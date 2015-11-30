@@ -103,10 +103,11 @@
 							</li>
 							<li class="dropdown"><a href="/wiki">WiKi <span class="caret hidden-xs"></span></a>
 								<ul class="dropdown-menu">
-									<li><a href="/wiki/Bien_d%C3%A9buter"><i class="fa fa-globe"></i> Comment bien débuter?</a></li>
-									<li><a href="/wiki/Trouver_un_job"><i class="fa fa-globe"></i> Comment trouver un job?</a></li>
-									<li><a href="/wiki/Gagner_de_l%27argent"><i class="fa fa-globe"></i> Comment gagner de l'argent?</a></li>
-									<li><a href="/forum/viewtopic.php?p=416771#p416771"><i class="fa fa-globe"></i> Règlement général</a></li>
+									<li><a href="/wiki/Bien_d%C3%A9buter"><i class="fa fa-key"></i> Comment bien débuter?</a></li>
+									<li><a href="/wiki/Trouver_un_job"><i class="fa fa-suitcase"></i> Comment trouver un job?</a></li>
+									<li><a href="/wiki/Gagner_de_l%27argent"><i class="fa fa-money"></i> Comment gagner de l'argent?</a></li>
+									<li><a href="/wiki/Les_binds"><i class="fa fa-keyboard-o"></i> Mettre en place vos binds</a></li>
+									<li><a href="/wiki/Le_rang_no-pyj"><i class="fa fa-ticket"></i> Qu'est-ce que le rang no-pyj ?</a></li>
 								</ul>
 							<li class="dropdown">
 								<a href="/forum/">FORUM <span class="caret hidden-xs"></span></a>
