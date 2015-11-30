@@ -9,24 +9,25 @@
 				</ul>
 			</div>
 		</article>
-		<article class="col-sm-8 comments">
+		<article class="col-sm-offset-1 col-sm-6 comments">
 			<div class="row">
-				<a href="/forum/search.php?search_id=unreadposts"><h4>Sur le forum</h4></a>
+				<a href="/forum/search.php?search_id=unreadposts"><h4>Sur le forum en ce moment ...</h4></a>
 				<ul class="list3">
 					{$listForum}
 				</ul>
 			</div>
 		</article>
-		<article class="col-sm-2">
+		<article class="col-sm-offset-1 col-sm-2">
 			<div class="row">
 				<h4>Les vidéos RP</h4>
 				<div class="video">
-					<p>Présentation RP:</p>
+					<p>Présentation Princeton :</p><br />
 					<figure class="img-polaroid"><a class="various" href="//www.youtube.com/embed/MpkwmbFX0uI?rel=0" style="opacity: 1;"></a><img alt="" src="/images/vid_roleplay.jpg" style="max-width:100%;"></figure>
 			    </div>
 			</div>
 		</article>
 	</div>
+	<br /><br />
 	<div class="container">
 		<p>Copyright &copy; 2010-2015 &bull; <a href="https://www.ts-x.eu">ts-x.eu</a> &bull; KoSSoLaX`</p>
 	</div>
