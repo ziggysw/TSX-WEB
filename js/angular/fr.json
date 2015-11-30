@@ -1,0 +1,4 @@
+{
+  "nuke": "La centrale nucléaire",  "villa": "La villa",  "tour": "La tour",
+  "rank": { "pvp": "PvP", "sell": "Vente", "buy": "Achat", "money": "Richesse", "age": "Ancienneté", "parrain": "Parrainage","vital": "Vitalité", "success": "Succès", "freekill": "Free-kill", "general": "Général" }
+}
