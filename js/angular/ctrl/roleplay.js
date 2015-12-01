@@ -28,6 +28,7 @@ app.controller('mainCtrl', function($scope, $http, $filter, $location, $routePar
   $scope.$watch(function(){return $location.search();}, function(value) {
     var tab = value.TABS; $('.tab-pane').hide(); $('#'+tab).show();
   });
+
 });
 app.controller('rpJobGang', function($scope, $http, $routeParams, $location) {
   $scope.$parent.back.push($location.path());
@@ -55,6 +56,14 @@ app.controller('rpJobGang', function($scope, $http, $routeParams, $location) {
     $http.get("https://www.ts-x.eu:8080/user/"+$routeParams.sub+"/stats").success(function(res) { $scope.stats = res; });
     $http.get("https://www.ts-x.eu:8080/live/connected/"+$routeParams.sub).success(function(res) { $scope.connected = parseInt(res); });
   }
+  $scope.dropCallback = function(event, index, item, external, type) {
+    console.log(index);
+    for(var i in $scope.data.notes ) {
+      if( $scope.data.notes[i].id == item.id ) {
+        console.log(i);
+      }
+    }
+  };
 
   $scope.getRank = function(pos, point) {
     if( pos == 1 ) return "Président";

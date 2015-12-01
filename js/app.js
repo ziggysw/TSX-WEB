@@ -1,5 +1,5 @@
-// sssssss
-var app = angular.module('tsx', ['ngRoute']);
+// 16h00
+var app = angular.module('tsx', ['ngRoute', 'dndLists']);
 
 require("./angular/ctrl/roleplay.js")(app);
 require("./angular/route/roleplay.js")(app);

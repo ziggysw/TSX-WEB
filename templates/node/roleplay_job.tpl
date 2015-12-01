@@ -62,8 +62,8 @@
   </div>
   <div class="col-md-5">
     <h3> Les notes </h3>
-    <ul>
-      <div ng-repeat="item in data.notes">
+    <ul class="list-unstyled" dnd-list="data.notes">
+      <li ng-repeat="item in data.notes" dnd-draggable="item" dnd-moved="data.notes.splice($index, 1);" dnd-dragend="dropCallback(event, $index, item);">
         <span ng-show="isAdmin">
           <a href class="fa fa-arrows"></a>
           <a href class="fa fa-trash-o" rest="delete@/job/{{Params.sub}}/note/{{item.id}}" ng-click="data.notes.splice($index, 1);"></a>
@@ -73,7 +73,7 @@
           </a>
         </span>
         <span ng-hide="isAdmin">{{item.name}}</span>
-      </div>
+      </li>
     </ul>
   </div>
 </div>
