@@ -84,7 +84,7 @@
 								</ul>
 							</li>
 							<li class="dropdown">
-								<a href="/index.php?page=roleplay2">RolePlay <span class="caret hidden-xs"></span></a>
+								<a href="/index.php?page=roleplay2#/">RolePlay <span class="caret hidden-xs"></span></a>
 								<ul class="dropdown-menu">
 									<li><a href="/wiki"><i class="fa fa-wikipedia-w"></i> Besoin d'aide?</a></li>
 									<li><a href="/forum/viewtopic.php?f=10&amp;t=26749"><i class="fa fa-balance-scale"></i> Règlement général</a></li>
