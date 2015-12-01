@@ -1,0 +1,9 @@
+{
+	"name": "ts-x.eu API",
+	"version": "0.1.0",
+	"description": "ts-x.eu API. Work in progress.",
+	"title": "ts-x.eu API",
+	"url" : "https://www.ts-x.eu:8080",
+	"sampleUrl" : "https://www.ts-x.eu:8080",
+	"template": { "withCompare": false }
+}
