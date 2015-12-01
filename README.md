@@ -1,13 +1,11 @@
 # TSX-WEB
 GitHUB du site web de la team [ts-x.eu][1]
 
-## API-RESTful
-Angular fait appel à un API-REST privé. La documentation de cet API se trouve à [cette adresse][4]
-
-**Besoin d'une mise à jour de l'API?** Ouvrez un [rapport sur github][3] !
-
 ## Bugs 
  Merci de poster les problèmes liés au site; à l'API, ouvrez [rapport sur github][3]!
+
+## API-RESTful
+Angular fait appel à un API-REST. La documentation de cet API se trouve à [cette adresse][4]
 
 ## Licence 
 [![CC-BY-NC-C-SA](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)][2]
