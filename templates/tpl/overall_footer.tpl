@@ -1,3 +1,4 @@
+	<a href="#" id="toTop"><span id="toTopHover"></span></a>
 </div>
 <footer>
 	<div class="container">
@@ -32,6 +33,6 @@
 		<p>Copyright &copy; 2010-2015 &bull; <a href="https://www.ts-x.eu">ts-x.eu</a> &bull; KoSSoLaX`</p>
 	</div>
 </footer>
-	<script type="text/javascript" src="/js/compile-bootstrap-jquery.easing.1.3-jquery.ui.totop-globals-axah-steam.js"></script>
+	<script type="text/javascript" src="/js/compile-bootstrap-globals-axah-steam.js?v=8"></script>
 </body>
 </html>

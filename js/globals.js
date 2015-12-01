@@ -4,6 +4,7 @@ $.fn.exists = function() {
 $(document).ready(function() {
 	$(".no_visible").animate({ opacity: 0.0 }, 0);
 	MakingTextEffect();
+	$('.carousel').carousel();
 });
 
 function MakingAlert(titre, text) {
@@ -17,25 +18,16 @@ function MakingTextEffect() {
 	$(".blinking").animate({ opacity: 1.0}, 500).animate({ opacity: 0.0 }, 500, function() { MakingTextEffect(); });
 }
 
-function getCookie(c_name) {
-	var i, x, y, ARRcookies = document.cookie.split(";");
-	for (i = 0; i < ARRcookies.length; i++) {
-		x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
-		y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
-		x = x.replace(/^\s+|\s+$./g, "");
-		if (x == c_name) {
-			return unescape(y);
-		}
-	}
-	return "";
-}
-
-function setCookie(c_name, value, exdays) {
-	var exdate = new Date();
-	exdate.setDate(exdate.getDate() + exdays);
-	var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
-	document.cookie = c_name + "=" + c_value;
-}
+var amountScrolled = 200;
+$(window).scroll(function() {
+	if ( $(window).scrollTop() > amountScrolled )
+		$('a#toTop').fadeIn();
+	else
+		$('a#toTop').fadeOut();
+});
+$('a#toTop').click(function() {
+	$('html, body').animate({scrollTop: 0}, 700); return false;
+});
 
 function tsxWebcam(nick) {
 	var chanName = "239029302382932tsx";
@@ -89,6 +81,3 @@ function tsxWebcam(nick) {
 		}
 	});
 }
-jQuery(document).ready(function() {
-	$('.carousel').carousel()
-});
