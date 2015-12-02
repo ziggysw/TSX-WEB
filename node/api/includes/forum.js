@@ -90,8 +90,8 @@ server.get('/forum/user/id/:username', function (req, res, next) {
 });
 
 /**
- * @api {get} /forum/user/pm/unread GetUnreadPM
- * @apiName GetUnreadPM
+ * @api {get} /forum/user/pm/unread GetCountUnreadPM
+ * @apiName GetCountUnreadPM
  * @apiGroup Forum
  * @apiHeader {String} auth Votre cookie de connexion.
  */
@@ -103,8 +103,29 @@ server.get('/forum/user/pm/unread', function (req, res, next) {
     if( row.length == 0 ) throw "NotAuthorized";
     var uid = row[0].user_id;
 
-
     var sql = "SELECT `user_unread_privmsg` FROM `ts-x`.`phpbb3_users` WHERE user_id = ?;";
+    server.conn.query(sql, [uid], function(err, row) {
+      return res.send(row[0].user_unread_privmsg);
+    });
+  });
+  next();
+});
+
+/**
+ * @api {get} /forum/user/pm/new GetCountNewPM
+ * @apiName GetCountNewPM
+ * @apiGroup Forum
+ * @apiHeader {String} auth Votre cookie de connexion.
+ */
+/*
+
+*/
+server.get('/forum/user/pm/new', function (req, res, next) {
+  server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
+    if( row.length == 0 ) throw "NotAuthorized";
+    var uid = row[0].user_id;
+
+    var sql = "SELECT `user_new_privmsg` FROM `ts-x`.`phpbb3_users` WHERE user_id = ?;";
     server.conn.query(sql, [uid], function(err, row) {
       return res.send(row[0].user_unread_privmsg);
     });
