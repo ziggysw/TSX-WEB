@@ -16,12 +16,14 @@ exports = module.exports = function(server){
 
 */
 server.post('/forum/pm/:id', function (req, res, next) {
+  req.params['id'] = parseInt(req.params['id']);
+  
   if( req.params['id'] == 0 )
     return res.send(new ERR.BadRequestError("InvalidParam"));
   server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
     if( row.length == 0 ) throw "NotAuthorized";
     var uid = row[0].user_id;
-
+    
     var sql = "INSERT INTO `ts-x`.`phpbb3_privmsgs`(`msg_id`, `author_id`, `author_ip`, `message_time`, `message_subject`, `message_text`, `to_address` ) VALUES";
     sql += "  (NULL, '"+uid+"', '0.0.0.0', UNIX_TIMESTAMP(), ?, ?, 'u_"+req.params['id']+"');"
     server.conn.query(sql, [req.params['title'], req.params['message']], function(err, row) {
