@@ -39,4 +39,26 @@ server.post('/forum/pm/:id', function (req, res, next) {
   });
   next();
 });
+
+/**
+ * @api {get} /forum/pm/ GetAllUserPM
+ * @apiName GetAllUserPM
+ * @apiGroup Forum
+ * @apiHeader {String} auth Votre cookie de connexion.
+ */
+/*
+
+*/
+server.get('/forum/pm', function (req, res, next) {
+  server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
+    if( row.length == 0 ) throw "NotAuthorized";
+    var uid = row[0].user_id;
+
+    var sql = "SELECT `msg_id`, `author_id`, `author_ip`, `message_time`, `message_subject`, `message_text`, `to_address` FROM `ts-x`.`phpbb3_privmsgs` WHERE bbcode_uid = '"+uid+"';";    
+    server.conn.query(sql, [], function(err, row) {
+      return res.send(row);
+    });
+  });
+  next();
+});
 };
