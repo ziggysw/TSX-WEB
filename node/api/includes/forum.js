@@ -132,4 +132,26 @@ server.get('/forum/user/pm/new', function (req, res, next) {
   });
   next();
 });
+
+/**
+ * @api {get} /forum/post/last GetLastPost
+ * @apiName GetLastPost
+ * @apiGroup Forum
+ * @apiHeader {String} auth Votre cookie de connexion.
+ */
+/*
+
+*/
+server.get('/forum/post/last', function (req, res, next) {
+  server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
+    if( row.length == 0 ) throw "NotAuthorized";
+    var uid = row[0].user_id;
+
+    var sql = "SELECT `post_id`,`post_subject` FROM `ts-x`.`phpbb_posts_text` WHERE post_subject !='' ORDER BY post_id DESC LIMIT 0,10;";
+    server.conn.query(sql, [], function(err, row) {
+      return res.send(row);
+    });
+  });
+  next();
+});
 };
