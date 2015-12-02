@@ -54,9 +54,36 @@ server.get('/forum/pm', function (req, res, next) {
     if( row.length == 0 ) throw "NotAuthorized";
     var uid = row[0].user_id;
 
-    var sql = "SELECT `msg_id`, `author_id`, `author_ip`, `message_time`, `message_subject`, `message_text`, `to_address` FROM `ts-x`.`phpbb3_privmsgs` WHERE bbcode_uid = ?;";    
+    var sql = "SELECT `msg_id`, `author_id`, `author_ip`, `message_time`, `message_subject`, `message_text`, `to_address` FROM `ts-x`.`phpbb3_privmsgs` WHERE bbcode_uid = ?;";
     server.conn.query(sql, [uid], function(err, row) {
       return res.send(row);
+    });
+  });
+  next();
+});
+
+/**
+ * @api {get} /forum/user/id/:username GetIdUser
+ * @apiName GetIdUser
+ * @apiGroup Forum
+ * @apiHeader {String} auth Votre cookie de connexion.
+ * @apiParam {String} pseudo forum de l'utilisateur.
+ */
+/*
+
+*/
+server.get('/forum/user/id/:username', function (req, res, next) {
+  if( req.params['username'] == "" )
+    return res.send(new ERR.BadRequestError("InvalidParam"));
+  server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
+    if( row.length == 0 ) throw "NotAuthorized";
+    var uid = row[0].user_id;
+
+    var username_clean = req.params['username'].toLowerCase();
+
+    var sql = "SELECT `user_id` FROM `ts-x`.`phpbb3_users` WHERE username_clean = ?;";
+    server.conn.query(sql, [username_clean], function(err, row) {
+      return res.send(row[0].user_id);
     });
   });
   next();
