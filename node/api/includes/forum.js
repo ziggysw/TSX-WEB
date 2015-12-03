@@ -149,8 +149,8 @@ server.get('/forum/post/last', function (req, res, next) {
     if( row.length == 0 ) throw "NotAuthorized";
     var uid = row[0].user_id;
 
-    var sql = "SELECT `post_id`,`post_subject`,`post_text` FROM `ts-x.``phpbb3_posts` AS P INNER JOIN `ts-x`.`phpbb3_users` AS U ON U.`user_id`=P.`poster_id`WHERE `forum_id` IN (10, 30, 53, 54, 56, 57, 147, 72, 12, 16, 5, 103, 35, 117, 83, 84, 86, 88, 94, 95, 11) AND LENGTH(`post_text`)>20 ORDER BY `post_time` DESC LIMIT 10;";
-    server.conn.query(sql, [], function(err, row) {
+    var sql = "SELECT `post_id`,`post_subject`,`post_text` FROM `ts-x`.`phpbb3_posts` AS P INNER JOIN `ts-x`.`phpbb3_users` AS U ON U.`user_id`=P.`poster_id`WHERE `forum_id` IN (10, 30, 53, 54, 56, 57, 147, 72, 12, 16, 5, 103, 35, 117, 83, 84, 86, 88, 94, 95, 11) AND LENGTH(`post_text`)>20 ORDER BY `post_time` DESC LIMIT 10;";
+    server.conn.query(sql, function(err, row) {
       return res.send(row);
     });
   });
