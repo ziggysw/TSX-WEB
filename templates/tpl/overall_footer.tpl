@@ -33,6 +33,6 @@
 		<p>Copyright &copy; 2010-2015 &bull; <a href="https://www.ts-x.eu">ts-x.eu</a> &bull; KoSSoLaX`</p>
 	</div>
 </footer>
-	<script type="text/javascript" src="/js/compile-bootstrap-globals-axah-steam.js?v=8"></script>
+	<script type="text/javascript" src="/js/compile-bootstrap-globals.js?v=8"></script>
 </body>
 </html>

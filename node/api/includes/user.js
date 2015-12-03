@@ -127,8 +127,44 @@ exports = module.exports = function(server){
   });
 
 /**
- * @api {get} /user/:SteamID/quests GetUserQuests
- * @apiName GetUserQuests
+ * @api {get} /user/:SteamID/personality GetUserPersonality
+ * @apiName GetUserPersonality
+ * @apiGroup User
+ * @apiParam {String} SteamID Un identifiant unique sous le format STEAM_1:x:xxxxxxx
+ */
+server.get('/user/:id/personality', function (req, res, next) {
+  function cb(obj) {
+    if( Object.keys(obj).length == 2 ) {
+      server.cache.set( req._url.pathname, obj);
+      return res.send(obj);
+    }
+  }
+
+  if( req.params['id'] == 0 )
+    return res.send(new ERR.BadRequestError("InvalidParam"));
+
+  var cache = server.cache.get( req._url.pathname);
+  if( cache != undefined ) return res.send(cache);
+
+  var obj = new Object();
+  server.conn.query("SELECT `type`, COUNT(`type`) as `cpt` FROM `rp_bigdata` WHERE `steamid`=? AND `date` > CURDATE() - INTERVAL 90 DAY GROUP BY `type`;", [req.params['id']], function(err, rows) {
+    if( err ) return res.send(new ERR.InternalServerError(err));
+    if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
+
+    obj.bigdata = rows[0];
+    cb(obj);
+  });
+  server.conn.query("SELECT `money`+`bank` FROM `rp_users` WHERE `steamid`=?;", [req.params['id']], function(err, rows) {
+    if( err ) return res.send(new ERR.InternalServerError(err));
+    if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
+
+    obj.data = rows[0];
+    cb(obj);
+  });
+}
+/**
+ * @api {get} /user/:SteamID/stats GetUserStats
+ * @apiName GetUserStats
  * @apiGroup User
  * @apiParam {String} SteamID Un identifiant unique sous le format STEAM_1:x:xxxxxxx
  */
