@@ -132,10 +132,16 @@ server.get('/user/search/:name', function (req, res, next) {
  */
 server.get('/user/:id/personality', function (req, res, next) {
   function cb(obj) {
-    if( Object.keys(obj).length == 6 ) {
+    if( Object.keys(obj).length == 7 ) {
       server.cache.set( req._url.pathname, obj);
       return res.send(obj);
     }
+  }
+  function clamp(i, slack, min, max) {
+    i = Math.round( i * 100) + slack;
+    if( i < min ) i = min;
+    else if( i > max ) i = max;
+    return i
   }
 
   if( req.params['id'] == 0 )
@@ -145,83 +151,124 @@ server.get('/user/:id/personality', function (req, res, next) {
   if( cache != undefined ) return res.send(cache);
 
   var obj = new Object();
-  var sql = "SELECT SUM(`amount`) as `delta` FROM ( ";
-  sql += "  SELECT SUM(`amount`) `amount` ";
+
+  var sql = "  SELECT SUM(`amount`) `amount` ";
   sql += "    FROM `rp_bigdata` ";
   sql += "    WHERE `type`='money' AND `steamid`=? AND `date` > CURDATE() - INTERVAL 90 DAY ";
   sql += "  UNION ";
-  sql += "    SELECT -SUM(`amount`) `amount` ";
+  sql += "    SELECT SUM(`amount`) `amount` ";
   sql += "    FROM `rp_bigdata` ";
   sql += "    WHERE `type`='money' AND `target`=? AND `date` > CURDATE() - INTERVAL 90 DAY  ";
   sql += "  UNION ";
-  sql += "    SELECT -(`money`+`bank`) FROM `rp_users` WHERE `steamid`=? ";
-  sql += ") as `zboub` ";
+  sql += "    SELECT (`money`+`bank`) `amount` FROM `rp_users` WHERE `steamid`=? ";
   // Si positif, c'est qu'il est give sa thune pour frauder l'état.
 
   server.conn.query(sql, [req.params['id'],req.params['id'],req.params['id']], function(err, rows) {
     if( err ) return res.send(new ERR.InternalServerError(err));
     if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
 
-    obj.avarice = parseInt(rows[0].delta);
+    var inc = parseInt(rows[0].amount);
+    var out = parseInt(rows[1].amount);
+    var now = parseInt(rows[2].amount);
+
+    obj.avarice = clamp((inc-out)/(inc+out+now), 33, 0, 100);
     cb(obj);
   });
 
-  var sql = "  SELECT SUM(`amount`) `delta` ";
-  sql += "    FROM `rp_bigdata` ";
-  sql += "    WHERE `type`='loto' AND `target`=? AND `date` > CURDATE() - INTERVAL 90 DAY ";
+  var sql = "SELECT SUM(`amount`*`prix`) `amount` FROM `rp_sell` S ";
+	sql += " INNER JOIN `rp_items` I ON I.`id`=S.`item_id` ";
+	sql += " WHERE `to_steamid`=? AND `item_type`='0' AND `item_id` IN (54, 55, 56, 57, 58, 76, 115) AND `timestamp`>UNIX_TIMESTAMP()-(90*24*60*60)";
+  sql += " UNION ";
+  sql += " SELECT AVG(`amount`) `amount` FROM (";
+  sql += " SELECT SUM(`amount`*`prix`) `amount` FROM `rp_sell` S ";
+	sql += " INNER JOIN `rp_items` I ON I.`id`=S.`item_id` ";
+	sql += " WHERE `to_steamid`<>? AND `item_type`='0' AND `item_id` IN (54, 55, 56, 57, 58, 76, 115) AND `timestamp`>UNIX_TIMESTAMP()-(90*24*60*60) GROUP BY `steamid`";
+  sql += " ) zboub "
   //
-
-  server.conn.query(sql, [req.params['id']], function(err, rows) {
+  server.conn.query(sql, [req.params['id'], req.params['id']], function(err, rows) {
     if( err ) return res.send(new ERR.InternalServerError(err));
     if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
 
-    obj.luxure = parseInt(rows[0].delta);
+    var a = parseInt(rows[0].amount);
+    var b = parseInt(rows[1].amount);
+
+    obj.luxure = clamp(a/(a+b), 0, 0, 100);
     cb(obj);
   });
 
-  var sql = "SELECT SUM(`amount`) as `delta` FROM ( ";
-  sql += "  SELECT COUNT(*) `amount` ";
+
+  var sql = "SELECT SUM(`amount`*`prix`) `amount` FROM `rp_sell` S ";
+	sql += " INNER JOIN `rp_items` I ON I.`id`=S.`item_id` ";
+	sql += " WHERE `to_steamid`=? AND `item_type`='0' AND `item_id` NOT IN (54, 55, 56, 57, 58, 76, 115) AND `timestamp`>UNIX_TIMESTAMP()-(90*24*60*60)";
+  sql += " UNION ";
+  sql += " SELECT AVG(`amount`) `amount` FROM (";
+  sql += " SELECT SUM(`amount`*`prix`) `amount` FROM `rp_sell` S ";
+	sql += " INNER JOIN `rp_items` I ON I.`id`=S.`item_id` ";
+	sql += " WHERE `to_steamid`<>? AND `item_type`='0' AND `item_id` NOT IN (54, 55, 56, 57, 58, 76, 115) AND `timestamp`>UNIX_TIMESTAMP()-(90*24*60*60) GROUP BY `steamid`";
+  sql += " ) zboub "
+  //
+  server.conn.query(sql, [req.params['id'], req.params['id']], function(err, rows) {
+    if( err ) return res.send(new ERR.InternalServerError(err));
+    if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
+
+    var a = parseInt(rows[0].amount);
+    var b = parseInt(rows[1].amount);
+
+    obj.gourmandise = clamp(a/(a+b), 0, 0, 100);
+    cb(obj);
+  });
+
+  var sql = "  SELECT COUNT(*) `amount` ";
   sql += "    FROM `rp_bigdata` ";
-  sql += "    WHERE `type`='kill' AND `steamid`=?  AND `date` > CURDATE() - INTERVAL 90 DAY ";
+  sql += "    WHERE `type`='kill' AND `steamid`=?  AND `date` > CURDATE() - INTERVAL 30 DAY ";
   sql += "  UNION ";
-  sql += "    SELECT -COUNT(*) `amount` ";
+  sql += "    SELECT COUNT(*) `amount` ";
   sql += "    FROM `rp_bigdata` ";
-  sql += "    WHERE `type`='kill' AND `target`=?  AND `date` > CURDATE() - INTERVAL 90 DAY ";
-  sql += ") as `zboub` ";
+  sql += "    WHERE `type`='kill' AND `target`=?  AND `date` > CURDATE() - INTERVAL 30 DAY ";
 
   server.conn.query(sql, [req.params['id'],req.params['id']], function(err, rows) {
     if( err ) return res.send(new ERR.InternalServerError(err));
     if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
-    obj.colere = parseInt(rows[0].delta);
+
+    var a = parseInt(rows[0].amount);
+    var b = parseInt(rows[1].amount);
+
+    obj.colere = clamp(a/(a+b) * 1.2, 0, 0, 100);
     cb(obj);
   });
 
   var sql = "  SELECT COUNT(*) `delta` ";
-  sql += "    FROM `ts-x`.`srv_bans` ";
-  sql += "    WHERE `SteamID`=? OR `SteamID`=? ";
+  sql += " FROM `ts-x`.`srv_bans` ";
+  sql += " WHERE `SteamID`=? OR `SteamID`=? ";
 
   server.conn.query(sql, [req.params['id'], req.params['id'].replace('STEAM_1', 'STEAM_0') ], function(err, rows) {
     if( err ) return res.send(new ERR.InternalServerError(err));
     if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
 
-    obj.orgueil = parseInt(rows[0].delta);
+    var a = parseInt(rows[0].delta);
+
+    obj.orgueil = clamp( Math.pow(a, 1/4) / 2, 0, 0, 100);
     cb(obj);
   });
 
-  var sql = "SELECT SUM(`amount`) as `delta` FROM ( ";
-  sql += "  SELECT COUNT(*) `amount` ";
-  sql += "    FROM `rp_bigdata` ";
-  sql += "    WHERE `type`='steal' AND `steamid`=? AND `date` > CURDATE() - INTERVAL 90 DAY ";
-  sql += "  UNION ";
-  sql += "    SELECT -COUNT(*) `amount` ";
-  sql += "    FROM `rp_bigdata` ";
-  sql += "    WHERE `type`='steal' AND `target`=? AND `date` > CURDATE() - INTERVAL 90 DAY  ";
-  sql += ") as `zboub` ";
+  var sql = "SELECT SUM(`amount`) `amount` ";
+  sql += "  FROM `rp_sell` ";
+  sql += "  WHERE `item_type`='4' AND `item_name` LIKE 'Vol:%' AND `steamid`=? AND `timestamp`>UNIX_TIMESTAMP()-(90*24*60*60) ";
+  sql += " UNION ";
+  sql += " SELECT AVG(`amount`) `amount` FROM (";
+  sql += "  SELECT SUM(`amount`) `amount` FROM `rp_sell` S ";
+  sql += "  WHERE `steamid`<>? AND `item_type`='4' AND `item_name` LIKE 'Vol:%' AND `timestamp`>UNIX_TIMESTAMP()-(90*24*60*60) GROUP BY `steamid`";
+  sql += " ) zboub "
 
-  server.conn.query(sql, [req.params['id'],req.params['id'],req.params['id']], function(err, rows) {
+  server.conn.query(sql, [req.params['id'], req.params['id']], function(err, rows) {
     if( err ) return res.send(new ERR.InternalServerError(err));
     if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
-    obj.envie = parseInt(rows[0].delta);
+
+
+    var a = parseInt(rows[0].amount);
+    var b = parseInt(rows[1].amount);
+
+    obj.envie = clamp(a/(a+b), 0, 0, 100);
     cb(obj);
   });
 
@@ -251,7 +298,7 @@ server.get('/user/:id/personality', function (req, res, next) {
       }
     }
 
-    obj.paresse = afkTime / (afkTime + connexionTime) * 100;
+    obj.paresse = clamp( afkTime / (afkTime + connexionTime), 0, 0, 100);
 
     cb(obj);
   });
