@@ -6,7 +6,7 @@ exports = module.exports = function(server){
 /**
  * @api {get} /connect/auth GetAuth
  * @apiName GetAuth
- * @apiGroup Forum
+ * @apiGroup Connection
  * @apiHeader {String} auth Votre cookie de connexion.
  */
 /*
@@ -24,7 +24,7 @@ server.get('/connect/auth', function (req, res, next) {
 /**
  * @api {get} /connect/check GetCheckConnect
  * @apiName GetCheckConnect
- * @apiGroup Forum
+ * @apiGroup Connection
  * @apiHeader {String} auth Votre cookie de connexion.
  */
 /*

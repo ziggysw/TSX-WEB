@@ -17,13 +17,13 @@ exports = module.exports = function(server){
 */
 server.post('/forum/pm/:id', function (req, res, next) {
   req.params['id'] = parseInt(req.params['id']);
-  
+
   if( req.params['id'] == 0 )
     return res.send(new ERR.BadRequestError("InvalidParam"));
   server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
     if( row.length == 0 ) throw "NotAuthorized";
     var uid = row[0].user_id;
-    
+
     var sql = "INSERT INTO `ts-x`.`phpbb3_privmsgs`(`msg_id`, `author_id`, `author_ip`, `message_time`, `message_subject`, `message_text`, `to_address` ) VALUES";
     sql += "  (NULL, '"+uid+"', '0.0.0.0', UNIX_TIMESTAMP(), ?, ?, 'u_"+req.params['id']+"');"
     server.conn.query(sql, [req.params['title'], req.params['message']], function(err, row) {
@@ -56,8 +56,8 @@ server.get('/forum/pm', function (req, res, next) {
     if( row.length == 0 ) throw "NotAuthorized";
     var uid = row[0].user_id;
 
-    var sql = "SELECT `msg_id`, `author_id`, `author_ip`, `message_time`, `message_subject`, `message_text`, `to_address` FROM `ts-x`.`phpbb3_privmsgs` WHERE to_address = ?;";
-    server.conn.query(sql, [uid], function(err, row) {
+    var sql = "SELECT `msg_id`, `author_id`, `author_ip`, `message_time`, `message_subject`, `message_text`, `to_address` FROM `ts-x`.`phpbb3_privmsgs` WHERE to_address = ? ORDER BY `message_time` DESC ;";
+    server.conn.query(sql, ["u_"+uid], function(err, row) {
       return res.send(row);
     });
   });
@@ -129,7 +129,7 @@ server.get('/forum/user/pm/new', function (req, res, next) {
 
     var sql = "SELECT `user_new_privmsg` FROM `ts-x`.`phpbb3_users` WHERE user_id = ?;";
     server.conn.query(sql, [uid], function(err, row) {
-      return res.send(row[0].user_unread_privmsg);
+      return res.send(""+row[0].user_unread_privmsg);
     });
   });
   next();
