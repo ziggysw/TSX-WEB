@@ -16,12 +16,14 @@ exports = module.exports = function(server){
 
 */
 server.post('/forum/pm/:id', function (req, res, next) {
+  req.params['id'] = parseInt(req.params['id']);
+  
   if( req.params['id'] == 0 )
     return res.send(new ERR.BadRequestError("InvalidParam"));
   server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
     if( row.length == 0 ) throw "NotAuthorized";
     var uid = row[0].user_id;
-
+    
     var sql = "INSERT INTO `ts-x`.`phpbb3_privmsgs`(`msg_id`, `author_id`, `author_ip`, `message_time`, `message_subject`, `message_text`, `to_address` ) VALUES";
     sql += "  (NULL, '"+uid+"', '0.0.0.0', UNIX_TIMESTAMP(), ?, ?, 'u_"+req.params['id']+"');"
     server.conn.query(sql, [req.params['title'], req.params['message']], function(err, row) {
@@ -105,7 +107,7 @@ server.get('/forum/user/pm/unread', function (req, res, next) {
 
     var sql = "SELECT `user_unread_privmsg` FROM `ts-x`.`phpbb3_users` WHERE user_id = ?;";
     server.conn.query(sql, [uid], function(err, row) {
-      return res.send(row[0].user_unread_privmsg);
+      return res.send(""+row[0].user_unread_privmsg);
     });
   });
   next();
@@ -147,8 +149,8 @@ server.get('/forum/post/last', function (req, res, next) {
     if( row.length == 0 ) throw "NotAuthorized";
     var uid = row[0].user_id;
 
-    var sql = "SELECT `post_id`,`post_subject`,`post_text`  FROM `phpbb3_posts` AS P INNER JOIN `phpbb3_users` AS U ON U.`user_id`=P.`poster_id`WHERE `forum_id` IN (10, 30, 53, 54, 56, 57, 147, 72, 12, 16, 5, 103, 35, 117, 83, 84, 86, 88, 94, 95, 11) AND LENGTH(`post_text`)>20 ORDER BY `post_time` DESC LIMIT 10;";
-    server.conn.query(sql, [], function(err, row) {
+    var sql = "SELECT `post_id`,`post_subject`,`post_text` FROM `ts-x`.`phpbb3_posts` AS P INNER JOIN `ts-x`.`phpbb3_users` AS U ON U.`user_id`=P.`poster_id`WHERE `forum_id` IN (10, 30, 53, 54, 56, 57, 147, 72, 12, 16, 5, 103, 35, 117, 83, 84, 86, 88, 94, 95, 11) AND LENGTH(`post_text`)>20 ORDER BY `post_time` DESC LIMIT 10;";
+    server.conn.query(sql, function(err, row) {
       return res.send(row);
     });
   });
@@ -169,7 +171,7 @@ server.get('/forum/smiley', function (req, res, next) {
     if( row.length == 0 ) throw "NotAuthorized";
     var uid = row[0].user_id;
 
-    var sql = "SELECT `code`,`smiley_url`,`smiley_width`,`smiley_height` FROM `phpbb3_smilies`;";
+    var sql = "SELECT `code`,`smiley_url`,`smiley_width`,`smiley_height` FROM `ts-x`.`phpbb3_smilies`;";
     server.conn.query(sql, [], function(err, row) {
       return res.send(row);
     });

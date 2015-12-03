@@ -32,103 +32,158 @@ exports = module.exports = function(server){
     return converted;
   }
 
-  /**
-   * @api {get} /user/:SteamID GetUserBySteamID
-   * @apiName GetUserBySteamID
-   * @apiGroup User
-   * @apiParam {String} SteamID Un identifiant unique sous le format STEAM_1:x:xxxxxxx
-   */
-  server.get('/user/:id', function (req, res, next) {
-    if( req.params['id'] == 0 )
-      return res.send(new ERR.BadRequestError("InvalidParam"));
+/**
+ * @api {get} /user/:SteamID GetUserBySteamID
+ * @apiName GetUserBySteamID
+ * @apiGroup User
+ * @apiParam {String} SteamID Un identifiant unique sous le format STEAM_1:x:xxxxxxx
+ */
+server.get('/user/:id', function (req, res, next) {
+  if( req.params['id'] == 0 )
+    return res.send(new ERR.BadRequestError("InvalidParam"));
 
-    var cache = server.cache.get( req._url.pathname);
-    if( cache != undefined ) {
-      cache.is_admin = false;
+  var cache = server.cache.get( req._url.pathname);
+  if( cache != undefined ) {
+    cache.is_admin = false;
 
-      server.conn.query(server.getAuthSMAdmin, [req.headers.auth], function(err, row) {
-        if( row.length > 0 )
-          cache.is_admin = true;
+    server.conn.query(server.getAuthSMAdmin, [req.headers.auth], function(err, row) {
+      if( row.length > 0 )
+        cache.is_admin = true;
 
-        return res.send(cache);
-      });
-    }
-    var sql = "SELECT U.`name`, `money`+`bank` as `cash`, U.`job_id`, `job_name`, U.`group_id`, G.`name` as `group_name`, `time_played` as `timeplayed`, ";
-    sql += "`permi_lege`, `permi_lourd`, `permi_vente`, `train` as `train_knife`, `train_weapon`, `train_esquive`, ";
-    sql += "`pay_to_bank`, `have_card`, `have_account`, `kill`, `death`, `refere`, `timePlayedJob`, U.`skin`, UNIX_TIMESTAMP(`last_connected`) as `last_connected`"
-    sql += " FROM `rp_users` U INNER JOIN `rp_jobs` J ON J.`job_id`=U.`job_id` INNER JOIN `rp_groups` G ON G.`id`=U.`group_id` WHERE `steamid`=?";
-
-    server.conn.query(sql, [req.params['id']], function(err, rows) {
-      if( err ) return res.send(new ERR.InternalServerError(err));
-      if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
-
-      rows[0].skin = (require('path').basename(rows[0].skin)).replace(/[^A-Za-z]/g, '').replace(/variant.mdl/g, '').replace(/varmdl/g, '').replace("mdl", "");
-      rows[0].skin = (rows[0].skin==''? 'null' : rows[0].skin);
-      rows[0].last_connected = new Date(parseInt(rows[0].last_connected)*1000);
-      rows[0].is_admin = false;
-      rows[0].steam64 = steamIDToProfile(req.params['id']);
-
-      server.cache.set( req._url.pathname, rows[0]);
-
-      server.conn.query(server.getAuthSMAdmin, [req.headers.auth], function(err, row) {
-        if( row.length > 0 )
-          rows[0].is_admin = true;
-
-        return res.send( rows[0] );
-      });
+      return res.send(cache);
     });
+  }
+  var sql = "SELECT U.`name`, `money`+`bank` as `cash`, U.`job_id`, `job_name`, U.`group_id`, G.`name` as `group_name`, `time_played` as `timeplayed`, ";
+  sql += "`permi_lege`, `permi_lourd`, `permi_vente`, `train` as `train_knife`, `train_weapon`, `train_esquive`, ";
+  sql += "`pay_to_bank`, `have_card`, `have_account`, `kill`, `death`, `refere`, `timePlayedJob`, U.`skin`, UNIX_TIMESTAMP(`last_connected`) as `last_connected`"
+  sql += " FROM `rp_users` U INNER JOIN `rp_jobs` J ON J.`job_id`=U.`job_id` INNER JOIN `rp_groups` G ON G.`id`=U.`group_id` WHERE `steamid`=?";
 
-  	next();
-  });
-  /**
-   * @api {get} /user/search/:name GetUserByName
-   * @apiName GetUserByName
-   * @apiGroup User
-   * @apiParam {String} name Un critère de recherche par nom
-   */
-  server.get('/user/search/:name', function (req, res, next) {
-    if( req.params['name'] == 0 )
-      return res.send(new ERR.BadRequestError("InvalidParam"));
+  server.conn.query(sql, [req.params['id']], function(err, rows) {
+    if( err ) return res.send(new ERR.InternalServerError(err));
+    if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
 
-    var cache = server.cache.get( req._url.pathname);
-    if( cache != undefined ) {
-      cache.is_admin = false;
+    rows[0].skin = (require('path').basename(rows[0].skin)).replace(/[^A-Za-z]/g, '').replace(/variant.mdl/g, '').replace(/varmdl/g, '').replace("mdl", "");
+    rows[0].skin = (rows[0].skin==''? 'null' : rows[0].skin);
+    rows[0].last_connected = new Date(parseInt(rows[0].last_connected)*1000);
+    rows[0].is_admin = false;
+    rows[0].steam64 = steamIDToProfile(req.params['id']);
 
-      server.conn.query(server.getAuthSMAdmin, [req.headers.auth], function(err, row) {
-        if( row.length > 0 )
-          cache.is_admin = true;
+    server.cache.set( req._url.pathname, rows[0]);
+    server.conn.query(server.getAuthSMAdmin, [req.headers.auth], function(err, row) {
+      if( row.length > 0 )
+        rows[0].is_admin = true;
 
-        return res.send(cache);
-      });
-    }
-    var sql = "SELECT C.`steamid`, C.`name`, J.`job_name` as `job` FROM (";
-    sql += " ( SELECT `steamid`, `name`, '1' as `priority` FROM `rp_csgo`.`rp_users` WHERE `name` LIKE ? ORDER BY `last_connected` DESC LIMIT 100 ) ";
-	  sql += " UNION ";
-	  sql += " ( SELECT REPLACE(`steamid`, 'STEAM_0', 'STEAM_1'), `username` AS `name`, '2' as `priority` FROM `ts-x`.`phpbb3_users` WHERE `username` LIKE ? OR `username_clean` LIKE ? ORDER BY `user_lastvisit` DESC LIMIT 100) ";
-	  sql += " UNION ";
-    sql += " ( SELECT `steamid`, `name`, '3' as `priority` FROM `rp_users` U INNER JOIN `rp_jobs` J ON U.`job_id`=J.`job_id` WHERE `job_name` LIKE ? LIMIT 100) ";
-    sql += " UNION ";
-	  sql += " ( SELECT REPLACE(`steamid`, 'STEAM_0', 'STEAM_1'), `uname` AS `name`, '4' as `priority` FROM `ts-x`.`srv_nicks` WHERE `uname` LIKE ? OR `uname2` LIKE ? LIMIT 10) ";
-    sql += " ) AS C LEFT JOIN `rp_users` U ON U.`steamid`=C.`steamid` LEFT JOIN `rp_jobs` J ON U.`job_id`=J.`job_id` WHERE C.`steamid`<>'notset' GROUP BY `steamid` ORDER BY `priority` ASC;";
-
-    req.params['name'] = "%" + req.params['name'] + "%";
-    server.conn.query(sql, [req.params['name'],req.params['name'],req.params['name'],req.params['name'],req.params['name'],req.params['name']], function(err, rows) {
-      if( err ) return res.send(new ERR.InternalServerError(err));
-      if( rows.length == 0 ) return res.send(new ERR.NotFoundError("NotFound"));
-
-      for(var i=0; i<rows.length; i++)
-        rows[i].steam64 = steamIDToProfile(rows[i].steamid);
-
-      server.cache.set( req._url.pathname, rows);
-      return res.send( rows );
+      return res.send( rows[0] );
     });
-
-  	next();
   });
+
+	next();
+});
+/**
+ * @api {get} /user/search/:name GetUserByName
+ * @apiName GetUserByName
+ * @apiGroup User
+ * @apiParam {String} name Un critère de recherche par nom
+ */
+server.get('/user/search/:name', function (req, res, next) {
+  if( req.params['name'] == 0 )
+    return res.send(new ERR.BadRequestError("InvalidParam"));
+
+  var cache = server.cache.get( req._url.pathname);
+  if( cache != undefined ) {
+    cache.is_admin = false;
+
+    server.conn.query(server.getAuthSMAdmin, [req.headers.auth], function(err, row) {
+      if( row.length > 0 )
+        cache.is_admin = true;
+      return res.send(cache);
+    });
+  }
+  var sql = "SELECT C.`steamid`, C.`name`, J.`job_name` as `job` FROM (";
+  sql += " ( SELECT `steamid`, `name`, '1' as `priority` FROM `rp_csgo`.`rp_users` WHERE `name` LIKE ? ORDER BY `last_connected` DESC LIMIT 100 ) ";
+  sql += " UNION ";
+  sql += " ( SELECT REPLACE(`steamid`, 'STEAM_0', 'STEAM_1'), `username` AS `name`, '2' as `priority` FROM `ts-x`.`phpbb3_users` WHERE `username` LIKE ? OR `username_clean` LIKE ? ORDER BY `user_lastvisit` DESC LIMIT 100) ";
+  sql += " UNION ";
+  sql += " ( SELECT `steamid`, `name`, '3' as `priority` FROM `rp_users` U INNER JOIN `rp_jobs` J ON U.`job_id`=J.`job_id` WHERE `job_name` LIKE ? LIMIT 100) ";
+  sql += " UNION ";
+  sql += " ( SELECT REPLACE(`steamid`, 'STEAM_0', 'STEAM_1'), `uname` AS `name`, '4' as `priority` FROM `ts-x`.`srv_nicks` WHERE `uname` LIKE ? OR `uname2` LIKE ? LIMIT 10) ";
+  sql += " ) AS C LEFT JOIN `rp_users` U ON U.`steamid`=C.`steamid` LEFT JOIN `rp_jobs` J ON U.`job_id`=J.`job_id` WHERE C.`steamid`<>'notset' GROUP BY `steamid` ORDER BY `priority` ASC;";
+
+  req.params['name'] = "%" + req.params['name'] + "%";
+  server.conn.query(sql, [req.params['name'],req.params['name'],req.params['name'],req.params['name'],req.params['name'],req.params['name']], function(err, rows) {
+    if( err ) return res.send(new ERR.InternalServerError(err));
+    if( rows.length == 0 ) return res.send(new ERR.NotFoundError("NotFound"));
+
+    for(var i=0; i<rows.length; i++)
+      rows[i].steam64 = steamIDToProfile(rows[i].steamid);
+
+    server.cache.set( req._url.pathname, rows);
+    return res.send( rows );
+  });
+
+	next();
+});
 
 /**
- * @api {get} /user/:SteamID/quests GetUserQuests
- * @apiName GetUserQuests
+ * @api {get} /user/:SteamID/personality GetUserPersonality
+ * @apiName GetUserPersonality
+ * @apiGroup User
+ * @apiParam {String} SteamID Un identifiant unique sous le format STEAM_1:x:xxxxxxx
+ */
+server.get('/user/:id/personality', function (req, res, next) {
+  function cb(obj) {
+    if( Object.keys(obj).length == 2 ) {
+      var obj2 = {};
+
+      var max=1;
+      for(var i in obj.bigdata )
+        obj2[i] = Math.log10(obj.bigdata[i]+1);
+
+      obj2["money"] = (obj2["money"] + Math.log10(obj.data["cash"]+1))/2.0;
+
+      for(var i in obj2 )
+        if( max < obj2[i] )
+          max = obj2[i];
+
+      for(var i in obj2 )
+        obj2[i] = Math.round(obj2[i] / max * 100) / 100;
+
+      server.cache.set( req._url.pathname, obj2);
+      return res.send(obj2);
+    }
+  }
+
+  if( req.params['id'] == 0 )
+    return res.send(new ERR.BadRequestError("InvalidParam"));
+
+  var cache = server.cache.get( req._url.pathname);
+  if( cache != undefined ) return res.send(cache);
+
+  var obj = new Object();
+  server.conn.query("SELECT `type`, COUNT(`type`) as `cpt` FROM `rp_bigdata` WHERE `steamid`=? AND `date` > CURDATE() - INTERVAL 90 DAY GROUP BY `type`;", [req.params['id']], function(err, rows) {
+    if( err ) return res.send(new ERR.InternalServerError(err));
+    if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
+
+    var arr = {};
+    for(var i=0; i<rows.length; i++) {
+      arr[rows[i].type] = rows[i].cpt;
+    }
+
+    obj.bigdata = arr;
+    cb(obj);
+  });
+  server.conn.query("SELECT `money`+`bank` as `cash` FROM `rp_users` WHERE `steamid`=?;", [req.params['id']], function(err, rows) {
+    if( err ) return res.send(new ERR.InternalServerError(err));
+    if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
+
+    obj.data = rows[0];
+    cb(obj);
+  });
+  next();
+});
+/**
+ * @api {get} /user/:SteamID/stats GetUserStats
+ * @apiName GetUserStats
  * @apiGroup User
  * @apiParam {String} SteamID Un identifiant unique sous le format STEAM_1:x:xxxxxxx
  */
