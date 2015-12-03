@@ -107,7 +107,7 @@ server.get('/forum/user/pm/unread', function (req, res, next) {
 
     var sql = "SELECT `user_unread_privmsg` FROM `ts-x`.`phpbb3_users` WHERE user_id = ?;";
     server.conn.query(sql, [uid], function(err, row) {
-      return res.send(row[0].user_unread_privmsg);
+      return res.send(""+row[0].user_unread_privmsg);
     });
   });
   next();
@@ -171,7 +171,7 @@ server.get('/forum/smiley', function (req, res, next) {
     if( row.length == 0 ) throw "NotAuthorized";
     var uid = row[0].user_id;
 
-    var sql = "SELECT `code`,`smiley_url`,`smiley_width`,`smiley_height` FROM `phpbb3_smilies`;";
+    var sql = "SELECT `code`,`smiley_url`,`smiley_width`,`smiley_height` FROM `ts-x`.`phpbb3_smilies`;";
     server.conn.query(sql, [], function(err, row) {
       return res.send(row);
     });
