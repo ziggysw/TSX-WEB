@@ -16,6 +16,20 @@ exports = module.exports = function(app) {
       });
     }
   });
+  app.directive('drawRadarChart', function ($http) {
+    return function (scope, element, attr) {
+      $http.get(attr.drawRadarChart).success(function(res) {
+        var chart = new Highcharts.Chart({
+          chart: { renderTo: $(element).attr("id"), type: 'area', polar: true, backgroundColor: null, zoomType: 'x'},
+          credits: { enabled: false }, legend: { enabled: false },
+          title: { text: null },
+          xAxis: res.axis, series: res.data,
+          tooltip: { formatter: function() { return '<b>'+ this.x + '</b>: '+ this.y+'%'; } },
+          yAxis: { gridLineInterpolation: 'polygon', lineWidth: 0, min: 0, max: 100}
+        });
+      });
+    }
+  });
   app.directive('drawLine', function ($window) {
     return function (scope, element, attr) {
       var w = angular.element($window);

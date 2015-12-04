@@ -34,10 +34,18 @@
     <button class="btn btn-warning" ng-show="data.job_id>0 && Params.sub==steamid" rest="delete@/user/job">Quitter mon job</button>
     <button class="btn btn-warning" ng-show="data.group_id>0 && Params.sub==steamid" rest="delete@/user/group">Quitter mon groupe</button>
     <button class="btn btn-success" ng-show="data.is_admin && Params.sub==steamid" ng-click="updateSteamID(); toggleModal();">Envoyer argent</button>
+    <br /><br /><br /><br /><br />
+    <a href="http://steamcommunity.com/profiles/{{data.steam64}}"><img src="http://steamsignature.com/status/french/{{data.steam64}}.png" /><img src="http://steamsignature.com/AddFriend.png" /></a>
+    <div class="input-group col-sm-10">
+        <span class="input-group-addon" required="">SteamID:</span>
+        <input type="text" class="form-control" value="{{Params.sub}}">
+    </div>
+
   </div>
 </div>
 <br clear="all" />
 <div id="graph" draw-user-chart="https://www.ts-x.eu:8080/user/{{Params.sub}}/incomes/24" style="height: 460px; margin: 0 auto; width:100%; display:block;"></div>
+
 <div class="row">
   <div class="col-sm-4">
     <h3 class="row">Les quêtes accomplies par {{data.name}}</h3>
@@ -58,12 +66,8 @@
     </ul>
   </div>
   <div class="col-sm-4">
-    <h3 class="row">Autres informations</h3>
-    <a href="http://steamcommunity.com/profiles/{{data.steam64}}"><img src="http://steamsignature.com/status/french/{{data.steam64}}.png" /><img src="http://steamsignature.com/AddFriend.png" /></a>
-    <div class="input-group col-sm-10">
-        <span class="input-group-addon" required="">SteamID:</span>
-        <input type="text" class="form-control" value="{{Params.sub}}">
-    </div>
+    <h3 class="row">Personnalité</h3>
+    <div id="polar" draw-radar-chart="https://www.ts-x.eu:8080/user/{{Params.sub}}/personality" style="height: 100%; margin: 0 auto; width:100%; display:block;"></div>
   </div>
 </div>
 

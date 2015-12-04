@@ -133,8 +133,19 @@ server.get('/user/search/:name', function (req, res, next) {
 server.get('/user/:id/personality', function (req, res, next) {
   function cb(obj) {
     if( Object.keys(obj).length == 7 ) {
-      server.cache.set( req._url.pathname, obj);
-      return res.send(obj);
+
+      var arr = new Array();
+      var max = -1;
+      for(var i in obj) { if( max < obj[i] ) max = obj[i]; }
+      for(var i in obj) { arr.push( Math.round(obj[i]/max*100) );  }
+
+      var obj2 = new Object();
+      obj2.title = 'Personnalité';
+      obj2.data = [{ data: arr }];
+      obj2.axis = [  {categories: Object.keys(obj), lineWidth: 0}  ];
+
+      server.cache.set( req._url.pathname, obj2);
+      return res.send(obj2);
     }
   }
   function clamp(i, slack, min, max) {
@@ -264,10 +275,8 @@ server.get('/user/:id/personality', function (req, res, next) {
     if( err ) return res.send(new ERR.InternalServerError(err));
     if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
 
-
-    var a = parseInt(rows[0].amount);
+    var a = parseInt(rows[0].amount); a = (a>0?a:0);
     var b = parseInt(rows[1].amount);
-
     obj.envie = clamp(a/(a+b), 0, 0, 100);
     cb(obj);
   });
