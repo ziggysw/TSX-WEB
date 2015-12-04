@@ -291,7 +291,9 @@ app.controller('rpSearch', function($scope, $http, $location) {
   }
   $scope.updateSteamID();
 });
-
+app.controller('rpTribunal', function($scope, $http, $location) {
+  $scope.$parent.back.push($location.path());
+});
 function lzw_decode(s) {
   var dict = {};
   var data = (s + "").split("");

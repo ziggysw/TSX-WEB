@@ -13,10 +13,10 @@ Highcharts.setOptions({lang: {
 	Note: Le ratio sera affiché pendant 15 minutes après l'utilisation d'un "ratio perso" afin de luter contre le bug csgo.
 	<button class="btn btn-info pull-right" ng-click="goBack()" ng-show="back.length>0">Retour</button>
 	<div class="btn-group btn-group-justified" role="group">
-	  <a class="btn btn-default" href="#/user/{$steamid}">Votre profil</a>
+	  <a class="btn btn-default" href="#/user/{$steamid}"><i class="fa fa-user"></i> Votre profil</a>
 		<div class="btn-group" role="group">
 	    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	      Les jobs
+	      <i class="fa fa-briefcase"></i> Les jobs
 	      <span class="caret"></span>
 	    </button>
 	    <ul class="dropdown-menu">
@@ -31,7 +31,7 @@ Highcharts.setOptions({lang: {
 	  </div>
 		<div class="btn-group" role="group">
 	    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	      Les groupes
+	      <i class="fa fa-users"></i> Les groupes
 	      <span class="caret"></span>
 	    </button>
 	    <ul class="dropdown-menu">
@@ -44,7 +44,6 @@ Highcharts.setOptions({lang: {
 				</li>
 	    </ul>
 	  </div>
-		<!-- <a class="btn btn-default" href="#/map">La carte</a> -->
 	</div>
 	<div ng-view>loading...</div>
 	<br clear="all" />
