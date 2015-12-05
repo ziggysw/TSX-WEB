@@ -29,13 +29,13 @@
             <td class="text-right"><a href="#/user/{{player.steamid}}" ng-class="(player.active? (player.TimePlayedJob>30*60?'':'text-warning') : 'text-danger')">{{player.nick}}</a></td>
             <td></td>
             <td>
-              <a ng-show="$parent.isAdmin" style="cursor:pointer;" data-ng-click="$parent.steamid = player.steamid; $parent.updateSteamID(); $parent.toggleModal();">{{player.name}}  <i class="fa fa-wrench"></i></a>
+              <a ng-show="$parent.isAdmin" style="cursor:pointer;" data-ng-click="$parent.steamid = player.steamid; $parent.toggleModal();">{{player.name}}  <i class="fa fa-wrench"></i></a>
               <span ng-hide="$parent.isAdmin">{{player.name}}</span>
             </td>
           </tr>
           <tr ng-show="isAdmin">
             <td></td><td></td>
-            <td><a style="cursor:pointer;" data-ng-click="steamid = 'STEAM_1:x:xxxxx'; updateSteamID(); toggleModal();">Nouveau <i class="fa fa-plus"></i></a></td>
+            <td><a style="cursor:pointer;" data-ng-click="steamid = 'STEAM_1:x:xxxxx'; toggleModal();">Nouveau <i class="fa fa-plus"></i></a></td>
           </tr>
         </table>
       </div>
@@ -87,9 +87,9 @@
   </ul>
 </div>
 <div modal-show="showDialog" class="modal fade">
-  <div class="modal-dialog">
-    <form ng-submit="UpdateData(pData.job_id)">
-      <div class="modal-content">
+  <div class="modal-dialog" ng-controller="rpSteamIDLookup">
+    <form ng-submit="$parent.UpdateData(pData.job_id)">
+      <div class="modal-content" >
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Gestion du job</h4>
@@ -97,7 +97,7 @@
         <div class="modal-body">
           <div class="input-group">
             <span class="input-group-addon" required>SteamID:</span>
-            <input type="text" class="form-control" ng-model="steamid" ng-change="updateSteamID()" />
+            <input type="text" class="form-control" ng-model="$parent.steamid" />
             <span class="input-group-addon">{{pData.name}}</span>
           </div>
           <div class="input-group">

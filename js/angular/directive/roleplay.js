@@ -30,6 +30,7 @@ exports = module.exports = function(app) {
       });
     }
   });
+
   app.directive('drawLine', function ($window) {
     return function (scope, element, attr) {
       var w = angular.element($window);

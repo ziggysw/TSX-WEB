@@ -42,8 +42,6 @@ app.controller('rpJobGang', function($scope, $http, $routeParams, $location) {
       $scope.players = res;
       $scope.isAdmin = false;
       for(var i=0; i<res.length; i++) if( res[i].steamid == $scope.$parent.steamid ) $scope.isAdmin = true;
-      if( $scope.isAdmin )
-        $scope.updateSteamID();
     });
 
     if( $routeParams.arg == "job" ) {
@@ -78,19 +76,6 @@ app.controller('rpJobGang', function($scope, $http, $routeParams, $location) {
     else if( pos >= 80 && pos < 100 ) return "Citoyen";
     else if( point < 0 ) return "Rôdeur";
     else return "Visiteur";
-  }
-  $scope.updateSteamID = function() {
-    var pattern = /^STEAM_[01]:[01]:[0-9]{1,18}$/g;
-    if( pattern.test($scope.steamid) ) {
-      $scope.steamid = $scope.steamid.replace("STEAM_0", "STEAM_1").trim();
-      $http.get("https://www.ts-x.eu:8080/user/"+$scope.steamid)
-      .success(function(res) { $scope.pData = res; $scope.valid = true; })
-      .error(function() { $scope.pData.name = "ERREUR: SteamID non trouvé"; $scope.valid = false;});
-    }
-    else {
-      $scope.valid = false;
-      $scope.pData.name = "ERREUR: SteamID non valide";
-    }
   }
   $scope.UpdateData = function(id) {
     $http.put("https://www.ts-x.eu:8080/"+$routeParams.arg+"/"+$routeParams.sub+"/"+$scope.steamid, {id: id})
@@ -291,9 +276,37 @@ app.controller('rpSearch', function($scope, $http, $location) {
   }
   $scope.updateSteamID();
 });
-app.controller('rpTribunal', function($scope, $http, $location) {
+app.controller('rpTribunal', function($scope, $location, $filter) {
   $scope.$parent.back.push($location.path());
+  $scope.steamid='';
+  $scope.nowDate = $filter('date')(new Date(), "le d/M à HH:mm");
+  $scope.reasonT=['Insultes, Irrespect', 'Meurtre', 'Freekill massif', 'Attitude négative', 'Menaces, Hack', 'Exploit, Triche', 'Abus de ses fonctions', 'Autre, préciser:' ];
+  $scope.reasonCT=['Jail dans une propriétée privée', 'Abus de /jail', 'Jail par déduction', 'Freekill en fonction', 'Abus de perquisition', 'Autre, préciser:' ];
+  $scope.reason = $scope.reasonT;
 });
+app.controller('rpSteamIDLookup', function($scope, $http) {
+
+  $scope.$watch('steamid', function(newValue, oldValue) {
+    SteamIDLookup(newValue);
+  });
+
+  function SteamIDLookup(steamid) {
+    var pattern = /^STEAM_[01]:[01]:[0-9]{1,18}$/g;
+
+    if( pattern.test($scope.steamid) ) {
+      steamid = steamid.replace("STEAM_0", "STEAM_1").trim();
+      $http.get("https://www.ts-x.eu:8080/user/"+steamid)
+        .success(function(res) { $scope.$parent.pData = res; $scope.$parent.valid = true; })
+        .error(function() { $scope.$parent.pData.name = "ERREUR: SteamID non trouvé"; $scope.$parent.valid = false;});
+    }
+    else {
+      $scope.$parent.valid = false;
+      $scope.$parent.pData.name = "ERREUR: SteamID non valide";
+    }
+  }
+
+});
+
 function lzw_decode(s) {
   var dict = {};
   var data = (s + "").split("");

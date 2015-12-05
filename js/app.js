@@ -1,4 +1,4 @@
-// sssszkjdjlj
+// sssszkjdjljssssssssssssssssssssssssssssssssssssssssssssssssssss
 var app = angular.module('tsx', ['ngRoute', 'dndLists']);
 
 require("./angular/ctrl/roleplay.js")(app);
