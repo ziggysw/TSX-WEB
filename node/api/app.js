@@ -33,7 +33,8 @@ server.cache = new NodeCache({ stdTTL: 30, checkperiod: 60 });
 server.restify = restify;
 server.restify.CORS.ALLOW_HEADERS.push('origin');
 server.restify.CORS.ALLOW_HEADERS.push('auth');
-
+server.restify.CORS.ALLOW_HEADERS.push('Accept-Encoding');
+server.restify.CORS.ALLOW_HEADERS.push('Accept-Language');
 
 function handleDisconnect() {
     server.conn = new Pool(16);

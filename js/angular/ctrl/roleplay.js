@@ -15,7 +15,6 @@ app.controller('mainCtrl', function($scope, $http, $filter, $location, $routePar
   }
 
   $scope.Params = $routeParams;
-  $http.defaults.headers.common['auth'] = _md5;
   $scope.steamid = _steamid;
   $scope.Math = window.Math;
 

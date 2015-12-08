@@ -90,7 +90,7 @@
 									<li><a href="/forum/viewtopic.php?f=10&amp;t=26749"><i class="fa fa-balance-scale"></i> Règlement général</a></li>
 									<li class="dropdown dropdown-submenu"><a href="/index.php?page=roleplay2"><i class="fa fa-briefcase"></i> Liste des jobs<span></span></a>
 										<ul class="dropdown-menu">
-											<li><a href="/index.php?page=roleplay2"><i class="fa fa-briefcase"></i> Nouvelle version</a></li>
+											<li><a href="/index.php?page=roleplay2#/"><i class="fa fa-briefcase"></i> Nouvelle version</a></li>
 											<li><a href="/index.php?page=roleplay"><i class="fa fa-briefcase"></i> Ancienne version</a></li>
 										</ul>
 									</li>
