@@ -134,15 +134,17 @@ server.get('/user/:id/personality', function (req, res, next) {
   function cb(obj) {
     if( Object.keys(obj).length == 7 ) {
 
+      var keys = Object.keys(obj).sort(function(a,b){return obj[b]-obj[a]});
+
       var arr = new Array();
       var max = -1;
       for(var i in obj) { if( max < obj[i] ) max = obj[i]; }
-      for(var i in obj) { arr.push( Math.round(obj[i]/max*100) );  }
+      for(var i in keys ) { arr.push( Math.round(obj[keys[i]]/max*100) );  }
 
       var obj2 = new Object();
       obj2.title = 'Personnalité';
       obj2.data = [{ data: arr }];
-      obj2.axis = [  {categories: Object.keys(obj), lineWidth: 0}  ];
+      obj2.axis = [  {categories: keys, lineWidth: 0}  ];
 
       server.cache.set( req._url.pathname, obj2);
       return res.send(obj2);
@@ -178,9 +180,9 @@ server.get('/user/:id/personality', function (req, res, next) {
     if( err ) return res.send(new ERR.InternalServerError(err));
     if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
 
-    var inc = parseInt(rows[0].amount);
-    var out = parseInt(rows[1].amount);
-    var now = parseInt(rows[2].amount);
+    var inc = parseFloat(rows[0].amount);
+    var out = parseFloat(rows[1].amount);
+    var now = parseFloat(rows[2].amount);
 
     obj.avarice = clamp((inc-out)/(inc+out+now), 33, 0, 100);
     cb(obj);
@@ -200,8 +202,8 @@ server.get('/user/:id/personality', function (req, res, next) {
     if( err ) return res.send(new ERR.InternalServerError(err));
     if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
 
-    var a = parseInt(rows[0].amount);
-    var b = parseInt(rows[1].amount);
+    var a = parseFloat(rows[0].amount);
+    var b = parseFloat(rows[1].amount);
 
     obj.luxure = clamp(a/(a+b), 0, 0, 100);
     cb(obj);
@@ -222,8 +224,8 @@ server.get('/user/:id/personality', function (req, res, next) {
     if( err ) return res.send(new ERR.InternalServerError(err));
     if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
 
-    var a = parseInt(rows[0].amount);
-    var b = parseInt(rows[1].amount);
+    var a = parseFloat(rows[0].amount);
+    var b = parseFloat(rows[1].amount);
 
     obj.gourmandise = clamp(a/(a+b), 0, 0, 100);
     cb(obj);
@@ -241,24 +243,32 @@ server.get('/user/:id/personality', function (req, res, next) {
     if( err ) return res.send(new ERR.InternalServerError(err));
     if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
 
-    var a = parseInt(rows[0].amount);
-    var b = parseInt(rows[1].amount);
+    var a = parseFloat(rows[0].amount);
+    var b = parseFloat(rows[1].amount);
 
     obj.colere = clamp(a/(a+b) * 1.2, 0, 0, 100);
     cb(obj);
   });
 
-  var sql = "  SELECT COUNT(*) `delta` ";
-  sql += " FROM `ts-x`.`srv_bans` ";
-  sql += " WHERE `SteamID`=? OR `SteamID`=? ";
 
-  server.conn.query(sql, [req.params['id'], req.params['id'].replace('STEAM_1', 'STEAM_0') ], function(err, rows) {
+  var sql = "  SELECT COUNT(*) `amount` ";
+  sql += " FROM `ts-x`.`srv_bans` ";
+  sql += " WHERE REPLACE(`steamid`, 'STEAM_0', 'STEAM_1')=? AND (`StartTime`>=UNIX_TIMESTAMP()-(90*24*60*60) OR `EndTime`>=UNIX_TIMESTAMP()-(90*24*60*60)) ";
+  sql += " UNION ";
+  sql += " SELECT AVG(`amount`) `amount` FROM (";
+  sql += "   SELECT COUNT(*) `amount` ";
+  sql += "    FROM `ts-x`.`srv_bans` ";
+  sql += "    WHERE REPLACE(`steamid`, 'STEAM_0', 'STEAM_1')<>? AND (`StartTime`>=UNIX_TIMESTAMP()-(90*24*60*60) OR `EndTime`>=UNIX_TIMESTAMP()-(90*24*60*60))  GROUP BY REPLACE(`steamid`, 'STEAM_0', 'STEAM_1') ";
+  sql += " ) zboub "
+
+  server.conn.query(sql, [req.params['id'], req.params['id'] ], function(err, rows) {
     if( err ) return res.send(new ERR.InternalServerError(err));
     if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
 
-    var a = parseInt(rows[0].delta);
+    var a = parseFloat(rows[0].amount); a = (a>0?a:0);
+    var b = parseFloat(rows[1].amount);
 
-    obj.orgueil = clamp( Math.pow(a, 1/4) / 2, 0, 0, 100);
+    obj.orgueil = clamp(a/b * 0.33, 0, 0, 100);
     cb(obj);
   });
 
@@ -275,8 +285,8 @@ server.get('/user/:id/personality', function (req, res, next) {
     if( err ) return res.send(new ERR.InternalServerError(err));
     if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
 
-    var a = parseInt(rows[0].amount); a = (a>0?a:0);
-    var b = parseInt(rows[1].amount);
+    var a = parseFloat(rows[0].amount); a = (a>0?a:0);
+    var b = parseFloat(rows[1].amount);
     obj.envie = clamp(a/(a+b), 0, 0, 100);
     cb(obj);
   });
