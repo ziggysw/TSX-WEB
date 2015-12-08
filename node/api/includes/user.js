@@ -1,6 +1,7 @@
 "use strict";
 exports = module.exports = function(server){
   var ERR = require('node-restify-errors');
+  var moment = require('moment');
   var request = require('request');
   var statData = require('/home/leeth/tsx/assoc.json');
   // bla, bla, bla... à déplacer
@@ -320,6 +321,71 @@ server.get('/user/:id/personality', function (req, res, next) {
     obj.paresse = clamp( afkTime / (afkTime + connexionTime), 0, 0, 100);
 
     cb(obj);
+  });
+
+  next();
+});
+
+
+/**
+ * @api {get} /user/:SteamID/playtime/:type GetUserPlayTime
+ * @apiName GetUserPlayTime
+ * @apiGroup User
+ * @apiParam {String} SteamID Un identifiant unique sous le format STEAM_1:x:xxxxxxx
+ * @apiParam {String} type Un identifiant unique sous le format STEAM_1:x:xxxxxxx
+ */
+server.get('/user/:id/playtime/:type', function (req, res, next) {
+  if( req.params['id'] == 0 )
+    return res.send(new ERR.BadRequestError("InvalidParam"));
+
+  var cache = server.cache.get( req._url.pathname);
+  if( cache != undefined ) return res.send(cache);
+
+  var dStart;
+  var type = req.params['type'];
+
+  switch(type) {
+    case "month":  dStart = moment().startOf('month').toDate(); break;
+    case "year":  dStart = moment().startOf('year').toDate(); break;
+    case "31days": dStart = moment().subtract(31, 'days').toDate(); break;
+    case "start":  dStart = moment().subtract(10, 'year').toDate(); break;
+    default:
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+  }
+
+  var sql = "SELECT `fileId`, `date`, `type`, `stop` FROM ";
+  sql += "  `rp_bigdata` BD INNER JOIN `rp_bigdata_files` BDF ON BD.`fileId`=BDF.`id` ";
+  sql += " WHERE `steamid`=? AND `type` IN ('connect', 'disconnect', 'afk', 'noafk') AND BDF.`start`>? ORDER BY `start`, BD.`id` ASC";
+
+  server.conn.query(sql, [req.params['id'], dStart], function(err, rows) {
+    if( err ) return res.send(new ERR.InternalServerError(err));
+    if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
+
+    var lastID = -1, connected = 0, lastDate, fileDate, connexionTime=0, afkTime=0;
+    for(var i in rows) {
+      if( connected == 0 && (rows[i].type == "connect" || rows[i].type == "noafk" ) ) {
+        lastDate = rows[i].date;
+        fileDate = rows[i].stop;
+        connected = 1;
+        if( rows[i].type == "noafk" )
+          connected = 2;
+        lastID = rows[i].fileId;
+      }
+      if( connected > 0 && (rows[i].type == "disconnect" || rows[i].type == "afk" || lastID != rows[i].fileId) ) {
+        if( connected == 2 )
+          afkTime += (rows[i].date - lastDate)/1000 + (3*60);
+        else
+          connexionTime += (rows[i].date - lastDate)/1000;
+        connected = 0;
+      }
+    }
+
+    var obj = new Object();
+    obj.afk = afkTime;
+    obj.play = connexionTime;
+
+    server.cache.set(req._url.pathname, obj);
+    return res.send(obj);
   });
 
   next();

@@ -14,6 +14,7 @@ app.controller('mainCtrl', function($scope, $http, $filter, $location, $routePar
     $location.path( path );
   }
 
+  $scope.Search = $location.search();
   $scope.Params = $routeParams;
   $scope.steamid = _steamid;
   $scope.Math = window.Math;
@@ -24,7 +25,9 @@ app.controller('mainCtrl', function($scope, $http, $filter, $location, $routePar
   $("body").popover({ selector: '[data-toggle="popover"]', trigger: "hover"});
   $("body").tooltip({ selector: '[data-toggle="tooltip"]', trigger: "hover"});
 
+  if( $location.search() && $location.search().TABS ) {  setTimeout(function() { $('#'+$location.search().TABS).show(); }, 100); }
   $scope.$watch(function(){return $location.search();}, function(value) {
+    $scope.Search = value;
     var tab = value.TABS; $('.tab-pane').hide(); $('#'+tab).show();
   });
 
@@ -282,6 +285,26 @@ app.controller('rpTribunal', function($scope, $location, $filter) {
   $scope.reasonT=['Insultes, Irrespect', 'Meurtre', 'Freekill massif', 'Attitude négative', 'Menaces, Hack', 'Exploit, Triche', 'Abus de ses fonctions', 'Autre, préciser:' ];
   $scope.reasonCT=['Jail dans une propriétée privée', 'Abus de /jail', 'Jail par déduction', 'Freekill en fonction', 'Abus de perquisition', 'Autre, préciser:' ];
   $scope.reason = $scope.reasonT;
+});
+app.controller('rpTribunalCase', function($scope, $location, $routeParams, $http) {
+  $scope.$parent.back.push($location.path());
+  $scope.steamid='';
+  $scope.case = $routeParams.sub;
+  $scope.playtime = {};
+  $scope.tribunal = {};
+  
+  $http.get("https://www.ts-x.eu:8080/user/"+$routeParams.sub).success(function(res) { $scope.data = res; });
+  $http.get("https://www.ts-x.eu:8080/live/connected/"+$routeParams.sub).success(function(res) { $scope.connected = parseInt(res); });
+
+  $http.get("https://www.ts-x.eu:8080/user/"+$routeParams.sub+"/playtime/31days").success(function(res) { $scope.playtime.days = res; });
+  $http.get("https://www.ts-x.eu:8080/user/"+$routeParams.sub+"/playtime/month").success(function(res) { $scope.playtime.month = res; });
+
+  $scope.cat = {chat: "Chat", money: "Transaction", kill: "Meurtre", jail: "Prison", item: "Item", buy: "Vente", steal: "Vol", connect: "Connexion" };
+
+
+  angular.forEach($scope.cat, function(val, key) {
+    $http.get("https://www.ts-x.eu:8080/tribunal/"+$scope.case+"/"+key).success(function(res) { $scope.tribunal[key] = res; });
+  });
 });
 app.controller('rpSteamIDLookup', function($scope, $http) {
 

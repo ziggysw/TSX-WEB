@@ -2,7 +2,11 @@
 exports = module.exports = function(app) {
 
   app.config(function($routeProvider, $locationProvider) {
-    $routeProvider.when('/tribunal/:sub', {
+    $routeProvider.when('/tribunal/case/:sub', {
+      templateUrl: function(p) { return "/templates/node/roleplay_tribunal_case.tpl"; },
+      controller: 'rpTribunalCase',
+      reloadOnSearch: false
+    }).when('/tribunal/:sub', {
       templateUrl: function(p) { return "/templates/node/roleplay_tribunal.tpl"; },
       controller: 'rpTribunal',
       reloadOnSearch: false
