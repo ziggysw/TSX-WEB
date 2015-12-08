@@ -45,7 +45,7 @@ Highcharts.setOptions({lang: {
 	    </ul>
 	  </div>
 	</div>
-	<div ng-view>loading...</div>
+	<div ng-view><i ng-repeat="i in [5,4,3,2,1]" class="fa fa-cog fa-spin fa-{{i}}x"></i></div>
 	<br clear="all" />
 	<div modal-show="showAlert" class="modal fade">
 	  <div class="modal-dialog">

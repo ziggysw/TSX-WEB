@@ -1,5 +1,6 @@
 <h2>Le classement {{Params.sub}}:</h2>
-<span ng-hide="data">loading...</span>
+<div ng-hide="data" class="text-center"><i ng-repeat="i in [5,4,3,2,1]" class="fa fa-cog fa-spin fa-{{i}}x"></i>
+</div>
 <table class="table">
   <thead>
     <tr><th>Pos.</th><th>Joueur:</th><th></th><th>Grade:</th><th>Point:</th></tr>
