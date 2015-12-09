@@ -332,9 +332,88 @@ server.get('/user/:id/personality', function (req, res, next) {
  * @apiName GetUserPlayTime
  * @apiGroup User
  * @apiParam {String} SteamID Un identifiant unique sous le format STEAM_1:x:xxxxxxx
- * @apiParam {String} type Un identifiant unique sous le format STEAM_1:x:xxxxxxx
+ * @apiParam {String} type month, year, 31days, begin
  */
 server.get('/user/:id/playtime/:type', function (req, res, next) {
+  if( req.params['id'] == 0 )
+    return res.send(new ERR.BadRequestError("InvalidParam"));
+
+  var cache = server.cache.get( req._url.pathname);
+  if( cache != undefined ) return res.send(cache);
+
+  var dStart;
+  var type = req.params['type'];
+
+
+
+  switch(type) {
+    case "month":  dStart = moment().startOf('month').toDate(); break;
+    case "year":  dStart = moment().startOf('year').toDate(); break;
+    case "31days": dStart = moment().subtract(31, 'days').toDate(); break;
+    case "begin": dStart = moment().subtract(10, 'year').toDate(); break;
+    case "start": break;
+    default:
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+  }
+
+  if( type == "start" ) {
+      var sql = "SELECT `date` FROM `rp_bigdata` WHERE `steamid`=? AND `type`='connect' ORDER BY `date` ASC LIMIT 1;";
+      server.conn.query(sql, [req.params['id']], function(err, rows) {
+        if( err ) return res.send(new ERR.InternalServerError(err));
+        if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
+
+        server.cache.set(req._url.pathname, rows[0].date);
+        return res.send(rows[0].date);
+      });
+  }
+  else {
+    var sql = "SELECT `fileId`, `date`, `type`, `stop` FROM ";
+    sql += "  `rp_bigdata` BD INNER JOIN `rp_bigdata_files` BDF ON BD.`fileId`=BDF.`id` ";
+    sql += " WHERE `steamid`=? AND `type` IN ('connect', 'disconnect', 'afk', 'noafk') AND BDF.`start`>? ORDER BY `start`, BD.`id` ASC";
+
+    server.conn.query(sql, [req.params['id'], dStart], function(err, rows) {
+      if( err ) return res.send(new ERR.InternalServerError(err));
+      if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
+
+      var lastID = -1, connected = 0, lastDate, fileDate, connexionTime=0, afkTime=0;
+      for(var i in rows) {
+        if( connected == 0 && (rows[i].type == "connect" || rows[i].type == "noafk" ) ) {
+          lastDate = rows[i].date;
+          fileDate = rows[i].stop;
+          connected = 1;
+          if( rows[i].type == "noafk" )
+            connected = 2;
+          lastID = rows[i].fileId;
+        }
+        if( connected > 0 && (rows[i].type == "disconnect" || rows[i].type == "afk" || lastID != rows[i].fileId) ) {
+          if( connected == 2 )
+            afkTime += (rows[i].date - lastDate)/1000 + (3*60);
+          else
+            connexionTime += (rows[i].date - lastDate)/1000;
+          connected = 0;
+        }
+      }
+
+      var obj = new Object();
+      obj.afk = afkTime;
+      obj.play = connexionTime;
+
+      server.cache.set(req._url.pathname, obj);
+      return res.send(obj);
+    });
+  }
+  next();
+});
+
+
+/**
+ * @api {get} /user/:SteamID/ratio/:type GetUserRatio
+ * @apiName GetUserRatio
+ * @apiGroup User
+ * @apiParam {String} SteamID Un identifiant unique sous le format STEAM_1:x:xxxxxxx
+ * @apiParam {String} type month, year, 31days, begin
+ */
+server.get('/user/:id/ratio/:type', function (req, res, next) {
   if( req.params['id'] == 0 )
     return res.send(new ERR.BadRequestError("InvalidParam"));
 
@@ -348,42 +427,27 @@ server.get('/user/:id/playtime/:type', function (req, res, next) {
     case "month":  dStart = moment().startOf('month').toDate(); break;
     case "year":  dStart = moment().startOf('year').toDate(); break;
     case "31days": dStart = moment().subtract(31, 'days').toDate(); break;
-    case "start":  dStart = moment().subtract(10, 'year').toDate(); break;
+    case "begin": dStart = moment().subtract(10, 'year').toDate(); break;
     default:
       return res.send(new ERR.BadRequestError("InvalidParam"));
   }
 
-  var sql = "SELECT `fileId`, `date`, `type`, `stop` FROM ";
-  sql += "  `rp_bigdata` BD INNER JOIN `rp_bigdata_files` BDF ON BD.`fileId`=BDF.`id` ";
-  sql += " WHERE `steamid`=? AND `type` IN ('connect', 'disconnect', 'afk', 'noafk') AND BDF.`start`>? ORDER BY `start`, BD.`id` ASC";
+  var sql = "SELECT `steamid`, `target` FROM `rp_bigdata` ";
+  sql += " WHERE `type`='kill' AND (`steamid`=? OR `target`=?) AND `date`>?";
 
-  server.conn.query(sql, [req.params['id'], dStart], function(err, rows) {
+  server.conn.query(sql, [req.params['id'], req.params['id'], dStart], function(err, rows) {
     if( err ) return res.send(new ERR.InternalServerError(err));
     if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
 
-    var lastID = -1, connected = 0, lastDate, fileDate, connexionTime=0, afkTime=0;
-    for(var i in rows) {
-      if( connected == 0 && (rows[i].type == "connect" || rows[i].type == "noafk" ) ) {
-        lastDate = rows[i].date;
-        fileDate = rows[i].stop;
-        connected = 1;
-        if( rows[i].type == "noafk" )
-          connected = 2;
-        lastID = rows[i].fileId;
-      }
-      if( connected > 0 && (rows[i].type == "disconnect" || rows[i].type == "afk" || lastID != rows[i].fileId) ) {
-        if( connected == 2 )
-          afkTime += (rows[i].date - lastDate)/1000 + (3*60);
-        else
-          connexionTime += (rows[i].date - lastDate)/1000;
-        connected = 0;
-      }
-    }
-
     var obj = new Object();
-    obj.afk = afkTime;
-    obj.play = connexionTime;
+    obj.kill = obj.death = 0;
 
+    for(var i in rows) {
+      if( rows[i].steamid == req.params['id'] )
+        obj.kill++;
+      else
+        obj.death++;
+    }
     server.cache.set(req._url.pathname, obj);
     return res.send(obj);
   });

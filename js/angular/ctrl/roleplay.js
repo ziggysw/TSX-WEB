@@ -290,14 +290,17 @@ app.controller('rpTribunalCase', function($scope, $location, $routeParams, $http
   $scope.$parent.back.push($location.path());
   $scope.steamid='';
   $scope.case = $routeParams.sub;
-  $scope.playtime = {};
-  $scope.tribunal = {};
-  
+  $scope.playtime = {}; $scope.tribunal = {}; $scope.ratio = {};
+
   $http.get("https://www.ts-x.eu:8080/user/"+$routeParams.sub).success(function(res) { $scope.data = res; });
   $http.get("https://www.ts-x.eu:8080/live/connected/"+$routeParams.sub).success(function(res) { $scope.connected = parseInt(res); });
 
-  $http.get("https://www.ts-x.eu:8080/user/"+$routeParams.sub+"/playtime/31days").success(function(res) { $scope.playtime.days = res; });
-  $http.get("https://www.ts-x.eu:8080/user/"+$routeParams.sub+"/playtime/month").success(function(res) { $scope.playtime.month = res; });
+  angular.forEach(["31days", "month", "begin", "start"], function(key) {
+    $http.get("https://www.ts-x.eu:8080/user/"+$scope.case+"/playtime/"+key).success(function(res) { $scope.playtime[key] = res; });
+  });
+  angular.forEach(["31days", "month", "begin", "start"], function(key) {
+    $http.get("https://www.ts-x.eu:8080/user/"+$scope.case+"/ratio/"+key).success(function(res) { $scope.ratio[key] = res; });
+  });
 
   $scope.cat = {chat: "Chat", money: "Transaction", kill: "Meurtre", jail: "Prison", item: "Item", buy: "Vente", steal: "Vol", connect: "Connexion" };
 
