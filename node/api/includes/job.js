@@ -485,6 +485,7 @@ server.get('/jobs/avocats', function (req, res, next) {
  * @api {put} /jobs/avocat/:steamid/:amount SetAvocat
  * @apiName SetAvocat
  * @apiGroup Jobs
+ * @apiHeader {String} auth Votre cookie de connexion.
  * @apiParam {String} steamid Le steamid de la personne
  * @apiParam {Integer} amount Le montant des honoraires (0 = pas avocat)
  */
