@@ -9,8 +9,6 @@ exports = module.exports = function(server) {
  * @apiGroup Jobs
  */
 server.get('/jobs', function (req, res, next) {
-  if( req.params['jobid'] == 0 )
-    return res.send(new ERR.BadRequestError("InvalidParam"));
 
   var cache = server.cache.get( req._url.pathname);
   if( cache != undefined ) { return res.send(cache); }
@@ -468,8 +466,6 @@ server.get('/jobs/:id/capital/:scale', function (req, res, next) {
  * @apiGroup Jobs
  */
 server.get('/jobs/avocats', function (req, res, next) {
-  if( req.params['jobid'] == 0 )
-    return res.send(new ERR.BadRequestError("InvalidParam"));
 
   var cache = server.cache.get( req._url.pathname);
   if( cache != undefined ) { return res.send(cache); }
