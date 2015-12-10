@@ -461,3 +461,25 @@ server.get('/jobs/:id/capital/:scale', function (req, res, next) {
 });
 
 };
+
+/**
+ * @api {get} /jobs/avocats GetAvocats
+ * @apiName GetAvocats
+ * @apiGroup Jobs
+ */
+server.get('/jobs/avocats', function (req, res, next) {
+  if( req.params['jobid'] == 0 )
+    return res.send(new ERR.BadRequestError("InvalidParam"));
+
+  var cache = server.cache.get( req._url.pathname);
+  if( cache != undefined ) { return res.send(cache); }
+
+  var sql = "SELECT `steamid`, `avocat` AS 'honoraires' FROM `rp_users` WHERE `avocat` > 0 ORDER BY `avocat` DESC;";
+
+  server.conn.query(sql, function(err, rows) {
+    server.cache.set( req._url.pathname, rows, 300);
+    return res.send( rows );
+  });
+
+  next();
+});
