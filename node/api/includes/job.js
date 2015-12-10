@@ -469,7 +469,7 @@ server.get('/jobs/avocats', function (req, res, next) {
   var cache = server.cache.get( req._url.pathname);
   if( cache != undefined ) { return res.send(cache); }
 
-  var sql = "SELECT `steamid`, `avocat` AS 'honoraires' FROM `rp_users` WHERE `avocat` > 0 ORDER BY `avocat` DESC;";
+  var sql = "SELECT `steamid`, `name`, `avocat` AS 'honoraires' FROM `rp_users` WHERE `avocat` > 0 ORDER BY `avocat` DESC;";
 
   server.conn.query(sql, function(err, rows) {
     server.cache.set( req._url.pathname, rows, 300);
