@@ -458,7 +458,6 @@ server.get('/jobs/:id/capital/:scale', function (req, res, next) {
   next();
 });
 
-};
 
 /**
  * @api {get} /jobs/avocats GetAvocats
@@ -479,3 +478,5 @@ server.get('/jobs/avocats', function (req, res, next) {
 
   next();
 });
+
+};
