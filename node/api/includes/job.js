@@ -479,4 +479,44 @@ server.get('/jobs/avocats', function (req, res, next) {
   next();
 });
 
+
+
+/**
+ * @api {put} /jobs/avocat/:steamid SetAvocat
+ * @apiName SetAvocat
+ * @apiGroup Jobs
+ * @apiHeader {String} auth Votre cookie de connexion.
+ * @apiParam {String} steamid Le steamid de la personne
+ * @apiParam {Integer} amount Le montant des honoraires (0 = pas avocat)
+ */
+server.put('/jobs/avocat/:steamid', function (req, res, next) {
+
+  if( req.params['steamid'] == 0 )
+    return res.send(new ERR.BadRequestError("InvalidParam"));
+
+  var sql  = "SELECT `is_boss`+`co_chef` as `is_admin`FROM `rp_users` U";
+  sql     += " INNER JOIN `rp_jobs` J ON J.`job_id`=U.`job_id`";
+  sql     += "WHERE `steamid`=? AND TRUNCATE(U.`job_id`,-1)=100;"
+
+  server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
+    if( err ) return res.send(new ERR.InternalServerError(err));
+    if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+    var SteamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
+
+    server.conn.query(sql, [SteamID], function(err, rows) {
+      if( rows.length == 0 ) return res.send(new ERR.NotFoundError("NotFound"));
+      if( rows[0].is_admin != 1 )  return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+
+      server.conn.query("UPDATE `rp_users` SET `avocat`=? WHERE `steamid`=?", [req.params['amount'], req.params['steamid']], function(err, rows) {
+        if( rows.length == 0 ) return res.send(new ERR.NotFoundError("NotFound"));
+
+        server.cache.del("/jobs/avocats");
+        return res.send( "OK" );
+      });
+    });
+  });
+
+  next();
+});
+
 };
