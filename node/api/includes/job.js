@@ -482,14 +482,14 @@ server.get('/jobs/avocats', function (req, res, next) {
 
 
 /**
- * @api {put} /jobs/avocat/:steamid/:amount SetAvocat
+ * @api {put} /jobs/avocat/:steamid SetAvocat
  * @apiName SetAvocat
  * @apiGroup Jobs
  * @apiHeader {String} auth Votre cookie de connexion.
  * @apiParam {String} steamid Le steamid de la personne
  * @apiParam {Integer} amount Le montant des honoraires (0 = pas avocat)
  */
-server.put('/jobs/avocat/:steamid/:amount', function (req, res, next) {
+server.put('/jobs/avocat/:steamid', function (req, res, next) {
 
   if( req.params['steamid'] == 0 )
     return res.send(new ERR.BadRequestError("InvalidParam"));
