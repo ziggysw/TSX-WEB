@@ -124,6 +124,7 @@ server.put('/group/:groupid/:steamid', function (req, res, next) {
     if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
     var SteamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
     var UserName = row[0].username_clean;
+    req.params['steamid'] = req.params['steamid'].replace("STEAM_0", "STEAM_1");
 
     if( SteamID == req.params["steamid"] )
         return res.send(new ERR.ForbiddenError("Vous ne pouvez pas modifier votre propre grade."));
