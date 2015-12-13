@@ -299,23 +299,53 @@ server.get('/user/:id/personality', function (req, res, next) {
     if( err ) return res.send(new ERR.InternalServerError(err));
     if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
 
-    var lastID = -1, connected = 0, lastDate, fileDate, connexionTime=0, afkTime=0;
+    var lastID = -1, connected = 0, lastDate, fileDate, connexionTime=0, afkTime=0, tmp=0;
     for(var i in rows) {
-      if( connected == 0 && (rows[i].type == "connect" || rows[i].type == "noafk" ) ) {
+
+      // Détection d'un crash
+      if( connected > 0 && lastID != rows[i].fileId ) {
+        rows[i].date = fileDate;
+
+        if( connected ==  2 )
+          afkTime += (rows[i].date - lastDate)/1000 + (3*60);
+        else
+          connexionTime += (rows[i].date - lastDate)/1000;
+      }
+
+      if( rows[i].type == "connect" ) {
         lastDate = rows[i].date;
         fileDate = rows[i].stop;
-        connected = 1;
-        if( rows[i].type == "noafk" )
-          connected = 2;
         lastID = rows[i].fileId;
+        connected = 1;
       }
-      if( connected > 0 && (rows[i].type == "disconnect" || rows[i].type == "afk" || lastID != rows[i].fileId) ) {
-        if( connected == 2 )
+      if( connected > 0 && rows[i].type == "afk" ) {
+        connexionTime += (rows[i].date - lastDate)/1000;
+        lastDate = rows[i].date;
+        connected = 2;
+      }
+      if( connected > 0 && rows[i].type == "noafk" ) {
+        afkTime += (rows[i].date - lastDate)/1000 + (3*60);
+        lastDate = rows[i].date;
+        connected = 1;
+      }
+      if( rows[i].type == "disconnect" ) {
+        if( connected ==  2 )
           afkTime += (rows[i].date - lastDate)/1000 + (3*60);
         else
           connexionTime += (rows[i].date - lastDate)/1000;
         connected = 0;
       }
+    }
+
+
+
+    if( connected ==  1 ) {
+      var tmp = (new Date() - lastDate)/1000
+      connexionTime += tmp;
+    }
+    if( connected ==  2 ) {
+      var tmp = (new Date() - lastDate)/1000 + (3*60);
+      afkTime += tmp;
     }
 
     obj.paresse = clamp( afkTime / (afkTime + connexionTime), 0, 0, 100);
@@ -371,27 +401,59 @@ server.get('/user/:id/playtime/:type', function (req, res, next) {
     sql += "  `rp_bigdata` BD INNER JOIN `rp_bigdata_files` BDF ON BD.`fileId`=BDF.`id` ";
     sql += " WHERE `steamid`=? AND `type` IN ('connect', 'disconnect', 'afk', 'noafk') AND BDF.`start`>? ORDER BY `start`, BD.`id` ASC";
 
+    var arr = [];
+
     server.conn.query(sql, [req.params['id'], dStart], function(err, rows) {
       if( err ) return res.send(new ERR.InternalServerError(err));
       if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
 
-      var lastID = -1, connected = 0, lastDate, fileDate, connexionTime=0, afkTime=0;
+      var lastID = -1, connected = 0, lastDate, fileDate, connexionTime=0, afkTime=0, tmp=0;
       for(var i in rows) {
-        if( connected == 0 && (rows[i].type == "connect" || rows[i].type == "noafk" ) ) {
+
+        // Détection d'un crash
+        if( connected > 0 && lastID != rows[i].fileId ) {
+          rows[i].date = fileDate;
+
+          if( connected ==  2 )
+            afkTime += (rows[i].date - lastDate)/1000 + (3*60);
+          else
+            connexionTime += (rows[i].date - lastDate)/1000;
+        }
+
+        if( rows[i].type == "connect" ) {
           lastDate = rows[i].date;
           fileDate = rows[i].stop;
-          connected = 1;
-          if( rows[i].type == "noafk" )
-            connected = 2;
           lastID = rows[i].fileId;
+          connected = 1;
         }
-        if( connected > 0 && (rows[i].type == "disconnect" || rows[i].type == "afk" || lastID != rows[i].fileId) ) {
-          if( connected == 2 )
+        if( connected > 0 && rows[i].type == "afk" ) {
+          connexionTime += (rows[i].date - lastDate)/1000;
+          lastDate = rows[i].date;
+          connected = 2;
+        }
+        if( connected > 0 && rows[i].type == "noafk" ) {
+          afkTime += (rows[i].date - lastDate)/1000 + (3*60);
+          lastDate = rows[i].date;
+          connected = 1;
+        }
+        if( rows[i].type == "disconnect" ) {
+          if( connected ==  2 )
             afkTime += (rows[i].date - lastDate)/1000 + (3*60);
           else
             connexionTime += (rows[i].date - lastDate)/1000;
           connected = 0;
         }
+      }
+
+
+
+      if( connected ==  1 ) {
+        var tmp = (new Date() - lastDate)/1000
+        connexionTime += tmp;
+      }
+      if( connected ==  2 ) {
+        var tmp = (new Date() - lastDate)/1000 + (3*60);
+        afkTime += tmp;
       }
 
       var obj = new Object();
