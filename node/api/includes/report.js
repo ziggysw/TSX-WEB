@@ -2,7 +2,8 @@
 var sys = require('sys')
 var exec = require('child_process').exec;
 
-exports = module.exports = function(server){
+exports = module.exports = function(server) {
+  var moment = require('moment');
 
 /**
  * @api {post} /report/police SendReportPolice
@@ -43,6 +44,45 @@ server.post('/report/police', function (req, res, next) {
                         });
                     }
                 });
+            });
+        });
+    } catch ( err ) {
+        return res.send(err);
+    }
+    next();
+});
+
+/**
+ * @api {post} /report/police SendReportTribunal
+ * @apiName SendReportTribunal
+ * @apiGroup Report
+ * @apiPermission user
+ * @apiHeader {String} auth Votre cookie de connexion.
+ * @apiParam {String} steamid Un identifiant unique Steam.
+ * @apiParam {Integer} timestamp La date, selon le joueur
+ * @apiParam {String} reason La raison
+ * @apiParam {String} moreinfo Info supplémentaire
+ */
+server.post('/report/tribunal', function (req, res, next) {
+    try {
+        if( !req.params['steamid'] || !req.params['timestamp'] || !req.params['reason'] || !req.params['moreinfo'] )
+            throw "InvalidParam";
+        var d = new Date(req.params['timestamp']);
+        if(!(d instanceof Date && isFinite(d)))
+            throw "InvalidDate";
+
+        server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
+            if( err ) throw err;
+            if( row[0] == null ) throw "NotAuthorized";
+
+            var steamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
+
+            server.conn.query("INSERT INTO `ts-x`.`site_report` (`id`, `own_steamid`, `own_ip`, `report_steamid`, `report_raison`, `report_date`, `report_moreinfo`, `timestamp`)  VALUES (NULL, ?, ?, ?, ?, ?, ?, ?);",
+            [steamID, req.connection.remoteAddress, req.params['steamid'], req.params['reason'], moment(d).format('\\L\\e DD/MM à HH:mm'), req.params['moreinfo'],  parseInt(d.getTime()/1000)], function(err, row) {
+                if( err ) throw err;
+
+                var ID = row.insertId;
+                return res.send({'id': ID});
             });
         });
     } catch ( err ) {

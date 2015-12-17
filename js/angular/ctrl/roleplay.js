@@ -278,36 +278,89 @@ app.controller('rpSearch', function($scope, $http, $location) {
   }
   $scope.updateSteamID();
 });
-app.controller('rpTribunal', function($scope, $location, $filter) {
+app.controller('rpTribunal', function($scope, $location, $filter, $http) {
   $scope.$parent.back.push($location.path());
   $scope.steamid='';
   $scope.nowDate = $filter('date')(new Date(), "le d/M à HH:mm");
   $scope.reasonT=['Insultes, Irrespect', 'Meurtre', 'Freekill massif', 'Attitude négative', 'Menaces, Hack', 'Exploit, Triche', 'Abus de ses fonctions', 'Autre, préciser:' ];
   $scope.reasonCT=['Jail dans une propriétée privée', 'Abus de /jail', 'Jail par déduction', 'Freekill en fonction', 'Abus de perquisition', 'Autre, préciser:' ];
   $scope.reason = $scope.reasonT;
+  $scope.typePolice = 0;
+
+  $scope.$watch('pData', function(newValue, old) {
+    if( newValue.job_id>=1&&newValue.job_id<=9||newValue.job_id>=101&&newValue.job_id<=109 ) {
+      $scope.typePolice = '1';
+      $scope.reason = $scope.reasonCT;
+    }
+    else {
+      $scope.typePolice = '0';
+      $scope.reason = $scope.reasonT;
+    }
+  });
+
+
+
+  $scope.report = function() {
+    var search = new RegExp(/^le ([0-9]{1,2})\/([0-9]{1,2}) à ([0-9]{1,2}):([0-9]{1,2})$/);
+    var buffer = search.exec($scope.nowDate);
+    var date = new Date( (new Date()).getFullYear(), parseInt(buffer[2])-1, parseInt(buffer[1]), parseInt(buffer[3]), parseInt(buffer[4]), 0, 0);
+    var type = parseInt($scope.typePolice);
+    var obj = {steamid: $scope.steamid, timestamp: date, reason: ($scope.rType2.length>1?$scope.rType2:$scope.rType), moreinfo: $scope.moreInfo};
+
+    if( type === 1 ) {
+      $http.post("https://www.ts-x.eu:8080/report/police", obj).success(function (response) {
+        if( response !== undefined )
+          $location.path("/tribunal/phone/"+response.id);
+      });
+    }
+    $http.post("https://www.ts-x.eu:8080/report/tribunal", obj).success(function (response) {
+    });
+  }
 });
 app.controller('rpTribunalCase', function($scope, $location, $routeParams, $http) {
   $scope.$parent.back.push($location.path());
-  $scope.steamid='';
+
   $scope.case = $routeParams.sub;
-  $scope.playtime = {}; $scope.tribunal = {}; $scope.ratio = {};
 
-  $http.get("https://www.ts-x.eu:8080/user/"+$routeParams.sub).success(function(res) { $scope.data = res; });
-  $http.get("https://www.ts-x.eu:8080/live/connected/"+$routeParams.sub).success(function(res) { $scope.connected = parseInt(res); });
+  if( $routeParams.arg == "phone" ) {
+    var id = $routeParams.sub;
+    $http.get("https://www.ts-x.eu:8080/user/"+$scope.steamid).success(function (response) { $scope.me = response; });
+    $http.get("https://www.ts-x.eu:8080/report/"+id).success(function (response) { $scope.plainte = response[0]; });
+    $http.get("https://www.ts-x.eu:8080/report/"+id+"/response").success(function (response) { $scope.response = response; });
+    $http.get("https://www.ts-x.eu:8080/report/"+id+"/log").success(function (response) { $scope.logs = response; });
+    $scope.lock = function() {
+      $http.put("https://www.ts-x.eu:8080/report/"+id, {lock: 1}).success(function (response) { });
+    }
+    $scope.reply = function() {
+			$scope.rapportReply = $scope.rapportReply.trim();
+			if( $scope.rapportReply == "" ) return;
 
-  angular.forEach(["31days", "month", "begin", "start"], function(key) {
-    $http.get("https://www.ts-x.eu:8080/user/"+$scope.case+"/playtime/"+key).success(function(res) { $scope.playtime[key] = res; });
-  });
-  angular.forEach(["31days", "month", "begin", "start"], function(key) {
-    $http.get("https://www.ts-x.eu:8080/user/"+$scope.case+"/ratio/"+key).success(function(res) { $scope.ratio[key] = res; });
-  });
+      var tmp = $scope.rapportReply;
+			$http.post("https://www.ts-x.eu:8080/report/"+id+"/reply", {text: $scope.rapportReply}).success(function (response) {
+				$scope.response.unshift({name: $scope.me.name, steamid: $scope.steamid, text: tmp});
+			});
+      $scope.rapportReply = "";
+		}
+  }
+  else if( $routeParams.arg == "case" ) {
+    $scope.steamid='';
+    $scope.playtime = {}; $scope.tribunal = {}; $scope.ratio = {};
+    $http.get("https://www.ts-x.eu:8080/user/"+$routeParams.sub).success(function(res) { $scope.data = res; });
+    $http.get("https://www.ts-x.eu:8080/live/connected/"+$routeParams.sub).success(function(res) { $scope.connected = parseInt(res); });
 
-  $scope.cat = {chat: "Chat", money: "Transaction", kill: "Meurtre", jail: "Prison", item: "Item", buy: "Vente", steal: "Vol", connect: "Connexion" };
+    angular.forEach(["31days", "month", "begin", "start"], function(key) {
+      $http.get("https://www.ts-x.eu:8080/user/"+$scope.case+"/playtime/"+key).success(function(res) { $scope.playtime[key] = res; });
+    });
+    angular.forEach(["31days", "month", "begin", "start"], function(key) {
+      $http.get("https://www.ts-x.eu:8080/user/"+$scope.case+"/ratio/"+key).success(function(res) { $scope.ratio[key] = res; });
+    });
 
+    $scope.cat = {chat: "Chat", money: "Transaction", kill: "Meurtre", jail: "Prison", item: "Item", buy: "Vente", steal: "Vol", connect: "Connexion" };
 
-  angular.forEach($scope.cat, function(val, key) {
-    $http.get("https://www.ts-x.eu:8080/tribunal/"+$scope.case+"/"+key).success(function(res) { $scope.tribunal[key] = res; });
-  });
+    angular.forEach($scope.cat, function(val, key) {
+      $http.get("https://www.ts-x.eu:8080/tribunal/"+$scope.case+"/"+key).success(function(res) { $scope.tribunal[key] = res; });
+    });
+  }
 });
 app.controller('rpSteamIDLookup', function($scope, $http) {
 

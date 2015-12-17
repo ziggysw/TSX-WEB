@@ -32,7 +32,9 @@
 	<div class="container">
 		<p>Copyright &copy; 2010-2015 &bull; <a href="https://www.ts-x.eu">ts-x.eu</a> &bull; KoSSoLaX`</p>
 	</div>
+	<div id="lights"></div>
 </footer>
-	<script type="text/javascript" src="/js/compile-bootstrap-globals.js"></script>
+	<script type="text/javascript" src="/js/compile-bootstrap-globals-christmaslights.js?v=5"></script>
+	<link rel="stylesheet" type="text/css" href="/css/christmaslights.css" media="screen">
 </body>
 </html>

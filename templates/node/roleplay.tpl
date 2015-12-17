@@ -23,7 +23,7 @@
   </a>
   <a class="col-md-3 col-sm-6 btn btn-default" href="#/tribunal/report" >
     <img class="pull-left img-circle" width="64" height="64" src="/images/icons/report.jpg" />
-    <div><strong>Raporter</strong><br />Un mauvais comportement</div>
+    <div><strong>Rapporter</strong><br />Un mauvais comportement</div>
   </a>
 </div>
 <br clear="all" /><br clear="all" />

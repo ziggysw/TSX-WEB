@@ -13,14 +13,16 @@
 	<link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css" media="screen, projection" />
 
-	<script type="text/javascript" src="/js/compile-jquery.2.1.3.min-angular.min.js"></script>
+	<script type="text/javascript" src="/js/compile-jquery.2.1.3.min-angular.min-soundmanager2.jsmin.js?v=2"></script>
+<!--	<script type="text/javascript" src="/js/compile-zepto.min-angular.min.js"></script> -->
+
 	<!--[if lt IE 9]>
 	<link rel="stylesheet" href="/css/ie.css" type="text/css" media="screen">
 	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	{if="count($scripts)>0"}<script type="text/javascript" src="/js/compile{loop="$scripts"}-{$value}{/loop}.js"></script>{/if}
 <!--	<style>img,.pagination,.postprofile dd,object,embed,.fb-post { transform: rotate(180deg); }.navbar-holder > ul > li { transform: rotate(180deg); }dl.icon { transform: scaleY(-1);  }dl.icon dt { transform: scaleY(-1);  }.buttons,.panel-icon,.panel-icon+a,.sf-menu>li { transform: scaleX(-1);  }</style> -->
-	<script type="text/javascript">_app = angular.module("tsx", []); _md5 = '{$uid}'; _steamid = '{$steamid}'; </script>
+	<script type="text/javascript">_app = angular.module("tsx", []); _md5 = '{$uid}'; _steamid = '{$steamid}'; var urlBase = './'; soundManager.url = '../'; </script>
 </head>
 <body ng-app="tsx">
 	<header>
