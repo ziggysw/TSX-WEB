@@ -408,12 +408,11 @@ server.get('/user/:id/playtime/:type', function (req, res, next) {
       if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
 
       var lastID = -1, connected = 0, lastDate, fileDate, connexionTime=0, afkTime=0, tmp=0;
+      var line = new Array();
       for(var i in rows) {
 
         // Détection d'un crash
         if( connected > 0 && lastID != rows[i].fileId ) {
-          rows[i].date = fileDate;
-
           if( connected ==  2 )
             afkTime += (rows[i].date - lastDate)/1000 + (3*60);
           else
@@ -436,13 +435,15 @@ server.get('/user/:id/playtime/:type', function (req, res, next) {
           lastDate = rows[i].date;
           connected = 1;
         }
-        if( rows[i].type == "disconnect" ) {
+        if( connected > 0 && rows[i].type == "disconnect" ) {
           if( connected ==  2 )
             afkTime += (rows[i].date - lastDate)/1000 + (3*60);
           else
             connexionTime += (rows[i].date - lastDate)/1000;
           connected = 0;
         }
+
+        fileDate = rows[i].start;
       }
 
 
@@ -459,6 +460,7 @@ server.get('/user/:id/playtime/:type', function (req, res, next) {
       var obj = new Object();
       obj.afk = afkTime;
       obj.play = connexionTime;
+      obj.line = line;
 
       server.cache.set(req._url.pathname, obj);
       return res.send(obj);
