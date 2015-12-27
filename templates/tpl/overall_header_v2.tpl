@@ -14,7 +14,6 @@
 	<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css" media="screen, projection" />
 
 	<script type="text/javascript" src="/js/compile-jquery.2.1.3.min-angular.min-soundmanager2.jsmin.js?v=2"></script>
-<!--	<script type="text/javascript" src="/js/compile-zepto.min-angular.min.js"></script> -->
 
 	<!--[if lt IE 9]>
 	<link rel="stylesheet" href="/css/ie.css" type="text/css" media="screen">
@@ -97,7 +96,7 @@
 										</ul>
 									</li>
 									<li><a href="/index.php?page=success"><i class="fa fa-trophy"></i> Les succès</a></li>
-									<li><a href="/index.php?page=tribunal&amp;action=report"><i class="fa fa-gavel"></i> Le Tribunal</a></li>
+									<li><a href="/index.php?page=tribunal"><i class="fa fa-gavel"></i> Le Tribunal</a></li>
 									<li><a href="/index.php?page=report"><i class="fa fa-phone"></i> Le téléphone</a></li>
 									<li><a href="/index.php?page=parrainage"><i class="fa fa-user-plus"></i> Parrainage</a></li>
 									<li><a href="/index.php?page=money"><i class="fa fa-usd"></i> Achat de $RP</a></li>

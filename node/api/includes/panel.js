@@ -122,7 +122,7 @@ server.get('/panel/email', function (req, res, next) {
         var tmp = 0;
 
         for(var i=0; i<email.length; i++) {
-          var mail = server.conn.escape(email[i]).slice(1, -1);
+          var mail = email[i]
 
           server.conn.query("SELECT COUNT(*) as `cpt`, '"+mail+"' as `mail` FROM `ts-x`.`mail_system` WHERE LOWER(`to`)='"+mail+"@ts-x.eu';", function(err, row) {
             if( err ) console.log(err);

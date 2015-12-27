@@ -362,7 +362,7 @@ server.get('/user/:id/personality', function (req, res, next) {
  * @apiName GetUserPlayTime
  * @apiGroup User
  * @apiParam {String} SteamID Un identifiant unique sous le format STEAM_1:x:xxxxxxx
- * @apiParam {String} type month, year, 31days, begin
+ * @apiParam {String} type month, year, 1days, 2days...7days, 31days, begin
  */
 server.get('/user/:id/playtime/:type', function (req, res, next) {
   if( req.params['id'] == 0 )
@@ -374,12 +374,18 @@ server.get('/user/:id/playtime/:type', function (req, res, next) {
   var dStart;
   var type = req.params['type'];
 
-
-
   switch(type) {
     case "month":  dStart = moment().startOf('month').toDate(); break;
     case "year":  dStart = moment().startOf('year').toDate(); break;
     case "31days": dStart = moment().subtract(31, 'days').toDate(); break;
+    case "1days": dStart = moment().subtract(1, 'days').toDate(); break;
+    case "2days": dStart = moment().subtract(2, 'days').toDate(); break;
+    case "3days": dStart = moment().subtract(3, 'days').toDate(); break;
+    case "4days": dStart = moment().subtract(4, 'days').toDate(); break;
+    case "5days": dStart = moment().subtract(5, 'days').toDate(); break;
+    case "6days": dStart = moment().subtract(6, 'days').toDate(); break;
+    case "7days": dStart = moment().subtract(7, 'days').toDate(); break;
+
     case "begin": dStart = moment().subtract(10, 'year').toDate(); break;
     case "start": break;
     default:
@@ -408,7 +414,6 @@ server.get('/user/:id/playtime/:type', function (req, res, next) {
       if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
 
       var lastID = -1, connected = 0, lastDate, fileDate, connexionTime=0, afkTime=0, tmp=0;
-      var line = new Array();
       for(var i in rows) {
 
         // Détection d'un crash
@@ -460,7 +465,6 @@ server.get('/user/:id/playtime/:type', function (req, res, next) {
       var obj = new Object();
       obj.afk = afkTime;
       obj.play = connexionTime;
-      obj.line = line;
 
       server.cache.set(req._url.pathname, obj);
       return res.send(obj);
@@ -787,7 +791,7 @@ server.del('/user/:type', function (req, res, next) {
 });
 
 /**
- * @api {get} /user/:SteamID/sendMoney/:cash sendMoneyToSteamID
+ * @api {put} /user/:SteamID/sendMoney/:cash sendMoneyToSteamID
  * @apiName sendMoneyToSteamID
  * @apiGroup User
  * @apiParam {String} SteamID Un identifiant unique sous le format STEAM_1:x:xxxxxxx
@@ -834,6 +838,35 @@ server.put('/user/:SteamID/sendMoney/:cash', function (req, res, next) {
   });
 
 
+
+	next();
+});
+
+/**
+ * @api {post} /user/:SteamID/give giveClientItem
+ * @apiName giveClientItem
+ * @apiGroup User
+ * @apiParam {String} SteamID Un identifiant unique sous le format STEAM_1:x:xxxxxxx
+ * @apiParam {Integer} itemid Identifiant unique de l'item à envoyer
+ * @apiParam {Integer} amount la quantité à envoyer
+ */
+server.post('/user/:SteamID/give', function (req, res, next) {
+
+  server.conn.query(server.getAuthSMAdmin, [req.headers.auth], function(err, row) {
+    if( err ) return res.send(new ERR.InternalServerError(err));
+    if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+    var SteamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
+    if( SteamID != "STEAM_1:0:7490757") return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+
+    var UserName = row[0].username;
+    var amount = parseInt(req.params['amount']);
+    var itemid = parseInt(req.params['itemid']);
+
+    server.conn.query("INSERT INTO `rp_csgo`.`rp_users2` (`id`, `steamid`, `itemid`, `itemAmount`, `pseudo`, `steamid2`) VALUES (NULL, ?, ?, ?, ?, ?);", [req.params['SteamID'], itemid, amount, UserName, SteamID], function(err, row) {
+      if( err ) return res.send(new ERR.InternalServerError(err));
+      return res.send("OK");
+    });
+  });
 
 	next();
 });

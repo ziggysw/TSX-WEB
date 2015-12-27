@@ -280,7 +280,11 @@ app.controller('rpSearch', function($scope, $http, $location) {
 });
 app.controller('rpTribunal', function($scope, $location, $filter, $http) {
   $scope.$parent.back.push($location.path());
-  $scope.steamid='';
+  $scope.steamid = '';
+  if( $location.search() !== undefined) {
+    $scope.steamid = Object.keys($location.search())[0];
+  }
+
   $scope.nowDate = $filter('date')(new Date(), "le d/M à HH:mm");
   $scope.reasonT=['Insultes, Irrespect', 'Meurtre', 'Freekill massif', 'Attitude négative', 'Menaces, Hack', 'Exploit, Triche', 'Abus de ses fonctions', 'Autre, préciser:' ];
   $scope.reasonCT=['Jail dans une propriétée privée', 'Abus de /jail', 'Jail par déduction', 'Freekill en fonction', 'Abus de perquisition', 'Autre, préciser:' ];
@@ -309,11 +313,17 @@ app.controller('rpTribunal', function($scope, $location, $filter, $http) {
 
     if( type === 1 ) {
       $http.post("https://www.ts-x.eu:8080/report/police", obj).success(function (response) {
+        $scope.$parent.showAlert = true;
+        $scope.$parent.messageAlert = "Votre rapport a été envoyé, il va maintenant être lu par des référés. Ce sont des personnes n'étant ni policier, ni admin.";
+        $scope.$parent.messageTitle = "Envois d'un rapport: Ok!";
         if( response !== undefined )
           $location.path("/tribunal/phone/"+response.id);
       });
     }
     $http.post("https://www.ts-x.eu:8080/report/tribunal", obj).success(function (response) {
+      $scope.$parent.showAlert = true;
+      $scope.$parent.messageAlert = "Votre rapport a été envoyé, il va maintenant être traité par le conseil des no-pyjs, puis par les hauts-juges.";
+      $scope.$parent.messageTitle = "Envois d'un rapport: Ok!";
     });
   }
 });
