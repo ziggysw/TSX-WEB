@@ -10,10 +10,10 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" media="screen">
-	<link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="/css/styles.css?v=2" media="screen">
 	<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css" media="screen, projection" />
 
-	<script type="text/javascript" src="/js/compile-jquery.2.1.3.min-angular.min-soundmanager2.jsmin.js?v=2"></script>
+	<script type="text/javascript" src="/js/compile-jquery.2.1.3.min-angular.min.js"></script>
 
 	<!--[if lt IE 9]>
 	<link rel="stylesheet" href="/css/ie.css" type="text/css" media="screen">

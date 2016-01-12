@@ -35,6 +35,9 @@ server.restify.CORS.ALLOW_HEADERS.push('Accept-Encoding');
 server.restify.CORS.ALLOW_HEADERS.push('Accept-Language');
 
 function handleDisconnect() {
+    for(var i=0; i < conn.pool.length; i++) {
+      server.conn.pool[i].end();
+    }
     server.conn = new Pool(8);
 }
 //handleDisconnect();
@@ -50,6 +53,7 @@ server.use(restify.bodyParser());
 server.use(restify.CORS());
 server.use(restify.fullResponse());
 server.use(restify.conditionalRequest());
+server.use(restify.gzipResponse());
 server.use(redirect());
 
 

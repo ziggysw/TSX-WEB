@@ -34,7 +34,7 @@
 	</div>
 	<div id="lights"></div>
 </footer>
-	<script type="text/javascript" src="/js/compile-bootstrap-globals-christmaslights.js?v=5"></script>
-	<link rel="stylesheet" type="text/css" href="/css/christmaslights.css" media="screen">
+	<script type="text/javascript" src="/js/compile-bootstrap-globals-jquery.event.move-jquery.twentytwenty.js"></script>
+	<script type="text/javascript">$(window).load(function() { $(".calc-diff").twentytwenty();});</script>
 </body>
 </html>
