@@ -21,7 +21,7 @@
 	<![endif]-->
 	{if="count($scripts)>0"}<script type="text/javascript" src="/js/compile{loop="$scripts"}-{$value}{/loop}.js"></script>{/if}
 <!--	<style>img,.pagination,.postprofile dd,object,embed,.fb-post { transform: rotate(180deg); }.navbar-holder > ul > li { transform: rotate(180deg); }dl.icon { transform: scaleY(-1);  }dl.icon dt { transform: scaleY(-1);  }.buttons,.panel-icon,.panel-icon+a,.sf-menu>li { transform: scaleX(-1);  }</style> -->
-	<script type="text/javascript">_app = angular.module("tsx", []); _md5 = '{$uid}'; _steamid = '{$steamid}'; var urlBase = './'; soundManager.url = '../'; </script>
+	<script type="text/javascript">_app = angular.module("tsx", []); _md5 = '{$uid}'; _steamid = '{$steamid}';</script>
 </head>
 <body ng-app="tsx">
 	<header>
