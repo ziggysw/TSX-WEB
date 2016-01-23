@@ -409,19 +409,27 @@ server.get('/user/:id/playtime/:type', function (req, res, next) {
 
     var arr = [];
 
+    function getRowById(rows, id) {
+      for(var i in rows) {
+        if( rows[i].fileId == id )
+          return rows[i];
+      }
+      return undefined;
+    }
     server.conn.query(sql, [req.params['id'], dStart], function(err, rows) {
       if( err ) return res.send(new ERR.InternalServerError(err));
       if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
 
-      var lastID = -1, connected = 0, lastDate, fileDate, connexionTime=0, afkTime=0, tmp=0;
+      var lastID = -1, connected = 0, lastDate, fileDate, connexionTime=0, afkTime=0, tmp=0, lastRow;
       for(var i in rows) {
 
         // Détection d'un crash
         if( connected > 0 && lastID != rows[i].fileId ) {
           if( connected ==  2 )
-            afkTime += (rows[i].date - lastDate)/1000 + (3*60);
-          else
-            connexionTime += (rows[i].date - lastDate)/1000;
+            afkTime += (lastRow.stop - lastDate)/1000 + (3*60);
+          else {
+            connexionTime += (lastRow.stop - lastDate)/1000;
+          }
         }
 
         if( rows[i].type == "connect" ) {
@@ -443,12 +451,14 @@ server.get('/user/:id/playtime/:type', function (req, res, next) {
         if( connected > 0 && rows[i].type == "disconnect" ) {
           if( connected ==  2 )
             afkTime += (rows[i].date - lastDate)/1000 + (3*60);
-          else
+          else {
             connexionTime += (rows[i].date - lastDate)/1000;
+          }
           connected = 0;
         }
 
         fileDate = rows[i].start;
+        lastRow = rows[i];
       }
 
 

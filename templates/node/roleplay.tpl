@@ -5,7 +5,7 @@
   </div>
   <div class="col-md-4 text-right">
     <h3><br />
-      Prochaine pvp: {{pvp | date : 'dd/MM à HH:mm'}}<br />
+      Prochaine pvp: <span class="text-warning">ANNULÉ</span><!--{{pvp | date : 'dd/MM à HH:mm'}}--><br />
       Cagnotte: {{stats.cagnotte[0] | currency : '' : 0}}$ <sub>{{stats.cagnotte[1] | currency : '' : 0}}$ <sub>{{stats.cagnotte[2] | currency : '' : 0}}$</sub></sub></h3>
   </div>
 </div>
