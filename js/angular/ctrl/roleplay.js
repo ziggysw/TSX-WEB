@@ -406,6 +406,11 @@ app.controller('rpSteamIDLookup', function($scope, $http) {
 
 });
 
+app.controller('rpGraph', function($scope, $http) {
+  $http.get("https://www.ts-x.eu:8080/best/job")
+    .success(function(res) { $scope.$data = res; });
+});
+
 function lzw_decode(s) {
   var dict = {};
   var data = (s + "").split("");

@@ -16,6 +16,20 @@ exports = module.exports = function(app) {
       });
     }
   });
+  app.directive('drawPieChart', function ($http) {
+    return function (scope, element, attr) {
+      $http.get(attr.drawPieChart).success(function(res) {
+        var chart = new Highcharts.Chart({
+          chart: { renderTo: $(element).attr("id"), type: 'pie', backgroundColor: null},
+          credits: { enabled: false }, legend: { align: 'right', verticalAlign: 'top'},
+          tooltip: { shared: true, pointFormat: 'Pourcent: <b>{point.percentage:.1f}%</b><br />Argent: <b>{point.y}</b>$' },
+          title: { text: null },
+          plotOptions: { pie: { allowPointSelect: true, showInLegend: true} },
+          xAxis: res.axis, series: res.data
+        });
+      });
+    }
+  });
   app.directive('drawRadarChart', function ($http) {
     return function (scope, element, attr) {
       $http.get(attr.drawRadarChart).success(function(res) {

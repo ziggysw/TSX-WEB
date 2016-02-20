@@ -21,13 +21,17 @@
     <img class="pull-left img-circle" width="64" height="64" src="/images/icons/map.jpg" />
     <div><strong>La carte</strong><br />vue satellite</div>
   </a>
+  <a class="col-md-3 col-sm-6 btn btn-default" href="#/graph" >
+    <img class="pull-left img-circle" width="64" height="64" src="/images/icons/nuke.jpg" />
+    <div><strong>Graphique</strong><br />Des meilleurs jobs</div>
+  </a>
   <a class="col-md-3 col-sm-6 btn btn-default" href="#/tribunal/report" >
     <img class="pull-left img-circle" width="64" height="64" src="/images/icons/report.jpg" />
     <div><strong>Rapporter</strong><br />Un mauvais comportement</div>
   </a>
 </div>
 <br clear="all" /><br clear="all" />
-<h3>Informations PvP:</h3>
+<h3>Informations:</h3>
 <div class="btn-group btn-group-justified">
   <a class="col-md-3 col-sm-6 btn btn-default" ng-repeat="(key, value) in stats.pvp" ng-attr-href="{{key!='villa' ? '#/group/'+value.id+'' : '#/user/'+value.id+''}}" href="yo">
     <img class="pull-left img-circle" width="64" height="64" src="/images/icons/{{key}}.jpg" />

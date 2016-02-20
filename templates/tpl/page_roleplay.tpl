@@ -1,11 +1,11 @@
-<script type="text/javascript" src="/js/highcharts-custom.js"></script>
+<script type="text/javascript" src="/js/highcharts-custom.js?v=2"></script>
 <script type="text/javascript">
 Highcharts.setOptions({lang: {
   	months: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
   	weekdays: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi']
 }});
 </script>
-<script type="text/javascript" src="/js/browser-app.js?v=6"></script>
+<script type="text/javascript" src="/js/browser-app.js"></script>
 
 <div class="col-md-12" ng-controller="mainCtrl">
 	<br  />
