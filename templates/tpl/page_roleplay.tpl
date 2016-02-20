@@ -5,7 +5,7 @@ Highcharts.setOptions({lang: {
   	weekdays: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi']
 }});
 </script>
-<script type="text/javascript" src="/js/browser-app.js?v=4"></script>
+<script type="text/javascript" src="/js/browser-app.js?v=6"></script>
 
 <div class="col-md-12" ng-controller="mainCtrl">
 	<br  />

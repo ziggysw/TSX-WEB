@@ -129,5 +129,7 @@
 	</div>
 	{$intro}
 	<div class="container main">
-<!--<div class="col-sm-4 col-sm-offset-8 alert alert-danger" role="alert"><b>Attention</b>, nous avons actuellement un problème de réseau sur notre infrastructure.</div>-->
+<!--<div class="col-sm-12 alert alert-success" role="alert">
+<strong>Le nouveau système de capture PvP est terminé.</strong> Je vous invite à le tester ce soir sur le serveur test. J'espère qu'on sera nombreux, on pourra trouver les derniers problèmes avant de reprendre ça 2x semaines. <a href="https://www.ts-x.eu/forum/viewtopic.php?p=560862#p560862">Plus d'info, débât et discution ici.</a>
+</div>-->
 		{$page}

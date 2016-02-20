@@ -1,4 +1,8 @@
 <h2>La vue satellite</h2>
+<!--
+  X <input type="text" ng-model="multiX" value="0"/> <input type="text" ng-model="deltaX" /> <br />
+  Y <input type="text" ng-model="multiY" /> <input type="text" ng-model="deltaY" />
+-->
 <div class="text-right">
   <button class="btn btn-info" ng-click="heatmapStop();" ng-class="timer?'':'disabled'">Vue cartographique</button>
   <button class="btn btn-info" ng-click="!timer && heatmap();" ng-class="timer?'disabled':''">Vue thermique</button>

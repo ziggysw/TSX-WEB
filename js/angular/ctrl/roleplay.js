@@ -136,8 +136,19 @@ app.controller('rpMap', function($scope, $http, $routeParams, $timeout, $interva
   var heatmapInstance;
   $scope.timer = null;
 
-  function scaleX(x, scale) { return Math.floor(((x/9.0)+870.0)*scale); }
+  /*function scaleX(x, scale) { return Math.floor(((x/9.0)+870.0)*scale); }
   function scaleY(y, scale) { return Math.floor(((y/-9.0)+520.0)*scale); }
+  */
+  $scope.multiX = 13.0;
+  $scope.multiY = -13.0;
+  $scope.deltaX = 726;
+  $scope.deltaY = 349;
+
+  function scaleX(x, scale) { return Math.floor(((x/$scope.multiX)+$scope.deltaX)*scale); }
+  function scaleY(y, scale) { return Math.floor(((y/$scope.multiY)+$scope.deltaY)*scale); }
+  $scope.$watchGroup(['multiX', 'multiY', 'deltaX', 'deltaY'], function(newValue, oldValue, scope) {
+    $scope.maparea();
+  });
 
   $scope.$on("$destroy", function() {
       if ($scope.timer) { $timeout.cancel($scope.timer); }
@@ -165,7 +176,7 @@ app.controller('rpMap', function($scope, $http, $routeParams, $timeout, $interva
     $(element).find("map").find("area").remove();
 
     var res = $scope.mapData;
-    var scale = (1/1559 * $(element).outerWidth());
+    var scale = (1/1200 * $(element).outerWidth());
 
     for(var i=0; i<res.length; i++) {
       var href = '';
@@ -200,7 +211,7 @@ app.controller('rpMap', function($scope, $http, $routeParams, $timeout, $interva
           nP.push(points[i]);
       }
 
-      var scale = (1/1559 * $(element).outerWidth());
+      var scale = (1/1200 * $(element).outerWidth());
       $scope.connected = res.length;
       $scope.lastUpdate = new Date();
 

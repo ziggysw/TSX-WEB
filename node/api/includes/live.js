@@ -129,19 +129,13 @@ server.get('/live/stats', function (req, res, next) {
     cb(obj);
   });
 
-  var sql = "SELECT G1.`id` as `nuclear`, G1.`name` as `nuclearNom`, G2.`id` as `tower`, G2.`name` as `towerNom`, G3.`id` as `villa`, G3.`name` as `villaNom`, I.`id` as `itemId`, I.`nom` as `itemNom`";
-  sql += " FROM `rp_servers` S";
-  sql += " INNER JOIN `rp_groups` G1 ON S.`nuclearCap`=G1.`id` ";
-  sql += " INNER JOIN `rp_groups` G2 ON S.`towerCap`=G2.`id` ";
-  sql += " INNER JOIN `rp_groups` G3 ON S.`capVilla`=G3.`id` ";
-  sql += " INNER JOIN `rp_items` I ON S.`capItem`=I.`id` ";
+  var sql = "SELECT G.`id` as `bunker`, G.`name` as `bunkerNom`, U.`steamid` as `villa`, U.`name` AS `villaNom` ";
+  sql += "FROM `rp_servers` S INNER JOIN `rp_groups` G ON G.`id`=S.`bunkerCap` INNER JOIN `rp_users` U ON U.`steamid`=S.`villaOwner` WHERE S.`id`=1";
 
   server.conn.query(sql , function(err, rows) {
     obj.pvp = new Object();
-    obj.pvp.nuke = {id: rows[0].nuclear, nom: rows[0].nuclearNom, type: "La centrale nucléaire" };
     obj.pvp.villa = {id: rows[0].villa, nom: rows[0].villaNom, type: "La villa" };
-    obj.pvp.tour = {id: rows[0].tower, nom: rows[0].towerNom, type: "La tour"};
-    obj.pvp.item = {id: rows[0].itemId, nom: rows[0].itemNom, type: "Désactivé en PvP" };
+    obj.pvp.bunker = {id: rows[0].bunker, nom: rows[0].bunkerNom, type: "Le bunker"};
 
     cb(obj);
   });
