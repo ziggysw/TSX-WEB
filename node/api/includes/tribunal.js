@@ -78,7 +78,7 @@ server.get('/tribunal/:SteamID/:type', function (req, res, next) {
           }
 
           server.cache.set(req._url.pathname, obj);
-          return res.send(data);
+          return res.send(obj);
         });
       });
     } catch ( err ) {
