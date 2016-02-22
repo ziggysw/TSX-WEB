@@ -110,13 +110,13 @@ exports = module.exports = function(app) {
       }
     };
   });
-  app.directive('rest', function ($http, $window) {
+  app.directive('rest', function ($http, $window, $location) {
     return function (scope, element, attr) {
       element.bind('click', function () {
         var method = attr.rest.split("@");
         method[1] = "https://www.ts-x.eu:8080" + method[1];
         $http({url: method[1], method: method[0].toUpperCase()})
-        .success(function(res) { scope.$parent.showAlert = true; scope.$parent.messageAlert = res.message; scope.$parent.messageTitle = "Okay";  })
+        .success(function(res) { if( res.hasOwnProperty("redirect") ) { $location.path(res.redirect); } scope.$parent.showAlert = true; scope.$parent.messageAlert = res.message; scope.$parent.messageTitle = "Okay";  })
         .error(function (res) { scope.$parent.showAlert = true; scope.$parent.messageAlert = res.message; scope.$parent.messageTitle = "Erreur"; });
       });
     }

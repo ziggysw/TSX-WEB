@@ -135,10 +135,6 @@ app.controller('rpMap', function($scope, $http, $routeParams, $timeout, $interva
   var element = document.getElementById('heatmap');
   var heatmapInstance;
   $scope.timer = null;
-
-  /*function scaleX(x, scale) { return Math.floor(((x/9.0)+870.0)*scale); }
-  function scaleY(y, scale) { return Math.floor(((y/-9.0)+520.0)*scale); }
-  */
   $scope.multiX = 13.0;
   $scope.multiY = -13.0;
   $scope.deltaX = 726;
@@ -335,10 +331,12 @@ app.controller('rpTribunal', function($scope, $location, $filter, $http) {
       $scope.$parent.showAlert = true;
       $scope.$parent.messageAlert = "Votre rapport a été envoyé, il va maintenant être traité par le conseil des no-pyjs, puis par les hauts-juges.";
       $scope.$parent.messageTitle = "Envois d'un rapport: Ok!";
+      if( response !== undefined )
+        $location.path("/tribunal/case/"+response.id);
     });
   }
 });
-app.controller('rpTribunalCase', function($scope, $location, $routeParams, $http) {
+app.controller('rpTribunalCase', function($scope, $location, $routeParams, $http, $timeout) {
   $scope.$parent.back.push($location.path());
 
   $scope.case = $routeParams.sub;
@@ -366,21 +364,30 @@ app.controller('rpTribunalCase', function($scope, $location, $routeParams, $http
   else if( $routeParams.arg == "case" ) {
     $scope.steamid='';
     $scope.playtime = {}; $scope.tribunal = {}; $scope.ratio = {};
-    $http.get("https://www.ts-x.eu:8080/user/"+$routeParams.sub).success(function(res) { $scope.data = res; });
-    $http.get("https://www.ts-x.eu:8080/live/connected/"+$routeParams.sub).success(function(res) { $scope.connected = parseInt(res); });
+    $scope.disableButton = true;
 
-    angular.forEach(["31days", "month", "begin", "start"], function(key) {
-      $http.get("https://www.ts-x.eu:8080/user/"+$scope.case+"/playtime/"+key).success(function(res) { $scope.playtime[key] = res; });
-    });
-    angular.forEach(["31days", "month", "begin", "start"], function(key) {
-      $http.get("https://www.ts-x.eu:8080/user/"+$scope.case+"/ratio/"+key).success(function(res) { $scope.ratio[key] = res; });
+    $http.get("https://www.ts-x.eu:8080/tribunal/"+$scope.case).success(function(res) {
+      $scope.steamid = res.steamid;
+      $scope.moreinfo = res.data;
+
+      $timeout(function() { $scope.disableButton = false; }, 5000);
+
+      $http.get("https://www.ts-x.eu:8080/user/"+$scope.steamid).success(function(res) { $scope.data = res; });
+      $http.get("https://www.ts-x.eu:8080/live/connected/"+$scope.steamid).success(function(res) { $scope.connected = parseInt(res); });
+
+      angular.forEach(["31days", "month", "begin", "start"], function(key) {
+        $http.get("https://www.ts-x.eu:8080/user/"+$scope.steamid+"/playtime/"+key).success(function(res) { $scope.playtime[key] = res; });
+      });
+      angular.forEach(["31days", "month", "begin", "start"], function(key) {
+        $http.get("https://www.ts-x.eu:8080/user/"+$scope.steamid+"/ratio/"+key).success(function(res) { $scope.ratio[key] = res; });
+      });
+      angular.forEach($scope.cat, function(val, key) {
+        $http.get("https://www.ts-x.eu:8080/tribunal/"+$scope.case+"/"+key).success(function(res) { $scope.tribunal[key] = res; });
+      });
     });
 
     $scope.cat = {chat: "Chat", money: "Transaction", kill: "Meurtre", jail: "Prison", item: "Item", buy: "Vente", steal: "Vol", connect: "Connexion" };
 
-    angular.forEach($scope.cat, function(val, key) {
-      $http.get("https://www.ts-x.eu:8080/tribunal/"+$scope.case+"/"+key).success(function(res) { $scope.tribunal[key] = res; });
-    });
   }
 });
 app.controller('rpSteamIDLookup', function($scope, $http) {
