@@ -36,12 +36,31 @@ exports = module.exports = function(server){
     if( pattern.test(tokken) ) {
       server.conn.query(server.getAuthAdminID, [req.headers.auth], function(err, row) {
         if( err ) throw err;
-        if( row[0] == null ) throw "NotAuthorized";
+        if( row[0] == null ) {
+          server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
+            if( err ) throw err;
+            if( row[0] == null ) throw "NotAuthorized";
 
-        var dStart = moment().startOf('month').toDate();
-        var dEnd = moment().startOf('month').add(1, 'months').toDate();
+            var SteamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
 
-        callback(tokken.replace("STEAM_0", "STEAM_1").trim(), dStart, dEnd);
+            server.conn.query("SELECT `job_id` FROM `rp_users` WHERE `steamid`=?", [SteamID], function(err, row) {
+              if( err ) throw err;
+              if( row[0] == null ) throw "NotAuthorized";
+              if( row[0].job_id >= 101 && row[0].job_id <= 106 ) {
+                var dStart = moment().subtract(2, 'hour').toDate();
+                var dEnd = moment().add(1, 'hour').toDate();
+
+                callback(tokken.replace("STEAM_0", "STEAM_1").trim(), dStart, dEnd);
+              }
+            });
+          });
+        }
+        else {
+          var dStart = moment().startOf('month').toDate();
+          var dEnd = moment().startOf('month').add(1, 'months').toDate();
+
+          callback(tokken.replace("STEAM_0", "STEAM_1").trim(), dStart, dEnd);
+        }
       });
     }
     else if( !isNaN(parseInt(tokken)) && parseInt(tokken) > 0 ) {
@@ -63,6 +82,35 @@ exports = module.exports = function(server){
       throw "InvalidParam";
     }
   }
+  /**
+   * @api {get} /tribunal/:id GetTribunal
+   * @apiName GetTribunal
+   * @apiGroup Tribunal
+   * @apiPermission user
+   * @apiHeader {String} auth Votre cookie de connexion.
+   * @apiParam {String} id
+   */
+  server.get('/tribunal/next', function (req, res, next) {
+  	try {
+
+      server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
+        if( err ) throw err;
+        if( row[0] == null ) throw "NotAuthorized";
+
+        var SteamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
+
+        server.conn.query("SELECT `id` FROM `ts-x`.`site_report` R WHERE `id` NOT IN (SELECT `reportid` FROM `ts-x`.`site_report_votes` V WHERE V.`steamid`=? ) ORDER BY `timestamp` ASC LIMIT 1;", [SteamID], function(err, row) {
+          if( err ) throw err;
+          if( row[0] == null ) throw "NotFound";
+
+          return res.send(row[0]);
+        });
+      });
+    } catch ( err ) {
+      return res.send(err);
+    }
+    next();
+  });
 
   /**
    * @api {get} /tribunal/:id GetTribunal
@@ -104,7 +152,7 @@ exports = module.exports = function(server){
 
           server.conn.query("DELETE `ts-x`.`site_report_votes` WHERE `reportid`=? AND `steamid`=?", [req.params['id'], SteamID], function(err, row) {
             server.conn.query("INSERT INTO `ts-x`.`site_report_votes`(`reportid`, `steamid`, `vote`) VALUES (?, ?, ?);", [req.params['id'], SteamID, req.params['vote']], function(err, row) {
-              return res.send({redirect: "/tribunal", message: "Votre vote a bien été pris en compte, merci!"});
+              return res.send({redirect: "/tribunal/rules", message: "Votre vote a bien été pris en compte, merci!"});
             });
           });
         });

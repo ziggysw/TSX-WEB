@@ -1,6 +1,7 @@
 "use strict";
 var sys = require('sys')
 var exec = require('child_process').exec;
+var request = require('request');
 
 exports = module.exports = function(server) {
   var moment = require('moment');
@@ -80,9 +81,10 @@ server.post('/report/tribunal', function (req, res, next) {
             server.conn.query("INSERT INTO `ts-x`.`site_report` (`id`, `own_steamid`, `own_ip`, `report_steamid`, `report_raison`, `report_date`, `report_moreinfo`, `timestamp`)  VALUES (NULL, ?, ?, ?, ?, ?, ?, ?);",
             [steamID, req.connection.remoteAddress, req.params['steamid'], req.params['reason'], moment(d).format('\\L\\e DD/MM à HH:mm'), req.params['moreinfo'],  parseInt(d.getTime()/1000)], function(err, row) {
                 if( err ) throw err;
-
-                var ID = row.insertId;
-                return res.send({'id': ID});
+                request("http://178.32.42.113:27015/njs/report/"+req.params['steamid']+"/"+req.params['reason'].replace('/', ', ')+"", function (error, response, body) {
+                  var ID = row.insertId;
+                  return res.send({'id': ID});
+                });
             });
         });
     } catch ( err ) {
@@ -189,7 +191,7 @@ server.get('/report/:id', function (req, res, next) {
                     if( err ) throw err;
                 });
 
-                server.conn.query("SELECT id, `title`, `text`, M.`steamid`, U.`name`, `reportSteamID`, U2.`name` as `reportName`, `timestamp`, `lock` FROM `rp_messages` M INNER JOIN `rp_users` U ON U.`steamid`=M.`steamid` INNER JOIN `rp_users` U2 ON U2.`steamid`=M.`reportSteamID` WHERE `id`=?", [req.params['id']], function( err, row ) {
+                server.conn.query("SELECT id, `title`, `text`, M.`steamid`, U.`name`, `reportSteamID`, U2.`name` as `reportName`, `timestamp`, `lock` FROM `rp_messages` M LEFT JOIN `rp_users` U ON U.`steamid`=M.`steamid` LEFT JOIN `rp_users` U2 ON U2.`steamid`=M.`reportSteamID` WHERE `id`=?", [req.params['id']], function( err, row ) {
                     if( err ) throw err;
                     if( job == 1 || job == 2 || job == 101 || job == 102 )
                         row[0].admin = 1;

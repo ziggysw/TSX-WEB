@@ -285,55 +285,59 @@ app.controller('rpSearch', function($scope, $http, $location) {
   }
   $scope.updateSteamID();
 });
-app.controller('rpTribunal', function($scope, $location, $filter, $http) {
-  $scope.$parent.back.push($location.path());
-  $scope.steamid = '';
-  if( $location.search() !== undefined) {
-    $scope.steamid = Object.keys($location.search())[0];
+app.controller('rpTribunal', function($scope, $location, $filter, $http, $routeParams) {
+  if( $routeParams.arg == "rules" ) {
+    $http.get("https://www.ts-x.eu:8080/tribunal/next").success(function(res) {
+      $scope.report = res;
+    });
   }
-
-  $scope.nowDate = $filter('date')(new Date(), "le d/M à HH:mm");
-  $scope.reasonT=['Insultes, Irrespect', 'Meurtre', 'Freekill massif', 'Attitude négative', 'Menaces, Hack', 'Exploit, Triche', 'Abus de ses fonctions', 'Autre, préciser:' ];
-  $scope.reasonCT=['Jail dans une propriétée privée', 'Abus de /jail', 'Jail par déduction', 'Freekill en fonction', 'Abus de perquisition', 'Autre, préciser:' ];
-  $scope.reason = $scope.reasonT;
-  $scope.typePolice = 0;
-
-  $scope.$watch('pData', function(newValue, old) {
-    if( newValue.job_id>=1&&newValue.job_id<=9||newValue.job_id>=101&&newValue.job_id<=109 ) {
-      $scope.typePolice = '1';
-      $scope.reason = $scope.reasonCT;
+  else if( $routeParams.arg == "report" ) {
+    $scope.$parent.back.push($location.path());
+    $scope.steamid = '';
+    if( $location.search() !== undefined) {
+      $scope.steamid = Object.keys($location.search())[0];
     }
-    else {
-      $scope.typePolice = '0';
-      $scope.reason = $scope.reasonT;
-    }
-  });
 
+    $scope.nowDate = $filter('date')(new Date(), "le d/M à HH:mm");
+    $scope.reasonT=['Insultes, Irrespect', 'Meurtre', 'Freekill massif', 'Attitude négative', 'Menaces, Hack', 'Exploit, Triche', 'Abus de ses fonctions', 'Autre, préciser:' ];
+    $scope.reasonCT=['Jail dans une propriétée privée', 'Abus de /jail', 'Jail par déduction', 'Freekill en fonction', 'Abus de perquisition', 'Autre, préciser:' ];
+    $scope.reason = $scope.reasonT;
+    $scope.typePolice = 0;
 
+    $scope.$watch('pData', function(newValue, old) {
+      if( newValue.job_id>=1&&newValue.job_id<=9||newValue.job_id>=101&&newValue.job_id<=109 ) {
+        $scope.typePolice = '1';
+        $scope.reason = $scope.reasonCT;
+      }
+      else {
+        $scope.typePolice = '0';
+        $scope.reason = $scope.reasonT;
+      }
+    });
+    $scope.report = function() {
+      var search = new RegExp(/^le ([0-9]{1,2})\/([0-9]{1,2}) à ([0-9]{1,2}):([0-9]{1,2})$/);
+      var buffer = search.exec($scope.nowDate);
+      var date = new Date( (new Date()).getFullYear(), parseInt(buffer[2])-1, parseInt(buffer[1]), parseInt(buffer[3]), parseInt(buffer[4]), 0, 0);
+      var type = parseInt($scope.typePolice);
+      var obj = {steamid: $scope.steamid, timestamp: date, reason: ($scope.rType2.length>1?$scope.rType2:$scope.rType), moreinfo: $scope.moreInfo};
 
-  $scope.report = function() {
-    var search = new RegExp(/^le ([0-9]{1,2})\/([0-9]{1,2}) à ([0-9]{1,2}):([0-9]{1,2})$/);
-    var buffer = search.exec($scope.nowDate);
-    var date = new Date( (new Date()).getFullYear(), parseInt(buffer[2])-1, parseInt(buffer[1]), parseInt(buffer[3]), parseInt(buffer[4]), 0, 0);
-    var type = parseInt($scope.typePolice);
-    var obj = {steamid: $scope.steamid, timestamp: date, reason: ($scope.rType2.length>1?$scope.rType2:$scope.rType), moreinfo: $scope.moreInfo};
-
-    if( type === 1 ) {
-      $http.post("https://www.ts-x.eu:8080/report/police", obj).success(function (response) {
+      if( type === 1 ) {
+        $http.post("https://www.ts-x.eu:8080/report/police", obj).success(function (response) {
+          $scope.$parent.showAlert = true;
+          $scope.$parent.messageAlert = "Votre rapport a été envoyé, il va maintenant être lu par des référés. Ce sont des personnes n'étant ni policier, ni admin.";
+          $scope.$parent.messageTitle = "Envois d'un rapport: Ok!";
+          if( response !== undefined )
+            $location.path("/tribunal/phone/"+response.id);
+        });
+      }
+      $http.post("https://www.ts-x.eu:8080/report/tribunal", obj).success(function (response) {
         $scope.$parent.showAlert = true;
-        $scope.$parent.messageAlert = "Votre rapport a été envoyé, il va maintenant être lu par des référés. Ce sont des personnes n'étant ni policier, ni admin.";
+        $scope.$parent.messageAlert = "Votre rapport a été envoyé, il va maintenant être traité par le conseil des no-pyjs, puis par les hauts-juges.";
         $scope.$parent.messageTitle = "Envois d'un rapport: Ok!";
         if( response !== undefined )
-          $location.path("/tribunal/phone/"+response.id);
+          $location.path("/tribunal/case/"+response.id);
       });
     }
-    $http.post("https://www.ts-x.eu:8080/report/tribunal", obj).success(function (response) {
-      $scope.$parent.showAlert = true;
-      $scope.$parent.messageAlert = "Votre rapport a été envoyé, il va maintenant être traité par le conseil des no-pyjs, puis par les hauts-juges.";
-      $scope.$parent.messageTitle = "Envois d'un rapport: Ok!";
-      if( response !== undefined )
-        $location.path("/tribunal/case/"+response.id);
-    });
   }
 });
 app.controller('rpTribunalCase', function($scope, $location, $routeParams, $http, $timeout) {

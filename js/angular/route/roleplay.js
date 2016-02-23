@@ -6,8 +6,8 @@ exports = module.exports = function(app) {
       templateUrl: function(p) { return "/templates/node/roleplay_tribunal_"+p.arg+".tpl"; },
       controller: 'rpTribunalCase',
       reloadOnSearch: false
-    }).when('/tribunal/:sub', {
-      templateUrl: function(p) { return "/templates/node/roleplay_tribunal.tpl"; },
+    }).when('/tribunal/:arg', {
+      templateUrl: function(p) { return "/templates/node/roleplay_tribunal_"+p.arg+".tpl"; },
       controller: 'rpTribunal',
       reloadOnSearch: false
     }).when('/:arg/:sub', {
