@@ -99,7 +99,7 @@ exports = module.exports = function(server){
 
         var SteamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
 
-        server.conn.query("SELECT `id` FROM `ts-x`.`site_report` R WHERE `id` NOT IN (SELECT `reportid` FROM `ts-x`.`site_report_votes` V WHERE V.`steamid`=? ) ORDER BY `timestamp` ASC LIMIT 1;", [SteamID], function(err, row) {
+        server.conn.query("SELECT `id` FROM `ts-x`.`site_report` R WHERE `jail`='-1' AND `id` NOT IN (SELECT `reportid` FROM `ts-x`.`site_report_votes` V WHERE V.`steamid`=? ) ORDER BY `timestamp` ASC LIMIT 1;", [SteamID], function(err, row) {
           if( err ) throw err;
           if( row[0] == null ) throw "NotFound";
 
