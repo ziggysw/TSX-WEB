@@ -191,7 +191,7 @@ server.get('/report/:id', function (req, res, next) {
                     if( err ) throw err;
                 });
 
-                server.conn.query("SELECT id, `title`, `text`, M.`steamid`, U.`name`, `reportSteamID`, U2.`name` as `reportName`, `timestamp`, `lock` FROM `rp_messages` M LEFT JOIN `rp_users` U ON U.`steamid`=M.`steamid` LEFT JOIN `rp_users` U2 ON U2.`steamid`=M.`reportSteamID` WHERE `id`=?", [req.params['id']], function( err, row ) {
+                server.conn.query("SELECT id, `title`, `text`, M.`steamid`, U.`name`, `reportSteamID`, U2.`name` as `reportName`, `timestamp`, `lock` FROM `rp_messages` M INNER JOIN `rp_users` U ON U.`steamid`=M.`steamid` INNER JOIN `rp_users` U2 ON U2.`steamid`=M.`reportSteamID` WHERE `id`=?", [req.params['id']], function( err, row ) {
                     if( err ) throw err;
                     if( job == 1 || job == 2 || job == 101 || job == 102 )
                         row[0].admin = 1;

@@ -417,9 +417,15 @@ app.controller('rpSteamIDLookup', function($scope, $http) {
 
 });
 
-app.controller('rpGraph', function($scope, $http) {
-  $http.get("https://www.ts-x.eu:8080/best/job")
-    .success(function(res) { $scope.$data = res; });
+app.controller('rpGraph', function($scope, $routeParams, $location) {
+  $scope.me = $routeParams.sub;
+  $scope.url = "https://www.ts-x.eu:8080/best/job";
+  if( $routeParams.sub != 0 )
+    $scope.url = "https://www.ts-x.eu:8080/best/job/"+$routeParams.sub;
+
+  $scope.$watch('me', function(newValue, old) {
+    $location.path("/graph/"+newValue);
+  });
 });
 
 function lzw_decode(s) {

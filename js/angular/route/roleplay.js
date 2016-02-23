@@ -21,7 +21,7 @@ exports = module.exports = function(app) {
     }).when('/search', {
       templateUrl: function(p) { return "/templates/node/roleplay_search.tpl"; },
       reloadOnSearch: false
-    }).when('/graph', {
+    }).when('/graph/:arg', {
       templateUrl: function(p) { return "/templates/node/roleplay_graph.tpl"; },
       reloadOnSearch: false
     }).when('/', {
