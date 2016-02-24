@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" ng-app="tsx">
 <head>
 	<title>.:|ts-X|:. {$titre} </title>
 	<meta charset="utf-8">
@@ -23,7 +23,7 @@
 <!--	<style>img,.pagination,.postprofile dd,object,embed,.fb-post { transform: rotate(180deg); }.navbar-holder > ul > li { transform: rotate(180deg); }dl.icon { transform: scaleY(-1);  }dl.icon dt { transform: scaleY(-1);  }.buttons,.panel-icon,.panel-icon+a,.sf-menu>li { transform: scaleX(-1);  }</style> -->
 	<script type="text/javascript">_app = angular.module("tsx", []); _md5 = '{$uid}'; _steamid = '{$steamid}';</script>
 </head>
-<body ng-app="tsx">
+<body>
 	<header>
 		<div class="follow-panel">
 			<div class="container">
