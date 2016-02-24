@@ -4,8 +4,9 @@ Highcharts.setOptions({lang: {
   	months: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
   	weekdays: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi']
 }});
+	_isAdmin = {$isAdmin};
 </script>
-<script type="text/javascript" src="/js/browser-app.jss?v=54"></script>
+<script type="text/javascript" src="/js/browser-app.jss?v=53"></script>
 
 <div class="col-md-12" ng-controller="mainCtrl">
 	<br  />

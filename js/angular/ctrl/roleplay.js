@@ -17,6 +17,7 @@ app.controller('mainCtrl', function($scope, $http, $filter, $location, $routePar
   $scope.Search = $location.search();
   $scope.Params = $routeParams;
   $scope.steamid = _steamid;
+  $scope.isAdmin = (_isAdmin?true:false);
   $scope.Math = window.Math;
 
   $http.get("https://www.ts-x.eu:8080/jobs").success(function(res) { $scope.jobs = res; });

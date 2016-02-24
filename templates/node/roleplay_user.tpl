@@ -31,9 +31,10 @@
       Ratio: {{data.kill}} tués / {{data.death}} morts = {{Math.round(data.kill/data.death*100)/100}}
     </div>
     <br /><br /><br />
-    <button class="btn btn-warning" ng-show="data.job_id>0 && Params.sub==steamid" rest="delete@/user/job">Quitter mon job</button>
-    <button class="btn btn-warning" ng-show="data.group_id>0 && Params.sub==steamid" rest="delete@/user/group">Quitter mon groupe</button>
+    <button class="btn btn-danger" ng-show="data.job_id>0 && Params.sub==steamid" rest="delete@/user/job">Quitter mon job</button>
+    <button class="btn btn-danger" ng-show="data.group_id>0 && Params.sub==steamid" rest="delete@/user/group">Quitter mon groupe</button>
     <button class="btn btn-success" ng-show="data.is_admin && Params.sub==steamid" ng-click="updateSteamID(); toggleModal();">Envoyer argent</button>
+    <a class="btn btn-warning" ng-show="$parent.isAdmin" href="#/tribunal/case/{{Params.sub}}">Page du Tribunal</a>
     <br /><br /><br /><br /><br />
     <a href="http://steamcommunity.com/profiles/{{data.steam64}}"><img src="http://steamsignature.com/status/french/{{data.steam64}}.png" /><img src="http://steamsignature.com/AddFriend.png" /></a>
     <div class="input-group col-sm-10">
