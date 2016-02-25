@@ -22,7 +22,7 @@ Pool.prototype.query = function(a, b, c, d) {
     return cli.query(a, b, c, d);
 }
 
-var server = restify.createServer({key: fs.readFileSync("../www.ts-x.eu.key"), certificate: fs.readFileSync("../www.ts-x.eu.crt"), ca: fs.readFileSync('../intermediate.crt'), rejectUnauthorized: false});
+var server = restify.createServer();
 require('./auth.js')(server);
 
 server.conn = new Pool(8);
