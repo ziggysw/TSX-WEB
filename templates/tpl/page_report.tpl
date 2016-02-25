@@ -13,12 +13,12 @@
             return ret;
         }
 		$scope.update = function(id) {
-			$http.get("https://www.ts-x.eu:8080/report/"+id).success(function (response) { $scope.plainte = response[0]; });
-			$http.get("https://www.ts-x.eu:8080/report/"+id+"/response").success(function (response) { $scope.response = response; });
-            $http.get("https://www.ts-x.eu:8080/report/"+id+"/log").success(function (response) { $scope.logs = response; });
+			$http.get("https://www.ts-x.eu/api/report/"+id).success(function (response) { $scope.plainte = response[0]; });
+			$http.get("https://www.ts-x.eu/api/report/"+id+"/response").success(function (response) { $scope.response = response; });
+            $http.get("https://www.ts-x.eu/api/report/"+id+"/log").success(function (response) { $scope.logs = response; });
 		}
         $scope.lock = function() {
-            $http.put("https://www.ts-x.eu:8080/report/"+$scope.myself, {lock: 1}).success(function (response) {
+            $http.put("https://www.ts-x.eu/api/report/"+$scope.myself, {lock: 1}).success(function (response) {
 
             });
         }
@@ -27,7 +27,7 @@
 			if( $scope.rapportReply == "" )
 				return;
 
-			$http.post("https://www.ts-x.eu:8080/report/"+$scope.myself+"/reply", {text: $scope.rapportReply}).success(function (response) {
+			$http.post("https://www.ts-x.eu/api/report/"+$scope.myself+"/reply", {text: $scope.rapportReply}).success(function (response) {
 				$scope.response.unshift({name: $scope.me.name, steamid: $scope.steamid, text: $scope.rapportReply});
 				$scope.rapportReply = "";
 			});
@@ -38,13 +38,13 @@
             now.setHours( parseInt(a[0]) );
             now.setMinutes( parseInt(a[1]) );
 
-            $http.post("https://www.ts-x.eu:8080/report/police", {steamid: $scope.cops, timestamp: now, reason: $scope.reason, moreinfo: $scope.moreinfo}).success(function (response) {
+            $http.post("https://www.ts-x.eu/api/report/police", {steamid: $scope.cops, timestamp: now, reason: $scope.reason, moreinfo: $scope.moreinfo}).success(function (response) {
 
                 if( response.id !== undefined ) {
                     MakingAlert("Envois d'un rapport: Ok!", "Votre rapport a été envoyé, il va maintenant être lu par des référés. Ce sont des personnes n'étant ni policier, ni admin.");
 
                     $scope.update( response.id );
-                    $http.get("https://www.ts-x.eu:8080/report").success(function (res) { $scope.reports = res; $scope.myself = response.id; });
+                    $http.get("https://www.ts-x.eu/api/report").success(function (res) { $scope.reports = res; $scope.myself = response.id; });
 
                     $('#list').tab('show');
                     $('#myTabs a[href="#list"]').tab('show')
@@ -56,10 +56,10 @@
             $scope.moreinfo = "";
 		}
 
-		$http.get("https://www.ts-x.eu:8080/jobs/1/users").success(function (response) { $scope.polices = response; $scope.cops = response[0].steamid; });
-		$http.get("https://www.ts-x.eu:8080/jobs/101/users").success(function (response) { $scope.justices = response; });
-		$http.get("https://www.ts-x.eu:8080/user/"+$scope.steamid).success(function (response) { $scope.me = response; });
-		$http.get("https://www.ts-x.eu:8080/report").success(function (response) { $scope.reports = response; $scope.update(response[0].id); $scope.myself = response[0].id; });
+		$http.get("https://www.ts-x.eu/api/jobs/1/users").success(function (response) { $scope.polices = response; $scope.cops = response[0].steamid; });
+		$http.get("https://www.ts-x.eu/api/jobs/101/users").success(function (response) { $scope.justices = response; });
+		$http.get("https://www.ts-x.eu/api/user/"+$scope.steamid).success(function (response) { $scope.me = response; });
+		$http.get("https://www.ts-x.eu/api/report").success(function (response) { $scope.reports = response; $scope.update(response[0].id); $scope.myself = response[0].id; });
 	});
 </script>
 <style>

@@ -136,4 +136,4 @@
   </div>
 </div>
 
-<div id="graph" draw-user-chart="https://www.ts-x.eu:8080/jobs/{{Params.sub}}/capital/6" style="height: 460px; margin: 0 auto"></div>
+<div id="graph" draw-user-chart="https://www.ts-x.eu/api/jobs/{{Params.sub}}/capital/6" style="height: 460px; margin: 0 auto"></div>

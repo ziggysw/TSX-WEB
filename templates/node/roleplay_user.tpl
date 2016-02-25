@@ -45,7 +45,7 @@
   </div>
 </div>
 <br clear="all" />
-<div id="graph" draw-user-chart="https://www.ts-x.eu:8080/user/{{Params.sub}}/incomes/24" style="height: 460px; margin: 0 auto; width:100%; display:block;"></div>
+<div id="graph" draw-user-chart="https://www.ts-x.eu/api/user/{{Params.sub}}/incomes/24" style="height: 460px; margin: 0 auto; width:100%; display:block;"></div>
 
 <div class="row">
   <div class="col-sm-4">
@@ -68,7 +68,7 @@
   </div>
   <div class="col-sm-4">
     <h3 class="row">Personnalité</h3>
-    <div id="polar" draw-radar-chart="https://www.ts-x.eu:8080/user/{{Params.sub}}/personality" style="height: 100%; margin: 0 auto; width:100%; display:block;"></div>
+    <div id="polar" draw-radar-chart="https://www.ts-x.eu/api/user/{{Params.sub}}/personality" style="height: 100%; margin: 0 auto; width:100%; display:block;"></div>
   </div>
 </div>
 

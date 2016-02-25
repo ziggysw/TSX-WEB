@@ -1,7 +1,6 @@
 var restify = require('restify');
 var redirect = require('restify-redirect');
-
-var fs=require("fs");
+var fs = require('fs');
 var mysql = require('mysql2');
 var NodeCache = require( "node-cache" );
 
@@ -23,7 +22,7 @@ Pool.prototype.query = function(a, b, c, d) {
     return cli.query(a, b, c, d);
 }
 
-var server = restify.createServer({key: fs.readFileSync("../www.ts-x.eu.key"), certificate: fs.readFileSync("../www.ts-x.eu.crt"), ca: fs.readFileSync('../intermediate.crt') });
+var server = restify.createServer({key: fs.readFileSync("../www.ts-x.eu.key"), certificate: fs.readFileSync("../www.ts-x.eu.crt"), ca: fs.readFileSync('../intermediate.crt'), rejectUnauthorized: false});
 require('./auth.js')(server);
 
 server.conn = new Pool(8);

@@ -20,8 +20,8 @@ app.controller('mainCtrl', function($scope, $http, $filter, $location, $routePar
   $scope.isAdmin = (_isAdmin?true:false);
   $scope.Math = window.Math;
 
-  $http.get("https://www.ts-x.eu:8080/jobs").success(function(res) { $scope.jobs = res; });
-  $http.get("https://www.ts-x.eu:8080/groups").success(function(res) { $scope.groups = res; });
+  $http.get("https://www.ts-x.eu/api/jobs").success(function(res) { $scope.jobs = res; });
+  $http.get("https://www.ts-x.eu/api/groups").success(function(res) { $scope.groups = res; });
 
   $("body").popover({ selector: '[data-toggle="popover"]', trigger: "hover"});
   $("body").tooltip({ selector: '[data-toggle="tooltip"]', trigger: "hover"});
@@ -38,24 +38,24 @@ app.controller('rpJobGang', function($scope, $http, $routeParams, $location) {
   if( $routeParams.sub == "notset" ) { $location.path( "/" ); }
 
   $scope.isAdmin = false;
-  $http.get("https://www.ts-x.eu:8080/"+$routeParams.arg+"/"+$routeParams.sub).success(function(res) { $scope.data = res; });
+  $http.get("https://www.ts-x.eu/api/"+$routeParams.arg+"/"+$routeParams.sub).success(function(res) { $scope.data = res; });
 
   if( $routeParams.arg == "job" || $routeParams.arg == "group" ) {
-    $http.get("https://www.ts-x.eu:8080/"+$routeParams.arg+"s/"+$routeParams.sub+"/users").success(function(res) {
+    $http.get("https://www.ts-x.eu/api/"+$routeParams.arg+"s/"+$routeParams.sub+"/users").success(function(res) {
       $scope.players = res;
       $scope.isAdmin = false;
       for(var i=0; i<res.length; i++) if( res[i].steamid == $scope.$parent.steamid ) $scope.isAdmin = true;
     });
 
     if( $routeParams.arg == "job" ) {
-      $http.get("https://www.ts-x.eu:8080/items/job/"+$routeParams.sub).success(function(res) { $scope.items = res; });
-      $http.get("https://www.ts-x.eu:8080/job/"+$routeParams.sub+"/top").success(function(res) { $scope.PlayerTop = res; });
+      $http.get("https://www.ts-x.eu/api/items/job/"+$routeParams.sub).success(function(res) { $scope.items = res; });
+      $http.get("https://www.ts-x.eu/api/job/"+$routeParams.sub+"/top").success(function(res) { $scope.PlayerTop = res; });
     }
   }
 
   if( $routeParams.arg == "user" ) {
-    $http.get("https://www.ts-x.eu:8080/user/"+$routeParams.sub+"/stats").success(function(res) { $scope.stats = res; });
-    $http.get("https://www.ts-x.eu:8080/live/connected/"+$routeParams.sub).success(function(res) { $scope.connected = parseInt(res); });
+    $http.get("https://www.ts-x.eu/api/user/"+$routeParams.sub+"/stats").success(function(res) { $scope.stats = res; });
+    $http.get("https://www.ts-x.eu/api/live/connected/"+$routeParams.sub).success(function(res) { $scope.connected = parseInt(res); });
   }
   $scope.dropCallback = function(event, index, item, external, type) {
     console.log(index);
@@ -81,9 +81,9 @@ app.controller('rpJobGang', function($scope, $http, $routeParams, $location) {
     else return "Visiteur";
   }
   $scope.UpdateData = function(id) {
-    $http.put("https://www.ts-x.eu:8080/"+$routeParams.arg+"/"+$routeParams.sub+"/"+$scope.steamid, {id: id})
+    $http.put("https://www.ts-x.eu/api/"+$routeParams.arg+"/"+$routeParams.sub+"/"+$scope.steamid, {id: id})
     .success(function (res) {
-      $http.get("https://www.ts-x.eu:8080/"+$routeParams.arg+"s/"+$routeParams.sub+"/users").success(function(res) {
+      $http.get("https://www.ts-x.eu/api/"+$routeParams.arg+"s/"+$routeParams.sub+"/users").success(function(res) {
         $scope.players = res;
       });
       $scope.showDialog = false;
@@ -92,9 +92,9 @@ app.controller('rpJobGang', function($scope, $http, $routeParams, $location) {
   }
   $scope.UpdateNote = function(id) {
 
-    $http.post("https://www.ts-x.eu:8080/"+$routeParams.arg+"/"+$routeParams.sub+"/note/"+id, {txt: $scope.laNote.name, hidden: 0})
+    $http.post("https://www.ts-x.eu/api/"+$routeParams.arg+"/"+$routeParams.sub+"/note/"+id, {txt: $scope.laNote.name, hidden: 0})
     .success(function (res) {
-      $http.get("https://www.ts-x.eu:8080/"+$routeParams.arg+"/"+$routeParams.sub).success(function(res) {  $scope.data = res;});
+      $http.get("https://www.ts-x.eu/api/"+$routeParams.arg+"/"+$routeParams.sub).success(function(res) {  $scope.data = res;});
       $scope.editShowNote = false;
     })
     .error(function (res) { $scope.$parent.showAlert = true; $scope.$parent.messageAlert = res.message; $scope.$parent.messageTitle = "Erreur"; });
@@ -117,7 +117,7 @@ app.controller('rpIndex', function($scope, $http, $timeout, $interval, $window, 
   var now = new Date();
   $scope.pvp = ((now-fri)<(now-wed)?wed:fri);
 
-  $http.get("https://www.ts-x.eu:8080/live/stats").success(function(res) {
+  $http.get("https://www.ts-x.eu/api/live/stats").success(function(res) {
     var delta = (res.time.h*60) + res.time.m + parseInt(((new Date())/1000) - res.time.t);
     $scope.stats = res;
     $scope.stats.time.h = parseInt(delta/60)%24;
@@ -151,12 +151,12 @@ app.controller('rpMap', function($scope, $http, $routeParams, $timeout, $interva
       if ($scope.timer) { $timeout.cancel($scope.timer); }
   });
 
-  $http.get("https://www.ts-x.eu:8080/zones").success(function(res) {
+  $http.get("https://www.ts-x.eu/api/zones").success(function(res) {
     $scope.mapData = JSON.parse(lzw_decode(res));
     $scope.maparea();
     angular.element($window).bind('resize', function () { $scope.maparea(); });
   });
-  $http.get("https://www.ts-x.eu:8080/live/stats").success(function(res) {
+  $http.get("https://www.ts-x.eu/api/live/stats").success(function(res) {
     var delta = (res.time.h*60) + res.time.m + parseInt(((new Date())/1000) - res.time.t);
     $scope.stats = res;
     $scope.stats.time.h = parseInt(delta/60)%24;
@@ -197,7 +197,7 @@ app.controller('rpMap', function($scope, $http, $routeParams, $timeout, $interva
   }
   $scope.heatmap = function() {
     $(element).find("canvas").css({"z-index": "1"});
-    $http.get("https://www.ts-x.eu:8080/live/positions").success(function(res) {
+    $http.get("https://www.ts-x.eu/api/live/positions").success(function(res) {
       var points = heatmapInstance.getData().data;
       var nP = new Array();
       for( var i=0; i<points.length; i++) {
@@ -280,7 +280,7 @@ app.controller('rpSearch', function($scope, $http, $location) {
 
     $location.search($scope.search);
 
-    $http.get("https://www.ts-x.eu:8080/user/search/"+$scope.search)
+    $http.get("https://www.ts-x.eu/api/user/search/"+$scope.search)
     .success(function(res) { $scope.data = res; })
     .error(function() { $scope.data = []; });
   }
@@ -288,7 +288,7 @@ app.controller('rpSearch', function($scope, $http, $location) {
 });
 app.controller('rpTribunal', function($scope, $location, $filter, $http, $routeParams) {
   if( $routeParams.arg == "rules" ) {
-    $http.get("https://www.ts-x.eu:8080/tribunal/next").success(function(res) {
+    $http.get("https://www.ts-x.eu/api/tribunal/next").success(function(res) {
       $scope.report = res;
     });
   }
@@ -323,7 +323,7 @@ app.controller('rpTribunal', function($scope, $location, $filter, $http, $routeP
       var obj = {steamid: $scope.steamid, timestamp: date, reason: ($scope.rType2.length>1?$scope.rType2:$scope.rType), moreinfo: $scope.moreInfo};
 
       if( type === 1 ) {
-        $http.post("https://www.ts-x.eu:8080/report/police", obj).success(function (response) {
+        $http.post("https://www.ts-x.eu/api/report/police", obj).success(function (response) {
           $scope.$parent.showAlert = true;
           $scope.$parent.messageAlert = "Votre rapport a été envoyé, il va maintenant être lu par des référés. Ce sont des personnes n'étant ni policier, ni admin.";
           $scope.$parent.messageTitle = "Envois d'un rapport: Ok!";
@@ -331,7 +331,7 @@ app.controller('rpTribunal', function($scope, $location, $filter, $http, $routeP
             $location.path("/tribunal/phone/"+response.id);
         });
       }
-      $http.post("https://www.ts-x.eu:8080/report/tribunal", obj).success(function (response) {
+      $http.post("https://www.ts-x.eu/api/report/tribunal", obj).success(function (response) {
         $scope.$parent.showAlert = true;
         $scope.$parent.messageAlert = "Votre rapport a été envoyé, il va maintenant être traité par le conseil des no-pyjs, puis par les hauts-juges.";
         $scope.$parent.messageTitle = "Envois d'un rapport: Ok!";
@@ -348,19 +348,19 @@ app.controller('rpTribunalCase', function($scope, $location, $routeParams, $http
 
   if( $routeParams.arg == "phone" ) {
     var id = $routeParams.sub;
-    $http.get("https://www.ts-x.eu:8080/user/"+$scope.steamid).success(function (response) { $scope.me = response; });
-    $http.get("https://www.ts-x.eu:8080/report/"+id).success(function (response) { $scope.plainte = response[0]; });
-    $http.get("https://www.ts-x.eu:8080/report/"+id+"/response").success(function (response) { $scope.response = response; });
-    $http.get("https://www.ts-x.eu:8080/report/"+id+"/log").success(function (response) { $scope.logs = response; });
+    $http.get("https://www.ts-x.eu/api/user/"+$scope.steamid).success(function (response) { $scope.me = response; });
+    $http.get("https://www.ts-x.eu/api/report/"+id).success(function (response) { $scope.plainte = response[0]; });
+    $http.get("https://www.ts-x.eu/api/report/"+id+"/response").success(function (response) { $scope.response = response; });
+    $http.get("https://www.ts-x.eu/api/report/"+id+"/log").success(function (response) { $scope.logs = response; });
     $scope.lock = function() {
-      $http.put("https://www.ts-x.eu:8080/report/"+id, {lock: 1}).success(function (response) { });
+      $http.put("https://www.ts-x.eu/api/report/"+id, {lock: 1}).success(function (response) { });
     }
     $scope.reply = function() {
 			$scope.rapportReply = $scope.rapportReply.trim();
 			if( $scope.rapportReply == "" ) return;
 
       var tmp = $scope.rapportReply;
-			$http.post("https://www.ts-x.eu:8080/report/"+id+"/reply", {text: $scope.rapportReply}).success(function (response) {
+			$http.post("https://www.ts-x.eu/api/report/"+id+"/reply", {text: $scope.rapportReply}).success(function (response) {
 				$scope.response.unshift({name: $scope.me.name, steamid: $scope.steamid, text: tmp});
 			});
       $scope.rapportReply = "";
@@ -371,23 +371,23 @@ app.controller('rpTribunalCase', function($scope, $location, $routeParams, $http
     $scope.playtime = {}; $scope.tribunal = {}; $scope.ratio = {};
     $scope.disableButton = true;
 
-    $http.get("https://www.ts-x.eu:8080/tribunal/"+$scope.case).success(function(res) {
+    $http.get("https://www.ts-x.eu/api/tribunal/"+$scope.case).success(function(res) {
       $scope.steamid = res.steamid;
       $scope.moreinfo = res.data;
 
       $timeout(function() { $scope.disableButton = false; }, 5000);
 
-      $http.get("https://www.ts-x.eu:8080/user/"+$scope.steamid).success(function(res) { $scope.data = res; });
-      $http.get("https://www.ts-x.eu:8080/live/connected/"+$scope.steamid).success(function(res) { $scope.connected = parseInt(res); });
+      $http.get("https://www.ts-x.eu/api/user/"+$scope.steamid).success(function(res) { $scope.data = res; });
+      $http.get("https://www.ts-x.eu/api/live/connected/"+$scope.steamid).success(function(res) { $scope.connected = parseInt(res); });
 
       angular.forEach(["31days", "month", "begin", "start"], function(key) {
-        $http.get("https://www.ts-x.eu:8080/user/"+$scope.steamid+"/playtime/"+key).success(function(res) { $scope.playtime[key] = res; });
+        $http.get("https://www.ts-x.eu/api/user/"+$scope.steamid+"/playtime/"+key).success(function(res) { $scope.playtime[key] = res; });
       });
       angular.forEach(["31days", "month", "begin", "start"], function(key) {
-        $http.get("https://www.ts-x.eu:8080/user/"+$scope.steamid+"/ratio/"+key).success(function(res) { $scope.ratio[key] = res; });
+        $http.get("https://www.ts-x.eu/api/user/"+$scope.steamid+"/ratio/"+key).success(function(res) { $scope.ratio[key] = res; });
       });
       angular.forEach($scope.cat, function(val, key) {
-        $http.get("https://www.ts-x.eu:8080/tribunal/"+$scope.case+"/"+key).success(function(res) { $scope.tribunal[key] = res; });
+        $http.get("https://www.ts-x.eu/api/tribunal/"+$scope.case+"/"+key).success(function(res) { $scope.tribunal[key] = res; });
       });
     });
 
@@ -406,7 +406,7 @@ app.controller('rpSteamIDLookup', function($scope, $http) {
 
     if( pattern.test($scope.steamid) ) {
       steamid = steamid.replace("STEAM_0", "STEAM_1").trim();
-      $http.get("https://www.ts-x.eu:8080/user/"+steamid)
+      $http.get("https://www.ts-x.eu/api/user/"+steamid)
         .success(function(res) { $scope.$parent.pData = res; $scope.$parent.valid = true; })
         .error(function() { $scope.$parent.pData.name = "ERREUR: SteamID non trouvé"; $scope.$parent.valid = false;});
     }
@@ -420,9 +420,9 @@ app.controller('rpSteamIDLookup', function($scope, $http) {
 
 app.controller('rpGraph', function($scope, $routeParams, $location) {
   $scope.me = $routeParams.sub;
-  $scope.url = "https://www.ts-x.eu:8080/best/job";
+  $scope.url = "https://www.ts-x.eu/api/best/job";
   if( $routeParams.sub != 0 )
-    $scope.url = "https://www.ts-x.eu:8080/best/job/"+$routeParams.sub;
+    $scope.url = "https://www.ts-x.eu/api/best/job/"+$routeParams.sub;
 
   $scope.$watch('me', function(newValue, old) {
     $location.path("/graph/"+newValue);
