@@ -71,6 +71,7 @@ require('./includes/forum.js')(server);
 require('./includes/rank.js')(server);
 require('./includes/connection.js')(server);
 require('./includes/tribunal.js')(server);
+require('./includes/hdv.js')(server);
 
 server.get('/', function (req, res, next) {
   return res.redirect('https://www.ts-x.eu/node/apidoc/');

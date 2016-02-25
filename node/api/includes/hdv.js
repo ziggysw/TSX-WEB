@@ -1,0 +1,33 @@
+"use strict";
+exports = module.exports = function(server){
+  var ERR = require('node-restify-errors');
+
+
+  /**
+   * @api {get} /hdv/sales/:job
+   * @apiName GetHdvSales
+   * @apiGroup HDV
+   */
+server.get('/hdv/sales/:job', function (req, res, next) {
+
+  var cache = server.cache.get( req._url.pathname);
+  if( cache != undefined ) { return res.send(cache); }
+
+  var sql = "SELECT `itemID`, `nom`, `amount`, `price`, I.`fees` FROM `rp_trade` T";
+  sql += " INNER JOIN `rp_items` I ON T.`itemID`=I.`id`";
+  sql +=  " WHERE `boughtBy` IS NULL";
+  if( parseInt(req.params['job']) != 0 )
+    sql += " AND I.`job_id`=?";
+
+  sql += " ORDER BY (`amount`*`price`) ASC;";
+
+  server.conn.query(sql, [parseInt(req.params['job'])], function(err, rows) {
+    if( err ) throw err;
+
+    server.cache.set( req._url.pathname, rows, 30);
+    return res.send( rows );
+  });
+
+  next();
+});
+};

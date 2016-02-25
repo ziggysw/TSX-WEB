@@ -417,7 +417,11 @@ app.controller('rpSteamIDLookup', function($scope, $http) {
   }
 
 });
-
+app.controller('rpHDV', function($scope, $http, $routeParams, $location) {
+  $scope.monFiltre = '';
+  console.log($routeParams);
+  $http.get("https://www.ts-x.eu/api/hdv/sales/"+$routeParams.arg).success(function(res) { $scope.HDV = res;});
+});
 app.controller('rpGraph', function($scope, $routeParams, $location) {
   $scope.me = $routeParams.sub;
   $scope.url = "https://www.ts-x.eu/api/best/job";
