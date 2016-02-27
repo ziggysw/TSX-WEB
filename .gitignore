@@ -20,3 +20,5 @@ Temporary Items
 .apdisk
 *.smx
 *.sp
+auth.js
+*.debug.js
