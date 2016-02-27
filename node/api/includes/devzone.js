@@ -4,7 +4,7 @@ exports = module.exports = function(server){
   var moment = require('moment');
   var dz = require('./user.devzone.js');
   /**
-   * @api {get} /devzone/user GetUserBySteamID
+   * @api {get} /devzone/user GetUser
    * @apiName GetUser
    * @apiGroup DevZone
    * @apiHeader {String} auth Votre cookie de connexion.
