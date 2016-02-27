@@ -10,13 +10,14 @@ exports = module.exports = function(server){
    * @apiHeader {String} auth Votre cookie de connexion.
    */
   server.get('/devzone/user', function (req, res, next) {
-    var user = new dz.user(server, req.headers.auth);
-    return res.send({
-      username:    user.username,
-      uid:         user.uid,
-      gid:         user.gid,
-      accesslevel: user.accesslevel,
-      accessname:  user.accessname
+    dz.user(server, req.headers.auth,function(user){
+      return res.send({
+        username:    user.username,
+        uid:         user.uid,
+        gid:         user.gid,
+        accesslevel: user.accesslevel,
+        accessname:  user.accessname
+      });
     });
     next();
   });
