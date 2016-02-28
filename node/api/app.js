@@ -9,7 +9,7 @@ function Pool(num_conns) {
   for(var i=0; i < num_conns; ++i) {
     var conn = mysql.createConnection(server.sqlConfig);
     conn.connect();
-    conn.on('error', function(err) {  setTimeout(handleDisconnect, 5000);  });
+    conn.on('error', function(err) {  console.log(err); setTimeout(handleDisconnect, 5000);  });
     this.pool.push(conn);
   }
   this.last = 0;
@@ -21,6 +21,12 @@ Pool.prototype.query = function(a, b, c, d) {
        this.last = 0;
     return cli.query(a, b, c, d);
 }
+
+setTimeout( function() {
+	for(var i=0; i < this.pool.length; ++i) {
+		this.pool[i].query("SELECT 1");
+	}
+}, 60*60*1000);
 
 var server = restify.createServer();
 require('./auth.js')(server);
