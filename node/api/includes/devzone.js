@@ -42,6 +42,27 @@ exports = module.exports = function(server){
   });
   
   /**
+   * @api {get} /devzone/category GetCategories
+   * @apiName GetCategories
+   * @apiGroup DevZone
+   * @apiHeader {String} auth Votre cookie de connexion.
+   */
+   server.get('/devzone/category', function (req, res, next) {
+     dz.user(server, req.headers.auth,function(user){
+       var cache = server.cache.get( req._url.pathname+'-'+user.accesslevel );
+       if( cache != undefined ) { return res.send(cache); }
+       
+       var sql = "SELECT cat_id,cat_name,cat_color,cat_prio,cat_minacc FROM `leeth`.dz_cat WHERE cat_minacc <= ? ORDER BY cat_prio DESC;";
+       server.conn.query(sql, [user.accesslevel], function(err, rows){
+         if( err ) throw err;
+         server.cache.set( req._url.pathname+'-'+user.accesslevel , rows);
+         return res.send(rows);
+       });
+     });
+     next();
+   });
+  
+  /**
    * @api {get} /devzone/ticket GetTickets
    * @apiName GetTickets
    * @apiGroup DevZone
