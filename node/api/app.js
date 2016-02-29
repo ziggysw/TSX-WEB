@@ -22,12 +22,6 @@ Pool.prototype.query = function(a, b, c, d) {
     return cli.query(a, b, c, d);
 }
 
-setTimeout( function() {
-	for(var i=0; i < this.pool.length; ++i) {
-		this.pool[i].query("SELECT 1");
-	}
-}, 60*60*1000);
-
 var server = restify.createServer();
 require('./auth.js')(server);
 
@@ -40,7 +34,7 @@ server.restify.CORS.ALLOW_HEADERS.push('Accept-Encoding');
 server.restify.CORS.ALLOW_HEADERS.push('Accept-Language');
 
 function handleDisconnect() {
-    for(var i=0; i < this.pool.length; i++) {
+    for(var i=0; i < server.conn.pool.length; i++) {
       server.conn.pool[i].end();
     }
     server.conn = new Pool(8);

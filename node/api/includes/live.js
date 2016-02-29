@@ -94,7 +94,6 @@ server.get('/live/connected/:id', function (req, res, next) {
 /**
  * @api {get} /live/stats GetServerStats
  * @apiName GetServerStats
- * @apiParam {String} steamid Un identifiant unique correspondant au steamid.
  * @apiGroup Live
  */
 server.get('/live/stats', function (req, res, next) {
@@ -160,6 +159,7 @@ server.get('/live/stats', function (req, res, next) {
 server.get('/live/stats/:ip/:port', function(req, res, next) {
   try {
     server.conn.query("SELECT CONCAT(`current`, '/', `maxplayers`) as p FROM `ts-x`.`adm_serv` WHERE `ip`=? AND `port`=?;", [req.params["ip"],req.params["port"]], function(err, row) {
+      if( err || row.length == 0) return res.send(new ERR.NotFoundError("ServerNotFound"));
       return res.send(row[0].p);
     });
   } catch ( err ) {

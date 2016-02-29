@@ -16,29 +16,35 @@ exports = module.exports = function(server){
 
 */
 server.post('/forum/pm/:id', function (req, res, next) {
-  req.params['id'] = parseInt(req.params['id']);
 
-  if( req.params['id'] == 0 )
-    return res.send(new ERR.BadRequestError("InvalidParam"));
-  server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
-    if( row.length == 0 ) throw "NotAuthorized";
-    var uid = row[0].user_id;
+  try {
+    req.params['id'] = parseInt(req.params['id']);
 
-    var sql = "INSERT INTO `ts-x`.`phpbb3_privmsgs`(`msg_id`, `author_id`, `author_ip`, `message_time`, `message_subject`, `message_text`, `to_address` ) VALUES";
-    sql += "  (NULL, '"+uid+"', '0.0.0.0', UNIX_TIMESTAMP(), ?, ?, 'u_"+req.params['id']+"');"
-    server.conn.query(sql, [req.params['title'], req.params['message']], function(err, row) {
-      var ID = row.insertId;
+    if( req.params['id'] == 0 )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
+      if( row.length == 0 ) throw "NotAuthorized";
+      var uid = row[0].user_id;
 
-      sql = "INSERT INTO `ts-x`.`phpbb3_privmsgs_to`(`msg_id`, `user_id`, `author_id`, `pm_new`, `pm_unread`) VALUES ";
-      sql += " (?, ?, ?, '1', '1');"
-      server.conn.query(sql, [ID, req.params['id'], uid], function(err, row) {
-        sql = "UPDATE `ts-x`.`phpbb3_users` SET `user_new_privmsg`=`user_new_privmsg`+1, `user_unread_privmsg`=`user_unread_privmsg`+1, `user_last_privmsg`=UNIX_TIMESTAMP() WHERE `user_id`=?";
-        server.conn.query(sql, [req.params['id']], function(err, row) {
-          return res.send("OK");
+      var sql = "INSERT INTO `ts-x`.`phpbb3_privmsgs`(`msg_id`, `author_id`, `author_ip`, `message_time`, `message_subject`, `message_text`, `to_address` ) VALUES";
+      sql += "  (NULL, '"+uid+"', '0.0.0.0', UNIX_TIMESTAMP(), ?, ?, 'u_"+req.params['id']+"');"
+      server.conn.query(sql, [req.params['title'], req.params['message']], function(err, row) {
+        var ID = row.insertId;
+
+        sql = "INSERT INTO `ts-x`.`phpbb3_privmsgs_to`(`msg_id`, `user_id`, `author_id`, `pm_new`, `pm_unread`) VALUES ";
+        sql += " (?, ?, ?, '1', '1');"
+        server.conn.query(sql, [ID, req.params['id'], uid], function(err, row) {
+          sql = "UPDATE `ts-x`.`phpbb3_users` SET `user_new_privmsg`=`user_new_privmsg`+1, `user_unread_privmsg`=`user_unread_privmsg`+1, `user_last_privmsg`=UNIX_TIMESTAMP() WHERE `user_id`=?";
+          server.conn.query(sql, [req.params['id']], function(err, row) {
+            return res.send("OK");
+          });
         });
       });
     });
-  });
+
+  } catch ( err ) {
+    return res.send(err);
+  }
   next();
 });
 
@@ -52,15 +58,19 @@ server.post('/forum/pm/:id', function (req, res, next) {
 
 */
 server.get('/forum/pm', function (req, res, next) {
-  server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
-    if( row.length == 0 ) throw "NotAuthorized";
-    var uid = row[0].user_id;
+  try {
+    server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
+      if( row.length == 0 ) throw "NotAuthorized";
+      var uid = row[0].user_id;
 
-    var sql = "SELECT `msg_id`, `author_id`, `author_ip`, `message_time`, `message_subject`, `message_text`, `to_address` FROM `ts-x`.`phpbb3_privmsgs` WHERE to_address = ? ORDER BY `message_time` DESC ;";
-    server.conn.query(sql, ["u_"+uid], function(err, row) {
-      return res.send(row);
+      var sql = "SELECT `msg_id`, `author_id`, `author_ip`, `message_time`, `message_subject`, `message_text`, `to_address` FROM `ts-x`.`phpbb3_privmsgs` WHERE to_address = ? ORDER BY `message_time` DESC ;";
+      server.conn.query(sql, ["u_"+uid], function(err, row) {
+        return res.send(row);
+      });
     });
-  });
+  } catch ( err ) {
+    return res.send(err);
+  }
   next();
 });
 
@@ -75,19 +85,25 @@ server.get('/forum/pm', function (req, res, next) {
 
 */
 server.get('/forum/user/id/:username', function (req, res, next) {
-  if( req.params['username'] == "" )
-    return res.send(new ERR.BadRequestError("InvalidParam"));
-  server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
-    if( row.length == 0 ) throw "NotAuthorized";
-    var uid = row[0].user_id;
+  try {
+    if( req.params['username'] == "" )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
+      if( row.length == 0 ) throw "NotAuthorized";
+      var uid = row[0].user_id;
 
-    var username_clean = req.params['username'].toLowerCase();
+      var username_clean = req.params['username'].toLowerCase();
 
-    var sql = "SELECT `user_id` FROM `ts-x`.`phpbb3_users` WHERE username_clean = ?;";
-    server.conn.query(sql, [username_clean], function(err, row) {
-      return res.send(row[0].user_id);
+      var sql = "SELECT `user_id` FROM `ts-x`.`phpbb3_users` WHERE username_clean = ?;";
+      server.conn.query(sql, [username_clean], function(err, row) {
+        if( err ) throw err;
+        if( row[0] == null ) throw "NotFound";
+        return res.send(row[0].user_id);
+      });
     });
-  });
+  } catch ( err ) {
+    return res.send(err);
+  }
   next();
 });
 
@@ -101,15 +117,19 @@ server.get('/forum/user/id/:username', function (req, res, next) {
 
 */
 server.get('/forum/user/pm/unread', function (req, res, next) {
-  server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
-    if( row.length == 0 ) throw "NotAuthorized";
-    var uid = row[0].user_id;
+  try {
+    server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
+      if( row.length == 0 ) throw "NotAuthorized";
+      var uid = row[0].user_id;
 
-    var sql = "SELECT `user_unread_privmsg` FROM `ts-x`.`phpbb3_users` WHERE user_id = ?;";
-    server.conn.query(sql, [uid], function(err, row) {
-      return res.send(""+row[0].user_unread_privmsg);
+      var sql = "SELECT `user_unread_privmsg` FROM `ts-x`.`phpbb3_users` WHERE user_id = ?;";
+      server.conn.query(sql, [uid], function(err, row) {
+        return res.send(""+row[0].user_unread_privmsg);
+      });
     });
-  });
+  } catch ( err ) {
+    return res.send(err);
+  }
   next();
 });
 
@@ -123,15 +143,19 @@ server.get('/forum/user/pm/unread', function (req, res, next) {
 
 */
 server.get('/forum/user/pm/new', function (req, res, next) {
-  server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
-    if( row.length == 0 ) throw "NotAuthorized";
-    var uid = row[0].user_id;
+  try {
+    server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
+      if( row.length == 0 ) throw "NotAuthorized";
+      var uid = row[0].user_id;
 
-    var sql = "SELECT `user_new_privmsg` FROM `ts-x`.`phpbb3_users` WHERE user_id = ?;";
-    server.conn.query(sql, [uid], function(err, row) {
-      return res.send(""+row[0].user_unread_privmsg);
+      var sql = "SELECT `user_new_privmsg`, `user_unread_privmsg` FROM `ts-x`.`phpbb3_users` WHERE user_id = ?;";
+      server.conn.query(sql, [uid], function(err, row) {
+        return res.send(""+row[0].user_new_privmsg);
+      });
     });
-  });
+  } catch ( err ) {
+    return res.send(err);
+  }
   next();
 });
 
@@ -145,15 +169,19 @@ server.get('/forum/user/pm/new', function (req, res, next) {
 
 */
 server.get('/forum/post/last', function (req, res, next) {
-  server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
-    if( row.length == 0 ) throw "NotAuthorized";
-    var uid = row[0].user_id;
+  try {
+    server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
+      if( row.length == 0 ) throw "NotAuthorized";
+      var uid = row[0].user_id;
 
-    var sql = "SELECT `post_id`,`post_subject`,`post_text` FROM `ts-x`.`phpbb3_posts` AS P INNER JOIN `ts-x`.`phpbb3_users` AS U ON U.`user_id`=P.`poster_id`WHERE `forum_id` IN (10, 30, 53, 54, 56, 57, 147, 72, 12, 16, 5, 103, 35, 117, 83, 84, 86, 88, 94, 95, 11) AND LENGTH(`post_text`)>20 ORDER BY `post_time` DESC LIMIT 10;";
-    server.conn.query(sql, function(err, row) {
-      return res.send(row);
+      var sql = "SELECT `post_id`,`post_subject`,`post_text` FROM `ts-x`.`phpbb3_posts` AS P INNER JOIN `ts-x`.`phpbb3_users` AS U ON U.`user_id`=P.`poster_id`WHERE `forum_id` IN (10, 30, 53, 54, 56, 57, 147, 72, 12, 16, 5, 103, 35, 117, 83, 84, 86, 88, 94, 95, 11) AND LENGTH(`post_text`)>20 ORDER BY `post_time` DESC LIMIT 10;";
+      server.conn.query(sql, function(err, row) {
+        return res.send(row);
+      });
     });
-  });
+  } catch ( err ) {
+    return res.send(err);
+  }
   next();
 });
 
@@ -167,6 +195,7 @@ server.get('/forum/post/last', function (req, res, next) {
 
 */
 server.get('/forum/smiley', function (req, res, next) {
+  try {
   server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
     if( row.length == 0 ) throw "NotAuthorized";
     var uid = row[0].user_id;
@@ -176,6 +205,9 @@ server.get('/forum/smiley', function (req, res, next) {
       return res.send(row);
     });
   });
+  } catch ( err ) {
+    return res.send(err);
+  }
   next();
 });
 };

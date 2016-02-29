@@ -41,6 +41,7 @@ server.get('/best/job', function (req, res, next) {
 /**
  * @api {get} /best/job/:id GetBestJobItem
  * @apiName GetBestItem
+ * @apiParam {Intger} id
  * @apiGroup Rank
  */
 server.get('/best/job/:id', function (req, res, next) {

@@ -6,10 +6,14 @@ exports = module.exports = function(server){
   /**
    * @api {get} /hdv/sales/:job
    * @apiName GetHdvSales
+   * @apiParam {Intger} job
    * @apiGroup HDV
    */
 server.get('/hdv/sales/:job', function (req, res, next) {
 
+  if( isNaN(parseInt(req.params['job'])) )
+    return res.send([]);
+  
   var cache = server.cache.get( req._url.pathname);
   if( cache != undefined ) { return res.send(cache); }
 
