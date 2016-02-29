@@ -13,9 +13,8 @@ exports.user = function(server, auth, cb){
   if(typeof auth != 'undefined'){
     
     var sql = "SELECT `username`, user_id, group_id FROM `ts-x`.`phpbb3_users` U INNER JOIN `ts-x`.`phpbb3_sessions` S ON S.`session_user_id`=U.`user_id` WHERE S.`session_id`=? AND `user_id`>1 ORDER BY `session_time` DESC LIMIT 1";
-    server.conn.query(sql, auth, function(err, rows) {
-      if( err ) return res.send(new ERR.InternalServerError(err));
-      if( rows.length != 0 ){
+    server.conn.query(sql, [auth], function(err, rows) {
+      if( !err && rows.length != 0 ){
         self.uid = rows[0].user_id;
         self.gid = rows[0].group_id;
         self.username = rows[0].username;
