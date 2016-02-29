@@ -40,7 +40,7 @@ server.restify.CORS.ALLOW_HEADERS.push('Accept-Encoding');
 server.restify.CORS.ALLOW_HEADERS.push('Accept-Language');
 
 function handleDisconnect() {
-    for(var i=0; i < conn.pool.length; i++) {
+    for(var i=0; i < this.pool.length; i++) {
       server.conn.pool[i].end();
     }
     server.conn = new Pool(8);
