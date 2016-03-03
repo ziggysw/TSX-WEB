@@ -100,7 +100,7 @@ exports = module.exports = function(server){
     var sql = 'SELECT st_val FROM `leeth`.dz_settings WHERE st_key="assig"';
     server.conn.query(sql, [], function(err, rows){
       if( err ) throw err;
-      var ret = JSON.parse(rows);
+      var ret = JSON.parse(rows[0]['st_val']);
       server.cache.set(req._url.pathname, ret);
       return res.send(ret);
     });
