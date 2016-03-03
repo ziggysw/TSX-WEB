@@ -16,7 +16,8 @@ exports = module.exports = function(server){
         uid:         user.uid,
         gid:         user.gid,
         accesslevel: user.accesslevel,
-        accessname:  user.accessname
+        accessname:  user.accessname,
+        assigne:     user.assigne
       });
     });
     next();
@@ -26,13 +27,12 @@ exports = module.exports = function(server){
    * @api {get} /devzone/status GetStatus
    * @apiName GetStatus
    * @apiGroup DevZone
-   * @apiHeader {String} auth Votre cookie de connexion.
    */
   server.get('/devzone/status', function (req, res, next) {
     var cache = server.cache.get( req._url.pathname);
     if( cache != undefined ) { return res.send(cache); }
     
-    var sql = "SELECT S.stat_id, S.stat_name, S.stat_priority, UNIX_TIMESTAMP(S.stat_date), S.stat_hidden FROM `leeth`.dz_status S ORDER BY stat_hidden ASC,stat_priority DESC";
+    var sql = "SELECT S.stat_id, S.stat_name, S.stat_priority, UNIX_TIMESTAMP(S.stat_date) stat_date, S.stat_hidden FROM `leeth`.dz_status S ORDER BY stat_hidden ASC,stat_priority DESC";
     server.conn.query(sql, [], function(err, rows){
       if( err ) throw err;
       server.cache.set( req._url.pathname, rows);
@@ -84,6 +84,25 @@ exports = module.exports = function(server){
         server.cache.set( req._url.pathname+'-'+user.accesslevel , rows);
         return res.send(rows);
       });
+    });
+    next();
+  });
+  
+  /**
+   * @api {get} /devzone/assigne GetAssigne
+   * @apiName GetAssigne
+   * @apiGroup DevZone
+   */
+  server.get('/devzone/assigne', function (req, res, next) {
+    var cache = server.cache.get(req._url.pathname);
+    if( cache != undefined ) { return res.send(cache); }
+    
+    var sql = 'SELECT st_val FROM `leeth`.dz_settings WHERE st_key="assig"';
+    server.conn.query(sql, [], function(err, rows){
+      if( err ) throw err;
+      var ret = JSON.parse(rows);
+      server.cache.set(req._url.pathname, ret);
+      return res.send(ret);
     });
     next();
   });
