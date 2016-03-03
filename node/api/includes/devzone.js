@@ -151,6 +151,51 @@ exports = module.exports = function(server){
     });
     next();
   });
+  
+  /**
+   * @api {delete} /devzone/assigne/:userid DelAssigne
+   * @apiName DelAssigne
+   * @apiGroup DevZone
+   * @apiHeader {String} auth Votre cookie de connexion.
+   * @apiParam {int} userid L'id forum de la personne.
+   */
+  server.del('/devzone/assigne/:userid', function (req, res, next) {
+
+    if( req.params['userid'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+      
+    dz.user(server, req.headers.auth,function(user){
+      
+      if(!user.hasaccess(50))
+        return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+        
+      var sql = 'SELECT st_val FROM `leeth`.dz_settings WHERE st_key="assig"';
+      server.conn.query(sql, [], function(err, rows){
+        if( err ) throw err;
+        
+        var ret = JSON.parse(rows[0]['st_val']);
+
+        for(var i=0; i<ret.length; i++){
+          if(ret[i] != req.params['userid'])
+            continue;
+            
+          ret.splice(i, 1);
+          break;
+        }
+        
+        var sql2 = 'UPDATE `leeth`.dz_settings SET st_val=? WHERE st_key="assig";';
+        server.conn.query(sql2, [JSON.stringify(ret)], function(err2, rows2){
+          if( err2 ) 
+            return res.send('UPDATE ERROR');
+            
+          server.cache.del("/devzone/assigne");
+          return res.send('OK');
+        });
+
+      });
+    });
+    next();
+  });
 
   
 };
