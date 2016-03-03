@@ -107,4 +107,50 @@ exports = module.exports = function(server){
     next();
   });
   
+  /**
+   * @api {put} /devzone/assigne PutAssigne
+   * @apiName PutAssigne
+   * @apiGroup DevZone
+   * @apiHeader {String} auth Votre cookie de connexion.
+   * @apiParam {String} user Le pseudo forum de la personne.
+   */
+  server.put('/devzone/assigne', function (req, res, next) {
+
+    if( req.params['user'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+      
+    dz.user(server, req.headers.auth,function(user){
+      
+      if(!user.hasaccess(50))
+        return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+        
+      var sql = 'SELECT st_val FROM `leeth`.dz_settings WHERE st_key="assig"';
+      server.conn.query(sql, [], function(err, rows){
+        if( err ) throw err;
+        
+        var ret = JSON.parse(rows[0]['st_val']);
+        dz.NameToId(server, req.params['user'], function(pid){
+          if(pid == 1)
+            return res.send(new ERR.NotFoundError("NotFound"));
+          for(var i=0; i<ret.length; i++){
+            if(ret[i] == pid)
+              return res.send('OK');
+          }
+          ret[ret.length] = pid;
+          var sql2 = 'UPDATE `leeth`.dz_settings SET st_val=? WHERE st_key="assig";';
+          server.conn.query(sql2, [JSON.stringify(ret)], function(err2, rows2){
+            if( err2 ) 
+              return res.send('UPDATE ERROR');
+              
+            server.cache.del("/devzone/assigne");
+            return res.send('OK');
+          });
+        });
+
+      });
+    });
+    next();
+  });
+
+  
 };

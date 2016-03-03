@@ -1,6 +1,26 @@
 "use strict";
 var exports = module.exports = {};
 
+exports.NameToId = function(server, name, cb){
+  var sql = "SELECT user_id FROM `ts-x`.`phpbb3_users` U WHERE username=?";
+  server.conn.query(sql, [name], function(err, rows){
+    if(!err && rows.length != 0)
+      cb(rows[0]['user_id']);
+    else
+      cb(1);
+  });
+};
+
+exports.IdToName = function(server, id, cb){
+  var sql = "SELECT username FROM `ts-x`.`phpbb3_users` U WHERE user_id=?";
+  server.conn.query(sql, [name], function(err, rows){
+    if(!err && rows.length != 0)
+      cb(rows[0]['username']);
+    else
+      cb('Visiteur');
+  });
+};
+
 exports.user = function(server, auth, cb){
   var self = {};
 
