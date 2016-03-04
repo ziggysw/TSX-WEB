@@ -77,7 +77,7 @@ next();
  * @api {get} /rank/:type GetRankByType
  * @apiName GetRankByType
  * @apiGroup Rank
- * @apiParam {String=zombie,pvp,sell,buy,money,age,parrain,vital,success,freekill,general} type Un identifiant correspondant au type
+ * @apiParam {String=zombie,pvp,sell,buy,money,age,parrain,vital,success,freekill,general,artisan} type Un identifiant correspondant au type
  */
 server.get('/rank/:type', function (req, res, next) {
   if( req.params['type'] == 0 )

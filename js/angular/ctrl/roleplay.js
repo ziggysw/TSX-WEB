@@ -2,18 +2,7 @@
 exports = module.exports = function(app) {
 
 app.controller('mainCtrl', function($scope, $http, $filter, $location, $routeParams) {
-
-  $scope.back = new Array();
-  $scope.goBack = function() {
-    var path = $scope.back.pop();
-    if( path == $location.path() )
-      path = $scope.back.pop();
-    if( path === undefined )
-      path = "/";
-
-    $location.path( path );
-  }
-
+  document.title = ".:|ts-X|:. RolePlay";
   $scope.Search = $location.search();
   $scope.Params = $routeParams;
   $scope.steamid = _steamid;
@@ -34,11 +23,14 @@ app.controller('mainCtrl', function($scope, $http, $filter, $location, $routePar
 
 });
 app.controller('rpJobGang', function($scope, $http, $routeParams, $location) {
-  $scope.$parent.back.push($location.path());
   if( $routeParams.sub == "notset" ) { $location.path( "/" ); }
 
   $scope.isAdmin = false;
-  $http.get("https://www.ts-x.eu/api/"+$routeParams.arg+"/"+$routeParams.sub).success(function(res) { $scope.data = res; });
+  $http.get("https://www.ts-x.eu/api/"+$routeParams.arg+"/"+$routeParams.sub).success(function(res) {
+    document.title = ".:|ts-X|:. RolePlay - " + res.name;
+
+    $scope.data = res;
+  });
 
   if( $routeParams.arg == "job" || $routeParams.arg == "group" ) {
     $http.get("https://www.ts-x.eu/api/"+$routeParams.arg+"s/"+$routeParams.sub+"/users").success(function(res) {
@@ -103,7 +95,7 @@ app.controller('rpJobGang', function($scope, $http, $routeParams, $location) {
   $scope.toggleModal = function(){ $scope.showDialog = !$scope.showDialog;};
 });
 app.controller('rpIndex', function($scope, $http, $timeout, $interval, $window, $location) {
-  $scope.$parent.back.push($location.path());
+  document.title = ".:|ts-X|:. RolePlay";
   function setDay(dayOfWeek, hour, minutes) {
     var d = new Date();
     d.setDate(d.getDate() + (dayOfWeek + 7 - d.getDay()) % 7);
@@ -131,7 +123,8 @@ app.controller('rpIndex', function($scope, $http, $timeout, $interval, $window, 
   });
 });
 app.controller('rpMap', function($scope, $http, $routeParams, $timeout, $interval, $window, $location) {
-  $scope.$parent.back.push($location.path());
+
+  document.title = ".:|ts-X|:. RolePlay - La carte";
 
   var element = document.getElementById('heatmap');
   var heatmapInstance;
@@ -264,15 +257,12 @@ app.controller('rpMap', function($scope, $http, $routeParams, $timeout, $interva
   });
 });
 app.controller('rpSearch', function($scope, $http, $location) {
-  $scope.$parent.back.push($location.path());
-
   $scope.search = "";
   $scope.data = [];
 
   if( $location.search() !== undefined) {
     $scope.search = Object.keys($location.search())[0];
   }
-
 
   $scope.updateSteamID = function() {
     if( $scope.search === undefined || $scope.search.length <= 1 )
@@ -287,13 +277,15 @@ app.controller('rpSearch', function($scope, $http, $location) {
   $scope.updateSteamID();
 });
 app.controller('rpTribunal', function($scope, $location, $filter, $http, $routeParams) {
+  document.title = ".:|ts-X|:. RolePlay - Le Tribunal";
+
   if( $routeParams.arg == "rules" ) {
     $http.get("https://www.ts-x.eu/api/tribunal/next").success(function(res) {
       $scope.report = res;
     });
   }
   else if( $routeParams.arg == "report" ) {
-    $scope.$parent.back.push($location.path());
+    document.title = ".:|ts-X|:. RolePlay - Rapporter un joueur";
     $scope.steamid = '';
     if( $location.search() !== undefined) {
       $scope.steamid = Object.keys($location.search())[0];
@@ -342,8 +334,7 @@ app.controller('rpTribunal', function($scope, $location, $filter, $http, $routeP
   }
 });
 app.controller('rpTribunalCase', function($scope, $location, $routeParams, $http, $timeout) {
-  $scope.$parent.back.push($location.path());
-
+  document.title = ".:|ts-X|:. RolePlay - Tribunal - Gestion d'un cas";
   $scope.case = $routeParams.sub;
 
   if( $routeParams.arg == "phone" ) {
@@ -418,11 +409,13 @@ app.controller('rpSteamIDLookup', function($scope, $http) {
 
 });
 app.controller('rpHDV', function($scope, $http, $routeParams, $location) {
+  document.title = ".:|ts-X|:. RolePlay - Hôtel des ventes";
   $scope.monFiltre = '';
   console.log($routeParams);
   $http.get("https://www.ts-x.eu/api/hdv/sales/"+$routeParams.arg).success(function(res) { $scope.HDV = res;});
 });
 app.controller('rpGraph', function($scope, $routeParams, $location) {
+  document.title = ".:|ts-X|:. RolePlay - Graphique des jobs";
   $scope.me = $routeParams.sub;
   $scope.url = "https://www.ts-x.eu/api/best/job";
   if( $routeParams.sub != 0 )
