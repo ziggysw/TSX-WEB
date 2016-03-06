@@ -1,4 +1,6 @@
-<script type="text/javascript" src="/js/highcharts-custom.js?v=2"></script>
+<script type="text/javascript" src="/js/highcharts.js"></script>
+<script type="text/javascript" src="/js/highcharts-more.js"></script>
+
 <script type="text/javascript">
 Highcharts.setOptions({lang: {
   	months: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],

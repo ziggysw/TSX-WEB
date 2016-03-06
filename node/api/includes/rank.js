@@ -3,6 +3,34 @@ exports = module.exports = function(server){
   var ERR = require('node-restify-errors');
   var moment = require('moment');
 
+  /**
+   * @api {get} /best/freekill GetTxFreekill
+   * @apiName GetTxFreekill
+   * @apiGroup Rank
+   */
+server.get('/best/freekill', function (req, res, next) {
+
+  var cache = server.cache.get( req._url.pathname);
+  if( cache != undefined ) { return res.send(cache); }
+
+  var sql = "SELECT * FROM `rp_bigdata_tx` ORDER BY `rp_bigdata_tx`.`time` ASC";
+
+  server.conn.query(sql, function(err, rows) {
+
+    var tmp = [];
+    for (var i = 0, len = rows.length; i < len; i++)
+      tmp.push( Array( rows[i].time.getTime(), rows[i].value ) );
+
+    var obj2 = new Object();
+    obj2.title = 'Taux de freekill';
+    obj2.data = [{ data: tmp, tooltip: { valueSuffix: 'kill' }}];
+    obj2.axis = [{title: { text: 'Nombre de kill moyen par personne par semaine'}, min: 0, lineWidth: 0}];
+    server.cache.set( req._url.pathname, obj2, 300);
+    return res.send( obj2 );
+  });
+
+  next();
+});
 
   /**
    * @api {get} /best/job GetBestJob

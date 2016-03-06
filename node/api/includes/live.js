@@ -122,7 +122,7 @@ server.get('/live/stats', function (req, res, next) {
   server.conn.query("SELECT `type`, R.`steamid`, `name` FROM `rp_rank` R INNER JOIN `rp_users` U ON U.`steamid`=R.`steamid` WHERE `rank`=1", function(err, rows) {
     obj.stats = new Object();
 
-    var tmp = { "pvp": "PvP", "sell": "Vente", "buy": "Achat", "money": "Richesse", "age": "Ancienneté", "parrain": "Parrainage","vital": "Vitalité", "success": "Succès", "freekill": "Free-kill", "general": "Général", "artisan": "Artisana" };
+    var tmp = { "pvp": "PvP", "sell": "Vente", "buy": "Achat", "money": "Richesse", "age": "Ancienneté", "parrain": "Parrainage","vital": "Vitalité", "success": "Succès", "freekill": "Free-kill", "general": "Général", "artisan": "Artisanat" };
     for(var i=0; i<rows.length; i++)
       obj.stats[rows[i].type] = {steamid: rows[i].steamid, name: rows[i].name, type: tmp[rows[i].type]};
     cb(obj);
