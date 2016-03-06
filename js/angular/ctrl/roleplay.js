@@ -365,6 +365,9 @@ app.controller('rpTribunalCase', function($scope, $location, $routeParams, $http
     $http.get("https://www.ts-x.eu/api/tribunal/"+$scope.case).success(function(res) {
       $scope.steamid = res.steamid;
       $scope.moreinfo = res.data;
+      $scope.condamner = res.condamner;
+      $scope.acquitter = res.acquitter;
+
 
       $timeout(function() { $scope.disableButton = false; }, 5000);
 
@@ -374,7 +377,7 @@ app.controller('rpTribunalCase', function($scope, $location, $routeParams, $http
       angular.forEach(["31days", "month", "begin", "start"], function(key) {
         $http.get("https://www.ts-x.eu/api/user/"+$scope.steamid+"/playtime/"+key).success(function(res) { $scope.playtime[key] = res; });
       });
-      angular.forEach(["31days", "month", "begin", "start"], function(key) {
+      angular.forEach(["31days", "month", "begin"], function(key) {
         $http.get("https://www.ts-x.eu/api/user/"+$scope.steamid+"/ratio/"+key).success(function(res) { $scope.ratio[key] = res; });
       });
       angular.forEach($scope.cat, function(val, key) {

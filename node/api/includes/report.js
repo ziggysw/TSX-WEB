@@ -79,7 +79,7 @@ server.post('/report/tribunal', function (req, res, next) {
             var steamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
 
             server.conn.query("SELECT * FROM `ts-x`.`site_report` WHERE `report_steamid`=? AND `report_raison`=? AND `timestamp`>? AND `timestamp`<? LIMIT 1",
-            [req.params['steamid'], req.params['reason'], parseInt(d.getTime()/1000)-500, parseInt(d.getTime()/1000)+500], function(err, rows) {
+            [req.params['steamid'], req.params['reason'], parseInt(d.getTime()/1000)-1800, parseInt(d.getTime()/1000)+1800], function(err, rows) {
               if( rows.length != 0 ) return res.send({'id': rows[0].id});
               server.conn.query("INSERT INTO `ts-x`.`site_report` (`id`, `own_steamid`, `own_ip`, `report_steamid`, `report_raison`, `report_date`, `report_moreinfo`, `timestamp`)  VALUES (NULL, ?, ?, ?, ?, ?, ?, ?);",
               [steamID, req.connection.remoteAddress, req.params['steamid'], req.params['reason'], moment(d).format('\\L\\e DD/MM à HH:mm'), req.params['moreinfo'],  parseInt(d.getTime()/1000)], function(err, row) {

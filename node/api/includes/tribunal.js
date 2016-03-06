@@ -123,7 +123,10 @@ exports = module.exports = function(server){
   server.get('/tribunal/:id', function (req, res, next) {
   	try {
       validateTokken(req, req.params['id'], function(tSteamID, dStart, dEnd, more) {
-        return res.send({steamid: tSteamID, dStart, dEnd, data: more});
+
+        server.conn.query("SELECT SUM(IF(vote=1,1,0)) AS condamner, SUM(IF(vote=0,1,0)) AS acquitter FROM `ts-x`.`site_report_votes` WHERE reportid=?", [req.params['id']], function(err, rows) {
+          return res.send({steamid: tSteamID, dStart, dEnd, data: more, condamner: rows[0].condamner, acquitter: rows[0].acquitter});
+        });        
       });
     } catch ( err ) {
       return res.send(err);

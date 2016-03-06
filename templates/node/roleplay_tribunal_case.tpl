@@ -17,14 +17,13 @@
     </ul></li>
   </ul>
   <ul class="col-md-7" ng-show="moreinfo.id">
-
     <li>Ce joueur s'est fait report {{moreinfo.timestamp*1000 | date : "le d/M à HH:mm"}}</li>
     <li>{{moreinfo.report_raison}}: {{moreinfo.report_moreinfo}}</li>
     <br />
     <div class="text-center" ng-hide="disableButton">
-      <button class="btn btn-danger" rest="put@/tribunal/{{moreinfo.id}}/1">Condamner</button>
+      <button class="btn btn-danger" rest="put@/tribunal/{{moreinfo.id}}/1">Condamner ({{condamner}})</button>
       <button class="btn btn-warning" rest="put@/tribunal/{{moreinfo.id}}/0">Ignorer</button>
-      <button class="btn btn-success" rest="put@/tribunal/{{moreinfo.id}}/2">Acquitter</button>
+      <button class="btn btn-success" rest="put@/tribunal/{{moreinfo.id}}/2">Acquitter ({{acquitter}})</button>
     </div>
     <div class="alert alert-danger" role="alert" ng-show="disableButton">
       <i class="fa fa-exclamation-triangle"></i>
