@@ -365,8 +365,8 @@ app.controller('rpTribunalCase', function($scope, $location, $routeParams, $http
     $http.get("https://www.ts-x.eu/api/tribunal/"+$scope.case).success(function(res) {
       $scope.steamid = res.steamid;
       $scope.moreinfo = res.data;
-      $scope.condamner = res.condamner;
-      $scope.acquitter = res.acquitter;
+      $scope.condamner = parseInt(res.condamner);
+      $scope.acquitter = parseInt(res.acquitter);
 
 
       $timeout(function() { $scope.disableButton = false; }, 5000);

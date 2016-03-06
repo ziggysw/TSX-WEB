@@ -17,17 +17,27 @@
     </ul></li>
   </ul>
   <ul class="col-md-7" ng-show="moreinfo.id">
+
     <li>Ce joueur s'est fait report {{moreinfo.timestamp*1000 | date : "le d/M à HH:mm"}}</li>
     <li>{{moreinfo.report_raison}}: {{moreinfo.report_moreinfo}}</li>
     <br />
-    <div class="text-center" ng-hide="disableButton">
+    <div class="text-center" ng-hide="disableButton || moreinfo.jail >= 0">
       <button class="btn btn-danger" rest="put@/tribunal/{{moreinfo.id}}/1">Condamner ({{condamner}})</button>
       <button class="btn btn-warning" rest="put@/tribunal/{{moreinfo.id}}/0">Ignorer</button>
       <button class="btn btn-success" rest="put@/tribunal/{{moreinfo.id}}/2">Acquitter ({{acquitter}})</button>
     </div>
-    <div class="alert alert-danger" role="alert" ng-show="disableButton">
+    <div class="alert alert-danger" role="alert" ng-show="disableButton && moreinfo.jail == -1">
       <i class="fa fa-exclamation-triangle"></i>
       <b>Attention, pas de précipitation dans l'étude du cas de {{data.name}}.</b> Réfléchissez avant de confirmer votre vote, les boutons seront débloqués dans quelques instants.
+    </div>
+    <div class="text-center" ng-show="moreinfo.jail >= 0">
+      <button class="btn btn-danger" ng-show="moreinfo.jail > 0 || moreinfo.amende > 0">
+        Condamné a {{moreinfo.jail}} heures de prisons et {{moreinfo.amende}}$ d'amende
+        par {{condamner/(condamner+acquitter)*100 | number: 0}}% des joueurs.
+      </button>
+      <button class="btn btn-success" ng-hide="moreinfo.jail > 0 || moreinfo.amende > 0">
+        Acquitté: {{moreinfo.reason}} ({{acquitter/(condamner+acquitter)*100 | number : 0}}% des joueurs)
+      </button>
     </div>
   </ul>
 </div>

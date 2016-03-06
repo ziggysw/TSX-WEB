@@ -1,4 +1,4 @@
-// sssdn,kaeaessssssssa
+// sssdn,kaeaessssssssaa
 var app = angular.module('tsx', ['ngRoute', 'dndLists']);
 
 app.config(function($httpProvider) {
