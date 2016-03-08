@@ -4,6 +4,40 @@ exports = module.exports = function(server){
   var moment = require('moment');
   var request = require('request');
   var statData = require('/home/leeth/tsx/assoc.json');
+  var gd = require('node-gd');
+  var fs = require('fs');
+
+  function getRank(pos) {
+    if( pos == 1 ) return "Président";
+    else if( pos >= 2 && pos < 4 ) return "Vice-Président";
+    else if( pos >= 4 && pos < 8 ) return "Ministre";
+    else if( pos >= 8 && pos < 14 ) return "Haut Conseiller";
+    else if( pos >= 14 && pos < 22 ) return "Assistant-Haut Conseiller";
+    else if( pos >= 22 && pos < 32 ) return "Conseiller";
+    else if( pos >= 32 && pos < 46 ) return "Maire";
+    else if( pos >= 46 && pos < 62 ) return "Porte-Parole";
+    else if( pos >= 62 && pos < 80 ) return "Citoyen dévoué";
+    else if( pos >= 80 && pos < 100 ) return "Citoyen";
+    else if( point < 0 ) return "Rôdeur";
+    else return "Visiteur";
+  }
+  function pretty_date(seconds) {
+    var year = Math.floor(seconds / ( 12*31*24*60*60));
+    var month = Math.floor(seconds / (31*24*60*60) % 12);
+    var day = Math.floor(seconds / (24*60*60) % 31);
+    var hs = Math.floor(seconds / (60*60) % 24);
+    var ms = Math.floor(seconds / 60 % 60);
+    var sr = Math.floor(seconds / 1 % 60);
+
+    var time = '';
+    if (year != 0) { time += year + 'ans '; }
+    if (month != 0) { time += month + 'mois '; }
+    if (day != 0) { time += day + 'j '; }
+    if (hs!= 0) { time += hs + 'h ';}
+    if (ms!= 0) { time += ms + 'm ';}
+
+    return time;
+  }
   // bla, bla, bla... à déplacer
   function steamIDToProfile(steamID) {
     var parts = steamID.split(":");
@@ -33,53 +67,153 @@ exports = module.exports = function(server){
     return converted;
   }
 
-/**
- * @api {get} /user/:SteamID GetUserBySteamID
- * @apiName GetUserBySteamID
- * @apiGroup User
- * @apiParam {String} SteamID Un identifiant unique sous le format STEAM_1:x:xxxxxxx
- */
-server.get('/user/:id', function (req, res, next) {
-  if( req.params['id'] == 0 )
-    return res.send(new ERR.BadRequestError("InvalidParam"));
+  /**
+   * @api {get} /user/:SteamID GetUserBySteamID
+   * @apiName GetUserBySteamID
+   * @apiGroup User
+   * @apiParam {String} SteamID Un identifiant unique sous le format STEAM_1:x:xxxxxxx
+   */
+  server.get('/user/:id', function (req, res, next) {
+    if( req.params['id'] == 0 )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
 
-  var cache = server.cache.get( req._url.pathname);
-  if( cache != undefined ) {
-    cache.is_admin = false;
+    var cache = server.cache.get( req._url.pathname);
+    if( cache != undefined ) {
+      cache.is_admin = false;
 
-    server.conn.query(server.getAuthSMAdmin, [req.headers.auth], function(err, row) {
-      if( row.length > 0 )
-        cache.is_admin = true;
+      server.conn.query(server.getAuthSMAdmin, [req.headers.auth], function(err, row) {
+        if( row.length > 0 )
+          cache.is_admin = true;
 
-      return res.send(cache);
+        return res.send(cache);
+      });
+    }
+    var sql = "SELECT U.`name`, `money`+`bank` as `cash`, U.`job_id`, `job_name`, U.`group_id`, G.`name` as `group_name`, `time_played` as `timeplayed`, ";
+    sql += "`permi_lege`, `permi_lourd`, `permi_vente`, `train` as `train_knife`, `train_weapon`, `train_esquive`, ";
+    sql += "`pay_to_bank`, `have_card`, `have_account`, `kill`, `death`, `refere`, `timePlayedJob`, U.`skin`, UNIX_TIMESTAMP(`last_connected`) as `last_connected`"
+    sql += " FROM `rp_users` U INNER JOIN `rp_jobs` J ON J.`job_id`=U.`job_id` INNER JOIN `rp_groups` G ON G.`id`=U.`group_id` WHERE `steamid`=?";
+
+    server.conn.query(sql, [req.params['id']], function(err, rows) {
+      if( err ) return res.send(new ERR.InternalServerError(err));
+      if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
+
+      rows[0].skin = (require('path').basename(rows[0].skin)).replace(/[^A-Za-z]/g, '').replace(/variant.mdl/g, '').replace(/varmdl/g, '').replace("mdl", "");
+      rows[0].skin = (rows[0].skin==''? 'null' : rows[0].skin);
+      rows[0].last_connected = new Date(parseInt(rows[0].last_connected)*1000);
+      rows[0].is_admin = false;
+      rows[0].steam64 = steamIDToProfile(req.params['id']);
+
+      server.cache.set( req._url.pathname, rows[0]);
+      server.conn.query(server.getAuthSMAdmin, [req.headers.auth], function(err, row) {
+        if( row.length > 0 )
+          rows[0].is_admin = true;
+
+        return res.send( rows[0] );
+      });
     });
-  }
-  var sql = "SELECT U.`name`, `money`+`bank` as `cash`, U.`job_id`, `job_name`, U.`group_id`, G.`name` as `group_name`, `time_played` as `timeplayed`, ";
-  sql += "`permi_lege`, `permi_lourd`, `permi_vente`, `train` as `train_knife`, `train_weapon`, `train_esquive`, ";
-  sql += "`pay_to_bank`, `have_card`, `have_account`, `kill`, `death`, `refere`, `timePlayedJob`, U.`skin`, UNIX_TIMESTAMP(`last_connected`) as `last_connected`"
-  sql += " FROM `rp_users` U INNER JOIN `rp_jobs` J ON J.`job_id`=U.`job_id` INNER JOIN `rp_groups` G ON G.`id`=U.`group_id` WHERE `steamid`=?";
 
-  server.conn.query(sql, [req.params['id']], function(err, rows) {
-    if( err ) return res.send(new ERR.InternalServerError(err));
-    if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
+  	next();
+  });
+  /**
+   * @api {get} /user/:id/signature/:type GetUserSignature
+   * @apiName GetUserSignature
+   * @apiGroup User
+   * @apiParam {String} SteamID Un identifiant unique sous le format STEAM_1:x:xxxxxxx
+   * @apiParam {String} type Un identifiant unique sous le format STEAM_1:x:xxxxxxx
+   */
+  server.get('/user/:id/signature/:type', function (req, res, next) {
+    var cache = server.cache.get( req._url.pathname);
+    if( cache != undefined ) {
+      fs.readFile(cache.content, function(err, data) {
+        res.setHeader("Content-Type", "image/jpeg");
+        res.writeHead(200);
+        res.write(data);
+        return res.end();
+      });
+      return next();
+    }
 
-    rows[0].skin = (require('path').basename(rows[0].skin)).replace(/[^A-Za-z]/g, '').replace(/variant.mdl/g, '').replace(/varmdl/g, '').replace("mdl", "");
-    rows[0].skin = (rows[0].skin==''? 'null' : rows[0].skin);
-    rows[0].last_connected = new Date(parseInt(rows[0].last_connected)*1000);
-    rows[0].is_admin = false;
-    rows[0].steam64 = steamIDToProfile(req.params['id']);
 
-    server.cache.set( req._url.pathname, rows[0]);
-    server.conn.query(server.getAuthSMAdmin, [req.headers.auth], function(err, row) {
-      if( row.length > 0 )
-        rows[0].is_admin = true;
 
-      return res.send( rows[0] );
-    });
+    if( req.params['id'] == 0 )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['type'] == 0 )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+
+    req.params['type'] = req.params['type'].replace("STEAM_0", "STEAM_1");
+
+      var sql = "SELECT *,  G.`name` AS  `group_name`, U.`name` AS `name`";
+      sql += "  FROM  `rp_users` U ";
+      sql += "  LEFT JOIN `rp_jobs` J ON  U.`job_id`=J.`job_id` ";
+      sql += "  LEFT JOIN `rp_groups` G ON U.`group_id`= G.`id` ";
+      sql += "  LEFT JOIN `rp_rank` R ON U.`steamid`= R.`steamid` ";
+      sql += "  LEFT JOIN `rp_idcard` I ON  U.`steamid`= I.`steamid` ";
+      sql += "  WHERE  U.`steamid`=? AND R.`type`='general'";
+
+      function write(img, x, y, text, size) {
+        if( size === undefined )
+          size = 15;
+        var police = "/var/www/ts-x/fonts/tahoma.ttf";
+        var black = img.colorAllocate(0,0,0);
+        var white = img.colorAllocate(255,255,255);
+
+        img.stringFT(black, police, size, 0, x+1, y+1, text);
+        img.stringFT(white, police, size, 0, x, y, text);
+
+      }
+      server.conn.query(sql, [req.params['id']], function(err, rows) {
+        if( err ) return res.send(new ERR.BadRequestError("InvalidParam"));
+        if( rows.length == 0 ) return res.send(new ERR.BadRequestError("InvalidParam"));
+
+
+        var cache = "/var/www/ts-x/cache/sign/"+req.params['type']+"-"+req.params['id']+".jpg";
+
+        var id = rows[0].job_id;
+        if( req.params['type'] == "group" )
+          id = rows[0].group_id;
+        id = (id - (id % 10))+1;
+
+        var img = gd.createTrueColorSync(800, 200);
+        var bg = gd.createFromJpeg("/var/www/ts-x/images/roleplay/"+req.params['type']+"/"+id+".jpg");
+        bg.copyResampled(img, 0, 0, 0, 0, 800, 200, bg.width, bg.height );
+        var black = img.colorAllocate(0,0,0);
+        var white = img.colorAllocate(255,255,255);
+        var alpha = img.colorAllocateAlpha(0, 0, 0, 60);
+
+        img.filledRectangle(50, 20, 580, 180, alpha);
+        img.rectangle(50, 20, 580, 180, black);
+        img.rectangle(0, 0, 799, 199, alpha);
+
+        var y = 60;
+        write(img, 80, y, "Pseudo: ");  write(img, 160, y, rows[0].name); y+= 25;
+        write(img, 80, y, "Job: ");  write(img, 160, y, rows[0].job_name); y+= 25;
+        if( rows[0].group_id != 0 ) {
+          write(img, 80, y, "Groupe: ");  write(img, 160, y, rows[0].group_name); y+= 25;
+        }
+        if( rows[0].rank != 0 ) {
+          write(img, 80, y, "Rang: ");  write(img, 160, y, getRank(rows[0].rank) + " (pos. "+rows[0].rank+")"); y+= 25;
+        }
+        write(img, 80, y, "Âge: ");  write(img, 160, y, pretty_date(rows[0].played*600)); y+= 25;
+
+        write(img, 608, 185, "178.32.42.113:27015");
+        write(img, 635, 196, ""+new Date(), 6);
+
+        img.saveJpeg(cache, 100, function(err, bla) {
+          fs.readFile(cache, function(err, data) {
+            res.setHeader("Content-Type", "image/jpeg");
+            res.writeHead(200);
+            res.write(data);
+
+            server.cache.set( req._url.pathname, {content: cache});
+            return res.end();
+          });
+          next();
+        });
+        next();
+      });
+  	next();
   });
 
-	next();
-});
 /**
  * @api {get} /user/search/:name GetUserByName
  * @apiName GetUserByName

@@ -71,7 +71,11 @@
     <div id="polar" draw-radar-chart="https://www.ts-x.eu/api/user/{{Params.sub}}/personality" style="height: 100%; margin: 0 auto; width:100%; display:block;"></div>
   </div>
 </div>
-
+<div class="row text-center" ng-show="data.job_id+data.group_id > 0 && $parent.steamid == Params.sub">
+  <h2>Votre signature</h2>
+  <img ng-show="data.job_id > 0"src="https://www.ts-x.eu/do/signature/job/{{Params.sub}}.jpg" />
+  <img ng-show="data.group_id > 0" src="https://www.ts-x.eu/do/signature/group/{{Params.sub}}.jpg" />
+</div>
 <div modal-show="showDialog" class="modal fade">
   <div class="modal-dialog">
     <form>

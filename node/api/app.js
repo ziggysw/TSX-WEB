@@ -19,6 +19,7 @@ Pool.prototype.query = function(a, b, c, d) {
     this.last++;
     if (this.last == this.pool.length)
        this.last = 0;
+/*    console.log(a);*/
     return cli.query(a, b, c, d);
 }
 
@@ -52,7 +53,7 @@ server.use(restify.bodyParser());
 server.use(restify.CORS());
 server.use(restify.fullResponse());
 server.use(restify.conditionalRequest());
-server.use(restify.gzipResponse());
+//server.use(restify.gzipResponse());
 server.use(redirect());
 
 

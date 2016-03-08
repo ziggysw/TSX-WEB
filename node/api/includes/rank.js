@@ -18,13 +18,18 @@ server.get('/best/freekill', function (req, res, next) {
   server.conn.query(sql, function(err, rows) {
 
     var tmp = [];
-    for (var i = 0, len = rows.length; i < len; i++)
-      tmp.push( Array( rows[i].time.getTime(), rows[i].value ) );
+    for (var i = 0, len = rows.length; i < len; i++) {
+      tmp.push( Array( rows[i].time.getTime(), Math.round(rows[i].kill/rows[i].player * 1000000.0)/100.0 ) );
+    }
 
     var obj2 = new Object();
     obj2.title = 'Taux de freekill';
-    obj2.data = [{ data: tmp, tooltip: { valueSuffix: 'kill' }}];
-    obj2.axis = [{title: { text: 'Nombre de kill moyen par personne par semaine'}, min: 0, lineWidth: 0}];
+    obj2.data = [
+      { data: tmp, tooltip: { valueSuffix: 'tx' }, yAxis: 0},
+    ];
+    obj2.axis = [
+      {title: { text: 'Taux de kill'}, min: 0, lineWidth: 0},
+    ];
     server.cache.set( req._url.pathname, obj2, 300);
     return res.send( obj2 );
   });
