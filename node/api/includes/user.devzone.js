@@ -1,6 +1,21 @@
 "use strict";
 var exports = module.exports = {};
 
+exports.pm = function(server, destId, title, message){
+  const dzUid = 19064;
+  var sql = "INSERT INTO `ts-x`.`phpbb3_privmsgs`(`msg_id`, `author_id`, `author_ip`, `message_time`, `message_subject`, `message_text`, `to_address` ) VALUES";
+  sql += "  (NULL, '"+ dzUid +"', '0.0.0.0', UNIX_TIMESTAMP(), ?, ?, 'u_"+destId+"');"
+  server.conn.query(sql, [title, message], function(err, row){
+    var ID = row.insertId;
+    sql = "INSERT INTO `ts-x`.`phpbb3_privmsgs_to`(`msg_id`, `user_id`, `author_id`, `pm_new`, `pm_unread`) VALUES ";
+    sql += " (?, ?, ?, '1', '1');"
+    server.conn.query(sql, [ID, destId, dzUid], function(err, row){
+      sql = "UPDATE `ts-x`.`phpbb3_users` SET `user_new_privmsg`=`user_new_privmsg`+1, `user_unread_privmsg`=`user_unread_privmsg`+1, `user_last_privmsg`=UNIX_TIMESTAMP() WHERE `user_id`=?";
+      server.conn.query(sql, [destId]);
+    });
+  });
+};
+
 exports.NameToId = function(server, name, cb){
   var sql = "SELECT user_id FROM `ts-x`.`phpbb3_users` U WHERE username=?";
   server.conn.query(sql, [name], function(err, rows){
