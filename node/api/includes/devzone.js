@@ -121,6 +121,35 @@ exports = module.exports = function(server){
   });
   
   /**
+   * @api {get} /devzone/ticket/:id/comment GetCommentsById
+   * @apiName GetCommentsById
+   * @apiGroup DevZone
+   * @apiHeader {String} auth Votre cookie de connexion.
+   * @apiParam {int} id L'id du ticket.
+   */
+  server.get('/devzone/ticket/:id/comment', function (req, res, next) {
+    
+    if( req.params['id'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+      
+    dz.user(server, req.headers.auth,function(user){
+      var cache = server.cache.get( req._url.pathname+'-'+user.accesslevel );
+      if( cache != undefined ) { return res.send(cache); }
+      
+      var sql = "SELECT com_id, com_text, C.usr_id "
+        +"FROM `leeth`.dz_comment C INNER JOIN `leeth`.dz_ticket T ON T.tk_id = C.tk_id INNER JOIN `leeth`.dz_cat K ON K.cat_id = T.cat_id "
+        +"WHERE C.tk_id=? AND K.cat_minacc <= ? ORDER BY com_id ASC;";
+      server.conn.query(sql, [req.params['id'], user.accesslevel], function(err, rows){
+        if( err ) throw err;
+
+        server.cache.set( req._url.pathname+'-'+user.accesslevel , rows);
+        return res.send(rows);
+      });
+    });
+    next();
+  });
+  
+  /**
    * @api {get} /devzone/assigne GetAssigne
    * @apiName GetAssigne
    * @apiGroup DevZone
