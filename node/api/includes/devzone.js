@@ -10,7 +10,7 @@ exports = module.exports = function(server){
    * @apiHeader {String} auth Votre cookie de connexion.
    */
   server.get('/devzone/user', function (req, res, next) {
-    dz.user(server, req.headers.auth,function(user){
+    dz.user(server, req.headers.auth, function(user){
       return res.send({
         username:    user.username,
         uid:         user.uid,
@@ -81,6 +81,38 @@ exports = module.exports = function(server){
 	      +"ORDER BY stat_hidden ASC,stat_priority DESC,cat_prio DESC,IFNULL(tk_prio,0) ASC;";
       server.conn.query(sql, [user.accesslevel], function(err, rows){
         if( err ) throw err;
+        server.cache.set( req._url.pathname+'-'+user.accesslevel , rows);
+        return res.send(rows);
+      });
+    });
+    next();
+  });
+  
+  /**
+   * @api {get} /devzone/ticket/:id GetTicketById
+   * @apiName GetTicketById
+   * @apiGroup DevZone
+   * @apiHeader {String} auth Votre cookie de connexion.
+   * @apiParam {int} id L'id du ticket.
+   */
+  server.get('/devzone/ticket/:id', function (req, res, next) {
+    
+    if( req.params['id'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+      
+    dz.user(server, req.headers.auth,function(user){
+      var cache = server.cache.get( req._url.pathname+'-'+user.accesslevel );
+      if( cache != undefined ) { return res.send(cache); }
+      
+      var sql = "SELECT T.tk_id, T.stat_id, stat_name, T.cat_id, cat_name, cat_minacc, tk_ava, tk_esttime, tk_title, tk_desc, tk_showdesc, T.usr_id AS 'usr_id',"
+        +" assig_usr_id, UNIX_TIMESTAMP(tk_datecrea) AS tk_datecrea, UNIX_TIMESTAMP(tk_dateend) AS tk_dateend, tk_url "
+        +"FROM `leeth`.dz_ticket T NATURAL JOIN `leeth`.dz_status S NATURAL JOIN `leeth`.dz_cat C WHERE T.tk_id = ? AND C.cat_minacc <= ?;";
+      server.conn.query(sql, [req.params['id'], user.accesslevel], function(err, rows){
+        if( err ) throw err;
+
+        if(rows.length == 0)
+          return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+
         server.cache.set( req._url.pathname+'-'+user.accesslevel , rows);
         return res.send(rows);
       });
