@@ -257,6 +257,106 @@ exports = module.exports = function(server){
     });
     next();
   });
-
   
+  /**
+   * @api {delete} /devzone/assigne/:userid DelTicket
+   * @apiName DelTicket
+   * @apiGroup DevZone
+   * @apiHeader {String} auth Votre cookie de connexion.
+   * @apiParam {int} id L'id du ticket.
+   * @apiParam {String} reason La raison de la supression
+   */
+  server.del('/devzone/ticket/:id', function (req, res, next) {
+
+    if( req.params['id'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+      
+    dz.user(server, req.headers.auth,function(user){
+        
+      var sql = 'SELECT usr_id, tk_title, stat_id FROM `leeth`.dz_ticket WHERE tk_id=?';
+      server.conn.query(sql, [req.params['id']], function(err, rows){
+        if( err ) throw err;
+        if( rows.length == 0 ) return res.send(new ERR.NotFoundError("NotFound"));
+        
+        var tkOwner = rows[0]['usr_id'];
+        
+        if(!user.hasaccess(40)){
+          if(user.uid != tkOwner){
+            return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+          }
+          else{
+            if(rows[0]['stat_id'] != 1)
+              return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+          }
+        }
+        
+        if(tkOwner != user.uid){
+          var msg = 'Votre ticket <span style="font-weight: bold">'+ rows[0]['tk_title'] +'</span> à été suprimmé par l\'admin <span style="font-weight: bold">'+ user.username +'</span>';
+          if(req.params['reason'] != undefined)
+            msg += ' pour le motif: <span style="font-style: italic">'+ req.params['reason'] +'</span>';
+          dz.pm(server, tkOwner, "Supression de votre ticket" + rows[0]['tk_title'], msg);
+        }
+          
+        var sql2 = 'DELETE FROM `leeth`.dz_ticket WHERE tk_id=?;'; // TODO
+        server.conn.query(sql2, [req.params['id']], function(err2, rows2){
+          if( err2 ) throw err2;
+
+          for(var i=0; i<=100; i+=10)
+            server.cache.del("/devzone/ticket-"+i);
+          server.cache.del("/devzone/ticket/" + req.params['id']);
+
+          return res.send('OK');
+        });
+
+      });
+    });
+    next();
+  });
+  
+  /**
+   * @api {put} /devzone/ticket PutTicket
+   * @apiName PutTicket
+   * @apiGroup DevZone
+   * @apiHeader {String} auth Votre cookie de connexion.
+   * @apiParam {String} title Le titre du ticket.
+   * @apiParam {int} job Le job qu'il concerne (0 = pas lié à un job)
+   * @apiParam {String} desc La description du ticket.
+   * @apiParam {String} url Un lien vers le forum.
+   * @apiParam {String} showdesc Afficher la description?
+   * @apiParam {int} category La categorie.
+   */
+  server.put('/devzone/ticket', function (req, res, next) {
+    console.log(req.params);
+    if( req.params['title'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['job'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['category'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.headers.auth == undefined )
+      return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+      
+    dz.user(server, req.headers.auth,function(user){
+        
+      if(!user.hasaccess(10))
+        return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+      
+      var showdesc = (req.params['showdesc'] == undefined || req.params['category'] == '') ? 0 : 1;
+      var tk_url = req.params['url'] || '';
+      var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
+      
+      var sql = "INSERT INTO `leeth`.dz_ticket(stat_id, cat_id, tk_title, tk_desc, tk_showdesc, assig_usr_id, tk_ip, usr_id, tk_url, tk_esttime) VALUES"
+        +"(1, ?, ?, ?, ?, 0, ?, ?, ?, ?)";
+  
+      server.conn.query(sql, [req.params['category'], req.params['title'], req.params['desc'], showdesc, ip, user.uid, tk_url, req.params['job']], function(err, rows){
+        if( err ) throw err;
+        
+        for(var i=0; i<=100; i+=10)
+          server.cache.del("/devzone/ticket-"+i);
+          
+        return res.send('ok');
+      });
+    });
+    next();
+  });  
 };
