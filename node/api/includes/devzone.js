@@ -313,4 +313,50 @@ exports = module.exports = function(server){
     next();
   });
   
+  /**
+   * @api {put} /devzone/ticket PutTicket
+   * @apiName PutTicket
+   * @apiGroup DevZone
+   * @apiHeader {String} auth Votre cookie de connexion.
+   * @apiParam {String} title Le titre du ticket.
+   * @apiParam {int} job Le job qu'il concerne (0 = pas lié à un job)
+   * @apiParam {String} desc La description du ticket.
+   * @apiParam {String} url Un lien vers le forum.
+   * @apiParam {String} showdesc Afficher la description?
+   * @apiParam {int} category La categorie.
+   */
+  server.put('/devzone/ticket', function (req, res, next) {
+    console.log(req.params);
+    if( req.params['title'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['job'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['category'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.headers.auth == undefined )
+      return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+      
+    dz.user(server, req.headers.auth,function(user){
+        
+      if(!user.hasaccess(10))
+        return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+      
+      var showdesc = (req.params['showdesc'] == undefined || req.params['category'] == '') ? 0 : 1;
+      var tk_url = req.params['url'] || '';
+      var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
+      
+      var sql = "INSERT INTO `leeth`.dz_ticket(stat_id, cat_id, tk_title, tk_desc, tk_showdesc, assig_usr_id, tk_ip, usr_id, tk_url, tk_esttime) VALUES"
+        +"(1, ?, ?, ?, ?, 0, ?, ?, ?, ?)";
+  
+      server.conn.query(sql, [req.params['category'], req.params['title'], req.params['desc'], showdesc, ip, user.uid, tk_url, req.params['job']], function(err, rows){
+        if( err ) throw err;
+        
+        for(var i=0; i<=100; i+=10)
+          server.cache.del("/devzone/ticket-"+i);
+          
+        return res.send('ok');
+      });
+    });
+    next();
+  });  
 };
