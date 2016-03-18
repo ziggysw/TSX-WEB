@@ -259,7 +259,7 @@ exports = module.exports = function(server){
   });
   
   /**
-   * @api {delete} /devzone/assigne/:userid DelTicket
+   * @api {delete} /devzone/ticket/:id DelTicket
    * @apiName DelTicket
    * @apiGroup DevZone
    * @apiHeader {String} auth Votre cookie de connexion.
