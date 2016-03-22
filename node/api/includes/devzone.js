@@ -660,4 +660,42 @@ exports = module.exports = function(server){
     });
     next();
   });
+  
+  /**
+   * @api {post} /devzone/category/:cid PostCategory
+   * @apiName PostCategory
+   * @apiGroup DevZone
+   * @apiHeader {String} auth Votre cookie de connexion.
+   * @apiParam {int} cid L'id de la catégorie.
+   * @apiParam {String} name Le nom de la catégorie.
+   * @apiParam {String} color La couleur css de la catégorie.
+   * @apiParam {int} prio La priorité de la catégorie.
+   * @apiParam {int} minacc Le niveau minimum d'accès pour voir la catégorie.
+   */
+  server.post('/devzone/category/:cid', function (req, res, next) {
+
+    if( req.params['cid'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['name'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['color'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['prio'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['minacc'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+      
+    dz.user(server, req.headers.auth,function(user){
+      
+      if(!user.hasaccess(50))
+        return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+        
+      var sql = 'UPDATE `leeth`.dz_cat SET cat_name=?, cat_prio=?, cat_color=?, cat_minacc=? WHERE cat_id=?';
+      server.conn.query(sql, [req.params['name'], req.params['prio'], req.params['color'], req.params['minacc'], req.params['cid']], function(err, rows){
+        if( err ) throw err;
+        return res.send('OK');
+      });
+    });
+    next();
+  });
 };
