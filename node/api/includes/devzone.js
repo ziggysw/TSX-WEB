@@ -538,12 +538,14 @@ exports = module.exports = function(server){
       if(!user.hasaccess(50))
         return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
         
-      var sql = 'SELECT stat_hidden FROM `leeth`.dz_status WHERE stat_id=?';
-      server.conn.query(sql, [req.params['statid']], function(err, rows){
+      var sql = 'SELECT stat_hidden,(SELECT count(tk_id) FROM `leeth`.dz_ticket WHERE stat_id=?) AS tk_num FROM `leeth`.dz_status WHERE stat_id=?';
+      server.conn.query(sql, [req.params['statid'], req.params['statid']], function(err, rows){
         if( err ) throw err;
         if(rows.length == 0)
           return res.send(new ERR.NotFoundError("NotFound"));
         if(rows[0]['stat_hidden'] == 0)
+          return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+        if(rows[0]['tk_num'] > 0)
           return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
           
         var sql2 = "DELETE FROM `leeth`.dz_status WHERE stat_id=?";
@@ -556,4 +558,36 @@ exports = module.exports = function(server){
     next();
   });
   
+  /**
+   * @api {delete} /devzone/status/:catid DelCategory
+   * @apiName DelCategory
+   * @apiGroup DevZone
+   * @apiHeader {String} auth Votre cookie de connexion.
+   * @apiParam {int} catid L'id de la categorie.
+   */
+  server.del('/devzone/category/:catid', function (req, res, next) {
+
+    if( req.params['catid'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+      
+    dz.user(server, req.headers.auth,function(user){
+      
+      if(!user.hasaccess(50))
+        return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+        
+      var sql = 'SELECT count(tk_id) AS tk_num FROM `leeth`.dz_ticket WHERE cat_id=?';
+      server.conn.query(sql, [req.params['catid']], function(err, rows){
+        if( err ) throw err;
+        if(rows[0]['tk_num'] > 0)
+          return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+          
+        var sql2 = "DELETE FROM `leeth`.dz_cat WHERE cat_id=?";
+        server.conn.query(sql2, [req.params['catid']], function(err2, rows2){
+          if( err2 ) throw err2;
+          return res.send('OK');
+        });
+      });
+    });
+    next();
+  });
 };
