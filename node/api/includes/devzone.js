@@ -392,6 +392,64 @@ exports = module.exports = function(server){
   });  
   
   /**
+   * @api {put} /devzone/ticket/:id/comment PutComment
+   * @apiName PutComment
+   * @apiGroup DevZone
+   * @apiHeader {String} auth Votre cookie de connexion.
+   * @apiParam {int} id L'id du ticket.
+   * @apiParam {string} text Le commentaire.
+   */
+  server.put('/devzone/ticket/:id/comment', function (req, res, next) {
+
+    if( req.params['id'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['text'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.headers.auth == undefined )
+      return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+      
+    dz.user(server, req.headers.auth,function(user){
+      if(user.uid == 1)
+        return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+
+      var sql = 'SELECT cat_minacc, tk_title, usr_id FROM `leeth`.dz_ticket T INNER JOIN `leeth`.dz_cat C ON T.cat_id = C.cat_id WHERE tk_id=?';
+      server.conn.query(sql, [req.params['id']], function(err, rows){
+        if(err) throw err;
+        if(rows[0] == undefined)
+          return res.send(new ERR.NotFoundError("NotFound"));
+        if(!user.hasaccess(rows[0]['cat_minacc']))
+          return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+          
+        var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
+        var sql2 = 'INSERT INTO `leeth`.dz_comment(com_text, usr_id, com_ip, tk_id) VALUES '
+          +'(?, ?, ?, ?)';
+        server.conn.query(sql2, [req.params['text'], user.uid, ip, req.params['id']], function(err2, rows2){
+          if(err2) throw err2;
+          var sql3 = "SELECT DISTINCT usr_id FROM `leeth`.dz_comment WHERE tk_id=? AND usr_id!=? AND usr_id!=?";
+          server.conn.query(sql3, [req.params['id'], user.uid, rows[0]['usr_id']], function(err3, rows3){
+            if(err3) throw err3;
+            
+            var msg = 'Un commentaire à été ajouté au ticket <span style="font-weight: bold">'+ rows[0]['tk_title'] +'</span> par <span style="font-weight: bold">' + user.username + '</span>.';
+            if(rows[0]['usr_id'] != user.uid){
+              dz.pm(server, rows[0]['usr_id'], "Ajout d'un commentaire au ticket: " + rows[0]['tk_title'], msg);
+            }
+            for(var i=0; i<rows3.length; i++){
+              if(rows[0]['usr_id'] == rows3[i]['usr_id'])
+                continue;
+              dz.pm(server, rows[0]['usr_id'], "Ajout d'un commentaire au ticket: " + rows[0]['tk_title'], msg);
+            };
+            for(var i=0; i<=100; i+=10)
+              server.cache.del("/devzone/ticket/"+ req.params['id'] +"/comment-"+i);
+            
+            return res.send('ok');
+          });
+        });
+      });
+    });
+    next();
+  });  
+  
+  /**
    * @api {post} /devzone/ticket/:id PostTicket
    * @apiName PostTicket
    * @apiGroup DevZone
