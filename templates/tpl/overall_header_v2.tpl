@@ -10,7 +10,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" media="screen">
-	<link rel="stylesheet" type="text/css" href="/css/styles.css?v=2" media="screen">
+	<link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css" media="screen, projection" />
 
 	<script type="text/javascript" src="/js/compile-jquery.2.1.3.min-angular.min.js"></script>
@@ -67,18 +67,8 @@
 								<ul class="dropdown-menu">
 									<li><a href="/index.php?page=intro&amp;last=news"><i class="fa fa-newspaper-o"></i> News</a></li>
 									<li><a href="/forum/memberlist.php?g=19&amp;mode=group&amp;sk=m&amp;sd=a"><i class="fa fa-users"></i> Les membres</a></li>
-									<li class="dropdown dropdown-submenu"><a href="/index.php?page=download"><i class="fa fa-upload"></i> Multimédia<span></span></a>
-										<ul class="dropdown-menu">
-											<li><a href="/index.php?page=upload">Envois</a></li>
-											<li><a href="/index.php?page=download">Téléchargement</a></li>
-										</ul>
-									</li>
-									<li class="dropdown dropdown-submenu"><a href="/index.php?page=steam"><i class="fa fa-steam"></i> Outils Steam<span></span></a>
-										<ul class="dropdown-menu">
-											<li><a href="/index.php?page=valider_steamid">Modifier son Steam</a></li>
-											<li><a href="/index.php?page=steam">Convertir SteamID</a></li>
-										</ul>
-									</li>
+									<li><a href="/index.php?page=valider_steamid"><i class="fa fa-steam"></i> Modifier son Steam</a></li>
+									<li><a href="/index.php?page=steam"><i class="fa fa-code-fork"></i> Convertir SteamID</a></li>
 									<li><a href="/index.php?page=money"><a href="/index.php?page=serveurs"><i class="fa fa-server"></i> Info-server<span></a></li>
 									<li><a href="/index.php?page=bannis"><i class="fa fa-ban"></i> Ban-liste</a></li>
 									<li><a href="/index.php?page=money"><i class="fa fa-usd"></i> Achat de $RP</a></li>

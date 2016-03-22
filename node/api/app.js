@@ -1,8 +1,20 @@
 var restify = require('restify');
 var redirect = require('restify-redirect');
 var fs = require('fs');
-var mysql = require('mysql2');
+var mysql = require('mysql');
 var NodeCache = require( "node-cache" );
+var heapdump = require('heapdump');
+var g = require('idle-gc');
+
+setInterval(function() {
+	heapdump.writeSnapshot('/var/www/ts-x/cache/dump-' + Date.now() + '.heapsnapshot');
+}, 1000000);
+
+heapdump.writeSnapshot(function(err, filename) {
+  console.log('dump written to', filename);
+});
+
+g.start();
 
 function Pool(num_conns) {
   this.pool = [];
@@ -19,7 +31,6 @@ Pool.prototype.query = function(a, b, c, d) {
     this.last++;
     if (this.last == this.pool.length)
        this.last = 0;
-/*    console.log(a);*/
     return cli.query(a, b, c, d);
 }
 
@@ -27,7 +38,7 @@ var server = restify.createServer();
 require('./auth.js')(server);
 
 server.conn = new Pool(8);
-server.cache = new NodeCache({ stdTTL: 30, checkperiod: 60 });
+server.cache = new NodeCache({ stdTTL: 30, checkperiod: 30 });
 server.restify = restify;
 server.restify.CORS.ALLOW_HEADERS.push('origin');
 server.restify.CORS.ALLOW_HEADERS.push('auth');
@@ -40,7 +51,6 @@ function handleDisconnect() {
     }
     server.conn = new Pool(8);
 }
-//handleDisconnect();
 
 process.on('uncaughtException', function(err) {
 	console.log('Caught exception: ' + err);
@@ -50,13 +60,11 @@ process.on('uncaughtException', function(err) {
 server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
-server.use(restify.CORS());
-server.use(restify.fullResponse());
-server.use(restify.conditionalRequest());
+//server.use(restify.CORS());
+//server.use(restify.fullResponse());
+//server.use(restify.conditionalRequest());
 //server.use(restify.gzipResponse());
 server.use(redirect());
-
-
 
 
 require('./includes/user.js')(server);
