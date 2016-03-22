@@ -104,13 +104,13 @@ exports = module.exports = function(server) {
       if( req.params['id'] == 0 ) throw "InvalidParam";
       server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
         if( err ) throw err;
-        if( row[0] == null ) throw "NotAuthorized";
+        if( row[0] == null ) throw "NotAuthorized1";
 
         var steamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
 
         server.conn.query("SELECT M.`id`, M.`title`, `seen`, `timestamp` FROM `rp_messages` M INNER JOIN `rp_messages_seen` MS ON MS.`messageid`=M.`id` AND MS.`steamid`=? AND `linked_to` IS NULL AND ((M.`lock`=1 AND MS.`seen`=0) OR M.`lock`=0) ORDER BY M.`timestamp` DESC", [steamID], function( err, row ) {
           if( err ) throw err;
-          if( row[0] == null ) throw "NotAuthorized";
+          if( row[0] == null ) throw "NotAuthorized2";
           res.send( row );
         });
       });

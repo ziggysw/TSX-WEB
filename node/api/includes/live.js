@@ -12,31 +12,33 @@ exports = module.exports = function(server) {
  * @apiGroup Live
  */
 server.get('/live/stream', function (req, res, next) {
+   try {
+      var cache = server.cache.get( req._url.pathname);
+      if( cache != undefined ) return res.send(cache);
+      var broadcaster = ["moyna54", "kossolax", "hipiman", "messorem_tsx"];
+      var obj = new Array();
+      var done = 0;
 
-  var cache = server.cache.get( req._url.pathname);
-  if( cache != undefined ) return res.send(cache);
-  var broadcaster = ["moyna54", "kossolax", "hipiman", "messorem_tsx"];
-  var obj = new Array();
-  var done = 0;
+      for(var i = 0; i<=broadcaster.length; i++ ) {
+        client.streams({ channel: broadcaster[i] }, cb1);
+      }
 
-  for(var i = 0; i<=broadcaster.length; i++ ) {
-    client.streams({ channel: broadcaster[i] }, cb1);
+      function cb1(err, response) {
+        if( response.stream ) {
+          obj.push( {name: response.stream.channel.status, username: response.stream.channel.display_name, url: response.stream.channel.url, viewer: response.stream.viewers} )
+        }
+        done++;
+        cb2();
+      }
+      function cb2() {
+        if( done == broadcaster.length ) {
+          server.cache.set( req._url.pathname, obj);
+          return res.send(obj);
+        }
+      }
+  } catch ( err ) {
+    return res.send(obj);
   }
-
-  function cb1(err, response) {
-    if( response.stream ) {
-      obj.push( {name: response.stream.channel.status, username: response.stream.channel.display_name, url: response.stream.channel.url, viewer: response.stream.viewers} )
-    }
-    done++;
-    cb2();
-  }
-  function cb2() {
-    if( done == broadcaster.length ) {
-      server.cache.set( req._url.pathname, obj);
-      return res.send(obj);
-    }
-  }
-
   next();
 });
 /**
