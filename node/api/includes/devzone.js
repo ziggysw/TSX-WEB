@@ -326,7 +326,7 @@ exports = module.exports = function(server){
    * @apiParam {int} category La categorie.
    */
   server.put('/devzone/ticket', function (req, res, next) {
-    console.log(req.params);
+
     if( req.params['title'] == undefined )
       return res.send(new ERR.BadRequestError("InvalidParam"));
     if( req.params['job'] == undefined )
@@ -355,6 +355,78 @@ exports = module.exports = function(server){
           server.cache.del("/devzone/ticket-"+i);
           
         return res.send('ok');
+      });
+    });
+    next();
+  });  
+  
+  /**
+   * @api {post} /devzone/ticket/:id PostTicket
+   * @apiName PostTicket
+   * @apiGroup DevZone
+   * @apiHeader {String} auth Votre cookie de connexion.
+   * @apiParam {int} id L'id du ticket a modifier.
+   * @apiParam {String} title Le titre du ticket.
+   * @apiParam {int} job Le job qu'il concerne (0 = pas lié à un job)
+   * @apiParam {int} assig L'id de la personne qui se charge du ticket
+   * @apiParam {int} avancement L'avancement du ticket (Compris entre 1 et 100)
+   * @apiParam {String} desc La description du ticket.
+   * @apiParam {String} url Un lien vers le forum.
+   * @apiParam {String} showdesc Afficher la description?
+   * @apiParam {int} category La categorie.
+   */
+  server.post('/devzone/ticket/:id', function (req, res, next) {
+
+    if( req.params['id'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['title'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['job'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['assig'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['avancement'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['desc'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['showdesc'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['category'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+
+    dz.user(server, req.headers.auth,function(user){
+      if(user.uid == 1)
+        return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+      
+      var sql = 'SELECT usr_id, tk_title, stat_id FROM `leeth`.dz_ticket WHERE tk_id=?';
+      server.conn.query(sql, [req.params['id']], function(err, rows){
+        
+        if(!user.hasaccess(40)){
+          if(user.uid != tkOwner){
+            return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+          }
+          else{
+            if(rows[0]['stat_id'] != 1)
+              return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+          }
+        }
+        
+        var showdesc = (req.params['showdesc'] == undefined || req.params['category'] == '') ? 0 : 1;
+        var tk_url = req.params['url'] || '';
+        
+        var sql = "UPDATE `leeth`.dz_ticket SET "
+          +"cat_id=?, tk_title=?, tk_desc=?, tk_showdesc=?, assig_usr_id=?, tk_url=?, tk_esttime=? "
+          +"WHERE tk_id=?";
+        
+        server.conn.query(sql, [req.params['category'], req.params['title'], req.params['desc'], showdesc, req.params['assig'], tk_url, req.params['job'], req.params['id']], function(err, rows){
+          if( err ) throw err;
+          
+          for(var i=0; i<=100; i+=10)
+            server.cache.del("/devzone/ticket-"+i);
+          server.cache.del("/devzone/ticket/" + req.params['id']);
+            
+          return res.send('ok');
+        });
       });
     });
     next();
