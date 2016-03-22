@@ -624,4 +624,40 @@ exports = module.exports = function(server){
     });
     next();
   });
+  
+  /**
+   * @api {put} /devzone/category PutCategory
+   * @apiName PutCategory
+   * @apiGroup DevZone
+   * @apiHeader {String} auth Votre cookie de connexion.
+   * @apiParam {String} name Le nom de la catégorie.
+   * @apiParam {String} color La couleur css de la catégorie.
+   * @apiParam {int} prio La priorité de la catégorie.
+   * @apiParam {int} minacc Le niveau minimum d'accès pour voir la catégorie.
+   */
+  server.put('/devzone/category', function (req, res, next) {
+
+    if( req.params['name'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['color'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['prio'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['minacc'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+      
+    dz.user(server, req.headers.auth,function(user){
+      
+      if(!user.hasaccess(50))
+        return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+        
+      var sql = 'INSERT INTO `leeth`.dz_cat(cat_name, cat_priority, cat_color, cat_minacc) VALUES'
+       +'(?, ?, ?, ?)';
+      server.conn.query(sql, [req.params['name'], req.params['prio'], req.params['color'], req.params['minacc']], function(err, rows){
+        if( err ) throw err;
+        return res.send('OK');
+      });
+    });
+    next();
+  });
 };
