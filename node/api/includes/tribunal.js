@@ -52,7 +52,7 @@ exports = module.exports = function(server){
                 var dStart = moment().subtract(2, 'hour').toDate();
                 var dEnd = moment().add(1, 'hour').toDate();
 
-                callback(tokken.replace("STEAM_0", "STEAM_1").trim(), dStart, dEnd);
+                callback(null, tokken.replace("STEAM_0", "STEAM_1").trim(), dStart, dEnd);
               }
             });
           });
@@ -61,7 +61,7 @@ exports = module.exports = function(server){
           var dStart = moment().startOf('month').toDate();
           var dEnd = moment().startOf('month').add(1, 'months').toDate();
 
-          callback(tokken.replace("STEAM_0", "STEAM_1").trim(), dStart, dEnd);
+          callback(null, tokken.replace("STEAM_0", "STEAM_1").trim(), dStart, dEnd);
         }
       });
     }
@@ -77,11 +77,11 @@ exports = module.exports = function(server){
         delete row[0].own_steamid;
         delete row[0].report_date;
 
-        callback(row[0].report_steamid.replace("STEAM_0", "STEAM_1").trim(), dStart, dEnd, row[0]);
+        callback(null, row[0].report_steamid.replace("STEAM_0", "STEAM_1").trim(), dStart, dEnd, row[0]);
       });
     }
     else {
-      throw "InvalidParam";
+      callback("InvalidParam");
     }
   }
   /**
@@ -103,7 +103,7 @@ exports = module.exports = function(server){
 
         server.conn.query("SELECT `id` FROM `ts-x`.`site_report` R WHERE `jail`='-1' AND `id` NOT IN (SELECT `reportid` FROM `ts-x`.`site_report_votes` V WHERE V.`steamid`=? ) ORDER BY `timestamp` ASC LIMIT 1;", [SteamID], function(err, row) {
           if( err ) return res.send(new ERR.InternalServerError(err));
-          if( row[0] == null ) throw "NotFound";
+          if( row[0] == null ) return res.send(new ERR.NotFoundError("NotFound"));
 
           return res.send(row[0]);
         });
@@ -124,8 +124,8 @@ exports = module.exports = function(server){
    */
   server.get('/tribunal/:id', function (req, res, next) {
   	try {
-      validateTokken(req, req.params['id'], function(tSteamID, dStart, dEnd, more) {
-
+      validateTokken(req, req.params['id'], function(err, tSteamID, dStart, dEnd, more) {
+        if( err ) return res.send(new ERR.InternalServerError(err));
         server.conn.query("SELECT SUM(IF(vote=1,1,0)) AS condamner, SUM(IF(vote=0,1,0)) AS acquitter FROM `ts-x`.`site_report_votes` WHERE reportid=?", [req.params['id']], function(err, rows) {
           return res.send({steamid: tSteamID, dStart, dEnd, data: more, condamner: rows[0].condamner, acquitter: rows[0].acquitter});
         });
@@ -147,8 +147,8 @@ exports = module.exports = function(server){
    */
   server.put('/tribunal/:id/:vote', function (req, res, next) {
     try {
-      validateTokken(req, req.params['id'], function(tSteamID, dStart, dEnd) {
-
+      validateTokken(req, req.params['id'], function(err, tSteamID, dStart, dEnd) {
+        if( err ) return res.send(new ERR.InternalServerError(err));
         server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
           if( err ) return res.send(new ERR.InternalServerError(err));
           if( row[0] == null ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
@@ -178,7 +178,8 @@ exports = module.exports = function(server){
  */
 server.get('/tribunal/:id/:type', function (req, res, next) {
 	try {
-    validateTokken(req, req.params['id'], function(tSteamID, dStart, dEnd) {
+    validateTokken(req, req.params['id'], function(err, tSteamID, dStart, dEnd) {
+      if( err ) return res.send(new ERR.InternalServerError(err));
       var cache = server.cache.get( req._url.pathname);
       if( cache != undefined ) return res.send(cache);
 
