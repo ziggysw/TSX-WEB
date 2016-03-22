@@ -297,7 +297,7 @@ exports = module.exports = function(server){
           dz.pm(server, tkOwner, "Supression de votre ticket" + rows[0]['tk_title'], msg);
         }
           
-        var sql2 = 'DELETE FROM `leeth`.dz_ticket WHERE tk_id=?;'; // TODO
+        var sql2 = 'DELETE FROM `leeth`.dz_ticket WHERE tk_id=?;';
         server.conn.query(sql2, [req.params['id']], function(err2, rows2){
           if( err2 ) throw err2;
 
@@ -309,6 +309,37 @@ exports = module.exports = function(server){
         });
 
       });
+    });
+    next();
+  });
+  
+  /**
+   * @api {delete} /devzone/ticket/:id/comment/:cid DelComment
+   * @apiName DelComment
+   * @apiGroup DevZone
+   * @apiHeader {String} auth Votre cookie de connexion.
+   * @apiParam {int} id L'id du ticket.
+   * @apiParam {int} cid L'id du commentaire.
+   */
+  server.del('/devzone/ticket/:id/comment/:cid', function (req, res, next) {
+
+    if( req.params['id'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['cid'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+      
+    dz.user(server, req.headers.auth,function(user){
+      if(!user.hasaccess(40))
+        return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+        
+      var sql = 'DELETE FROM `leeth`.dz_comment WHERE com_id=? AND tk_id=?;';
+      server.conn.query(sql, [req.params['cid'], req.params['id']], function(err, rows){
+        if( err ) throw err;
+        for(var i=0; i<=100; i+=10)
+          server.cache.del("/devzone/ticket/"+ req.params['id'] +"/comment-"+i);
+        return res.send('OK');
+      });
+
     });
     next();
   });
