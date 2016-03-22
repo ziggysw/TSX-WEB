@@ -372,7 +372,7 @@ exports = module.exports = function(server){
       if(!user.hasaccess(10))
         return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
       
-      var showdesc = (req.params['showdesc'] == undefined || req.params['category'] == '') ? 0 : 1;
+      var showdesc = (req.params['showdesc'] == undefined || req.params['showdesc'] == '') ? 0 : 1;
       var tk_url = req.params['url'] || '';
       var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
       
@@ -478,8 +478,6 @@ exports = module.exports = function(server){
       return res.send(new ERR.BadRequestError("InvalidParam"));
     if( req.params['desc'] == undefined )
       return res.send(new ERR.BadRequestError("InvalidParam"));
-    if( req.params['showdesc'] == undefined )
-      return res.send(new ERR.BadRequestError("InvalidParam"));
     if( req.params['category'] == undefined )
       return res.send(new ERR.BadRequestError("InvalidParam"));
 
@@ -500,7 +498,7 @@ exports = module.exports = function(server){
           }
         }
         
-        var showdesc = (req.params['showdesc'] == undefined || req.params['category'] == '') ? 0 : 1;
+        var showdesc = (req.params['showdesc'] == undefined || req.params['showdesc'] == '') ? 0 : 1;
         var tk_url = req.params['url'] || '';
         
         var sql = "UPDATE `leeth`.dz_ticket SET "
@@ -519,5 +517,217 @@ exports = module.exports = function(server){
       });
     });
     next();
-  });  
+  });
+  
+  /**
+   * @api {delete} /devzone/status/:statid DelStatus
+   * @apiName DelStatus
+   * @apiGroup DevZone
+   * @apiHeader {String} auth Votre cookie de connexion.
+   * @apiParam {int} statid L'id de la maj.
+   */
+  server.del('/devzone/status/:statid', function (req, res, next) {
+
+    if( req.params['statid'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+      
+    dz.user(server, req.headers.auth,function(user){
+      
+      if(!user.hasaccess(50))
+        return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+        
+      var sql = 'SELECT stat_hidden,(SELECT count(tk_id) FROM `leeth`.dz_ticket WHERE stat_id=?) AS tk_num FROM `leeth`.dz_status WHERE stat_id=?';
+      server.conn.query(sql, [req.params['statid'], req.params['statid']], function(err, rows){
+        if( err ) throw err;
+        if(rows.length == 0)
+          return res.send(new ERR.NotFoundError("NotFound"));
+        if(rows[0]['stat_hidden'] == 0)
+          return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+        if(rows[0]['tk_num'] > 0)
+          return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+          
+        var sql2 = "DELETE FROM `leeth`.dz_status WHERE stat_id=?";
+        server.conn.query(sql2, [req.params['statid']], function(err2, rows2){
+          if( err2 ) throw err2;
+          return res.send('OK');
+        });
+      });
+    });
+    next();
+  });
+  
+  /**
+   * @api {delete} /devzone/category/:catid DelCategory
+   * @apiName DelCategory
+   * @apiGroup DevZone
+   * @apiHeader {String} auth Votre cookie de connexion.
+   * @apiParam {int} catid L'id de la categorie.
+   */
+  server.del('/devzone/category/:catid', function (req, res, next) {
+
+    if( req.params['catid'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+      
+    dz.user(server, req.headers.auth,function(user){
+      
+      if(!user.hasaccess(50))
+        return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+        
+      var sql = 'SELECT count(tk_id) AS tk_num FROM `leeth`.dz_ticket WHERE cat_id=?';
+      server.conn.query(sql, [req.params['catid']], function(err, rows){
+        if( err ) throw err;
+        if(rows[0]['tk_num'] > 0)
+          return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+          
+        var sql2 = "DELETE FROM `leeth`.dz_cat WHERE cat_id=?";
+        server.conn.query(sql2, [req.params['catid']], function(err2, rows2){
+          if( err2 ) throw err2;
+          return res.send('OK');
+        });
+      });
+    });
+    next();
+  });
+  
+  /**
+   * @api {put} /devzone/status PutStatus
+   * @apiName PutStatus
+   * @apiGroup DevZone
+   * @apiHeader {String} auth Votre cookie de connexion.
+   * @apiParam {String} name Le nom de la maj.
+   * @apiParam {String} moveall Déplacer tout les tickets.
+   */
+  server.put('/devzone/status', function (req, res, next) {
+
+    if( req.params['name'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+      
+    dz.user(server, req.headers.auth,function(user){
+      
+      if(!user.hasaccess(50))
+        return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+        
+      var sql = 'INSERT INTO `leeth`.dz_status(stat_name, stat_priority, stat_hidden) VALUES'
+       +'(?, (SELECT (SELECT IFNULL(max(stat_priority),0)+10 a FROM dz_status WHERE stat_hidden=1) AS temp), 1)';
+      server.conn.query(sql, [req.params['name']], function(err, rows){
+        if( err ) throw err;
+        var moveall = (req.params['moveall'] == undefined || req.params['moveall'] == '');
+        if(!moveall)
+          return res.send('OK');
+        
+        var sql2 = 'UPDATE dz_ticket SET stat_id=? WHERE stat_id=4';
+        server.conn.query(sql, [rows.insertId], function(err2, rows2){
+          if(err2) throw err2;
+          return res.send('OK');
+        });
+      });
+    });
+    next();
+  });
+  
+  /**
+   * @api {put} /devzone/category PutCategory
+   * @apiName PutCategory
+   * @apiGroup DevZone
+   * @apiHeader {String} auth Votre cookie de connexion.
+   * @apiParam {String} name Le nom de la catégorie.
+   * @apiParam {String} color La couleur css de la catégorie.
+   * @apiParam {int} prio La priorité de la catégorie.
+   * @apiParam {int} minacc Le niveau minimum d'accès pour voir la catégorie.
+   */
+  server.put('/devzone/category', function (req, res, next) {
+
+    if( req.params['name'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['color'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['prio'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['minacc'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+      
+    dz.user(server, req.headers.auth,function(user){
+      
+      if(!user.hasaccess(50))
+        return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+        
+      var sql = 'INSERT INTO `leeth`.dz_cat(cat_name, cat_priority, cat_color, cat_minacc) VALUES'
+       +'(?, ?, ?, ?)';
+      server.conn.query(sql, [req.params['name'], req.params['prio'], req.params['color'], req.params['minacc']], function(err, rows){
+        if( err ) throw err;
+        return res.send('OK');
+      });
+    });
+    next();
+  });
+  
+  /**
+   * @api {post} /devzone/category/:cid PostCategory
+   * @apiName PostCategory
+   * @apiGroup DevZone
+   * @apiHeader {String} auth Votre cookie de connexion.
+   * @apiParam {int} cid L'id de la catégorie.
+   * @apiParam {String} name Le nom de la catégorie.
+   * @apiParam {String} color La couleur css de la catégorie.
+   * @apiParam {int} prio La priorité de la catégorie.
+   * @apiParam {int} minacc Le niveau minimum d'accès pour voir la catégorie.
+   */
+  server.post('/devzone/category/:cid', function (req, res, next) {
+
+    if( req.params['cid'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['name'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['color'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['prio'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['minacc'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+      
+    dz.user(server, req.headers.auth,function(user){
+      
+      if(!user.hasaccess(50))
+        return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+        
+      var sql = 'UPDATE `leeth`.dz_cat SET cat_name=?, cat_prio=?, cat_color=?, cat_minacc=? WHERE cat_id=?';
+      server.conn.query(sql, [req.params['name'], req.params['prio'], req.params['color'], req.params['minacc'], req.params['cid']], function(err, rows){
+        if( err ) throw err;
+        return res.send('OK');
+      });
+    });
+    next();
+  });
+  
+  /**
+   * @api {post} /devzone/status/:sid PostStatus
+   * @apiName PostStatus
+   * @apiGroup DevZone
+   * @apiHeader {String} auth Votre cookie de connexion.
+   * @apiParam {int} sid L'id de la maj.
+   * @apiParam {String} name Le nom de la maj.
+   * @apiParam {int} prio La priorité de la maj.
+   */
+  server.post('/devzone/status/:sid', function (req, res, next) {
+
+    if( req.params['sid'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['name'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['prio'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+      
+    dz.user(server, req.headers.auth,function(user){
+      
+      if(!user.hasaccess(50))
+        return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+        
+      var sql = 'UPDATE `leeth`.dz_status SET stat_name=?, stat_prio=? WHERE stat_id=?';
+      server.conn.query(sql, [req.params['name'], req.params['prio'], req.params['sid']], function(err, rows){
+        if( err ) throw err;
+        return res.send('OK');
+      });
+    });
+    next();
+  });
 };
