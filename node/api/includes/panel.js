@@ -36,8 +36,10 @@ server.get('/panel/sys', function (req, res, next) {
 
         var obj = new Object();
         function cb(obj) {
-          if( Object.keys(obj).length == 5 )
-            return res.send(obj);
+          if( Object.keys(obj).length == 5 ) {
+            res.send(obj);
+	    return next();
+	  }
         }
 
         obj.loadavg = sys.loadavg(1);

@@ -18,7 +18,7 @@ exports = module.exports = function(server){
     else if( pos >= 46 && pos < 62 ) return "Porte-Parole";
     else if( pos >= 62 && pos < 80 ) return "Citoyen dévoué";
     else if( pos >= 80 && pos < 100 ) return "Citoyen";
-    else if( point < 0 ) return "Rôdeur";
+    else if( pos < 0 ) return "Rôdeur";
     else return "Visiteur";
   }
   function pretty_date(seconds) {
@@ -78,16 +78,8 @@ exports = module.exports = function(server){
       return res.send(new ERR.BadRequestError("InvalidParam"));
 
     var cache = server.cache.get( req._url.pathname);
-    if( cache != undefined ) {
-      cache.is_admin = false;
+    if( cache != undefined ) { return res.send(cache); };
 
-      server.conn.query(server.getAuthSMAdmin, [req.headers.auth], function(err, row) {
-        if( row.length > 0 )
-          cache.is_admin = true;
-
-        return res.send(cache);
-      });
-    }
     var sql = "SELECT U.`name`, `money`+`bank` as `cash`, U.`job_id`, `job_name`, U.`group_id`, G.`name` as `group_name`, `time_played` as `timeplayed`, ";
     sql += "`permi_lege`, `permi_lourd`, `permi_vente`, `train` as `train_knife`, `train_weapon`, `train_esquive`, ";
     sql += "`pay_to_bank`, `have_card`, `have_account`, `kill`, `death`, `refere`, `timePlayedJob`, U.`skin`, UNIX_TIMESTAMP(`last_connected`) as `last_connected`"
@@ -100,16 +92,10 @@ exports = module.exports = function(server){
       rows[0].skin = (require('path').basename(rows[0].skin)).replace(/[^A-Za-z]/g, '').replace(/variant.mdl/g, '').replace(/varmdl/g, '').replace("mdl", "");
       rows[0].skin = (rows[0].skin==''? 'null' : rows[0].skin);
       rows[0].last_connected = new Date(parseInt(rows[0].last_connected)*1000);
-      rows[0].is_admin = false;
       rows[0].steam64 = steamIDToProfile(req.params['id']);
 
       server.cache.set( req._url.pathname, rows[0]);
-      server.conn.query(server.getAuthSMAdmin, [req.headers.auth], function(err, row) {
-        if( row.length > 0 )
-          rows[0].is_admin = true;
-
-        return res.send( rows[0] );
-      });
+      return res.send( rows[0] );
     });
 
   	next();
@@ -315,9 +301,9 @@ server.get('/user/:id/personality', function (req, res, next) {
     if( err ) return res.send(new ERR.InternalServerError(err));
     if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
 
-    var inc = parseFloat(rows[0].amount);
-    var out = parseFloat(rows[1].amount);
-    var now = parseFloat(rows[2].amount);
+    var inc = rows[0] ? parseFloat(rows[0].amount) : 0;
+    var out = rows[1] ? parseFloat(rows[1].amount) : 0;
+    var now = rows[2] ? parseFloat(rows[2].amount) : 1;
 
     obj.avarice = clamp((inc-out)/(inc+out+now), 33, 0, 100);
     cb(obj);
@@ -337,8 +323,8 @@ server.get('/user/:id/personality', function (req, res, next) {
     if( err ) return res.send(new ERR.InternalServerError(err));
     if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
 
-    var a = parseFloat(rows[0].amount);
-    var b = parseFloat(rows[1].amount);
+    var a = rows[0] ? parseFloat(rows[0].amount) : 0;
+    var b = rows[1] ? parseFloat(rows[1].amount) : 1;
 
     obj.luxure = clamp(a/(a+b), 0, 0, 100);
     cb(obj);
@@ -359,8 +345,8 @@ server.get('/user/:id/personality', function (req, res, next) {
     if( err ) return res.send(new ERR.InternalServerError(err));
     if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
 
-    var a = parseFloat(rows[0].amount);
-    var b = parseFloat(rows[1].amount);
+    var a = rows[0] ? parseFloat(rows[0].amount) : 0;
+    var b = rows[1] ? parseFloat(rows[1].amount) : 1;
 
     obj.gourmandise = clamp(a/(a+b), 0, 0, 100);
     cb(obj);
@@ -378,8 +364,8 @@ server.get('/user/:id/personality', function (req, res, next) {
     if( err ) return res.send(new ERR.InternalServerError(err));
     if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
 
-    var a = parseFloat(rows[0].amount);
-    var b = parseFloat(rows[1].amount);
+    var a = rows[0] ? parseFloat(rows[0].amount) : 0;
+    var b = rows[1] ? parseFloat(rows[1].amount) : 1;
 
     obj.colere = clamp(a/(a+b) * 1.2, 0, 0, 100);
     cb(obj);
@@ -400,8 +386,8 @@ server.get('/user/:id/personality', function (req, res, next) {
     if( err ) return res.send(new ERR.InternalServerError(err));
     if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
 
-    var a = parseFloat(rows[0].amount); a = (a>0?a:0);
-    var b = parseFloat(rows[1].amount);
+    var a = rows[0] ? parseFloat(rows[0].amount) : 0;
+    var b = rows[1] ? parseFloat(rows[1].amount) : 1;
 
     obj.orgueil = clamp(a/b * 0.33, 0, 0, 100);
     cb(obj);
@@ -420,8 +406,9 @@ server.get('/user/:id/personality', function (req, res, next) {
     if( err ) return res.send(new ERR.InternalServerError(err));
     if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
 
-    var a = parseFloat(rows[0].amount); a = (a>0?a:0);
-    var b = parseFloat(rows[1].amount);
+    var a = rows[0] ? parseFloat(rows[0].amount) : 0;
+    var b = rows[1] ? parseFloat(rows[1].amount) : 1;
+
     obj.envie = clamp(a/(a+b), 0, 0, 100);
     cb(obj);
   });
@@ -470,8 +457,6 @@ server.get('/user/:id/personality', function (req, res, next) {
         connected = 0;
       }
     }
-
-
 
     if( connected ==  1 ) {
       var tmp = (new Date() - lastDate)/1000

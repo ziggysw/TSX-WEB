@@ -65,7 +65,8 @@ server.get('/live/positions', function (req, res, next) {
 
     body = JSON.parse(body);
     server.cache.set( req._url.pathname, body, 0.1);
-    return res.send(body);
+    res.send(body);
+    return next();
   });
 	next();
 });

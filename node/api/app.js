@@ -3,17 +3,7 @@ var redirect = require('restify-redirect');
 var fs = require('fs');
 var mysql = require('mysql');
 var NodeCache = require( "node-cache" );
-var heapdump = require('heapdump');
 var g = require('idle-gc');
-
-setInterval(function() {
-	heapdump.writeSnapshot('/var/www/ts-x/cache/dump-' + Date.now() + '.heapsnapshot');
-}, 1000000);
-
-heapdump.writeSnapshot(function(err, filename) {
-  console.log('dump written to', filename);
-});
-
 g.start();
 
 function Pool(num_conns) {
@@ -56,6 +46,10 @@ process.on('uncaughtException', function(err) {
 	console.log('Caught exception: ' + err);
 	handleDisconnect();
 });
+server.on('uncaughtException', function (request, response, route, error) {
+	console.log('Caught exception in : '+request.path());
+	console.log(error);
+});
 
 server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
@@ -82,6 +76,11 @@ require('./includes/connection.js')(server);
 require('./includes/tribunal.js')(server);
 require('./includes/hdv.js')(server);
 require('./includes/devzone.js')(server);
+
+server.pre(function (request, response, next) {
+//	console.log(request.path());
+	next();
+});
 
 server.get('/', function (req, res, next) {
   return res.redirect('https://www.ts-x.eu/node/apidoc/');
