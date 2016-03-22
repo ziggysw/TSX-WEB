@@ -698,4 +698,36 @@ exports = module.exports = function(server){
     });
     next();
   });
+  
+  /**
+   * @api {post} /devzone/status/:sid PostStatus
+   * @apiName PostStatus
+   * @apiGroup DevZone
+   * @apiHeader {String} auth Votre cookie de connexion.
+   * @apiParam {int} sid L'id de la maj.
+   * @apiParam {String} name Le nom de la maj.
+   * @apiParam {int} prio La priorité de la maj.
+   */
+  server.post('/devzone/status/:sid', function (req, res, next) {
+
+    if( req.params['sid'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['name'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+    if( req.params['prio'] == undefined )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+      
+    dz.user(server, req.headers.auth,function(user){
+      
+      if(!user.hasaccess(50))
+        return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+        
+      var sql = 'UPDATE `leeth`.dz_status SET stat_name=?, stat_prio=? WHERE stat_id=?';
+      server.conn.query(sql, [req.params['name'], req.params['prio'], req.params['sid']], function(err, rows){
+        if( err ) throw err;
+        return res.send('OK');
+      });
+    });
+    next();
+  });
 };
