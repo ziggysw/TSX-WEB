@@ -4,6 +4,8 @@ var exec = require('child_process').exec;
 
 exports = module.exports = function(server){
   var moment = require('moment');
+  var ERR = require('node-restify-errors');
+
   function lzw_encode(s) {
     var dict = {};
     var data = (s + "").split("");
@@ -35,17 +37,17 @@ exports = module.exports = function(server){
 
     if( pattern.test(tokken) ) {
       server.conn.query(server.getAuthAdminID, [req.headers.auth], function(err, row) {
-        if( err ) throw err;
+        if( err ) return res.send(new ERR.InternalServerError(err));
         if( row[0] == null ) {
           server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
-            if( err ) throw err;
-            if( row[0] == null ) throw "NotAuthorized";
+            if( err ) return res.send(new ERR.InternalServerError(err));
+            if( row[0] == null ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
 
             var SteamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
 
             server.conn.query("SELECT `job_id` FROM `rp_users` WHERE `steamid`=?", [SteamID], function(err, row) {
-              if( err ) throw err;
-              if( row[0] == null ) throw "NotAuthorized";
+              if( err ) return res.send(new ERR.InternalServerError(err));
+              if( row[0] == null ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
               if( row[0].job_id >= 101 && row[0].job_id <= 106 ) {
                 var dStart = moment().subtract(2, 'hour').toDate();
                 var dEnd = moment().add(1, 'hour').toDate();
@@ -65,8 +67,8 @@ exports = module.exports = function(server){
     }
     else if( !isNaN(parseInt(tokken)) && parseInt(tokken) > 0 ) {
       server.conn.query("SELECT * FROM `ts-x`.`site_report` WHERE `id`=?", [parseInt(tokken)], function(err, row) {
-        if( err ) throw err;
-        if( row[0] == null ) throw "NotAuthorized";
+        if( err ) return res.send(new ERR.InternalServerError(err));
+        if( row[0] == null ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
 
         var dStart = moment.unix(row[0].timestamp).subtract(1, 'hour').toDate();
         var dEnd = moment.unix(row[0].timestamp).add(1, 'hour').toDate();
@@ -94,13 +96,13 @@ exports = module.exports = function(server){
   	try {
 
       server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
-        if( err ) throw err;
-        if( row[0] == null ) throw "NotAuthorized";
+        if( err ) return res.send(new ERR.InternalServerError(err));
+        if( row[0] == null ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
 
         var SteamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
 
         server.conn.query("SELECT `id` FROM `ts-x`.`site_report` R WHERE `jail`='-1' AND `id` NOT IN (SELECT `reportid` FROM `ts-x`.`site_report_votes` V WHERE V.`steamid`=? ) ORDER BY `timestamp` ASC LIMIT 1;", [SteamID], function(err, row) {
-          if( err ) throw err;
+          if( err ) return res.send(new ERR.InternalServerError(err));
           if( row[0] == null ) throw "NotFound";
 
           return res.send(row[0]);
@@ -126,7 +128,7 @@ exports = module.exports = function(server){
 
         server.conn.query("SELECT SUM(IF(vote=1,1,0)) AS condamner, SUM(IF(vote=0,1,0)) AS acquitter FROM `ts-x`.`site_report_votes` WHERE reportid=?", [req.params['id']], function(err, rows) {
           return res.send({steamid: tSteamID, dStart, dEnd, data: more, condamner: rows[0].condamner, acquitter: rows[0].acquitter});
-        });        
+        });
       });
     } catch ( err ) {
       return res.send(err);
@@ -148,8 +150,8 @@ exports = module.exports = function(server){
       validateTokken(req, req.params['id'], function(tSteamID, dStart, dEnd) {
 
         server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
-          if( err ) throw err;
-          if( row[0] == null ) throw "NotAuthorized";
+          if( err ) return res.send(new ERR.InternalServerError(err));
+          if( row[0] == null ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
 
           var SteamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
 
@@ -197,7 +199,7 @@ server.get('/tribunal/:id/:type', function (req, res, next) {
       sql += "    WHERE `date`>? AND `date`<? AND "+sqlTYPE+" AND (`steamid`=? OR `target`=?) ORDER BY `date` DESC;";
 
       server.conn.query(sql, [dStart, dEnd, tSteamID, tSteamID], function( err, row ) {
-        if( err ) throw err;
+        if( err ) return res.send(new ERR.InternalServerError(err));
         var obj = new Array();
         for(var i=0; i<row.length; i++) {
           obj.push(row[i].line);

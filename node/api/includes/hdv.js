@@ -13,7 +13,7 @@ server.get('/hdv/sales/:job', function (req, res, next) {
 
   if( isNaN(parseInt(req.params['job'])) )
     return res.send([]);
-  
+
   var cache = server.cache.get( req._url.pathname);
   if( cache != undefined ) { return res.send(cache); }
 
@@ -26,7 +26,7 @@ server.get('/hdv/sales/:job', function (req, res, next) {
   sql += " ORDER BY (`amount`*`price`) ASC;";
 
   server.conn.query(sql, [parseInt(req.params['job'])], function(err, rows) {
-    if( err ) throw err;
+    if( err ) return res.send(new ERR.InternalServerError(err));
 
     server.cache.set( req._url.pathname, rows, 30);
     return res.send( rows );

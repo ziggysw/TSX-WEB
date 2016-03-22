@@ -2,7 +2,7 @@
 exports = module.exports = function(server){
   var ERR = require('node-restify-errors');
   var moment = require('moment');
-
+  
 /**
  * @api {get} /connect/auth GetAuth
  * @apiName GetAuth
@@ -14,7 +14,7 @@ exports = module.exports = function(server){
 */
 server.get('/connect/auth', function (req, res, next) {
   server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
-    if( row.length == 0 ) throw "NotAuthorized";
+    if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
     var uid = row[0].user_id;
     return res.send(req.headers.auth);
   });
@@ -32,7 +32,7 @@ server.get('/connect/auth', function (req, res, next) {
 */
 server.get('/connect/check', function (req, res, next) {
   server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
-    if( row.length == 0 ) throw "NotAuthorized";
+    if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
     var uid = row[0].user_id;
     return res.send("ok");
   });

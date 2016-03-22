@@ -23,7 +23,7 @@ server.post('/forum/pm/:id', function (req, res, next) {
     if( req.params['id'] == 0 )
       return res.send(new ERR.BadRequestError("InvalidParam"));
     server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
-      if( row.length == 0 ) throw "NotAuthorized";
+      if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
       var uid = row[0].user_id;
 
       var sql = "INSERT INTO `ts-x`.`phpbb3_privmsgs`(`msg_id`, `author_id`, `author_ip`, `message_time`, `message_subject`, `message_text`, `to_address` ) VALUES";
@@ -60,7 +60,7 @@ server.post('/forum/pm/:id', function (req, res, next) {
 server.get('/forum/pm', function (req, res, next) {
   try {
     server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
-      if( row.length == 0 ) throw "NotAuthorized";
+      if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
       var uid = row[0].user_id;
 
       var sql = "SELECT `msg_id`, `author_id`, `author_ip`, `message_time`, `message_subject`, `message_text`, `to_address` FROM `ts-x`.`phpbb3_privmsgs` WHERE to_address = ? ORDER BY `message_time` DESC ;";
@@ -89,7 +89,7 @@ server.get('/forum/user/id/:username', function (req, res, next) {
     if( req.params['username'] == "" )
       return res.send(new ERR.BadRequestError("InvalidParam"));
     server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
-      if( row.length == 0 ) throw "NotAuthorized";
+      if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
       var uid = row[0].user_id;
 
       var username_clean = req.params['username'].toLowerCase();
@@ -97,7 +97,7 @@ server.get('/forum/user/id/:username', function (req, res, next) {
       var sql = "SELECT `user_id` FROM `ts-x`.`phpbb3_users` WHERE username_clean = ?;";
       server.conn.query(sql, [username_clean], function(err, row) {
         if( err ) throw err;
-        if( row[0] == null ) throw "NotFound";
+        if( row[0] == null ) return res.send(new ERR.NotFoundError("NotFound"));
         return res.send(row[0].user_id);
       });
     });
@@ -119,7 +119,7 @@ server.get('/forum/user/id/:username', function (req, res, next) {
 server.get('/forum/user/pm/unread', function (req, res, next) {
   try {
     server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
-      if( row.length == 0 ) throw "NotAuthorized";
+      if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
       var uid = row[0].user_id;
 
       var sql = "SELECT `user_unread_privmsg` FROM `ts-x`.`phpbb3_users` WHERE user_id = ?;";
@@ -145,7 +145,7 @@ server.get('/forum/user/pm/unread', function (req, res, next) {
 server.get('/forum/user/pm/new', function (req, res, next) {
   try {
     server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
-      if( row.length == 0 ) throw "NotAuthorized";
+      if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
       var uid = row[0].user_id;
 
       var sql = "SELECT `user_new_privmsg`, `user_unread_privmsg` FROM `ts-x`.`phpbb3_users` WHERE user_id = ?;";
@@ -171,7 +171,7 @@ server.get('/forum/user/pm/new', function (req, res, next) {
 server.get('/forum/post/last', function (req, res, next) {
   try {
     server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
-      if( row.length == 0 ) throw "NotAuthorized";
+      if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
       var uid = row[0].user_id;
 
       var sql = "SELECT `post_id`,`post_subject`,`post_text` FROM `ts-x`.`phpbb3_posts` AS P INNER JOIN `ts-x`.`phpbb3_users` AS U ON U.`user_id`=P.`poster_id`WHERE `forum_id` IN (10, 30, 53, 54, 56, 57, 147, 72, 12, 16, 5, 103, 35, 117, 83, 84, 86, 88, 94, 95, 11) AND LENGTH(`post_text`)>20 ORDER BY `post_time` DESC LIMIT 10;";
@@ -197,7 +197,7 @@ server.get('/forum/post/last', function (req, res, next) {
 server.get('/forum/smiley', function (req, res, next) {
   try {
   server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
-    if( row.length == 0 ) throw "NotAuthorized";
+    if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
     var uid = row[0].user_id;
 
     var sql = "SELECT `code`,`smiley_url`,`smiley_width`,`smiley_height` FROM `ts-x`.`phpbb3_smilies`;";

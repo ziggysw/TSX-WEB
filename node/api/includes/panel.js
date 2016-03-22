@@ -2,6 +2,7 @@
 
 exports = module.exports = function(server) {
 var sys  = require('os-utils');
+var ERR = require('node-restify-errors');
 
 
 function encode(str, key) {
@@ -31,8 +32,8 @@ function encode(str, key) {
 server.get('/panel/sys', function (req, res, next) {
     try {
       server.conn.query(server.getAuthAdminID, [req.headers.auth], function(err, row) {
-        if( err ) throw err;
-        if( row[0] == null ) throw "NotAuthorized";
+        if( err ) return res.send(new ERR.InternalServerError(err));
+        if( row[0] == null ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
 
         var obj = new Object();
         function cb(obj) {
@@ -88,8 +89,8 @@ server.get('/panel/sys', function (req, res, next) {
 server.get('/panel/servers', function (req, res, next) {
     try {
       server.conn.query(server.getAuthAdminID, [req.headers.auth], function(err, row) {
-        if( err ) throw err;
-        if( row[0] == null ) throw "NotAuthorized";
+        if( err ) return res.send(new ERR.InternalServerError(err));
+        if( row[0] == null ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
 
         server.conn.query("SELECT `uniq_id`, `url` as `game`, `ip`, `port`, `is_on`, `current`, `maxplayers` FROM `ts-x`.`adm_serv`;", function(err, row) {
           return res.send(row);
@@ -110,8 +111,8 @@ server.get('/panel/servers', function (req, res, next) {
 server.get('/panel/email', function (req, res, next) {
     try {
       server.conn.query(server.getAuthAdminID, [req.headers.auth], function(err, row) {
-        if( err ) throw err;
-        if( row[0] == null ) throw "NotAuthorized";
+        if( err ) return res.send(new ERR.InternalServerError(err));
+        if( row[0] == null ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
 
         var pattern = "/[^a-zA-Z0-9_]+/g";
 

@@ -1,5 +1,6 @@
 "use strict";
 exports = module.exports = function(server){
+  var ERR = require('node-restify-errors');
 
 /**
  * @api {get} /items GetItems
@@ -9,13 +10,13 @@ exports = module.exports = function(server){
 server.get('/items', function (req, res, next) {
     try {
         if( req.params['id'] == 0 )
-            throw "InvalidParam";
+            return res.send(new ERR.BadRequestError("InvalidParam"));
 
         server.conn.query("SELECT `id`, `nom` FROM `rp_items`", function(err, rows) {
             if( err )
-                throw err;
+                return res.send(new ERR.InternalServerError(err));
             if( rows.length == 0 )
-                res.send("NotFound");
+                return res.send(new ERR.NotFoundError("NotFound"));
             else
                 res.send(rows);
 		});
@@ -33,11 +34,11 @@ server.get('/items', function (req, res, next) {
 server.get('/items/job/:id', function (req, res, next) {
 	try {
         if( req.params['id'] == 0 )
-            throw "InvalidParam";
+            return res.send(new ERR.BadRequestError("InvalidParam"));
 
         server.conn.query("SELECT `id`, `nom`, `prix` FROM `rp_items` WHERE `job_id`=? AND `extra_cmd`<>'UNKNOWN'", [req.params['id']], function(err, rows) {
 		        if( err )
-              throw err;
+              return res.send(new ERR.InternalServerError(err));
             return res.send(rows);
 		});
     } catch ( err ) {
