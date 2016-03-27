@@ -12,6 +12,7 @@ exports = module.exports = function(server) {
  * @apiGroup Live
  */
 server.get('/live/stream', function (req, res, next) {
+   return next();
    try {
       var cache = server.cache.get( req._url.pathname);
       if( cache != undefined ) return res.send(cache);

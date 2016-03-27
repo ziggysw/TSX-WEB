@@ -114,12 +114,11 @@ exports = module.exports = function(server){
         res.setHeader("Content-Type", "image/jpeg");
         res.writeHead(200);
         res.write(data);
-        return res.end();
+        res.end();
+        return next();
       });
       return next();
     }
-
-
 
     if( req.params['id'] == 0 )
       return res.send(new ERR.BadRequestError("InvalidParam"));
@@ -162,6 +161,8 @@ exports = module.exports = function(server){
         var img = gd.createTrueColorSync(800, 200);
         var bg = gd.createFromJpeg("/var/www/ts-x/images/roleplay/"+req.params['type']+"/"+id+".jpg");
         bg.copyResampled(img, 0, 0, 0, 0, 800, 200, bg.width, bg.height );
+        bg.destroy();
+
         var black = img.colorAllocate(0,0,0);
         var white = img.colorAllocate(255,255,255);
         var alpha = img.colorAllocateAlpha(0, 0, 0, 60);
@@ -185,19 +186,18 @@ exports = module.exports = function(server){
         write(img, 635, 196, ""+new Date(), 6);
 
         img.saveJpeg(cache, 100, function(err, bla) {
+          img.destroy();
           fs.readFile(cache, function(err, data) {
             res.setHeader("Content-Type", "image/jpeg");
             res.writeHead(200);
             res.write(data);
 
             server.cache.set( req._url.pathname, {content: cache});
-            return res.end();
+            res.end();
+            return next();
           });
-          next();
         });
-        next();
       });
-  	next();
   });
 
 /**

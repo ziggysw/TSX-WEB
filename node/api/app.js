@@ -6,12 +6,19 @@ var NodeCache = require( "node-cache" );
 var g = require('idle-gc');
 g.start();
 
+var server = restify.createServer();
+require('./auth.js')(server);
+
+setInterval(function() {
+	global.gc();
+}, 100000);
+
 function Pool(num_conns) {
   this.pool = [];
   for(var i=0; i < num_conns; ++i) {
     var conn = mysql.createConnection(server.sqlConfig);
     conn.connect();
-    conn.on('error', function(err) {  console.log(err); setTimeout(handleDisconnect, 5000);  });
+    conn.on('error', function(err) {  console.log("EER"); console.log(err); setTimeout(handleDisconnect, 5000);  });
     this.pool.push(conn);
   }
   this.last = 0;
@@ -24,9 +31,6 @@ Pool.prototype.query = function(a, b, c, d) {
     return cli.query(a, b, c, d);
 }
 
-var server = restify.createServer();
-require('./auth.js')(server);
-
 server.conn = new Pool(8);
 server.cache = new NodeCache({ stdTTL: 30, checkperiod: 30 });
 server.restify = restify;
@@ -36,6 +40,7 @@ server.restify.CORS.ALLOW_HEADERS.push('Accept-Encoding');
 server.restify.CORS.ALLOW_HEADERS.push('Accept-Language');
 
 function handleDisconnect() {
+    console.log("fired");
     for(var i=0; i < server.conn.pool.length; i++) {
       server.conn.pool[i].end();
     }
@@ -44,7 +49,6 @@ function handleDisconnect() {
 
 process.on('uncaughtException', function(err) {
 	console.log('Caught exception: ' + err);
-	handleDisconnect();
 });
 server.on('uncaughtException', function (request, response, route, error) {
 	console.log('Caught exception in : '+request.path());
@@ -54,10 +58,6 @@ server.on('uncaughtException', function (request, response, route, error) {
 server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
-//server.use(restify.CORS());
-//server.use(restify.fullResponse());
-//server.use(restify.conditionalRequest());
-//server.use(restify.gzipResponse());
 server.use(redirect());
 
 

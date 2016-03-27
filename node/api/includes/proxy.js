@@ -3,7 +3,11 @@ exports = module.exports = function(server) {
 
 var Rcon = require('rcon');
 var proxy = require('dgram').createSocket('udp4');
-var io = require("socket.io").listen(server.server);
+var fs = require('fs');
+var socket = require("socket.io");
+var https = require('https');
+
+var io = socket.listen( https.createServer({  key: fs.readFileSync('/etc/letsencrypt/live/ts-x.eu/privkey.pem'), cert: fs.readFileSync('/etc/letsencrypt/live/ts-x.eu/fullchain.pem')}).listen(4433) );
 
 io.sockets.on('connection', function (socket, msg) {
 	var ip = socket.handshake.address;
