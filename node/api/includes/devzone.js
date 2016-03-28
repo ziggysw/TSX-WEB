@@ -34,7 +34,7 @@ exports = module.exports = function(server){
     
     var sql = "SELECT S.stat_id, S.stat_name, S.stat_priority, UNIX_TIMESTAMP(S.stat_date) stat_date, S.stat_hidden FROM `leeth`.dz_status S ORDER BY stat_hidden ASC,stat_priority DESC";
     server.conn.query(sql, [], function(err, rows){
-      if( err ) throw err;
+      if( err ) res.send(new ERR.InternalServerError(err));
       server.cache.set( req._url.pathname, rows);
       return res.send(rows);
     });
@@ -54,7 +54,7 @@ exports = module.exports = function(server){
        
        var sql = "SELECT cat_id,cat_name,cat_color,cat_prio,cat_minacc FROM `leeth`.dz_cat WHERE cat_minacc <= ? ORDER BY cat_prio DESC;";
        server.conn.query(sql, [user.accesslevel], function(err, rows){
-         if( err ) throw err;
+         if( err ) res.send(new ERR.InternalServerError(err));
          server.cache.set( req._url.pathname+'-'+user.accesslevel , rows);
          return res.send(rows);
        });
@@ -80,7 +80,7 @@ exports = module.exports = function(server){
 	      +"S.stat_id IN(SELECT * FROM (SELECT S.stat_id FROM `leeth`.dz_status S ORDER BY stat_hidden ASC,stat_priority DESC LIMIT 4) AS temp) "
 	      +"ORDER BY stat_hidden ASC,stat_priority DESC,cat_prio DESC,IFNULL(tk_prio,0) ASC;";
       server.conn.query(sql, [user.accesslevel], function(err, rows){
-        if( err ) throw err;
+        if( err ) res.send(new ERR.InternalServerError(err));
         server.cache.set( req._url.pathname+'-'+user.accesslevel , rows);
         return res.send(rows);
       });
@@ -108,7 +108,7 @@ exports = module.exports = function(server){
         +" assig_usr_id, UNIX_TIMESTAMP(tk_datecrea) AS tk_datecrea, UNIX_TIMESTAMP(tk_dateend) AS tk_dateend, tk_url "
         +"FROM `leeth`.dz_ticket T NATURAL JOIN `leeth`.dz_status S NATURAL JOIN `leeth`.dz_cat C WHERE T.tk_id = ? AND C.cat_minacc <= ?;";
       server.conn.query(sql, [req.params['id'], user.accesslevel], function(err, rows){
-        if( err ) throw err;
+        if( err ) res.send(new ERR.InternalServerError(err));
 
         if(rows.length == 0)
           return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
@@ -140,7 +140,7 @@ exports = module.exports = function(server){
         +"FROM `leeth`.dz_comment C INNER JOIN `leeth`.dz_ticket T ON T.tk_id = C.tk_id INNER JOIN `leeth`.dz_cat K ON K.cat_id = T.cat_id "
         +"WHERE C.tk_id=? AND K.cat_minacc <= ? ORDER BY com_id ASC;";
       server.conn.query(sql, [req.params['id'], user.accesslevel], function(err, rows){
-        if( err ) throw err;
+        if( err ) res.send(new ERR.InternalServerError(err));
 
         server.cache.set( req._url.pathname+'-'+user.accesslevel , rows);
         return res.send(rows);
@@ -160,7 +160,7 @@ exports = module.exports = function(server){
     
     var sql = 'SELECT st_val FROM `leeth`.dz_settings WHERE st_key="assig"';
     server.conn.query(sql, [], function(err, rows){
-      if( err ) throw err;
+      if( err ) res.send(new ERR.InternalServerError(err));
       var ret = JSON.parse(rows[0]['st_val']);
       server.cache.set(req._url.pathname, ret);
       return res.send(ret);
@@ -187,7 +187,7 @@ exports = module.exports = function(server){
         
       var sql = 'SELECT st_val FROM `leeth`.dz_settings WHERE st_key="assig"';
       server.conn.query(sql, [], function(err, rows){
-        if( err ) throw err;
+        if( err ) res.send(new ERR.InternalServerError(err));
         
         var ret = JSON.parse(rows[0]['st_val']);
         dz.NameToId(server, req.params['user'], function(pid){
@@ -232,7 +232,7 @@ exports = module.exports = function(server){
         
       var sql = 'SELECT st_val FROM `leeth`.dz_settings WHERE st_key="assig"';
       server.conn.query(sql, [], function(err, rows){
-        if( err ) throw err;
+        if( err ) res.send(new ERR.InternalServerError(err));
         
         var ret = JSON.parse(rows[0]['st_val']);
 
@@ -275,7 +275,7 @@ exports = module.exports = function(server){
         
       var sql = 'SELECT usr_id, tk_title, stat_id FROM `leeth`.dz_ticket WHERE tk_id=?';
       server.conn.query(sql, [req.params['id']], function(err, rows){
-        if( err ) throw err;
+        if( err ) res.send(new ERR.InternalServerError(err));
         if( rows.length == 0 ) return res.send(new ERR.NotFoundError("NotFound"));
         
         var tkOwner = rows[0]['usr_id'];
@@ -299,7 +299,7 @@ exports = module.exports = function(server){
           
         var sql2 = 'DELETE FROM `leeth`.dz_ticket WHERE tk_id=?;';
         server.conn.query(sql2, [req.params['id']], function(err2, rows2){
-          if( err2 ) throw err2;
+          if( err2 ) res.send(new ERR.InternalServerError(err2));
 
           for(var i=0; i<=100; i+=10)
             server.cache.del("/devzone/ticket-"+i);
@@ -334,7 +334,7 @@ exports = module.exports = function(server){
         
       var sql = 'DELETE FROM `leeth`.dz_comment WHERE com_id=? AND tk_id=?;';
       server.conn.query(sql, [req.params['cid'], req.params['id']], function(err, rows){
-        if( err ) throw err;
+        if( err ) res.send(new ERR.InternalServerError(err));
         for(var i=0; i<=100; i+=10)
           server.cache.del("/devzone/ticket/"+ req.params['id'] +"/comment-"+i);
         return res.send('OK');
@@ -380,7 +380,7 @@ exports = module.exports = function(server){
         +"(1, ?, ?, ?, ?, 0, ?, ?, ?, ?)";
   
       server.conn.query(sql, [req.params['category'], req.params['title'], req.params['desc'], showdesc, ip, user.uid, tk_url, req.params['job']], function(err, rows){
-        if( err ) throw err;
+        if( err ) res.send(new ERR.InternalServerError(err));
         
         for(var i=0; i<=100; i+=10)
           server.cache.del("/devzone/ticket-"+i);
@@ -414,7 +414,7 @@ exports = module.exports = function(server){
 
       var sql = 'SELECT cat_minacc, tk_title, usr_id FROM `leeth`.dz_ticket T INNER JOIN `leeth`.dz_cat C ON T.cat_id = C.cat_id WHERE tk_id=?';
       server.conn.query(sql, [req.params['id']], function(err, rows){
-        if(err) throw err;
+        if(err) res.send(new ERR.InternalServerError(err));
         if(rows[0] == undefined)
           return res.send(new ERR.NotFoundError("NotFound"));
         if(!user.hasaccess(rows[0]['cat_minacc']))
@@ -424,10 +424,10 @@ exports = module.exports = function(server){
         var sql2 = 'INSERT INTO `leeth`.dz_comment(com_text, usr_id, com_ip, tk_id) VALUES '
           +'(?, ?, ?, ?)';
         server.conn.query(sql2, [req.params['text'], user.uid, ip, req.params['id']], function(err2, rows2){
-          if(err2) throw err2;
+          if(err2) res.send(new ERR.InternalServerError(err2));
           var sql3 = "SELECT DISTINCT usr_id FROM `leeth`.dz_comment WHERE tk_id=? AND usr_id!=? AND usr_id!=?";
           server.conn.query(sql3, [req.params['id'], user.uid, rows[0]['usr_id']], function(err3, rows3){
-            if(err3) throw err3;
+            if(err3) res.send(new ERR.InternalServerError(err3));
             
             var msg = 'Un commentaire à été ajouté au ticket <span style="font-weight: bold">'+ rows[0]['tk_title'] +'</span> par <span style="font-weight: bold">' + user.username + '</span>.';
             if(rows[0]['usr_id'] != user.uid){
@@ -506,7 +506,7 @@ exports = module.exports = function(server){
           +"WHERE tk_id=?";
         
         server.conn.query(sql, [req.params['category'], req.params['title'], req.params['desc'], showdesc, req.params['assig'], tk_url, req.params['job'], req.params['id']], function(err, rows){
-          if( err ) throw err;
+          if( err ) res.send(new ERR.InternalServerError(err));
           
           for(var i=0; i<=100; i+=10)
             server.cache.del("/devzone/ticket-"+i);
@@ -538,7 +538,7 @@ exports = module.exports = function(server){
         
       var sql = 'SELECT stat_hidden,(SELECT count(tk_id) FROM `leeth`.dz_ticket WHERE stat_id=?) AS tk_num FROM `leeth`.dz_status WHERE stat_id=?';
       server.conn.query(sql, [req.params['statid'], req.params['statid']], function(err, rows){
-        if( err ) throw err;
+        if( err ) res.send(new ERR.InternalServerError(err));
         if(rows.length == 0)
           return res.send(new ERR.NotFoundError("NotFound"));
         if(rows[0]['stat_hidden'] == 0)
@@ -548,7 +548,7 @@ exports = module.exports = function(server){
           
         var sql2 = "DELETE FROM `leeth`.dz_status WHERE stat_id=?";
         server.conn.query(sql2, [req.params['statid']], function(err2, rows2){
-          if( err2 ) throw err2;
+          if( err2 ) res.send(new ERR.InternalServerError(err2));
           return res.send('OK');
         });
       });
@@ -575,13 +575,13 @@ exports = module.exports = function(server){
         
       var sql = 'SELECT count(tk_id) AS tk_num FROM `leeth`.dz_ticket WHERE cat_id=?';
       server.conn.query(sql, [req.params['catid']], function(err, rows){
-        if( err ) throw err;
+        if( err ) res.send(new ERR.InternalServerError(err));
         if(rows[0]['tk_num'] > 0)
           return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
           
         var sql2 = "DELETE FROM `leeth`.dz_cat WHERE cat_id=?";
         server.conn.query(sql2, [req.params['catid']], function(err2, rows2){
-          if( err2 ) throw err2;
+          if( err2 ) res.send(new ERR.InternalServerError(err2));
           return res.send('OK');
         });
       });
@@ -610,14 +610,14 @@ exports = module.exports = function(server){
       var sql = 'INSERT INTO `leeth`.dz_status(stat_name, stat_priority, stat_hidden) VALUES'
        +'(?, (SELECT (SELECT IFNULL(max(stat_priority),0)+10 a FROM dz_status WHERE stat_hidden=1) AS temp), 1)';
       server.conn.query(sql, [req.params['name']], function(err, rows){
-        if( err ) throw err;
+        if( err ) res.send(new ERR.InternalServerError(err));
         var moveall = (req.params['moveall'] == undefined || req.params['moveall'] == '');
         if(!moveall)
           return res.send('OK');
         
         var sql2 = 'UPDATE dz_ticket SET stat_id=? WHERE stat_id=4';
         server.conn.query(sql, [rows.insertId], function(err2, rows2){
-          if(err2) throw err2;
+          if(err2) res.send(new ERR.InternalServerError(err2));
           return res.send('OK');
         });
       });
@@ -654,7 +654,7 @@ exports = module.exports = function(server){
       var sql = 'INSERT INTO `leeth`.dz_cat(cat_name, cat_priority, cat_color, cat_minacc) VALUES'
        +'(?, ?, ?, ?)';
       server.conn.query(sql, [req.params['name'], req.params['prio'], req.params['color'], req.params['minacc']], function(err, rows){
-        if( err ) throw err;
+        if( err ) res.send(new ERR.InternalServerError(err));
         return res.send('OK');
       });
     });
@@ -692,7 +692,7 @@ exports = module.exports = function(server){
         
       var sql = 'UPDATE `leeth`.dz_cat SET cat_name=?, cat_prio=?, cat_color=?, cat_minacc=? WHERE cat_id=?';
       server.conn.query(sql, [req.params['name'], req.params['prio'], req.params['color'], req.params['minacc'], req.params['cid']], function(err, rows){
-        if( err ) throw err;
+        if( err ) res.send(new ERR.InternalServerError(err));
         return res.send('OK');
       });
     });
@@ -724,7 +724,7 @@ exports = module.exports = function(server){
         
       var sql = 'UPDATE `leeth`.dz_status SET stat_name=?, stat_prio=? WHERE stat_id=?';
       server.conn.query(sql, [req.params['name'], req.params['prio'], req.params['sid']], function(err, rows){
-        if( err ) throw err;
+        if( err ) res.send(new ERR.InternalServerError(err));
         return res.send('OK');
       });
     });
