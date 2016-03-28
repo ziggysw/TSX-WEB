@@ -1,7 +1,7 @@
 var restify = require('restify');
 var redirect = require('restify-redirect');
 var fs = require('fs');
-var mysql = require('mysql');
+var mysql = require('mysql2');
 var NodeCache = require( "node-cache" );
 var g = require('idle-gc');
 g.start();

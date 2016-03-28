@@ -972,14 +972,14 @@ server.put('/user/:SteamID/sendMoney/:cash', function (req, res, next) {
 });
 
 /**
- * @api {post} /user/:SteamID/give giveClientItem
+ * @api {post} /user/:SteamID/giveitem giveClientItem
  * @apiName giveClientItem
  * @apiGroup User
  * @apiParam {String} SteamID Un identifiant unique sous le format STEAM_1:x:xxxxxxx
  * @apiParam {Integer} itemid Identifiant unique de l'item à envoyer
  * @apiParam {Integer} amount la quantité à envoyer
  */
-server.post('/user/:SteamID/give', function (req, res, next) {
+server.post('/user/:SteamID/giveitem', function (req, res, next) {
 
   server.conn.query(server.getAuthSMAdmin, [req.headers.auth], function(err, row) {
     if( err ) return res.send(new ERR.InternalServerError(err));
@@ -992,6 +992,34 @@ server.post('/user/:SteamID/give', function (req, res, next) {
     var itemid = parseInt(req.params['itemid']);
 
     server.conn.query("INSERT INTO `rp_csgo`.`rp_users2` (`id`, `steamid`, `itemid`, `itemAmount`, `pseudo`, `steamid2`) VALUES (NULL, ?, ?, ?, ?, ?);", [req.params['SteamID'], itemid, amount, UserName, SteamID], function(err, row) {
+      if( err ) return res.send(new ERR.InternalServerError(err));
+      return res.send("OK");
+    });
+  });
+
+	next();
+});
+/**
+ * @api {post} /user/:SteamID/givemoney giveClientMoney
+ * @apiName giveClientItem
+ * @apiGroup User
+ * @apiParam {String} SteamID Un identifiant unique sous le format STEAM_1:x:xxxxxxx
+ * @apiParam {Integer} jobid Identifiant unique de l'item à envoyer
+ * @apiParam {Integer} amount la quantité à envoyer
+ */
+server.post('/user/:SteamID/givemoney', function (req, res, next) {
+
+  server.conn.query(server.getAuthSMAdmin, [req.headers.auth], function(err, row) {
+    if( err ) return res.send(new ERR.InternalServerError(err));
+    if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+    var SteamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
+    if( SteamID != "STEAM_1:0:7490757") return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+
+    var UserName = row[0].username;
+    var amount = parseInt(req.params['amount']);
+    var jobid = parseInt(req.params['jobid']);
+
+    server.conn.query("INSERT INTO `rp_csgo`.`rp_users2` (`id`, `steamid`, `job_id`, `money`, `pseudo`, `steamid2`) VALUES (NULL, ?, ?, ?, ?, ?);", [req.params['SteamID'], jobid, amount, UserName, SteamID], function(err, row) {
       if( err ) return res.send(new ERR.InternalServerError(err));
       return res.send("OK");
     });
