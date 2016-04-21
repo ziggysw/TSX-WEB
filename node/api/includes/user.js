@@ -7,6 +7,12 @@ exports = module.exports = function(server){
   var gd = require('node-gd');
   var fs = require('fs');
 
+  function getVitalityLevel(points) {
+    var l = Math.floor(Math.log2(points) / 2.0 - 3.0);
+    if( l < 0 )
+      l = 0;
+    return l;
+  }
   function getRank(pos) {
     if( pos == 1 ) return "Président";
     else if( pos >= 2 && pos < 4 ) return "Vice-Président";
@@ -82,7 +88,7 @@ exports = module.exports = function(server){
 
     var sql = "SELECT U.`name`, `money`+`bank` as `cash`, U.`job_id`, `job_name`, U.`group_id`, G.`name` as `group_name`, `time_played` as `timeplayed`, ";
     sql += "`permi_lege`, `permi_lourd`, `permi_vente`, `train` as `train_knife`, `train_weapon`, `train_esquive`, ";
-    sql += "`pay_to_bank`, `have_card`, `have_account`, `kill`, `death`, `refere`, `timePlayedJob`, U.`skin`, UNIX_TIMESTAMP(`last_connected`) as `last_connected`"
+    sql += "`pay_to_bank`, `have_card`, `have_account`, `kill`, `death`, `refere`, `timePlayedJob`, U.`skin`, UNIX_TIMESTAMP(`last_connected`) as `last_connected`, `vitality`"
     sql += " FROM `rp_users` U INNER JOIN `rp_jobs` J ON J.`job_id`=U.`job_id` INNER JOIN `rp_groups` G ON G.`id`=U.`group_id` WHERE `steamid`=?";
 
     server.conn.query(sql, [req.params['id']], function(err, rows) {
@@ -93,6 +99,7 @@ exports = module.exports = function(server){
       rows[0].skin = (rows[0].skin==''? 'null' : rows[0].skin);
       rows[0].last_connected = new Date(parseInt(rows[0].last_connected)*1000);
       rows[0].steam64 = steamIDToProfile(req.params['id']);
+      rows[0].vitality = getVitalityLevel(rows[0].vitality);
 
       server.cache.set( req._url.pathname, rows[0]);
       return res.send( rows[0] );
@@ -223,7 +230,7 @@ server.get('/user/search/:name', function (req, res, next) {
   var sql = "SELECT C.`steamid`, C.`name`, J.`job_name` as `job` FROM (";
   sql += " ( SELECT `steamid`, `name`, '1' as `priority` FROM `rp_csgo`.`rp_users` WHERE `name` LIKE ? ORDER BY `last_connected` DESC LIMIT 100 ) ";
   sql += " UNION ";
-  sql += " ( SELECT REPLACE(`steamid`, 'STEAM_0', 'STEAM_1'), `username` AS `name`, '2' as `priority` FROM `ts-x`.`phpbb3_users` WHERE `username` LIKE ? OR `username_clean` LIKE ? ORDER BY `user_lastvisit` DESC LIMIT 100) ";
+  sql += " ( SELECT REPLACE(`steamid`, 'STEAM_0', 'STEAM_1')  as `steamid`, CONVERT(`username` USING utf32) AS `name`, '2' as `priority` FROM `ts-x`.`phpbb3_users` WHERE `username` LIKE ? OR `username_clean` LIKE ? ORDER BY `user_lastvisit` DESC LIMIT 100) ";
   sql += " UNION ";
   sql += " ( SELECT `steamid`, `name`, '3' as `priority` FROM `rp_users` U INNER JOIN `rp_jobs` J ON U.`job_id`=J.`job_id` WHERE `job_name` LIKE ? LIMIT 100) ";
   sql += " UNION ";

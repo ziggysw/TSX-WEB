@@ -22,8 +22,8 @@
 			<div class="row">
 				<h4>Les vidéos RP</h4>
 				<div class="video">
-					<p>Présentation de Princeton:</p><br />
-					<figure class="img-polaroid"><a class="various" href="//www.youtube.com/embed/mlDRoYYYmMU" style="opacity: 1;"></a><img alt="" src="https://cdn.ts-x.eu/images/vid_roleplay.jpg" style="max-width:100%;"></figure>
+					<p>Braquages:</p><br />
+					<figure class="img-polaroid"><a class="various" href="https://www.youtube.com/watch?v=RtNNPcaTzO0" style="opacity: 1;"></a><img alt="" src="//i.ytimg.com/vi_webp/RtNNPcaTzO0/mqdefault.webp" style="max-width:100%;"></figure>
 			    </div>
 			</div>
 		</article>
@@ -34,7 +34,7 @@
 	</div>
 	<div id="lights"></div>
 </footer>
-	<script type="text/javascript" src="https://cdn.ts-x.eu/js/compile-bootstrap-globals-jquery.event.move-jquery.twentytwenty.js"></script>
+	<script type="text/javascript" src="https://www.ts-x.eu/js/compile-bootstrap-globals-jquery.event.move-jquery.twentytwenty.js"></script>
 	<script type="text/javascript">$(window).load(function() { $(".calc-diff").twentytwenty();});</script>
 </body>
 </html>

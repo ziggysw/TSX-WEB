@@ -8,7 +8,7 @@ Highcharts.setOptions({lang: {
 }});
 	_isAdmin = {$isAdmin};
 </script>
-<script type="text/javascript" src="/js/browser-apps.jss?vb=54daaa"></script>
+<script type="text/javascript" src="/js/browser-apps.js"></script>
 
 <div class="col-md-12" ng-controller="mainCtrl">
 	<br  />

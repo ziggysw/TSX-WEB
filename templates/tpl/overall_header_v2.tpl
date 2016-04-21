@@ -115,6 +115,7 @@
 	{$intro}
 	<div class="container main">
 <!--<div class="col-sm-12 alert alert-success" role="alert">
-<strong>Le nouveau système de capture PvP est terminé.</strong> Je vous invite à le tester ce soir sur le serveur test. J'espère qu'on sera nombreux, on pourra trouver les derniers problèmes avant de reprendre ça 2x semaines. <a href="https://www.ts-x.eu/forum/viewtopic.php?p=560862#p560862">Plus d'info, débât et discution ici.</a>
+<strong>Après quelques semaines, mois, de retard... <img src="https://www.ts-x.eu/forum/images/smilies/wisdom.gif" /> voici enfin le braquage.</strong> <br />
+	Nous avons besoin d'une grosse 10ène de personnes ce soir après la PvP pour le tester. <a href="https://www.ts-x.eu/forum/viewtopic.php?p=573711#p573711">Inscrivez-vous sur le topic s'il vous plait</a>. Nous allons faire 2-3 simulations, et 2-3 scénarios typiques pour faire une vidéo de la mise à jour.
 </div>-->
 		{$page}

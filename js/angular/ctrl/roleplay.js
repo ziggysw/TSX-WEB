@@ -263,17 +263,21 @@ app.controller('rpSearch', function($scope, $http, $location) {
   if( $location.search() !== undefined) {
     $scope.search = Object.keys($location.search())[0];
   }
+  $scope.sendSearch = function(param) {
+    $http.get("https://www.ts-x.eu/api/user/search/"+$scope.search).success(function(res) { if( param == $scope.searchLast ) $scope.data = res; }).error(function() { $scope.data = []; });
+  }
 
   $scope.updateSteamID = function() {
     if( $scope.search === undefined || $scope.search.length <= 1 )
       return;
 
     $location.search($scope.search);
+    $scope.searchLast = Math.random();
+    $scope.sendSearch($scope.searchLast);
 
-    $http.get("https://www.ts-x.eu/api/user/search/"+$scope.search)
-    .success(function(res) { $scope.data = res; })
-    .error(function() { $scope.data = []; });
   }
+
+
   $scope.updateSteamID();
 });
 app.controller('rpTribunal', function($scope, $location, $filter, $http, $routeParams) {
@@ -323,13 +327,15 @@ app.controller('rpTribunal', function($scope, $location, $filter, $http, $routeP
             $location.path("/tribunal/phone/"+response.id);
         });
       }
-      $http.post("https://www.ts-x.eu/api/report/tribunal", obj).success(function (response) {
-        $scope.$parent.showAlert = true;
-        $scope.$parent.messageAlert = "Votre rapport a été envoyé, il va maintenant être traité par le conseil des no-pyjs, puis par les hauts-juges.";
-        $scope.$parent.messageTitle = "Envois d'un rapport: Ok!";
-        if( response !== undefined )
-          $location.path("/tribunal/case/"+response.id);
-      });
+      else {
+        $http.post("https://www.ts-x.eu/api/report/tribunal", obj).success(function (response) {
+          $scope.$parent.showAlert = true;
+          $scope.$parent.messageAlert = "Votre rapport a été envoyé, il va maintenant être traité par le conseil des no-pyjs, puis par les hauts-juges.";
+          $scope.$parent.messageTitle = "Envois d'un rapport: Ok!";
+          if( response !== undefined )
+            $location.path("/tribunal/case/"+response.id);
+        });
+      }
     }
   }
 });

@@ -33,7 +33,7 @@
     <br /><br /><br />
     <button class="btn btn-danger" ng-show="data.job_id>0 && Params.sub==steamid" rest="delete@/user/job">Quitter mon job</button>
     <button class="btn btn-danger" ng-show="data.group_id>0 && Params.sub==steamid" rest="delete@/user/group">Quitter mon groupe</button>
-    <button class="btn btn-success" ng-show="data.is_admin && Params.sub==steamid" ng-click="updateSteamID(); toggleModal();">Envoyer argent</button>
+    <button class="btn btn-success" ng-show="$parent.isAdmin" ng-click="steamid = Params.sub; toggleModal();">Envoyer argent</button>
     <a class="btn btn-warning" ng-show="$parent.isAdmin" href="#/tribunal/case/{{Params.sub}}">Page du Tribunal</a>
     <br /><br /><br /><br /><br />
     <a href="http://steamcommunity.com/profiles/{{data.steam64}}"><img src="http://steamsignature.com/status/french/{{data.steam64}}.png" /><img src="http://steamsignature.com/AddFriend.png" /></a>
@@ -77,7 +77,7 @@
   <img ng-show="data.group_id > 0" src="https://www.ts-x.eu/do/signature/group/{{Params.sub}}.jpg" />
 </div>
 <div modal-show="showDialog" class="modal fade">
-  <div class="modal-dialog">
+  <div class="modal-dialog" ng-controller="rpSteamIDLookup">
     <form>
       <div class="modal-content">
         <div class="modal-header">
@@ -87,7 +87,7 @@
         <div class="modal-body">
           <div class="input-group">
             <span class="input-group-addon" required>SteamID:</span>
-            <input type="text" class="form-control" ng-model="steamid" ng-change="updateSteamID()" />
+            <input type="text" class="form-control" ng-model="steamid" />
             <span class="input-group-addon">{{pData.name}}</span>
           </div>
           <div class="input-group">
@@ -97,7 +97,7 @@
         </div>
         <div class="modal-footer">
           <button class="btn btn-warning" data-dismiss="modal">Annuler</button>
-          <input class="btn" type="submit" ng-class="valid ? 'btn-success' : 'disabled btn-warning'" value="Envoyer" rest="put@/user/{{steamid}}/sendMoney/{{amount}}" />
+          <input class="btn" type="submit" ng-class="(valid && amount > 0) ? 'btn-success' : 'disabled btn-warning'" value="Envoyer" rest="put@/user/{{steamid}}/sendMoney/{{amount}}" ng-click="toggleModal();" />
         </div>
       </div>
     </form>
