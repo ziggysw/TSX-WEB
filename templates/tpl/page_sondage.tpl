@@ -10,7 +10,7 @@
 </script>
 <form role="form" class="form-inline col-sm-offset-1 col-sm-11" action="index.php?page=sondage&action=post" method="post" id="sondage_form" ng-controller="sondage" >
 	<h2 class="ThemeLettre">Sondage: Le RolePlay</h2>
-	<div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="{{step/80*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{step/80*100}}%;">{{step/80*100 | number: 0}}%</div></div>
+	<div class="progress" ng-hide="step==0"><div class="progress-bar" role="progressbar" aria-valuenow="{{step/80*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{step/80*100}}%;">{{step/80*100 | number: 0}}%</div></div>
 
 	<br clear="all" />
 
