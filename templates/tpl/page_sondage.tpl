@@ -20,7 +20,7 @@
 			Des nouveautés sortent sur le serveur chaque semaine, ce qui rend notre serveur unique.
 			Nous ne souhaitons pas nous arrêter et nous espérons vivre encore une année de plus à
 			vos côtés. Nous avons quelques questions à vous poser afin de suivre la bonne voie.
-			<br> <br />Ce sondage vous prendra 10 à 15 minutes pour y répondre et est anonyme.
+			<br> <br />Ce sondage vous prendra 10 à 15 minutes pour y répondre et il est anonyme.
 		<a class="btn btn-primary pull-right" ng-click="step=1">Commencer le sondage</a>
 		</p>
 	</div>
@@ -100,10 +100,10 @@
 		</div>
 		<div class="form-group col-sm-12" ng-show="step==12">
 			<div class="col-sm-12">Les quêtes sont-elles trop difficiles pour des récompenses trop faibles ?</div>
-			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="0">Oui trop difficile et les récompenses sont parfaites</label>
-			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="1">Oui trop difficile et les récompenses sont trop faibles</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="0">Oui trop difficiles et les récompenses sont parfaites</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="1">Oui trop difficiles et les récompenses sont trop faibles</label>
 			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="2">Non trop faciles et les récompenses trop fortes</label>
-			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="3">Non trop facile et les récompenses sont trop faibles</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="3">Non trop faciles et les récompenses sont trop faibles</label>
 			<a class="btn btn-success" ng-click="step=13">Suivant</a>
 		</div>
 		<div class="form-group col-sm-12" ng-show="step==13">
@@ -286,7 +286,7 @@
 		</div>
 		<div class="form-group col-sm-12" ng-show="step==43">
 			<div class="col-sm-12">Selectionnez l'une des propositions suivantes</div>
-			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="0" >Il faut diminuer le cout des crafts et garder telle quelle la fatigue</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="0" >Il faut diminuer le coût des crafts et garder telle quelle la fatigue</label>
 			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="1">Il faut diminuer la fatigue et garder tel quel le coût des crafts</label>
 			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="1">Je sais pas</label>
 			<a class="btn btn-success" ng-click="step=44">Suivant</a>
@@ -376,7 +376,7 @@
 			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="2" ng-click="step=64">Oui, les problèmes sont principalement liés aux stuff. (Berserk, crack, etc).</label>
 		</div>
 		<div class="form-group col-sm-12" ng-show="step==62">
-			<div class="col-sm-12">Mais à part sanctionner le joueur, avez-vous une suggestion pour éviter ces problèmes ?</div>
+			<div class="col-sm-12">Mis à part sanctionner le joueur, avez-vous une suggestion pour éviter ces problèmes ?</div>
 			<label class="col-sm-offset-3 col-sm-3"><input type="radio" name="q1" value="1" ng-click="step=63"/> Oui</label>
 			<label class="col-sm-3"><input type="radio" name="q1" value="0" ng-click="step=66" /> Non</label>
 		</div>
@@ -386,7 +386,7 @@
 			<a class="btn btn-success" ng-click="step=66">Suivant</a>
 		</div>
 		<div class="form-group col-sm-12" ng-show="step==64">
-			<div class="col-sm-12">Mais à part interdire totalement l’item, avez-vous une suggestion pour équilibrer cet item ?</div>
+			<div class="col-sm-12">Mis à part interdire totalement l’item, avez-vous une suggestion pour équilibrer cet item ?</div>
 			<label class="col-sm-offset-3 col-sm-3"><input type="radio" name="q1" value="1" ng-click="step=65"/> Oui</label>
 			<label class="col-sm-3"><input type="radio" name="q1" value="0" ng-click="step=66"/> Non</label>
 		</div>
