@@ -293,8 +293,8 @@
 		</div>
 		<div class="form-group col-sm-12" ng-show="step==44">
 			<div class="col-sm-12">Pensez-vous que l'artisanat a un effet négatif pour votre métier ?</div>
-			<label class="col-sm-offset-3 col-sm-2"><input type="radio" name="q1" value="1" /> Oui</label>
-			<label class="col-sm-2"><input type="radio" name="q1" value="0" /> Non</label>
+			<label class="col-sm-offset-3 col-sm-2"><input type="radio" name="q1" value="2" /> Oui</label>
+			<label class="col-sm-2"><input type="radio" name="q1" value="1" /> Non</label>
 			<label class="col-sm-2"><input type="radio" name="q1" value="0" /> Je sais pas</label>
 			<a class="btn btn-success" ng-click="step=45">Suivant</a>
 		</div>
@@ -321,7 +321,7 @@
 			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="3">Je trouve ça trop chiant</label>
 			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="4">Je trouve ça trop long</label>
 			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="5">Autre</label>
-			<a class="btn btn-success" ng-click="step=44">Suivant</a>
+			<a class="btn btn-success" ng-click="step=50">Suivant</a>
 		</div>
 	</div>
 
