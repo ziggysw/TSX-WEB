@@ -1,6 +1,11 @@
 <script type="text/javascript">
 	_app.controller('sondage', function($scope) {
 	    $scope.step = 0;
+			$scope.restart = function() {
+				if( window.confirm("Toutes vos réponses seront supprimées, êtes vous sur de vouloir recommencer le sondage?") ) {
+					location.href = "/index.php?page=sondage";
+				}
+			}
 	});
 </script>
 <form role="form" class="form-inline col-sm-offset-1 col-sm-11" action="index.php?page=sondage&action=post" method="post" id="sondage_form" ng-controller="sondage" >
@@ -10,8 +15,15 @@
 	<br clear="all" />
 
 	<div class="rows" ng-show="step==0">
-		Blablabla
-		<a class="btn btn-primary" ng-click="step=1">Commencer le sondage</a>
+		<p class="col-sm-9 col-sm-offset-1"><br /><br />
+			&nbsp;&nbsp;&nbsp;&nbsp;En 6 années d'existance notre serveur n'a pas cesser d'évoluer. Des nouveautés
+		sortent sur le serveur chaques semaines, ce qui rend notre serveur unique.
+		Nous ne souhaitons pas nous arrêtez et nous espérons vivre encore une année
+		de plus à vos cotés. Nous avons quelques questions à vous posez afin de suivre
+		la bonne voie.
+		<br /><br />Ce sondage vous prendra 10 à 15 minutes pour y répondre et est anonymes.
+		<a class="btn btn-primary pull-right" ng-click="step=1">Commencer le sondage</a>
+		</p>
 	</div>
 	<div class="rows" ng-show="step>=1 && step < 10">
 		<h3>Les débutants</h3>
@@ -491,8 +503,12 @@
 	</div>
 
 	<div class="rows" ng-show="step==80">
-		Merci !
+		<p class="col-sm-6 col-sm-offset-3"><br /><br />
+			Merci pour le temps que vous avez consacrer à répondre à ce sondage !<br />
+			<a class="btn btn-danger" ng-click="restart()">Recommencer le sondage</a> ou
+			<input type="submit" class="btn btn-success" value="Envoyer mes réponses" />
+			<br /><br /><br /><br />
+		</p>
 	</div>
-
-	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />
+	<div class="rows"><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></div>
 </form>
