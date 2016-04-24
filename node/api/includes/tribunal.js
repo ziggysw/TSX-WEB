@@ -45,13 +45,26 @@ exports = module.exports = function(server){
 
             var SteamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
 
-            server.conn.query("SELECT `job_id` FROM `rp_users` WHERE `steamid`=?", [SteamID], function(err, row) {
+            server.conn.query("SELECT * FROM `rp_csgo`.`rp_tribunal` WHERE `steamid`=? AND `uniqID`=? AND `timestamp`+(30*60*60)>=UNIX_TIMESTAMP()", [tokken.replace("STEAM_0", "STEAM_1").trim(), SteamID], function(err, row) {
               if( err ) return res.send(new ERR.InternalServerError(err));
-              if( row[0] == null ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
-              if( row[0].job_id >= 101 && row[0].job_id <= 106 ) {
-                var dStart = moment().subtract(2, 'hour').toDate();
-                var dEnd = moment().add(1, 'hour').toDate();
 
+              if( row[0] == null ) {
+                server.conn.query("SELECT `job_id` FROM `rp_users` WHERE `steamid`=?", [SteamID], function(err, row) {
+                  if( err ) return res.send(new ERR.InternalServerError(err));
+                  if( row[0] == null ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+                  if( row[0].job_id >= 101 && row[0].job_id <= 106 ) {
+                    var dStart = moment().subtract(2, 'hour').toDate();
+                    var dEnd = moment().add(1, 'hour').toDate();
+                    callback(null, tokken.replace("STEAM_0", "STEAM_1").trim(), dStart, dEnd);
+                  }
+                  else {
+                    callback("InvalidParam");
+                  }
+                });
+              }
+              else {
+                var dStart = moment().startOf('month').toDate();
+                var dEnd = moment().startOf('month').add(1, 'months').toDate();
                 callback(null, tokken.replace("STEAM_0", "STEAM_1").trim(), dStart, dEnd);
               }
             });
