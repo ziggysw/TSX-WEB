@@ -76,8 +76,8 @@
 			<div class="col-sm-12">Quelle est votre quête préférée ?</div>
 			<select name="q1_1" class="form-control col-sm-offset-3 col-sm-6">
 				<option value="0">Aucune</option>
-				<option value="1">18-Th: Blanchiment d'argent</option>
-				<option value="2">18-Th: Vol de voiture</option>
+				<option value="1">18TH: Blanchiment d'argent</option>
+				<option value="2">18TH: Vol de voiture</option>
 				<option value="3">Dealer: Surveillance des plants</option>
 				<option value="4">Dealer: Récolte des plants</option>
 				<option value="5">Justice: La justice sournoise</option>
