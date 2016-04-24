@@ -2,7 +2,7 @@
 	_app.controller('sondage', function($scope) {
 	    $scope.step = 0;
 			$scope.restart = function() {
-				if( window.confirm("Toutes vos réponses seront supprimées, êtes vous sur de vouloir recommencer le sondage?") ) {
+				if( window.confirm("Toutes vos réponses seront supprimées, êtes vous sur de vouloir recommencer le sondage ?") ) {
 					location.href = "/index.php?page=sondage";
 				}
 			}
@@ -282,13 +282,13 @@
 		<div class="form-group col-sm-12" ng-show="step==42">
 			<div class="col-sm-12">Avez-vous déjà pratiqué l'artisanat sur notre serveur ?</div>
 			<label class="col-sm-offset-3 col-sm-3"><input type="radio" name="q1" value="1" ng-click="step=43"/> Oui</label>
-			<label class="col-sm-3"><input type="radio" name="q1" value="0" ng-click="step=50"/> Non</label>
+			<label class="col-sm-3"><input type="radio" name="q1" value="0" ng-click="step=48"/> Non</label>
 		</div>
 		<div class="form-group col-sm-12" ng-show="step==43">
 			<div class="col-sm-12">Selectionnez l'une des propositions suivantes</div>
 			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="0" >Il faut diminuer le coût des crafts et garder telle quelle la fatigue</label>
 			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="1">Il faut diminuer la fatigue et garder tel quel le coût des crafts</label>
-			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="1">Je sais pas</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="2">Je sais pas</label>
 			<a class="btn btn-success" ng-click="step=44">Suivant</a>
 		</div>
 		<div class="form-group col-sm-12" ng-show="step==44">
@@ -312,6 +312,16 @@
 			<div class="col-sm-12">Pensez-vous qu’il faille rajouter un mini-tutorial pour son premier craft ?</div>
 			<label class="col-sm-offset-3 col-sm-3"><input type="radio" name="q1" value="1" ng-click="step=50"/> Oui</label>
 			<label class="col-sm-3"><input type="radio" name="q1" value="0" ng-click="step=50"/> Non</label>
+		</div>
+		<div class="form-group col-sm-12" ng-show="step==48">
+			<div class="col-sm-12">Selectionnez l'une des propositions suivantes</div>
+			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="0" >Je ne connais pas</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="1">Je trouve ça trop compliqué</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="2">Je trouve ça trop cher</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="3">Je trouve ça trop chiant</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="4">Je trouve ça trop long</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="5">Autre</label>
+			<a class="btn btn-success" ng-click="step=44">Suivant</a>
 		</div>
 	</div>
 
