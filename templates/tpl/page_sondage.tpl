@@ -16,12 +16,11 @@
 
 	<div class="rows" ng-show="step==0">
 		<p class="col-sm-9 col-sm-offset-1"><br /><br />
-			&nbsp;&nbsp;&nbsp;&nbsp;En 6 années d'existance notre serveur n'a pas cesser d'évoluer. Des nouveautés
-		sortent sur le serveur chaques semaines, ce qui rend notre serveur unique.
-		Nous ne souhaitons pas nous arrêtez et nous espérons vivre encore une année
-		de plus à vos cotés. Nous avons quelques questions à vous posez afin de suivre
-		la bonne voie.
-		<br /><br />Ce sondage vous prendra 10 à 15 minutes pour y répondre et est anonymes.
+			&nbsp;&nbsp;&nbsp;&nbsp;En 6 années d'existence, notre serveur n'a pas cessé d'évoluer.
+			Des nouveautés sortent sur le serveur chaque semaine, ce qui rend notre serveur unique.
+			Nous ne souhaitons pas nous arrêter et nous espérons vivre encore une année de plus à
+			vos côtés. Nous avons quelques questions à vous poser afin de suivre la bonne voie.
+			<br> <br />Ce sondage vous prendra 10 à 15 minutes pour y répondre et est anonyme.
 		<a class="btn btn-primary pull-right" ng-click="step=1">Commencer le sondage</a>
 		</p>
 	</div>
@@ -504,7 +503,7 @@
 
 	<div class="rows" ng-show="step==80">
 		<p class="col-sm-6 col-sm-offset-3"><br /><br />
-			Merci pour le temps que vous avez consacrer à répondre à ce sondage !<br />
+			Merci pour le temps que vous avez consacré à répondre à ce sondage !<br />
 			<a class="btn btn-danger" ng-click="restart()">Recommencer le sondage</a> ou
 			<input type="submit" class="btn btn-success" value="Envoyer mes réponses" />
 			<br /><br /><br /><br />
