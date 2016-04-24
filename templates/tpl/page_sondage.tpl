@@ -59,7 +59,7 @@
 			<div class="col-sm-12">Quelles étaient vos difficultés ?</div>
 			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q2_4" value="0">Je suis resté trop longtemps sans emploi</label>
 			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q2_4" value="1">Il y a trop de meurtres en ville</label>
-			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q2_4" value="2">Il y a trop de commandes à connaitre</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q2_4" value="2">Il y a trop de commandes à connaître</label>
 			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q2_4" value="3">Le tutorial devrait expliquer le premier job</label>
 			<a class="btn btn-success" ng-click="step=10">Suivant</a>
 		</div>
@@ -76,8 +76,8 @@
 			<div class="col-sm-12">Quelle est votre quête préférée ?</div>
 			<select name="q1_1" class="form-control col-sm-offset-3 col-sm-6">
 				<option value="0">Aucune</option>
-				<option value="1">18TH: Blanchiment d'argent</option>
-				<option value="2">18TH: Vol de voiture</option>
+				<option value="1">18-Th: Blanchiment d'argent</option>
+				<option value="2">18-Th: Vol de voiture</option>
 				<option value="3">Dealer: Surveillance des plants</option>
 				<option value="4">Dealer: Récolte des plants</option>
 				<option value="5">Justice: La justice sournoise</option>
@@ -168,7 +168,7 @@
 	<div class="rows" ng-show="step>=30 && step < 40">
 		<h3>Princeton</h3>
 		<div class="form-group col-sm-12" ng-show="step==30">
-			<div class="col-sm-12">Quel est votre lieu que vous préférez dans Princeton ?</div>
+			<div class="col-sm-12">Quel est le lieu que vous préférez dans Princeton?</div>
 			<select name="q1_1" class="form-control col-sm-offset-3 col-sm-6">
 				<option value="0">Le commissariat</option>
 				<option value="1">L'hôpital</option>
@@ -203,7 +203,7 @@
 			<a class="btn btn-success" ng-click="step=32">Suivant</a>
 		</div>
 		<div class="form-group col-sm-12" ng-show="step==32">
-			<div class="col-sm-12">Quel est votre lieu que vous aimez le moins dans Princeton ?</div>
+			<div class="col-sm-12">Quel est le lieu que vous aimez le moins dans Princeton ?</div>
 			<select name="q1_1" class="form-control col-sm-offset-3 col-sm-6">
 				<option value="0">Le commissariat</option>
 				<option value="1">L'hôpital</option>
