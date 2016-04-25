@@ -11,16 +11,13 @@
 <style>
 	#sondage_form > div, #sondage_form > div > div {
 		font-size: 14px;
+		color: white;
 	}
 </style>
 <form role="form" class="form-inline col-sm-offset-1 col-sm-11" action="index.php?page=sondage&action=post" method="post" id="sondage_form" ng-controller="sondage" >
-	<img src="https://i.gyazo.com/0d7a97f6c7a8d2a3cd0dd7927eaf80eb.png">
-	<div class="progress" ng-hide="step==0"><div class="progress-bar" role="progressbar" aria-valuenow="{{step/80*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{step/80*100}}%;">{{step/80*100 | number: 0}}%</div></div>
-
+	<img src="/images/sondage.png" style="width:100%" />
 	<br clear="all" />
-
 	<div class="row" ng-show="step==0">
-		<div style="color:white;" class="row" ng-show="step==0">
 		<p class="col-sm-9 col-sm-offset-1"><br><br>
         	 En 6 années d'existence, notre serveur n'a pas cessé d'évoluer et de s'améliorer.<br />
 		Des nouveautés sortent chaque semaine sur le serveur et ce qui le rend unique,
@@ -30,8 +27,8 @@
 		Ce sondage vous prendra 10 à 15 minutes pour y répondre et il est anonyme.</p>
   <br><br>
 		<a class="btn btn-primary pull-right" ng-click="step=1">Commencer le sondage</a>
-
 	</div>
+
 	<div class="row" ng-show="step>=1 && step < 10">
 		<h3>Les débutants</h3>
 		<div class="form-group col-sm-12" ng-show="step==1">
@@ -65,15 +62,15 @@
 		</div>
 		<div class="form-group col-sm-12" ng-show="step==5">
 			<div class="col-sm-12">Quelles étaient vos difficultés ?</div>
-			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q5" value="0">Je suis resté trop longtemps sans emploi</label>
-			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q5" value="1">Il y a trop de meurtres en ville</label>
-			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q5" value="2">Il y a trop de commandes à connaître</label>
-			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q5" value="3">Le tutorial devrait expliquer le premier job</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q5[]" value="0">Je suis resté trop longtemps sans emploi</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q5[]" value="1">Il y a trop de meurtres en ville</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q5[]" value="2">Il y a trop de commandes à connaître</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q5[]" value="3">Le tutorial devrait expliquer le premier job</label>
 			<a class="btn btn-success" ng-click="step=10">Suivant</a>
 		</div>
 	</div>
 
-	<div class="rows" ng-show="step>=10 && step < 20">
+	<div class="row" ng-show="step>=10 && step < 20">
 		<h3>Les quêtes</h3>
 		<div class="form-group col-sm-12" ng-show="step==10">
 			<div class="col-sm-12">Connaissez-vous les quêtes sur le roleplay ?</div>
@@ -144,7 +141,7 @@
 		</div>
 	</div>
 
-	<div class="rows" ng-show="step>=20 && step < 30">
+	<div class="row" ng-show="step>=20 && step < 30">
 		<h3>Le roleplay</h3>
 		<div class="form-group col-sm-12" ng-show="step==20">
 			<div class="col-sm-12">Pensez-vous que le serveur devrait être plus roleplay ?</div>
@@ -173,7 +170,7 @@
 		</div>
 	</div>
 
-	<div class="rows" ng-show="step>=30 && step < 40">
+	<div class="row" ng-show="step>=30 && step < 40">
 		<h3>Princeton</h3>
 		<div class="form-group col-sm-12" ng-show="step==30">
 			<div class="col-sm-12">Quel est le lieu que vous préférez dans Princeton ?</div>
@@ -247,7 +244,7 @@
 		</div>
 	</div>
 
-	<div class="rows" ng-show="step>=40 && step < 42">
+	<div class="row" ng-show="step>=40 && step < 42">
 		<h3>Les Métiers</h3>
 		<div class="form-group col-sm-12" ng-show="step==40">
 			<div class="col-sm-12">Quel est votre métier préféré sur notre serveur ?</div>
@@ -276,16 +273,16 @@
 		</div>
 		<div class="form-group col-sm-12" ng-show="step==41">
 			<div class="col-sm-12">Pourquoi ce job vous intéresse-t-il ?</div>
-			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q41" value="0">L'argent, on y gagne beaucoup</label>
-			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q41" value="1">Les personnes présentes dans le métier</label>
-			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q41" value="2">Je trouve que le chef du métier fait bien son travail</label>
-			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q41" value="3">Le prestige de faire partie de ce métier</label>
-			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q41" value="3">Il y a toujours quelque chose à faire dans ce job</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q41[]" value="0">L'argent, on y gagne beaucoup</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q41[]" value="1">Les personnes présentes dans le métier</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q41[]" value="2">Je trouve que le chef du métier fait bien son travail</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q41[]" value="3">Le prestige de faire partie de ce métier</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q41[]" value="3">Il y a toujours quelque chose à faire dans ce job</label>
 			<a class="btn btn-success" ng-click="step=42">Suivant</a>
 		</div>
 	</div>
 
-	<div class="rows" ng-show="step>=42 && step < 50">
+	<div class="row" ng-show="step>=42 && step < 50">
 		<h3>L'artisanat</h3>
 		<div class="form-group col-sm-12" ng-show="step==42">
 			<div class="col-sm-12">Avez-vous déjà pratiqué l'artisanat sur notre serveur ?</div>
@@ -333,7 +330,7 @@
 		</div>
 	</div>
 
-	<div class="rows" ng-show="step>=50 && step < 60">
+	<div class="row" ng-show="step>=50 && step < 60">
 		<h3>Les meurtres / Le freekill</h3>
 		<div class="form-group col-sm-12" ng-show="step==50">
 			<div class="col-sm-12">Pensez-vous qu’il y a trop de meurtre en ville ?</div>
@@ -380,7 +377,7 @@
 		</div>
 	</div>
 
-	<div class="rows" ng-show="step>=60 && step < 70">
+	<div class="row" ng-show="step>=60 && step < 70">
 		<h3>Le PvP</h3>
 		<div class="form-group col-sm-12" ng-show="step==60">
 			<div class="col-sm-12">Connaissez-vous le système de PvP présent sur le serveur ?</div>
@@ -426,16 +423,16 @@
 		</div>
 		<div class="form-group col-sm-12" ng-show="step==68">
 			<div class="col-sm-12">Pourquoi ?</div>
-			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q68" value="0">Le stuff coûte trop cher</label>
-			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q68" value="1">Je n'ai pas de groupe</label>
-			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q68" value="2">Mon groupe n'est pas assez organisé</label>
-			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q68" value="2">Je n'y comprends rien</label>
-			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q68" value="3">Je m'oppose au système de capture actuel</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q68[]" value="0">Le stuff coûte trop cher</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q68[]" value="1">Je n'ai pas de groupe</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q68[]" value="2">Mon groupe n'est pas assez organisé</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q68[]" value="2">Je n'y comprends rien</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q68[]" value="3">Je m'oppose au système de capture actuel</label>
 			<a class="btn btn-success" ng-click="step=70">Suivant</a>
 		</div>
 	</div>
 
-	<div class="rows" ng-show="step>=70 && step < 80">
+	<div class="row" ng-show="step>=70 && step < 80">
 		<h3>Les administrateurs</h3>
 		<div class="form-group col-sm-12" ng-show="step==70">
 			<div class="col-sm-12">Pensez-vous que les admins sont suffisamment réactifs aux questions des joueurs ?</div>
@@ -519,7 +516,7 @@
 		</div>
 	</div>
 
-	<div class="rows" ng-show="step==80">
+	<div class="row" ng-show="step==80">
 		<p class="col-sm-6 col-sm-offset-3"><br /><br />
 			Merci pour le temps que vous avez consacré à répondre à ce sondage !<br />
 			<a class="btn btn-danger" ng-click="restart()">Recommencer le sondage</a> ou
@@ -527,5 +524,9 @@
 			<br /><br /><br /><br />
 		</p>
 	</div>
-	<div class="rows"><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></div>
+	<div class="rows">
+		<br /><br /><br />
+		<div class="progress" ng-hide="step==0"><div class="progress-bar" role="progressbar" aria-valuenow="{{step/80*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{step/80*100}}%;">{{step/80*100 | number: 0}}%</div></div>
+
+	</div>
 </form>
