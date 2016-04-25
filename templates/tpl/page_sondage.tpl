@@ -14,22 +14,25 @@
 	}
 </style>
 <form role="form" class="form-inline col-sm-offset-1 col-sm-11" action="index.php?page=sondage&action=post" method="post" id="sondage_form" ng-controller="sondage" >
-	<h2 class="ThemeLettre">Sondage: Le RolePlay</h2>
+	<img src="https://i.gyazo.com/0d7a97f6c7a8d2a3cd0dd7927eaf80eb.png">
 	<div class="progress" ng-hide="step==0"><div class="progress-bar" role="progressbar" aria-valuenow="{{step/80*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{step/80*100}}%;">{{step/80*100 | number: 0}}%</div></div>
 
 	<br clear="all" />
 
-	<div class="rows" ng-show="step==0">
-		<p class="col-sm-9 col-sm-offset-1"><br /><br />
-			&nbsp;&nbsp;&nbsp;&nbsp;En 6 années d'existence, notre serveur n'a pas cessé d'évoluer.
-			Des nouveautés sortent sur le serveur chaque semaine, ce qui rend notre serveur unique.
-			Nous ne souhaitons pas nous arrêter et nous espérons vivre encore une année de plus à
-			vos côtés. Nous avons quelques questions à vous poser afin de suivre la bonne voie.
-			<br> <br />Ce sondage vous prendra 10 à 15 minutes pour y répondre et il est anonyme.
+	<div class="row" ng-show="step==0">
+		<div style="color:white;" class="row" ng-show="step==0">
+		<p class="col-sm-9 col-sm-offset-1"><br><br>
+        	 En 6 années d'existence, notre serveur n'a pas cessé d'évoluer et de s'améliorer.<br />
+		Des nouveautés sortent chaque semaine sur le serveur et ce qui le rend unique, 
+		mais nous ne souhaitons pas nous arrêter là et nous espérons vivre encore quelque années de plus à vos côtés. <br />
+        	Nous avons quelques questions à vous poser afin de suivre la bonne voie.<br />
+		<br /><br />
+		Ce sondage vous prendra 10 à 15 minutes pour y répondre et il est anonyme.</p>
+  <br><br>
 		<a class="btn btn-primary pull-right" ng-click="step=1">Commencer le sondage</a>
-		</p>
+		
 	</div>
-	<div class="rows" ng-show="step>=1 && step < 10">
+	<div class="row" ng-show="step>=1 && step < 10">
 		<h3>Les débutants</h3>
 		<div class="form-group col-sm-12" ng-show="step==1">
 			<div class="col-sm-12">Pensez-vous que le tutorial du serveur est assez complet ?</div>
@@ -81,12 +84,12 @@
 			<div class="col-sm-12">Quelle est votre quête préférée ?</div>
 			<select name="q1_1" class="form-control col-sm-offset-3 col-sm-6">
 				<option value="0">Aucune</option>
-				<option value="1">18-Th: Blanchiment d'argent</option>
-				<option value="2">18-Th: Vol de voiture</option>
+				<option value="1">18th: Blanchiment d'argent</option>
+				<option value="2">18th: Vol de voiture</option>
 				<option value="3">Dealer: Surveillance des plants</option>
 				<option value="4">Dealer: Récolte des plants</option>
 				<option value="5">Justice: La justice sournoise</option>
-				<option value="6">Justice: La justice exprès</option>
+				<option value="6">Justice: La justice express</option>
 				<option value="7">Justice: Un homme très recherché</option>
 				<option value="8">Mafia: Délivrance</option>
 				<option value="9">Mafia: Où est Charlie?</option>
@@ -130,12 +133,12 @@
 			<a class="btn btn-success" ng-click="step=16">Suivant</a>
 		</div>
 		<div class="form-group col-sm-12" ng-show="step==16">
-			<div class="col-sm-12">La quête braquage est une quête “en groupe”. Avez-vous une idée d’une autre quête à faire “en groupe” ?</div>
+			<div class="col-sm-12">La quête braquage est une quête “en groupe”, avez-vous une idée d’une autre quête à faire “en groupe” ?</div>
 			<label class="col-sm-offset-3 col-sm-3"><input type="radio" name="q1_3_3" value="1" ng-click="step=17" /> Oui</label>
 			<label class="col-sm-3"><input type="radio" name="q1_3_3" value="0" ng-click="step=20"/> Non</label>
 		</div>
 		<div class="form-group col-sm-12" ng-show="step==17">
-			<div class="col-sm-12">Quelle est votre idée?</div>
+			<div class="col-sm-12">Quelle est votre idée ?</div>
 			<textarea class="form-control col-sm-offset-3" name="q1_3_4" style="width:50% !important;"></textarea>
 			<a class="btn btn-success" ng-click="step=20">Suivant</a>
 		</div>
@@ -144,12 +147,12 @@
 	<div class="rows" ng-show="step>=20 && step < 30">
 		<h3>Le roleplay</h3>
 		<div class="form-group col-sm-12" ng-show="step==20">
-			<div class="col-sm-12">Pensez-vous que le roleplay devrait-il être plus roleplay ?</div>
+			<div class="col-sm-12">Pensez-vous que le serveur devrait être plus roleplay ?</div>
 			<label class="col-sm-offset-3 col-sm-3"><input type="radio" name="q3" value="1" ng-click="step=21"/> Oui</label>
 			<label class="col-sm-3"><input type="radio" name="q3" value="0" ng-click="step=30"/> Non</label>
 		</div>
 		<div class="form-group col-sm-12" ng-show="step==21">
-			<div class="col-sm-12">Pensez-vous que les joueurs devraient tous avoir un nom et prénom RP. Exemple: Jean Peuplus ?</div>
+			<div class="col-sm-12">Pensez-vous que les joueurs devraient tous avoir un nom et un prénom RP. Exemple: Jean Peuplus ?</div>
 			<label class="col-sm-offset-3 col-sm-3"><input type="radio" name="q3" value="1" ng-click="step=22"/> Oui</label>
 			<label class="col-sm-3"><input type="radio" name="q3" value="0" ng-click="step=22"/> Non</label>
 		</div>
@@ -173,7 +176,7 @@
 	<div class="rows" ng-show="step>=30 && step < 40">
 		<h3>Princeton</h3>
 		<div class="form-group col-sm-12" ng-show="step==30">
-			<div class="col-sm-12">Quel est le lieu que vous préférez dans Princeton?</div>
+			<div class="col-sm-12">Quel est le lieu que vous préférez dans Princeton ?</div>
 			<select name="q1_1" class="form-control col-sm-offset-3 col-sm-6">
 				<option value="0">Le commissariat</option>
 				<option value="1">L'hôpital</option>
@@ -185,12 +188,12 @@
 				<option value="7">La planque 18th</option>
 				<option value="8">La planque dealer</option>
 				<option value="9">Le SexShop</option>
-				<option value="10">Le batiment des Tueurs</option>
-				<option value="11">Le batiment des Concessionnaires</option>
-				<option value="12">Le batiment des Coachs</option>
-				<option value="13">Le batiemnt des Couturier</option>
-				<option value="14">Le batiment des Artificiers</option>
-				<option value="15">Le batiment des vendeurs de ticket Loto</option>
+				<option value="10">Le bâtiment des Tueurs</option>
+				<option value="11">Le bâtiment des Concessionnaires</option>
+				<option value="12">Le bâtiment des Coachs</option>
+				<option value="13">Le bâtiment des Couturier</option>
+				<option value="14">Le bâtiment des Artificiers</option>
+				<option value="15">Le bâtiment des vendeurs de ticket Loto</option>
 				<option value="16">Le batiment des techniciens</option>
 				<option value="17">La villa PvP</option>
 				<option value="18">La villa immobilier</option>
@@ -220,13 +223,13 @@
 				<option value="7">La planque 18th</option>
 				<option value="8">La planque dealer</option>
 				<option value="9">Le SexShop</option>
-				<option value="10">Le batiment des Tueurs</option>
-				<option value="11">Le batiment des Concessionnaires</option>
-				<option value="12">Le batiment des Coachs</option>
-				<option value="13">Le batiemnt des Couturier</option>
-				<option value="14">Le batiment des Artificiers</option>
-				<option value="15">Le batiment des vendeurs de ticket Loto</option>
-				<option value="16">Le batiment des techniciens</option>
+				<option value="10">Le bâtiment des Tueurs</option>
+				<option value="11">Le bâtiment des Concessionnaires</option>
+				<option value="12">Le bâtiment des Coachs</option>
+				<option value="13">Le bâtiment des Couturier</option>
+				<option value="14">Le bâtiment des Artificiers</option>
+				<option value="15">Le bâtiment des vendeurs de ticket Loto</option>
+				<option value="16">Le bâtiment des techniciens</option>
 				<option value="17">La villa PvP</option>
 				<option value="18">La villa immobilier</option>
 				<option value="19">La villa Mafieuse</option>
@@ -322,7 +325,7 @@
 			<div class="col-sm-12">Selectionnez l'une des propositions suivantes</div>
 			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="0" >Je ne connais pas</label>
 			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="1">Je trouve ça trop compliqué</label>
-			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="2">Je trouve ça trop cher</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="2">Je trouve ça trop coûteux</label>
 			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="3">Je trouve ça trop chiant</label>
 			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="4">Je trouve ça trop long</label>
 			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="5">Autre</label>
@@ -338,7 +341,7 @@
 			<label class="col-sm-3"><input type="radio" name="q1" value="0" ng-click="step=57"/> Non</label>
 		</div>
 		<div class="form-group col-sm-12" ng-show="step==51">
-			<div class="col-sm-12">Connaissez-vous le Tribunal en jeu?</div>
+			<div class="col-sm-12">Connaissez-vous le Tribunal en jeu ?</div>
 			<label class="col-sm-offset-3 col-sm-3"><input type="radio" name="q1" value="1" ng-click="step=52" /> Oui</label>
 			<label class="col-sm-3"><input type="radio" name="q1" value="0" ng-click="step=52"/> Non</label>
 		</div>
@@ -366,7 +369,7 @@
 			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="3" ng-click="step=56">Autre</label>
 		</div>
 		<div class="form-group col-sm-12" ng-show="step==56">
-			<div class="col-sm-12">Préciser</div>
+			<div class="col-sm-12">Précisez :</div>
 			<textarea class="form-control col-sm-offset-3" name="q1_3_2" style="width:50% !important;"></textarea>
 			<a class="btn btn-success" ng-click="step=60">Suivant</a>
 		</div>
@@ -385,7 +388,7 @@
 			<label class="col-sm-3"><input type="radio" name="q1" value="0" ng-click="step=70" /> Non</label>
 		</div>
 		<div class="form-group col-sm-12" ng-show="step==61">
-			<div class="col-sm-12">Pensez-vous qu’il y a des problèmes liés à celle-ci ?</div>
+			<div class="col-sm-12">Pensez-vous qu’il y ait des problèmes liés à celle-ci ?</div>
 			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="0" ng-click="step=66">Non</label>
 			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="1" ng-click="step=62">Oui, les problèmes sont principalement liés aux personnes eux-mêmes. (Rage, non fairplay, hors pvp).</label>
 			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q1_2" value="2" ng-click="step=64">Oui, les problèmes sont principalement liés aux stuff. (Berserk, crack, etc).</label>
@@ -396,7 +399,7 @@
 			<label class="col-sm-3"><input type="radio" name="q1" value="0" ng-click="step=66" /> Non</label>
 		</div>
 		<div class="form-group col-sm-12" ng-show="step==63">
-			<div class="col-sm-12">Préciser</div>
+			<div class="col-sm-12">Précisez :</div>
 			<textarea class="form-control col-sm-offset-3" name="q1_3_2" style="width:50% !important;"></textarea>
 			<a class="btn btn-success" ng-click="step=66">Suivant</a>
 		</div>
@@ -406,7 +409,7 @@
 			<label class="col-sm-3"><input type="radio" name="q1" value="0" ng-click="step=66"/> Non</label>
 		</div>
 		<div class="form-group col-sm-12" ng-show="step==65">
-			<div class="col-sm-12">Préciser</div>
+			<div class="col-sm-12">Précisez :</div>
 			<textarea class="form-control col-sm-offset-3" name="q1_3_2" style="width:50% !important;"></textarea>
 			<a class="btn btn-success" ng-click="step=66">Suivant</a>
 		</div>

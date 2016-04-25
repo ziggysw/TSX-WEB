@@ -120,12 +120,12 @@ pre.well > img { margin-right: 5px; }
 							<option>Jail par déduction</option>
 							<option>Freekill en fonction</option>
 							<option>Abus de perquisition</option>
-							<option>Autre, préciser:</option>
+							<option>Autre, précisez :</option>
 						</select>
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Informations supplémentaire: </label>
+					<label class="col-sm-2 control-label">Informations supplémentaires: </label>
 					<div class="col-sm-6 col-md-offset-1">
 						<textarea class="form-control" required="required" ng-model="moreinfo"></textarea>
 					</div>
