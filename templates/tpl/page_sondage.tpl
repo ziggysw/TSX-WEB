@@ -366,7 +366,7 @@
 			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q55" value="1" ng-click="step=60">Augmenter le temps de prison pour meurtre par les juges</label>
 			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q55" value="2" ng-click="step=60">Augmenter le temps de prison pour meurtre par le /report</label>
 			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q55" value="3" ng-click="step=60">Augmenter la pénalité liée à la maladie du freekill</label>
-			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q55" value="3" ng-click="step=56">Autre</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q55" value="4" ng-click="step=56">Autre</label>
 		</div>
 		<div class="form-group col-sm-12" ng-show="step==56">
 			<div class="col-sm-12">Précisez :</div>
@@ -430,7 +430,7 @@
 			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q68" value="1">Je n'ai pas de groupe</label>
 			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q68" value="2">Mon groupe n'est pas assez organisé</label>
 			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q68" value="2">Je n'y comprends rien</label>
-			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q68" value="2">Je m'oppose au système de capture actuel</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="checkbox" name="q68" value="3">Je m'oppose au système de capture actuel</label>
 			<a class="btn btn-success" ng-click="step=70">Suivant</a>
 		</div>
 	</div>
