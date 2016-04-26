@@ -105,10 +105,11 @@
 		</div>
 		<div class="form-group col-sm-12" ng-show="step==12">
 			<div class="col-sm-12">Les quêtes sont-elles trop difficiles pour des récompenses trop faibles ?</div>
-			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q12" value="0">Oui trop difficiles et les récompenses sont parfaites</label>
-			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q12" value="1">Oui trop difficiles et les récompenses sont trop faibles</label>
-			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q12" value="2">Non trop faciles et les récompenses trop fortes</label>
-			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q12" value="3">Non trop faciles et les récompenses sont trop faibles</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q12" value="0">Non, c'est parfait</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q12" value="1">Les quêtes sont difficiles mais les récompenses trop faible</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q12" value="2">Les quêtes sont difficiles et les récompenses trop forte</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q12" value="3">Les quêtes sont facile et les récompenses trop faible</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q12" value="4">Les quêtes sont facile mais les récompenses trop forte</label>
 			<a class="btn btn-success" ng-click="step=13">Suivant</a>
 		</div>
 		<div class="form-group col-sm-12" ng-show="step==13">
