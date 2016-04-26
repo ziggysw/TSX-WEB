@@ -181,7 +181,8 @@ next();
 server.get('/live/sondage/:steamid', function(req, res, next) {
   try {
     var steamid = req.params["steamid"].replace("STEAM_1", "STEAM_0");
-
+    if( steamid == "notset" ) return res.send("2");
+    
     server.conn.query("SELECT * FROM `ts-x`.`site_sondage` WHERE `steamid`=? LIMIT 1;", [steamid], function(err, row) {
       if( err ) return res.send("2");
       if( row.length == 0) return res.send("0");

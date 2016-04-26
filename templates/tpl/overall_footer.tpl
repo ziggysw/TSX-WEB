@@ -34,7 +34,20 @@
 	</div>
 	<div id="lights"></div>
 </footer>
-	<script type="text/javascript" src="https://www.ts-x.eu/js/compile-bootstrap-globals-jquery.event.move-jquery.twentytwenty.js"></script>
-	<script type="text/javascript">$(window).load(function() { $(".calc-diff").twentytwenty();});</script>
+	<script type="text/javascript" src="https://www.ts-x.eu/js/compile-bootstrap-globals-jquery.event.move.js"></script>
+	<script type="text/javascript">
+		$.getJSON("https://www.ts-x.eu/api/live/sondage/"+_steamid, function( data ) {
+			if( parseInt(data) == 0 ) {
+				$("#homer").css('display', 'block').css('opacity', '0').animate({ opacity: "1", height: "200px"}, 1000, function() {
+					$("#homerTalk").css('display', 'block').css('opacity', '0').animate({ opacity: "1", fontSize: "12px"}, 1000);
+				});
+			}
+		});
+	</script>
+	<div id="homer" style="display:none; position:fixed; height:0px; width:200px; float:right; right: 0px; bottom:0px;"><img src="/images/homer-1.gif" width="200"/>
+		<div id="homerTalk" style="display:none; position:absolute; top:-50px; left:-70px; font-weight:bold; font-size:0px; background-color:white;border:2px solid black; color:black; padding:10px;">
+			<a href="/index.php?page=sondage" style="font-weight:bold; color:black;">Ohhhh, un sondage est arrivé <br />Complète le pour 10.000$RP!</a>
+		</div>
+	</div>
 </body>
 </html>

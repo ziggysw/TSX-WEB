@@ -26,7 +26,12 @@
 		<br /><br />
 		Ce sondage vous prendra 10 à 15 minutes pour y répondre et il est anonyme.</p>
   <br><br>
-		<a class="btn btn-primary pull-right" ng-click="step=1">Commencer le sondage</a>
+		{$isNew}
+		{if="$isNew"}
+			<a class="btn btn-primary pull-right" ng-click="step=1">Commencer le sondage</a>
+		{else}
+			<a class="btn btn-primary pull-right" ng-click="step=10">Commencer le sondage</a>
+		{/if}
 	</div>
 
 	<div class="row" ng-show="step>=1 && step < 10">
@@ -108,8 +113,8 @@
 			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q12" value="0">Non, c'est parfait</label>
 			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q12" value="1">Les quêtes sont difficiles mais les récompenses trop faible</label>
 			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q12" value="2">Les quêtes sont difficiles et les récompenses trop forte</label>
-			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q12" value="3">Les quêtes sont facile et les récompenses trop faible</label>
-			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q12" value="4">Les quêtes sont facile mais les récompenses trop forte</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q12" value="3">Les quêtes sont faciles et les récompenses trop faible</label>
+			<label class="col-sm-offset-3 col-sm-8"><input type="radio" name="q12" value="4">Les quêtes sont faciles mais les récompenses trop forte</label>
 			<a class="btn btn-success" ng-click="step=13">Suivant</a>
 		</div>
 		<div class="form-group col-sm-12" ng-show="step==13">
