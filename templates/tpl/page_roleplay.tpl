@@ -13,7 +13,7 @@ Highcharts.setOptions({lang: {
 <div class="col-md-12" ng-controller="mainCtrl">
 	<br  />
 	<h3>Cette page est en construction. <a href="/forum/viewtopic.php?p=531049">Vos suggestions sont les bienvenues</a>.</h3>
-	Note: Le ratio sera affiché pendant 15 minutes après l'utilisation d'un "ratio perso" afin de luter contre le bug csgo.
+	Note: Le ratio sera affiché pendant 15 minutes après l'utilisation d'un "ratio perso" afin de lutter contre le bug CS:GO.
 	<button class="btn btn-info pull-right" ng-click="goBack()" ng-show="back.length>0">Retour</button>
 	<div class="btn-group btn-group-justified" role="group">
 	  <a class="btn btn-default" href="#/user/{$steamid}"><i class="fa fa-user"></i> Votre profil</a>
