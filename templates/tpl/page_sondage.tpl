@@ -444,7 +444,7 @@
 			<div class="col-sm-12">Pensez-vous que les admins sont suffisamment réactifs aux questions des joueurs ?</div>
 			<label class="col-sm-offset-1 col-sm-2"><input type="radio" name="q70" value="0" ng-click="step=71">Pas du tout d'accord</label>
 			<label class="col-sm-2"><input type="radio" name="q70" value="1" ng-click="step=71">Plutôt pas d'accord</label>
-			<label class="col-sm-2"><input type="radio" name="q70" value="2" ng-click="step=71">Neurtre</label>
+			<label class="col-sm-2"><input type="radio" name="q70" value="2" ng-click="step=71">Neutre</label>
 			<label class="col-sm-2"><input type="radio" name="q70" value="3" ng-click="step=71">Plutôt d'accord</label>
 			<label class="col-sm-2"><input type="radio" name="q70" value="4" ng-click="step=71">Totalement d'accord</label>
 		</div>
@@ -452,7 +452,7 @@
 			<div class="col-sm-12">Pensez-vous que les admins sont “de votre côté” ?</div>
 			<label class="col-sm-offset-1 col-sm-2"><input type="radio" name="q71" value="0" ng-click="step=72">Pas du tout d'accord</label>
 			<label class="col-sm-2"><input type="radio" name="q71" value="1" ng-click="step=72">Plutôt pas d'accord</label>
-			<label class="col-sm-2"><input type="radio" name="q71" value="2" ng-click="step=72">Neurtre</label>
+			<label class="col-sm-2"><input type="radio" name="q71" value="2" ng-click="step=72">Neutre</label>
 			<label class="col-sm-2"><input type="radio" name="q71" value="3" ng-click="step=72">Plutôt d'accord</label>
 			<label class="col-sm-2"><input type="radio" name="q71" value="4" ng-click="step=72">Totalement d'accord</label>
 		</div>
@@ -460,7 +460,7 @@
 			<div class="col-sm-12">Pensez-vous que les admins règles suffisamment les problèmes du quotidien ?</div>
 			<label class="col-sm-offset-1 col-sm-2"><input type="radio" name="q72" value="0" ng-click="step=73">Pas du tout d'accord</label>
 			<label class="col-sm-2"><input type="radio" name="q72" value="1" ng-click="step=73">Plutôt pas d'accord</label>
-			<label class="col-sm-2"><input type="radio" name="q72" value="2" ng-click="step=73">Neurtre</label>
+			<label class="col-sm-2"><input type="radio" name="q72" value="2" ng-click="step=73">Neutre</label>
 			<label class="col-sm-2"><input type="radio" name="q72" value="3" ng-click="step=73">Plutôt d'accord</label>
 			<label class="col-sm-2"><input type="radio" name="q72" value="4" ng-click="step=73">Totalement d'accord</label>
 		</div>
@@ -468,7 +468,7 @@
 			<div class="col-sm-12">Pensez-vous que les admins devraient sanctionner plus lourdement les mauvais comportements ?</div>
 			<label class="col-sm-offset-1 col-sm-2"><input type="radio" name="q73" value="0" ng-click="step=74">Pas du tout d'accord</label>
 			<label class="col-sm-2"><input type="radio" name="q73" value="1" ng-click="step=74">Plutôt pas d'accord</label>
-			<label class="col-sm-2"><input type="radio" name="q73" value="2" ng-click="step=74">Neurtre</label>
+			<label class="col-sm-2"><input type="radio" name="q73" value="2" ng-click="step=74">Neutre</label>
 			<label class="col-sm-2"><input type="radio" name="q73" value="3" ng-click="step=74">Plutôt d'accord</label>
 			<label class="col-sm-2"><input type="radio" name="q73" value="4" ng-click="step=74">Totalement d'accord</label>
 		</div>
@@ -476,7 +476,7 @@
 			<div class="col-sm-12">Pensez-vous que les admins arrivent rapidement sur le channel “besoin d’un admin” sur TeamSpeak ?</div>
 			<label class="col-sm-offset-1 col-sm-2"><input type="radio" name="q74" value="0" ng-click="step=75">Pas du tout d'accord</label>
 			<label class="col-sm-2"><input type="radio" name="q74" value="1" ng-click="step=75">Plutôt pas d'accord</label>
-			<label class="col-sm-2"><input type="radio" name="q74" value="2" ng-click="step=75">Neurtre</label>
+			<label class="col-sm-2"><input type="radio" name="q74" value="2" ng-click="step=75">Neutre</label>
 			<label class="col-sm-2"><input type="radio" name="q74" value="3" ng-click="step=75">Plutôt d'accord</label>
 			<label class="col-sm-2"><input type="radio" name="q74" value="4" ng-click="step=75">Totalement d'accord</label>
 		</div>
@@ -484,7 +484,7 @@
 			<div class="col-sm-12">Pensez-vous que les admins sont suffisamment présents en jeu ?</div>
 			<label class="col-sm-offset-1 col-sm-2"><input type="radio" name="q75" value="0" ng-click="step=76">Pas du tout d'accord</label>
 			<label class="col-sm-2"><input type="radio" name="q75" value="1" ng-click="step=76">Plutôt pas d'accord</label>
-			<label class="col-sm-2"><input type="radio" name="q75" value="2" ng-click="step=76">Neurtre</label>
+			<label class="col-sm-2"><input type="radio" name="q75" value="2" ng-click="step=76">Neutre</label>
 			<label class="col-sm-2"><input type="radio" name="q75" value="3" ng-click="step=76">Plutôt d'accord</label>
 			<label class="col-sm-2"><input type="radio" name="q75" value="4" ng-click="step=76">Totalement d'accord</label>
 		</div>
@@ -492,7 +492,7 @@
 			<div class="col-sm-12">Pensez-vous que les admins font suffisamment d'événement ?</div>
 			<label class="col-sm-offset-1 col-sm-2"><input type="radio" name="q76" value="0" ng-click="step=77">Pas du tout d'accord</label>
 			<label class="col-sm-2"><input type="radio" name="q76" value="1" ng-click="step=77">Plutôt pas d'accord</label>
-			<label class="col-sm-2"><input type="radio" name="q76" value="2" ng-click="step=77">Neurtre</label>
+			<label class="col-sm-2"><input type="radio" name="q76" value="2" ng-click="step=77">Neutre</label>
 			<label class="col-sm-2"><input type="radio" name="q76" value="3" ng-click="step=77">Plutôt d'accord</label>
 			<label class="col-sm-2"><input type="radio" name="q76" value="4" ng-click="step=77">Totalement d'accord</label>
 		</div>
@@ -500,7 +500,7 @@
 			<div class="col-sm-12">Pensez-vous que les admins s'impliquent suffisamment pour faire progresser le serveur ?</div>
 			<label class="col-sm-offset-1 col-sm-2"><input type="radio" name="q77" value="0" ng-click="step=78">Pas du tout d'accord</label>
 			<label class="col-sm-2"><input type="radio" name="q77" value="1" ng-click="step=78">Plutôt pas d'accord</label>
-			<label class="col-sm-2"><input type="radio" name="q77" value="2" ng-click="step=78">Neurtre</label>
+			<label class="col-sm-2"><input type="radio" name="q77" value="2" ng-click="step=78">Neutre</label>
 			<label class="col-sm-2"><input type="radio" name="q77" value="3" ng-click="step=78">Plutôt d'accord</label>
 			<label class="col-sm-2"><input type="radio" name="q77" value="4" ng-click="step=78">Totalement d'accord</label>
 		</div>
@@ -508,7 +508,7 @@
 			<div class="col-sm-12">Pensez-vous que le serveur crash de moins en moins avec le temps ?</div>
 			<label class="col-sm-offset-1 col-sm-2"><input type="radio" name="q78" value="0" ng-click="step=79">Pas du tout d'accord</label>
 			<label class="col-sm-2"><input type="radio" name="q78" value="1" ng-click="step=79">Plutôt pas d'accord</label>
-			<label class="col-sm-2"><input type="radio" name="q78" value="2" ng-click="step=79">Neurtre</label>
+			<label class="col-sm-2"><input type="radio" name="q78" value="2" ng-click="step=79">Neutre</label>
 			<label class="col-sm-2"><input type="radio" name="q78" value="3" ng-click="step=79">Plutôt d'accord</label>
 			<label class="col-sm-2"><input type="radio" name="q78" value="4" ng-click="step=79">Totalement d'accord</label>
 		</div>
@@ -516,7 +516,7 @@
 			<div class="col-sm-12">Pensez-vous que le serveur est suffisamment résistant contre le DDos ?</div>
 			<label class="col-sm-offset-1 col-sm-2"><input type="radio" name="q79" value="0" ng-click="step=80">Pas du tout d'accord</label>
 			<label class="col-sm-2"><input type="radio" name="q79" value="1" ng-click="step=80">Plutôt pas d'accord</label>
-			<label class="col-sm-2"><input type="radio" name="q79" value="2" ng-click="step=80">Neurtre</label>
+			<label class="col-sm-2"><input type="radio" name="q79" value="2" ng-click="step=80">Neutre</label>
 			<label class="col-sm-2"><input type="radio" name="q79" value="3" ng-click="step=80">Plutôt d'accord</label>
 			<label class="col-sm-2"><input type="radio" name="q79" value="4" ng-click="step=80">Totalement d'accord</label>
 		</div>
