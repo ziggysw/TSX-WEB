@@ -24,6 +24,21 @@ exports = module.exports = function(server){
   });
   
   /**
+   * @api {get} /devzone/user/:id GetUserNameById
+   * @apiName GetUser
+   * @apiGroup DevZone
+   */
+  server.get('/devzone/user/:id', function (req, res, next) {
+    var cache = server.cache.get( req._url.pathname);
+    if( cache !== undefined ) { return res.send(cache); }
+    dz.IdToName(server, req.params.id, function(ret){
+      server.cache.set( req._url.pathname, {username: ret});
+      return res.send({username: ret});
+    });
+    next();
+  });
+  
+  /**
    * @api {get} /devzone/status GetStatus
    * @apiName GetStatus
    * @apiGroup DevZone
