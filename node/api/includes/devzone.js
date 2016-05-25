@@ -508,7 +508,7 @@ exports = module.exports = function(server){
       if(user.uid == 1)
         return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
       
-      var sql = 'SELECT usr_id, tk_title, stat_id FROM `leeth`.dz_ticket WHERE tk_id=? LIMIT 1';
+      var sql = 'SELECT usr_id, tk_title, stat_id, assig_usr_id FROM `leeth`.dz_ticket WHERE tk_id=? LIMIT 1';
       server.conn.query(sql, [req.params.id], function(err, rows){
         
         if(!user.hasaccess(40)){
@@ -525,16 +525,35 @@ exports = module.exports = function(server){
         var tk_url = req.params.url || '';
         
         var sql = "UPDATE `leeth`.dz_ticket SET ";
-          sql  += "cat_id=?, tk_title=?, tk_desc=?, tk_showdesc=?, assig_usr_id=?, tk_url=?, tk_esttime=? ";
+          sql  += "cat_id=?, tk_title=?, tk_desc=?, tk_showdesc=?, assig_usr_id=?, tk_url=?, tk_esttime=?, tk_ava=? ";
           sql  += "WHERE tk_id=?";
         
-        server.conn.query(sql, [req.params.category, req.params.title, req.params.desc, showdesc, req.params.assig, tk_url, req.params.job, req.params.id], function(err, rows){
+        server.conn.query(sql, [req.params.category, req.params.title, req.params.desc, showdesc, req.params.assig, tk_url, req.params.job, req.params.avancement, req.params.id], function(err, rows2){
           if( err ) res.send(new ERR.InternalServerError(err));
           
           for(var i=0; i<=100; i+=10)
             server.cache.del("/devzone/ticket-"+i);
           server.cache.del("/devzone/ticket/" + req.params.id);
-            
+          
+          var msg = '';
+          if(user.uid != rows[0].usr_id){
+            if(rows[0].usr_id != req.params.assig){
+              msg = 'Votre ticket <span style="font-weight: bold">'+ rows[0].tk_title +'</span> à été modifié par <span style="font-weight: bold">' + user.username + '</span>.';
+              dz.pm(server, rows[0].usr_id, "Modification du ticket: " + rows[0].tk_title, msg);
+            }
+          }
+          if(req.params.assig != '0'){
+            if(user.uid != req.params.assig){
+              if(rows[0].assig_usr_id != req.params.assig){
+                msg = 'Le ticket <span style="font-weight: bold">'+ rows[0].tk_title +'</span> vous a été assigné par <span style="font-weight: bold">' + user.username + '</span>.';
+                dz.pm(server, req.params.assig, "Assignation au ticket: " + rows[0].tk_title, msg);
+              }
+              else{
+                msg = 'Le ticket <span style="font-weight: bold">'+ rows[0].tk_title +'</span> auquel vous êtes assignés a été modifié par <span style="font-weight: bold">' + user.username + '</span>.';
+                dz.pm(server, req.params.assig, "Modification du ticket: " + rows[0].tk_title, msg);
+              }
+            }
+          }
           return res.send('ok');
         });
       });
