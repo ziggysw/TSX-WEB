@@ -3,15 +3,9 @@ var redirect = require('restify-redirect');
 var fs = require('fs');
 var mysql = require('mysql2');
 var NodeCache = require( "node-cache" );
-var g = require('idle-gc');
-g.start();
 
 var server = restify.createServer();
 require('./auth.js')(server);
-
-setInterval(function() {
-	global.gc();
-}, 100000);
 
 function Pool(num_conns) {
   this.pool = [];
@@ -75,6 +69,7 @@ require('./includes/rank.js')(server);
 require('./includes/connection.js')(server);
 require('./includes/tribunal.js')(server);
 require('./includes/hdv.js')(server);
+require('./includes/steam.js')(server);
 require('./includes/devzone.js')(server);
 
 server.pre(function (request, response, next) {

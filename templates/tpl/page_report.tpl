@@ -87,7 +87,7 @@ pre.well > img { margin-right: 5px; }
 		<div role="tabpanel" class="tab-pane active row" id="report">
 			<h3>Rapporter un policier</h3>
 			<p>
-				Vous avez été victime d'une violance policière ? Remplisser ce formulaire, et on se charge du reste.
+				Vous avez été victime d'une violence policière ? Remplisser ce formulaire, et on se charge du reste.
 			</p>
 			<hr />
 			<form class="form-horizontal"  ng-submit="send()">

@@ -29,6 +29,25 @@ exports = module.exports = function(server){
     }
     return out.join("");
 }
+/**
+ * @api {get} /zone/:x/:y:/:z GetZoneByLocation
+ * @apiName GetZoneByLocation
+ * @apiGroup Zone
+ * @apiParam {float} x
+ * @apiParam {float} y
+ * @apiParam {float} z
+ */
+server.get('/zone/:x/:y/:z', function (req, res, next) {
+  if( req.params['id'] == 0 )
+    return res.send(new ERR.BadRequestError("InvalidParam"));
+
+  server.conn.query("SELECT `id`, `zone_name` FROM `rp_location_zones` WHERE `min_x` < ? AND `max_x` > ? AND `min_y` < ? AND `max_y` > ? AND `min_z` < ? AND `max_z` > ? AND `id`>0 ORDER BY `id` ASC LIMIT 1;", [req.params['x'], req.params['x'], req.params['y'], req.params['y'], req.params['z'], req.params['z']], function(err, rows) {
+    if( rows.length == 0 ) return res.send({id: 0, zone_name: "Extérieur"});
+
+    return res.send(rows[0]);
+	});
+	next();
+});
 
 /**
  * @api {get} /zone/:id GetZoneById
