@@ -12,7 +12,7 @@ app.controller('ctrl', function($scope, $http, $filter, $location) {
 
   $scope.loading = true;
   $scope.steamid64 = steamIDToProfile($scope.steamid);
-  $http.get("https://www.ts-x.eu/api/steam/inventory/"+$scope.steamid)
+  $http.get("https://www.ts-x.eu/api/steam/trade")
     .success(function (response) { $scope.error = false; $scope.loading = false; $scope.items = response; })
     .error(function() { $scope.loading = false; $scope.error = true; });
 
@@ -23,7 +23,9 @@ app.controller('ctrl', function($scope, $http, $filter, $location) {
     });
   }
   $scope.offert = function(id) {
-    $http.post("https://www.ts-x.eu/api/steam/trade", {itemid: id}).success(function(res) {console.log(res); }).error(function(res) {console.log(res); });
+    $http.post("https://www.ts-x.eu/api/steam/trade", {itemid: id})
+      .success(function(res) { window.open("https://steamcommunity.com/tradeoffer/"+res.id+"/", "steam"); })
+      .error(function(res) { console.log(res); });
   }
 });
 
@@ -94,7 +96,7 @@ function steamIDToProfile(steamID) {
         instance: {{item.instanceid}}
         class: {{item.classid}}
         <br /><br />
-        <img src="http://steamcommunity-a.akamaihd.net/economy/image/{{item.image}}" width="100" ng-click="offert('6436295075')"/>
+        <img src="http://steamcommunity-a.akamaihd.net/economy/image/{{item.image}}" width="100" ng-click="offert(item.id)"/>
         <br /><br />
         {{item.price*10000*0.90 | number: 0 }}$RP
     </figure>

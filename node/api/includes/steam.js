@@ -1,78 +1,58 @@
 "use strict";
 exports = module.exports = function(server){
   var ERR = require('node-restify-errors');
+  var fs = require('fs');
   var request = require('request');
   var priceList = require('../market.json');
-  var fs = require('fs');
-  var crypto = require('crypto');
-  var Steam = require('steam');
-  var SteamWebLogOn = require('steam-weblogon');
-  var getSteamAPIKey = require('steam-web-api-key');
-  var SteamTradeOffers = require('steam-tradeoffers');
+  var SteamUser = require('steam-user');
+  var SteamC = require('steamid');
+  var TradeOfferManager = require('steam-tradeoffer-manager');
   var SteamTotp = require('steam-totp');
-  var http = require('sync-request');
-  var logOnOptions = {account_name: server.getSteamLink.username, password: server.getSteamLink.password};
+  var logOnOptions = {accountName: server.getSteamLink.username, password: server.getSteamLink.password, twoFactorCode: SteamTotp.generateAuthCode(server.getSteamLink.auth)};
+  var client = new SteamUser();
+  var manager = new TradeOfferManager({steam: client, domain: "ts-x.eu", language: "fr"});
 
-  var steamClient = new Steam.SteamClient();
-  var steamUser = new Steam.SteamUser(steamClient);
-  var steamFriends = new Steam.SteamFriends(steamClient);
-  var steamWebLogOn = new SteamWebLogOn(steamClient, steamUser);
-  var offers = new SteamTradeOffers();
-
-  steamClient.connect();
-  steamClient.on('connected', function() {
-    logOnOptions.two_factor_code = SteamTotp.generateAuthCode(server.getSteamLink.auth);
-    steamUser.logOn(logOnOptions);
+  if (fs.existsSync('polldata.json')) {
+    manager.pollData = JSON.parse(fs.readFileSync('../polldata.json'));
+  }
+  manager.on('pollData', function(pollData) {
+  	fs.writeFile('../polldata.json', JSON.stringify(pollData));
   });
-  steamClient.on('logOnResponse', function(logonResp) {
-    if (logonResp.eresult === Steam.EResult.OK) {
-      console.log('Steam: Logged in!');
-      steamFriends.setPersonaState(Steam.EPersonaState.Online);
-      steamWebLogOn.webLogOn(function(sessionID, newCookie) {
-        getSteamAPIKey({ sessionID: sessionID, webCookie: newCookie }, function(err, APIKey) {
-          offers.setup({ sessionID: sessionID, webCookie: newCookie, APIKey: APIKey });
-          handleOffers();
+  client.logOn(logOnOptions);
+  client.on('loggedOn', function() {
+	   console.log("Logged into Steam");
+     client.setPersona(SteamUser.EPersonaState.Online);
+  });
+  client.on('webSession', function(sessionID, cookies) {
+  	manager.setCookies(cookies);
+  });
+  manager.on('sentOfferChanged', function(offer, oldState) {
+    console.log("Offer #" + offer.id + " changed: " + TradeOfferManager.getStateName(oldState) + " -> " + TradeOfferManager.getStateName(offer.state));
+    if (offer.state == TradeOfferManager.ETradeOfferState.Accepted) {
+      offer.getReceivedItems(function(err, items) {
+        Object.keys(items).forEach(function (i) {
+          var item = items[i];
+          var price = priceList[item.market_hash_name];
+          var count = 0;
+          var total = 0;
+          Object.keys(price).forEach(function (j) {
+            total += (price[j].price * price[j].count);
+            count += price[j].count;
+          });
+
+          var euro = (Math.floor(total/count)/100 * 0.9);
+          var money = euro * 10000;
+          var SteamID = (new SteamC('76561198006409530')).getSteam2RenderedID();
+          var now = new Date();
+          var year = now.getFullYear() - 2000;
+          var month = now.getMonth() + 1;
+
+          server.conn.query("INSERT INTO `rp_csgo`.`rp_users2` (`steamid`,`bank`) VALUES (?,?);", [SteamID, money]);
+          server.conn.query("INSERT INTO `ts-x`.`site_donations` (`id`, `steamid`, `timestamp`, `month`, `year`, `code`, `amount`) VALUES (NULL, ?, ?, ?, ?, ?, ?)", [SteamID, now, month, year, item.classid+"_"+item.instanceid, euro]);
         });
       });
     }
   });
-  steamUser.on('tradeOffers', function(number) {
-    if (number > 0) { handleOffers(); }
-  });
-
-  function handleOffers() {
-    offers.getOffers({get_received_offers: 1, active_only: 1, time_historical_cutoff: Math.round(Date.now() / 1000), get_descriptions: 1}, function(error, body) {
-      console.log(body);
-    });
-  }
-
-  function steamIDToProfile(steamID) {
-    var parts = steamID.split(":");
-    var iServer = Number(parts[1]);
-    var iAuthID = Number(parts[2]);
-    var converted = "76561197960265728"
-    var lastIndex = converted.length - 1
-
-    var toAdd = iAuthID * 2 + iServer;
-    var toAddString = new String(toAdd)
-    var addLastIndex = toAddString.length - 1;
-
-    for(var i=0;i<=addLastIndex;i++) {
-        var num = Number(toAddString.charAt(addLastIndex - i));
-        var j=lastIndex - i;
-
-        do {
-            var num2 = Number(converted.charAt(j));
-            var sum = num + num2;
-
-            converted = converted.substr(0,j) + (sum % 10).toString() + converted.substr(j+1);
-
-            num = Math.floor(sum / 10);
-            j--;
-        } while(num);
-    }
-    return converted;
-  }
 
   /**
    * @api {get} /trade/inventory/:steam
@@ -110,10 +90,11 @@ server.post('/steam/trade', function (req, res, next) {
     server.conn.query("SELECT `partner`, `tokken` FROM `ts-x`.`phpbb3_users` WHERE `steamid`=?", [SteamID], function(err, row) {
       if( err ) return res.send(new ERR.InternalServerError(err));
 
-      offers.makeOffer ({ partnerAccountId: row[0].partner, accessToken: row[0].tokken,
-          itemsFromThem: [{appid: 730, contextid: 2, amount: 1, assetid: req.params['itemid']}], itemsFromMe: [], message: "hello"}, function(err, response) {
-        if (err) return res.send(new ERR.InternalServerError(err));
-        res.send({id: response.tradeofferid});
+      var offer = manager.createOffer(SteamID);
+      offer.addTheirItem({appid: 730, contextid: 2, assetid: parseInt(req.params['itemid'])});
+      offer.send("hello", row[0].tokken, function(err, status) {
+        if( err) return res.send(new ERR.InternalServerError(err));
+        res.send({id: offer.id});
         return next();
       });
     });
@@ -121,72 +102,83 @@ server.post('/steam/trade', function (req, res, next) {
 });
 
   /**
-   * @api {get} /trade/inventory/:steam
+   * @api {get} /steam/trade
    * @apiName GetSteamInvetory
-   * @apiParam {Intger} job
    * @apiGroup Steam
    */
-server.get('/steam/inventory/:steam', function (req, res, next) {
-  var cache = server.cache.get( req._url.pathname);
-  if( cache != undefined ) return res.send(cache);
+server.get('/steam/trade', function (req, res, next) {
+  server.conn.query(server.getAuthSMAdmin, [req.headers.auth], function(err, row) {
+    if( err ) return res.send(new ERR.InternalServerError(err));
+    if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+    var SteamID = row[0].steamid;
 
+    var cache = server.cache.get( req._url.pathname+"/"+SteamID );
+    if( cache != undefined ) return res.send(cache);
 
-  request("http://steamcommunity.com/profiles/" + steamIDToProfile(req.params['steam']) + "/inventory/json/730/2", function (error, response, body) {
-    if( error ) return res.send(new ERR.NotFoundError("SteamError"));
+    request("http://steamcommunity.com/profiles/" + (new SteamC(SteamID)).getSteamID64() + "/inventory/json/730/2", function (error, response, body) {
+      if( error ) return res.send(new ERR.NotFoundError("SteamError"));
 
-    try {
-      body = JSON.parse(body);
-      if( !body.success ) return res.send(new ERR.NotFoundError("InventoryError"));
+      try {
+        body = JSON.parse(body);
+        if( !body.success ) return res.send(new ERR.NotFoundError("InventoryError"));
 
-      var items = body.rgDescriptions;
-      var obj = new Array();
+        var invs = body.rgInventory;
+        var items = body.rgDescriptions;
+        var invID = new Array();
+        var obj = new Array();
 
-      Object.keys(items).forEach(function (i) {
-        var item = items[i];
-        if( parseInt(item.tradable) == 1 ) {
-          var data = {
-            name: item.name,
-            classid: item.classid,
-            instanceid: item.instanceid,
-            image: item.icon_url_large ? item.icon_url_large : item.icon_url,
-            hashname: item.market_hash_name,
-            price: null
-          };
+        Object.keys(invs).forEach(function (i) {
+          var inv = invs[i];
+          invID[inv.classid+"_"+inv.instanceid] = inv.id;
+        });
 
-          var isBox = false;
+        Object.keys(items).forEach(function (i) {
+          var item = items[i];
+          if( parseInt(item.tradable) == 1 ) {
+            var data = {
+              id: invID[item.classid+"_"+item.instanceid],
+              name: item.name,
+              classid: item.classid,
+              instanceid: item.instanceid,
+              image: item.icon_url_large ? item.icon_url_large : item.icon_url,
+              hashname: item.market_hash_name,
+              price: null,
+            };
 
-          Object.keys(item.tags).forEach(function (j) {
-            var tag = item.tags[j];
-            if( tag.internal_name === "CSGO_Type_WeaponCase" )
-              isBox = true;
-          });
+            var isBox = false;
 
-          if( !isBox ) {
-            var total = 0;
-            var count = 0;
-            var price = priceList[item.market_hash_name];
-            Object.keys(price).forEach(function (j) {
-              total += (price[j].price * price[j].count);
-              count += price[j].count;
+            Object.keys(item.tags).forEach(function (j) {
+              var tag = item.tags[j];
+              if( tag.internal_name === "CSGO_Type_WeaponCase" )
+                isBox = true;
             });
 
-            data.price = Math.floor(total/count)/100;
+            if( !isBox ) {
+              var total = 0;
+              var count = 0;
+              var price = priceList[item.market_hash_name];
+              Object.keys(price).forEach(function (j) {
+                total += (price[j].price * price[j].count);
+                count += price[j].count;
+              });
 
-            if( data.price >= 0.15 )
-              obj.push(data);
+              data.price = Math.floor(total/count)/100;
+
+              if( data.price >= 0.15 )
+                obj.push(data);
+            }
           }
-        }
-      });
+        });
 
-      server.cache.set( req._url.pathname, obj);
-      res.send(obj);
-    }
-    catch( e ) {
-      console.log(e);
-    }
-    next();
+        server.cache.set( req._url.pathname+"/"+SteamID, obj);
+        res.send(obj);
+      }
+      catch( e ) {
+        console.log(e);
+      }
+      next();
   });
   next();
-
+  });
 });
 };
