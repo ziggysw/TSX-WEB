@@ -13,10 +13,10 @@ exports = module.exports = function(server){
   var manager = new TradeOfferManager({steam: client, domain: "ts-x.eu", language: "fr"});
 
   if (fs.existsSync('polldata.json')) {
-    manager.pollData = JSON.parse(fs.readFileSync('../polldata.json'));
+    manager.pollData = JSON.parse(fs.readFileSync('polldata.json'));
   }
   manager.on('pollData', function(pollData) {
-  	fs.writeFile('../polldata.json', JSON.stringify(pollData));
+  	fs.writeFile('polldata.json', JSON.stringify(pollData));
   });
   client.logOn(logOnOptions);
   client.on('loggedOn', function() {
@@ -42,13 +42,13 @@ exports = module.exports = function(server){
 
           var euro = (Math.floor(total/count)/100 * 0.9);
           var money = euro * 10000;
-          var SteamID = (new SteamC('76561198006409530')).getSteam2RenderedID();
+          var SteamID = offer.partner.getSteam2RenderedID();
           var now = new Date();
           var year = now.getFullYear() - 2000;
           var month = now.getMonth() + 1;
 
           server.conn.query("INSERT INTO `rp_csgo`.`rp_users2` (`steamid`,`bank`) VALUES (?,?);", [SteamID, money]);
-          server.conn.query("INSERT INTO `ts-x`.`site_donations` (`id`, `steamid`, `timestamp`, `month`, `year`, `code`, `amount`) VALUES (NULL, ?, ?, ?, ?, ?, ?)", [SteamID, now, month, year, item.classid+"_"+item.instanceid, euro]);
+          server.conn.query("INSERT INTO `ts-x`.`site_donations` (`id`, `steamid`, `timestamp`, `month`, `year`, `code`, `amount`) VALUES (NULL, ?, ?, ?, ?, ?, ?)", [SteamID, Math.round(now.getTime()/1000), month, year, item.classid+"_"+item.instanceid, euro]);
         });
       });
     }
@@ -164,7 +164,7 @@ server.get('/steam/trade', function (req, res, next) {
 
               data.price = Math.floor(total/count)/100;
 
-              if( data.price >= 0.15 )
+              if( data.price >= 0.0015 )
                 obj.push(data);
             }
           }
