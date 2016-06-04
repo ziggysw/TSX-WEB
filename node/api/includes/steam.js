@@ -54,6 +54,17 @@ exports = module.exports = function(server){
     }
   });
 
+  function getPrice(name) {
+    var total = 0;
+    var count = 0;
+    var price = priceList[name];
+      Object.keys(price).forEach(function (j) {
+        total += (price[j].price * price[j].count);
+        count += price[j].count;
+    });
+    return Math.floor(total/count)/100;
+  }
+
   /**
    * @api {get} /trade/inventory/:steam
    * @apiName GetSteamInvetory
@@ -61,7 +72,7 @@ exports = module.exports = function(server){
    * @apiGroup Steam
    */
 server.put('/steam/trade', function (req, res, next) {
-  server.conn.query(server.getAuthSMAdmin, [req.headers.auth], function(err, row) {
+  server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
     if( err ) return res.send(new ERR.InternalServerError(err));
     if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
     var SteamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
@@ -82,7 +93,7 @@ server.put('/steam/trade', function (req, res, next) {
  * @apiGroup Steam
  */
 server.post('/steam/trade', function (req, res, next) {
-  server.conn.query(server.getAuthSMAdmin, [req.headers.auth], function(err, row) {
+  server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
     if( err ) return res.send(new ERR.InternalServerError(err));
     if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
     var SteamID = row[0].steamid;
@@ -101,7 +112,7 @@ server.post('/steam/trade', function (req, res, next) {
 
         Object.keys(invs).forEach(function (i) {
           var inv = invs[i];
-          if( inv.id == 6454936355 ) {
+          if( inv.id == parseInt(req.params['itemid']) ) {
             cData = inv.classid+"_"+inv.instanceid;
           }
         });
@@ -122,15 +133,9 @@ server.post('/steam/trade', function (req, res, next) {
           if( tag.internal_name === "CSGO_Type_WeaponCase" ) return res.send(new ERR.NotFoundError("InventoryError"));
         });
 
-        var total = 0;
-        var count = 0;
-        var price = priceList[item.market_hash_name];
-          Object.keys(price).forEach(function (j) {
-            total += (price[j].price * price[j].count);
-            count += price[j].count;
-        });
 
-        var euro = (Math.floor(total/count)/100);
+
+        var euro = getPrice(item.market_hash_name);
         var money = (euro * 0.9) * 10000;
         if( euro < 0.15 ) return res.send(new ERR.NotFoundError("InventoryError"));
 
@@ -138,7 +143,8 @@ server.post('/steam/trade', function (req, res, next) {
           if( err ) return res.send(new ERR.InternalServerError(err));
           var offer = manager.createOffer(SteamID);
           offer.addTheirItem({appid: 730, contextid: 2, assetid: parseInt(req.params['itemid'])});
-          offer.send("Votre item vaut: "+money+" $RP, selon les prix actuels sur le marché.", row[0].tokken, function(err, status) {
+          offer.send("Votre item vaut: "+Math.round(money)+" $RP, selon les prix actuels sur le marché.", row[0].tokken, function(err, status) {
+            console.log(err);
             if( err && err.eresult == 15 ) return res.send({id: -1});
             else if( err && err.eresult == 50 ) return res.send({id: -2});
             else if( err ) return res.send(new ERR.InternalServerError(err));
@@ -154,13 +160,54 @@ server.post('/steam/trade', function (req, res, next) {
   });
 });
 
+/**
+ * @api {get} /steam/trade
+ * @apiName GetSteamInvetory
+ * @apiGroup Steam
+ */
+server.get('/steam/trade', function (req, res, next) {
+  server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
+    if( err ) return res.send(new ERR.InternalServerError(err));
+    if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+    var SteamID = row[0].steamid;
+
+    var cache = server.cache.get( req._url.pathname+"/"+SteamID );
+    if( cache != undefined ) return res.send(cache);
+
+    manager.getOffers(1, function(err, sent, received) {
+
+      var obj = new Array();
+      if( sent != null ) {
+        Object.keys(sent).forEach(function (i) {
+          if( sent[i].partner.getSteamID64() == (new SteamC(SteamID)).getSteamID64() ) {
+            var item = sent[i].itemsToReceive[0];
+            var data = {
+              id: sent[i].id,
+              name: item.name,
+              image: item.icon_url_large ? item.icon_url_large : item.icon_url,
+              price: getPrice(item.market_hash_name),
+              escrow: sent[i].escrowEnds
+            };
+            obj.push(data);
+
+          }
+        });
+      }
+      server.cache.set( req._url.pathname+"/"+SteamID, obj);
+      res.send(obj);
+      return next();
+    });
+    next();
+  });
+});
+
   /**
-   * @api {get} /steam/trade
+   * @api {get} /steam/inventory
    * @apiName GetSteamInvetory
    * @apiGroup Steam
    */
-server.get('/steam/trade', function (req, res, next) {
-  server.conn.query(server.getAuthSMAdmin, [req.headers.auth], function(err, row) {
+server.get('/steam/inventory', function (req, res, next) {
+  server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
     if( err ) return res.send(new ERR.InternalServerError(err));
     if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
     var SteamID = row[0].steamid;
@@ -207,17 +254,8 @@ server.get('/steam/trade', function (req, res, next) {
             });
 
             if( !isBox ) {
-              var total = 0;
-              var count = 0;
-              var price = priceList[item.market_hash_name];
-              Object.keys(price).forEach(function (j) {
-                total += (price[j].price * price[j].count);
-                count += price[j].count;
-              });
-
-              data.price = Math.floor(total/count)/100;
-
-              if( data.price >= 0.0015 )
+              data.price = getPrice(item.market_hash_name);
+              if( data.price >= 0.15 )
                 obj.push(data);
             }
           }

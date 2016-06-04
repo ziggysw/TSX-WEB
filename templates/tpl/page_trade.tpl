@@ -9,11 +9,13 @@ app.controller('ctrl', function($scope, $http, $filter, $location) {
   $scope.state = 0;
   $scope.link = "{$link}";
   $scope.validLink = false;
-  $scope.patternLink = new RegExp(/^https:\/\/steamcommunity\.com\/tradeoffer\/new\/\?partner=([0-9]+)&token=([a-zA-Z0-9]+)$/);
+  $scope.patternLink = new RegExp(/^https:\/\/steamcommunity\.com\/tradeoffer\/new\/\?partner=([0-9]+)&token=([a-zA-Z0-9_]+)$/);
   $scope.steamid64 = steamIDToProfile($scope.steamid);
-  $http.get("https://www.ts-x.eu/api/steam/trade")
+  $http.get("https://www.ts-x.eu/api/steam/inventory")
     .success(function (response) { $scope.state = 2; $scope.items = response; })
     .error(function() { $scope.state = 1; });
+  $http.get("https://www.ts-x.eu/api/steam/trade")
+    .success(function (response) { $scope.doing = response; });
 
   $scope.submitLink = function() {
     var match = $scope.link.match($scope.patternLink);
@@ -23,14 +25,20 @@ app.controller('ctrl', function($scope, $http, $filter, $location) {
   }
   $scope.offert = function(id) {
     $scope.state = 0;
+    if( $scope.link == "" ) {
+      $scope.state = 3;
+      return;
+    }
     $http.post("https://www.ts-x.eu/api/steam/trade", {itemid: id})
       .success(function(res) {
         if( res.id >= 1 ) {
           $scope.state = 4;
           $scope.transactionID = res.id;
         }
-        else if( res.id == -2 )
-          $scope.state = 6;
+        else if( res.id == -1 )
+          $scope.state = 3;
+          else if( res.id == -2 )
+            $scope.state = 6;
         else
           $scope.state = 5;
       }).error(function(res) { $scope.state = 5; });
@@ -65,10 +73,22 @@ function steamIDToProfile(steamID) {
   return converted;
 }
 </script>
-
 <br /><br />
-
 <div class="col-md-10 col-md-offset-1" ng-app="app" ng-controller="ctrl">
+  <div ng-show="doing.length >= 1" class="col-sm-12 alert alert-warning" role="alert">
+    <strong>Vous avez toujours des transactions en attente</strong> <a href="https://steamcommunity.com/my/tradeoffers/">Veuillez les confirmer</a>.
+  </div>
+  <div ng-show="doing.length >= 1" class="col-sm-12">
+    <figure class="img-polaroid col-md-3" ng-repeat="item in doing" style="height:160px;float:left;text-align:center;">
+      <strong ng-show="item.escrow">Cette transaction est bloquée par Steam jusqu'au {{item.escrow | date:"dd/MM à HH:mm"}}<br /></strong>
+      {{item.name}}
+        <br /><br />
+        <a href="https://steamcommunity.com/my/tradeoffers/{{item.id}}"><img src="http://steamcommunity-a.akamaihd.net/economy/image/{{item.image}}" width="100" /></a>
+        <br /> {{item.price * 0.9 * 10000 | number: 0}}$RP
+    </figure>
+    <br clear="all" />
+    <hr />
+  </div>
   <div ng-show="state == 0" class="col-sm-12 alert alert-warning" role="alert">
     Chargement des données... <i class="fa fa-cog fa-spin fa-fw"></i><i class="fa fa-cog fa-spin fa-fw"></i><i class="fa fa-cog fa-spin fa-fw"></i>
   </div>
@@ -80,18 +100,18 @@ function steamIDToProfile(steamID) {
     <strong>Votre inventaire est vide.</strong> Vous n'avez aucun item qui peut-être revendu pour des $RP.
   </div>
   <div ng-show="state == 2 && items.length != 0">
-    <h3>Votre inventaire CS:GO</h3>
+    <h3>Votre inventaire CS:GO/h3>
     <figure class="img-polaroid col-md-3" ng-repeat="item in items" style="height:150px;float:left;text-align:center;">
         {{item.name}}
         <br /><br />
-        <img src="http://steamcommunity-a.akamaihd.net/economy/image/{{item.image}}" width="100" ng-click="offert(item.id)"/>
+        <img src="http://steamcommunity-a.akamaihd.net/economy/image/{{item.image}}" width="100" ng-click="offert(item.id)" style="cursor: pointer;"/>
         <br /><br />
-        {{item.price*10000*0.90 | number: 0 }}$RP
+        {{item.price*0.9*10000 | number: 0 }}$RP
     </figure>
   </div>
   <div ng-show="state == 3" class="col-sm-12 alert alert-danger" role="alert">
-    <strong>Il semble avoir un problème avec votre lien d'échange...</strong> Vous pouvez le retrouver <a href="https://steamcommunity.com/my/tradeoffers/privacy#trade_offer_access_url">ici</a>.
-      <a href="https://steamcommunity.com/my/tradeoffers/privacy#trade_offer_access_url">
+    <strong>Il semble avoir un problème avec votre lien d'échange...</strong> Vous pouvez le retrouver <a href="https://steamcommunity.com/my/tradeoffers/privacy#trade_offer_access_url" target="_newtab">ici</a>.
+      <a href="https://steamcommunity.com/my/tradeoffers/privacy#trade_offer_access_url" target="_newtab">
         <img src="/images/steam-confirm.png" />
       </a>
       <br />
