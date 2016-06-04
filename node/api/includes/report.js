@@ -39,8 +39,7 @@ exports = module.exports = function(server) {
 
             for (var i = 0; i < row.length; i++) {
               server.conn.query("INSERT INTO `rp_messages_seen` (`id`, `messageid`, `steamid`) VALUES (NULL, ?, ?)", [ID, row[i].steamid], function(err, row) {
-                if( err ) return res.send(new ERR.InternalServerError(err));
-                res.send({'id': ID});
+                return res.send({'id': ID});
               });
             }
           });

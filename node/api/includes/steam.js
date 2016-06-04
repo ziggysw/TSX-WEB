@@ -87,16 +87,69 @@ server.post('/steam/trade', function (req, res, next) {
     if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
     var SteamID = row[0].steamid;
 
-    server.conn.query("SELECT `partner`, `tokken` FROM `ts-x`.`phpbb3_users` WHERE `steamid`=?", [SteamID], function(err, row) {
-      if( err ) return res.send(new ERR.InternalServerError(err));
+    request("http://steamcommunity.com/profiles/" + (new SteamC(SteamID)).getSteamID64() + "/inventory/json/730/2", function (error, response, body) {
+      try {
+        body = JSON.parse(body);
+        if( !body.success ) return res.send(new ERR.NotFoundError("InventoryError"));
 
-      var offer = manager.createOffer(SteamID);
-      offer.addTheirItem({appid: 730, contextid: 2, assetid: parseInt(req.params['itemid'])});
-      offer.send("hello", row[0].tokken, function(err, status) {
-        if( err) return res.send(new ERR.InternalServerError(err));
-        res.send({id: offer.id});
-        return next();
-      });
+        var invs = body.rgInventory;
+        var items = body.rgDescriptions;
+        var invID = new Array();
+        var obj = new Array();
+
+        var cData = "";
+
+        Object.keys(invs).forEach(function (i) {
+          var inv = invs[i];
+          if( inv.id == 6454936355 ) {
+            cData = inv.classid+"_"+inv.instanceid;
+          }
+        });
+
+        if( cData == "" )  return res.send(new ERR.NotFoundError("InventoryError"));
+
+        var item = items[cData];
+        if( parseInt(item.tradable) != 1 ) return res.send(new ERR.NotFoundError("InventoryError"));
+          var data = {
+            id: invID[item.classid+"_"+item.instanceid],
+            name: item.name,
+            hashname: item.market_hash_name,
+            price: null,
+          };
+
+        Object.keys(item.tags).forEach(function (j) {
+          var tag = item.tags[j];
+          if( tag.internal_name === "CSGO_Type_WeaponCase" ) return res.send(new ERR.NotFoundError("InventoryError"));
+        });
+
+        var total = 0;
+        var count = 0;
+        var price = priceList[item.market_hash_name];
+          Object.keys(price).forEach(function (j) {
+            total += (price[j].price * price[j].count);
+            count += price[j].count;
+        });
+
+        var euro = (Math.floor(total/count)/100);
+        var money = (euro * 0.9) * 10000;
+        if( euro < 0.15 ) return res.send(new ERR.NotFoundError("InventoryError"));
+
+        server.conn.query("SELECT `partner`, `tokken` FROM `ts-x`.`phpbb3_users` WHERE `steamid`=?", [SteamID], function(err, row) {
+          if( err ) return res.send(new ERR.InternalServerError(err));
+          var offer = manager.createOffer(SteamID);
+          offer.addTheirItem({appid: 730, contextid: 2, assetid: parseInt(req.params['itemid'])});
+          offer.send("Votre item vaut: "+money+" $RP, selon les prix actuels sur le marché.", row[0].tokken, function(err, status) {
+            if( err && err.eresult == 15 ) return res.send({id: -1});
+            else if( err && err.eresult == 50 ) return res.send({id: -2});
+            else if( err ) return res.send(new ERR.InternalServerError(err));
+            res.send({id: offer.id});
+            return next();
+          });
+        });
+      }
+      catch( e ) {
+        console.log(e);
+      }
     });
   });
 });

@@ -1,31 +1,39 @@
 <script type="text/javascript">
-var app = angular.module("tsx", []);
+var app = angular.module("tsx", [], function ($compileProvider) {
+  $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|steam):/);
+
+});
 app.controller('ctrl', function($scope, $http, $filter, $location) {
   $http.defaults.headers.common['auth'] = _md5;
   $scope.steamid = _steamid;
-  $scope.error = false;
-  $scope.loading = true;
-  $scope.trade = true;
+  $scope.state = 0;
   $scope.link = "{$link}";
   $scope.validLink = false;
   $scope.patternLink = new RegExp(/^https:\/\/steamcommunity\.com\/tradeoffer\/new\/\?partner=([0-9]+)&token=([a-zA-Z0-9]+)$/);
-
-  $scope.loading = true;
   $scope.steamid64 = steamIDToProfile($scope.steamid);
   $http.get("https://www.ts-x.eu/api/steam/trade")
-    .success(function (response) { $scope.error = false; $scope.loading = false; $scope.items = response; })
-    .error(function() { $scope.loading = false; $scope.error = true; });
+    .success(function (response) { $scope.state = 2; $scope.items = response; })
+    .error(function() { $scope.state = 1; });
 
   $scope.submitLink = function() {
     var match = $scope.link.match($scope.patternLink);
     $http.put("https://www.ts-x.eu/api/steam/trade", {partner: match[1], tokken: match[2]}).success(function(res) {
-      console.log(res);
+      $scope.state = 2;
     });
   }
   $scope.offert = function(id) {
+    $scope.state = 0;
     $http.post("https://www.ts-x.eu/api/steam/trade", {itemid: id})
-      .success(function(res) { window.open("https://steamcommunity.com/tradeoffer/"+res.id+"/", "steam"); })
-      .error(function(res) { console.log(res); });
+      .success(function(res) {
+        if( res.id >= 1 ) {
+          $scope.state = 4;
+          $scope.transactionID = res.id;
+        }
+        else if( res.id == -2 )
+          $scope.state = 6;
+        else
+          $scope.state = 5;
+      }).error(function(res) { $scope.state = 5; });
   }
 });
 
@@ -61,13 +69,31 @@ function steamIDToProfile(steamID) {
 <br /><br />
 
 <div class="col-md-10 col-md-offset-1" ng-app="app" ng-controller="ctrl">
-
-  <div ng-show="trade">
-    <strong>Nous ne connaissons pas votre lien d'échange</strong> Vous pouvez retrouver votre lien ici: <a href="https://steamcommunity.com/my/tradeoffers/privacy#trade_offer_access_url">ici</a>.
+  <div ng-show="state == 0" class="col-sm-12 alert alert-warning" role="alert">
+    Chargement des données... <i class="fa fa-cog fa-spin fa-fw"></i><i class="fa fa-cog fa-spin fa-fw"></i><i class="fa fa-cog fa-spin fa-fw"></i>
+  </div>
+  <div ng-show="state == 1" class="col-sm-12 alert alert-danger" role="alert">
+    <strong>Votre inventaire est privé.</strong> Vous pouvez modifier les paramètres d'inventaire <a href="http://steamcommunity.com/my/edit/settings" />ici</a>.
+      <a href="http://steamcommunity.com/my/edit/settings" /><img src="/images/steam-trade.png" /></a>
+  </div>
+  <div ng-show="state == 2 && items.length == 0" class="col-sm-12 alert alert-warning" role="alert">
+    <strong>Votre inventaire est vide.</strong> Vous n'avez aucun item qui peut-être revendu pour des $RP.
+  </div>
+  <div ng-show="state == 2 && items.length != 0">
+    <h3>Votre inventaire CS:GO</h3>
+    <figure class="img-polaroid col-md-3" ng-repeat="item in items" style="height:150px;float:left;text-align:center;">
+        {{item.name}}
+        <br /><br />
+        <img src="http://steamcommunity-a.akamaihd.net/economy/image/{{item.image}}" width="100" ng-click="offert(item.id)"/>
+        <br /><br />
+        {{item.price*10000*0.90 | number: 0 }}$RP
+    </figure>
+  </div>
+  <div ng-show="state == 3" class="col-sm-12 alert alert-danger" role="alert">
+    <strong>Il semble avoir un problème avec votre lien d'échange...</strong> Vous pouvez le retrouver <a href="https://steamcommunity.com/my/tradeoffers/privacy#trade_offer_access_url">ici</a>.
       <a href="https://steamcommunity.com/my/tradeoffers/privacy#trade_offer_access_url">
         <img src="/images/steam-confirm.png" />
       </a>
-
       <br />
       <form name="form" class="input-group">
           <input type="text" class="form-control" name="link" ng-model="link" required ng-pattern="patternLink"/>
@@ -76,29 +102,16 @@ function steamIDToProfile(steamID) {
           </span>
       </form>
   </div>
-
-
-
-  <div ng-show="error" class="col-sm-12 alert alert-danger" role="alert">
-    <strong>Votre inventaire est privé.</strong> Vous pouvez modifier les paramètres d'inventaire <a href="http://steamcommunity.com/profiles/{{steamid64}}/edit/settings" />ici</a>.
-      <img src="/images/steam-trade.png" />
+  <div ng-show="state == 4" class="col-sm-12 alert alert-success" role="alert">
+    <strong>L'offre d'échange est prête!</strong> Il ne vous reste qu'à valider l'échange sur steam. Dès que nous avons reçu votre objet, votre argent sera transféré sur votre compte.
+    <br />Si vous avez une question, contactez KoSSoLaX` sur TeamSpeak ou par email à kossolax@ts-x.eu<br />
+    <a class="btn btn-default pull-right" href="https://steamcommunity.com/tradeoffer/{{transactionID}}"><i class="fa fa-chrome"></i> Navigateur</a>
+    <a class="btn btn-default pull-right" href="steam://url/ShowTradeOffer/{{transactionID}}"><i class="fa fa-steam"></i> Steam</a>
   </div>
-  <div ng-show="loading" class="col-sm-12 alert alert-warning" role="alert">
-    Chargement des données...
+  <div ng-show="state == 5" class="col-sm-12 alert alert-warning" role="alert">
+    <strong>Notre bot est hors ligne</strong> Impossible de valider votre transaction pour le moment. Soit Steam est hors ligne, soit il y a un souci chez nous. Si le problème persiste, contactez KoSSoLaX` sur TeamSpeak ou par email à kossolax@ts-x.eu
   </div>
-  <div ng-show="items.length == 0" class="col-sm-12 alert alert-warning" role="alert">
-    <strong>Votre inventaire est vide.</strong> Vous n'avez aucun item qui n'est pas une caisse, ou qui ne vaut pas au moins 10 centimes.
-  </div>
-  <div ng-hide="error || loading || items.length == 0">
-    <h3>Votre inventaire CS:GO</h3>
-    <figure class="img-polaroid col-md-3" ng-repeat="item in items" style="height:150px;float:left;text-align:center;">
-        {{item.name}}
-        instance: {{item.instanceid}}
-        class: {{item.classid}}
-        <br /><br />
-        <img src="http://steamcommunity-a.akamaihd.net/economy/image/{{item.image}}" width="100" ng-click="offert(item.id)"/>
-        <br /><br />
-        {{item.price*10000*0.90 | number: 0 }}$RP
-    </figure>
+  <div ng-show="state == 6" class="col-sm-12 alert alert-danger" role="alert">
+    <strong>Erreur</strong> Vous avez trop de transactions non validées. <a href="https://steamcommunity.com/my/tradeoffers/">Veuillez les confirmer ou les refuser</a>.
   </div>
 </div>
