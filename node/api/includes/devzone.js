@@ -308,7 +308,7 @@ exports = module.exports = function(server){
             return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
           }
           else{
-            if(rows[0]['stat_id'] != 1)
+            if(rows[0].stat_id != 1)
               return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
           }
         }
@@ -399,8 +399,8 @@ exports = module.exports = function(server){
       var tk_url = req.params.url || '';
       var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
       
-      var sql = "INSERT INTO `leeth`.dz_ticket(stat_id, cat_id, tk_title, tk_desc, tk_showdesc, assig_usr_id, tk_ip, usr_id, tk_url, tk_esttime) VALUES "
-        sql  += "(1, ?, ?, ?, ?, 0, ?, ?, ?, ?)";
+      var sql = "INSERT INTO `leeth`.dz_ticket(stat_id, cat_id, tk_title, tk_desc, tk_showdesc, assig_usr_id, tk_ip, usr_id, tk_url, tk_esttime) VALUES ";
+      sql  += "(1, ?, ?, ?, ?, 0, ?, ?, ?, ?)";
   
       server.conn.query(sql, [req.params.category, req.params.title, req.params.desc, showdesc, ip, user.uid, tk_url, req.params.job], function(err, rows){
         if( err ) res.send(new ERR.InternalServerError(err));
@@ -440,28 +440,33 @@ exports = module.exports = function(server){
         if(err) res.send(new ERR.InternalServerError(err));
         if(rows[0] === undefined)
           return res.send(new ERR.NotFoundError("NotFound"));
-        if(!user.hasaccess(rows[0]['cat_minacc']))
+        if(!user.hasaccess(rows[0].cat_minacc))
           return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
           
         var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
-        var sql2 = 'INSERT INTO `leeth`.dz_comment(com_text, usr_id, com_ip, tk_id) VALUES '
-          +'(?, ?, ?, ?)';
+        var sql2 = 'INSERT INTO `leeth`.dz_comment(com_text, usr_id, com_ip, tk_id) VALUES ';
+        sql2 += '(?, ?, ?, ?)';
         server.conn.query(sql2, [req.params.text, user.uid, ip, req.params.id], function(err2, rows2){
           if(err2) res.send(new ERR.InternalServerError(err2));
           var sql3 = "SELECT DISTINCT usr_id FROM `leeth`.dz_comment WHERE tk_id=? AND usr_id!=? AND usr_id!=?";
-          server.conn.query(sql3, [req.params.id, user.uid, rows[0]['usr_id']], function(err3, rows3){
+          server.conn.query(sql3, [req.params.id, user.uid, rows[0].usr_id], function(err3, rows3){
             if(err3) res.send(new ERR.InternalServerError(err3));
             
-            var msg = 'Un commentaire à été ajouté au ticket <span style="font-weight: bold">'+ rows[0]['tk_title'] +'</span> par <span style="font-weight: bold">' + user.username + '</span>.';
-            if(rows[0]['usr_id'] != user.uid){
-              dz.pm(server, rows[0]['usr_id'], "Ajout d'un commentaire au ticket: " + rows[0]['tk_title'], msg);
+            var msg = 'Un commentaire à été ajouté au ticket <span style="font-weight: bold">'+ rows[0].tk_title +'</span> par <span style="font-weight: bold">' + user.username + '</span>.';
+            var sent = [];
+            if(rows[0].usr_id != user.uid){
+              sent[sent.length] = rows[0].usr_id;
+              dz.pm(server, rows[0].usr_id, "Ajout d'un commentaire au ticket: " + rows[0].tk_title, msg);
             }
-            for(var i=0; i<rows3.length; i++){
-              if(rows[0]['usr_id'] == rows3[i]['usr_id'])
+            for(let i=0; i<rows3.length; i++){
+              if(rows[0].usr_id == rows3[i].usr_id)
                 continue;
-              dz.pm(server, rows[0]['usr_id'], "Ajout d'un commentaire au ticket: " + rows[0]['tk_title'], msg);
-            };
-            for(var i=0; i<=100; i+=10)
+              if(sent.indexOf(rows3[i].usr_id) != -1)
+                continue;
+              sent[sent.length] = rows3[i].usr_id;
+              dz.pm(server, rows3[i].usr_id, "Ajout d'un commentaire au ticket: " + rows[0].tk_title, msg);
+            }
+            for(let i=0; i<=100; i+=10)
               server.cache.del("/devzone/ticket/"+ req.params.id +"/comment-"+i);
             
             return res.send('ok');
