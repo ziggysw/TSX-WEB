@@ -34,14 +34,12 @@ exports = module.exports = function(server) {
           if( err ) return res.send(new ERR.InternalServerError(err));
 
           var ID = row.insertId;
-          server.conn.query("SELECT DISTINCT `steamid` FROM `rp_users` WHERE `job_id` IN (1,2,101,102) OR `refere` = 1 OR `steamid`=? OR `steamid`=?;", [req.params['steamid'], steamID], function( err, row ) {
+
+
+          server.conn.query("INSERT INTO `rp_messages_seen` (`messageid`, `steamid`) (SELECT ?, `steamid` FROM `rp_users` WHERE `job_id` IN (1,2,101,102) OR `refere` = 1 OR `steamid`=? OR `steamid`=?);", [ID, req.params['steamid'], steamID], function( err, row ) {
             if( err ) return res.send(new ERR.InternalServerError(err));
 
-            for (var i = 0; i < row.length; i++) {
-              server.conn.query("INSERT INTO `rp_messages_seen` (`id`, `messageid`, `steamid`) VALUES (NULL, ?, ?)", [ID, row[i].steamid], function(err, row) {
-                return res.send({'id': ID});
-              });
-            }
+            return res.send({'id': ID});
           });
         });
       });
