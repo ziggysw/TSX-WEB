@@ -38,7 +38,7 @@
 					{/if}
 				</ul>
 				<ul class="follow-icon">
-					<li><a href="https://www.facebook.com/pages/The-specialists-X/158129454222258"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="https://www.facebook.com/The-Specialists-X-Roleplay-1405541629728459"><i class="fa fa-facebook"></i></a></li>
 					<li><a href="https://twitter.com/KoSSoLaX"><i class="fa fa-twitter"></i></a></li>
 					<li><a href="http://steamcommunity.com/groups/TS-X-RP"><i class="fa fa-steam"></i></a></li>
 					<li><a href="ts3server://ts.ts-x.eu/?port=9987"><i class="fa fa-microphone"></i> TS</a></li>
