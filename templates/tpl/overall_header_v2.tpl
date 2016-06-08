@@ -43,7 +43,7 @@
 					<li><a href="http://steamcommunity.com/groups/TS-X-RP"><i class="fa fa-steam"></i></a></li>
 					<li><a href="ts3server://ts.ts-x.eu/?port=9987"><i class="fa fa-microphone"></i> TS</a></li>
 					<li><a href="/index.php?page=irc"># irc</a></li>
-					<li><a href="https://github.com/ts-x"><i class="fa fa-github"></i></a></li>
+					<li><a target="_blank" href="https://github.com/ts-x"><i class="fa fa-github"></i></a></li>
 				</ul>
 			</div>
 		</div>
