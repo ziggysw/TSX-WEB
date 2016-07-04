@@ -100,7 +100,7 @@ function steamIDToProfile(steamID) {
     <strong>Votre inventaire est vide.</strong> Vous n'avez aucun item qui peut-être revendu pour des $RP.
   </div>
   <div ng-show="state == 2 && items.length != 0">
-    <h3>Votre inventaire CS:GO/h3>
+    <h3>Votre inventaire CS:GO</h3>
     <figure class="img-polaroid col-md-3" ng-repeat="item in items" style="height:150px;float:left;text-align:center;">
         {{item.name}}
         <br /><br />

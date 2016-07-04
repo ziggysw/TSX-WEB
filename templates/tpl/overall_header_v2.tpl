@@ -114,8 +114,11 @@
 	</div>
 	{$intro}
 	<div class="container main">
-<!--<div class="col-sm-12 alert alert-success" role="alert">
-<strong>Après quelques semaines, mois, de retard... <img src="https://www.ts-x.eu/forum/images/smilies/wisdom.gif" /> voici enfin le braquage.</strong> <br />
-	Nous avons besoin d'une grosse 10ène de personnes ce soir après la PvP pour le tester. <a href="https://www.ts-x.eu/forum/viewtopic.php?p=573711#p573711">Inscrivez-vous sur le topic s'il vous plait</a>. Nous allons faire 2-3 simulations, et 2-3 scénarios typiques pour faire une vidéo de la mise à jour.
+<!--
+<div class="col-sm-12 alert alert-success" role="alert">
+<strong>Les amendes et la vitalité ne sont plus influencées par la richesse des joueurs.</strong> Certains joueurs prêtent leur argent à leurs amis pour cette raison, ce qui permet d'augmenter sa paye tout en payant moins d'amendes.
+Nous demandons aux joueurs à qui l'on a prêté de l'argent de bien vouloir rendre la majeure partie de cet argent. Sans quoi, nous serons dans l'obligation d'instaurer une taxation automatique sur ces joueurs servant de "banque".
+<br /><br />
+Merci de votre compréhension.
 </div>-->
 		{$page}

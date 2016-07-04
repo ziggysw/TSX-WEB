@@ -1,5 +1,10 @@
+<div class="btn-group btn-group-justified" role="group">
+  <a class="btn btn-default" href="#/tribunal/mine"> Vos rapports </a>
+  <a class="btn btn-default" href="#/tribunal/last"> Les dernières condamnations </a>
+  <a class="btn btn-default" href="#/tribunal/rules"> Participer au Tribunal </a>
+  <a class="btn btn-default" href="#/tribunal/report"> Rapporter un mauvais comportement </a>
+</div>
 <br />
-
 <h2>Le Tribunal: {{data.name}} <span ng-class="connected?'text-success':'text-danger'" class="text-danger"><i class="fa fa-gamepad"></i></span></h2>
 <div class="row">
   <ul class="col-md-offset-1 col-md-4">

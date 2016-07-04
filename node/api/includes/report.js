@@ -106,7 +106,7 @@ exports = module.exports = function(server) {
 
         var steamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
 
-        server.conn.query("SELECT M.`id`, M.`title`, `seen`, `timestamp` FROM `rp_messages` M INNER JOIN `rp_messages_seen` MS ON MS.`messageid`=M.`id` AND MS.`steamid`=? AND `linked_to` IS NULL AND ((M.`lock`=1 AND MS.`seen`=0) OR M.`lock`=0) ORDER BY M.`timestamp` DESC", [steamID], function( err, row ) {
+        server.conn.query("SELECT M.`id`, M.`title`, `seen`, `timestamp`, U.`name` as 'name', U2.`name` as 'plaignant' FROM `rp_messages` M INNER JOIN `rp_messages_seen` MS ON MS.`messageid`=M.`id` INNER JOIN `rp_users` U ON M.`reportSteamID`=U.`steamid` INNER JOIN `rp_users` U2 ON M.`SteamID`=U2.`steamid` WHERE MS.`steamid`=? AND `linked_to` IS NULL AND ((M.`lock`=1 AND MS.`seen`=0) OR M.`lock`=0) ORDER BY M.`timestamp` DESC", [steamID], function( err, row ) {
           if( err ) return res.send(new ERR.InternalServerError(err));
           if( row[0] == null ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
           res.send( row );
@@ -158,6 +158,32 @@ exports = module.exports = function(server) {
     }
     next();
   });
+
+  /**
+  * @api {post} /report/read
+  * @apiName PutMessagesRead
+  * @apiGroup Report
+  * @apiPermission user
+  * @apiHeader {String} auth Votre cookie de connexion.
+  */
+  server.post('/report/read', function (req, res, next) {
+    try {
+      server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
+        if( err ) return res.send(new ERR.InternalServerError(err));
+        if( row[0] == null ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+
+        var steamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
+
+        server.conn.query("UPDATE `rp_messages_seen` SET `seen`=1 WHERE `steamid`=?", [steamID], function( err, row ) {
+          if( err ) return res.send(new ERR.InternalServerError(err));
+          res.send("ok");
+        });
+      });
+    } catch ( err ) {
+      return res.send(err);
+    }
+    next();
+});
   /**
   * @api {put} /report/:id GetReportMessage
   * @apiName GetReportMessage

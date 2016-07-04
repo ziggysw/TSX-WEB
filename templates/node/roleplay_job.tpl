@@ -61,7 +61,10 @@
     </div>
   </div>
   <div class="col-md-5">
-    <h3> Les notes </h3>
+    <h3> Les notes  <button class="btn btn-warning" ng-hide="data.approuved" ng-show="$parent.isAdmin" rest="put@/job/{{Params.sub}}/approuve">Valider</button> </h3>
+    <img ng-show="data.approuved" class="pull-right" src="/images/approuved.png" width="100"/>
+
+
     <ul class="list-unstyled" dnd-list="data.notes">
       <li ng-repeat="item in data.notes" dnd-draggable="item" dnd-moved="data.notes.splice($index, 1);" dnd-dragend="dropCallback(event, $index, item);">
         <span ng-show="isAdmin">

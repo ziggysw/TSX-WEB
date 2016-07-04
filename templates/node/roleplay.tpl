@@ -51,4 +51,3 @@
   </a>
 </div>
 <br clear="all" /><br clear="all" />
-<div id="graph" ng-show="$parent.isAdmin" draw-user-chart="https://www.ts-x.eu/api/best/freekill" style="height: 460px; margin: 0 auto; width:100%; display:block;"></div>

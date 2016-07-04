@@ -1,5 +1,17 @@
+<div class="btn-group btn-group-justified" role="group">
+  <a class="btn btn-default" href="#/tribunal/mine"> Vos rapports </a>
+  <a class="btn btn-default" href="#/tribunal/last"> Les dernières condamnations </a>
+  <a class="btn btn-default" href="#/tribunal/rules"> Participer au Tribunal </a>
+  <a class="btn btn-default" href="#/tribunal/report"> Rapporter un mauvais comportement </a>
+</div>
+<br />
 <style>.well { margin-bottom: 2px; } pre.well > img { margin-right: 5px; }</style>
 <form class="form-horizontal">
+  <select class="form-control" ng-model="myself" ng-change="update(myself)" >
+    <option value=''>Les autres rapports ouverts</option>
+    <option ng-repeat="item in reports | orderBy:['group']" value="{{item.id}}">{{getTitleName(item)}}</option>
+  </select>
+
   <h4>{{plainte.title}} du {{(plainte.timestamp*1000) | date: 'dd/MM à HH:mm'}}:</h4>
   <table style="text-align:center; width:100%;">
     <tr>

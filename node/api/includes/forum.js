@@ -54,9 +54,6 @@ server.post('/forum/pm/:id', function (req, res, next) {
  * @apiGroup Forum
  * @apiHeader {String} auth Votre cookie de connexion.
  */
-/*
-
-*/
 server.get('/forum/pm', function (req, res, next) {
   try {
     server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
@@ -165,9 +162,6 @@ server.get('/forum/user/pm/new', function (req, res, next) {
  * @apiGroup Forum
  * @apiHeader {String} auth Votre cookie de connexion.
  */
-/*
-
-*/
 server.get('/forum/post/last', function (req, res, next) {
   try {
     server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
@@ -191,9 +185,6 @@ server.get('/forum/post/last', function (req, res, next) {
  * @apiGroup Forum
  * @apiHeader {String} auth Votre cookie de connexion.
  */
-/*
-
-*/
 server.get('/forum/smiley', function (req, res, next) {
   try {
   server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
@@ -208,6 +199,28 @@ server.get('/forum/smiley', function (req, res, next) {
   } catch ( err ) {
     return res.send(err);
   }
+  next();
+});
+
+
+/**
+ * @api {get} /forum/download GetAllUserPM
+ * @apiName GetAllDownload
+ * @apiGroup Forum
+ * @apiHeader {String} auth Votre cookie de connexion.
+ */
+server.get('/forum/download', function (req, res, next) {
+  var cache = server.cache.get( req._url.pathname);
+  if( cache != undefined ) return res.send(cache);
+  server.conn.query("SELECT `path` FROM `rp_csgo`.`rp_download`;", function(err, row) {
+
+    var obj = new Array();
+    for(var i=0; i<row.length; i++)
+      obj.push(row[i].path);
+
+    server.cache.set( req._url.pathname, obj);
+    return res.send(obj);
+  });
   next();
 });
 };

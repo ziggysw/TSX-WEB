@@ -126,7 +126,7 @@ server.get('/live/stats', function (req, res, next) {
   server.conn.query("SELECT `type`, R.`steamid`, `name` FROM `rp_rank` R INNER JOIN `rp_users` U ON U.`steamid`=R.`steamid` WHERE `rank`=1", function(err, rows) {
     obj.stats = new Object();
 
-    var tmp = { "pvp": "PvP", "sell": "Vente", "buy": "Achat", "money": "Richesse", "age": "Ancienneté", "parrain": "Parrainage","vital": "Vitalité", "success": "Succès", "freekill": "Free-kill", "general": "Général", "artisan": "Artisanat" };
+    var tmp = { "pvp": "PvP", "sell": "Vente", "buy": "Achat", "money": "Richesse", "age": "Ancienneté", "parrain": "Parrainage","vital": "Vitalité", "success": "Succès", "freekill": "Free-kill", "general": "Général", "artisan": "Artisanat", "quest": "Quêtes" };
     for(var i=0; i<rows.length; i++)
       obj.stats[rows[i].type] = {steamid: rows[i].steamid, name: rows[i].name, type: tmp[rows[i].type]};
     cb(obj);
@@ -182,7 +182,7 @@ server.get('/live/sondage/:steamid', function(req, res, next) {
   try {
     var steamid = req.params["steamid"].replace("STEAM_1", "STEAM_0");
     if( steamid == "notset" ) return res.send("2");
-    
+
     server.conn.query("SELECT * FROM `ts-x`.`site_sondage` WHERE `steamid`=? LIMIT 1;", [steamid], function(err, row) {
       if( err ) return res.send("2");
       if( row.length == 0) return res.send("0");
@@ -194,4 +194,61 @@ server.get('/live/sondage/:steamid', function(req, res, next) {
 next();
 
 });
+
+
+/**
+ * @api {get} /live/update GetLastUpdate
+ * @apiName GetLastUpdate
+ * @apiGroup Live
+ */
+server.get('/live/update', function (req, res, next) {
+  var cache = server.cache.get( req._url.pathname);
+  if( cache != undefined ) return res.send(cache);
+
+  var data = new Array();
+  var done=0;
+  var subRequest=0;
+  var subRequestDone=0;
+  function output() {
+    subRequestDone++;
+    if( done == 2 && subRequestDone == subRequest) {
+      data.sort(function(a,b){  return new Date(b.date) - new Date(a.date); });
+      server.cache.set( req._url.pathname, data, 300);
+      return res.send(data);
+    }
+  }
+  function getFileName(str) {
+    return str.split('\\').pop().split('/').pop();
+  }
+
+  function traitement(error, response, body) {
+    body = JSON.parse(body);
+    body.forEach(function (i) {
+      request({url: i.url+"?access_token=e13c5d9ec7c00ea93d3e94fa5130886cc95df92f", headers: {'User-Agent': 'kossolax'}}, function (error, response, body) {
+        body = JSON.parse(body);
+
+        var file = "";
+        var change=0;
+        body.files.forEach(function (j) {
+          change += j.changes;
+          file += getFileName(j.filename)+", ";
+        });
+        file = file.substring(0, file.length - 2);
+
+        var obj = { author: i.author.login, date: i.commit.author.date, message: i.commit.message, files: file, changes: change };
+        data.push(obj);
+        output();
+      });
+    });
+    done++;
+    subRequest += body.length;
+  }
+
+  request({url: "https://api.github.com/repos/TS-X/TSX-RP/commits?access_token=e13c5d9ec7c00ea93d3e94fa5130886cc95df92f", headers: {'User-Agent': 'kossolax'}}, traitement);
+  request({url: "https://api.github.com/repos/kossolax/tsx.eu/commits?access_token=e13c5d9ec7c00ea93d3e94fa5130886cc95df92f", headers: {'User-Agent': 'kossolax'}}, traitement);
+
+  next();
+});
+
+
 };

@@ -1,6 +1,10 @@
 "use strict";
 exports = module.exports = function(app) {
 
+app.controller('rpUpdate', function($scope, $http, $filter, $location, $routeParams) {
+  $http.get("https://www.ts-x.eu/api/live/update").success(function(res) { $scope.data = res; });
+});
+
 app.controller('mainCtrl', function($scope, $http, $filter, $location, $routeParams) {
   document.title = ".:|ts-X|:. RolePlay";
   $scope.Search = $location.search();
@@ -284,9 +288,22 @@ app.controller('rpTribunal', function($scope, $location, $filter, $http, $routeP
   document.title = ".:|ts-X|:. RolePlay - Le Tribunal";
 
   if( $routeParams.arg == "rules" ) {
-    $http.get("https://www.ts-x.eu/api/tribunal/next").success(function(res) {
-      $scope.report = res;
-    });
+    $http.get("https://www.ts-x.eu/api/tribunal/next").success(function(res) { $scope.report = res; });
+  }
+  else if( $routeParams.arg == "last" ) {
+    $http.get("https://www.ts-x.eu/api/tribunal/last").success(function(res) { $scope.report = res; });
+  }
+  else if( $routeParams.arg == "mine" ) {
+    $scope.update = function(item) {
+      $location.path("/tribunal/phone/"+item);
+    }
+    $scope.getTitleName = function( item ) {
+        var ret = item.title + " du "+ $filter('date')( new Date(item.timestamp*1000), 'dd/MM à HH:mm');
+        if( item.seen == 0 ) ret += ' - NOUVEAU MESSAGE';
+        return ret;
+    }
+    $http.get("https://www.ts-x.eu/api/tribunal/mine").success(function(res) { $scope.reportTribu = res; });
+    $http.get("https://www.ts-x.eu/api/report").success(function (res) { $scope.reportPolice = res; });
   }
   else if( $routeParams.arg == "report" ) {
     document.title = ".:|ts-X|:. RolePlay - Rapporter un joueur";
@@ -339,13 +356,13 @@ app.controller('rpTribunal', function($scope, $location, $filter, $http, $routeP
     }
   }
 });
-app.controller('rpTribunalCase', function($scope, $location, $routeParams, $http, $timeout) {
+app.controller('rpTribunalCase', function($scope, $location, $routeParams, $http, $timeout, $filter) {
   document.title = ".:|ts-X|:. RolePlay - Tribunal - Gestion d'un cas";
   $scope.case = $routeParams.sub;
-
   if( $routeParams.arg == "phone" ) {
     var id = $routeParams.sub;
     $http.get("https://www.ts-x.eu/api/user/"+$scope.steamid).success(function (response) { $scope.me = response; });
+    $http.get("https://www.ts-x.eu/api/report").success(function (response) { $scope.reports = response; });
     $http.get("https://www.ts-x.eu/api/report/"+id).success(function (response) { $scope.plainte = response[0]; });
     $http.get("https://www.ts-x.eu/api/report/"+id+"/response").success(function (response) { $scope.response = response; });
     $http.get("https://www.ts-x.eu/api/report/"+id+"/log").success(function (response) { $scope.logs = response; });
@@ -362,6 +379,14 @@ app.controller('rpTribunalCase', function($scope, $location, $routeParams, $http
 			});
       $scope.rapportReply = "";
 		}
+    $scope.update = function(item) {
+      $location.path("/tribunal/phone/"+item);
+    }
+    $scope.getTitleName = function( item ) {
+        var ret = item.title + " du "+ $filter('date')( new Date(item.timestamp*1000), 'dd/MM à HH:mm');
+        if( item.seen == 0 ) ret += ' - NOUVEAU MESSAGE';
+        return ret;
+    }
   }
   else if( $routeParams.arg == "case" ) {
     $scope.steamid='';

@@ -126,7 +126,54 @@ exports = module.exports = function(server){
     }
     next();
   });
+  /**
+   * @api {get} /tribunal/last
+   * @apiName GetTribunal
+   * @apiGroup Tribunal
+   * @apiPermission user
+   * @apiHeader {String} auth Votre cookie de connexion.
+   * @apiParam {String} id
+   */
+  server.get('/tribunal/last', function (req, res, next) {
+    var cache = server.cache.get( req._url.pathname);
+    if( cache != undefined ) { return res.send(cache); }
 
+    	server.conn.query("SELECT `id`, U.`steamid`, U.`name`, `report_raison`, `timestamp`, `jail`, `amende`, `reason`, U2.`steamid` as juge, U2.`name` as `jugeName` FROM `ts-x`.`site_report` R INNER JOIN `rp_csgo`.`rp_users` U ON U.`steamid`=R.`report_steamid` INNER JOIN `rp_csgo`.`rp_users` U2 ON U2.`steamid`=R.`juge` WHERE jail<>-1 AND amende<>-1 ORDER BY `timestamp` DESC LIMIT 50;", function(err, row) {
+      if( err ) return res.send(new ERR.InternalServerError(err));
+
+      server.cache.set( req._url.pathname, row);
+      return res.send(row);
+    });
+    next();
+  });
+
+  /**
+   * @api {get} /tribunal/mine
+   * @apiName GetTribunal
+   * @apiGroup Tribunal
+   * @apiPermission user
+   * @apiHeader {String} auth Votre cookie de connexion.
+   * @apiParam {String} id
+   */
+   server.get('/tribunal/mine', function (req, res, next) {
+     try {
+       server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
+         if( err ) return res.send(new ERR.InternalServerError(err));
+         if( row[0] == null ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+
+         var SteamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
+
+         server.conn.query("SELECT `id`, U.`steamid`, U.`name`, `report_raison`, `timestamp`, `jail`, `amende`, `reason`, U2.`steamid` as juge, U2.`name` as `jugeName` FROM `ts-x`.`site_report` R INNER JOIN `rp_csgo`.`rp_users` U ON U.`steamid`=R.`report_steamid` INNER JOIN `rp_csgo`.`rp_users` U2 ON U2.`steamid`=R.`juge` WHERE `own_steamid`=? OR `report_steamid`=? ORDER BY `id` DESC LIMIT 50;", [SteamID, SteamID], function(err, row) {
+           if( err ) return res.send(new ERR.InternalServerError(err));
+
+           return res.send(row);
+         });
+       });
+     } catch ( err ) {
+       return res.send(err);
+     }
+     next();
+   });
   /**
    * @api {get} /tribunal/:id GetTribunal
    * @apiName GetTribunal

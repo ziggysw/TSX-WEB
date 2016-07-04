@@ -27,7 +27,7 @@ exports = module.exports = function(server){
   	manager.setCookies(cookies);
   });
   manager.on('sentOfferChanged', function(offer, oldState) {
-    console.log("Offer #" + offer.id + " changed: " + TradeOfferManager.getStateName(oldState) + " -> " + TradeOfferManager.getStateName(offer.state));
+    console.log(`Offer #${offer.id} changed: ${TradeOfferManager.ETradeOfferState[oldState]} -> ${TradeOfferManager.ETradeOfferState[offer.state]}`);
     if (offer.state == TradeOfferManager.ETradeOfferState.Accepted) {
       offer.getReceivedItems(function(err, items) {
         Object.keys(items).forEach(function (i) {
@@ -99,6 +99,7 @@ server.post('/steam/trade', function (req, res, next) {
     var SteamID = row[0].steamid;
 
     request("http://steamcommunity.com/profiles/" + (new SteamC(SteamID)).getSteamID64() + "/inventory/json/730/2", function (error, response, body) {
+	console.log(error);
       try {
         body = JSON.parse(body);
         if( !body.success ) return res.send(new ERR.NotFoundError("InventoryError"));
@@ -142,8 +143,10 @@ server.post('/steam/trade', function (req, res, next) {
         server.conn.query("SELECT `partner`, `tokken` FROM `ts-x`.`phpbb3_users` WHERE `steamid`=?", [SteamID], function(err, row) {
           if( err ) return res.send(new ERR.InternalServerError(err));
           var offer = manager.createOffer(SteamID);
+          offer.setMessage("Votre item vaut: "+Math.round(money)+" $RP, selon les prix actuels sur le marché.");
+          offer.setToken(row[0].tokken);
           offer.addTheirItem({appid: 730, contextid: 2, assetid: parseInt(req.params['itemid'])});
-          offer.send("Votre item vaut: "+Math.round(money)+" $RP, selon les prix actuels sur le marché.", row[0].tokken, function(err, status) {
+          offer.send(function(err, status) {
             console.log(err);
             if( err && err.eresult == 15 ) return res.send({id: -1});
             else if( err && err.eresult == 50 ) return res.send({id: -2});
@@ -193,7 +196,7 @@ server.get('/steam/trade', function (req, res, next) {
           }
         });
       }
-      server.cache.set( req._url.pathname+"/"+SteamID, obj);
+      server.cache.set( req._url.pathname+"/"+SteamID, obj, 5);
       res.send(obj);
       return next();
     });
@@ -261,7 +264,7 @@ server.get('/steam/inventory', function (req, res, next) {
           }
         });
 
-        server.cache.set( req._url.pathname+"/"+SteamID, obj);
+        server.cache.set( req._url.pathname+"/"+SteamID, obj, 5);
         res.send(obj);
       }
       catch( e ) {

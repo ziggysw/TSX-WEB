@@ -28,6 +28,10 @@ exports = module.exports = function(app) {
     }).when('/graph/:arg', {
       templateUrl: function(p) { return "/templates/node/roleplay_graph.tpl"; },
       reloadOnSearch: false
+    }).when('/update', {
+      templateUrl: function(p) { return "/templates/node/roleplay_update.tpl"; },
+      controller: 'rpUpdate',
+      reloadOnSearch: false
     }).when('/', {
       templateUrl: function(p) { return "/templates/node/roleplay.tpl"; },
       controller: 'rpIndex',

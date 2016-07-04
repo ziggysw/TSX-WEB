@@ -1,3 +1,9 @@
+<div class="btn-group btn-group-justified" role="group">
+  <a class="btn btn-default" href="#/tribunal/mine"> Vos rapports </a>
+  <a class="btn btn-default" href="#/tribunal/last"> Les dernières condamnations </a>
+  <a class="btn btn-default" href="#/tribunal/rules"> Participer au Tribunal </a>
+  <a class="btn btn-default" href="#/tribunal/report"> Rapporter un mauvais comportement </a>
+</div>
 <br />
 <h2>Rapporter un mauvais comportement</h2>
   <h3>

@@ -1,6 +1,7 @@
 "use strict";
 exports = module.exports = function(server) {
   var ERR = require('node-restify-errors');
+  var ratioMulti = 1.2;
 
 
 /**
@@ -13,7 +14,7 @@ server.get('/jobs', function (req, res, next) {
   var cache = server.cache.get( req._url.pathname);
   if( cache != undefined ) { return res.send(cache); }
 
-  var sql = "SELECT J.`job_id` as `id`, SUBSTRING(`job_name`, LOCATE(' - ', `job_name`)+3) as `name`, `quota`, `current`, `steamid`";
+  var sql = "SELECT J.`job_id` as `id`, SUBSTRING(`job_name`, LOCATE(' - ', `job_name`)+3) as `name`, FLOOR(`quota`*"+ratioMulti+") as `quota`, `current`, `steamid`";
 	sql += " FROM `rp_jobs` J";
   sql += " LEFT JOIN (";
   sql += " SELECT `steamid`, `job_id` FROM `rp_users` U WHERE `job_id`>0 AND UNIX_TIMESTAMP(`last_connected`)>UNIX_TIMESTAMP()-(7*24*60*60) AND `time_played`>=(DAY(NOW())/2)";
@@ -77,6 +78,30 @@ server.get('/job/:id/top', function (req, res, next) {
   });
 
   next();
+});
+/**
+ * @api {post} /job/:SteamID/approuve giveClientItem
+ * @apiName giveClientItem
+ * @apiGroup User
+ * @apiParam {String} SteamID Un identifiant unique sous le format STEAM_1:x:xxxxxxx
+ * @apiParam {Integer} itemid Identifiant unique de l'item à envoyer
+ * @apiParam {Integer} amount la quantité à envoyer
+ */
+server.put('/job/:id/approuve', function (req, res, next) {
+
+  server.conn.query(server.getAuthSMAdmin, [req.headers.auth], function(err, row) {
+    if( err ) return res.send(new ERR.InternalServerError(err));
+    if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+    var SteamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
+    if( SteamID != "STEAM_1:0:7490757" && SteamID != "STEAM_1:1:39278818" ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+
+    server.conn.query("UPDATE `rp_csgo`.`rp_jobs` SET `approuved` = '1' WHERE `rp_jobs`.`job_id` = ?;", [req.params['id']], function(err, row) {
+      if( err ) return res.send(new ERR.InternalServerError(err));
+      return res.send("OK");
+    });
+  });
+
+	next();
 });
 
 /**
@@ -186,7 +211,7 @@ server.get('/job/:id', function (req, res, next) {
   var cache = server.cache.get( req._url.pathname);
   if( cache != undefined ) return res.send(cache);
 
-  var sql = "SELECT `job_id` as `id`, SUBSTRING(`job_name`, LOCATE(' - ', `job_name`)+3) as `name`, `capital`, `subside`, `quota`, `current` ";
+  var sql = "SELECT `job_id` as `id`, SUBSTRING(`job_name`, LOCATE(' - ', `job_name`)+3) as `name`, `capital`, `subside`, FLOOR(`quota`*"+ratioMulti+") as `quota`, `current`, `approuved` ";
   sql += "FROM `rp_jobs` WHERE `job_id`=?;"
   var obj = new Object();
 
