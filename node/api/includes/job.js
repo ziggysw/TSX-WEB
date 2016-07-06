@@ -1,7 +1,7 @@
 "use strict";
 exports = module.exports = function(server) {
   var ERR = require('node-restify-errors');
-  var ratioMulti = 1.2;
+  var ratioMulti = 1.0;
 
 
 /**

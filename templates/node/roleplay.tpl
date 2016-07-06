@@ -45,8 +45,8 @@
 <div class="btn-group">
   <a class="col-md-3 col-sm-6 btn btn-default" ng-repeat="(key, value) in stats.stats" href="#/rank/{{key}}">
     <img class="pull-left img-circle" width="64" height="64" src="/images/icons/{{key}}.jpg" />
-    <div ng-class="(key=='freekill'?'text-warning':'')">
-      <strong>{{value.type}}:</strong><br />{{value.name}}<sub ng-show="key=='freekill'"><br />Il n'est pas recommandé d'être premier</sub>
+    <div ng-class="(key=='freekill'||key=='freekill2'?'text-warning':'')">
+      <strong>{{value.type}}:</strong><br />{{value.name}}<sub ng-show="key=='freekill'||key=='freekill2'"><br />Il n'est pas recommandé d'être premier</sub>
     </div>
   </a>
 </div>

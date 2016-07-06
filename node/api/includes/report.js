@@ -27,6 +27,7 @@ exports = module.exports = function(server) {
       server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
         if( err ) return res.send(new ERR.InternalServerError(err));
         if( row[0] == null ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+	if( row[0].steamid == 'notset' ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
 
         var steamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
 

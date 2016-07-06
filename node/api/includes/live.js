@@ -126,7 +126,7 @@ server.get('/live/stats', function (req, res, next) {
   server.conn.query("SELECT `type`, R.`steamid`, `name` FROM `rp_rank` R INNER JOIN `rp_users` U ON U.`steamid`=R.`steamid` WHERE `rank`=1", function(err, rows) {
     obj.stats = new Object();
 
-    var tmp = { "pvp": "PvP", "sell": "Vente", "buy": "Achat", "money": "Richesse", "age": "Ancienneté", "parrain": "Parrainage","vital": "Vitalité", "success": "Succès", "freekill": "Free-kill", "general": "Général", "artisan": "Artisanat", "quest": "Quêtes" };
+    var tmp = { "pvp": "PvP", "sell": "Vente", "buy": "Achat", "money": "Richesse", "age": "Ancienneté", "parrain": "Parrainage","vital": "Vitalité", "success": "Succès", "freekill": "Free-kill/mois", "freekill2": "Free-kill/31j", "general": "Général", "artisan": "Artisanat", "quest": "Quêtes" };
     for(var i=0; i<rows.length; i++)
       obj.stats[rows[i].type] = {steamid: rows[i].steamid, name: rows[i].name, type: tmp[rows[i].type]};
     cb(obj);
@@ -209,6 +209,8 @@ server.get('/live/update', function (req, res, next) {
   var done=0;
   var subRequest=0;
   var subRequestDone=0;
+  var tokken="ffbf202c9fbbc295e859950a23bf29be4a309261";
+
   function output() {
     subRequestDone++;
     if( done == 2 && subRequestDone == subRequest) {
@@ -222,9 +224,10 @@ server.get('/live/update', function (req, res, next) {
   }
 
   function traitement(error, response, body) {
+    try {
     body = JSON.parse(body);
     body.forEach(function (i) {
-      request({url: i.url+"?access_token=e13c5d9ec7c00ea93d3e94fa5130886cc95df92f", headers: {'User-Agent': 'kossolax'}}, function (error, response, body) {
+      request({url: i.url+"?access_token="+tokken, headers: {'User-Agent': 'kossolax'}}, function (error, response, body) {
         body = JSON.parse(body);
 
         var file = "";
@@ -242,10 +245,14 @@ server.get('/live/update', function (req, res, next) {
     });
     done++;
     subRequest += body.length;
+    } catch( e ) {
+	console.log(e);
+	console.log(body);
+    }
   }
 
-  request({url: "https://api.github.com/repos/TS-X/TSX-RP/commits?access_token=e13c5d9ec7c00ea93d3e94fa5130886cc95df92f", headers: {'User-Agent': 'kossolax'}}, traitement);
-  request({url: "https://api.github.com/repos/kossolax/tsx.eu/commits?access_token=e13c5d9ec7c00ea93d3e94fa5130886cc95df92f", headers: {'User-Agent': 'kossolax'}}, traitement);
+  request({url: "https://api.github.com/repos/TS-X/TSX-RP/commits?access_token="+tokken, headers: {'User-Agent': 'kossolax'}}, traitement);
+  request({url: "https://api.github.com/repos/kossolax/tsx.eu/commits?access_token="+tokken, headers: {'User-Agent': 'kossolax'}}, traitement);
 
   next();
 });
