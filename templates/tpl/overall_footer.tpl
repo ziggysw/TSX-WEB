@@ -23,7 +23,7 @@
 				<h4>Les vidéos RP</h4>
 				<div class="video">
 					<p>Braquages:</p><br />
-					<figure class="img-polaroid"><a class="various" href="https://www.youtube.com/watch?v=RtNNPcaTzO0" style="opacity: 1;"></a><img alt="" src="//i.ytimg.com/vi_webp/RtNNPcaTzO0/mqdefault.webp" style="max-width:100%;"></figure>
+					<figure><a class="various" href="https://www.youtube.com/watch?v=RtNNPcaTzO0" style="opacity: 1;"></a><img alt="" src="/images/tv_tsx_brkg.png" style="max-width:100%;"></figure>
 			    </div>
 			</div>
 		</article>
