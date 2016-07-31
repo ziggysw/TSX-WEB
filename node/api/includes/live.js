@@ -16,7 +16,7 @@ server.get('/live/stream', function (req, res, next) {
    try {
       var cache = server.cache.get( req._url.pathname);
       if( cache != undefined ) return res.send(cache);
-      var broadcaster = ["moyna54", "kossolax", "hipiman", "messorem_tsx"];
+      var broadcaster = ["moyna54", "kossolax", "hipiman", "messorem_tsx", "exblast"];
       var obj = new Array();
       var done = 0;
 
@@ -126,7 +126,7 @@ server.get('/live/stats', function (req, res, next) {
   server.conn.query("SELECT `type`, R.`steamid`, `name` FROM `rp_rank` R INNER JOIN `rp_users` U ON U.`steamid`=R.`steamid` WHERE `rank`=1", function(err, rows) {
     obj.stats = new Object();
 
-    var tmp = { "pvp": "PvP", "sell": "Vente", "buy": "Achat", "money": "Richesse", "age": "Ancienneté", "parrain": "Parrainage","vital": "Vitalité", "success": "Succès", "freekill": "Free-kill/mois", "freekill2": "Free-kill/31j", "general": "Général", "artisan": "Artisanat", "quest": "Quêtes" };
+    var tmp = { "pvp": "PvP", "sell": "Vente", "buy": "Achat", "money": "Richesse", "age": "Ancienneté", "parrain": "Parrainage","vital": "Vitalité", "success": "Succès", "freekill": "Free-kill/mois", "freekill2": "Free-kill/31j", "general": "Général", "artisan": "Artisanat", "quest": "Quêtes", "jeton": "Jetons bleus" };
     for(var i=0; i<rows.length; i++)
       obj.stats[rows[i].type] = {steamid: rows[i].steamid, name: rows[i].name, type: tmp[rows[i].type]};
     cb(obj);
@@ -209,7 +209,7 @@ server.get('/live/update', function (req, res, next) {
   var done=0;
   var subRequest=0;
   var subRequestDone=0;
-  var tokken="ffbf202c9fbbc295e859950a23bf29be4a309261";
+  var tokken="718dd1601e0cd9fc3591e54a5cc2133fbf1b53e3";
 
   function output() {
     subRequestDone++;

@@ -5,7 +5,7 @@
   <a class="btn btn-default" href="#/tribunal/report"> Rapporter un mauvais comportement </a>
 </div>
 <br />
-<style>.well { margin-bottom: 2px; } pre.well > img { margin-right: 5px; }</style>
+<style>.well { margin-bottom: 2px; white-space: pre-wrap; } pre.well > img { margin-right: 5px; }</style>
 <form class="form-horizontal">
   <select class="form-control" ng-model="myself" ng-change="update(myself)" >
     <option value=''>Les autres rapports ouverts</option>

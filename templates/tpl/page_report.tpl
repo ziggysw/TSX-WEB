@@ -63,7 +63,7 @@
 	});
 </script>
 <style>
-.well { margin-bottom: 2px; }
+.well { margin-bottom: 2px; white-space: pre-wrap; }
 pre.well > img { margin-right: 5px; }
 </style>
 

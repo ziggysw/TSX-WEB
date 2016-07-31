@@ -57,7 +57,7 @@
 							<span class="sr-only">Toggle navigation</span>
 							<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="./"><img src="/images/bleue2.png" alt="tsX" width="400" height="100" style="max-height:100px !important"/></a>
+						<a class="navbar-brand" href="./"><img src="{if="$alternate"}{$alternate}{else}/images/bleue2.png{/if}" alt="tsX" width="400" height="100" style="max-height:100px !important"/></a>
 					</div>
 					<div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav navbar-right" style="z-index:2;">
@@ -115,10 +115,8 @@
 	{$intro}
 	<div class="container main">
 <!--
-<div class="col-sm-12 alert alert-success" role="alert">
-<strong>Les amendes et la vitalité ne sont plus influencées par la richesse des joueurs.</strong> Certains joueurs prêtent leur argent à leurs amis pour cette raison, ce qui permet d'augmenter sa paye tout en payant moins d'amendes.
-Nous demandons aux joueurs à qui l'on a prêté de l'argent de bien vouloir rendre la majeure partie de cet argent. Sans quoi, nous serons dans l'obligation d'instaurer une taxation automatique sur ces joueurs servant de "banque".
-<br /><br />
-Merci de votre compréhension.
-</div>-->
+<div class="col-sm-4 col-sm-offset-8 alert alert-success" role="alert">
+<strong>Princeton a été mis à jour.</strong> Venez faire un tour en ville !
+</div>
+-->
 		{$page}

@@ -3,7 +3,7 @@ exports = module.exports = function(server){
   var ERR = require('node-restify-errors');
   var fs = require('fs');
   var request = require('request');
-  var priceList = require('../market.json');
+  var priceList = require('/var/www/ts-x/node/api/market.json');
   var SteamUser = require('steam-user');
   var SteamC = require('steamid');
   var TradeOfferManager = require('steam-tradeoffer-manager');
@@ -14,6 +14,7 @@ exports = module.exports = function(server){
 
   if (fs.existsSync('polldata.json')) {
     manager.pollData = JSON.parse(fs.readFileSync('polldata.json'));
+    console.log
   }
   manager.on('pollData', function(pollData) {
   	fs.writeFile('polldata.json', JSON.stringify(pollData));
@@ -32,15 +33,7 @@ exports = module.exports = function(server){
       offer.getReceivedItems(function(err, items) {
         Object.keys(items).forEach(function (i) {
           var item = items[i];
-          var price = priceList[item.market_hash_name];
-          var count = 0;
-          var total = 0;
-          Object.keys(price).forEach(function (j) {
-            total += (price[j].price * price[j].count);
-            count += price[j].count;
-          });
-
-          var euro = (Math.floor(total/count)/100 * 0.9);
+          var euro = ( getPrice(item.market_hash_name) * 0.9);
           var money = euro * 10000;
           var SteamID = offer.partner.getSteam2RenderedID();
           var now = new Date();
@@ -58,6 +51,7 @@ exports = module.exports = function(server){
     var total = 0;
     var count = 0;
     var price = priceList[name];
+    console.log(price);
       Object.keys(price).forEach(function (j) {
         total += (price[j].price * price[j].count);
         count += price[j].count;
@@ -272,6 +266,72 @@ server.get('/steam/inventory', function (req, res, next) {
       }
       next();
   });
+  next();
+  });
+});
+
+  /**
+   * @api {get} /steam/inventory/:id
+   * @apiName GetSteamInvetory
+   * @apiGroup Steam
+   */
+server.get('/steam/inventory/:id', function (req, res, next) {
+  var SteamID = req.params['id']
+  var cache = server.cache.get( req._url.pathname+"/"+SteamID );
+  if( cache != undefined ) return res.send(cache);
+
+  request("http://steamcommunity.com/profiles/" + (new SteamC(SteamID)).getSteamID64() + "/inventory/json/730/2", function (error, response, body) {
+    if( error ) return res.send(new ERR.NotFoundError("SteamError"));
+
+    try {
+      body = JSON.parse(body);
+      if( !body.success ) return res.send(new ERR.NotFoundError("InventoryError"));
+
+      var invs = body.rgInventory;
+      var items = body.rgDescriptions;
+      var invID = new Array();
+      var obj = new Array();
+
+      Object.keys(invs).forEach(function (i) {
+        var inv = invs[i];
+        invID[inv.classid+"_"+inv.instanceid] = inv.id;
+      });
+
+      Object.keys(items).forEach(function (i) {
+        var item = items[i];
+        if( parseInt(item.tradable) == 1 ) {
+          var data = {
+            id: invID[item.classid+"_"+item.instanceid],
+            name: item.name,
+            classid: item.classid,
+            instanceid: item.instanceid,
+            image: item.icon_url_large ? item.icon_url_large : item.icon_url,
+            hashname: item.market_hash_name,
+            price: null,
+          };
+
+          var isBox = false;
+          Object.keys(item.tags).forEach(function (j) {
+            var tag = item.tags[j];
+            if( tag.internal_name === "CSGO_Type_WeaponCase" )
+              isBox = true;
+          });
+
+          if( !isBox ) {
+            console.log(data);
+            data.price = getPrice(item.market_hash_name);
+            if( data.price >= 0.15 )
+              obj.push(data);
+          }
+        }
+      });
+
+      server.cache.set( req._url.pathname+"/"+SteamID, obj, 5);
+      res.send(obj);
+    }
+    catch( e ) {
+      console.log(e);
+    }
   next();
   });
 });

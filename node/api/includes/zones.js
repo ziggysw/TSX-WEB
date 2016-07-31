@@ -2,33 +2,6 @@
 exports = module.exports = function(server){
   var ERR = require('node-restify-errors');
   var moment = require('moment');
-  // bla, bla, bla... à déplacer
-  // Compression algorithm
-  function lzw_encode(s) {
-    var dict = {};
-    var data = (s + "").split("");
-    var out = [];
-    var currChar;
-    var phrase = data[0];
-    var code = 256;
-    for (var i=1; i<data.length; i++) {
-        currChar=data[i];
-        if (dict[phrase + currChar] != null) {
-            phrase += currChar;
-        }
-        else {
-            out.push(phrase.length > 1 ? dict[phrase] : phrase.charCodeAt(0));
-            dict[phrase + currChar] = code;
-            code++;
-            phrase=currChar;
-        }
-    }
-    out.push(phrase.length > 1 ? dict[phrase] : phrase.charCodeAt(0));
-    for (var i=0; i<out.length; i++) {
-        out[i] = String.fromCharCode(out[i]);
-    }
-    return out.join("");
-}
 /**
  * @api {get} /zone/:x/:y:/:z GetZoneByLocation
  * @apiName GetZoneByLocation
@@ -102,9 +75,8 @@ server.get('/zones', function (req, res, next) {
       array.push(obj);
     }
 
-    var data = lzw_encode( JSON.stringify(array) );
-    server.cache.set( req._url.pathname, data, 3600);
-    return res.send(data);
+    server.cache.set( req._url.pathname, array, 3600);
+    return res.send(array);
 	});
 	next();
 });

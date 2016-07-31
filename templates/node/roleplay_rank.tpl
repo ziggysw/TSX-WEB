@@ -21,7 +21,7 @@ tr.bad { background-color: #af2a2a; }
   </thead>
   <tbody>
     <tr ng-repeat="item in data" ng-init="steamid=item[0]; name=item[1]; rank=item[2]; old_rank=item[3]; point=item[4]; old_point=item[5];" ng-class="{
-	bad: ((Params.sub=='freekill2' && point>250) || (Params.sub=='freekill' && (point-old_point)>=25)),
+	bad: ((Params.sub=='freekill2' && point>=250) || (Params.sub=='freekill' && (point-old_point)>=25)),
 	active: ($parent.steamid==steamid) }">
       <td>{{rank}}
         <span ng-show="old_rank-rank<0" class="label label-warning">{{old_rank-rank}}</span>
