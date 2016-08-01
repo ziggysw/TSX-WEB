@@ -10,7 +10,7 @@
 				</ul>
 			</div>
 		</article>
-		<article class="col-sm-8 comments">
+		<article class="col-sm-6 comments">
 			<div class="row">
 				<a href="/forum/search.php?search_id=unreadposts"><h4 class="text-center">Pendant ce temps, sur le forum...</h4></a>
 				<ul class="list3">
@@ -18,7 +18,7 @@
 				</ul>
 			</div>
 		</article>
-		<article class="col-sm-2">
+		<article class="col-sm-offset-1 col-sm-2">
 			<div class="row">
 				<h4>La Ts-X tv présente :</h4>
 				<div class="video">
