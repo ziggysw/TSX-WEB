@@ -86,6 +86,7 @@
 			<li><span class="prune">prune</span></li> 
 			<li><span class="ocean">ocean</span></li> 
 			<li><span class="pomme">pomme</span></li> 
+			<li><span class="orange">orange</span></li> 
 			<li><span class="txt">txt</span> <span class="info"><= couleur noir</span></li> 
 		</ul>
 
