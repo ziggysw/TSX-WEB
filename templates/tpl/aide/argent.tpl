@@ -65,7 +65,53 @@
 									</div>
 								</div>
 								<div class="panel-body">
-									<p></p>
+									<p>À Princeton-City, il y a un complexe immobilier pas très regardant sur ses locataires.<br />
+									Nous ne vous conseillerons jamais assez d'y prendre un logement pour y passer la nuit. Munis de plusieurs bonus, les logements vous permettront d'augmenter l'argent de votre paye et quelques
+									autre bonus de la vie de tous les jours.</p>
+									<br />
+									<div id="slider" class="carousel slide" data-ride="carousel">
+										<div class="carousel-inner" role="listbox">
+											<div class="item active"><!-- Slide 0 -->
+												<img id="img_carrousel" alt="img_appart" src="/images/wiki/appart/ap1.jpg">
+											</div>
+											<div class="item"><!-- Slide 1 -->
+												<img id="img_carrousel" alt="img_appart" src="/images/wiki/appart/ap2.jpg">
+											</div>
+											<div class="item"><!-- Slide 2 -->
+												<img id="img_carrousel" alt="img_appart" src="/images/wiki/appart/ap3.jpg">
+											</div>
+											<div class="item"><!-- Slide 3 -->
+												<img id="img_carrousel" alt="img_appart" src="/images/wiki/appart/ap4.jpg">
+											</div>
+											<div class="item"><!-- Slide 4 -->
+												<img id="img_carrousel" alt="img_appart" src="/images/wiki/appart/ap5.jpg">
+											</div>
+											<div class="item"><!-- Slide 5 -->
+												<img id="img_carrousel" alt="img_appart" src="/images/wiki/appart/ap6.jpg">
+											</div>
+											<div class="item"><!-- Slide 6 -->
+												<img id="img_carrousel" alt="img_appart" src="/images/wiki/appart/ap7.jpg">
+											</div>
+											<div class="item"><!-- Slide 7 -->
+												<img id="img_carrousel" alt="img_appart" src="/images/wiki/appart/ap8.jpg">
+											</div>
+											<div class="item"><!-- Slide 8 -->
+												<img id="img_carrousel" alt="img_appart" src="/images/wiki/appart/ap9.jpg">
+											</div>
+											<div class="item"><!-- Slide 9 -->
+												<img id="img_carrousel" alt="img_appart" src="/images/wiki/appart/ap10.jpg">
+											</div>
+											<div class="item"><!-- Slide 10 -->
+												<img id="img_carrousel" alt="img_appart" src="/images/wiki/appart/ap11.jpg">
+											</div>
+											<div class="item"><!-- Slide 11 -->
+												<img id="img_carrousel" alt="img_appart" src="/images/wiki/appart/ap12.jpg">
+											</div>
+										</div>
+									</div>
+									<br />
+									<p>Votre appartement peut également être partagé en collocation avec d'autre citoyens, il vous fera office de lieux de stockage pour vos plantes, machines et autres objets plus ou moins légaux.</p>
+									<p><a href="/index.php?page=roleplay2#/job/61?TABS=player" target="_blank">Cette page</a> vous permettra d'en savoir plus sur les bonus des appartements</p>
 								</div>
 							</div>
 						</div>
