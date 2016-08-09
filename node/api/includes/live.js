@@ -209,7 +209,7 @@ server.get('/live/update', function (req, res, next) {
   var done=0;
   var subRequest=0;
   var subRequestDone=0;
-  var tokken="718dd1601e0cd9fc3591e54a5cc2133fbf1b53e3";
+  var tokken=server.gitTokken;
 
   function output() {
     subRequestDone++;

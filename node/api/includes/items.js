@@ -46,4 +46,27 @@ server.get('/items/job/:id', function (req, res, next) {
     }
 	next();
 });
+
+/**
+ * @api {get} /items/:id GetItemById
+ * @apiName GetItemById
+ * @apiGroup Item
+ * @apiParam {Integer} id Un identifiant unique correspondant au job.
+ */
+server.get('/items/:id', function (req, res, next) {
+	try {
+        if( req.params['id'] == 0 )
+            return res.send(new ERR.BadRequestError("InvalidParam"));
+
+        server.conn.query("SELECT I.`id`, I.`nom`, I.`prix`, SUBSTRING(`job_name`, LOCATE(' - ', `job_name`)+3) as `job` FROM `rp_items` I INNER JOIN `rp_jobs` J ON I.`job_id`=J.`job_id` WHERE I.`id`=?", [req.params['id']], function(err, rows) {
+		        if( err )
+              return res.send(new ERR.InternalServerError(err));
+            return res.send(rows[0]);
+		});
+    } catch ( err ) {
+        return res.send(err);
+    }
+	next();
+});
+
 };

@@ -4,6 +4,8 @@ exports = module.exports = function(server){
   var fs = require('fs');
   var request = require('request');
   var priceList = require('/var/www/ts-x/node/api/market.json');
+  var priceListOld = require('/var/www/ts-x/node/api/old.json');
+
   var SteamUser = require('steam-user');
   var SteamC = require('steamid');
   var TradeOfferManager = require('steam-tradeoffer-manager');
@@ -11,6 +13,11 @@ exports = module.exports = function(server){
   var logOnOptions = {accountName: server.getSteamLink.username, password: server.getSteamLink.password, twoFactorCode: SteamTotp.generateAuthCode(server.getSteamLink.auth)};
   var client = new SteamUser();
   var manager = new TradeOfferManager({steam: client, domain: "ts-x.eu", language: "fr"});
+
+  var priceListDATA = new Array();
+  Object.keys(priceListOld.prices).forEach(function (j) {
+    priceListDATA[priceListOld.prices[j].market_hash_name] = priceListOld.prices[j].price;
+  });
 
   if (fs.existsSync('polldata.json')) {
     manager.pollData = JSON.parse(fs.readFileSync('polldata.json'));
@@ -46,8 +53,9 @@ exports = module.exports = function(server){
       });
     }
   });
-
   function getPrice(name) {
+    return priceListDATA[name];
+    /*
     var total = 0;
     var count = 0;
     var price = priceList[name];
@@ -56,7 +64,7 @@ exports = module.exports = function(server){
         total += (price[j].price * price[j].count);
         count += price[j].count;
     });
-    return Math.floor(total/count)/100;
+    return Math.floor(total/count)/100;*/
   }
 
   /**
@@ -318,8 +326,8 @@ server.get('/steam/inventory/:id', function (req, res, next) {
           });
 
           if( !isBox ) {
-            console.log(data);
             data.price = getPrice(item.market_hash_name);
+            console.log(data);
             if( data.price >= 0.15 )
               obj.push(data);
           }
