@@ -1,7 +1,6 @@
  <body>
  
         <p><button>Menu</button></p>
-            <div id="menu">
                 <nav>
                     <ul>
                         <li><a href="club.php">LE CLUB</a></li>
@@ -14,6 +13,4 @@
                         <li><a href="#">VENIR</a></li>
                     </ul>
                 </nav>   
-            </div>
-                 
     </body>
