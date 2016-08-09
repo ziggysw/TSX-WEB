@@ -1,6 +1,6 @@
  <body>
  
-        <p><button id="bouton_menu">Menu</button></p>
+        <p><button>Menu</button></p>
             <div id="menu">
                 <nav>
                     <ul>
