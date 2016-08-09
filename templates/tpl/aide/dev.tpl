@@ -86,6 +86,7 @@
 			<li><span class="prune">prune</span></li> 
 			<li><span class="ocean">ocean</span></li> 
 			<li><span class="pomme">pomme</span></li> 
+			<li><span class="orange">orange</span></li> 
 			<li><span class="txt">txt</span> <span class="info"><= couleur noir</span></li> 
 		</ul>
 
@@ -109,12 +110,12 @@
 		</div>
 
 		<h2 id="t4">Le Wiki Badge</h2>
-		<p>class="wiki-badge"  pour les couleurs : wiki-blue / wiki-red / wiki-green / wiki-orange</p>
-		<div class="wiki-badge">defaut</div> <div class="wiki-badge wiki-blue">bleu</div> <div class="wiki-badge wiki-red">rouge</div> <div class="wiki-badge wiki-green">vert</div> <div class="wiki-badge wiki-orange">orange</div>
+		<p>class="wiki-badge"  pour les couleurs : wiki-blue / wiki-red / wiki-green / wiki-orange / wiki-jaune / wiki-prune</p>
+		<div class="wiki-badge">defaut</div> <div class="wiki-badge wiki-blue">bleu</div> <div class="wiki-badge wiki-red">rouge</div> <div class="wiki-badge wiki-green">vert</div> <div class="wiki-badge wiki-orange">orange</div> <div class="wiki-badge wiki-jaune">jaune</div> <div class="wiki-badge wiki-prune">prune</div>
 
 		<h2 id="t5">Le Wiki Bulle</h2>
-		<p>class="wiki-bulle"  pour les couleurs : wiki-blue / wiki-red / wiki-green / wiki-orange</p>
-		<div class="wiki-bulle">0</div> <div class="wiki-bulle wiki-blue">1</div> <div class="wiki-bulle wiki-red">2</div> <div class="wiki-bulle wiki-green">3</div> <div class="wiki-bulle wiki-orange">4</div>
+		<p>class="wiki-bulle"  pour les couleurs : wiki-blue / wiki-red / wiki-green / wiki-orange / wiki-jaune / wiki-prune / wiki-bonbon / wiki-cannelle / wiki-ciel / wiki-lemon / wiki-jango</p>
+		<div class="wiki-bulle">0</div> <div class="wiki-bulle wiki-blue">1</div> <div class="wiki-bulle wiki-red">2</div> <div class="wiki-bulle wiki-green">3</div> <div class="wiki-bulle wiki-orange">4</div> <div class="wiki-bulle wiki-jaune">5</div> <div class="wiki-bulle wiki-prune">6</div> <div class="wiki-bulle wiki-bonbon">7</div> <div class="wiki-bulle wiki-cannelle">8</div> <div class="wiki-bulle wiki-ciel">9</div> <div class="wiki-bulle wiki-lemon">A</div> <div class="wiki-bulle wiki-jango">B</div>
 	</div>
 	<div class=" col-md-1" role="complementary">
 		<nav class="bs-docs-sidebar hidden-print hidden-sm hidden-xs affix"> 

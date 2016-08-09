@@ -17,115 +17,175 @@
 					<div class="row">
 						<div class="col-md-12" role="main">
 							<div class="panel panel-wiki">
-								<div class="panel-heading panel-heading-wiki">
-									<h1 id="t1">Qu'est-ce que le rang "No-Pyj" ?</h1>
-								</div>
-									<div class="panel-body">
-										<p>Le Rang "no-pyj" est un grade qui est attribué aux plus matures, droits et sages d'entre vous, il vous permet d'acquérir différents bonus sur nos serveurs et notre forum.</p>
-										<br />
-										<ul>
-											<li>Sur le forum, vous apercevrez une notification "Rang: no-pyj" et cette icône  [[Fichier:No pyj.jpg|50px|No pyj.jpg]](indisponible pour le moment) représentant ce rang en dessous de l'avatar des personnes ayant ce rang.</li>
-											<li>Le rang no-pyj est maintenant constitué d'un questionnaire automatique et aléatoire, c'est à dire que ce n'est plus un admin qui va vous poser des questions mais celles-ci vous seront posées sur une page web,<br />
-											et vous devrez sélectionner vos réponses sur cette page. Un admin ou VIP est tout de même nécessaire pour initialiser le test.</li>
-										</ul>
+								<div class="row">
+									<div class="hidden-xs hidden-sm col-md-1">
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
-							</div>
-						</div>
-						<div class="col-md-12" role="main">
-							<div class="panel panel-wiki">
-								<div class="panel-heading panel-heading-wiki"><h1 id="t2">Les conditions d'éligibilités</h1></div>
-								<div class="panel-body">
-									<ul>
-									<li>Avoir 16 ans minimum. 16 ans à partir de votre anniversaire, et non pas 15 ans, 11 mois et 30 jours.</li>
-									<li>Avoir un compte sur le forum.</li>
-									<li>Avoir lié votre compte forum à votre steam ID.</li>
-									<li>Avoir posté sur le forum au minimum 1 message.</li>
-									<li>Connaître toutes les informations que vous trouverez dans ce tutoriel.</li>
-									<li>Connaître les sections suivante du [https://www.ts-x.eu/forum/viewtopic.php?f=10&t=26749  règlements général] :
-										<ul>
-											<li>Le règlement général du serveur</li>
-											<li>Les points particuliers</li>
-										</ul></li>
-									<li>Connaître les 10 points du [http://www.ts-x.eu/index.php?page=tribunal  règlement Tribunal Forum]</li>
-									<li>Vous munir d'une photo récente de vous</li>
-								</ul>
-								<p>Une fois ces conditions remplies, vous devrez vous rendre sur notre [[TeamSpeak | teamSpeak 3]] via l'adresse ts.ts-x.eu ou en cliquant sur l'onglet "teamSpeak" du site.</p>
-								<p>Une fois connecté, rendez dans le canal "besoin d'un admin" et patientez jusqu'à la venue d'un vip ou d'un administrateur.<br />
-								Quand le vip ou l'administrateur sera présent, il vous enverra un lien pour le questionnaire automatique et vous guidera dans les démarches à suivre.</p>
-								<br />
-								<p><span style="color: red;"> /!\ Attention !! </span>  Si c'est votre première connexion sur notre teamspeak, vous vous retrouverez dans le "hall" avec un cadenas,<br />
-								il vous empêchera de faire une quelconque action, vous devrez vous referez au tutoriel [[TeamSpeak | teamSpeak 3]] après quoi allez dans le chanel requis.</p>
+									<div class="col-md-11">
+										<div class="panel-heading panel-heading-wiki"><h2 id="t1" >Qu'est-ce que le rang "No-Pyj" ?</h2></div>
+									</div>
 								</div>
-							</div>
-						</div>
-						<div class="col-md-12" role="main">
-							<div class="panel panel-wiki">
-								<div class="panel-heading panel-heading-wiki"><h1 id="t3">A quoi sert le rang No-Pyj ?</h1></div>
 								<div class="panel-body">
+									<p>Le Rang "no-pyj" est un grade qui est attribué aux plus matures, droits et sages d'entre vous, il vous permet d'acquérir différents bonus sur nos serveurs et notre forum.</p>
+									<br />
 									<ul>
-										<li>Devenir membre de la Justice.</li>
-										<li>Devenir Chef d'un job.</li>
-										<li>Certains Chefs de job veulent avoir des vendeurs compétents, ainsi ils restreignent leur job aux membres ayant le no-pyj.</li>
-										<li>Avoir accès à une partie privé du forum (Forum des no-pyj)</li>
-										<li>Pouvoir juger les plaintes au tribunal forum.</li>
-										<li>Avoir le +force (Tenir une personne avec le grade adéquat).</li>
-										<li>Avoir le /me (annonces). Ce qui permet en outre de pouvoir faire des annonces , message blanc qui est mieux visible et qui tape à l'oeil.</li>
-										<li>Possibilité d'écrire moins que toutes les 10 secondes dans le chat.</li>
-										<li>Possibilité de modifier le Wiki</li>
+										<li><p>Sur le forum, vous aurez une notification "Rang: no-pyj" en dessous de l'avatar des personnes ayant ce rang, ainsi que l'accès à la partie "forum des No-pyj"</p></li>
+										<br />
+										<li><p>Sur le Serveur, il vous permettra d'utiliser la commande "/annonce" ou "/me" afin de rendre votre publication plus lisible.<br />
+										Mais attention, l'utilisation de cette commande est soumise à une règlementation que vous retrouverez dans le <a target="_blank" href="/forum/viewtopic.php?f=10&t=26749"> règlement général</a></p></li>
 									</ul>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-12" role="main">
 							<div class="panel panel-wiki">
-								<div class="panel-heading panel-heading-wiki"><h1 id="t4">Gérer une plainte Tribunal Forum</h1></div>
+								<div class="row">
+									<div class="hidden-xs hidden-sm col-md-1">
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+									</div>
+									<div class="col-md-11">
+										<div class="panel-heading panel-heading-wiki"><h2 id="t2" >Les conditions d'éligibilités</h2></div>
+									</div>
+								</div>
+								<div class="panel-body">
+									<p>Le rang "No-Pyj" est soumis à certaine condition d'éligibilités, il vous faudra :</p>
+									<br />
+									<ul>
+									<li><p>Avoir 16 ans minimum. ( Le bandeau sur cette page est basé sur l'âge de votre profil forum, pensez donc à donner votre vrai âge ! )</li>
+									<li><p>Avoir un compte sur le forum.<p></li>
+									<li><p>Avoir lié votre compte forum à votre Steam ID.<p></li>
+									<li><p>Avoir posté sur le forum au minimum 1 message.<p></li>
+									<li><p>Connaître toutes les informations que vous trouverez dans ce tutoriel.<p></li>
+									<li><p>Connaître les sections suivantes du <a target="_blank" href="/forum/viewtopic.php?f=10&t=26749"> règlement général</a> :
+										<ul>
+											<li><p>Le règlement général du serveur<p></li>
+											<li><p>Les points particuliers<p></li>
+										</ul><p></li>
+									<li><p>Vous munir d'une photo récente de vous<p></li>
+								</ul>
+								<br />
+								<p>Une fois ces conditions remplies, vous devrez vous rendre sur notre <a href="ts3server://ts.ts-x.eu/?port=9987">TeamSpeak</a> et demander à un admin de vous le faire passer.</p>
+								<p>Une fois connecté, le meilleur moyen de contacter un admin est de vous rendre dans le channel "Besoin d'un admin? - Public & calme".</p>
+								<br />
+								<p><span class="blood"> /!\ Attention /!\ </span>  Si c'est votre première connexion sur notre teamspeak, vous vous retrouverez dans le "hall" avec un cadenas,<br />
+								il vous empêchera de faire une quelconque action, vous devrez suivre le lien que vous a envoyé le bot et vous connecter au forum pour vous débloquez</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12" role="main">
+							<div class="panel panel-wiki">
+								<div class="row">
+									<div class="hidden-xs hidden-sm col-md-1">
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+									</div>
+									<div class="col-md-11">
+										<div class="panel-heading panel-heading-wiki"><h2 id="t3" >A quoi sert le rang No-Pyj ?</h2></div>
+									</div>
+								</div>
+								<div class="panel-body">
+								<p>Le rang "No-Pyj" à de multiples avantages, il vous permettra entre autres de :</p>
+								<br />
+									<ul>
+										<li><p>Devenir membre de la Justice.<p></li>
+										<li><p>Devenir Chef d'un job.<p></li>
+										<li><p>Avoir accès à une partie privée du forum (Forum des no-pyj)<p></li>
+										<li><p>Avoir le "+force" (Tenir une personne avec le grade adéquat).<p></li>
+										<li><p>Avoir le "/me" (annonces), qui vous permettra en outre de pouvoir faire des annonces , message blanc qui est mieux visible et qui tape à l'oeil.<p></li>
+										<li><p>Possibilité d'écrire moins que toutes les 10 secondes dans le chat.<p></li>
+										<li><p>Pouvoir juger les plaintes au tribunal forum.<p></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12" role="main">
+							<div class="panel panel-wiki">
+								<div class="row">
+									<div class="hidden-xs hidden-sm col-md-1">
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+									</div>
+									<div class="col-md-11">
+										<div class="panel-heading panel-heading-wiki"><h2 id="t4" >Gérer une plainte Tribunal Forum</h2></div>
+									</div>
+								</div>
 								<div class="panel-body">
 									<h3><u>1 ~ Soumettre une plainte</u></h3><br />
 										<ul>
-											<li>Grâce au tribunal forum, vous pourrez soumettre sous forme de "plainte" tous les abus que vous aurez pu remarquer en jeu qui ne peut ou qui n'a pu être traité en jeu par un juge.</li>
-											<li>Pour envoyer votre plainte c'est très simple, allez sur l'onglet Roleplay puis selectionez "Le tribunal" ou vous pouvez les faire directement In Game via les téléphones.</li>
-										</ul>
-										<p><u>Voici un exemple de plainte :</u></p><br />
-										<center>[[Fichier:Tribunnal rapport.png]]<br />
-										<p><strong>Le SteamID à indiquer est celui de l'accusé !</strong></p></center>
+											<li><p>Grâce au tribunal forum, vous pourrez soumettre sous forme de "plainte" tous les abus que vous ayez pu remarquer en jeu qui ne peut ou qui n'a pu être traité en jeu par un juge.<p></li>
+											<li><p>Pour envoyer votre plainte, c'est très simple, 
+												<ul>
+													<li><p>Par le Forum, allez sur l'onglet Roleplay puis sélectionnez "Le tribunal" et cliquez en haut à droite sur "Rapporter un mauvais comportement".<p></li>
+													<center><img class="img_wiki" src="images/wiki/tribu_forum.png"/></center>
+													<li><p>In Game, vous trouverez partout dans la ville des téléphones, il vous suffira de faire "e" en le visant ou bien tapez / report dans le tchat.<p></li>
+												</ul>
+										<br />
+										<p><u>Voici un exemple de plainte :</u></p>
+										<br />
+										<img class="img_wiki" src="/images/wiki/report_tribu.png"/>
 										<br /><br />
-										<h3><u>2 ~ Traiter un plainte</u></h3><br />
+										<p><strong class="blood">Le SteamID à indiquer est celui de l'accusé !</strong></p>
+										<br /><br />
+										<h3><u>2 ~ Traiter une plainte</u></h3><br />
 											<ul>
-										<li>Quand le rang no-pyj est acquis, le tribunal forum permet de juger les personnes ayant reçu une plainte, <br />
-										pour y accéder il vous faudra vous rendre au même endroit que pour soumettre une plainte, à une exception prêt, vous devrez cliquez sur "s'occuper du tribunal"</li><br />
-										<li>Cela vous redirigera sur la page "le tribunal : le règlement", et tout en bas de cette page, il vous suffira de cliquer sur "j'ai lu le règlement, et je souhaite traiter un cas".</li><br />
-										<li>L'image ci-dessous, correspond aux pseudos, métier, et rang de la personne suspectée.<br /><br />
-										[[Fichier:Tribunnal pseudo.png|400px]]
-										</li><br />
-										<li>L'image ci-dessous correspond à l'endroit où se trouve la raison de la plainte et les informations relatives à cette plainte.<br /><br />
-										[[Fichier:Tribunnal complaint.png|400px]]
-										</li><br />
-										<li>L'image ci-dessous correspond aux logs, vous y trouverez toutes les informations nécessaires afin de traiter la plainte (messages, meurtres, décès, prison, etc...)<br /><br />
-										[[Fichier:Tribunal log.png]]
-										</li><br />
-										<li>L'image ci-dessous correspond au calendrier, qui vous permet de center les logs sur une date précise.<br /><br />
-										[[Fichier:Tribunal callendar.png|250px]]
-										</li><br />
-										<li>L'image ci-dessous correspond à l'endroit où vous devez sélectionner votre verdict afin de pouvoir prononcer un jugement (Condamner, acquitter ou ignorer).<br /><br />
-										[[Fichier:Tribunnal judge.png|250px]]
-										</li><br />
+										<li><p>Quand le rang no-pyj est acquis, le tribunal forum permet de juger les personnes ayant reçu une plainte, <br />
+										pour y accéder il vous faudra vous rendre au même endroit que pour soumettre une plainte, à une exception près, vous devrez cliquer sur le bouton "S'occuper du tribunal"</p></li><br />
+										<p>Cela vous redirigera sur la page "le tribunal : le règlement", et en bas de la page, il vous suffira de cliquer sur "j'ai lu le règlement, et je souhaite traiter un cas".<p>
+										<br />
+										<li><p>L'image ci-dessous, correspond aux informations générales de l'accusé (Pseudo, job, argent, etc...) <br /><br />
+										<img class="img_wiki" src="/images/wiki/recap_tribu.png"/>
+										<p></li>
+										<br />
+										<li><p>L'image ci-dessous correspond à l'endroit où se trouve la raison de la plainte et les informations relatives à cette plainte.<br />
+										Ainsi que les choix qui vous sont offerts pour donner un verdict, réfléchissez bien avant de le rendre !<br /><br />
+										<img class="img_wiki" src="/images/wiki/raison_tribunal.png"/>
+										<p></li>
+										<br />
+										<li><p>L'image ci-dessous correspond aux logs, vous y trouverez toutes les informations nécessaires afin de traiter la plainte (messages, meurtres, décès, prison, etc...)<br /><br />
+										<img class="img_wiki" src="/images/wiki/log_tribu.png"/>
+										<p></li>
+										<br />
 									</ul>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-12" role="main">
 							<div class="panel panel-wiki">
-								<div class="panel-heading panel-heading-wiki"><h1 id="t5">Perdre le No-Pyj</h3></div>
+								<div class="row">
+									<div class="hidden-xs hidden-sm col-md-1">
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+									</div>
+									<div class="col-md-11">
+										<div class="panel-heading panel-heading-wiki"><h2 id="t5" >Perdre le No-Pyj</h2></div>
+									</div>
+								</div>
 								<div class="panel-body">
-									<p>A la suite d'une plainte comme ci-dessus vous pouvez perdre votre no-pyj.<br />
-								Si vous abusez de quelconque commande hors de son contexte prévu vous vous exposez à un risque de ban de nos serveurs.<br />
-								Si on ne vous ban pas, vous aurez surement une sanction qui sera des heures de prison ou bien dans un cas, la perte de ce rang-ci.<br />
-								Vous n'aurais pas accès à ce rang et ne pourrez passer l'examen qu'en cas de réels changements de votre part.<br />
-								Ainsi si vous possédez le rang No-Pyj , vous devrez respecter le règlement.<br />
-								En effet si vous voulez passer ce rang vous attestez avoir pris conscience du règlement et avoir accepté celui-ci.<br />
-								En vous engageant vous acceptez aussi les sanctions qu'on pourrait entreprendre contre vous.<br />
-								Afin de prospérer et ne pas perdre ce rang presque vital dans votre vie de citoyen vous devrez respecter toutes les règles sans exception.<br />
-								En perdant le rang No-Pyj vous perdrez tous les avantages qu'ils procurent et vous aurez moins de chances de le ré-avoir.</p>
+								<p>Dans certaines circonstances exeptionelles il est possible que l'on vous retire votre rang "No-Pyj", mais cela sera seulement en cas de grosse bêtise comme :</p>
+									<ul>
+										<li><p>Si vous abusez d'une quelconque commande hors de son contexte prévu<p></li>
+										<li><p>Des multiples bans pour des raisons de comportement nuisible <p></li>
+										<li><p>Si vous ne respectez pas votre engagement de chef de job<p></li>
+									</ul>
+								<p>Bien évidemment cette liste est non exhaustive et ne représente que quelque un des cas les plus fréquents, une fois votre
+								rang "No-Pyj" perdu, vous n'aurez plus accès à ce rang et ne pourrez repasser l'examen qu'en cas de réels changements de votre part.</p><br />
+								<p>Ainsi si vous possédez le rang "No-Pyj", vous devrez respecter le <a target="_blank" href="/forum/viewtopic.php?f=10&t=26749"> règlement général</a>
+								et ne pas nuire volontairement à la communauté ou au serveur.
+								En passant ce rang, vous attestez avoir pris conscience du règlement général et avoir accepté celui-ci.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12" role="main">
+							<div class="panel panel-wiki">
+								<div class="row">
+									<div class="hidden-xs hidden-sm col-md-1">
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+									</div>
+									<div class="col-md-11">
+										<div class="panel-heading panel-heading-wiki"><h2 id="t5" >Le rang "No-Pyj émancipé"</h2></div>
+									</div>
+								</div>
+								<div class="panel-body">
+								<p>Dans certaines circonstances exeptionelles il est possible que l'on vous accorde le rang "No-Pyj émancipé", mais ce grade n'est pas accordé au premier venu ...<br /><br />
+								Les "No-Pyj émancipé" sont des joueurs qui n'ont pas l'âge requis pour avoir le rang "No-Pyj" mais qui connaissent très bien le règlement et ont fait preuve d'un comportement exemplaire,
+								ce rang vous accorde les mêmes avantages que le rang "No-Pyj" côté Forum (Forum "no-pyj" et place de chef de job) mais pas côté serveur (+force ou /me).</p>
 								</div>
 							</div>
 						</div>
@@ -140,7 +200,9 @@
 							<li><a href="#t3" id="page_menu_wiki" ><i class="fa fa-asterisk gold" aria-hidden="true"></i> A quoi sert le rang "No-Pyj" ?</a></li>
 							<li><a href="#t4" id="page_menu_wiki" ><i class="fa fa-asterisk pomme" aria-hidden="true"></i> Gérer une plainte Tribunal Forum</a></li>
 							<li><a href="#t5" id="page_menu_wiki" ><i class="fa fa-asterisk blood" aria-hidden="true"></i> Perdre son "No-Pyj"</a></li>
+							<li><a href="#t5" id="page_menu_wiki" ><i class="fa fa-asterisk orange" aria-hidden="true"></i> Le rang "No-Pyj" émancipé</a></li>
 						</ul>
 					</nav>
 				</div>
 			</div>
+		</div>

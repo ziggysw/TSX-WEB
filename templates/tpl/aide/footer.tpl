@@ -11,11 +11,12 @@
   var app = angular.module("tsx", [])
   .directive("rpItemInformation", function($compile, $http) {
 		return {
-			template: '<img class="img-circle" width="100" height="100" src="/images/roleplay/csgo/items/{{item.id}}.png" data-toggle="popover" data-placement="top" title="{{item.nom}}" data-content="{{item.prix}}$">',
-			replace: true,
+			template: '<img class="img-circle" width="100" height="100" src="/images/roleplay/csgo/items/{{item.id}}.png" data-toggle="popover" data-placement="top" title="{{item.nom}}" data-content="{{item.prix}}$ vendu par {{item.job}}">',
+			replace: false,
+			scope: true,
 			link: function(scope, element, attr) {
 				$http.get("https://www.ts-x.eu/api/items/"+attr.rpItemInformation).success(function(res) {
-					scope.item = res[0];
+					scope.item = res;
 	      });
 			}
 		}

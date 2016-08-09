@@ -2,4 +2,3 @@
 <script type="text/javascript" src="/js/wiki/wiki.js"></script>
 
 <div ng-controller="ctrlAide" >
-  <span rp-item-information="81"></span>

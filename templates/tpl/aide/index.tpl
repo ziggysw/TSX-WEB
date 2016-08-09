@@ -11,7 +11,7 @@
 				<img id="img_carrousel" alt="NeW" src="/images/wiki/guide_debutant.png">
 				<div class="flex-caption "><div>
 					<p class="title1">Bien debuter sa vie à Princeton-City</p>
-					<p class="title2">Argent actuel : {$money|pretty_number} $rp<br />
+					<p class="title2"><span class="wiki_pub"><u>Ar</u>g<u>ent actuel :</u></span> {$money|pretty_number} $rp<br />
 					Bienvenue {$name} !<br />
 					Si tu souhaites avoir plus d'argent en banque, je te conseille de venir jeter un oeil à ce tutoriel !</p>
 					<br />
@@ -31,7 +31,7 @@
 				<img id="img_carrousel" alt="PVP" src="/images/wiki/banniere_pvp.png">
 				<div class="flex-caption"><div>
 					<p class="title1">Les Gangs et La PvP</p>
-					<p class="title2">Rang actuel : {$gang} </p>
+					<p class="title2"><span class="wiki_pub"><u>Ran</u>g <u>actuel :</u></span> {$gang} </p>
 					<p class="title3">Tu rêves de devenir des As de la PvP et tu ne sais pas comment t'y prendre ?<br /><br /> Ce tutoriel est peut-être fait pour toi !</p>
 					<br />
 					<a class="various btn btn-primary" href="/index.php?page=aide&sub=pvp"><i class="fa fa-hand-o-right"></i> En savoir plus !</a>
@@ -55,7 +55,7 @@
 					<div id="rotate"><img class="img-circle" src="/images/wiki/pole_emploi.png" alt="Generic placeholder image" id="img_circle_index"></div>
 					<div class="caption">
 						<h2 id="title_thun">Trouver un Job</h2>
-						<p>Trouvez un métier sur le Rôle play n'est pas toujours évident, c'est pour nous vous expliquons ici tout les fillons pour trouvez enfin le job de vos rêves !</p>
+						<p>Trouver un métier sur à Princeton-City n'est pas toujours évident, c'est pourquoi nous vous expliquons ici tous les filons pour trouver enfin le job de vos rêves !</p>
 						<br />
 						<p><a class="btn btn-success" href="/index.php?page=aide&sub=job" role="button"><i class="fa fa-hand-o-right"></i> Aller voir !</a></p>
 					</div>
@@ -66,7 +66,7 @@
 					<div id="rotate"><img class="img-circle" src="/images/wiki/piece.png" alt="Generic placeholder image" id="img_circle_index"></div>
 					<div class="caption">
 						<h2 id="title_thun">Gagner de L'argent</h2>
-						<p>Quand on commence une nouvelle vie, il n'est jamais facile de faire des économies... Graces à nous vous deviendrez le plus riches des hommes en seulement quelques jours</p>
+						<p>Quand on commence une nouvelle vie, il n'est jamais facile de faire des économies... Grâces à nous vous deviendrez le plus riches des hommes en seulement quelques jours.</p>
 						<br />
 						<p><a class="btn btn-success" href="/index.php?page=aide&sub=argent" role="button"><i class="fa fa-hand-o-right"></i> Aller voir !</a></p>
 					</div>
@@ -77,8 +77,8 @@
 					<div id="rotate"><img class="img-circle" src="/images/wiki/No_pyj.png" alt="Generic placeholder image" id="img_circle_index"></div>
 					<div class="caption">
 						<h2 id="title_thun">Le No-PYJ</h2>
-						<p>Qu'est-ce que le NO-PYJ ? A quoi sert-il ? Comment l'obtenir ?<br />
-						Nous vous expliquons tous dans cette article !</p>
+						<p>Qu'est-ce que le NO-PYJ ? À quoi sert-il ? Comment l'obtenir ?<br />
+						Nous vous expliquons tous dans cet article !</p>
 						<br />
 						<p><a class="btn btn-success" href="/index.php?page=aide&sub=nopyj" role="button"><i class="fa fa-hand-o-right"></i> Aller voir !</a></p>
 					</div>
@@ -87,7 +87,7 @@
 		</div>
 		  <!-- debut du block-buster -->
 		<div class="row">
-			<hr class="featurette-divider">
+			<!-- <hr class="featurette-divider">
 
 			<div class="row featurette">
 				<div class="col-md-7">
@@ -97,14 +97,14 @@
 				<div class="col-md-5">
 				  <img id="img_block_buster" class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="http://2.bp.blogspot.com/_FU9UCvCKHaQ/TBYL1pifkZI/AAAAAAAADR0/7crhQZ9qsJ0/s1600/l_fccf730fd0b94713bad70cb9b979bbea.jpg" data-holder-rendered="true">
 				</div>
-			</div>
+			</div> -->
 
 			<hr class="featurette-divider">
 			  <div class="row featurette">
 				<div class="col-md-7 col-md-push-5">
 				  <h2 class="featurette-heading">Nous rejoindre <span class="text-muted">#Chargement_en_cour...</span></h2>
-				  <p class="lead">Vous souhaitez nous rejoindre mais vous n'y arrivez pas ?<br />
-				  Vous trouverez ici divers astuce sur les problèmes connu...<a href="/index.php?page=aide&sub=admin">lire plus</a>
+				  <p class="lead">Vous souhaitez nous rejoindre, mais vous n'y arrivez pas ?<br />
+				  Vous trouverez ici diverses astuces sur les problèmes connus...<a href="/index.php?page=aide&sub=help">lire plus</a>
 				</div>
 				<div class="col-md-5 col-md-pull-7">
 				  <img id="img_block_buster" class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="http://www.2vanssay.fr/twittmooc/wp-content/uploads/2014/01/Twitter-Help.jpg" data-holder-rendered="true">
@@ -115,8 +115,8 @@
 			  <div class="row featurette">
 				<div class="col-md-7">
 				  <h2 class="featurette-heading">Silence ça tourne !<span class="text-muted">#faire_une_record</span></h2>
-				  <p class="lead">Vous aimeriez apprendre à filmez vos action en jeux ? ou tout simplement faire un reportage en camera caché pour dénoncer des comportements nuisible à la communautée ?
-				  Rien de plus simple, apres ce petit stage vous deviendrez le rois des caméras cachée... <a href="/index.php?page=aide&sub=record">lire plus</a></p>
+				  <p class="lead">Vous aimeriez apprendre à filmer vos actions en jeux ? Ou tout simplement faire un reportage en caméra caché pour dénoncer des comportements nuisible à la communauté ?
+				  Rien de plus simple, après ce petit stage vous deviendrez le roi des caméras cachées... <a href="/index.php?page=aide&sub=record">lire plus</a></p>
 				</div>
 				<div class="col-md-5">
 				  <img id="img_block_buster" class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="/images/wiki/faire_une_record.png" data-holder-rendered="true">
@@ -127,10 +127,10 @@
 			  <div class="row featurette">
 				<div class="col-md-7 col-md-push-5">
 				  <h2 class="featurette-heading">Devenir VIP / Membre CS:GO <span class="text-muted">#Admin</span></h2>
-				  <p class="lead">Notre communautée vous plait et vous tiens à coeur ?<br />
+				  <p class="lead">Notre communauté vous plait et vous tient à coeur ?<br />
 				  Vous aimeriez en faire plus pour nous et pour nos joueurs ?<br />
-				  Rejoignez-nous ! les recrutements sont ouvert toute l'année sur simple candidature, mais attention !<br />
-				  il faut tout de même certain pré-requis...<a href="/index.php?page=aide&sub=admin">lire plus</a>
+				  Rejoignez-nous ! Les recrutements sont ouverts toute l'année sur simple candidature, mais attention !<br />
+				  il faut tout de même certains prérequis...<a href="/index.php?page=aide&sub=admin">lire plus</a>
 				</div>
 				<div class="col-md-5 col-md-pull-7">
 				  <img id="img_block_buster" class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="https://bootstrapmaster.com/wp-content/themes/bootstrap/img/avatars/noavatar.png" data-holder-rendered="true">
