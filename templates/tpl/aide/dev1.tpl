@@ -12,7 +12,7 @@
 							<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 						</div>
 						<div class="col-md-11">
-							<div class="panel-heading panel-heading-wiki"><h2 id="t1" >Bienvenue à Princeton-City {$name} !</h2></div>
+							<div class="panel-heading panel-heading-wiki"><h2 id="WIKIt1" >Bienvenue à Princeton-City {$name} !</h2></div>
 						</div>
 					</div>
 					<div class="panel-body">
@@ -35,7 +35,7 @@
 							<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 						</div>
 						<div class="col-md-11">
-							<div class="panel-heading panel-heading-wiki"><h2 id="t2" >Le Guide de survie</h2></div>
+							<div class="panel-heading panel-heading-wiki"><h2 id="WIKItb" >Le Guide de survie</h2></div>
 						</div>
 					</div>
 					<div class="panel-body">
@@ -63,7 +63,7 @@
 							<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 						</div>
 						<div class="col-md-11">
-							<div class="panel-heading panel-heading-wiki"><h2 id="t3" >Les commandes de base</h2></div>
+							<div class="panel-heading panel-heading-wiki"><h2 id="WIKIt3" >Les commandes de base</h2></div>
 						</div>
 					</div>
 					<div class="panel-body">
@@ -143,7 +143,7 @@
 							<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 						</div>
 						<div class="col-md-11">
-							<div class="panel-heading panel-heading-wiki"><h2 id="t4" >Le Teamspeak</h2></div>
+							<div class="panel-heading panel-heading-wiki"><h2 id="WIKIt4" >Le Teamspeak</h2></div>
 						</div>
 					</div>
 					<div class="panel-body">
@@ -173,7 +173,7 @@
 							<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 						</div>
 						<div class="col-md-11">
-							<div class="panel-heading panel-heading-wiki"><h2 id="t4.1" >Configurer son Ts3</h2></div>
+							<div class="panel-heading panel-heading-wiki"><h2 id="WIKIt4-1" >Configurer son Ts3</h2></div>
 						</div>
 					</div>
 					<div class="panel-body">
@@ -197,24 +197,23 @@
 			</div>
 		</div>
 	</div>
-	<!--Nav Bar -->
-    <nav class="col-xs-3 bs-docs-sidebar">
-        <ul id="sidebar" class="nav nav-stacked fixed">
-            <li>
-                <a href="#t1">Bienvenue</a>
-            </li>
-            <li>
-                <a href="#t2">Guide de survie</a>
-            </li>
+	<nav class="col-xs-3 bs-docs-sidebar affix" id="navbar-example">
+		<ul class="nav nav-stacked fixed">
 			<li>
-                <a href="#t3">Les commandes de base</a>
-            </li>
-            <li>
-                <a href="#t4">Le Teamspeak</a>
-                <ul class="nav nav-stacked">
-                    <li><a href="#t4.1">Configurer son Teamspeak</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
+				<a href="#WIKIt1">Bienvenue</a>
+			</li>
+			<li>
+				<a href="#WIKItb">Guide de survie</a>
+			</li>
+			<li>
+				<a href="#WIKIt3">Les commandes de base</a>
+			</li>
+			<li>
+				<a href="#WIKIt4">Le Teamspeak</a>
+				<ul class="nav nav-stacked">
+					<li><a href="#WIKIt4-1">Configurer son Teamspeak</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
 </div>
