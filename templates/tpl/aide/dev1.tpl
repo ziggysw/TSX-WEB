@@ -14,3 +14,11 @@
                     </ul>
                 </nav>   
     </body>
+	 <script>
+        $('#bouton_menu').click(function () {
+        var effect = 'slide';
+        var options = { direction: 'right' };
+        var duration = 700;
+        $('#menu').toggle(effect, options, duration);
+        });
+        </script>
