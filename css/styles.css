@@ -23,7 +23,7 @@ body{background: #101010;font: 12px Arial, Helvetica, sans-serif;line-height: 14
 #heatmap canvas { z-index:-1; }#heatmap map area { background-color: red; }
 @media screen and (max-device-width: 480px) {
 /* Styles pour cette Media Queries */
-.hidden-mobile{
+.hidden-phone{
   visibility: hidden;
 }
 }
