@@ -168,10 +168,10 @@
 									<p>La première méthode est d'acheter et faire tourner des machines à faux billet ou photocopieuse à faux billet :</p>
 									<br />
 									<div class="row">
-										<div class="col-xs-offset-1 col-xs-2">
+										<div class="col-xs-offset-1 col-xs-2 col-md-offset-3 col-md-2">
 											<span rp-item-information="190"></span>
 										</div>
-										<div class="col-xs-offset-3 col-xs-2">
+										<div class="col-xs-offset-3 col-xs-2 col-md-offset-1 col-md-1">
 											<span rp-item-information="81"></span>
 										</div>
 									</div>
@@ -221,19 +221,16 @@
 									Vous connaissez tous le principe des tickets de loto, vous achetez, vous grattez et vous avez une petite chance de gagner...</p><br />
 									<br />
 									<div class="row">
-										<div class="col-xs-4 col-md-offset-2 col-md-2">
+										<div class="col-xs-4 col-md-offset-1 col-md-1">
 											<span rp-item-information="54"></span>
 										</div>
-										<div class="col-xs-offset-2 col-xs-4 col-md-2">
+										<div class="col-xs-offset-2 col-xs-4 col-md-offset-1 col-md-1">
 											<span rp-item-information="55"></span>
 										</div>
-									</div>
-									<br />
-									<div class="row">
-										<div class="col-xs-4 col-md-2">
+										<div class="col-xs-4 col-md-offset-1 col-md-1">
 											<span rp-item-information="56"></span>
 										</div>
-										<div class="col-xs-offset-2 col-xs-3 col-md-2">
+										<div class="col-xs-offset-2 col-xs-3 col-md-offset-1 col-md-1">
 											<span rp-item-information="57"></span>
 										</div>
 									</div>
@@ -283,10 +280,10 @@
 									Vous pouvez booster votre vitalité grâce à ces items :</p>
 									<br />
 									<div class="row">
-										<div class="col-xs-offset-2 col-xs-2"> 
+										<div class="col-xs-offset-2 col-xs-2 col-md-offset-3 col-md-2"> 
 											<span rp-item-information="16"></span>
 										</div>
-										<div class="col-xs-offset-3 col-xs-2">
+										<div class="col-xs-offset-3 col-xs-2 col-md-offset-1 col-md-2">
 											<span rp-item-information="296"></span>
 										</div>
 									</div>
@@ -339,44 +336,44 @@
 									<p>Voici quelques exemples d'évents qui ont été faits sur notre serveur :</p><br />
 									<br />
 									<div class="row">
-									  <div class="col-xs-6">
+									  <div class="col-xs-6 col-md-3">
 										<a  class="thumbnail">
 										  <img src="/images/wiki/e1.jpg" alt="img_event">
 										</a>
 									  </div>
-									  <div class="col-xs-6">
+									  <div class="col-xs-6 col-md-3">
 										<a  class="thumbnail">
 										  <img src="/images/wiki/e2.png" alt="img_event">
 										</a>
 									  </div>
-									  <div class="col-xs-6">
+									  <div class="col-xs-6 col-md-3">
 										<a  class="thumbnail">
 										  <img src="/images/wiki/e3.jpg" alt="img_event">
 										</a>
 									  </div>
-									  <div class="col-xs-6">
+									  <div class="col-xs-6 col-md-3">
 										<a  class="thumbnail">
 										  <img src="/images/wiki/e4.png" alt="img_event">
 										</a>
 									  </div>
 									</div>
 									<div class="row">
-									  <div class="col-xs-6">
+									  <div class="col-xs-6 col-md-3">
 										<a  class="thumbnail">
 										  <img src="/images/wiki/e5.png" alt="img_event">
 										</a>
 									  </div>
-									  <div class="col-xs-6">
+									  <div class="col-xs-6 col-md-3">
 										<a  class="thumbnail">
 										  <img src="/images/wiki/e6.jpg" alt="img_event">
 										</a>
 									  </div>
-									  <div class="col-xs-6">
+									  <div class="col-xs-6 col-md-3">
 										<a  class="thumbnail">
 										  <img src="/images/wiki/e7.jpg" alt="img_event">
 										</a>
 									  </div>
-									  <div class="col-xs-6">
+									  <div class="col-xs-6 col-md-3">
 										<a class="thumbnail">
 										  <img src="/images/wiki/e8.jpg" alt="img_event">
 										</a>
@@ -402,11 +399,11 @@
 									<p>Vous en avez sûrement déjà entendu parler, un système de quête est disponible sur le serveur, elles sont disponibles soit par téléphone, soit par le confessionnal de l'église.</p>
 									<br />
 									<div class="row">
-										<div class="col-xs-10">
+										<div class="col-xs-10 col-md-offset-2 col-md-3">
 											<img width="240" height="180" src="/images/wiki/telephone.jpg" />
 											<p>Un téléphone</p>
 										</div>
-										<div class="col-xs-10">
+										<div class="col-xs-10 col-md-offset-1 col-md-3">
 											<img width="240" height="180" src="/images/wiki/eglise.jpg" />
 											<p>Entrée de l'église</p>
 										</div>
