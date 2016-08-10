@@ -60,29 +60,30 @@
 						<a class="navbar-brand" href="./"><img src="{if="$alternate"}{$alternate}{else}/images/bleue2.png{/if}" alt="tsX" width="350" height="100" style="max-height:100px !important"/></a>
 					</div>
 					<div id="navbar" class="navbar-collapse collapse">
-						<ul class="nav navbar-nav navbar-right" style="z-index:2;">
+					<ul class="nav navbar-nav navbar-right" style="z-index:2;">
 							<li class="visible-lg-block"><a href="/index.php">Accueil</a>
-							<li class="dropdown">
-								<a href="/index.php">Le Site<span class="caret hidden-xs"></span></a>
+							</li><li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Le Site <span class="caret"></span></a>
 								<ul class="dropdown-menu">
+  									<li><a href="/index.php"><i class="fa fa-home"></i> Accueil</a></li>
 									<li><a href="/index.php?page=intro&amp;last=news"><i class="fa fa-newspaper-o"></i> News</a></li>
 									<li><a href="/forum/memberlist.php?g=19&amp;mode=group&amp;sk=m&amp;sd=a"><i class="fa fa-users"></i> Les membres</a></li>
-									<li><a href="/index.php?page=valider_steamid"><i class="fa fa-steam"></i> Modifier son Steam</a></li>
-									<li><a href="/index.php?page=steam"><i class="fa fa-code-fork"></i> Convertir SteamID</a></li>
-									<li><a href="/index.php?page=money"><a href="/index.php?page=serveurs"><i class="fa fa-server"></i> Info-server<span></a></li>
+									<li><a class="hidden-xs" href="/index.php?page=valider_steamid"><i class="fa fa-steam"></i> Modifier son Steam</a></li>
+									<li><a class="hidden-xs" href="/index.php?page=steam"><i class="fa fa-code-fork"></i> Convertir SteamID</a></li>
+									<li><a href="/index.php?page=money"></a><a href="/index.php?page=serveurs"><i class="fa fa-server"></i> Info-server<span></span></a></li>
 									<li><a href="/index.php?page=bannis"><i class="fa fa-ban"></i> Ban-liste</a></li>
 									<li><a href="/index.php?page=money"><i class="fa fa-usd"></i> Achat de $RP</a></li>
 								</ul>
 							</li>
 							<li class="dropdown">
-								<a href="/index.php?page=roleplay2#/">RolePlay <span class="caret hidden-xs"></span></a>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">RolePlay <span class="caret"></span></a>
 								<ul class="dropdown-menu">
 									<li><a href="/wiki"><i class="fa fa-wikipedia-w"></i> Besoin d'aide?</a></li>
 									<li><a href="/forum/viewtopic.php?f=10&amp;t=26749"><i class="fa fa-balance-scale"></i> Règlement général</a></li>
-									<li><a href="/index.php?page=roleplay2"><i class="fa fa-briefcase"></i> Liste des jobs<span></span></a></li>
+									<li><a href="/index.php?page=roleplay2#/"><i class="fa fa-briefcase"></i> Liste des jobs<span></span></a></li>
 									<li><a href="/index.php?page=success"><i class="fa fa-trophy"></i> Les succès</a></li>
-									<li><a href="/index.php?page=tribunal"><i class="fa fa-gavel"></i> Le Tribunal</a></li>
-									<li><a href="/index.php?page=report"><i class="fa fa-phone"></i> Le téléphone</a></li>
+									<li><a class="hidden-xs" href="/index.php?page=tribunal"><i class="fa fa-gavel"></i> Le Tribunal</a></li>
+									<li><a class="hidden-xs" href="/index.php?page=report"><i class="fa fa-phone"></i> Le téléphone</a></li>
 									<li><a href="/index.php?page=parrainage"><i class="fa fa-user-plus"></i> Parrainage</a></li>
 									<li><a href="/index.php?page=money"><i class="fa fa-usd"></i> Achat de $RP</a></li>
 								</ul>
@@ -95,14 +96,14 @@
 									<li><a href="/wiki/Les_binds"><i class="fa fa-keyboard-o"></i> Mettre en place vos binds</a></li>
 									<li><a href="/wiki/Le_rang_no-pyj"><i class="fa fa-ticket"></i> Qu'est-ce que le rang no-pyj ?</a></li>
 								</ul>
-							<li class="dropdown">
+							</li><li class="dropdown">
 								<a href="/forum/">FORUM <span class="caret hidden-xs"></span></a>
 								<ul class="dropdown-menu">
 									<li><a href="/forum/"><i class="fa fa-globe"></i> Toutes les catégories</a></li>
 									<li><a href="/forum/viewforum.php?f=92"><i class="fa fa-list-alt"></i> Section Générale</a></li>
-									<li><a href="/forum/viewforum.php?f=117"><img src="/images/icons/section/csgo.png" width="16" height="16" /> CS:GO RolePlay</a></li>
-									<li><a href="/forum/viewforum.php?f=83"><img src="/images/icons/section/tf.png" width="16" height="16" />Team Fortress 2</a></li>
-									<li><a href="/forum/viewforum.php?f=88"><img src="/images/icons/section/lol.png" width="16" height="16" />League Of Legend</a></li>
+									<li><a href="/forum/viewforum.php?f=117"><img src="/images/icons/section/csgo.png" width="16" height="16"> CS:GO RolePlay</a></li>
+									<li><a href="/forum/viewforum.php?f=83"><img src="/images/icons/section/tf.png" width="16" height="16">Team Fortress 2</a></li>
+									<li><a href="/forum/viewforum.php?f=88"><img src="/images/icons/section/lol.png" width="16" height="16">League Of Legend</a></li>
 									<li><a href="/forum/viewforum.php?f=20"><i class="fa fa-lock"></i> Privée</a></li>
 								</ul>
 							</li>
