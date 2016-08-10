@@ -14,16 +14,10 @@ body{background: #101010;font: 12px Arial, Helvetica, sans-serif;line-height: 14
 @media (max-width:979px){.flex-caption .title2,.flex-caption a{display:none}}@media (max-width:626px){.flex-caption{display:none}}
 .SteamProfiler{position:relative;width:246px;height:48px;overflow:hidden;background:#1D1D1D;font-size:10px;font-family:tahoma,Arial,Helvetica,sans-serif;margin:0;padding:0}div.SteamProfilerHandler{position:absolute;top:0;left:240px;width:6px;height:48px;background-image:url(../images/SteamProfiler/handle.png);background-repeat:no-repeat;cursor:pointer;margin:0;padding:0}table.SteamProfilerHandlerSub{position:absolute;top:0;left:246px;height:48px;width:auto;background-color:#2a2a2a;background-repeat:no-repeat;border:0}table.SteamProfilerHandlerSub td{width:18px;text-align:center}table.SteamProfilerHandlerSub a img{border:0}div.SteamProfilerGame{position:absolute;top:0;right:0;background-image:url(../images/SteamProfiler/background_fade.png);background-repeat:repeat-y;height:48px;width:246px}img.SteamProfilerGame{width:128px;height:48px;position:absolute;top:0;right:0}div.SteamProfilerAvatar{position:absolute;top:4px;left:4px;background-image:url(../images/SteamProfiler/iconholder.png);background-repeat:no-repeat;width:40px;height:40px}div.SteamProfilerAvatar a img{position:absolute;top:2px;left:2px;width:36px;height:36px;border:0}div.SteamProfilerName{position:absolute;top:6px;left:48px;font-size:12px;font-weight:700}div.SeamProfilerStatus{position:absolute;top:20px;left:50px;font-size:10px;text-align:left}.SteamProfilerOffline{color:#898989}.SteamProfilerOnline{color:#6f9fc8}.SteamProfilerInGame{color:#8bc53f}.SteamProfilerOnlineAvatar{background-position:-40px 0}.SteamProfilerInGameAvatar{background-position:-80px 0}.SteamPicList{list-style-type:none;width:800px;height:auto;display:block}.SteamPicList li{display:inline;float:left;width:400px;list-style-type:none;overflow:hidden}
 .follow-icon a  { color: white !important; font-variant: small-caps; font-size:18px; } .dropdown-menu { top: 99%; }
-@media (max-width: 767px) { .navbar-brand img { left: 0px; } #menu { height: 81px } ul.nav > li { background-color:white; border-left:2px solid #333; } ul.nav > li:nth-child(2) { border-top:2px solid #333; } ul.nav > li:nth-child(5) { border-bottom:2px solid #333; } ul.nav > li > a { color: #333 !important; } .navbar-collapse { border:0; -webkit-box-shadow: 0; box-shadow: 0; } }
+@media (max-width: 767px) { .hidden-phone { display: none !important; } .navbar-brand img { left: 0px; } #menu { height: 81px } ul.nav > li { background-color:white; border-left:2px solid #333; } ul.nav > li:nth-child(2) { border-top:2px solid #333; } ul.nav > li:nth-child(5) { border-bottom:2px solid #333; } ul.nav > li > a { color: #333 !important; } .navbar-collapse { border:0; -webkit-box-shadow: 0; box-shadow: 0; } }
 .btn-group > *, .popover, .popover-title { background-color: #141414; border: 1px solid #282828; color: #565555; font-weight: bold; }
 .btn-group > .dropdown-menu > li > a, .popover { color: #565555; font-weight: bold; }
 .box { border: 1px solid white; padding:5px; border-radius: 5px;}
 .row > .col-sm-4:nth-child(1) > .box {text-align: right;}
 .modal-title { color: #666; }
 #heatmap canvas { z-index:-1; }#heatmap map area { background-color: red; }
-@media screen and (max-device-width: 480px) {
-/* Styles pour cette Media Queries */
-.hidden-phone{
-  visibility: hidden;
-}
-}
