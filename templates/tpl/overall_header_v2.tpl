@@ -57,7 +57,7 @@
 							<span class="sr-only">Toggle navigation</span>
 							<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="./"><img src="{if="$alternate"}{$alternate}{else}/images/bleue2.png{/if}" alt="tsX" width="400" height="100" style="max-height:100px !important"/></a>
+						<a class="navbar-brand" href="./"><img src="{if="$alternate"}{$alternate}{else}/images/bleue2.png{/if}" alt="tsX" width="350" height="100" style="max-height:100px !important"/></a>
 					</div>
 					<div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav navbar-right" style="z-index:2;">
