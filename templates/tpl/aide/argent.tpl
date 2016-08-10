@@ -1,18 +1,17 @@
-		<div class="container bs-docs-container">
 			<div class="row">
 				<div class="col-md-9" role="main">
 					<br /><br />
 					<center><img alt="img_title" id="img_title" src="/images/wiki/sousou.jpg"></center><br />
 					<br />
 					<div class="row">
-						<div class="col-md-12" role="main">
+						<div id="GroupA" class="col-md-12 group">
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2 id="t1" >Pourquoi gagner de l'argent ?</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>Pourquoi gagner de l'argent ?</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
@@ -32,14 +31,17 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-12" role="main">
+					</div>
+					<br />
+					<div class="row">
+						<div id="GroupB" class="col-md-12 group">
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2 id="t2" >Travailler</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>Travailler</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
@@ -54,14 +56,17 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-12" role="main">
+					</div>
+					<br />
+					<div class="row">
+						<div id="GroupBSub1" class="col-md-12 group">
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2 id="t2.1" >Prendre un appartement</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>Prendre un appartement</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
@@ -110,64 +115,72 @@
 									<br />
 									<p>Nous ne vous conseillerons jamais assez d'y prendre un logement pour y passer la nuit. Munis de plusieurs bonus, les logements vous permettront d'augmenter l'argent de votre paye et quelques
 									autre bonus de la vie de tous les jours, en voici quelques un : </p>
+									<br />
 									<div class="row">
-										<div class="col-xs-offset-2 col-xs-2">
+										<div class="col-xs-offset-2 col-xs-4 col-md-offset-2 col-md-1">
 											<span rp-item-information="201"></span>
 										</div>
-										<div class="col-xs-offset-1 col-xs-2">
+										<div class="col-xs-offset-1 col-xs-4 col-md-offset-1 col-md-1">
 											<span rp-item-information="204"></span>
 										</div>
-										<div class="col-xs-offset-1 col-xs-2">
+										<div class="col-xs-offset-2 col-xs-4 col-md-offset-1 col-md-1">
 											<span rp-item-information="205"></span>
 										</div>
-										<div class="col-xs-offset-1 col-xs-2">
+										<div class="col-xs-offset-1 col-xs-4 col-md-offset-1 col-md-1">
 											<span rp-item-information="208"></span>
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-xs-offset-2 col-xs-2">
+										<div class="col-xs-offset-2 col-xs-4 col-md-offset-2s col-md-1">
 											<span rp-item-information="209"></span>
 										</div>
-										<div class="col-xs-offset-1 col-xs-2">
+										<div class="col-xs-offset-1 col-xs-4 col-md-offset-1 col-md-1">
 											<span rp-item-information="210"></span>
 										</div>
-										<div class="col-xs-offset-1 col-xs-2">
+										<div class="col-xs-offset-2 col-xs-4 col-md-offset-1 col-md-1">
 											<span rp-item-information="211"></span>
 										</div>
-										<div class="col-xs-offset-1 col-xs-2">
+										<div class="col-xs-offset-1 col-xs-4 col-md-offset-1 col-md-1">
 											<span rp-item-information="227"></span>
 										</div>
 									</div>
 									<p>Votre appartement peut également être partagé en collocation avec d'autre citoyens, il vous fera office de lieux de stockage pour vos plantes, machines et autres objets plus ou moins légaux.</p>
+									<br />
 									<p><a href="/index.php?page=roleplay2#/job/61?TABS=player" target="_blank">Cette page</a> vous permettra d'en savoir plus sur les bonus des appartements</p>
 								</div>
 							</div>
 						</div>
-						<div class="col-md-12" role="main">
+					</div>
+					<br />
+					<div class="row">
+						<div id="GroupC" class="col-md-12 group">
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2 id="t3" >Via des items</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>Via des items</h2></div>
 									</div>
 								</div> 
 								<div class="panel-body">
-									<p id="t3.1">À Princeton-City, il existe plusieurs méthodes plus ou moins sures pour gagner de l'argent, mais attention, elles peuvent aussi vous mener à votre perte...</p>
+									<p id="GroupCSub1">À Princeton-City, il existe plusieurs méthodes plus ou moins sures pour gagner de l'argent, mais attention, elles peuvent aussi vous mener à votre perte...</p>
 									<p>La première méthode est d'acheter et faire tourner des machines à faux billet ou photocopieuse à faux billet :</p>
+									<br />
 									<div class="row">
-										<div class="col-xs-offset-3 col-xs-1">
+										<div class="col-xs-offset-1 col-xs-2">
 											<span rp-item-information="190"></span>
 										</div>
-										<div class="col-xs-offset-1 col-xs-1">
+										<div class="col-xs-offset-3 col-xs-2">
 											<span rp-item-information="81"></span>
 										</div>
 									</div>
+									<br />
 									<p>Si vous choisissez les imprimantes, cela vous demandera un investissement de 5 150$rp pour les 15 imprimantes et les 12 améliorations électroniques nécessaires à leur bon fonctionnement
 									contre 5 250$rp pour la photocopieuse.<br />
 									Les imprimantes ont l'avantage de pouvoir être dissimulé dans toute la ville et donc de ne pas tout perdre d'un coup, mais la photocopieuse elle réunit le tout en seul endroit et
 									elle est beaucoup plus discrète.</p>
+									<br />
 									<p>Nous vous conseillons d'esseiller les 2 méthodes tout en sachant que la photocopieuse est l'équivalent exact des ce que vous rapportes les 15 machines.<br />
 									Vous trouverez ci-dessous un tableau de rentabilité dans le temps de cette méthode :</p>
 									<br />
@@ -204,19 +217,23 @@
 									</table>
 									<br />
 									<br />
-									<p id="t3.2">Une autre méthode consiste à gratter des tickets de loto, cette méthode est loin d'être la plus sûre de toutes, mais permet de gagner beaucoup d'argent d'un seul coup.<br />
+									<p id="GroupCSub2">Une autre méthode consiste à gratter des tickets de loto, cette méthode est loin d'être la plus sûre de toutes, mais permet de gagner beaucoup d'argent d'un seul coup.<br />
 									Vous connaissez tous le principe des tickets de loto, vous achetez, vous grattez et vous avez une petite chance de gagner...</p><br />
+									<br />
 									<div class="row">
-										<div class="col-xs-offset-2 col-xs-2">
+										<div class="col-xs-4 col-md-offset-2 col-md-2">
 											<span rp-item-information="54"></span>
 										</div>
-										<div class="col-xs-2">
+										<div class="col-xs-offset-2 col-xs-4 col-md-2">
 											<span rp-item-information="55"></span>
 										</div>
-										<div class="col-xs-2">
+									</div>
+									<br />
+									<div class="row">
+										<div class="col-xs-4 col-md-2">
 											<span rp-item-information="56"></span>
 										</div>
-										<div class="col-xs-2">
+										<div class="col-xs-offset-2 col-xs-3 col-md-2">
 											<span rp-item-information="57"></span>
 										</div>
 									</div>
@@ -229,14 +246,17 @@
 								</div> 
 							</div>
 						</div>
-						<div class="col-md-12" role="main">
+					</div>
+					<br />
+					<div class="row">
+						<div id="GroupD" class="col-md-12 subgroup">
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2 id="t4" >L'activité sur le serveur</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>L'activité sur le serveur</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
@@ -245,14 +265,17 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-12" role="main">
+					</div>
+					<br />
+					<div class="row">
+						<div id="GroupDSub1" class="col-md-12 subgroup">
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2 id="t4.1" >La vitalité</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>La vitalité</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
@@ -263,10 +286,11 @@
 										<div class="col-xs-offset-2 col-xs-2"> 
 											<span rp-item-information="16"></span>
 										</div>
-										<div class="col-xs-2">
+										<div class="col-xs-offset-3 col-xs-2">
 											<span rp-item-information="296"></span>
 										</div>
 									</div>
+									<br />
 									<p>L'hamburger vital, augmente votre vitalité de 256 points pour chaque hamburger vital consommé et la paire de baskets elle augmentera votre vitalité de 5 pour chaque minute où vous marchez.</p>
 									<p><i>C'est bien beau tout ça, mais en quoi ça nous fait gagner de l'argent ?</i></p>
 									<p>Et bien, j'allais y venir, la vitalité est composée de paliers et à chaque palier correspond un coefficient multiplicateur de votre salaire... HAHA !<br />
@@ -295,14 +319,17 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-12" role="main">
+					</div>
+					<br />
+					<div class="row">
+						<div id="GroupDSub2" class="col-md-12 subgroup">
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2 id="t4.2">Participer à des évents</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>Participer à des évents</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
@@ -312,44 +339,44 @@
 									<p>Voici quelques exemples d'évents qui ont été faits sur notre serveur :</p><br />
 									<br />
 									<div class="row">
-									  <div class="col-xs-3">
+									  <div class="col-xs-6">
 										<a  class="thumbnail">
 										  <img src="/images/wiki/e1.jpg" alt="img_event">
 										</a>
 									  </div>
-									  <div class="col-xs-3">
+									  <div class="col-xs-6">
 										<a  class="thumbnail">
 										  <img src="/images/wiki/e2.png" alt="img_event">
 										</a>
 									  </div>
-									  <div class="col-xs-3">
+									  <div class="col-xs-6">
 										<a  class="thumbnail">
 										  <img src="/images/wiki/e3.jpg" alt="img_event">
 										</a>
 									  </div>
-									  <div class="col-xs-3">
+									  <div class="col-xs-6">
 										<a  class="thumbnail">
 										  <img src="/images/wiki/e4.png" alt="img_event">
 										</a>
 									  </div>
 									</div>
 									<div class="row">
-									  <div class="col-xs-3">
+									  <div class="col-xs-6">
 										<a  class="thumbnail">
 										  <img src="/images/wiki/e5.png" alt="img_event">
 										</a>
 									  </div>
-									  <div class="col-xs-3">
+									  <div class="col-xs-6">
 										<a  class="thumbnail">
 										  <img src="/images/wiki/e6.jpg" alt="img_event">
 										</a>
 									  </div>
-									  <div class="col-xs-3">
+									  <div class="col-xs-6">
 										<a  class="thumbnail">
 										  <img src="/images/wiki/e7.jpg" alt="img_event">
 										</a>
 									  </div>
-									  <div class="col-xs-3">
+									  <div class="col-xs-6">
 										<a class="thumbnail">
 										  <img src="/images/wiki/e8.jpg" alt="img_event">
 										</a>
@@ -358,24 +385,28 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-12" role="main">
+					</div>
+					<br />
+					<div class="row">
+						<div id="GroupDSub3" class="col-md-12 subgroup">
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2 id="t4.3" >Les Quêtes</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>Les Quêtes</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
 									<p>Vous en avez sûrement déjà entendu parler, un système de quête est disponible sur le serveur, elles sont disponibles soit par téléphone, soit par le confessionnal de l'église.</p>
+									<br />
 									<div class="row">
-										<div class="col-sm-3">
+										<div class="col-xs-10">
 											<img width="240" height="180" src="/images/wiki/telephone.jpg" />
 											<p>Un téléphone</p>
 										</div>
-										<div class="col-sm-offset-1 col-sm-3">
+										<div class="col-xs-10">
 											<img width="240" height="180" src="/images/wiki/eglise.jpg" />
 											<p>Entrée de l'église</p>
 										</div>
@@ -406,14 +437,17 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-12" role="main">
+					</div>
+					<br />
+					<div class="row">
+						<div id="GroupE" class="col-md-12 subgroup">
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2 id="t5" >Faire un don pour le serveur</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>Faire un don pour le serveur</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
@@ -435,26 +469,36 @@
 					</div>
 				
 				</div>
-				<div class=" col-md-1" role="complementary">
-					<nav class="bs-docs-sidebar hidden-print hidden-sm hidden-xs affix"> 
-						<ul class="nav bs-docs-sidenav target-active">
-							<li><a href="#t1" id="page_menu_wiki" ><i class="fa fa-asterisk prune" aria-hidden="true"></i> Pourquoi gagner de l'argent ?</a></li>
-							<li><a href="#t2" id="page_menu_wiki" ><i class="fa fa-asterisk ocean" aria-hidden="true"></i> Travailler</a></li>
-							<ul class="nav target-active"><li><a href="#t2.1" class="sous_menu" id="page_menu_wiki"><i class="fa fa-asterisk ocean" aria-hidden="true"></i> Prendre un appartement</a></li></ul>
-							<li><a href="#t3" id="page_menu_wiki" ><i class="fa fa-asterisk gold" aria-hidden="true"></i> Via des items</a></li>
-							<ul class="nav target-active">
-								<li><a href="#t3.1" class="sous_menu" id="page_menu_wiki"><i class="fa fa-asterisk gold" aria-hidden="true"></i> Les Machines</a></li>
-								<li><a href="#t3.2" class="sous_menu" id="page_menu_wiki"><i class="fa fa-asterisk gold" aria-hidden="true"></i> Gratter des tickets</a></li>
+				<!--Nav Bar -->
+				<nav class="col-md-2 bs-docs-sidebar">
+					<ul id="sidebar" class="nav nav-stacked fixed">
+						<li>
+							<a href="#GroupA">Pourquoi gagner de l'argent ?</a>
+						</li>
+						<li>
+							<a href="#GroupB">Travailler</a>
+							<ul class="nav nav-stacked">
+								<li><a href="#GroupBSub1">Prendre un appartement</a></li>
 							</ul>
-							<li><a href="#t4" id="page_menu_wiki" ><i class="fa fa-asterisk blood" aria-hidden="true"></i> L'activité sur le serveur</a></li>
-							<ul class="nav target-active">
-								<li><a href="#t4.1" class="sous_menu" id="page_menu_wiki"><i class="fa fa-asterisk blood" aria-hidden="true"></i> La vitalité</a></li>
-								<li><a href="#t4.2" class="sous_menu" id="page_menu_wiki"><i class="fa fa-asterisk blood" aria-hidden="true"></i> Participer à des évents</a></li>
-								<li><a href="#t4.3" class="sous_menu" id="page_menu_wiki"><i class="fa fa-asterisk blood" aria-hidden="true"></i> Les Quêtes</a></li>
+						</li>
+						<li>
+							<a href="#GroupC">Via des items</a>
+							<ul class="nav nav-stacked">
+								<li><a href="#GroupCSub1">Les Machines</a></li>
+								<li><a href="#GroupCSub2">Gratter des tickets</a></li>
 							</ul>
-							<li><a href="#t5" id="page_menu_wiki" ><i class="fa fa-asterisk pomme" aria-hidden="true"></i> Faire un don pour le serveur</a></li>
-						</ul>
-					</nav>
-				</div>
+						</li>
+						<li>
+							<a href="#GroupD">L'activité sur le serveur</a>
+							<ul class="nav nav-stacked">
+								<li><a href="#GroupDSub1">La vitalité</a></li>
+								<li><a href="#GroupDSub2">Participer à des évents</a></li>
+								<li><a href="#GroupDSub3">Les Quêtes</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#GroupE">Faire un don pour le serveur</a>
+						</li>
+					</ul>
+				</nav>
 			</div>
-		</div>
