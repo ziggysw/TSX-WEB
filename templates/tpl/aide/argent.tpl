@@ -427,8 +427,19 @@
 											<tr><td>Mafia</td><td>Documents secrets</td><td>5 000$RP</td><td>Vous devrez vous rendre dans la villa PvP pour voler des documents secret et retournez dans votre planque pour les déposer.</td></tr>
 											<tr><td>Mafia</td><td>Traffic illégal</td><td>5 000$RP.</td><td>Durant cette quête vous devez vous introduire dans le commissariat jusqu'au distributeur d'arme et en voler le plus possible !</td></tr>
 											<tr><td>Mafia</td><td>Braquage des distributeurs</td><td>x</td><td>Dans cette quête votre objectif sera de crocheter tout les distributeurs présent dans les métro</td></tr>
-											<tr><td>x</td><td>x</td><td>x</td><td>x</td></tr>
-											<tr><td>x</td><td>x</td><td>x</td><td>x</td></tr>
+											<tr><td>Mercenaire</td><td>Un coup de main pour la justice</td><td>2 500$RP</td><td>Cette quête sera disponible que quand il y a un recherché tribunal. Vous devrez allé la prendre et tué le recherché en question, quand la personne sera tué, elle sera tp dans la prison du tribunal.</td></tr>
+											<tr><td>Mercenaire</td><td>Le justicier masqué</td><td>2 500$RP</td><td>Dans cette quête vous aurez 12h tué le plus grand freekiller. Cette quête ce présentera comme un contrat classique.</td></tr>
+											<tr><td>Police</td><td>Suivez le lapin blanc</td><td>5 000$RP</td><td>Pourchasser le tueur en série, jusqu'à ce qu'il commette un meurtre. Ensuite, arrête le.</td></tr>
+											<tr><td>Police</td><td>Surveillance renforcée</td><td>x</td><td>Surveillez la prison. Pendant les prochaines 24h. 35$ pour chaque 10 minute passée à surveiller les prisonniers.</td></tr>
+											<tr><td>Police</td><td>Non à la contrebande</td><td>x</td><td>Tazer un maximum d'objets illégaux en ville. Pendant les 24 prochaines heures. (Plante: 2.000$, Machine: 200, Photocopieuse: 3000$)</td></tr>
+											<tr><td>Justice</td><td>Un homme très recherché</td><td>2500</td><td>Un homme est recherché par le Tribunal. Vous avez 12 heures pour le trouver, et l'arrêter</td></tr>
+											<tr><td>Justice</td><td>La justice exprès</td><td>2 5000$RP</td><td>Vous avais un bonus pour vos 3 prochaines condamnations. Pendant ces 24 prochaines heures condamnez 3 joueurs différents dans votre Tribunal. Les seul conditions: Ils doivent avoir une amende d'au moins 100$, ainsi que 3 heures de prison.</td></tr>
+											<tr><td>Justice</td><td>La justice sournoise</td><td>5 000$RP</td><td>	Vous devais faire en sorte que le joueurs sélectionnais commette un meurtre et que la victime porte plainte. Après quoi, il vous sera possible de faire régner la justice. Les seul conditions: Ils doivent avoir une amende d'au moins 100$, ainsi que 3 heures de prison.</td></tr>
+											<tr><td>Stidda Famiglia</td><td>Vandalisme des distributeurs</td><td>2 500$RP</td><td>Dans cette quête votre objectif sera de crocheter tout les distributeurs présent dans les métro</td></tr>
+											<tr><td>Stidda Famiglia</td><td>Surveillance des plants.</td><td>500xNb de plant posé</td><td>x</td>Dans cette quête vous devrez poser 10 plants caché des yeux de la police. Ainsi que de les protéger durant 24 heures </tr>
+											<tr><td>Stidda Famiglia</td><td>Blanchissement d'argent</td><td>5 000$RP</td><td>Volé une arme à un flic et la ramené à la planque.</td></tr>
+											<tr><td>Stidda Famiglia</td><td>Récolte des plants</td><td>x</td><td>Dans cette quête l'interlocuteur anonyme vous demandes d'allez crocheter 5 fois la place de l'indépendance en 5x6 minutes.</td></tr
+											<tr><td>Technicien</td><td>Surveillance des machines</td><td></td><td>x</td></tr>
 										</table>
 										<br />
 								</div>
