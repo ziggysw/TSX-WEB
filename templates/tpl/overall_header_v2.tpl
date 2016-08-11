@@ -63,9 +63,10 @@
 					<ul class="nav navbar-nav navbar-right" style="z-index:2;">
 							<li class="visible-lg-block"><a href="/index.php">Accueil</a>
 							</li><li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Le Site <span class="caret"></span></a>
+								<a class="hidden-md hidden-lg" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Le Site <span class="caret"></span></a>
+								<a class="hidden-xs hidden-sm" href="/index.php" >Le Site <span class="caret"></span></a>
 								<ul class="dropdown-menu">
-  									<li><a href="/index.php"><i class="fa fa-home"></i> Accueil</a></li>
+  									<li><a class="hidden-md hidden-lg" href="/index.php"><i class="fa fa-home"></i> Accueil</a></li>
 									<li><a href="/index.php?page=intro&amp;last=news"><i class="fa fa-newspaper-o"></i> News</a></li>
 									<li><a href="/forum/memberlist.php?g=19&amp;mode=group&amp;sk=m&amp;sd=a"><i class="fa fa-users"></i> Les membres</a></li>
 									<li><a class="hidden-xs" href="/index.php?page=valider_steamid"><i class="fa fa-steam"></i> Modifier son Steam</a></li>
@@ -77,7 +78,7 @@
 							</li>
 							<li class="dropdown">
 								<a class="hidden-md hidden-lg" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">RolePlay <span class="caret"></span></a>
-								<a class="hidden-xs hidden-sm" href="/index.php?page=roleplay2" >RolePlay <span class="caret"></span></a>
+								<a class="hidden-xs hidden-sm" href="/index.php?page=roleplay2#" >RolePlay <span class="caret"></span></a>
 								<ul class="dropdown-menu">
 									<li><a href="/wiki"><i class="fa fa-wikipedia-w"></i> Besoin d'aide?</a></li>
 									<li><a href="/forum/viewtopic.php?f=10&amp;t=26749"><i class="fa fa-balance-scale"></i> Règlement général</a></li>
