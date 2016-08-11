@@ -76,7 +76,7 @@
 								</ul>
 							</li>
 							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">RolePlay <span class="caret"></span></a>
+								<a href="/index.php?page=roleplay2" >RolePlay <span class="caret"></span></a>
 								<ul class="dropdown-menu">
 									<li><a href="/wiki"><i class="fa fa-wikipedia-w"></i> Besoin d'aide?</a></li>
 									<li><a href="/forum/viewtopic.php?f=10&amp;t=26749"><i class="fa fa-balance-scale"></i> Règlement général</a></li>
