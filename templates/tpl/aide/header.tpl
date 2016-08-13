@@ -5,7 +5,7 @@
 
 <br />
 
-	<nav class="navbar navbar-default p-navbar" role="navigation" id="mw-navigation">
+	<nav class="navbar navbar-inverse p-navbar" role="navigation" id="mw-navigation">
 					<div class="container-fluid">
 							<div class="navbar-header">
 
@@ -28,7 +28,7 @@
 							<!-- Nouveaux Joueurs -->
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Nouveaux Joueurs <b class="caret"></b></a>
-								<ul class="dropdown-menu p-Nouveaux Joueurs" id="p-Nouveaux Joueurs">
+								<ul class="dropdown-menu dropdown-menu-inverse p-Nouveaux Joueurs" id="p-Nouveaux Joueurs">
 										<li id="n-Le-TeamSpeak-.5BTS.5D"><a href="/index.php?page=aide&sub=debuter#GroupD">Le TeamSpeak [TS]</a></li>
 										<li id="n-Comment-bien-d.C3.A9buter-.3F"><a href="/index.php?page=aide&sub=debuter">Comment bien débuter ?</a></li>
 										<li id="n-Le-Parrainage"><a href="">Le Parrainage [CREA]</a></li>
