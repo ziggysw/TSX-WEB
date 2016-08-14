@@ -448,7 +448,47 @@
 					</div>
 					<br />
 					<div class="row">
-						<div id="GroupE" class="col-md-12 subgroup">
+						<div id="GroupE" class="col-md-12 group">
+							<div class="panel panel-wiki">
+								<div class="row">
+									<div class="hidden-xs hidden-sm col-md-1">
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+									</div>
+									<div class="col-md-11">
+										<div class="panel-heading panel-heading-wiki"><h2>Le Parrainage</h2></div>
+									</div>
+								</div>
+								<div class="panel-body">
+									<p>Le RolePlay se joue avant tout entre amis. C'est pourquoi grâce au programme de parrainage, vous gagnez des récompenses telles que <br />
+									des points pour le classement général, de l'argent sur le roleplay, des succès et un titre sur le forum.</p>
+									<br />
+									<p id="GroupESub1"><br />Dites à vos amis d'ajouter le roleplay à leur favoris <u>178.32.42.113:27015</u> afin de vous rejoindre,<br />
+									Ils peuvent, en cas de difficulté, cliquer sur le bouton "Rejoindre RP" présent sur notre site.<br />
+									<br />
+									À la fin du tutoriel, le nouveau joueur pourra choisir un parrain parmi les joueurs présents sur le serveur,<br />
+									<span class="blood">ATTENTION !!</span> vous devez toutefois êtes connecté pour qu'il puisse vous choisir.<br />
+									Vous pouvez aussi tenter d'aider les joueurs lorsqu'ils font le tutoriel, les nouveaux joueurs ont souvent besoin d'aide, en les aidant ils sont heureux et vous pouvez gagner un nouveau filleul.<br />
+									<br />
+									Après 20 heures d'activité, votre filleul est validé et vous pouvez bénéficier de la récompense de <b>100.000 $rp</b>.</p>
+									<br />
+									<p id="GroupESub2">
+									<br />
+									<ul>
+										<li>À chaque filleul validé : 100 000 $ RP</li>
+										<li>Au 5ème filleul validé : le succès "Entre amis"</li>
+										<li>Au 10eme filleul validé : L'icone forum "Parrain"</li>
+										<li>Au 15ème filleul validé : 250 points dans le classement général supplémentaire.</li>
+									</ul>
+									Pour accepter vos récompenses il faudra passer par le forum <a href="/index.php?page=parrainage" target="_blank">(RolePlay>Parrainage)</a> et cliquer sur valider puis recevoir pour obtenir votre récompense.</p>
+									<br />
+									<p id="GroupESub3"><br />Vous souhaite que votre filleul vous parraine même quand vous n'êtes pas connecté sur le serveur ? C'est très simple envoyer une demande de parrainage à Kossolax@ts-X.eu , avec votre steam id ainsi que le joueur en question.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<br />
+					<div class="row">
+						<div id="GroupF" class="col-md-12 group">
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
@@ -505,7 +545,15 @@
 							</ul>
 						</li>
 						<li>
-							<a href="#GroupE">Faire un don pour le serveur</a>
+							<a href="#GroupE">Le parrainage</a>
+							<ul class="nav nav-stacked">
+								<li><a href="#GroupESub1">Comment ça marche</a></li>
+								<li><a href="#GroupESub2">Les récompenses</a></li>
+								<li><a href="#GroupESub3">Petits plus</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#GroupF">Faire un don pour le serveur</a>
 						</li>
 					</ul>
 				</nav>

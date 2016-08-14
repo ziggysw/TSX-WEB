@@ -16,7 +16,7 @@
 
 							<!-- logo and main page link -->
 							<div id="p-logo" class="p-logo navbar-brand" role="banner">
-								<a href="/index.php?page=aide" title="Page principale"><img src="/w/images/b/bc/Wiki.png" class="img_wiki" width="40" height="40" alt="ts-X.eu :: wiki"></a>
+								<a href="/index.php?page=aide" title="Page principale"><img src="/w/images/b/bc/Wiki.png" class="img_wiki_menu" width="40" height="40" alt="ts-X.eu :: wiki"></a>
 							</div>
 
 
@@ -31,7 +31,7 @@
 								<ul class="dropdown-menu dropdown-menu-inverse p-Nouveaux Joueurs" id="p-Nouveaux Joueurs">
 										<li id="n-Le-TeamSpeak-.5BTS.5D"><a href="/index.php?page=aide&sub=debuter#GroupD"><i class="fa fa-headphones" aria-hidden="true"></i> Le TeamSpeak [TS]</a></li>
 										<li id="n-Comment-bien-d.C3.A9buter-.3F"><a href="/index.php?page=aide&sub=debuter"><i class="fa fa-book" aria-hidden="true"></i> Comment bien débuter ?</a></li>
-										<li id="n-Le-Parrainage"><a href=""><i class="fa fa-users" aria-hidden="true"></i> Le Parrainage [CREA]</a></li>
+										<li id="n-Le-Parrainage"><a href="/index.php?page=aide&sub=argent#GroupE"><i class="fa fa-users" aria-hidden="true"></i> Le Parrainage </a></li>
 										<li id="n-Comment-gagner-de-l.27argent-sur-le-Roleplay-.3F"><a href="/index.php?page=aide&sub=argent"><i class="fa fa-money" aria-hidden="true"></i> Comment gagner de l'argent sur le Roleplay ?</a></li>
 										<li id="n-Comment-Trouver-un-job-.3F"><a href="/index.php?page=aide&sub=job"><i class="fa fa-map-o" aria-hidden="true"></i> Comment Trouver un job ?</a></li>
 										<li id="n-Mettre-en-place-vos-binds"><a href="/index.php?page=aide&sub=bind"><i class="fa fa-keyboard-o" aria-hidden="true"></i> Mettre en place vos binds</a></li>
@@ -58,7 +58,7 @@
 										<li id="n-Bugs-et-Probl.C3.A8mes-connus"><a href="/wiki/Bugs_et_Probl%C3%A8mes_connus"><i class="fa fa-bug" aria-hidden="true"></i> Bugs et Problèmes connus [CREA]</a></li>
 										<li id="n-Mises-.C3.A0-jours-effectu.C3.A9es"><a href="https://www.ts-x.eu/forum/viewtopic.php?f=10&amp;t=28678&amp;view=unread#unread" rel="nofollow"><i class="fa fa-check" aria-hidden="true"></i> Mises à jours effectuées</a></li>
 										<li id="n-Comment-devenir-Chef-d.27un-m.C3.A9tier-.3F"><a href="/wiki/Devenir_chef_d%27un_m%C3%A9tier"><i class="fa fa-user-secret" aria-hidden="true"></i> Comment devenir Chef d'un métier ?</a></li>
-										<li id="n-Comment-faire-une-record-.3F"><a href="/index.php?page=aide&sub=record"><i class="fa fa-video-camera" aria-hidden="true"></i> Comment faire une record ?[CREA]</a></li>
+										<li id="n-Comment-faire-une-record-.3F"><a href="/index.php?page=aide&sub=record"><i class="fa fa-video-camera" aria-hidden="true"></i> Comment faire une record ?</a></li>
 										<li id="n-Qui-sont-les-Ts-X"><a href="/wiki/Ts-x"><i class="fa fa-coffee" aria-hidden="true"></i> Qui sont les Ts-X[CREA]</a></li>
 										<li id="n-Devenir-VIP"><a href="/wiki/Devenir_VIP"><i class="fa fa-wheelchair" aria-hidden="true"></i> Devenir VIP[CREA]</a></li>
 										<li id="n-Devenir-membre-CS:GO"><a href="/wiki/Devenir_admin_Fun"><i class="fa fa-rebel" aria-hidden="true"></i> Devenir membre CS:GO[CREA]</a></li>
