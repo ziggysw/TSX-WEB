@@ -8,7 +8,7 @@
 		</ol>
 		<div class="carousel-inner" role="listbox">
 			<div class="item active"><!-- Slide 0 -->
-				<img id="img_carrousel" alt="NeW" src="/images/wiki/guide_debutant.png">
+				<img id="img_carrousel" alt="NeW" src="/images/wiki/guide_debutant.png" />
 				<div class="flex-caption "><div>
 					<p class="title1">Bien debuter sa vie à Princeton-City</p>
 					<p class="title2"><span class="wiki_pub"><u>Ar</u>g<u>ent actuel :</u></span> {$money|pretty_number} $rp<br />
@@ -19,7 +19,7 @@
 				</div></div>
 			</div>
 			<div class="item"><!-- Slide 1 -->
-				<img id="img_carrousel" alt="Binds" src="/images/wiki/bind.png">
+				<img id="img_carrousel" alt="Binds" src="/images/wiki/bind.png" /></a>
 				<div class="flex-caption"><div>
 					<p class="title1">Les binds</p>
 					<p class="title2">Cet article vous informera sur les diverses touches "bindable" de votre clavier, sur les différents binds possibles et sur ce que l'on appelle communément un "Bind"</p>
@@ -28,7 +28,7 @@
 				</div></div>
 			</div>
 			<div class="item"><!-- Slide 2 -->
-				<img id="img_carrousel" alt="PVP" src="/images/wiki/banniere_pvp.png">
+				<img id="img_carrousel" alt="PVP" src="/images/wiki/banniere_pvp.png" /></a>
 				<div class="flex-caption"><div>
 					<p class="title1">Les Gangs et La PvP</p>
 					<p class="title2"><span class="wiki_pub"><u>Ran</u>g <u>actuel :</u></span> {$gang} </p>
@@ -87,17 +87,16 @@
 		</div>
 		  <!-- debut du block-buster -->
 		<div class="row">
-			<!-- <hr class="featurette-divider">
-
+			<div class="hidden-md hidden-lg"><hr class="featurette-divider">
 			<div class="row featurette">
 				<div class="col-md-7">
-					<h2 class="featurette-heading">Bien débuter sur le Rôle-Play <span class="text-muted">#I_have_a_dream</span></h2>
-					<p class="lead">Tout connaitre sur le serveur rôle-play, les items, le reglement, les secret les plus enfouis.... <a href="/index.php?page=aide&sub=debuter">lire plus</a></p>
+					<h2 class="featurette-heading">Bienvenue à Princeton-City <span class="text-muted">#I_have_a_dream</span></h2>
+					<p class="lead">Tout connaitre sur le serveur rôle-play, les bases, le reglement, les secret les plus enfouis.... <a href="/index.php?page=aide&sub=debuter">lire plus</a></p>
 				</div>
 				<div class="col-md-5">
 				  <img id="img_block_buster" class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="http://2.bp.blogspot.com/_FU9UCvCKHaQ/TBYL1pifkZI/AAAAAAAADR0/7crhQZ9qsJ0/s1600/l_fccf730fd0b94713bad70cb9b979bbea.jpg" data-holder-rendered="true">
 				</div>
-			</div> -->
+			</div></div>
 
 			<hr class="featurette-divider">
 			  <div class="row featurette">
