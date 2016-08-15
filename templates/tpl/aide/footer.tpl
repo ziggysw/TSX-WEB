@@ -25,5 +25,4 @@
 		$("body").popover({ selector: '[data-toggle="popover"]', trigger: "hover"});
 		$("body").tooltip({ selector: '[data-toggle="tooltip"]', trigger: "hover"});
   });
-
 </script>

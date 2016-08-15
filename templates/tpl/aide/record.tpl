@@ -73,7 +73,8 @@
 									<img class="img_wiki" src="/images/wiki/record_w10.png"/>
 									<br />
 									<p>Ce menu s'ouvrira alors et il vous suffira de cliquer sur le bouton rouge pour lancer la record ou l'arrêter.<br />
-									Vous pourrez retrouver votre enregistrement dans "C:\Users\VOTRE_NOM_DE_SESSION\Videos\Captures".</p>
+									Vous pourrez retrouver votre enregistrement dans 
+									<span class="wiki-phone">"C:\Users\VOTRE_NOM_DE_SESSION\Videos\Captures"</span>.</p>
 								</div>
 							</div>
 						</div>

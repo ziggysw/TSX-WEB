@@ -16,8 +16,8 @@
 					Si tu souhaites avoir plus d'argent en banque, je te conseille de venir jeter un oeil à ce tutoriel !</p>
 					<br />
 					<a class="various btn btn-primary" href="/index.php?page=aide&sub=debuter"><i class="fa fa-hand-o-right"></i> En savoir plus !</a>
-				</div>
-			</div></div>
+				</div></div>
+			</div>
 			<div class="item"><!-- Slide 1 -->
 				<img id="img_carrousel" alt="Binds" src="/images/wiki/bind.png">
 				<div class="flex-caption"><div>

@@ -336,8 +336,8 @@
 									<p>Voici quelques exemples d'évents qui ont été faits sur notre serveur :</p><br />
 									<br />
 									<div class="row">
-									  <div class="col-xs-6 col-md-3">
-										<a  class="thumbnail">
+										<div class="col-xs-6 col-md-3">
+										<a  class="thumbnail" data-toggle="lightbox">
 										  <img src="/images/wiki/e1.jpg" alt="img_event">
 										</a>
 									  </div>
@@ -416,30 +416,32 @@
 											<th id="table-top-left">Metier</th>
 											<th>Nom</th>
 											<th>Gain</th>
-											<th id="table-top-right">Objectif</th>
+											<th class="hidden-phone" id="table-top-right">Objectif</th>
 										  </tr>
-											<tr><td>Artisan</td><td>Commande d'artisanat</td><td>5 000$RP</td><td>Poser une table de craft ou se rendre près d'une déjà poser.</td></tr>
-											<tr><td>Justice</td><td>La justice sournoise</td><td>5 000$RP</td><td>condamné un meurtrier à 100$ d'amende et 3h de prison minimum</td></tr>
-											<tr><td>Justice</td><td>La justice express</td><td>3 000$RP</td><td>Vous avez un bonus pour vos 3 prochaines condamnations pendant 24h. (100$ d'amende et 3h de prison minimum)</td></tr>
-											<tr><td>Justice</td><td>Un homme très recherché</td><td>x</td><td>Un homme est recherché par le Tribunal. Vous avez 12 heures pour le trouver, et l'arrêter</td></tr>
-											<tr><td>Mafia</td><td>Délivrance</td><td>1 000$RP par prisonniers</td><td>Durant cette quête vous devez vous infiltrer dans les cellules de prison du commissariat et tenter la plus grande évasion jamais crée</td></tr>
-											<tr><td>Mafia</td><td>Où est Charlie?</td><td>1 000$RP par zone découverte</td><td>Vous devrez vous rendre à 5 zones dans la map (Changement de zone à chaque quête)</td></tr>
-											<tr><td>Mafia</td><td>Documents secrets</td><td>5 000$RP</td><td>Vous devrez vous rendre dans la villa PvP pour voler des documents secret et retournez dans votre planque pour les déposer.</td></tr>
-											<tr><td>Mafia</td><td>Traffic illégal</td><td>5 000$RP.</td><td>Durant cette quête vous devez vous introduire dans le commissariat jusqu'au distributeur d'arme et en voler le plus possible !</td></tr>
-											<tr><td>Mafia</td><td>Braquage des distributeurs</td><td>x</td><td>Dans cette quête votre objectif sera de crocheter tout les distributeurs présent dans les métro</td></tr>
-											<tr><td>Mercenaire</td><td>Un coup de main pour la justice</td><td>2 500$RP</td><td>Cette quête sera disponible que quand il y a un recherché tribunal. Vous devrez allé la prendre et tué le recherché en question, quand la personne sera tué, elle sera tp dans la prison du tribunal.</td></tr>
-											<tr><td>Mercenaire</td><td>Le justicier masqué</td><td>2 500$RP</td><td>Dans cette quête vous aurez 12h tué le plus grand freekiller. Cette quête ce présentera comme un contrat classique.</td></tr>
-											<tr><td>Police</td><td>Suivez le lapin blanc</td><td>5 000$RP</td><td>Pourchasser le tueur en série, jusqu'à ce qu'il commette un meurtre. Ensuite, arrête le.</td></tr>
-											<tr><td>Police</td><td>Surveillance renforcée</td><td>x</td><td>Surveillez la prison. Pendant les prochaines 24h. 35$ pour chaque 10 minute passée à surveiller les prisonniers.</td></tr>
-											<tr><td>Police</td><td>Non à la contrebande</td><td>x</td><td>Tazer un maximum d'objets illégaux en ville. Pendant les 24 prochaines heures. (Plante: 2.000$, Machine: 200, Photocopieuse: 3000$)</td></tr>
-											<tr><td>Justice</td><td>Un homme très recherché</td><td>2500</td><td>Un homme est recherché par le Tribunal. Vous avez 12 heures pour le trouver, et l'arrêter</td></tr>
-											<tr><td>Justice</td><td>La justice exprès</td><td>2 5000$RP</td><td>Vous avais un bonus pour vos 3 prochaines condamnations. Pendant ces 24 prochaines heures condamnez 3 joueurs différents dans votre Tribunal. Les seul conditions: Ils doivent avoir une amende d'au moins 100$, ainsi que 3 heures de prison.</td></tr>
-											<tr><td>Justice</td><td>La justice sournoise</td><td>5 000$RP</td><td>	Vous devais faire en sorte que le joueurs sélectionnais commette un meurtre et que la victime porte plainte. Après quoi, il vous sera possible de faire régner la justice. Les seul conditions: Ils doivent avoir une amende d'au moins 100$, ainsi que 3 heures de prison.</td></tr>
-											<tr><td>Stidda Famiglia</td><td>Vandalisme des distributeurs</td><td>2 500$RP</td><td>Dans cette quête votre objectif sera de crocheter tout les distributeurs présent dans les métro</td></tr>
-											<tr><td>Stidda Famiglia</td><td>Surveillance des plants.</td><td>500xNb de plant posé</td><td>x</td>Dans cette quête vous devrez poser 10 plants caché des yeux de la police. Ainsi que de les protéger durant 24 heures </tr>
-											<tr><td>Stidda Famiglia</td><td>Blanchissement d'argent</td><td>5 000$RP</td><td>Volé une arme à un flic et la ramené à la planque.</td></tr>
-											<tr><td>Stidda Famiglia</td><td>Récolte des plants</td><td>x</td><td>Dans cette quête l'interlocuteur anonyme vous demandes d'allez crocheter 5 fois la place de l'indépendance en 5x6 minutes.</td></tr
-											<tr><td>Technicien</td><td>Surveillance des machines</td><td></td><td>x</td></tr>
+											<tr><td>Artisan</td><td>Commande d'artisanat</td><td>5.000$RP</td><td class="hidden-phone">Posez une table de craft ou rendez-vous près d'une déjà poser.</td></tr>
+											<tr><td>Justice</td><td>La justice sournoise</td><td>5.000$RP</td><td class="hidden-phone">Condamnez un meurtrier à 100$RP d'amende et 3h de prison minimum.</td></tr>
+											<tr><td>Justice</td><td>La justice express</td><td>3.000$RP</td><td class="hidden-phone">Vous avez un bonus pour vos 3 prochaines condamnations pendant 24h.<br /> (100$RP d'amende et 3h de prison minimum)</td></tr>
+											<tr><td>Justice</td><td>Un homme très recherché</td><td>2.500$RP</td><td class="hidden-phone">Vous avez 12 heures pour trouver un homme recherché par le tribunal, et l'arrêter.</td></tr>
+											<tr><td>Mafia</td><td>Délivrance</td><td>1.000$RP par prisonniers</td><td class="hidden-phone">Infiltrez-vous dans les cellules du commissariat et libérer un maximum de prisonnier.</td></tr>
+											<tr><td>Mafia</td><td>Où est Charlie?</td><td>1.000$RP par zone découverte</td><td class="hidden-phone">Rendez-vous dans 5 zones aléatoires de la ville.</td></tr>
+											<tr><td>Mafia</td><td>Documents secrets</td><td>5.000$RP</td><td class="hidden-phone">Rendez-vous dans la villa PvP pour voler des documents secrets et retournez dans votre planque pour les déposer.</td></tr>
+											<tr><td>Mafia</td><td>Traffic illégal</td><td>5.000$RP.</td><td class="hidden-phone">Introduisez-vous dans le commissariat jusqu'au distributeur d'arme et volez-en le plus possible !</td></tr>
+											<tr><td>Mafia</td><td>Braquage des distributeurs</td><td>2.500$RP</td><td class="hidden-phone">Crochetez tous les distributeurs présents dans les stations de métro</td></tr>
+											<tr><td>Mercenaire</td><td>Un coup de main pour la justice</td><td>2.500$RP</td><td class="hidden-phone">Tuez un homme recherché par le tribunal.</td></tr>
+											<tr><td>Mercenaire</td><td>Le justicier masqué</td><td>2.500$RP</td><td class="hidden-phone">Vous avez 12 minutes pour tuer le plus grand freekiller de la ville.<br /> (Cette quête se présentera comme un contrat classique)</td></tr>
+											<tr><td>Police</td><td>Suivez le lapin blanc</td><td>5.000$RP</td><td class="hidden-phone">Pourchassez le tueur en série jusqu'à ce qu'il commette un meurtre, et arrêtez-le.</td></tr>
+											<tr><td>Police</td><td>Surveillance renforcée</td><td>210$RP / minutes dans les jails (5.000$RP)</td><td class="hidden-phone">Surveillez la prison pendant 24 minutes.</td></tr>
+											<tr><td>Police</td><td>Non à la contrebande</td><td>En fonction des objets détruits</td><td class="hidden-phone">Vous avez 24 minutes pour tazer un maximum d'objets illégaux en ville.<br />(Plante: 2.000$RP, Machine: 200$RP, Photocopieuse: 3.000$RP)</td></tr>
+											<tr><td>Justice</td><td>Un homme très recherché</td><td>2.500RP</td><td class="hidden-phone">Vous avez 12 heures pour le trouver et l'arrêter un homme recherché par le tribunal.</td></tr>
+											<tr><td>Justice</td><td>La justice exprès</td><td>2.5000$RP</td><td class="hidden-phone">Vous avez 24 minutes pour condamner 3 joueurs différents dans votre Tribunal.<br /> (100$RP d'amende et 3h de prison minimum).</td></tr>
+											<tr><td>Justice</td><td>La justice sournoise</td><td>5.000$RP</td><td class="hidden-phone">Prenez une plainte pour meurtre sur votre cible et condamnez le.<br /> (100$RP d'amende et 3h de prison minimum)</td></tr>
+											<tr><td>Stidda Famiglia</td><td>Vandalisme des distributeurs</td><td>2 .00$RP</td><td class="hidden-phone">Crochetez tous les distributeurs présents dans les stations de métro.</td></tr>
+											<tr><td>Stidda Famiglia</td><td>Surveillance des plants.</td><td>500$RP par plan restant à la fin</td><td class="hidden-phone">Posez 10 plants et protégez-les pendant 24 minutes.</td></tr>
+											<tr><td>Stidda Famiglia</td><td>Blanchissement d'argent</td><td>5.000$RP</td><td class="hidden-phone">Volez une arme à un flic et ramenez la dans votre planque.</td></tr>
+											<tr><td>Stidda Famiglia</td><td>Récolte des plants</td><td>1.000$ Par plant</td><td class="hidden-phone">Crochetez 5 fois la place de l'indépendance en 5x6 minutes.</td></tr>
+											<tr><td>Stidda Famiglia</td><td>Razzia</td><td>En fonction des armes volé</td><td class="hidden-phone">Introduisez-vous dans le commissariat jusqu'au distributeur d'arme et en voler le plus possible,<br /> ou bien aller crocheter le marché noir de la mafia !</td></tr>
+											<tr><td>Technicien</td><td>Surveillance des machines</td><td>500$RP par machine restant à la fin</td><td class="hidden-phone">Posez 10 machines en protégez les durant 24 minutes</td></tr>
+											<tr><td>Technicien</td><td>Sous écoute</td><td>5.000$RP</td><td class="hidden-phone">Enlevez les micros posés par la police sur les téléphones de la ville dans le temps impartis.</td></tr>
 										</table>
 										<br />
 								</div>
