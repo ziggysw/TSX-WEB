@@ -13,7 +13,7 @@
 		<article class="col-sm-6 comments">
 			<div class="row">
 				<a href="/forum/search.php?search_id=unreadposts"><h4 class="text-center">Pendant ce temps, sur le forum...</h4></a>
-				<ul class="list3" style="word-wrap: break-word;">
+				<ul class="list3">
 					{$listForum}
 				</ul>
 			</div>
