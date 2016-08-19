@@ -8,6 +8,7 @@
 	<meta name="keywords" content="ts-x.eu roleplay csgo css kossolax bajail rp-csgo rp-css rp">
 	<meta name="author" content="kossolax">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta property="og:image" content="/images/ts.png" />
 
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen">
