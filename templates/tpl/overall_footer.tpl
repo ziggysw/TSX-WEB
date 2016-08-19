@@ -10,7 +10,7 @@
 				</ul>
 			</div>
 		</article>
-		<article class="col-sm-6 comments">
+		<article class="col-sm-7 comments">
 			<div class="row">
 				<a href="/forum/search.php?search_id=unreadposts"><h4 class="text-center">Pendant ce temps, sur le forum...</h4></a>
 				<ul class="list3" style="word-wrap: break-word;">
