@@ -23,7 +23,7 @@
 				<h4>La Ts-X tv présente :</h4>
 				<div class="video">
 					<p>Les Braquages</p><br />
-					<figure><a class="various" target="_blank" href="https://www.youtube.com/watch?v=RtNNPcaTzO0" style="opacity: 1;"></a><img alt="ts_x" class="img_phone"></figure>
+					<figure><a class="various" target="_blank" href="https://www.youtube.com/watch?v=RtNNPcaTzO0" style="opacity: 1;"></a><img alt="ts_x" src="/images/tv_tsx_brkg.png" class="img_phone"></figure>
 			    </div>
 			</div>
 		</article>
