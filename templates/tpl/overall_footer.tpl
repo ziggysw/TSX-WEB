@@ -13,7 +13,7 @@
 		<article class="col-sm-6 comments">
 			<div class="row">
 				<a href="/forum/search.php?search_id=unreadposts"><h4 class="text-center">Pendant ce temps, sur le forum...</h4></a>
-				<ul class="list3">
+				<ul class="list3" style="word-wrap: break-word;">
 					{$listForum}
 				</ul>
 			</div>
@@ -23,7 +23,7 @@
 				<h4>La Ts-X tv présente :</h4>
 				<div class="video">
 					<p>Les Braquages</p><br />
-					<figure><a class="various" target="_blank" href="https://www.youtube.com/watch?v=RtNNPcaTzO0" style="opacity: 1;"></a><img alt="" src="/images/tv_tsx_brkg.png" style="max-width:100%;"></figure>
+					<figure><a class="various" target="_blank" href="https://www.youtube.com/watch?v=RtNNPcaTzO0" style="opacity: 1;"></a><img alt="tsx_tv" class="img_phone" src="/images/tv_tsx_brkg.png" style="max-width:100%;"></figure>
 			    </div>
 			</div>
 		</article>
