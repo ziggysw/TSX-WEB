@@ -33,14 +33,14 @@
 								</div>
 								<div class="panel-body">
 								<p>Dans un premier temps, notre mission sera d'activer la console dans laquelle on va écrire nos binds. Elle ressemble à ça, la petite barre en bas va nous servir à écrire nos binds.</p><br />
-								<img class="img_wiki" src="https://www.ts-x.eu/w/images/thumb/6/6e/Console.png/1200px-Console.png" /><br /><br />
+								<img class="img_wiki" src="/images/wiki/bind/1200px-Console.png" /><br /><br />
 									<p><strong>Si vous savez déjà comment l'afficher, vous pouvez passer cette étape.</strong><br />
 									Pour ouvrir la console, il faudra d'abord l'activer.<br /> 
 									Pour ce faire, allez dans vos options et choisissez : Paramètres de jeu > activez la console développeur (3ème ligne)</p><br />
-									<img class="img_wiki" src="https://www.ts-x.eu/w/images/thumb/b/be/Activer_console.png/1200px-Activer_console.png" /><br /><br />
+									<img class="img_wiki" src="/images/wiki/bind/1200px-Activer_console.png" /><br /><br />
 									<p>Nous allons ensuite définir une touche pour afficher votre console, rendez-vous dans : options > clavier / souris.<br />
 									Descendez tout en bas et choisissez la touche de votre choix:</p><br />
-									<img class="img_wiki" src="https://www.ts-x.eu/w/images/thumb/c/cd/Assigner_une_touche_console.png/1200px-Assigner_une_touche_console.png" /><br />
+									<img class="img_wiki" src="/images/wiki/bind/1200px-Assigner_une_touche_console.png" /><br />
 								</div>
 							</div>
 						</div>
@@ -90,88 +90,88 @@
 								<div class="panel-body">
 									<div class="row">
 										<div class="col-xs-offset-3 col-xs-3">
-											  <img class="img_wiki center-block"src="https://www.ts-x.eu/w/images/5/56/Slash.png" alt="/">
+											  <img class="img_wiki center-block"src="/images/wiki/bind/Slash.png" alt="/">
 											  <p class="text-center">kp_slash</p>
 										</div>
 										<div class="col-xs-3">
-											  <img class="img_wiki center-block" src="https://www.ts-x.eu/w/images/f/fc/%2A.png" alt="*">
+											  <img class="img_wiki center-block" src="/images/wiki/bind/*.png" alt="*">
 											  <p class="text-center">KP_Multiply</p>
 										</div>
 										<div class="col-xs-3">
-											<img class="img_wiki center-block" src="https://www.ts-x.eu/w/images/9/90/-.png" alt="-">
+											<img class="img_wiki center-block" src="/images/wiki/bind/-.png" alt="-">
 											<p class="text-center">KP_minus</p>
 											</a>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-xs-3">
-											<img class="img_wiki center-block" src="https://www.ts-x.eu/w/images/9/9e/7.png" alt="7">
+											<img class="img_wiki center-block" src="/images/wiki/bind/7.png" alt="7">
 											<p class="text-center">kp_home</p>
 											</a>
 										</div>
 										<div class="col-xs-3">
-											<img class="img_wiki center-block" src="https://www.ts-x.eu/w/images/6/60/8.png" alt="8">
+											<img class="img_wiki center-block" src="/images/wiki/bind/8.png" alt="8">
 											<p class="text-center">kp_uparrow</p>
 											</a>
 										</div>
 										<div class="col-xs-3">
-											<img class="img_wiki center-block" src="https://www.ts-x.eu/w/images/7/7a/9.png" alt="9">
+											<img class="img_wiki center-block" src="/images/wiki/bind/9.png" alt="9">
 											<p class="text-center">kp_pgup</p>
 											</a>
 										</div>
 										<div class="col-xs-3">
-											<img class="img_wiki center-block" src="https://www.ts-x.eu/w/images/b/b2/%2B.png" alt="+">
+											<img class="img_wiki center-block" src="/images/wiki/bind/+.png" alt="+">
 											<p class="text-center">kp_plus</p>
 											</a>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-xs-3">
-											<img class="img_wiki center-block" src="https://www.ts-x.eu/w/images/0/09/4.png" alt="4">
+											<img class="img_wiki center-block" src="/images/wiki/bind/4.png" alt="4">
 											<p class="text-center">kp_leftarrow</p>
 											</a>
 										</div>
 										<div class="col-xs-3">
-											<img class="img_wiki center-block" src="/images/wiki/5.png" alt="5">
+											<img class="img_wiki center-block" src="/images/wiki/bind/5.png" alt="5">
 											<p class="text-center">kp_5</p>
 											</a>
 										</div>
 										<div class="col-xs-3">
-											<img class="img_wiki center-block" src="https://www.ts-x.eu/w/images/f/f1/6.png" alt="6">
+											<img class="img_wiki center-block" src="/images/wiki/bind/6.png" alt="6">
 											<p class="text-center">kp_rightarrow</p>
 											</a>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-xs-3">
-											<img class="img_wiki center-block" src="https://www.ts-x.eu/w/images/b/b5/101.png" alt="1">
+											<img class="img_wiki center-block" src="/images/wiki/bind/101.png" alt="1">
 											<p class="text-center">kp_end</p>
 											</a>
 										</div>
 										<div class="col-xs-3">
-											<img class="img_wiki center-block" src="https://www.ts-x.eu/w/images/f/fb/2.png" alt="2">
+											<img class="img_wiki center-block" src="/images/wiki/bind/2.png" alt="2">
 											<p class="text-center">kp_downarrow</p>
 											</a>
 										</div>
 										<div class="col-xs-3">
-											<img class="img_wiki center-block" src="https://www.ts-x.eu/w/images/1/10/3.png" alt="3">
+											<img class="img_wiki center-block" src="/images/wiki/bind/3.png" alt="3">
 											<p class="text-center">kp_pgdn</p>
 											</a>
 										</div>
 										<div class="col-xs-3">
-											<img class="img_wiki center-block" src="https://www.ts-x.eu/w/images/2/20/Entr.png" alt="enter">
+											<img class="img_wiki center-block" src="/images/wiki/bind/Entr.png" alt="enter">
 											<p class="text-center">kp_enter</p>
 											</a>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-xs-offset-3 col-xs-3">
-											<img class="img_wiki center-block" src="https://www.ts-x.eu/w/images/d/dd/0i.png" alt="0">
+											<img class="img_wiki center-block" src="/images/wiki/bind/0i.png" alt="0">
 											<p class="text-center">kp_ins</p>
 											</a>
 										</div>
 										<div class="col-xs-3">
-											<img class="img_wiki center-block" src="https://www.ts-x.eu/w/images/e/e8/..png" alt=".">
+											<img class="img_wiki center-block" src="/images/wiki/bind/point.png" alt=".">
 											<p class="text-center">kp_del</p>
 											</a>
 										</div>
@@ -181,39 +181,39 @@
 									<br />
 									<div class="row">
 										<div class="col-xs-3">
-											<img class="img_wiki center-block" src="https://www.ts-x.eu/w/images/b/bc/Pgup.png" alt="PGUP">
+											<img class="img_wiki center-block" src="/images/wiki/bind/Pgup.png" alt="PGUP">
 											<p class="text-center">PGUP</p>
 											</a>
 										</div>
 										<div class="col-xs-3">
-											<img class="img_wiki center-block" src="https://www.ts-x.eu/w/images/4/4d/Suppr.png" alt="DEL">
+											<img class="img_wiki center-block" src="/images/wiki/bind/Suppr.png" alt="DEL">
 											<p class="text-center">DEL</p>
 											</a>
 										</div>
 										<div class="col-xs-3">
-											<img class="img_wiki center-block" src="https://www.ts-x.eu/w/images/8/82/Fin.png" alt="END">
+											<img class="img_wiki center-block" src="/images/wiki/bind/Fin.png" alt="END">
 											<p class="text-center">END</p>
 											</a>
 										</div>
 										<div class="col-xs-3">
-											<img class="img_wiki center-block" src="https://www.ts-x.eu/w/images/e/e2/Inser.png" alt="INS">
+											<img class="img_wiki center-block" src="/images/wiki/bind/Inser.png" alt="INS">
 											<p class="text-center">INS</p>
 											</a>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-xs-offset-3 col-xs-3">
-											<img class="img_wiki center-block" src="https://www.ts-x.eu/w/images/4/47/AD.png" alt="SCROLL">
+											<img class="img_wiki center-block" src="/images/wiki/bind/AD.png" alt="SCROLL">
 											<p class="text-center">SCROLLLOCK</p>
 											</a>
 										</div>
 										<div class="col-xs-3">
-											<img class="img_wiki center-block" src="https://www.ts-x.eu/w/images/9/9c/%29.png" alt="]">
+											<img class="img_wiki center-block" src="/images/wiki/bind/).png" alt="]">
 											<p class="text-center">]</p>
 											</a>
 										</div>
 										<div class="col-xs-3">
-											<img class="img_wiki center-block" src="https://www.ts-x.eu/w/images/7/75/%2B%3D.png" alt="=">
+											<img class="img_wiki center-block" src="/images/wiki/bind/+=.png" alt="=">
 											<p class="text-center">=</p>
 											</a>
 										</div>

@@ -113,13 +113,13 @@
 											<li><p>Pour envoyer votre plainte, c'est très simple, 
 												<ul>
 													<li><p>Par le Forum, allez sur l'onglet Roleplay puis sélectionnez "Le tribunal" et cliquez en haut à droite sur "Rapporter un mauvais comportement".<p></li>
-													<center><img class="img_wiki" src="images/wiki/tribu_forum.png"/></center>
+													<center><img class="img_wiki" src="images/wiki/nopyj/tribu_forum.png"/></center>
 													<li><p>In Game, vous trouverez partout dans la ville des téléphones, il vous suffira de faire "e" en le visant ou bien tapez / report dans le tchat.<p></li>
 												</ul>
 										<br />
 										<p><u>Voici un exemple de plainte :</u></p>
 										<br />
-										<img class="img_wiki" src="/images/wiki/report_tribu.png"/>
+										<img class="img_wiki" src="/images/wiki/nopyj/report_tribu.png"/>
 										<br /><br />
 										<p><strong class="blood">Le SteamID à indiquer est celui de l'accusé !</strong></p>
 										<br /><br />
@@ -130,16 +130,16 @@
 										<p>Cela vous redirigera sur la page "le tribunal : le règlement", et en bas de la page, il vous suffira de cliquer sur "j'ai lu le règlement, et je souhaite traiter un cas".<p>
 										<br />
 										<li><p>L'image ci-dessous, correspond aux informations générales de l'accusé (Pseudo, job, argent, etc...) <br /><br />
-										<img class="img_wiki" src="/images/wiki/recap_tribu.png"/>
+										<img class="img_wiki" src="/images/wiki/nopyj/recap_tribu.png"/>
 										<p></li>
 										<br />
 										<li><p>L'image ci-dessous correspond à l'endroit où se trouve la raison de la plainte et les informations relatives à cette plainte.<br />
 										Ainsi que les choix qui vous sont offerts pour donner un verdict, réfléchissez bien avant de le rendre !<br /><br />
-										<img class="img_wiki" src="/images/wiki/raison_tribunal.png"/>
+										<img class="img_wiki" src="/images/wiki/nopyj/raison_tribunal.png"/>
 										<p></li>
 										<br />
 										<li><p>L'image ci-dessous correspond aux logs, vous y trouverez toutes les informations nécessaires afin de traiter la plainte (messages, meurtres, décès, prison, etc...)<br /><br />
-										<img class="img_wiki" src="/images/wiki/log_tribu.png"/>
+										<img class="img_wiki" src="/images/wiki/nopyj/log_tribu.png"/>
 										<p></li>
 										<br />
 									</ul>

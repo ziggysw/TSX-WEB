@@ -32,7 +32,7 @@
 										<li><a href="/index.php?page=aide&sub=debuter"><i class="fa fa-book" aria-hidden="true"></i> Comment bien débuter ?</a></li>
 										<li><a href="/index.php?page=aide&sub=argent#GroupE"><i class="fa fa-users" aria-hidden="true"></i> Le Parrainage </a></li>
 										<li><a href="/index.php?page=aide&sub=argent"><i class="fa fa-money" aria-hidden="true"></i> Comment gagner de l'argent sur le Roleplay ?</a></li>
-										<li><a href="/index.php?page=aide&sub=job"><i class="fa fa-map-o" aria-hidden="true"></i> Comment Trouver un job ?</a></li>
+										<li><a href="/index.php?page=aide&sub=job"><i class="fa fa-map-o" aria-hidden="true"></i> Comment Trouver un job ?[CREA]</a></li>
 										<li><a href="/index.php?page=aide&sub=bind"><i class="fa fa-keyboard-o" aria-hidden="true"></i> Mettre en place vos binds</a></li>
 										<li><a href="/index.php?page=aide&sub=nopyj"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Qu'est-ce que le rang no-pyj ?</a></li>
 								</ul>
@@ -56,7 +56,7 @@
 								
 								<ul class="dropdown-menu p-Informations Pratiques" id="p-Informations Pratiques">
 										<li><a href="https://www.ts-x.eu/index.php?page=iframe#/DevZone/" rel="nofollow"><i class="fa fa-ticket" aria-hidden="true"></i> Les futures mises à jours</a></li>
-										<li><a href="/wiki/Bugs_et_Probl%C3%A8mes_connus"><i class="fa fa-bug" aria-hidden="true"></i> Bugs et Problèmes connus [CREA]</a></li>
+										<li><a href="/wiki/Bugs_et_Probl%C3%A8mes_connus"><i class="fa fa-bug" aria-hidden="true"></i> Bugs et Problèmes connus </a></li>
 										<li><a href="https://www.ts-x.eu/forum/viewtopic.php?f=10&amp;t=28678&amp;view=unread#unread" rel="nofollow"><i class="fa fa-check" aria-hidden="true"></i> Mises à jours effectuées</a></li>
 										<li><a href="/wiki/Devenir_chef_d%27un_m%C3%A9tier"><i class="fa fa-user-secret" aria-hidden="true"></i> Comment devenir Chef d'un métier ?</a></li>
 										<li><a href="/index.php?page=aide&sub=record"><i class="fa fa-video-camera" aria-hidden="true"></i> Comment faire une record ?</a></li>

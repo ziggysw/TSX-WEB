@@ -30,7 +30,7 @@
 										<div class="row">
 											<div class="col-xs-offset-2 col-xs-5 col-md-2">
 												<div style="overflow:hidden;margin:0 auto;" data-toggle="modal" data-target="#myModal1">
-													<div class="text-center"><img class="img-circle img_wiki" src="/images/wiki/Oviscity.jpg" style="height: 125px; width: 150px"/></div>
+													<div class="text-center"><img class="img-circle img_wiki" src="/images/wiki/admin/Oviscity.jpg" style="height: 125px; width: 150px"/></div>
 													<br />
 												</div>
 												<center>Oviscity</center>
@@ -38,7 +38,7 @@
 													<div class="modal-dialog modal-lg">
 														<div class="modal-content">
 															<div class="modal-body">
-																<div class="thumbnail img-thumbnail color-border" style="overflow:hidden;margin:0 auto;"><img src="/images/wiki/Oviscity.jpg" /></div><br />
+																<div class="thumbnail img-thumbnail color-border" style="overflow:hidden;margin:0 auto;"><img src="/images/wiki/admin/Oviscity.jpg" /></div><br />
 																<p class="txt">Le serveur à ouvert le 12 mars 2010, la ville d'Oviscity qui était la plus utilisée pour l'époque fut donc la première de l'équipe Ts-X.<br />
 																Ils lui ont bien sûr effectué quelques modifications, dans l'optique de la rendre plus réaliste en tant que ville rôle play.<br />
 																Elle fut utilisée du 12 mars 2010 à octobre 2011, et fut remplacée par la ville de Sunvale.</p>
@@ -52,7 +52,7 @@
 											</div>
 											<div class="col-xs-5 col-md-2">
 												<div style="overflow:hidden;margin:0 auto;" data-toggle="modal" data-target="#myModal2">
-													<div class="text-center"><img class="img-circle img_wiki" src="/images/wiki/Sunvale.jpg" style="height: 125px; width: 150px"/></div>
+													<div class="text-center"><img class="img-circle img_wiki" src="/images/wiki/admin/Sunvale.jpg" style="height: 125px; width: 150px"/></div>
 													<br />
 												</div>
 												<center>Sunvale</center>
@@ -60,7 +60,7 @@
 													<div class="modal-dialog modal-lg">
 														<div class="modal-content">
 															<div class="modal-body">
-																<div class="thumbnail img-thumbnail color-border" style="overflow:hidden;margin:0 auto;"><img src="/images/wiki/Sunvale.jpg" /></div><br />
+																<div class="thumbnail img-thumbnail color-border" style="overflow:hidden;margin:0 auto;"><img src="/images/wiki/admin/Sunvale.jpg" /></div><br />
 																<p class="txt">Mise en ligne en octobre 2011 et succédant à la ville d'Oviscity, la ville de Sunvale qui fût retravaillée par l'équipe Ts-X et ne rencontra pas le succès tant attendu.<br />
 																Et pour cause, à peine 2 semaines après sa mise en service, une mise à jour majeure des moteurs sur l'orangebox (à cause de Day of Defeat) rendit l'utilisation des voitures difficile, voire impossible.<br />
 																En effet, il était toujours possible de les utiliser, mais l'équipe Ts-x ne pouvaient pas garantir aux joueurs de ne pas crash.<br />
@@ -77,7 +77,7 @@
 											</div>
 											<div class="col-xs-5 col-md-2">
 												<div style="overflow:hidden;margin:0 auto;" data-toggle="modal" data-target="#myModal3">
-													<div class="text-center"><img class="img-circle img_wiki" src="/images/wiki/Riverside.jpg" style="height: 125px; width: 150px"/></div>
+													<div class="text-center"><img class="img-circle img_wiki" src="/images/wiki/admin/Riverside.jpg" style="height: 125px; width: 150px"/></div>
 													<br />
 												</div>
 												<center>Riverside</center>
@@ -85,7 +85,7 @@
 													<div class="modal-dialog modal-lg">
 														<div class="modal-content">
 															<div class="modal-body">
-																<div class="thumbnail img-thumbnail color-border" style="overflow:hidden;margin:0 auto;"><img src="/images/wiki/Riverside.jpg" /></div><br />
+																<div class="thumbnail img-thumbnail color-border" style="overflow:hidden;margin:0 auto;"><img src="/images/wiki/admin/Riverside.jpg" /></div><br />
 																<p class="txt">Riverside fût mis en ligne en décembre 2011, elle est la première ville créée à 100% par l'équipe Ts-X.<br />
 																Elle était très appréciée par la communauté, à un point ou certains la demandent encore aujourd'hui.<br />
 																Mais comme toutes les bonnes choses ont une fin, elle a été mise à la retraite en juillet 2013 pour laisser la place à Midway.<br />
@@ -100,7 +100,7 @@
 											</div>
 											<div class="col-xs-5 col-md-2">
 												<div style="overflow:hidden;margin:0 auto;" data-toggle="modal" data-target="#myModal4">
-													<div class="text-center"><img class="img-circle img_wiki" src="/images/wiki/Midway.png" style="height: 125px; width: 150px"/></div>
+													<div class="text-center"><img class="img-circle img_wiki" src="/images/wiki/admin/Midway.png" style="height: 125px; width: 150px"/></div>
 													<br />
 												</div>
 												<center>Midway</center>
@@ -108,7 +108,7 @@
 													<div class="modal-dialog modal-lg">
 														<div class="modal-content">
 															<div class="modal-body">
-																<div class="thumbnail img-thumbnail color-border"><img src="/images/wiki/Midway.png" /></div><br />
+																<div class="thumbnail img-thumbnail color-border"><img src="/images/wiki/admin/Midway.png" /></div><br />
 																<p class="txt">Midway vu le jour en juillet 2013, c'est la 2ème ville 100% Ts-x, elle fut créée avec l'aide des joueurs.<br />
 																Une question leur avait été posée : qu'est-ce que je fais dans ta planque? Et en fonction de leur réponse, l'équipe Ts-x modifia la ville pour répondre au mieux à leur demande.<br />
 																Mais malheureusement, le joueur est difficile et malgré les nombreuses mises à jour et une attention non négligeable portée sur l'avis de la communauté lors de sa conception la ville de Midway n'a pas plu à ces derniers.<br />
@@ -154,7 +154,7 @@
 									La ville de Princeton est actuellement équipée de 10 cabines téléphoniques, il vous suffit de vous diriger vers une de ces cabines et de faire la touche utilisée dessus (touche "e" par défaut).
 									Un écran comme celui_ci dessous devrait alors s'afficher :</p>
 									<br />
-									<img class="img_wiki" src="https://www.ts-x.eu/w/images/7/73/Plainte_police.png" />
+									<img class="img_wiki" src="/images/wiki/admin/Plainte_police.png" />
 									<br /><br />
 									<p>Vous devrez donc indiquer :<br />
 										<ul>
@@ -167,7 +167,7 @@
 									Suite un ça, l'accusé recevra une copie de la plainte et sera appelé a ce justifié, à chaque réponse, vous recevrez une notification "nouveaux messages" sur la gauche de votre écran.
 									</p>
 									<br />
-									<img class="img_wiki" src="https://www.ts-x.eu/w/images/e/e6/Nex_mess.png" />
+									<img class="img_wiki" src="/images/wiki/admin/Nex_mess.png" />
 									<br />
 									<p id="GroupBSub3">
 									<br />

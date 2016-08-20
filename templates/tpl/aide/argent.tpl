@@ -1,7 +1,7 @@
 			<div class="row">
 				<div class="col-md-9" role="main">
 					<br /><br />
-					<center><img alt="img_title" id="img_title" src="/images/wiki/sousou.jpg"></center><br />
+					<center><img alt="img_title" id="img_title" src="/images/wiki/argent/sousou.jpg"></center><br />
 					<br />
 					<div class="row">
 						<div id="GroupA" class="col-md-12 group">
@@ -75,34 +75,34 @@
 									<div id="slider" class="carousel slide" data-ride="carousel">
 										<div class="carousel-inner" role="listbox">
 											<div class="item active"><!-- Slide 0 -->
-												<img id="img_carrousel" alt="img_appart" src="/images/wiki/appart/ap1.jpg">
+												<img id="img_carrousel" alt="img_appart" src="/images/wiki/argent/ap1.jpg">
 											</div>
 											<div class="item"><!-- Slide 1 -->
-												<img id="img_carrousel" alt="img_appart" src="/images/wiki/appart/ap3.jpg">
+												<img id="img_carrousel" alt="img_appart" src="/images/wiki/argent/ap3.jpg">
 											</div>
 											<div class="item"><!-- Slide 2 -->
-												<img id="img_carrousel" alt="img_appart" src="/images/wiki/appart/ap4.jpg">
+												<img id="img_carrousel" alt="img_appart" src="/images/wiki/argent/ap4.jpg">
 											</div>
 											<div class="item"><!-- Slide 3 -->
-												<img id="img_carrousel" alt="img_appart" src="/images/wiki/appart/ap5.jpg">
+												<img id="img_carrousel" alt="img_appart" src="/images/wiki/argent/ap5.jpg">
 											</div>
 											<div class="item"><!-- Slide 4 -->
-												<img id="img_carrousel" alt="img_appart" src="/images/wiki/appart/ap6.jpg">
+												<img id="img_carrousel" alt="img_appart" src="/images/wiki/argent/ap6.jpg">
 											</div>
 											<div class="item"><!-- Slide 5 -->
-												<img id="img_carrousel" alt="img_appart" src="/images/wiki/appart/ap7.jpg">
+												<img id="img_carrousel" alt="img_appart" src="/images/wiki/argent/ap7.jpg">
 											</div>
 											<div class="item"><!-- Slide 6 -->
-												<img id="img_carrousel" alt="img_appart" src="/images/wiki/appart/ap8.jpg">
+												<img id="img_carrousel" alt="img_appart" src="/images/wiki/argent/ap8.jpg">
 											</div>
 											<div class="item"><!-- Slide 7 -->
-												<img id="img_carrousel" alt="img_appart" src="/images/wiki/appart/ap9.jpg">
+												<img id="img_carrousel" alt="img_appart" src="/images/wiki/argent/ap9.jpg">
 											</div>
 											<div class="item"><!-- Slide 8 -->
-												<img id="img_carrousel" alt="img_appart" src="/images/wiki/appart/ap10.jpg">
+												<img id="img_carrousel" alt="img_appart" src="/images/wiki/argent/ap10.jpg">
 											</div>
 											<div class="item"><!-- Slide 9 -->
-												<img id="img_carrousel" alt="img_appart" src="/images/wiki/appart/ap11.jpg">
+												<img id="img_carrousel" alt="img_appart" src="/images/wiki/argent/ap11.jpg">
 											</div>
 										</div>
 										<!-- Controle gauche -->
@@ -338,44 +338,44 @@
 									<div class="row">
 										<div class="col-xs-6 col-md-3">
 										<a  class="thumbnail" data-toggle="lightbox">
-										  <img src="/images/wiki/e1.jpg" alt="img_event">
+										  <img src="/images/wiki/argent/e1.jpg" alt="img_event">
 										</a>
 									  </div>
 									  <div class="col-xs-6 col-md-3">
 										<a  class="thumbnail">
-										  <img src="/images/wiki/e2.png" alt="img_event">
+										  <img src="/images/wiki/argent/e2.png" alt="img_event">
 										</a>
 									  </div>
 									  <div class="col-xs-6 col-md-3">
 										<a  class="thumbnail">
-										  <img src="/images/wiki/e3.jpg" alt="img_event">
+										  <img src="/images/wiki/argent/e3.jpg" alt="img_event">
 										</a>
 									  </div>
 									  <div class="col-xs-6 col-md-3">
 										<a  class="thumbnail">
-										  <img src="/images/wiki/e4.png" alt="img_event">
+										  <img src="/images/wiki/argent/e4.png" alt="img_event">
 										</a>
 									  </div>
 									</div>
 									<div class="row">
 									  <div class="col-xs-6 col-md-3">
 										<a  class="thumbnail">
-										  <img src="/images/wiki/e5.png" alt="img_event">
+										  <img src="/images/wiki/argent/e5.png" alt="img_event">
 										</a>
 									  </div>
 									  <div class="col-xs-6 col-md-3">
 										<a  class="thumbnail">
-										  <img src="/images/wiki/e6.jpg" alt="img_event">
+										  <img src="/images/wiki/argent/e6.jpg" alt="img_event">
 										</a>
 									  </div>
 									  <div class="col-xs-6 col-md-3">
 										<a  class="thumbnail">
-										  <img src="/images/wiki/e7.jpg" alt="img_event">
+										  <img src="/images/wiki/argent/e7.jpg" alt="img_event">
 										</a>
 									  </div>
 									  <div class="col-xs-6 col-md-3">
 										<a class="thumbnail">
-										  <img src="/images/wiki/e8.jpg" alt="img_event">
+										  <img src="/images/wiki/argent/e8.jpg" alt="img_event">
 										</a>
 									  </div>
 									</div>
@@ -400,11 +400,11 @@
 									<br />
 									<div class="row">
 										<div class="col-xs-10 col-md-offset-2 col-md-3">
-											<img width="240" height="180" src="/images/wiki/telephone.jpg" />
+											<img width="240" height="180" src="/images/wiki/argent/telephone.jpg" />
 											<p>Un téléphone</p>
 										</div>
 										<div class="col-xs-10 col-md-offset-1 col-md-3">
-											<img width="240" height="180" src="/images/wiki/eglise.jpg" />
+											<img width="240" height="180" src="/images/wiki/argent/eglise.jpg" />
 											<p>Entrée de l'église</p>
 										</div>
 									</div>
@@ -506,7 +506,7 @@
 									En contrepartie, vous recevez environ 10 000$ pour chaque euro reçu sur le serveur !
 									C'est donc vraiment très rentable. Pour seulement 10 euros vous gagnez 94 000$rp !</p>
 									<br />
-									<a target="_blank" href="https://www.ts-x.eu/index.php?page=money "><img class="img_wiki" src="images/wiki/don.png" /></a>
+									<a target="_blank" href="https://www.ts-x.eu/index.php?page=money "><img class="img_wiki" src="images/wiki/argent/don.png" /></a>
 									<br /><br />
 									<p>Il est désormais possible d'échanger ses skins CSGO contre des $RP uniquement sous ce lien ! Il n'est possible que de donner une arme supérieure a 0,15cts</p>
 									<br />

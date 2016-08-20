@@ -2,7 +2,7 @@
     <!--Main Content -->
     <div class="col-md-9" role="main">
 		<br /><br />
-		<center><img alt="img_title" id="img_title" src="https://www.ts-x.eu/w/images/thumb/7/77/Bon_debut.png/1280px-Bon_debut.png"></center><br />
+		<center><img alt="img_title" id="img_title" src="/images/wiki/debuter/1280px-Bon_debut.png"></center><br />
 		<br />
 		<div class="row">
 			<div id="GroupA" class="col-md-12 group">
@@ -190,10 +190,10 @@
 							<p>Nous allons maintenant nous atteler à la partie la plus complexe, la configuration du TeamSpeak.<br />
 							Une fois le client TS téléchargé, vous lancez l'installation comme tout autre logiciel classique. L’installation en elle-même est très facile.</p>
 							<br /> 
-							<img class="img_wiki"  src="https://www.ts-x.eu/w/images/a/a9/Ts_1.png" />
+							<img class="img_wiki"  src="/images/wiki/debuter/Ts_1.png" />
 							<br />
 							<p>Cliquez sur Bookmarks (encadré rouge)</p>
-							<br />								<img class="img_wiki"src="https://www.ts-x.eu/w/images/2/20/Ts2.png" />
+							<br />								<img class="img_wiki"src="/images/wiki/debuter/Ts2.png" />
 							<br />
 							<p>Maintenant, remplissez les champs :
 								<ul>

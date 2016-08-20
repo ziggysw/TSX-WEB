@@ -19,7 +19,7 @@
 									<div class="row">
 										<p>Après avoir téléchargé et installé <a target="_blank" href="http://www.fraps.com/">FRAPS</a>, vous le lancez et vous arriverez sur cette page :</p>
 										<br />
-										<img class="img_wiki" src="/images/wiki/fraps1.png"/>
+										<img class="img_wiki" src="/images/wiki/record/fraps1.png"/>
 										<br /><br />
 										<p>Pour configurer le mode vidéo,cliquez sur "Movies" :
 											<ul>
@@ -28,7 +28,7 @@
 											</ul>
 										</p>
 										<br />
-										<img class="img_wiki" src="/images/wiki/fraps2.png"/>
+										<img class="img_wiki" src="/images/wiki/record/fraps2.png"/>
 										<br />
 									</div>
 									<br />
@@ -46,9 +46,9 @@
 										</ol>
 										</p>
 										<br />
-										<img class="img_wiki" src="/images/wiki/fraps3.JPG"/>
+										<img class="img_wiki" src="/images/wiki/record/fraps3.JPG"/>
 										<br /><br />
-										<img class="img_wiki" src="/images/wiki/fraps4.JPG"/>
+										<img class="img_wiki" src="/images/wiki/record/fraps4.JPG"/>
 										<br />
 									</div>
 								</div>
@@ -70,7 +70,7 @@
 									Pour l'activer ou le désactiver, il vous suffit de presser votre touche Windows et la touche G simultanément.<br />
 									Ou alors vous pouvez aussi presser les touches Windows + alt + r pour lancer et arrêter la record plus rapidement.</p>
 									<br />
-									<img class="img_wiki" src="/images/wiki/record_w10.png"/>
+									<img class="img_wiki" src="/images/wiki/record/record_w10.png"/>
 									<br />
 									<p>Ce menu s'ouvrira alors et il vous suffira de cliquer sur le bouton rouge pour lancer la record ou l'arrêter.<br />
 									Vous pourrez retrouver votre enregistrement dans 
@@ -97,11 +97,11 @@
 									<br />
 									Pour lancer une record il vous suffit d'écrire : Record Nomdelarecord</p>
 									<br />
-									<img class="img_wiki" src="/images/wiki/steam_r1.png"/>
+									<img class="img_wiki" src="/images/wiki/record/steam_r1.png"/>
 									<br /><br />
 									<p>Si vous pensez avoir fini votre record vous retournez sur votre console et vous inscrivez : Stop</p>
 									<br />
-									<img class="img_wiki" src="/images/wiki/steam_r2.png"/>
+									<img class="img_wiki" src="/images/wiki/record/steam_r2.png"/>
 									<br /><br />
 									<p>Pour retrouver votre record, il vous suffit d'aller dans Steam>SteamApps>Common>Counter-Strike Global Offensive>csgo<br />
 									( vous descendez votre page une fois dans "csgo" vous trouverez votre nom de record en .dem)</p>
@@ -123,16 +123,16 @@
 									<p>Après vous avoir créé une chaine YouTube, si cela n'est pas déjà fait, connectez-vous à votre compte.<br />
 									À la gauche de votre écran, cliquez sur l'onglet "Ma Chaine" qui vous permettra d’accéder à votre propre chaine.</p>
 									<br />
-									<img class="img_wiki" src="/images/wiki/ytub1.png"/>
+									<img class="img_wiki" src="/images/wiki/record/ytub1.png"/>
 									<br /><br />
 									<p>Une fois arrivé dans votre chaine vous arriverez sur cette page :</p>
 									<br />
-									<img class="img_wiki" src="/images/wiki/ytub2.png"/>
+									<img class="img_wiki" src="/images/wiki/record/ytub2.png"/>
 									<br /><br />
 									<p>Il vous suffit de cliquer sur "Vidéos" pour poursuivre la publication.<br />
 									Au milieu de votre écran, il vous apparaîtra ceci :</p>
 									<br />
-									<img class="img_wiki" src="/images/wiki/ytub3.png"/>
+									<img class="img_wiki" src="/images/wiki/record/ytub3.png"/>
 									<br /><br />
 									<p>
 									Cliquez sur "Mettre en ligne une vidéo".<br />
@@ -141,7 +141,7 @@
 									(celui que vous avez choisi dans "Folder to save movies in") et choisissez la record que vous voulez nous partager.
 									</p>
 									<br />
-									<img class="img_wiki" src="/images/wiki/ytub4.png"/>
+									<img class="img_wiki" src="/images/wiki/record/ytub4.png"/>
 									<br /><br />
 									<p>
 									Enfin, une fois votre record sélectionné, vous choisirez un titre à votre vidéo ainsi qu'une brève description.<br />
@@ -151,7 +151,7 @@
 									Une fois cela terminé, cliquez sur "Publier", vous retrouverez votre vidéo dans votre Chaine.
 									</p>
 									<br />
-									<img class="img_wiki" src="/images/wiki/ytub5.png"/>
+									<img class="img_wiki" src="/images/wiki/record/ytub5.png"/>
 									<br />
 								</div>
 							</div>
