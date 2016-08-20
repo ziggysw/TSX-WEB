@@ -22,3 +22,4 @@ body{background: #101010;font: 12px Arial, Helvetica, sans-serif;line-height: 14
 .modal-title { color: #666; }
 #heatmap canvas { z-index:-1; }#heatmap map area { background-color: red; }
 .img_phone{max-width: 100%;}
+.list1 {word-wrap: break-word;}
