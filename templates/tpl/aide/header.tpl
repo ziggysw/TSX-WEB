@@ -43,9 +43,9 @@
 								
 								<ul class="dropdown-menu p-Rôle-Play" id="p-Rôle-Play">
 										<li><a href="https://www.ts-x.eu/forum/viewtopic.php?f=10&t=26749"><i class="fa fa-university" aria-hidden="true"></i> Le Règlement Général</a></li>
-										<li><a href=""><i class="fa fa-shield" aria-hidden="true"></i> La PvP</a></li>
+										<li><a href="/index.php?page=aide&sub=pvp"><i class="fa fa-shield" aria-hidden="true"></i> La PvP</a></li>
 										<li><a href="/index.php?page=aide&sub=admin#GroupB"><i class="fa fa-user-plus" aria-hidden="true"></i> Les référés</a></li>
-										<li><a href="/wiki/Les_Crayons_de_Couleurs"><i class="fa fa-paint-brush" aria-hidden="true"></i> Les Crayons de Couleurs[CREA]</a></li>
+										<li><a href="/index.php?page=aide&sub=crayon"><i class="fa fa-paint-brush" aria-hidden="true"></i> Les Crayons de Couleurs</a></li>
 										<li><a href="/index.php?page=aide&sub=admin#GroupC"><i class="fa fa-wheelchair" aria-hidden="true"></i> Passer VIP</a></li>
 										<li><a href="/index.php?page=aide&sub=admin#GroupD"><i class="fa fa-rebel" aria-hidden="true"></i> Devenir membre CS:GO</a></li>
 								</ul>
@@ -56,9 +56,9 @@
 								
 								<ul class="dropdown-menu p-Informations Pratiques" id="p-Informations Pratiques">
 										<li><a href="https://www.ts-x.eu/index.php?page=iframe#/DevZone/" rel="nofollow"><i class="fa fa-ticket" aria-hidden="true"></i> Les futures mises à jours</a></li>
-										<li><a href="/wiki/Bugs_et_Probl%C3%A8mes_connus"><i class="fa fa-bug" aria-hidden="true"></i> Bugs et Problèmes connus </a></li>
+										<li><a href="/index.php?page=aide&sub=help"><i class="fa fa-bug" aria-hidden="true"></i> Bugs et Problèmes connus </a></li>
 										<li><a href="https://www.ts-x.eu/forum/viewtopic.php?f=10&amp;t=28678&amp;view=unread#unread" rel="nofollow"><i class="fa fa-check" aria-hidden="true"></i> Mises à jours effectuées</a></li>
-										<li><a href="/wiki/Devenir_chef_d%27un_m%C3%A9tier"><i class="fa fa-user-secret" aria-hidden="true"></i> Comment devenir Chef d'un métier ?</a></li>
+										<li><a href="/index.php?page=aide&sub=job#GroupE"><i class="fa fa-user-secret" aria-hidden="true"></i> Comment devenir Chef d'un métier ?</a></li>
 										<li><a href="/index.php?page=aide&sub=record"><i class="fa fa-video-camera" aria-hidden="true"></i> Comment faire une record ?</a></li>
 										<li><a href="/index.php?page=aide&sub=admin#GroupA"><i class="fa fa-coffee" aria-hidden="true"></i> Qui sont les Ts-X</a></li>
 								</ul>
