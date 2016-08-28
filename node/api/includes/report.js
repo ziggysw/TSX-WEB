@@ -79,10 +79,10 @@ exports = module.exports = function(server) {
           server.conn.query("INSERT INTO `ts-x`.`site_report` (`id`, `own_steamid`, `own_ip`, `report_steamid`, `report_raison`, `report_date`, `report_moreinfo`, `timestamp`)  VALUES (NULL, ?, ?, ?, ?, ?, ?, ?);",
           [steamID, req.connection.remoteAddress, req.params['steamid'], req.params['reason'], moment(d).format('\\L\\e DD/MM à HH:mm'), req.params['moreinfo'],  parseInt(d.getTime()/1000)], function(err, row) {
             if( err ) return res.send(new ERR.InternalServerError(err));
-            request("http://178.32.42.113:27015/njs/report/"+req.params['steamid']+"/"+req.params['reason'].replace('/', ', ')+"", function (error, response, body) {
-              var ID = row.insertId;
-              return res.send({'id': ID});
-            });
+	    return res.send({'id': row.insertId});
+            //request("http://178.32.42.113:27015/njs/report/"+req.params['steamid']+"/"+req.params['reason'].replace('/', ', ')+"", function (error, response, body) {
+            //  return res.send({'id': row.insertId});
+            //});
           });
         });
       });

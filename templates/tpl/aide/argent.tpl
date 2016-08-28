@@ -1,7 +1,7 @@
 			<div class="row">
 				<div class="col-md-9" role="main">
 					<br /><br />
-					<center><img alt="img_title" id="img_title" src="/images/wiki/argent/sousou.jpg"></center><br />
+					<center><img alt="img_title" id="img_title" src="/images/wiki/argent/argent_top.png"></center><br />
 					<br />
 					<div class="row">
 						<div id="GroupA" class="col-md-12 group">

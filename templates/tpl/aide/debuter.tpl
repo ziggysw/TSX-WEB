@@ -1,6 +1,6 @@
 <div class="row">
     <!--Main Content -->
-    <div class="col-md-9" role="main">
+    <div class="col-md-9" role="main"> 
 		<br /><br />
 		<center><img alt="img_title" id="img_title" src="/images/wiki/debuter/1280px-Bon_debut.png"></center><br />
 		<br />

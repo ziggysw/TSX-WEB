@@ -43,7 +43,7 @@
 								
 								<ul class="dropdown-menu p-Rôle-Play" id="p-Rôle-Play">
 										<li><a href="https://www.ts-x.eu/forum/viewtopic.php?f=10&t=26749"><i class="fa fa-university" aria-hidden="true"></i> Le Règlement Général</a></li>
-										<li><a href=""><i class="fa fa-shield" aria-hidden="true"></i> La PvP[CREA]</a></li>
+										<li><a href=""><i class="fa fa-shield" aria-hidden="true"></i> La PvP</a></li>
 										<li><a href="/index.php?page=aide&sub=admin#GroupB"><i class="fa fa-user-plus" aria-hidden="true"></i> Les référés</a></li>
 										<li><a href="/wiki/Les_Crayons_de_Couleurs"><i class="fa fa-paint-brush" aria-hidden="true"></i> Les Crayons de Couleurs[CREA]</a></li>
 										<li><a href="/index.php?page=aide&sub=admin#GroupC"><i class="fa fa-wheelchair" aria-hidden="true"></i> Passer VIP</a></li>
