@@ -52,18 +52,18 @@
 		<div class="row">
 			<div class="col-sm-6 col-md-4">
 				<div class="thumbnail" id="thun_index">
-					<div id="rotate"><img class="img-circle" src="/images/wiki/pole_emploi.png" alt="Generic placeholder image" id="img_circle_index"></div>
+					<a href="/index.php?page=aide&sub=emploi"><div id="rotate"><img class="img-circle" src="/images/wiki/pole_emploi.png" alt="Generic placeholder image" id="img_circle_index"></div></a>
 					<div class="caption">
 						<h2 id="title_thun">Trouver un Job</h2>
 						<p>Trouver un métier sur à Princeton-City n'est pas toujours évident, c'est pourquoi nous vous expliquons ici tous les filons pour trouver enfin le job de vos rêves !</p>
 						<br />
-						<p><a class="btn btn-success" href="/index.php?page=aide&sub=job" role="button"><i class="fa fa-hand-o-right"></i> Aller voir !</a></p>
+						<p><a class="btn btn-success" href="/index.php?page=aide&sub=emploi" role="button"><i class="fa fa-hand-o-right"></i> Aller voir !</a></p>
 					</div>
 				</div>
 			</div>
 			<div class="col-sm-6 col-md-4">
 				<div class="thumbnail" id="thun_index">
-					<div id="rotate"><img class="img-circle" src="/images/wiki/piece.png" alt="Generic placeholder image" id="img_circle_index"></div>
+					<a href="/index.php?page=aide&sub=argent"><div id="rotate"><img class="img-circle" src="/images/wiki/piece.png" alt="Generic placeholder image" id="img_circle_index"></div></a>
 					<div class="caption">
 						<h2 id="title_thun">Gagner de L'argent</h2>
 						<p>Quand on commence une nouvelle vie, il n'est jamais facile de faire des économies... Grâces à nous vous deviendrez le plus riches des hommes en seulement quelques jours.</p>
@@ -74,7 +74,7 @@
 			</div>
 			<div class="col-sm-6 col-md-4">
 				<div class="thumbnail" id="thun_index">
-					<div id="rotate"><img class="img-circle" src="/images/wiki/No_pyj.png" alt="Generic placeholder image" id="img_circle_index"></div>
+					<a href="/index.php?page=aide&sub=nopyj"><div id="rotate"><img class="img-circle" src="/images/wiki/No_pyj.png" alt="Generic placeholder image" id="img_circle_index"></div></a>
 					<div class="caption">
 						<h2 id="title_thun">Le No-PYJ</h2>
 						<p>Qu'est-ce que le NO-PYJ ? À quoi sert-il ? Comment l'obtenir ?<br />

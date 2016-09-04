@@ -32,7 +32,7 @@
 										<li><a href="/index.php?page=aide&sub=debuter"><i class="fa fa-book" aria-hidden="true"></i> Comment bien débuter ?</a></li>
 										<li><a href="/index.php?page=aide&sub=argent#GroupE"><i class="fa fa-users" aria-hidden="true"></i> Le Parrainage </a></li>
 										<li><a href="/index.php?page=aide&sub=argent"><i class="fa fa-money" aria-hidden="true"></i> Comment gagner de l'argent sur le Roleplay ?</a></li>
-										<li><a href="/index.php?page=aide&sub=job"><i class="fa fa-map-o" aria-hidden="true"></i> Comment Trouver un job ?[CREA]</a></li>
+										<li><a href="/index.php?page=aide&sub=emploi"><i class="fa fa-map-o" aria-hidden="true"></i> Comment Trouver un emploi ?[CREA]</a></li>
 										<li><a href="/index.php?page=aide&sub=bind"><i class="fa fa-keyboard-o" aria-hidden="true"></i> Mettre en place vos binds</a></li>
 										<li><a href="/index.php?page=aide&sub=nopyj"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Qu'est-ce que le rang no-pyj ?</a></li>
 								</ul>
