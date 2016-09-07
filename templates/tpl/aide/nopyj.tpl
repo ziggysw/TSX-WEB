@@ -78,6 +78,26 @@
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
+										<div class="panel-heading panel-heading-wiki"><h2>Le Test No-Pyj</h2></div>
+									</div>
+								</div>
+								<div class="panel-body">
+								<p>Une fois les conditions remplies et l'admin contacté, ce dernier vous posera quelques questions de routine et
+								si tout va bien, vous donnera un lien.<br />
+								<span class="blood">Attention !</span> en cliquant sur ce lien, vous démarrerez directement le test !</p>
+								<p>Le test se compose d'une série de 10 questions générées aléatoirement par un bot, vous aurez 1 question pour
+								3 réponses possible.<br />
+								Un résultat de 8/10 minimum est attendu pour pouvoir décrocher votre rang, pensez donc à bien réviser !</p>
+								</div>
+							</div>
+						</div>
+						<div id="GroupD" class="col-md-12 group">
+							<div class="panel panel-wiki">
+								<div class="row">
+									<div class="hidden-xs hidden-sm col-md-1">
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+									</div>
+									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2>A quoi sert le rang No-Pyj ?</h2></div>
 									</div>
 								</div>
@@ -96,7 +116,7 @@
 								</div>
 							</div>
 						</div>
-						<div id="GroupD" class="col-md-12 group">
+						<div id="GroupE" class="col-md-12 group">
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
@@ -146,7 +166,7 @@
 								</div>
 							</div>
 						</div>
-						<div id="GroupE" class="col-md-12 group">
+						<div id="GroupF" class="col-md-12 group">
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
@@ -171,7 +191,7 @@
 								</div>
 							</div>
 						</div>
-						<div id="GroupF" class="col-md-12 group">
+						<div id="GroupG" class="col-md-12 group">
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
@@ -200,16 +220,19 @@
 							<a href="#GroupB">Les conditions d'éligibilités</a>
 						</li>
 						<li>
-							<a href="#GroupC">A quoi sert le rang "No-Pyj" ?</a>
+							<a href="#GroupC">Le Test No-Pyj</a>
 						</li>
 						<li>
-							<a href="#GroupD">Gérer une plainte Tribunal Forum</a>
+							<a href="#GroupD">A quoi sert le rang "No-Pyj" ?</a>
 						</li>
 						<li>
-							<a href="#GroupE">Perdre son "No-Pyj"</a>
+							<a href="#GroupE">Gérer une plainte Tribunal Forum</a>
 						</li>
 						<li>
-							<a href="#GroupF">Le rang "No-Pyj" émancipé</a>
+							<a href="#GroupF">Perdre son "No-Pyj"</a>
+						</li>
+						<li>
+							<a href="#GroupG">Le rang "No-Pyj" émancipé</a>
 						</li>
 					</ul>
 				</nav>
