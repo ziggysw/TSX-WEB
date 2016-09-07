@@ -86,7 +86,7 @@
 								si tout va bien, vous donnera un lien.<br />
 								<span class="blood">Attention !</span> en cliquant sur ce lien, vous démarrerez directement le test !</p>
 								<p>Le test se compose d'une série de 10 questions générées aléatoirement par un bot, vous aurez 1 question pour
-								3 réponses possible.<br />
+								4 réponses possible.<br />
 								Un résultat de 8/10 minimum est attendu pour pouvoir décrocher votre rang, pensez donc à bien réviser !</p>
 								</div>
 							</div>
