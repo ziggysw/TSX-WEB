@@ -10,8 +10,8 @@
 			<div class="item active"><!-- Slide 0 -->
 				<img id="img_carrousel" alt="NeW" src="/images/wiki/guide_debutant.png" />
 				<div class="flex-caption "><div>
-					<p class="title1">Bien debuter sa vie à Princeton-City</p>
-					<p class="title2"><span class="wiki_pub"><u>Ar</u>g<u>ent actuel :</u></span> {$money|pretty_number} $rp<br />
+					<p class="title1">Bien débuter sa vie à Princeton-City</p>
+					<p class="title2"><span class="wiki_pub"><u>Argent actuel :</u></span> {$money|pretty_number} $rp<br />
 					Bienvenue {$name} !<br />
 					Si tu souhaites avoir plus d'argent en banque, je te conseille de venir jeter un oeil à ce tutoriel !</p>
 					<br />
@@ -22,7 +22,7 @@
 				<img id="img_carrousel" alt="Binds" src="/images/wiki/bind.png" /></a>
 				<div class="flex-caption"><div>
 					<p class="title1">Les binds</p>
-					<p class="title2">Cet article vous informera sur les diverses touches "bindable" de votre clavier, sur les différents binds possibles et sur ce que l'on appelle communément un "Bind"</p>
+					<p class="title2">Cet article vous informera sûr les diverses touches "bindable" de votre clavier, sur les différents binds possibles et sur ce que l'on appelle communément un "Bind"</p>
 					<br />
 					<a class="various btn btn-primary" href="/index.php?page=aide&sub=bind"><i class="fa fa-hand-o-right"></i> En savoir plus !</a>
 				</div></div>
@@ -31,8 +31,8 @@
 				<img id="img_carrousel" alt="PVP" src="/images/wiki/banniere_pvp.png" /></a>
 				<div class="flex-caption"><div>
 					<p class="title1">Les Gangs et La PvP</p>
-					<p class="title2"><span class="wiki_pub"><u>Ran</u>g <u>actuel :</u></span> {$gang} </p>
-					<p class="title3">Tu rêves de devenir des As de la PvP et tu ne sais pas comment t'y prendre ?<br /><br /> Ce tutoriel est peut-être fait pour toi !</p>
+					<p class="title2"><span class="wiki_pub"><u>Rang actuel :</u></span> {$gang} </p>
+					<p class="title3">Tu rêves de devenir un As de la PvP et tu ne sais pas comment t'y prendre ?<br /><br /> Ce tutoriel est peut-être fait pour toi !</p>
 					<br />
 					<a class="various btn btn-primary" href="/index.php?page=aide&sub=pvp"><i class="fa fa-hand-o-right"></i> En savoir plus !</a>
 				</div></div>
@@ -66,7 +66,7 @@
 					<a href="/index.php?page=aide&sub=argent"><div id="rotate"><img class="img-circle" src="/images/wiki/piece.png" alt="Generic placeholder image" id="img_circle_index"></div></a>
 					<div class="caption">
 						<h2 id="title_thun">Gagner de L'argent</h2>
-						<p>Quand on commence une nouvelle vie, il n'est jamais facile de faire des économies... Grâces à nous vous deviendrez le plus riches des hommes en seulement quelques jours.</p>
+						<p>Quand on commence une nouvelle vie, il n'est jamais facile de faire des économies... Grâce à nous vous deviendrez le plus riche des hommes en seulement quelques jours.</p>
 						<br />
 						<p><a class="btn btn-success" href="/index.php?page=aide&sub=argent" role="button"><i class="fa fa-hand-o-right"></i> Aller voir !</a></p>
 					</div>
@@ -91,7 +91,7 @@
 			<div class="row featurette">
 				<div class="col-md-7">
 					<h2 class="featurette-heading">Bienvenue à Princeton-City <span class="text-muted">#I_have_a_dream</span></h2>
-					<p class="lead">Tout connaitre sur le serveur rôle-play, les bases, le reglement, les secret les plus enfouis.... <a href="/index.php?page=aide&sub=debuter">lire plus</a></p>
+					<p class="lead">Tout connaitre sur le serveur rôle-play, les bases, le règlement, les secrets les plus enfouis... <a href="/index.php?page=aide&sub=debuter">lire plus</a></p>
 				</div>
 				<div class="col-md-5">
 				  <img id="img_block_buster" class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="http://2.bp.blogspot.com/_FU9UCvCKHaQ/TBYL1pifkZI/AAAAAAAADR0/7crhQZ9qsJ0/s1600/l_fccf730fd0b94713bad70cb9b979bbea.jpg" data-holder-rendered="true">
@@ -101,7 +101,7 @@
 			<hr class="featurette-divider">
 			  <div class="row featurette">
 				<div class="col-md-7 col-md-push-5">
-				  <h2 class="featurette-heading">Nous rejoindre <span class="text-muted">#Chargement_en_cour...</span></h2>
+				  <h2 class="featurette-heading">Nous rejoindre <span class="text-muted">#Chargement_en_cours...</span></h2>
 				  <p class="lead">Vous souhaitez nous rejoindre, mais vous n'y arrivez pas ?<br />
 				  Vous trouverez ici diverses astuces sur les problèmes connus...<a href="/index.php?page=aide&sub=help">lire plus</a>
 				</div>
@@ -114,7 +114,7 @@
 			  <div class="row featurette">
 				<div class="col-md-7">
 				  <h2 class="featurette-heading">Silence ça tourne !<span class="text-muted">#faire_une_record</span></h2>
-				  <p class="lead">Vous aimeriez apprendre à filmer vos actions en jeux ? Ou tout simplement faire un reportage en caméra caché pour dénoncer des comportements nuisible à la communauté ?
+				  <p class="lead">Vous aimeriez apprendre à filmer vos actions en jeu ? Ou tout simplement faire un reportage en caméra caché pour dénoncer des comportements nuisibles à la communauté ?
 				  Rien de plus simple, après ce petit stage vous deviendrez le roi des caméras cachées... <a href="/index.php?page=aide&sub=record">lire plus</a></p>
 				</div>
 				<div class="col-md-5">
@@ -126,7 +126,7 @@
 			  <div class="row featurette">
 				<div class="col-md-7 col-md-push-5">
 				  <h2 class="featurette-heading">Devenir VIP / Membre CS:GO <span class="text-muted">#Admin</span></h2>
-				  <p class="lead">Notre communauté vous plait et vous tient à coeur ?<br />
+				  <p class="lead">Notre communauté vous plaît et vous tient à coeur ?<br />
 				  Vous aimeriez en faire plus pour nous et pour nos joueurs ?<br />
 				  Rejoignez-nous ! Les recrutements sont ouverts toute l'année sur simple candidature, mais attention !<br />
 				  il faut tout de même certains prérequis...<a href="/index.php?page=aide&sub=admin">lire plus</a>
