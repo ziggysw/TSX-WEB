@@ -106,6 +106,10 @@
 											<th id="table-top-right">Zones d'effet</th>
 										</tr>
 										<tr>
+											<td>{cagnotte}</td>
+											<td>Affiche le montant total (en $RP) présent dans la cagnotte</td>
+										</tr>
+										<tr>
 											<td>{hp}</td>
 											<td>Les points de vie</td>
 										</tr>
