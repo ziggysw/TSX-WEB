@@ -25,7 +25,7 @@
     border-radius: 45px;
 }
 
-p {
+p{
 	color : #AAAAAA ;
 	font-family:Lucida Caligraphy;
 	font-size: 120%;
@@ -48,7 +48,7 @@ h2{
 	font-weight: gras;
 }
 
-li{
+.panel-body li{
 	margin: 5px 0 5px 0;
 	color : #AAAAAA ;
 	font-family:Lucida Caligraphy;
