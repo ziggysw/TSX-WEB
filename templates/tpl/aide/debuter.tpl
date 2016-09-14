@@ -19,7 +19,7 @@
 						<p>Le fondateur <span class="blood">KoSSoLaX`</span> et le <a target="_blank" href="/forum/memberlist.php?g=19&mode=group&sk=m&sd=a">staff Ts-X</a> qui l'accompagne, travaillent depuis janvier 2010 sur ce concept de role-playing <br />sur Counter-Strike : Source et Counter-Strike: Global Offensive.<br /> 
 						<br /> 
 						Ce wiki est là pour vous guider dans votre intégration à "Princeton-city", veuillez prendre le temps de lire et consulter les différentes informations et liens présents sur cette page.<br />
-						Le "roleplay" ou RP est par définition un jeu de rôle, où vous incarnez un citoyen dans la ville de Princeton, le plus important étant bien entendu de s'amuser.<br />
+						Le "roleplay" ou RP est par définition un jeu de rôles, où vous incarnez un citoyen dans la ville de Princeton, le plus important étant bien entendu de s'amuser.<br />
 						Votre travail vous permet de gagner de l'argent et de le dépenser, afin de découvrir la totalité des objets et/ou situations que notre serveur vous propose.<br />
 						Il n'est jamais facile de rentrer complètement et en peu de temps dans un nouveau jeu, vous pourrez trouver ici toutes les informations nécessaires à cette adaptation en milieu parfois hostile.</p>
 						<br />
@@ -47,7 +47,7 @@
 						Le roleplay ts-x compte au total 15 jobs, avec une hiérarchie bien précise, et toujours à leur tête un chef accompagné(s) d'un ou plusieurs co-chef(s).<br />
 						<br />
 						Ils sont tous référencés avec les différents membres qui les composent sur <a href="/index.php?page=roleplay2#/">cette page</a>.<br />
-						( Pour plus d'informations et de précisions, vous pouvez retrouvez un guide sur <a href="/index.php?page=aide&sub=job">comment trouver un job</a> )<br />
+						( Pour plus d'informations et de précisions, vous pouvez retrouver un guide sur <a href="/index.php?page=aide&sub=job">comment trouver un job</a> )<br />
 						Un <a href="https://www.ts-x.eu/forum/viewtopic.php?f=10&t=26749">règlement général</a> est mis à votre disposition sur le site pour vous permettre de mieux comprendre le fonctionnement de la communauté,<br />
 						Il est souvent mis à jour et des modifications peuvent survenir tous les jours.<br />
 						<br />
@@ -76,12 +76,12 @@
 						<table class="table wiki-table-prune">
 							<tr>
 								<th id="table-top-left">Commande</th>
-								<th id="table-top-right">utilitée</th>
+								<th id="table-top-right">Utilité</th>
 							</tr>
 							<tr class="txt">
 								<td>/aide</td>
 								<td>Ouvre un menu "question-réponse"<br />
-									ou vous trouverez les principales informations utiles pour bien débuter.</td>
+									où vous trouverez les principales informations utiles pour bien débuter.</td>
 							</tr>
 							<tr class="txt">
 								<td>/lock</td>
@@ -116,7 +116,7 @@
 							</tr>
 							<tr class="txt">
 								<td>/3rd</td>
-								<td>Permet de se voir a la 3ème personne, retapez la commande pour repasser en première personne.</td>
+								<td>Permet de se voir à la 3ème personne, retapez la commande pour repasser en première personne.</td>
 							</tr>
 							<tr class="txt">
 								<td>/job </td>
@@ -157,13 +157,13 @@
 					</div>
 					<div class="panel-body">
 						<p>TeamSpeak (TS) est un logiciel de conversation vocale par Internet, ce freeware est une fusion entre un IRC et le téléphone.<br />
-						Contrairement à d'autres programmes de messagerie, Skype et autres, TS est conçu pour fonctionner en arrière plan, son intérêt provient 
+						Contrairement à d'autres programmes de messagerie, Skype et autres, TS est conçu pour fonctionner en arrière-plan, son intérêt provient 
 						du fait qu'il n'est nullement nécessaire de quitter son serveur RP préféré pour communiquer avec ses amis et tailler le bout de gras avec eux 
 						qu'ils soient ou non connecté sur le serveur RP.<br /> 
-						Le TS vous permettra également de contacter plus aisément le Staff en cas de problème, car les modérateurs peuvent être présents sur le ts mais pas forcement
+						Le TS vous permettra également de contacter plus aisément le Staff en cas de problème, car les modérateurs peuvent être présents sur le ts mais pas forcément
 						sur le rôle play.<br />
 						Divers channels ont été mis en place pour répondre à la demande et pour le confort des joueurs, ainsi vous pourrez y trouver des channels dédiés aux groupes PvP,
-						aux métiers, mais également des channels communautaires ou tout le monde se retrouvent pour parler de tout et de rien.</p>
+						aux métiers, mais également des channels communautaires où tout le monde se retrouve pour parler de tout et de rien.</p>
 						<br /><br />
 						<p> Pour <strong><u>le télécharger</u></strong>, rien de plus simple ! rendez-vous sur :
 							<ul>
@@ -197,7 +197,7 @@
 							<br />
 							<p>Maintenant, remplissez les champs :
 								<ul>
-									<li>En <a class="pomme">Vert</a> c'est le nom que vous donnerez à votre favoris (bookmarks)</li>
+									<li>En <a class="pomme">Vert</a> c'est le nom que vous donnerez à votre favori (bookmarks)</li>
 									<li>En <a class="orange">Orange</a> c'est l'adresse du serveur</li>
 									<li>En <a class="ocean">Bleu</a> c'est VOTRE pseudo</li>
 								</ul>
