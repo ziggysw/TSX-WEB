@@ -9,7 +9,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div id="GroupA" class="panel-heading panel-heading-wiki"><h2>Conseils</h2></div>
@@ -18,7 +18,7 @@
 								<div class="panel-body">
 									<ol>
 										<li><p id="GroupASub1">Dans un premier temps, vous pourrez sur notre forum, <a target="_blank" href="https://www.ts-x.eu/forum/viewforum.php?f=35">postuler à n'importe quel emploi</a>.<br />
-										Il vous suffit de rechercher l'offre de recrutement pour le métier dans lequel vous voulez trouver une place (n'hésitez pas à postuler à deux ou trois offres de métiers différents, cela augmentera vos chances). <br /> 
+										Il vous suffit de rechercher l'offre de recrutement pour le métier dans lequel vous voulez trouver une place (n'hésitez pas à postuler à deux ou trois offres de métiers différents, cela augmentera vos chances). <br />
 										Pour faire une belle candidature, inspirez-vous de celles précédemment faites, et surtout ne faites pas de copier / coller.</p></li>
 										<br />
 										<li><p id="GroupASub2">Si vous avez de la chance ou des contacts, vous pourrez aussi trouver un emploi directement en jeux.<br />
@@ -34,7 +34,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div id="GroupB" class="panel-heading panel-heading-wiki"><h2>Les métiers de ventes</h2></div>
@@ -61,7 +61,7 @@
 													<a ng-click='main.active.tab = "shownote" '>Règlement</a>
 												</li>
 											</ul>
-											
+
 											<div class="tab-content">
 												<div ng-switch='main.active.tab'>
 													<div
@@ -157,7 +157,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div id="GroupC" class="panel-heading panel-heading-wiki"><h2>Les forces de l'ordre</h2></div>
@@ -191,7 +191,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div id="GroupD" class="panel-heading panel-heading-wiki"><h2>Les hors la lois</h2></div>
@@ -224,7 +224,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div id="GroupE" class="panel-heading panel-heading-wiki"><h2>Devenir chef d'un métier</h2></div>
@@ -281,7 +281,7 @@
 							</div>
 						</div>
 					</div>
-				
+
 				</div>
 				<!--Nav Bar -->
 				<nav class="col-md-2 bs-docs-sidebar">

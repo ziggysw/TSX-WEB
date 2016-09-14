@@ -9,7 +9,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2>A quoi ça sert ?</h2></div>
@@ -25,7 +25,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2>Les couleurs</h2></div>
@@ -93,7 +93,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2>Les balises d'effets</h2></div>
@@ -104,6 +104,10 @@
 										<tr>
 											<th id="table-top-left">Balise</th>
 											<th id="table-top-right">Zones d'effet</th>
+										</tr>
+										<tr>
+											<td>{cagnotte}</td>
+											<td>Affiche le montant total (en $RP) présent dans la cagnotte</td>
 										</tr>
 										<tr>
 											<td>{hp}</td>
@@ -157,7 +161,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2>Comment les utiliser ?</h2></div>
@@ -197,7 +201,7 @@
 							</div>
 						</div>
 					</div>
-				
+
 				</div>
 				<!--Nav Bar -->
 				<nav class="col-md-2 bs-docs-sidebar">
