@@ -11,7 +11,7 @@
 				<img id="img_carrousel" alt="NeW" src="/images/wiki/guide_debutant.png" />
 				<div class="flex-caption "><div>
 					<p class="title1">Bien débuter sa vie à Princeton-City</p>
-					<p class="title2"><span class="wiki_pub"><u>Argent actuel :</u></span> {$money|pretty_number} $rp<br />
+					<p class="title2"><span class="wiki_pub"><u>Ar</u>g<u>ent actuel :</u></span> {$money|pretty_number} $rp<br />
 					Bienvenue {$name} !<br />
 					Si tu souhaites avoir plus d'argent en banque, je te conseille de venir jeter un oeil à ce tutoriel !</p>
 					<br />
@@ -31,7 +31,7 @@
 				<img id="img_carrousel" alt="PVP" src="/images/wiki/banniere_pvp.png" /></a>
 				<div class="flex-caption"><div>
 					<p class="title1">Les Gangs et La PvP</p>
-					<p class="title2"><span class="wiki_pub"><u>Rang actuel :</u></span> {$gang} </p>
+					<p class="title2"><span class="wiki_pub"><u>Ran</u>g<u> actuel :</u></span> {$gang} </p>
 					<p class="title3">Tu rêves de devenir un As de la PvP et tu ne sais pas comment t'y prendre ?<br /><br /> Ce tutoriel est peut-être fait pour toi !</p>
 					<br />
 					<a class="various btn btn-primary" href="/index.php?page=aide&sub=pvp"><i class="fa fa-hand-o-right"></i> En savoir plus !</a>
