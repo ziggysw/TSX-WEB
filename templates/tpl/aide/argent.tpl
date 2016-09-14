@@ -15,8 +15,8 @@
 									</div>
 								</div>
 								<div class="panel-body">
-									<p>À Princeton-City, tout à un prix ! Et quoi de mieux que de la bonne vieille monnaie sonnante et trébuchante pour régler des conflits ?</p>
-									<p>D'une manière générale, le plus important est de bien faire attention à votre argent en toute situation. N'acceptez pas d'offres douteuses où ont lieu des échanges d'argents, 
+									<p>À Princeton-City, tout a un prix ! Et quoi de mieux que de la bonne vieille monnaie sonnante et trébuchante pour régler des conflits ?</p>
+									<p>D'une manière générale, le plus important est de bien faire attention à votre argent en toute situation. N'acceptez pas d'offres douteuses où ont lieu des échanges d'argent, 
 									rangez en permanence votre argent en banque pour ne pas vous le faire voler et n'achetez pas n'importe quoi !</p>
 									<p><strong><u>Commencez par acheter :</u></strong></p>
 									<ul>
@@ -50,9 +50,9 @@
 										<ul>
 											<li><p>La justice : Tribunal ou Police, ils sont là pour faire régner l'ordre et la loi.</p></li>
 											<li><p>La vente : ils permettent de faire vivre la ville, ils fournissent les joueurs en objet et services du quotidien.</p></li>
-											<li><p>Les malfrats : Mafia <i>Cosa Nostra</i> et la <i>Stidda Famiglia</i>, sont des familles ou règnes les petits trafiques et larcin en tout genre.</p></li>
+											<li><p>Les malfrats : Mafia <i>Cosa Nostra</i> et la <i>Stidda Famiglia</i>, sont des familles ou règnes les petits trafiques et larcin en tous genres.</p></li>
 										</ul></p>
-									<p>Vous l'aurez compris, le choix du job de vos rêves va être dur ! et si jamais vous avez besoin de plus de détail, nous vous en donnons sur <a target="_blank" href="?page=aide&sub=job">cette page dédié.</a></p>
+									<p>Vous l'aurez compris, le choix du job de vos rêves va être dur ! et si jamais vous avez besoin de plus de détail, nous vous en donnons sur <a target="_blank" href="?page=aide&sub=job">cette page dédiée.</a></p>
 								</div>
 							</div>
 						</div>
@@ -113,8 +113,8 @@
 										<span class="sr-only">Next</span></a>
 									</div>
 									<br />
-									<p>Nous ne vous conseillerons jamais assez d'y prendre un logement pour y passer la nuit. Munis de plusieurs bonus, les logements vous permettront d'augmenter l'argent de votre paye et quelques
-									autre bonus de la vie de tous les jours, en voici quelques un : </p>
+									<p>Nous ne vous conseillerons jamais assez d'y prendre un logement pour y passer la nuit. Munis de plusieurs bonus, les logements vous permettront d'augmenter l'argent de votre paye et quelque
+									autre bonus de la vie de tous les jours, en voici quelques-uns : </p>
 									<br />
 									<div class="row">
 										<div class="col-xs-offset-2 col-xs-4 col-md-offset-2 col-md-1">
@@ -144,7 +144,7 @@
 											<span rp-item-information="227"></span>
 										</div>
 									</div>
-									<p>Votre appartement peut également être partagé en collocation avec d'autre citoyens, il vous fera office de lieux de stockage pour vos plantes, machines et autres objets plus ou moins légaux.</p>
+									<p>Votre appartement peut également être partagé en collocation avec d'autres citoyens, il vous fera office de lieux de stockage pour vos plantes, machines et autres objets plus ou moins légaux.</p>
 									<br />
 									<p><a href="/index.php?page=roleplay2#/job/61?TABS=player" target="_blank">Cette page</a> vous permettra d'en savoir plus sur les bonus des appartements</p>
 								</div>
@@ -181,7 +181,7 @@
 									Les imprimantes ont l'avantage de pouvoir être dissimulé dans toute la ville et donc de ne pas tout perdre d'un coup, mais la photocopieuse elle réunit le tout en seul endroit et
 									elle est beaucoup plus discrète.</p>
 									<br />
-									<p>Nous vous conseillons d'esseiller les 2 méthodes tout en sachant que la photocopieuse est l'équivalent exact des ce que vous rapportes les 15 machines.<br />
+									<p>Nous vous conseillons d'essayer les 2 méthodes tout en sachant que la photocopieuse est l'équivalent exact des ce que vous rapportes les 15 machines.<br />
 									Vous trouverez ci-dessous un tableau de rentabilité dans le temps de cette méthode :</p>
 									<br />
 									<table class="wiki-table-pomme txt">
@@ -257,8 +257,8 @@
 									</div>
 								</div>
 								<div class="panel-body">
-									<p>Votre activité sur notre serveur peut elle aussi vous rapporter gros ! c'est bien simple, plus vous jouer, plus vous avez de chance de participé à des evenements très lucratif !<br />
-									Nous vous en avons cité quelque un des plus important si dessous.</p>
+									<p>Votre activité sur notre serveur peut elle aussi vous rapporter gros ! c'est bien simple, plus vous jouer, plus vous avez de chance de participé à des événements très lucratifs !<br />
+									Nous vous en avons cité quelques-uns des plus importants ci-dessous.</p>
 								</div>
 							</div>
 						</div>
@@ -276,7 +276,7 @@
 									</div>
 								</div>
 								<div class="panel-body">
-									<p>Votre vitalité et directement relié à votre temps de jeux, vous gagnez X points de vitalité par heure de jeux et en perdez X par heure d'inactivité.<br />
+									<p>Votre vitalité est directement reliée à votre temps de jeux, vous gagnez X points de vitalité par heure de jeux et en perdez X par heure d'inactivité.<br />
 									Vous pouvez booster votre vitalité grâce à ces items :</p>
 									<br />
 									<div class="row">
@@ -330,9 +330,9 @@
 									</div>
 								</div>
 								<div class="panel-body">
-									<p>Les admin et VIP ne sont pas la que pour gérer des conflits entre joueurs, ils peuvent aussi faire des "évents" qui vous permettrons pendant un cour moment de faire une activité inhabituelle
+									<p>Les Admins et VIPs ne sont pas là que pour gérer des conflits entre joueurs, ils peuvent aussi faire des "évents" qui vous permettront pendant un court moment de faire une activité inhabituelle
 									sur le RP.</p>
-									<p>En règle général, les évents sont accompagnés d'une prime de réussite pour les gagnants, le montant de la prime et fixé par le responsable de l'évent.</p><br />
+									<p>En règle générale, les évents sont accompagnés d'une prime de réussite pour les gagnants, le montant de la prime est fixés par le responsable de l'évent.</p><br />
 									<p>Voici quelques exemples d'évents qui ont été faits sur notre serveur :</p><br />
 									<br />
 									<div class="row">
@@ -409,7 +409,7 @@
 										</div>
 									</div>
 										<br />
-									<p>Les quêtes ne sont pas forcement tous public, certaines sont réservées en fonction de votre métier.</p>
+									<p>Les quêtes ne sont pas forcément tous public, certaines sont réservées en fonction de votre métier.</p>
 									<br />
 										<table class="wiki-table txt"> 
 										  <tr>
@@ -464,7 +464,7 @@
 									<p>Le RolePlay se joue avant tout entre amis. C'est pourquoi grâce au programme de parrainage, vous gagnez des récompenses telles que <br />
 									des points pour le classement général, de l'argent sur le roleplay, des succès et un titre sur le forum.</p>
 									<br />
-									<p id="GroupESub1"><br />Dites à vos amis d'ajouter le roleplay à leur favoris <u>178.32.42.113:27015</u> afin de vous rejoindre,<br />
+									<p id="GroupESub1"><br />Dites à vos amis d'ajouter le roleplay à leurs favoris <u>178.32.42.113:27015</u> afin de vous rejoindre,<br />
 									Ils peuvent, en cas de difficulté, cliquer sur le bouton "Rejoindre RP" présent sur notre site.<br />
 									<br />
 									À la fin du tutoriel, le nouveau joueur pourra choisir un parrain parmi les joueurs présents sur le serveur,<br />
@@ -478,7 +478,7 @@
 									<ul>
 										<li>À chaque filleul validé : 100 000 $ RP</li>
 										<li>Au 5ème filleul validé : le succès "Entre amis"</li>
-										<li>Au 10eme filleul validé : L'icone forum "Parrain"</li>
+										<li>Au 10eme filleul validé : L'icône forum "Parrain"</li>
 										<li>Au 15ème filleul validé : 250 points dans le classement général supplémentaire.</li>
 									</ul>
 									Pour accepter vos récompenses il faudra passer par le forum <a href="/index.php?page=parrainage" target="_blank">(RolePlay>Parrainage)</a> et cliquer sur valider puis recevoir pour obtenir votre récompense.</p>
