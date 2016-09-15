@@ -4,7 +4,7 @@
 
 <br />
 
-	<nav class="navbar navbar-inverse p-navbar" role="navigation" id="mw-navigation">
+	<nav class="navbar navbar-inverse p-navbar" id="mw-navigation">
 					<div class="container-fluid">
 							<div class="navbar-header">
 
