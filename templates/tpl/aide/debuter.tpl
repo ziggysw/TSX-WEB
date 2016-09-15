@@ -53,8 +53,8 @@
 						<br />
 						Dorénavant, vous savez ce que vous devez faire, vous connaissez bien les règles et les différents métiers, il ne vous reste plus qu'à trouver le job qui vous correspond, pour cela, deux solutions s'offrent à vous :<br />
 						<ul>
-							<li>Demander à un chef ou à un co-chef directement sur le serveur roleplay de vous compter dans son effectif.</li>
-							<li>Poster votre candidature sur l'un des topics suivants dans la section <a href="https://www.ts-x.eu/forum/viewforum.php?f=35">"Pôle Emploi"</a> du forum après avoir pris connaissance des critères exigés du métier ciblé.</li>
+							<li><p>Demander à un chef ou à un co-chef directement sur le serveur roleplay de vous compter dans son effectif.</p></li>
+							<li><p>Poster votre candidature sur l'un des topics suivants dans la section <a href="https://www.ts-x.eu/forum/viewforum.php?f=35">"Pôle Emploi"</a> du forum après avoir pris connaissance des critères exigés du métier ciblé.</p></li>
 						</ul></p>
 					</div>
 				</div>
