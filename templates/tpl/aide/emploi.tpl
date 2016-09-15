@@ -21,8 +21,8 @@
 										Il vous suffit de rechercher l'offre de recrutement pour le métier dans lequel vous voulez trouver une place (n'hésitez pas à postuler à deux ou trois offres de métiers différents, cela augmentera vos chances). <br />
 										Pour faire une belle candidature, inspirez-vous de celles précédemment faites, et surtout ne faites pas de copier / coller.</p></li>
 										<br />
-										<li><p id="GroupASub2">Si vous avez de la chance ou des contacts, vous pourrez aussi trouver un emploi directement en jeux.<br />
-										Vous pouvez également utiliser la commande /job et contacter le chef ou un co-chef du métier qui vous intéraisse si ils sont connectés.<br />
+										<li><p id="GroupASub2">Si vous avez de la chance ou des contacts, vous pourrez aussi trouver un emploi directement en jeu.<br />
+										Vous pouvez également utiliser la commande /job et contacter le chef ou un co-chef du métier qui vous intéresse s'ils sont connectés.<br />
 										Encore plus simple, faites un message correct et simple dans le chat global en demandant si un chef recrute, à ce moment-là si un co-chef ou un chef est présent,<br />
 										il vous répondra et vous présentera son métier si vous correspondez à ses attentes.</p></li>
 										<br />
@@ -41,7 +41,7 @@
 									</div>
 								</div>
 								<div class="panel-body">
-									<p>Dans la ville de princeton il existe 12 commerces différents qui recherchent activement des employés pour répondre aux attentes de leurs clients, serez-vous à la hauteur ?</p>
+									<p>Dans la ville de Princeton il existe 12 commerces différents qui recherchent activement des employés pour répondre aux attentes de leurs clients, serez-vous à la hauteur ?</p>
 									<br /><br />
 									<img id="GroupBSub1" alt="armurier" class="img_wiki radius" src="/images/wiki/job/armu.jpg" />
 									<p>L'Armurerie vous permet de fabriquer et de vendre des armes pour vous défendre face aux criminels qui sévissent dans Princeton.</p>
@@ -83,25 +83,25 @@
 									<br /><br />
 									<img id="GroupBSub2" alt="agence_immo" class="img_wiki radius" src="/images/wiki/job/immo.jpg" />
 									<br /><br />
-									<p>Elle est responsable des appartements et de la villa au seins de Princeton.</p>
+									<p>Elle est responsable des appartements et de la villa au sein de Princeton.</p>
 									<br />
 									<p></p>
 									<br /><br />
 									<img id="GroupBSub3" alt="artificier" class="img_wiki radius" src="/images/wiki/job/artif.jpg" />
 									<br /><br />
-									<p>Ils sont les rois des explosifs en tout genre, mais aussi des fusées et de bien d'autres objets fulminants et foudroyants !</p>
+									<p>Ils sont les rois des explosifs en tous genres, mais aussi des fusées et de bien d'autres objets fulminants et foudroyants !</p>
 									<br />
 									<p></p>
 									<br /><br />
 									<img id="GroupBSub4" alt="artisan" class="img_wiki radius" src="/images/wiki/job/arti.jpg" />
 									<br /><br />
-									<p>Ils sont les maîtres du bricolage, vous savez vous servir de vos 10 doigts ? Rejoignez les !</p>
+									<p>Ils sont les maîtres du bricolage, vous savez vous servir de vos 10 doigts ? Rejoignez-les !</p>
 									<br />
 									<p></p>
 									<br /><br />
 									<img id="GroupBSub5" alt="banquier" class="img_wiki radius" src="/images/wiki/job/bank.jpg" />
 									<br /><br />
-									<p>C'est un métier de vente de notoriété publique, elle permet de fournir des cartes bleu, des chèques et de multiples autres produit financier.</p>
+									<p>C'est un métier de vente de notoriété publique, elle permet de fournir des cartes bleues, des chèques et de multiples autres produits financiers.</p>
 									<br />
 									<p></p>
 									<br /><br />
@@ -126,7 +126,7 @@
 									<br /><br />
 									<img id="GroupBSub9" alt="loto" class="img_wiki radius" src="/images/wiki/job/loto.jpg" />
 									<br /><br />
-									<p>Un loisir unique dans notre ville, le loto sert à tout les habitants afin de se divertir. <br />
+									<p>Un loisir unique dans notre ville, le loto sert à tous les habitants afin de se divertir. <br />
 									Mais en cachette , il complote pour vous rendre riche, toujours plus riche.</p>
 									<br />
 									<p></p>
@@ -140,7 +140,7 @@
 									<br /><br />
 									<img id="GroupBSub11" alt="sexshop" class="img_wiki radius" src="/images/wiki/job/sex.png" />
 									<br /><br />
-									<p>Du sadomasochisme, à l'homosexualité en passant par la zoophilie, ils vous trouverons toujours de quoi vous faire plaisir et saurons toujours vous faire vibrer.</p>
+									<p>Du sadomasochisme, à l'homosexualité en passant par la zoophilie, ils vous trouveront toujours de quoi vous faire plaisir et sauront toujours vous faire vibrer.</p>
 									<br />
 									<p></p>
 									<br /><br />
@@ -194,27 +194,27 @@
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
-										<div id="GroupD" class="panel-heading panel-heading-wiki"><h2>Les hors la lois</h2></div>
+										<div id="GroupD" class="panel-heading panel-heading-wiki"><h2>Les hors la loi</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
 									<br /><br />
 									<img id="GroupDSub1" alt="mafia" class="img_wiki radius" src="/images/wiki/job/mafia.jpg" />
 									<br /><br />
-									<p>Le vol, le meurtre, les attaques à main armés. La discrétion,le pouvoir,la famille. </p>
+									<p>Le vol, le meurtre, les attaques à main armée. La discrétion, le pouvoir, la famille. </p>
 									<br />
 									<p></p>
 									<br /><br />
-									<img id="GroupBSub10" alt="mercenaire" class="img_wiki radius" src="/images/wiki/job/merco.jpg" />
+									<img id="GroupDSub2" alt="mercenaire" class="img_wiki radius" src="/images/wiki/job/merco.jpg" />
 									<br /><br />
-									<p>Ce sont des combattants émérite recruté moyennant finance pour kidnapper ou assasiné votre pire ennemis.</p>
+									<p>Ce sont des combattants émérites recrutés moyennant finance pour kidnapper ou assassiner vos pires ennemis.</p>
 									<br />
 									<p></p>
 									<br /><br />
-									<img id="GroupBSub2" alt="stidda" class="img_wiki radius" src="/images/wiki/job/stidda.jpg" />
+									<img id="GroupDSub3" alt="stidda" class="img_wiki radius" src="/images/wiki/job/stidda.jpg" />
 									<br /><br />
 									<p>C'est un gang soudé et puissant qui est constamment à la recherche d'armes, d'argent et de voitures.<br />
-									Ils est également connu des forces de l'ordre pour fournir toute la ville en drogue de tout genre.</p>
+									Il est également connu des forces de l'ordre pour fournir toute la ville en drogue de tous genres.</p>
 									<br />
 									<p></p>
 								</div>
@@ -233,16 +233,16 @@
 								<div class="panel-body">
 									<p class=" text-center blood"><u>Une place de chef est disponible SEULEMENT quand KoSSoLax le signale sur le topic !</u></p>
 									<br /><br /><br />
-									<p>Pour devenir chef d'un métier, vous devrez remplir certaine condition :</p>
+									<p>Pour devenir chef d'un métier, vous devrez remplir certaines conditions :</p>
 									<br />
 									<ul>
 										<li>Avoir le no-pyj</li>
-										<li>Être présent dans le job depuis quelques temps</li>
+										<li>Être présent dans le job depuis quelque temps</li>
 										<li>Avoir au minimum 7h/semaines de jeu.</li>
 										<li>Avoir 100 000$</li>
 									</ul>
 									<br />
-									<p>Lorsque vous obtenez la place, vous vous engagez pour une période de 3 mois, vous devez, dés lors:</p>
+									<p>Lorsque vous obtenez la place, vous vous engagez pour une période de 3 mois, vous devez, dès lors:</p>
 									<br />
 									<ul>
 										<li>Respecter votre quota d'engagement (profitez du système de parrainage...)</li>
@@ -250,11 +250,11 @@
 										<li>S'occuper au bon fonctionnement, exposer les problèmes sur le forum et rechercher des solutions</li>
 									</ul>
 									<br />
-									<p>Si vous devez vous absenter pour de bonne raison (vacance, déménagement, etc).<br />
-									Envoyez moi un mail, ou un MP sur le forum précisent bien qui vous êtes et pour quel job.<br />
-									Vous devez prendre aussi les dispositions nécessaire: Un de vos co-chef doit s'occuper du quota.</p>
+									<p>Si vous devez vous absenter pour de bonnes raisons (vacance, déménagement, etc).<br />
+									Envoyez-moi un mail, ou un MP sur le forum précisent bien qui vous êtes et pour quel job.<br />
+									Vous devez prendre aussi les dispositions nécessaires: Un de vos co-chef doit s'occuper du quota.</p>
 									<br />
-									<p>Vous vous engagez pour 3 mois minimum, si vous quittez avant vous risquez les sanctions suivantes:</p>
+									<p>Vous vous engagez pour 3 mois au minimum, si vous quittez avant vous risquer les sanctions suivantes:</p>
 									<br />
 									<ul>
 										<li>Démission première semaine: Ban du serveur</li>
@@ -263,8 +263,8 @@
 										<li>Démission pendant le 3ème mois: Légère pénalité pour de devenir chef d'un nouveau.</li>
 									</ul>
 									<br />
-									<p>Enfin, vous devez impérativement marqué dans votre candidature que vous avez lu le code du travail, et ne pas dépasser les 5 lignes !<br />
-									A partir du moment que vous avez été accepté, vous avez 48 heures pour aller marquer "Lu et approuvé" sur ce topic,
+									<p>Enfin, vous devez impérativement marquer dans votre candidature que vous avez lu le code du travail, et ne pas dépasser les 5 lignes !<br />
+									À partir du moment où vous avez été accepté, vous avez 48 heures pour aller marquer "Lu et approuvé" sur ce topic,
 									sans quoi... Vous perdez votre place de chef.</p>
 									<br /><br /><br />
 									<div class="row">
@@ -290,7 +290,7 @@
 							<a href="#GroupA">Conseils</a>
 							<ul class="nav nav-stacked">
 								<li><a href="#GroupASub1">Par le Forum</a></li>
-								<li><a href="#GroupASub2">En Jeux</a></li>
+								<li><a href="#GroupASub2">En Jeu</a></li>
 							</ul>
 						</li>
 						<li>
