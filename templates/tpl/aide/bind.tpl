@@ -222,16 +222,16 @@
 							</div>
 						</div>
 					</div>
+				
 				</div>
-				<div class=" col-md-1" role="complementary">
-					<nav class="bs-docs-sidebar hidden-print hidden-sm hidden-xs affix"> 
-						<ul class="nav bs-docs-sidenav target-active">
-							<li><a href="#t1" id="page_menu_wiki" ><i class="fa fa-asterisk prune" aria-hidden="true"></i> Qu'est-ce qu'un Bind </a></li>
-							<li><a href="#t2" id="page_menu_wiki" ><i class="fa fa-asterisk ocean" aria-hidden="true"></i> Afficher la console</a></li>
-							<li><a href="#t3" id="page_menu_wiki" ><i class="fa fa-asterisk gold" aria-hidden="true"></i> Ecrire vos Binds</a></li>
-							<li><a href="#t4" id="page_menu_wiki" ><i class="fa fa-asterisk pomme" aria-hidden="true"></i> Les touches spéciales</a></li>
-						</ul>
-					</nav>
-				</div>
+				<!--Nav Bar -->
+				<nav class="col-md-2 bs-docs-sidebar"> 
+					<ul class="nav nav-stacked fixed">
+						<li><a href="#t1" id="page_menu_wiki" ><i class="fa fa-asterisk prune" aria-hidden="true"></i> Qu'est-ce qu'un Bind </a></li>
+						<li><a href="#t2" id="page_menu_wiki" ><i class="fa fa-asterisk ocean" aria-hidden="true"></i> Afficher la console</a></li>
+						<li><a href="#t3" id="page_menu_wiki" ><i class="fa fa-asterisk gold" aria-hidden="true"></i> Ecrire vos Binds</a></li>
+						<li><a href="#t4" id="page_menu_wiki" ><i class="fa fa-asterisk pomme" aria-hidden="true"></i> Les touches spéciales</a></li>
+					</ul>
+				</nav>
 			</div>
 		</div>
