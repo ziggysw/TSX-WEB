@@ -107,7 +107,7 @@
 										</tr>
 										<tr>
 											<td>{cagnotte}</td>
-											<td>Le montant total (en $RP) présent dans la cagnotte</td>
+											<td>Affiche le montant total (en $RP) présent dans la cagnotte</td>
 										</tr>
 										<tr>
 											<td>{hp}</td>
