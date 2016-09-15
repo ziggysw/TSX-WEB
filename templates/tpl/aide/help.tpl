@@ -32,7 +32,7 @@
 												<br />
 												<img alt="img_nav" class="img_wiki" src="/images/wiki/bug/bug2.png"><br />
 												<br />
-												<p>Vous aurez alors une nouvelle fenêtre, sélectionnez l'onglet "Compatibilité" et vérifiez que la version est réglée sur votre version de Windows ou sur la version Windows 8 si vous êtes sur Windows 10.</p>
+												<p>Vous aurez alors une nouvelle fenêtre, sélectionnez l'onglet "Compatibilité" et vérifiez que la version est réglée sur votre version de Windows ou sur la version Windows 10 si vous êtes sur Windows 10.</p>
 												<br />
 												<img alt="img_vers_win" class="img_wiki" src="/images/wiki/bug/bug3.png"><br />
 												<br />
@@ -40,7 +40,7 @@
 											<br />
 											<li id="GroupASub2">
 												<p><u><b>La deuxième solution</b></u>, beaucoup plus radicale, <br />
-												consiste à baisser votre qualité graphique au minimum, vous mettre en plein écran fenêtré et baisser votre rendu multicoeur au minimum comme sur la photo ci-joint.</p>
+												consiste à baisser votre qualité graphique au minimum, vous mettre en plein écran fenêtré et enfin vous baissez votre rendu multicoeur au minimum comme sur la photo ci-jointe.</p>
 												<br />
 												<img class="img_wiki" src="/images/wiki/bug/bug4.png">
 												<br />
@@ -64,10 +64,10 @@
 										<ul>
 											<li>Qu'est-ce que ce bug ?</li>
 											<p>De base, lorsqu'on fait un retour Windows (Alt+Tab), l'OS n'alloue plus autant de ressources qu'il le faisait quand vous étiez en jeu,<br />
-											ce qui provoque des ralentissements quand vous faites le retour Windows et quand vous revenez sur le jeu,<br />
-											vous avez un écran noir qui dure 30 secondes avant d'avoir accès au jeu en attendant encore 20 secondes, car ralentissements soit 50 secondes pour revenir en jeu.</p>
+											ce qui provoque des ralentissements quand vous faites le retour Windows ainsi que quand vous retournez sur le jeu.<br />
+											Vous avez un écran noir qui dure 30 secondes avant d'avoir accès au jeu, ensuite vous avez encore 20 secondes à attendre, car le jeu subit des ralentissements, soit au total 50 secondes pour revenir en jeu.</p>
 											<p>Suite à une mise à jour du jeu, ce bug a été partiellement corrigé, mais vous devez attendre tout de même 50 secondes avant de pouvoir jouer,<br />
-											quand vous faîtes le retour Windows par contre, vous ne laguez plus. </p><br />
+											quand vous faites le retour Windows par contre, vous ne laguez plus. </p><br />
 											<li>Comment résoudre ce bug
 												<ul>
 													<li>Tout d'abord, rendez-vous dans la bibliothèque Steam,</li>
@@ -147,7 +147,7 @@
 									</div>
 								</div>
 								<div class="panel-body">
-									<p>Si au moment où vous lancez la map vous revenez à l'écran d’accueil, le problème vient du téléchargement de la map. Il vous suffit d'aller dans vos dossiers suivez les instructions suivantes.</p><br />
+									<p>Si au moment où vous lancez la map vous revenez à l'écran d’accueil, le problème vient du téléchargement de la map. Il vous suffit d'aller dans vos dossiers et de suivre les instructions suivantes.</p><br />
 									<p>Allez dans : <u><b>C:\Program Files\Steam\SteamApps\common\Counter-Strike Global Offensive\csgo\Maps</b></u></p><br />
 									<p>Arrivé à ce stade vous supprimez la map Princeton ou, si la map ne s'affiche pas vous devrez supprimer toutes les maps.<br />
 									Quand la map est supprimée, il vous suffit de relancer Global offensive et lancer la connexion au serveur.<br /></p>
@@ -170,8 +170,8 @@
 									<img alt="img_vers_win" class="img_wiki" src="/images/wiki/bug/bug8.png"><br />
 									<br />
 									<p>Malheureusement, nous ne pouvons rien y faire, car le problème vient de Steam lui-même, soit parce que leurs serveurs on plantés, <br />
-									soit parce qu'ils font des mises à jours et nous sommes donc en décalage au niveau de la version.								
-									(ex : 13h30 le serveur est en 1.2.56, steam fait un mise à jour et passe en 1.2.57. Il nous faudra alors relancer le serveur. Mais ce cas de figure est plutôt rare). </p>
+									soit parce qu'ils font des mises à jour et nous sommes donc en décalage au niveau de la version.								
+									(ex : 13h30 le serveur est en 1.2.56, steam fait une mise à jour et passe en 1.2.57. Il nous faudra alors relancer le serveur. Mais ce cas de figure est plutôt rare). </p>
 								</div>
 							</div>
 						</div>
