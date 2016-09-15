@@ -32,7 +32,7 @@
 												<br />
 												<img alt="img_nav" class="img_wiki" src="/images/wiki/bug/bug2.png"><br />
 												<br />
-												<p>Vous aurez alors une nouvelle fenêtre, sélectionnez l'onglet "Compatibilité" et vérifiez que la version est réglée sur votre version de Windows ou sur la version Windows 10 si vous êtes sur Windows 10.</p>
+												<p>Vous aurez alors une nouvelle fenêtre, sélectionnez l'onglet "Compatibilité" et vérifiez que la version est réglée sur votre version de Windows ou sur la version Windows 8 si vous êtes sur Windows 10.</p>
 												<br />
 												<img alt="img_vers_win" class="img_wiki" src="/images/wiki/bug/bug3.png"><br />
 												<br />
