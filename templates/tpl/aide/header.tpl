@@ -58,7 +58,7 @@
 										<li><a href="https://www.ts-x.eu/index.php?page=iframe#/DevZone/" rel="nofollow"><i class="fa fa-ticket" aria-hidden="true"></i> Les futures mises à jours</a></li>
 										<li><a href="/index.php?page=aide&sub=help"><i class="fa fa-bug" aria-hidden="true"></i> Bugs et Problèmes connus </a></li>
 										<li><a href="https://www.ts-x.eu/forum/viewtopic.php?f=10&amp;t=28678&amp;view=unread#unread" rel="nofollow"><i class="fa fa-check" aria-hidden="true"></i> Mises à jours effectuées</a></li>
-										<li><a href="/index.php?page=aide&sub=job#GroupE"><i class="fa fa-user-secret" aria-hidden="true"></i> Comment devenir Chef d'un métier ?</a></li>
+										<li><a href="/index.php?page=aide&sub=emploi#GroupE"><i class="fa fa-user-secret" aria-hidden="true"></i> Comment devenir Chef d'un métier ?</a></li>
 										<li><a href="/index.php?page=aide&sub=record"><i class="fa fa-video-camera" aria-hidden="true"></i> Comment faire une record ?</a></li>
 										<li><a href="/index.php?page=aide&sub=admin#GroupA"><i class="fa fa-coffee" aria-hidden="true"></i> Qui sont les Ts-X</a></li>
 								</ul>
