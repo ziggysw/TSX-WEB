@@ -17,7 +17,7 @@
 								</div>
 								<div class="panel-body">
 									<p>Un bind consiste à rattacher une commande à une touche, cela permet notamment d'ouvrir les menus les plus utiles du RP instantanément et vous faire gagner énormément de temps.
-									La procédure depuis CS:GO est devenue assez simple et peut maintenant s'effectuer directement en jeu.</p>
+									La procédure depuis CS:GO est devenu assez simple et peut maintenant s'effectuer directement en jeu.</p>
 								</div>
 							</div>
 						</div>
