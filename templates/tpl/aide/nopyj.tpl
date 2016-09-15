@@ -47,7 +47,7 @@
 									</div>
 								</div>
 								<div class="panel-body">
-									<p>Le rang "No-Pyj" est soumis à certaine condition d'éligibilités, il vous faudra :</p>
+									<p>Le rang "No-Pyj" est soumis à certaines conditions d'éligibilités, il vous faudra :</p>
 									<br />
 									<ul>
 									<li><p>Avoir 16 ans minimum. ( Le bandeau sur cette page est basé sur l'âge de votre profil forum, pensez donc à donner votre vrai âge ! )</li>
@@ -67,7 +67,7 @@
 								<p>Une fois connecté, le meilleur moyen de contacter un admin est de vous rendre dans le channel "Besoin d'un admin? - Public & calme".</p>
 								<br />
 								<p><span class="blood"> /!\ Attention /!\ </span>  Si c'est votre première connexion sur notre teamspeak, vous vous retrouverez dans le "hall" avec un cadenas,<br />
-								il vous empêchera de faire une quelconque action, vous devrez suivre le lien que vous a envoyé le bot et vous connecter au forum pour vous débloquez</p>
+								il vous empêchera de faire une quelconque action, vous devrez suivre le lien que vous a envoyé le bot et vous connecter au forum pour vous débloquer</p>
 								</div>
 							</div>
 						</div>
@@ -86,7 +86,7 @@
 								si tout va bien, vous donnera un lien.<br />
 								<span class="blood">Attention !</span> en cliquant sur ce lien, vous démarrerez directement le test !</p>
 								<p>Le test se compose d'une série de 10 questions générées aléatoirement par un bot, vous aurez 1 question pour
-								4 réponses possible.<br />
+								4 réponses possibles.<br />
 								Un résultat de 8/10 minimum est attendu pour pouvoir décrocher votre rang, pensez donc à bien réviser !</p>
 								</div>
 							</div>
@@ -98,7 +98,7 @@
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2>A quoi sert le rang No-Pyj ?</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>À quoi sert le rang No-Pyj ?</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
@@ -134,7 +134,7 @@
 												<ul>
 													<li><p>Par le Forum, allez sur l'onglet Roleplay puis sélectionnez "Le tribunal" et cliquez en haut à droite sur "Rapporter un mauvais comportement".<p></li>
 													<center><img class="img_wiki" src="images/wiki/nopyj/tribu_forum.png"/></center>
-													<li><p>In Game, vous trouverez partout dans la ville des téléphones, il vous suffira de faire "e" en le visant ou bien tapez / report dans le tchat.<p></li>
+													<li><p>In Game, vous trouverez partout dans la ville des téléphones, il vous suffira de faire "e" en les visant ou bien de taper / report dans le tchat.<p></li>
 												</ul>
 										<br />
 										<p><u>Voici un exemple de plainte :</u></p>
@@ -177,13 +177,13 @@
 									</div>
 								</div>
 								<div class="panel-body">
-								<p>Dans certaines circonstances exeptionelles il est possible que l'on vous retire votre rang "No-Pyj", mais cela sera seulement en cas de grosse bêtise comme :</p>
+								<p>Dans certaines circonstances exceptionnelles il est possible que l'on vous retire votre rang "No-Pyj", mais cela sera seulement en cas de grosse bêtise comme :</p>
 									<ul>
 										<li><p>Si vous abusez d'une quelconque commande hors de son contexte prévu<p></li>
 										<li><p>Des multiples bans pour des raisons de comportement nuisible <p></li>
 										<li><p>Si vous ne respectez pas votre engagement de chef de job<p></li>
 									</ul>
-								<p>Bien évidemment cette liste est non exhaustive et ne représente que quelque un des cas les plus fréquents, une fois votre
+								<p>Bien évidemment cette liste est non exhaustive et ne représente que quelques-uns des cas les plus fréquents, une fois votre
 								rang "No-Pyj" perdu, vous n'aurez plus accès à ce rang et ne pourrez repasser l'examen qu'en cas de réels changements de votre part.</p><br />
 								<p>Ainsi si vous possédez le rang "No-Pyj", vous devrez respecter le <a target="_blank" href="/forum/viewtopic.php?f=10&t=26749"> règlement général</a>
 								et ne pas nuire volontairement à la communauté ou au serveur.
@@ -202,7 +202,7 @@
 									</div>
 								</div>
 								<div class="panel-body">
-								<p>Dans certaines circonstances exeptionelles il est possible que l'on vous accorde le rang "No-Pyj émancipé", mais ce grade n'est pas accordé au premier venu ...<br /><br />
+								<p>Dans certaines circonstances exceptionnelles il est possible que l'on vous accorde le rang "No-Pyj émancipé", mais ce grade n'est pas accordé au premier venu...<br /><br />
 								Les "No-Pyj émancipé" sont des joueurs qui n'ont pas l'âge requis pour avoir le rang "No-Pyj" mais qui connaissent très bien le règlement et ont fait preuve d'un comportement exemplaire,
 								ce rang vous accorde les mêmes avantages que le rang "No-Pyj" côté Forum (Forum "no-pyj" et place de chef de job) mais pas côté serveur (+force ou /me).</p>
 								</div>
