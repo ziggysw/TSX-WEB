@@ -36,7 +36,7 @@
 									Drapeaux en poche, il ne vous restera plus qu'à vous en équiper en dehors de la PvP,<br />
 									pour ensuite aller tenter de le déposer sur la base ennemie.<br />
 									Attention toutefois, vous ne serez pas seul ! pour participer aux captures PvP il vous faudra obligatoirement appartenir à un gang !<br />
-									Ce prés requis remplis, vous vous retrouverez soit en attaque (équipe rouge) avec les autres gangs attaquant pour vous épaulez,<br />
+									Ce pré requis rempli, vous vous retrouverez soit en attaque (équipe rouge) avec les autres gangs attaquant pour vous épauler,<br />
 									soit en défense (équipe bleue) ou vous serez confronté à tous les autres gangs du serveur !!!
 								</div>
 							</div>
@@ -48,15 +48,15 @@
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2>A quoi servent les gangs ?</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>À quoi servent les gangs ?</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
-									<p>Un Gang est un groupe de joueur qui décide de s'unir pour participer aux captures PvP, <br />
+									<p>Un Gang est un groupe de joueurs qui décide de s'unir pour participer aux captures PvP, <br />
 									il est composé au maximum de 10 joueurs qui peuvent être recrutés jusqu'à 5 minutes avant le début de la capture.
 									<br />
 									Le gang permet également l'entraide entre membres, un channel TS privé et une section forum rien que pour vous !<br />
-									Cela peut également vous permettre de mieux vous intégrer à la communauté étant donné que vous êtes appelé à côtoyé plus de joueurs et donc plus de métier,<br />
+									Cela peut également vous permettre de mieux vous intégrer à la communauté étant donné que vous êtes appelé à côtoyer plus de joueurs et donc plus de métier,<br />
 									en résumé être dans un gang est toujours un bonus pour votre Game Play au sein de notre communauté !</p>
 								</div>
 							</div>
@@ -68,7 +68,7 @@
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2>Comment crée un Gang </h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>Comment créer un Gang </h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
@@ -77,17 +77,17 @@
 										<li>Faire une donation de 20€ sur le site internet.</li>
 										<li>Contacter par mail Kossolax pour se faire prélever 2,5millions de $rp.</li>
 									</ol>
-									<p>Une fois cette donation faite, il vous suffira d'envoyer un mails à Kossolax@ts-x.eu pour demandé la création de votre gangs,<br />
-									en précisant les informations suivante :</p>
+									<p>Une fois cette donation faite, il vous suffira d'envoyer un mail à Kossolax@ts-x.eu pour demander la création de votre gang,<br />
+									en précisant les informations suivantes :</p>
 									<ul>
 										<li> Nom du Gang :</li> 
 										<li> Les Grades :</li> 
 										<li> Le Tag (image représentative du Gang) :</li> 
 									</ul>
 									<br />
-									<p>Suite à ce mail, votre gang sera crée dans les 24h et vous pourrez bénéficier d'une section "privé groupe" réserver au membre de votre gang<br />
-									et d'un channel TeamSpeak qui vous sera également exclusif, dans ce channel la lois c'est vous !<br />
-									Ce topic vous à convaincu et vous voulez votre propre Gang ?</p><br />
+									<p>Suite à ce mail, votre gang sera créé dans les 24h et vous pourrez bénéficier d'une section "privé groupe" réserver aux membres de votre gang<br />
+									et d'un channel TeamSpeak qui vous sera également exclusif, dans ce channel la loi c'est vous !<br />
+									Ce topic vous a convaincu et vous voulez votre propre Gang ?</p><br />
 									<center><a href="https://www.ts-x.eu/index.php?page=money" class="b_gang">CREER UN GANG</a></center>
 								</div>
 							</div>
@@ -115,7 +115,7 @@
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2>Une suspition de triche ?</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>Une suspicion de triche ?</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
@@ -142,7 +142,7 @@
 						<li>
 							<a href="#GroupB">Les Gangs</a>
 							<ul class="nav nav-stacked">
-								<li><a href="#GroupBSub1">A quoi servent les Gangs</a></li>
+								<li><a href="#GroupBSub1">À quoi servent les Gangs</a></li>
 								<li><a href="#GroupBSub2">Comment créer un Gang</a></li>
 							</ul>
 						</li>
@@ -150,7 +150,7 @@
 							<a href="#GroupC">Bien se préparer</a>
 						</li>
 						<li>
-							<a href="#GroupD">Suspition de triche</a>
+							<a href="#GroupD">Suspicion de triche</a>
 						</li>
 					</ul>
 				</nav>

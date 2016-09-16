@@ -12,11 +12,11 @@
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2>A quoi ça sert ?</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>À quoi ça sert ?</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
-									<p>Le crayon de couleur est un item proposé par les Coachs au prix de 900 $rp.<br />
+									<p>Le crayon de couleur est un item proposé par les Coachs au prix de 900 $Rp.<br />
 									Une fois l'item activé, il est valable jusqu'à votre déconnexion et vous permettra de mettre de la couleur dans votre vie ainsi que de simplifier certaines commandes !</p>
 								</div>
 							</div>
@@ -119,27 +119,26 @@
 										</tr>
 										<tr>
 											<td>{heure}</td>
-											<td>Heure</td>
+											<td>L'heure</td>
 										</tr>
 										<tr>
 											<td>{minutes}</td>
-											<td>Minutes</td>
+											<td>Les minutes</td>
 										</tr>
 										<tr>
 											<td>{job}</td>
-											<td>Rang du métier dans lequel vous êtes</td>
+											<td>Le rang du métier dans lequel vous êtes</td>
 										</tr>
 										<tr>
 											<td>{gang}</td>
-											<td>Rang du gang dans lequel vous êtes</td>
+											<td>Le rang du gang dans lequel vous êtes</td>
 										</tr>
 										<tr>
 											<td>{zone}</td>
-											<td>Zone dans laquelle vous êtes</td>
-										</tr>
+											<td>La zone dans laquelle vous êtes</td>										</tr>
 										<tr>
 											<td>{date}</td>
-											<td>Date sur le Rôle-Play</td>
+											<td>La date sur le Rôle-Play</td>
 										</tr>
 										<tr>
 											<td>{me} ou {client}</td>
@@ -169,7 +168,7 @@
 								</div>
 								<div class="panel-body">
 									<div class="row">
-										<p>Dicrectement en jeux : </p><br /><br />
+										<p>Directement en jeu : </p><br /><br />
 										<div class="col-sm-6">
 											<img class="img_wiki" src="/images/wiki/crayon/crayon.jpg" />
 										</div>
@@ -207,7 +206,7 @@
 				<nav class="col-md-2 bs-docs-sidebar">
 					<ul id="sidebar" class="nav nav-stacked fixed">
 						<li>
-							<a href="#GroupA">A quoi ça sert ?</a>
+							<a href="#GroupA">À quoi ça sert ?</a>
 						</li>
 						<li>
 							<a href="#GroupB">Les couleurs</a>
