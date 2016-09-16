@@ -107,6 +107,68 @@ exports = module.exports = function(server){
 
   	next();
   });
+
+  /**
+   * @api {get} /user/double/steamid/:SteamID GetUserDoubleByIP
+   * @apiName GetUserDoubleBySteamID
+   * @apiGroup User
+   * @apiParam {String} SteamID Un identifiant unique sous le format STEAM_1:x:xxxxxxx
+   */
+  server.get('/user/double/steamid/:id', function (req, res, next) {
+    if( req.params['id'] == 0 )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+
+    var cache = server.cache.get( req._url.pathname);
+    if( cache != undefined ) { return res.send(cache); };
+
+    var sql = "SELECT DISTINCT `steamid` FROM `rp_ip` WHERE `ip` IN ( SELECT DISTINCT `ip` FROM `rp_ip` WHERE `steamid` IN ( ";
+    sql += " SELECT DISTINCT `steamid` FROM `rp_ip` WHERE `ip` IN ( ";
+    sql += " SELECT `ip` FROM `rp_ip` WHERE `steamid`=? )))"
+
+    server.conn.query(sql, [req.params['id']], function(err, rows) {
+      if( err ) return res.send(new ERR.InternalServerError(err));
+      if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
+      var data = new Array();
+      for(var i=0; i<rows.length; i++)
+        data.push(rows[i].steamid);
+
+      server.cache.set( req._url.pathname, data);
+      return res.send( data );
+    });
+
+    next();
+  });
+  /**
+   * @api {get} /user/double/ip/:IP GetUserDoubleByIP
+   * @apiName GetUserDoubleByIP
+   * @apiGroup User
+   * @apiParam {String} IP
+   */
+  server.get('/user/double/ip/:id', function (req, res, next) {
+    if( req.params['id'] == 0 )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+
+    var cache = server.cache.get( req._url.pathname);
+    if( cache != undefined ) { return res.send(cache); };
+
+    var sql = "SELECT DISTINCT `steamid` FROM `rp_ip` WHERE `ip` IN ( SELECT DISTINCT `ip` FROM `rp_ip` WHERE `steamid` IN ( ";
+    sql += "SELECT DISTINCT `steamid` FROM `rp_ip` WHERE `ip` IN ( SELECT DISTINCT `ip` FROM `rp_ip` WHERE `steamid` IN ( ";
+    sql += " SELECT DISTINCT `steamid` FROM `rp_ip` WHERE `ip`=? )))) ";
+
+    server.conn.query(sql, [req.params['id']], function(err, rows) {
+      if( err ) return res.send(new ERR.InternalServerError(err));
+      if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
+      var data = new Array();
+      for(var i=0; i<rows.length; i++)
+        data.push(rows[i].steamid);
+
+      server.cache.set( req._url.pathname, data);
+      return res.send( data );
+    });
+
+    next();
+  });
+
   /**
    * @api {get} /user/:id/signature/:type GetUserSignature
    * @apiName GetUserSignature
