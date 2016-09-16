@@ -23,8 +23,8 @@
 										<br /><br />
 										<p>Pour configurer le mode vidéo,cliquez sur "Movies" :
 											<ul>
-												<li>Dans la case "Folder to save movies in" vous pouvez choisir l'emplacement de stockage de vos vidéos prises en jeu. ( Vous retrouverez donc vos records directement à l'emplacement que vous avez choisi).</li>
-												<li>Dans la case "Video Capture Hotkey" vous pouvez choisir une touche avec laquelle vous pourrez commencer la record. (Une record dure au maximum 30secondes).</li>
+												<li>Dans la case "Folder to save movies in" vous pouvez choisir l'emplacement de stockage de vos vidéos prises en jeu. (Vous retrouverez donc vos records directement à l'emplacement que vous avez choisi).</li>
+												<li>Dans la case "Video Capture Hotkey" vous pouvez choisir une touche avec laquelle vous pourrez commencer la record. (Une record dure au maximum 30 secondes).</li>
 											</ul>
 										</p>
 										<br />
@@ -93,7 +93,7 @@
 									<p>Pour faire une record avec Steam, il vous faudra tout d'abord avoir la console en jeu.<br />
 									Vous pouvez trouver <a target="_blan" href="/index.php?page=aide&sub=bind#t2">sur cette page</a> un tutoriel sur comment l'afficher.</p>
 									<br />
-									<p>Une fois fait,vous pouvez accéder à votre console à n'importe quel moment.<br />
+									<p>Une fois fait, vous pouvez accéder à votre console à n'importe quel moment.<br />
 									<br />
 									Pour lancer une record il vous suffit d'écrire : Record Nomdelarecord</p>
 									<br />
@@ -145,7 +145,7 @@
 									<br /><br />
 									<p>
 									Enfin, une fois votre record sélectionné, vous choisirez un titre à votre vidéo ainsi qu'une brève description.<br />
-									Les "Tags" sont des mots clés descriptifs que vous pouvez ajouter à votre vidéo afin d'aider à découvrir le contenu de votre vidéo.<br />
+									Les "Tags" sont des mots-clés descriptifs que vous pouvez ajouter à votre vidéo afin d'aider à découvrir le contenu de votre vidéo.<br />
 									<br />
 									À gauche vous trouverez le lien de votre vidéo (Record) que vous pourrez nous faire partager afin que nous puissions la regarder.<br />
 									Une fois cela terminé, cliquez sur "Publier", vous retrouverez votre vidéo dans votre Chaine.
