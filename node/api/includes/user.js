@@ -243,7 +243,7 @@ exports = module.exports = function(server){
       var sql = "SELECT DISTINCT `steamid` FROM `rp_ip` WHERE `ip` IN ( SELECT DISTINCT `ip` FROM `rp_ip` WHERE `steamid` IN ( ";
 
       sql += " SELECT DISTINCT `steamid` FROM `rp_ip` WHERE `ip` IN ( ";
-      sql += " SELECT `ip` FROM `rp_ip` WHERE `steamid`=? )"
+      sql += " SELECT `ip` FROM `rp_ip` WHERE `steamid`=? )";
 
       sql += " AND `steamid` NOT IN (SELECT `target` FROM `rp_double_contest` WHERE `steamid`=? "+sub+") ";
       sql += " AND `steamid` NOT IN (SELECT `steamid` FROM `rp_double_contest` WHERE `target`=? "+sub+") ";
