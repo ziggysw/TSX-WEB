@@ -260,14 +260,14 @@ exports = module.exports = function(server){
       return res.send(new ERR.BadRequestError("InvalidParam"));
 
     server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
-      var sub = " AND `approuved`='1'"
+      var sub = " AND `approuved`='1'";
 
       if( !err && row.length == 1 && row[0].steamid.replace("STEAM_0", "STEAM_1") == req.params['id'] ) sub = "";
 
       var sql = "SELECT DISTINCT `steamid` FROM `rp_ip` WHERE `ip` IN ( SELECT DISTINCT `ip` FROM `rp_ip` WHERE `steamid` IN ( ";
 
       sql += " SELECT DISTINCT `steamid` FROM `rp_ip` WHERE `ip` IN ( ";
-      sql += " SELECT `ip` FROM `rp_ip` WHERE `steamid`=? )"
+      sql += " SELECT `ip` FROM `rp_ip` WHERE `steamid`=? )";
 
       sql += " AND `steamid` NOT IN (SELECT `target` FROM `rp_double_contest` WHERE `steamid`=? "+sub+") ";
       sql += " AND `steamid` NOT IN (SELECT `steamid` FROM `rp_double_contest` WHERE `target`=? "+sub+") ";

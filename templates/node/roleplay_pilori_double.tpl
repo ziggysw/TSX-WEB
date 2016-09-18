@@ -41,7 +41,7 @@
     <td>{{item}}</td>
     <td>{{fullData[item].name}}</td>
     <td>{{fullData[item].job_name}}</td>
-    <td ng-show="steamid==Params.sub"><a class="btn btn-default" ng-click="$parent.showDialog = true; $parent.target = item; $parent.pData = fullData[item];">Contster</a></td>
+    <td ng-show="steamid==Params.sub"><a class="btn btn-default" ng-click="$parent.showDialog = true; $parent.target = item; $parent.pData = fullData[item];">Contester</a></td>
   </tr>
 </table>
 
