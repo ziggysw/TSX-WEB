@@ -7,6 +7,8 @@ exports = module.exports = function(server){
   var gd = require('node-gd');
   var fs = require('fs');
   var sendmail = require('sendmail')();
+  var TeamSpeak = require('node-teamspeak-api');
+
 
 
   function getVitalityLevel(points) {
@@ -143,20 +145,30 @@ exports = module.exports = function(server){
    */
   server.put('/user/pilori/:target/:time/:game/:reason', function (req, res, next) {
 
-
     server.conn.query(server.getAuthSMAdmin, [req.headers.auth], function(err, row) {
       if( err ) return res.send(new ERR.InternalServerError(err));
       if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
       var SteamID = row[0].steamid.replace("STEAM_1", "STEAM_0");
       var target = req.params['target'].replace("STEAM_1", "STEAM_0");
 
-      var sql = "INSERT INTO `srv_bans` (`id`, `SteamID`, `StartTime`, `EndTime`, `Length`, `adminSteamID`, `BanReason`, `game`) VALUES (NULL, ?, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()+?, ?, ?, ?, ?)";
+      var sql = "INSERT INTO `ts-x`.`srv_bans` (`id`, `SteamID`, `StartTime`, `EndTime`, `Length`, `adminSteamID`, `BanReason`, `game`) VALUES (NULL, ?, UNIX_TIMESTAMP(), UNIX_TIMESTAMP()+?, ?, ?, ?, ?)";
 
-      server.conn.query(sql, [target, req.params['time'], req.params['time'], SteamID, req.params['reason'], req.params['game']], function(err, rows) {
+      server.conn.query(sql, [target, req.params['time']*60, req.params['time']*60, SteamID, req.params['reason'], req.params['game']], function(err, rows) {
         if( err ) return res.send(new ERR.InternalServerError(err));
 
         return res.send( "OK" );
       });
+
+      if( req.params['game'] == "teamspeak" ) {
+        var tsClient = new TeamSpeak('176.31.38.179', 10011);
+      }
+      tsClient.api.login({ client_login_name: "tsxbot", client_login_password: server.TSTokken}, function(err, resp, req) {
+        tsClient.api.use({ sid: 1}, function(err, resp, req) {
+          tsClient.api.clientlist();
+          tsClient.send("clientupdate", {client_nickname: "[BOT] ts-x.eu"});
+        });
+      });
+
       next();
     });
     next();
