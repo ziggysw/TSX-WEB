@@ -1,8 +1,28 @@
 <div class="btn-group btn-group-justified" role="group">
-  <a class="btn btn-default" href="#/pilori/view/{{steamid}}"> Vos rapports </a>
+  <a class="btn btn-default" href="#/pilori/view/{{steamid}}"> Vos sanctions </a>
   <a class="btn btn-default" href="#/pilori/double/{{steamid}}"> Vos doubles comptes </a>
   <a class="btn btn-default" href="#/pilori/last/0"> Les dernières condamnations </a>
 </div>
+<form ng-show="isAdmin">
+  <div class="form-inline">
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="STEAM_0:x:abcdef" ng-model="target">
+		</div>
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="1440 temps en minutes" ng-model="time">
+		</div>
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="Raison..." ng-model="reason">
+		</div>
+		<div class="input-group">
+			<select name="game" class="form-control" ng-model="game"><option value="csgo">Counter-Strike: GO</option><option value="rp-kill">Roleplay: KILL</option><option value="rp-pvp">Roleplay: PvP</option><option value="rp-global">Roleplay: Chat Global</option><option value="rp-vocal">Roleplay: Chat Vocal</option><option value="rp-local">Roleplay: Chat Local</option><option value="rp-event">Roleplay: Event</option><option value="tf">Team Fortress</option><option value="forum">FORUM</option><option value="teamspeak">TeamSpeak</option><option value="ALL">Global</option><option value="teamspeak">TeamSpeak</option><option value="tribunal">Tribunal</option></select>
+		</div>
+		<div class="input-group">
+      <a class="btn btn-default" rest="put@/user/pilori/{{target}}/{{time}}/{{game}}/{{reason}}">Bannir</a>
+    </div>
+  </div>
+</form>
+<br />
 <style>
   .img-overlay {
     position: relative;
