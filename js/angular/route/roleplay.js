@@ -10,6 +10,14 @@ exports = module.exports = function(app) {
       templateUrl: function(p) { return "/templates/node/roleplay_tribunal_"+p.arg+".tpl"; },
       controller: 'rpTribunal',
       reloadOnSearch: false
+    }).when('/pilori/:arg/:sub', {
+      templateUrl: function(p) { return "/templates/node/roleplay_pilori_"+p.arg+".tpl"; },
+      controller: 'rpPiloriCase',
+      reloadOnSearch: false
+    }).when('/pilori/:arg', {
+      templateUrl: function(p) { return "/templates/node/roleplay_pilori_"+p.arg+".tpl"; },
+      controller: 'rpPiloriCase',
+      reloadOnSearch: false
     }).when('/hdv/:arg', {
       templateUrl: function(p) { return "/templates/node/roleplay_hdv.tpl"; },
       controller: 'rpHDV',

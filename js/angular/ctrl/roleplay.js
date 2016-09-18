@@ -5,13 +5,19 @@ app.controller('rpUpdate', function($scope, $http, $filter, $location, $routePar
   $http.get("https://www.ts-x.eu/api/live/update").success(function(res) { $scope.data = res; });
 });
 
-app.controller('mainCtrl', function($scope, $http, $filter, $location, $routeParams) {
+app.controller('mainCtrl', function($scope, $http, $filter, $location, $routeParams, $route, $timeout) {
   document.title = ".:|ts-X|:. RolePlay";
   $scope.Search = $location.search();
   $scope.Params = $routeParams;
   $scope.steamid = _steamid;
   $scope.isAdmin = (_isAdmin?true:false);
   $scope.Math = window.Math;
+
+  $scope.reloadTimer = function(timer) {
+    $timeout( function() {
+      $route.reload();
+    }, timer);
+  }
 
   $http.get("https://www.ts-x.eu/api/jobs").success(function(res) { $scope.jobs = res; });
   $http.get("https://www.ts-x.eu/api/groups").success(function(res) { $scope.groups = res; });
@@ -355,6 +361,56 @@ app.controller('rpTribunal', function($scope, $location, $filter, $http, $routeP
       }
     }
   }
+});
+app.controller('rpPiloriCase', function($scope, $location, $filter, $http, $routeParams) {
+  document.title = ".:|ts-X|:. RolePlay - Le Pilori";
+  var id = $routeParams.sub;
+
+  $scope.getBanDuration = function(reason, time) {
+    var duration = new Array();
+
+    switch(reason) {
+      case "irrespect":
+      case "spam": duration = [-5, -15, -60, 15, 60, 24*60, 2*24*60, 5*24*60, 7*24*60, 14*24*60, 21*24*60, 31*24*60, 40*24*60, 60*24*60, 90*24*60, 120*24*60]; break;
+      case "event": duration = [60, 24*60, 2*24*60, 5*24*60, 7*24*60, 14*24*60, 31*24*60]; break;
+      case "usebug": duration = [7*24*60, 365*24*60]; break;
+      case "cheat": duration = [365*24*60]; break;
+      case "double": duration = [0]; break;
+      case "refus": duration = [60, 24*60, 2*24*60, 5*24*60, 7*24*60, 14*24*60, 31*24*60]; break;
+      default: duration = [60, 24*60, 2*24*60, 5*24*60, 7*24*60, 14*24*60, 31*24*60]; break;
+    }
+
+    if( duration.length <= time )
+      time = duration.length - 1;
+    return duration[time];
+  }
+
+  if( $routeParams.arg == "view" ) {
+    $http.get("https://www.ts-x.eu/api/user/pilori/"+id).success(function (response) {
+      $scope.data = response;
+      var j = 0;
+      for(var i=0; i<response.length; i++) if( response[i].banned == 1 ) j++;
+      $scope.banned = j;
+    });
+    $http.get("https://www.ts-x.eu/api/user/pilori/"+id+"/next").success(function (response) { $scope.next = response; });
+  }
+  if( $routeParams.arg == "double" ) {
+    $http.get("https://www.ts-x.eu/api/user/double/steamid/"+id).success(function (response) {
+      $scope.data = response;
+      $scope.fullData = new Array();
+
+      angular.forEach(response, function(key) {
+        $http.get("https://www.ts-x.eu/api/user/"+key).success(function (response2) {
+          $scope.fullData[key] = response2;
+        });
+      });
+
+    });
+  }
+  if( $routeParams.arg == "last" ) {
+    $http.get("https://www.ts-x.eu/api/user/pilori/last/"+id).success(function (response) { $scope.data = response; });
+  }
+
 });
 app.controller('rpTribunalCase', function($scope, $location, $routeParams, $http, $timeout, $filter) {
   document.title = ".:|ts-X|:. RolePlay - Tribunal - Gestion d'un cas";

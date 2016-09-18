@@ -6,6 +6,8 @@ exports = module.exports = function(server){
   var statData = require('/home/leeth/tsx/assoc.json');
   var gd = require('node-gd');
   var fs = require('fs');
+  var sendmail = require('sendmail')();
+
 
   function getVitalityLevel(points) {
     var l = Math.floor(Math.log2(points) / 2.0 - 3.0);
@@ -109,7 +111,122 @@ exports = module.exports = function(server){
   });
 
   /**
-   * @api {get} /user/double/steamid/:SteamID GetUserDoubleByIP
+   * @api {get} /user/pilori/last/:page GetUserBan
+   * @apiName GetUserBan
+   * @apiGroup User
+   */
+  server.get('/user/pilori/last/:page', function (req, res, next) {
+
+    var cache = server.cache.get( req._url.pathname);
+    if( cache != undefined ) { return res.send(cache); };
+
+    var sql = "SELECT REPLACE(COALESCE(N.`SteamID`, tmp.`SteamID`), 'STEAM_0', 'STEAM_1') as `SteamID`, COALESCE(`uname2`, N.`SteamID`, tmp.`SteamID`) as `nick`, `BanReason` as `reason`, `Length`, `game`, `banned`, `StartTime`, `is_unban` as `unban` FROM (";
+    sql += " SELECT *, '1' as banned FROM `ts-x`.`srv_bans` WHERE `is_hidden`='0' AND ((`Length`='0' OR `EndTime`>UNIX_TIMESTAMP()) AND `is_unban`='0') ";
+    sql += "   UNION ";
+    sql += "   SELECT *, '0' as banned FROM `ts-x`.`srv_bans` WHERE `is_hidden`='0' AND NOT ((`Length`='0' OR `EndTime`>UNIX_TIMESTAMP()) AND `is_unban`='0') ";
+    sql += " ) AS tmp LEFT JOIN `ts-x`.`srv_nicks` N ON REPLACE(tmp.`SteamID`, 'STEAM_0', 'STEAM_1')=N.`SteamID` ORDER BY id DESC LIMIT ?,100;";
+
+    server.conn.query(sql, [req.params['page']*100], function(err, rows) {
+      if( err ) return res.send(new ERR.InternalServerError(err));
+      if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
+
+      server.cache.set( req._url.pathname, rows);
+      return res.send( rows );
+    });
+    next();
+  });
+
+
+  /**
+   * @api {get} /user/pilori/:SteamID GetUserBanBySteamID
+   * @apiName GetUserBanBySteamID
+   * @apiGroup User
+   * @apiParam {String} SteamID Un identifiant unique sous le format STEAM_1:x:xxxxxxx
+   */
+  server.get('/user/pilori/:id', function (req, res, next) {
+    if( req.params['id'] == 0 )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+
+    var cache = server.cache.get( req._url.pathname);
+    if( cache != undefined ) { return res.send(cache); };
+
+    var sql = "SELECT `BanReason` as `reason`, `Length`, `game`, `banned`, `StartTime`, `is_unban` as `unban` FROM (";
+    sql += " SELECT *, '1' as banned FROM `ts-x`.`srv_bans` WHERE REPLACE(`steamid`, 'STEAM_0', 'STEAM_1')=? AND `is_hidden`='0' AND ((`Length`='0' OR `EndTime`>UNIX_TIMESTAMP()) AND `is_unban`='0') ";
+    sql += "   UNION ";
+    sql += "   SELECT *, '0' as banned FROM `ts-x`.`srv_bans` WHERE REPLACE(`steamid`, 'STEAM_0', 'STEAM_1')=? AND `is_hidden`='0' AND NOT ((`Length`='0' OR `EndTime`>UNIX_TIMESTAMP()) AND `is_unban`='0') ";
+    sql += " ) AS tmp ORDER BY banned DESC, id DESC; ";
+
+    server.conn.query(sql, [req.params['id'],req.params['id']], function(err, rows) {
+      if( err ) return res.send(new ERR.InternalServerError(err));
+      if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
+
+      server.cache.set( req._url.pathname, rows);
+      return res.send( rows );
+    });
+    next();
+  });
+
+  /**
+   * @api {get} /user/pilori/:SteamID/next GetUserNextBanBySteamID
+   * @apiName GetUserNextBanBySteamID
+   * @apiGroup User
+   * @apiParam {String} SteamID Un identifiant unique sous le format STEAM_1:x:xxxxxxx
+   */
+  server.get('/user/pilori/:id/next', function (req, res, next) {
+    if( req.params['id'] == 0 )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+
+    var cache = server.cache.get( req._url.pathname);
+    if( cache != undefined ) { return res.send(cache); };
+
+    var obj = {irrespect: 0, spam: 0, event: 0, usebug: 0, cheat: 0, double: 0, refus: 0, freekill: 0, autres: 0};
+    var filter = {
+      irrespect: new RegExp(/(insulte)|(respect)|(provocation)|(lourd)|(calmer)|(gueule)|(racis)|(propos)|(menace)|(gag)|(rage)|(affaire)/),
+      spam: new RegExp(/(flood)|(spam)|(hldj)|(micro)|(musique)|(music)/),
+      event: new RegExp(/(event)|(braquage)|(quete)|(nuisible)|(évent)|(quête)/),
+      usebug: new RegExp(/(bug)/),
+      cheat: new RegExp(/(cheat)|(hack)|(triche)|(exploit)|(ddos)/),
+      double: new RegExp(/(double)/),
+      refus : new RegExp(/(refus)|(black)/),
+      freekill : new RegExp(/(freekill)|(fk massif)/)
+    };
+
+    var obj2 = {irrespect: new Array(), spam: new Array(), event: new Array(), usebug: new Array(), cheat: new Array(), double: new Array(), refus: new Array(), freekill: new Array(), autres: new Array()};
+
+    server.conn.query("SELECT * FROM `ts-x`.`srv_bans` WHERE REPLACE(`steamid`, 'STEAM_0', 'STEAM_1')=?;", [req.params['id']], function(err, rows) {
+      if( err ) return res.send(new ERR.InternalServerError(err));
+      if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
+
+      var k = 0;
+      var found = false;
+
+      for(var i=0; i<rows.length; i++) {
+
+        found = false;
+
+        for(var j=0; j<Object.keys(filter).length; j++) {
+          if( filter[Object.keys(filter)[j]].exec(rows[i].BanReason.toLowerCase()) ) {
+
+            obj[Object.keys(filter)[j]]++;
+            obj2[Object.keys(filter)[j]].push(rows[i].BanReason);
+
+            found = true;
+          }
+        }
+
+        if( ! found ) {
+          obj.autres++;
+          obj2["autres"].push(rows[i].BanReason);
+        }
+      }
+
+      server.cache.set( req._url.pathname, {count: obj, other: obj2});
+      return res.send( {count: obj, other: obj2} );
+    });
+    next();
+  });
+  /**
+   * @api {get} /user/double/steamid/:SteamID GetUserDoubleBySteamID
    * @apiName GetUserDoubleBySteamID
    * @apiGroup User
    * @apiParam {String} SteamID Un identifiant unique sous le format STEAM_1:x:xxxxxxx
@@ -118,22 +235,36 @@ exports = module.exports = function(server){
     if( req.params['id'] == 0 )
       return res.send(new ERR.BadRequestError("InvalidParam"));
 
-    var cache = server.cache.get( req._url.pathname);
-    if( cache != undefined ) { return res.send(cache); };
+    server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
+      var sub = " AND `approuved`='1'"
 
-    var sql = "SELECT DISTINCT `steamid` FROM `rp_ip` WHERE `ip` IN ( SELECT DISTINCT `ip` FROM `rp_ip` WHERE `steamid` IN ( ";
-    sql += " SELECT DISTINCT `steamid` FROM `rp_ip` WHERE `ip` IN ( ";
-    sql += " SELECT `ip` FROM `rp_ip` WHERE `steamid`=? )))"
+      if( !err && row.length == 1 && row[0].steamid.replace("STEAM_0", "STEAM_1") == req.params['id'] ) sub = "";
 
-    server.conn.query(sql, [req.params['id']], function(err, rows) {
-      if( err ) return res.send(new ERR.InternalServerError(err));
-      if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
-      var data = new Array();
-      for(var i=0; i<rows.length; i++)
-        data.push(rows[i].steamid);
+      var sql = "SELECT DISTINCT `steamid` FROM `rp_ip` WHERE `ip` IN ( SELECT DISTINCT `ip` FROM `rp_ip` WHERE `steamid` IN ( ";
 
-      server.cache.set( req._url.pathname, data);
-      return res.send( data );
+      sql += " SELECT DISTINCT `steamid` FROM `rp_ip` WHERE `ip` IN ( ";
+      sql += " SELECT `ip` FROM `rp_ip` WHERE `steamid`=? )"
+
+      sql += " AND `steamid` NOT IN (SELECT `target` FROM `rp_double_contest` WHERE `steamid`=? "+sub+") ";
+      sql += " AND `steamid` NOT IN (SELECT `steamid` FROM `rp_double_contest` WHERE `target`=? "+sub+") ";
+
+      sql += " )) ";
+
+      sql += " AND `steamid` NOT IN (SELECT `target` FROM `rp_double_contest` WHERE `steamid`=? "+sub+") ";
+      sql += " AND `steamid` NOT IN (SELECT `steamid` FROM `rp_double_contest` WHERE `target`=? "+sub+") ";
+
+      server.conn.query(sql, [req.params['id'],req.params['id'],req.params['id'],req.params['id'],req.params['id']], function(err, rows) {
+        if( err ) return res.send(new ERR.InternalServerError(err));
+        if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
+        var data = new Array();
+        for(var i=0; i<rows.length; i++)
+          data.push(rows[i].steamid);
+
+        server.cache.set( req._url.pathname, data);
+        return res.send( data );
+      });
+
+      next();
     });
 
     next();
@@ -166,6 +297,34 @@ exports = module.exports = function(server){
       return res.send( data );
     });
 
+    next();
+  });
+  /**
+   * @api {put} /user/double/deny/:target/:reason UserDoubleDeny
+   * @apiName UserDoubleDeny
+   * @apiGroup User
+   * @apiParam {String} SteamID
+   * @apiParam {String} reason
+   */
+  server.put('/user/double/deny/:target/:reason', function (req, res, next) {
+    if( req.params['id'] == 0 )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+
+    server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
+      if( err ) return res.send(new ERR.InternalServerError(err));
+      if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+      var SteamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
+      var UserName = row[0].username_clean;
+
+      var mail = "<input type='text' value='"+ SteamID + "'/> conteste <input type='text' value='" + req.params['target'] + "'/> <br />"+ req.params['reason'];
+
+      sendmail({from: 'account@ts-x.eu', to: 'kossolax@ts-x.eu', subject: 'Double compte: '+ UserName, html: mail }, function(err, reply) {
+        server.conn.query("INSERT INTO `rp_double_contest` (`steamid`, `target`) VALUES (?, ?);", [SteamID, req.params['target']], function(err, rows) {
+          return res.send("Votre contestation va être annalysée sous les 24 heures.");
+        });
+      });
+
+    });
     next();
   });
 
