@@ -236,7 +236,7 @@ exports = module.exports = function(server){
       return res.send(new ERR.BadRequestError("InvalidParam"));
 
     server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
-      var sub = " AND `approuved`='1'"
+      var sub = " AND `approuved`='1'";
 
       if( !err && row.length == 1 && row[0].steamid.replace("STEAM_0", "STEAM_1") == req.params['id'] ) sub = "";
 
