@@ -44,109 +44,71 @@
 									<p>Dans la ville de Princeton il existe 12 commerces différents qui recherchent activement des employés pour répondre aux attentes de leurs clients, serez-vous à la hauteur ?</p>
 									<br /><br />
 									<img id="GroupBSub1" alt="armurier" class="img_wiki radius" src="/images/wiki/job/armu.jpg" />
-									<p>L'Armurerie vous permet de fabriquer et de vendre des armes pour vous défendre face aux criminels qui sévissent dans Princeton.</p>
-									<!--<div class="row">
-										<div class="col-xs-offset-1 col-xs-10">
-											<ul class="nav nav-tabs">
-												<li ng-class="{active: main.active.tab == 'presentation' }">
-													<a ng-click='main.active.tab = "presentation" '>Présentation</a>
-												</li>
-												<li ng-class="{active: main.active.tab == 'items' }">
-													<a ng-click='main.active.tab = "items" '>Produits</a>
-												</li>
-												<li ng-class="{active: main.active.tab == 'tree' }">
-													<a ng-click='main.active.tab = "tree" '>Hierarchies</a>
-												</li>
-												<li ng-class="{active: main.active.tab == 'shownote' }">
-													<a ng-click='main.active.tab = "shownote" '>Règlement</a>
-												</li>
-											</ul>
-
-											<div class="tab-content">
-												<div ng-switch='main.active.tab'>
-													<div
-														ng-switch-when='presentation'
-														ng-include='"/job/presentation/armu.html"'></div>
-													<div
-														ng-switch-when='items'
-														ng-include='""'></div>
-													<div
-														ng-switch-when='tree'
-														ng-include='""'></div>
-													<div
-														ng-switch-when='shownote'
-														ng-include='""'></div>
-												</div>
-											</div>
-										</div>
-									</div>-->
-									<br /><br />
+									<div ng-include="'/templates/tpl/aide/job/111.tpl'"><i ng-repeat="i in [5,4,3,2,1]" class="fa fa-cog fa-spin fa-5x"></i></div>
+									&nbsp;<br /><br />
 									<img id="GroupBSub2" alt="agence_immo" class="img_wiki radius" src="/images/wiki/job/immo.jpg" />
 									<br /><br />
-									<p>Elle est responsable des appartements et de la villa au sein de Princeton.</p>
+									<div ng-include="'/templates/tpl/aide/job/61.tpl'"><i ng-repeat="i in [5,4,3,2,1]" class="fa fa-cog fa-spin fa-5x"></i></div>
 									<br />
 									<p></p>
-									<br /><br />
+									&nbsp;<br /><br />
 									<img id="GroupBSub3" alt="artificier" class="img_wiki radius" src="/images/wiki/job/artif.jpg" />
 									<br /><br />
-									<p>Ils sont les rois des explosifs en tous genres, mais aussi des fusées et de bien d'autres objets fulminants et foudroyants !</p>
+									<div ng-include="'/templates/tpl/aide/job/131.tpl'"><i ng-repeat="i in [5,4,3,2,1]" class="fa fa-cog fa-spin fa-5x"></i></div>
 									<br />
 									<p></p>
-									<br /><br />
+									&nbsp;<br /><br />
 									<img id="GroupBSub4" alt="artisan" class="img_wiki radius" src="/images/wiki/job/arti.jpg" />
 									<br /><br />
-									<p>Ils sont les maîtres du bricolage, vous savez vous servir de vos 10 doigts ? Rejoignez-les !</p>
+									<div ng-include="'/templates/tpl/aide/job/31.tpl'"><i ng-repeat="i in [5,4,3,2,1]" class="fa fa-cog fa-spin fa-5x"></i></div>
 									<br />
 									<p></p>
-									<br /><br />
+									&nbsp;<br /><br />
 									<img id="GroupBSub5" alt="banquier" class="img_wiki radius" src="/images/wiki/job/bank.jpg" />
 									<br /><br />
-									<p>C'est un métier de vente de notoriété publique, elle permet de fournir des cartes bleues, des chèques et de multiples autres produits financiers.</p>
+									<div ng-include="'/templates/tpl/aide/job/211.tpl'"><i ng-repeat="i in [5,4,3,2,1]" class="fa fa-cog fa-spin fa-5x"></i></div>
 									<br />
 									<p></p>
-									<br /><br />
+									&nbsp;<br /><br />
 									<img id="GroupBSub6" alt="carshop" class="img_wiki radius" src="/images/wiki/job/cars.jpg" />
 									<br /><br />
-									<p>Il est le seul endroit où vous pourrez vous procurer une voiture. <br />
-									De l'achat de la simple moto à la voiture tuné, ils ont tout ce que vous voulez !</p>
+									<div ng-include="'/templates/tpl/aide/job/51.tpl'"><i ng-repeat="i in [5,4,3,2,1]" class="fa fa-cog fa-spin fa-5x"></i></div>
 									<br />
 									<p></p>
-									<br /><br />
+									&nbsp;<br /><br />
 									<img id="GroupBSub7" alt="coach" class="img_wiki radius" src="/images/wiki/job/coach.jpg" />
 									<br /><br />
-									<p>Ils sont des entraîneurs, ils apprennent à la population à se servir d'un couteau, à éviter les coups de couteau ou encore à apprendre à tirer en fournissant divers permis de port d'arme.</p>
+									<div ng-include="'/templates/tpl/aide/job/71.tpl'"><i ng-repeat="i in [5,4,3,2,1]" class="fa fa-cog fa-spin fa-5x"></i></div>
 									<br />
 									<p></p>
-									<br /><br />
+									&nbsp;<br /><br />
 									<img id="GroupBSub8" alt="hopital" class="img_wiki radius" src="/images/wiki/job/hp.jpg" />
 									<br /><br />
-									<p>Son rôle est de soigner les patients en cas de maladie, en leur fournissant les médicaments adéquats.</p>
+									<div ng-include="'/templates/tpl/aide/job/11.tpl'"><i ng-repeat="i in [5,4,3,2,1]" class="fa fa-cog fa-spin fa-5x"></i></div>
 									<br />
 									<p></p>
-									<br /><br />
+									&nbsp;<br /><br />
 									<img id="GroupBSub9" alt="loto" class="img_wiki radius" src="/images/wiki/job/loto.jpg" />
 									<br /><br />
-									<p>Un loisir unique dans notre ville, le loto sert à tous les habitants afin de se divertir. <br />
-									Mais en cachette , il complote pour vous rendre riche, toujours plus riche.</p>
+									<div ng-include="'/templates/tpl/aide/job/171.tpl'"><i ng-repeat="i in [5,4,3,2,1]" class="fa fa-cog fa-spin fa-5x"></i></div>
 									<br />
 									<p></p>
-									<br /><br />
+									&nbsp;<br /><br />
 									<img id="GroupBSub10" alt="mcdo" class="img_wiki radius" src="/images/wiki/job/mcdo.jpg" />
 									<br /><br />
-									<p>"Venez comme vous êtes", Tel est le slogan de l'unique fast-food de Princeton.<br />
-									Idéal pour une sortie entre amis, c'est un métier qui permettra de vendre divers produits utiles dans la vie de tous les jours.</p>
+									<div ng-include="'/templates/tpl/aide/job/21.tpl'"><i ng-repeat="i in [5,4,3,2,1]" class="fa fa-cog fa-spin fa-5x"></i></div>
 									<br />
 									<p></p>
-									<br /><br />
+									&nbsp;<br /><br />
 									<img id="GroupBSub11" alt="sexshop" class="img_wiki radius" src="/images/wiki/job/sex.png" />
 									<br /><br />
-									<p>Du sadomasochisme, à l'homosexualité en passant par la zoophilie, ils vous trouveront toujours de quoi vous faire plaisir et sauront toujours vous faire vibrer.</p>
+									<div ng-include="'/templates/tpl/aide/job/191.tpl'"><i ng-repeat="i in [5,4,3,2,1]" class="fa fa-cog fa-spin fa-5x"></i></div>
 									<br />
 									<p></p>
-									<br /><br />
+									&nbsp;<br /><br />
 									<img id="GroupBSub12" alt="mercenaire" class="img_wiki radius" src="/images/wiki/job/tech.png" />
 									<br /><br />
-									<p>Ils sont la modernité et le futur, ils disposent d'une grande source de technologie </p>
+									<div ng-include="'/templates/tpl/aide/job/221.tpl'"><i ng-repeat="i in [5,4,3,2,1]" class="fa fa-cog fa-spin fa-5x"></i></div>
 									<br />
 									<p></p>
 									<br /><br />
@@ -167,21 +129,20 @@
 									<br /><br />
 									<img id="GroupCSub1" alt="tribu" class="img_wiki radius" src="/images/wiki/job/tribu.jpg" />
 									<br /><br />
-									<p>Composée de Juges dévoués, il traite de nombreuses plaintes diverses dans le but de faire respecter les lois et les devoirs des citoyens.<br />
-									Ses employés font preuves d'impartialité dans n'importe quelle situation. Sans eux, la vie se résumerait à l'anarchie...</p>
+									<div ng-include="'/templates/tpl/aide/job/101.tpl'"><i ng-repeat="i in [5,4,3,2,1]" class="fa fa-cog fa-spin fa-5x"></i></div>
 									<br />
 									<p></p>
-									<br /><br />
+									&nbsp;<br /><br />
 									<img id="GroupCSub2" alt="avocat" class="img_wiki radius" src="/images/wiki/job/avoc.jpg" />
 									<br /><br />
 									<p>Ce métier annex vous offre l'occasion de défendre une victime ou un accusé pendant un procès.<br />
 									Si défendre la veuve et le meurtrier vous inspire,<a href="https://www.ts-x.eu/forum/viewtopic.php?f=35&t=33602&view=unread#unread"> c'est par ici !</a></p>
 									<br />
 									<p></p>
-									<br /><br />
+									&nbsp;<br /><br />
 									<img id="GroupCSub3" alt="police" class="img_wiki radius" src="/images/wiki/job/police.jpg" />
 									<br /><br />
-									<p>C'est le métier le plus important et le plus prestigieux de la ville, son but est simple, réduire au maximum la criminalité, le vol et tout sorte de trafique illégal dans Princeton.</p>
+									<div ng-include="'/templates/tpl/aide/job/1.tpl'"><i ng-repeat="i in [5,4,3,2,1]" class="fa fa-cog fa-spin fa-5x"></i></div>
 									<br />
 									<p></p>
 								</div>
@@ -201,20 +162,19 @@
 									<br /><br />
 									<img id="GroupDSub1" alt="mafia" class="img_wiki radius" src="/images/wiki/job/mafia.jpg" />
 									<br /><br />
-									<p>Le vol, le meurtre, les attaques à main armée. La discrétion, le pouvoir, la famille. </p>
+									<div ng-include="'/templates/tpl/aide/job/91.tpl'"><i ng-repeat="i in [5,4,3,2,1]" class="fa fa-cog fa-spin fa-5x"></i></div>
 									<br />
 									<p></p>
-									<br /><br />
+									&nbsp;<br /><br />
 									<img id="GroupDSub2" alt="mercenaire" class="img_wiki radius" src="/images/wiki/job/merco.jpg" />
 									<br /><br />
-									<p>Ce sont des combattants émérites recrutés moyennant finance pour kidnapper ou assassiner vos pires ennemis.</p>
+									<div ng-include="'/templates/tpl/aide/job/41.tpl'"><i ng-repeat="i in [5,4,3,2,1]" class="fa fa-cog fa-spin fa-5x"></i></div>
 									<br />
 									<p></p>
-									<br /><br />
+									&nbsp;<br /><br />
 									<img id="GroupDSub3" alt="stidda" class="img_wiki radius" src="/images/wiki/job/stidda.jpg" />
 									<br /><br />
-									<p>C'est un gang soudé et puissant qui est constamment à la recherche d'armes, d'argent et de voitures.<br />
-									Il est également connu des forces de l'ordre pour fournir toute la ville en drogue de tous genres.</p>
+									<div ng-include="'/templates/tpl/aide/job/81.tpl'"><i ng-repeat="i in [5,4,3,2,1]" class="fa fa-cog fa-spin fa-5x"></i></div>
 									<br />
 									<p></p>
 								</div>
@@ -301,10 +261,10 @@
 								<li><a href="#GroupBSub3">Artificier</a></li>
 								<li><a href="#GroupBSub4">Artisan</a></li>
 								<li><a href="#GroupBSub5">Banquier</a></li>
-								<li><a href="#GroupBSub6">Carshop</a></li>
+								<li><a href="#GroupBSub6">Concessionnaire</a></li>
 								<li><a href="#GroupBSub7">Coach</a></li>
 								<li><a href="#GroupBSub8">L'hôpital</a></li>
-								<li><a href="#GroupBSub9">Vendeur Loto</a></li>
+								<li><a href="#GroupBSub9">Casino</a></li>
 								<li><a href="#GroupBSub10">Mc Donald's</a></li>
 								<li><a href="#GroupBSub11">Sex-shop</a></li>
 								<li><a href="#GroupBSub12">Technicien</a></li>

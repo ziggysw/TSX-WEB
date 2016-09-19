@@ -4,7 +4,7 @@
 	<p class="txt"><span><img alt="attention" id="img_warning" src="/images/wiki/warning.png"/></span>
 	Si cette page n'est plus d'actualité, vous pouvez nous le signaler
 	<a href="https://www.ts-x.eu/forum/viewtopic.php?f=10&t=33820">ici</a> ou le modifier vous-même sur <a href="https://github.com/ts-x/TSX-WEB/tree/master/templates/tpl/aide">Github</a></p>
-</div> 
+</div>
 
 <script type="text/javascript">
   var app = angular.module("tsx", [])
@@ -23,5 +23,20 @@
   .controller("ctrlAide", function($scope, $http) {
 		$("body").popover({ selector: '[data-toggle="popover"]', trigger: "hover"});
 		$("body").tooltip({ selector: '[data-toggle="tooltip"]', trigger: "hover"});
-  });
+  })
+	.controller("ctrlTabs", function($scope, $http, $attrs) {
+		$scope.tabs = "desc";
+
+		$scope.$watch("tabs", function(newValue, oldValue) {
+
+			$scope.users = $scope.items = $scope.jobs = null;
+			if( newValue == "memb" )
+				$http.get("/api/jobs/"+$attrs.job+"/users").success(function(res) { $scope.users = res; });
+			else if( newValue == "item" )
+				$http.get("/api/items/job/"+$attrs.job).success(function(res) { $scope.items = res; });
+			else if( newValue == "note" || newValue == "hier" )
+				$http.get("/api/job/"+$attrs.job).success(function(res) { $scope.jobs = res; });
+
+		});
+	});
 </script>

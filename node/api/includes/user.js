@@ -122,7 +122,7 @@ exports = module.exports = function(server){
     var cache = server.cache.get( req._url.pathname);
     if( cache != undefined ) { return res.send(cache); };
 
-    var sql = "SELECT REPLACE(COALESCE(N.`SteamID`, tmp.`SteamID`), 'STEAM_0', 'STEAM_1') as `SteamID`, COALESCE(`uname2`, N.`SteamID`, tmp.`SteamID`) as `nick`, `BanReason` as `reason`, `Length`, `game`, `banned`, `StartTime`, `is_unban` as `unban` FROM (";
+    var sql = "SELECT id, REPLACE(COALESCE(N.`SteamID`, tmp.`SteamID`), 'STEAM_0', 'STEAM_1') as `SteamID`, COALESCE(`uname2`, N.`SteamID`, tmp.`SteamID`) as `nick`, `BanReason` as `reason`, `Length`, `game`, `banned`, `StartTime`, `is_unban` as `unban` FROM (";
     sql += " SELECT *, '1' as banned FROM `ts-x`.`srv_bans` WHERE `is_hidden`='0' AND ((`Length`='0' OR `EndTime`>UNIX_TIMESTAMP()) AND `is_unban`='0') ";
     sql += "   UNION ";
     sql += "   SELECT *, '0' as banned FROM `ts-x`.`srv_bans` WHERE `is_hidden`='0' AND NOT ((`Length`='0' OR `EndTime`>UNIX_TIMESTAMP()) AND `is_unban`='0') ";
@@ -164,8 +164,22 @@ exports = module.exports = function(server){
       }
       tsClient.api.login({ client_login_name: "tsxbot", client_login_password: server.TSTokken}, function(err, resp, req) {
         tsClient.api.use({ sid: 1}, function(err, resp, req) {
-          tsClient.api.clientlist();
-          tsClient.send("clientupdate", {client_nickname: "[BOT] ts-x.eu"});
+          tsClient.send("clientupdate", {client_nickname: "[BOT2] ts-x.eu"});
+          tsClient.send('clientlist', function(err, resp, req) {
+            var clients = new Array();
+            resp.data.forEach(function(element) {
+              clients[element.client_database_id] = element.clid;
+            });
+            server.conn.query("SELECT `client_id` FROM `TeamSpeak`.`clients` WHERE `steamid`=?;", [target], function(err, rows) {
+              for(var i=0; i<rows.length; i++) {
+                tsClient.send("servergroupdelclient", {sgid: 7, cldbid: rows[i].client_id});
+                if( clients[rows[i].client_id] > 0 )
+                  tsClient.send("clientkick", {reasonid: 5, clid: clients[rows[i].client_id], reasonmsg: "banned"});
+              }
+
+              setTimeout(function() { tsClient.disconnect(); }, 3000);
+            });
+          });
         });
       });
 
