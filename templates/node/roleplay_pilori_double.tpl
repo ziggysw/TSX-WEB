@@ -66,6 +66,7 @@
               <option>Il s'agit un proche qui est venu chez moi</option>
               <option>Il s'agit d'un ancien compte que je n'ai plus accès</option>
               <option>Il s'agit d'une erreur, je n'ai pas partagé mon compte avec lui</option>
+              <option>J'ai partagé mon compte avec lui, mais il n'a plus accès.</option>
               <option>Je ne sais pas qui c'est</option>
               <option>Autres, je souhaite être recontacté</option>
             </select>

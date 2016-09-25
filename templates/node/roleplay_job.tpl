@@ -66,7 +66,7 @@
 
 
     <ul class="list-unstyled" dnd-list="data.notes">
-      <li ng-repeat="item in data.notes" dnd-draggable="item" dnd-moved="data.notes.splice($index, 1);" dnd-dragend="dropCallback(event, $index, item);">
+      <li ng-repeat="item in data.notes" ng-class="item.approuved?'':'bg-danger'" dnd-draggable="item" dnd-moved="data.notes.splice($index, 1);" dnd-dragend="dropCallback(event, $index, item);">
         <span ng-show="isAdmin">
           <a href class="fa fa-arrows"></a>
           <a href class="fa fa-trash-o" rest="delete@/job/{{Params.sub}}/note/{{item.id}}" ng-click="data.notes.splice($index, 1);"></a>

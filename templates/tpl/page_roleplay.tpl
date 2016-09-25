@@ -23,7 +23,7 @@ Highcharts.setOptions({lang: {
 	    <ul class="dropdown-menu">
 	      <li ng-repeat="item in jobs">
 					<a href="#/job/{{item.id}}?TABS=player">
-						<span class="pull-left" ng-class="item.steamid ? '' : 'text-danger'">{{item.name}}</span>
+						<span class="pull-left" ng-class="item.steamid ? '' : 'text-danger'"><i ng-hide="{{item.approuved}}" class="fa fa-exclamation text-danger" aria-hidden="true"></i>{{item.name}}</span>
 						<i class="pull-right" ng-class="(item.current-item.quota)>0 ? 'text-success' : (item.current-item.quota)>-2 ? 'text-warning' : 'text-danger'">{{item.current}}  / {{item.quota}}</i>
 						<i class="clearfix"></i>
 					</a>

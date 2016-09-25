@@ -46,8 +46,7 @@
 						La communauté du roleplay sera là aussi pour vous aider, c'est un peu long à lire, mais prenez le temps de le faire, cela ne peut que vous aider à mieux comprendre le fonctionnement du jeu.<br />
 						Le roleplay ts-x compte au total 15 jobs, avec une hiérarchie bien précise, et toujours à leur tête un chef accompagné(s) d'un ou plusieurs co-chef(s).<br />
 						<br />
-						Ils sont tous référencés avec les différents membres qui les composent sur <a href="/index.php?page=roleplay2#/">cette page</a>.<br />
-						( Pour plus d'informations et de précisions, vous pouvez retrouver un guide sur <a href="/index.php?page=aide&sub=job">comment trouver un job</a> )<br />
+						Ils sont tous référencés avec les différents membres qui les composent sur <a href="/index.php?page=aide&sub=emploi">cette page</a>.<br />
 						Un <a href="https://www.ts-x.eu/forum/viewtopic.php?f=10&t=26749">règlement général</a> est mis à votre disposition sur le site pour vous permettre de mieux comprendre le fonctionnement de la communauté,<br />
 						Il est souvent mis à jour et des modifications peuvent survenir tous les jours.<br />
 						<br />
@@ -63,6 +62,60 @@
 		<br />
 		<div class="row">
 			<div id="GroupC" class="col-md-12 group">
+				<div class="panel panel-wiki">
+					<div class="row">
+						<div class="hidden-xs hidden-sm col-md-1">
+							<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+						</div>
+						<div class="col-md-11">
+							<div class="panel-heading panel-heading-wiki"><h2>Monter en Lvl</h2></div>
+						</div>
+					</div>
+					<div class="panel-body">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<br />
+		<div class="row">
+			<div id="GroupCSub1" class="col-md-12 group">
+				<div class="panel panel-wiki">
+					<div class="row">
+						<div class="hidden-xs hidden-sm col-md-1">
+							<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+						</div>
+						<div class="col-md-11">
+							<div class="panel-heading panel-heading-wiki"><h2>Les bonus de LvL</h2></div>
+						</div>
+					</div>
+					<div class="panel-body">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<br />
+		<div class="row">
+			<div id="GroupCSub2" class="col-md-12 group">
+				<div class="panel panel-wiki">
+					<div class="row">
+						<div class="hidden-xs hidden-sm col-md-1">
+							<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+						</div>
+						<div class="col-md-11">
+							<div class="panel-heading panel-heading-wiki"><h2>Le Prestige</h2></div>
+						</div>
+					</div>
+					<div class="panel-body">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<br />
+		<div class="row">
+			<div id="GroupD" class="col-md-12 group">
 				<div class="panel panel-wiki">
 					<div class="row">
 						<div class="hidden-xs hidden-sm col-md-1">
@@ -145,7 +198,7 @@
 		</div>
 		<br />
 		<div class="row">
-			<div id="GroupD" class="col-md-12 group">
+			<div id="GroupE" class="col-md-12 group">
 				<div class="panel panel-wiki">
 					<div class="row">
 						<div class="hidden-xs hidden-sm col-md-1">
@@ -176,7 +229,7 @@
 					
 				</div>
 				<br />
-				<div id="GroupDSub1" class="col-md-12 subgroup">
+				<div id="GroupESub1" class="col-md-12 subgroup">
 					<div class="panel panel-wiki">
 						<div class="row">
 							<div class="hidden-xs hidden-sm col-md-1">
@@ -202,6 +255,9 @@
 									<li>En <a class="ocean">Bleu</a> c'est VOTRE pseudo</li>
 								</ul>
 							</p>
+							<p>Si vous avez un compte forum actif lié à votre steam ID, veillez à y être connecté quand vous rejoignez notre TeamSpeak pour la
+							première fois, ainsi vous serez débloqué automatiquement.<br />
+							Sinon, vous recevrez un message privé de notre bot qui vous indiquera la marche à suivre :) .</p>
 						</div>
 					</div>
 				</div>
@@ -218,12 +274,19 @@
                 <a href="#GroupB">Guide de survie</a>
             </li>
 			<li>
-                <a href="#GroupC">Les commandes de base</a>
+                <a href="#GroupC">Monter en Lvl</a>
+				<ul class="nav nav-stacked">
+                    <li><a href="#GroupCSub1">Les bonus de LvL</a></li>
+					<li><a href="#GroupCSub1">Le Prestige</a></li>
+                </ul>
+            </li>
+			<li>
+                <a href="#GroupD">Les commandes de base</a>
             </li>
             <li>
-                <a href="#GroupD">Le Teamspeak</a>
+                <a href="#GroupE">Le Teamspeak</a>
                 <ul class="nav nav-stacked">
-                    <li><a href="#GroupDSub1">Configurer son Teamspeak</a></li>
+                    <li><a href="#GroupESub1">Configurer son Teamspeak</a></li>
                 </ul>
             </li>
         </ul>

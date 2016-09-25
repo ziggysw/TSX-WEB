@@ -14,7 +14,7 @@ server.get('/jobs', function (req, res, next) {
   var cache = server.cache.get( req._url.pathname);
   if( cache != undefined ) { return res.send(cache); }
 
-  var sql = "SELECT J.`job_id` as `id`, SUBSTRING(`job_name`, LOCATE(' - ', `job_name`)+3) as `name`, FLOOR(`quota`*"+ratioMulti+") as `quota`, `current`, `steamid`";
+  var sql = "SELECT J.`job_id` as `id`, SUBSTRING(`job_name`, LOCATE(' - ', `job_name`)+3) as `name`, FLOOR(`quota`*"+ratioMulti+") as `quota`, `current`, `steamid`, `approuved`";
 	sql += " FROM `rp_jobs` J";
   sql += " LEFT JOIN (";
   sql += " SELECT `steamid`, `job_id` FROM `rp_users` U WHERE `job_id`>0 AND UNIX_TIMESTAMP(`last_connected`)>UNIX_TIMESTAMP()-(7*24*60*60) AND `time_played`>=(DAY(NOW())/2)";
@@ -95,10 +95,12 @@ server.put('/job/:id/approuve', function (req, res, next) {
     var SteamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
     if( SteamID != "STEAM_1:0:7490757" && SteamID != "STEAM_1:1:39278818" ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
 
-    server.conn.query("UPDATE `rp_csgo`.`rp_jobs` SET `approuved` = '1' WHERE `rp_jobs`.`job_id` = ?;", [req.params['id']], function(err, row) {
-      if( err ) return res.send(new ERR.InternalServerError(err));
-      return res.send("OK");
-    });
+     server.conn.query("UPDATE `rp_notes` SET `approuved` = '1' WHERE `job_id` = ?;", [req.params['id']], function(err, row) {
+	server.conn.query("UPDATE `rp_jobs` SET `approuved` = '1' WHERE `job_id` = ?;", [req.params['id']], function(err, row) {
+	      if( err ) return res.send(new ERR.InternalServerError(err));
+	      return res.send("OK");
+    	});
+     });
   });
 
 	next();
@@ -234,7 +236,7 @@ server.get('/job/:id', function (req, res, next) {
     cb(obj);
   });
 
-  sql = "SELECT `id`, `txt` as `name` FROM `rp_notes` WHERE `job_id`=? AND `hidden`='0' ORDER BY `id`-`priority` ASC ";
+  sql = "SELECT `id`, `txt` as `name`, `approuved` FROM `rp_notes` WHERE `job_id`=? AND `hidden`='0' ORDER BY `id`-`priority` ASC ";
   server.conn.query(sql, [req.params['id']], function(err, rows) {
     obj.notes = rows;
     cb(obj);
@@ -298,7 +300,7 @@ server.post('/job/:jobid/note/:id', function (req, res, next) {
       if( rows.length == 0 ) return res.send(new ERR.NotFoundError("NotFound"));
       if( rows[0].is_admin != 1 )  return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
 
-      server.conn.query("UPDATE `rp_notes` SET `txt`=? WHERE `id`=?", [req.params['txt'], req.params['id']], function(err, rows) {
+      server.conn.query("UPDATE `rp_notes` SET `txt`=?,`approuved`='0' WHERE `id`=?", [req.params['txt'], req.params['id']], function(err, rows) {
         if( rows.length == 0 ) return res.send(new ERR.NotFoundError("NotFound"));
 
         server.cache.del("/job/"+req.params["jobid"]);
