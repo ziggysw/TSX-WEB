@@ -57,7 +57,7 @@
 			</table><br />
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='hier'">
-			 <h2 class="text-center"><u>La hiérarchie de l'entre<u>p</u>rise :</u></h2><br />
+			 <h2 class="text-center"><u>La hiérarchie de l'entre</u>p<u>rise :</u></h2><br />
 			  <i ng-hide="jobs" ng-repeat="i in [5,4,3,2,1]" class="fa fa-cog fa-spin fa-{{i}}x"></i>
 				<table width="100%" class="table-condensed">
 					<tbody>
