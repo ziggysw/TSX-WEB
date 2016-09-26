@@ -1,5 +1,14 @@
 /* Regles General au Wiki */
 
+@media only screen and (max-width: 575px) {
+	.tab-content .tabpanel .table-condensed.employes {
+		width: 90%;	
+	}
+	.tab-content .tabpanel .table-condensed.employee {
+		width: 80%;	
+	}
+}
+
 @media only screen and (min-width: 600px) {
 	
 	.wiki-phone{
@@ -12,8 +21,7 @@
 .wiki-phone{
 	font-size:10px;
 }
-
-
+	
 .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
 	background-color: rgba(0, 0, 0, 0.1);
 }
@@ -49,6 +57,9 @@ h2{
 	font-weight: gras;
 }
 	
+.tab-content .tabpanel .table-condensed.employes, .tab-content .tabpanel .table-condensed.hierarchie{
+	margin: 0 auto;	
+}	
 .nav-tabs li {
 	width: 110px;
 }
