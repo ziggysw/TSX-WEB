@@ -32,7 +32,7 @@
 					<br />
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='memb'">
-			<h2 class="text-center"><u>Liste des emplo</u>y<u>és :</u></h2><br /><br />
+			<h2 class="text-center"><u>Liste des employés :</u></h2><br /><br />
 			<i ng-hide="users" ng-repeat="i in [5,4,3,2,1]" class="fa fa-cog fa-spin fa-{{i}}x"></i>
 			<table width="100%" class="table-condensed">
 				<tbody><!-- methode un peut dégueux pour centrer, a revoir vite ! -->
@@ -57,7 +57,7 @@
 			</table><br />
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='hier'">
-			 <h2 class="text-center"><u>La hiérarchie de l'entre</u>p<u>rise :</u></h2><br />
+			 <h2 class="text-center"><u>La hiérarchie de l'entreprise :</u></h2><br />
 			  <i ng-hide="jobs" ng-repeat="i in [5,4,3,2,1]" class="fa fa-cog fa-spin fa-{{i}}x"></i>
 				<table width="100%" class="table-condensed">
 					<tbody>
@@ -86,19 +86,19 @@
 				<p class="text-center"> Nous avons actuellement {{jobs.quota}} vendeurs régulier dans  notre entreprise.</p>
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='note'">
-			<h2 class="text-center"><u>Le rè</u>g<u>lement interne :</u></h2><br />
+			<h2 class="text-center"><u>Le règlement interne :</u></h2><br />
 			<i ng-hide="jobs" ng-repeat="i in [5,4,3,2,1]" class="fa fa-cog fa-spin fa-{{i}}x"></i>
 			<ul>
 				<li ng-repeat="note in jobs.notes"><span style="color: #999;">{{note.name}}</span></li>
 			</ul><br />
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='item'">
-			<h2><u>Nos Produits :</u></h2><br /><br />
+			<h2 class="text-center"><u>Nos Produits :</u></h2><br /><br />
 			<i ng-hide="items" ng-repeat="i in [5,4,3,2,1]" class="fa fa-cog fa-spin fa-{{i}}x"></i>
 			<span ng-repeat="item in items" rp-item-information="{{item.id}}"></span><br />
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='quest'">
-			<h2>Nos missions :</h2><br />
+			<h2 class="text-center"><u>Nos missions :</u></h2><br />
 			<table class="table-condensed">
 				<tbody>
 					<tr>
