@@ -63,7 +63,9 @@ h2{
 .nav-tabs li {
 	width: 110px;
 }
-
+.nav-tabs li a:hover {
+	color: #fff !important;
+}
 /* Empeche que le style des menu change en responsive */
 ul.nav-tabs > li {
     background-color: initial !important;
