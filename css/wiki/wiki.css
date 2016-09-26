@@ -67,7 +67,7 @@ h2{
 /* Empeche que le style des menu change en responsive */
 ul.nav > li {
     background-color: initial !important;
-    border-left: 2px solid #333 !important;
+    border-left: 2px solid transparent !important;
 }
 ul.nav > li > a {
     color: #565555; !important;
