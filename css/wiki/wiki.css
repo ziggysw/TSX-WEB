@@ -1,19 +1,5 @@
 /* Regles General au Wiki */
 
-@media only screen and (min-width: 320px) {
-	
-	.wiki-phone{
-		font-size:10px;
-	}
-	
-	
-	.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
-		background-color: rgba(0, 0, 0, 0.1);
-	}
-
-	.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
-    color: #000000;
-	}
 @media only screen and (min-width: 600px) {
 	
 	.wiki-phone{
@@ -21,6 +7,21 @@
 	}
 }
 
+@media only screen and (min-width: 320px) {
+	
+.wiki-phone{
+	font-size:10px;
+}
+
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+	color: #000000;
+}
+	
 .radius {
     border-radius: 45px;
 }
@@ -33,9 +34,9 @@ p{
 	margin: 5px 0 5px 0;
 }
 
-  .affix {
-      top: 20px;
-  }
+.affix {
+	top: 20px;
+}
 
 h2{
 	float:none;
@@ -47,6 +48,22 @@ h2{
 	font-style: italic;
 	font-weight: gras;
 }
+	
+.nav-tabs li {
+	width: 110px;
+}
+
+/* Empeche que le style des menu change en responsive */
+ul.nav > li {
+    background-color: initial !important;
+    border-left: 2px solid #333 !important;
+}
+ul.nav > li > a {
+    color: #565555; !important;
+}
+ul.nav > li:nth-child(2) {
+    border-top: none !important;
+}	
 
 .panel-body li{ 
     	font-size: 14.5px;
@@ -265,6 +282,16 @@ h2{
  
 /* Fin Block Buster index*/
 
+	
+/* Block Détail job*/
+
+.tab-content .tab-pane {
+	padding: 0 10px;
+}
+	
+/* Fin Détail job*/
+	
+	
 /* Petit menu de navigation sur les pages */
 
 .group {
