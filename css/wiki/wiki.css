@@ -57,7 +57,7 @@ h2{
 	font-weight: gras;
 }
 	
-.tab-content .tabpanel .table-condensed.employes, .tab-content .tabpanel .table-condensed.hierarchie{
+.tab-content .tabpane .table-condensed.employes, .tab-content .tabpane .table-condensed.hierarchie{
 	margin: 0 auto;	
 }	
 .nav-tabs li {
