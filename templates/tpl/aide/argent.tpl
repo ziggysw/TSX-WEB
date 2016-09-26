@@ -435,7 +435,7 @@
 											<tr><td>Justice</td><td>Un homme très recherché</td><td>2.500RP</td><td class="hidden-phone">Vous avez 12 heures pour le trouver et l'arrêter un homme recherché par le tribunal.</td></tr>
 											<tr><td>Justice</td><td>La justice exprès</td><td>2.5000$RP</td><td class="hidden-phone">Vous avez 24 minutes pour condamner 3 joueurs différents dans votre Tribunal.<br /> (100$RP d'amende et 3h de prison minimum).</td></tr>
 											<tr><td>Justice</td><td>La justice sournoise</td><td>5.000$RP</td><td class="hidden-phone">Prenez une plainte pour meurtre sur votre cible et condamnez le.<br /> (100$RP d'amende et 3h de prison minimum)</td></tr>
-											<tr><td>Stidda Famiglia</td><td>Vandalisme des distributeurs</td><td>2 .00$RP</td><td class="hidden-phone">Crochetez tous les distributeurs présents dans les stations de métro.</td></tr>
+											<tr><td>Stidda Famiglia</td><td>Vandalisme des distributeurs</td><td>2.000$RP</td><td class="hidden-phone">Crochetez tous les distributeurs présents dans les stations de métro.</td></tr>
 											<tr><td>Stidda Famiglia</td><td>Surveillance des plants.</td><td>500$RP par plan restant à la fin</td><td class="hidden-phone">Posez 10 plants et protégez-les pendant 24 minutes.</td></tr>
 											<tr><td>Stidda Famiglia</td><td>Blanchissement d'argent</td><td>5.000$RP</td><td class="hidden-phone">Volez une arme à un flic et ramenez la dans votre planque.</td></tr>
 											<tr><td>Stidda Famiglia</td><td>Récolte des plants</td><td>1.000$ Par plant</td><td class="hidden-phone">Crochetez 5 fois la place de l'indépendance en 5x6 minutes.</td></tr>
