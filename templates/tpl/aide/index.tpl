@@ -13,7 +13,7 @@
 					<p class="title1">Bien débuter sa vie à Princeton-City</p>
 					<p class="title2"><span class="wiki_pub"><u>Ar</u>g<u>ent actuel :</u></span> {$money|pretty_number} $rp<br />
 					Bienvenue {$name} !<br />
-					Si tu souhaites avoir plus d'argent en banque, je te conseille de venir jeter un oeil à ce tutoriel !</p>
+					Si tu souhaites avoir plus d'argentee en banque, je te conseille de venir jeter un oeil à ce tutoriel !</p>
 					<br />
 					<a class="various btn btn-primary" href="/index.php?page=aide&sub=debuter"><i class="fa fa-hand-o-right"></i> En savoir plus !</a>
 				</div></div>
