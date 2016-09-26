@@ -32,7 +32,7 @@
 					<br />
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='memb'">
-			<h2 class="text-center"><u>Liste des em</u>p<u>lo</u>y</u>és :</u></h2><br /><br />
+			<h2 class="text-center"><u>Liste des em</u>p<u>lo</u>y<u>és :</u></h2><br /><br />
 			<i ng-hide="users" ng-repeat="i in [5,4,3,2,1]" class="fa fa-cog fa-spin fa-{{i}}x"></i>
 			<table width="100%" class="table-condensed">
 				<tbody><!-- methode un peut dégueux pour centrer, a revoir vite ! -->
