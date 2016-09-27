@@ -1,4 +1,4 @@
-<div ng-controller="ctrlTabs" data-job="111">
+<div ng-controller="ctrlTabs" data-job="61">
 	<ul class="nav nav-tabs" role="tablist">
 		<li><a ng-click="tabs='desc'">Présentation </a></li>
 		<li><a ng-click="tabs='memb'">Employés </a></li>
@@ -11,24 +11,24 @@
 	<div class="tab-content" style="width:100%;">
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='desc'">
 					<hr class="featurette-divider">
-					<h2 class="text-center">Qui sommes nous :</h2><br />
+					<h2 class="text-center">Qui sommes-nous :</h2><br />
 					<hr class="featurette-divider">
-					<p>L'agence immobilière à le monopole du logement sur Princeton, nous proposons des locations qui vont du simple HLM à la villa de luxe.<br />
-					Nos client sont tous traité de la même manière, notre priorité depuis plusieur année est de fournir un logement pour tout les habitants de princeton !<br />
-					C'est pourquoi, pour les plus nécéssiteux, nous avons installé des lits de camps au premiere étage de  notre siège sociale le temps de pouvoir leur fournir un logement.</p>
+					<p>L'agence immobilière a le monopole du logement sur Princeton, nous proposons des locations qui vont du simple HLM à la villa de luxe.<br />
+					Nos clients sont tous traité de la même manière, notre priorité depuis plusieurs années est de fournir un logement pour tous les habitants de Princeton !<br />
+					C'est pourquoi, pour les plus nécessiteux, nous avons installé des lits de camp au premier étage de  notre siège social le temps de pouvoir leur fournir un logement.</p>
 					<hr class="featurette-divider">
 					<h2 class="text-center">Informations :</h2><br />
 					<hr class="featurette-divider">
-					<p><u>Siè</u>g<u>es social :</u> Rue du Commerce</p><br/>
+					<p><u>Siè</u>g<u>e social :</u> Rue du Commerce</p><br/>
 					<p><u>Portefeuille de propriété intellectuelle :</u> Des dizaines de brevets axé sur l'ameublement et la construction.</p><br />
 					<p><u>Distinctions :</u> En 2013, notre groupe immobilié à reçu la médaille du mérite pour sa mobilisation dans l'association "Un logement pour tous".
 				
 					<hr class="featurette-divider">
 					<h2 class="text-center">Recrutement :</h2><br />
 					<hr class="featurette-divider">
-					<p>Nous sommes actuellement à la recherche de personel motivé qui ne compte pas leur heures !<br />
-					Priceton subis actuellement une forte hausse de demande de logement c'est pourquoi nous recherchons en priorité 
-					des personnes qui ont le goût du sociale et de la négociation.</p>
+					<p>Nous sommes actuellement à la recherche de personnel motivé qui ne compte pas leurs heures !<br />
+					Priceton subit actuellement une forte hausse de demande de logement c'est pourquoi nous recherchons en priorité 
+					des personnes qui ont le goût du social et de la négociation.</p>
 					<br />
 					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposer une candidature spontanée</a></center>
 					<br />
@@ -64,7 +64,7 @@
 						</tr>
 					</tbody>
 				</table><br />
-				<p class="text-center"> Nous avons actuellement {{jobs.quota}} vendeurs régulier dans  notre entreprise.</p>
+				<p class="text-center"> Nous avons actuellement {{jobs.quota}} vendeurs réguliers dans notre entreprise.</p>
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='note'">
 			<h2 class="text-center"><u>Le rè</u>g<u>lement interne :</u></h2><br />
@@ -90,7 +90,7 @@
 					<tr>
 						<td>Collecte des matières première</td>
 						<td>[PvP] AK-47</td>
-						<td>Votre patron vous demande d'aller recuperez 5 colis en ville le plus vite possible.</td>
+						<td>Votre patron vous demande d'aller récupérer 5 colis en ville le plus vite possible.</td>
 					</tr>
 					<tr>
 						<td>Employé modèle</td>
