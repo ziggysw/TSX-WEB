@@ -24,7 +24,7 @@
 						Il n'est jamais facile de rentrer complètement et en peu de temps dans un nouveau jeu, vous pourrez trouver ici toutes les informations nécessaires à cette adaptation en milieu parfois hostile.</p>
 						<br />
 						<p>Comme vous l'aurez surement constaté à votre arrivée sur le serveur, un tutoriel exclusif vous est proposé, inévitable, il vous permettra de découvrir les principales commandes et les principaux endroits et items qu'on peut trouver sur la map de Princeton.
-						Après l'avoir accompli vous aurez 25 000 $Rp pour commencer une nouvelle vie. !</p>
+						Après l'avoir accompli vous aurez 25 000 $Rp pour commencer une nouvelle vie !</p>
 					</div>
 				</div>
 			</div>
@@ -47,7 +47,7 @@
 						Le roleplay ts-x compte au total 17 jobs, avec une hiérarchie bien précise, et toujours à leur tête un chef accompagné(s) d'un ou plusieurs co-chef(s).<br />
 						<br />
 						Ils sont tous référencés avec les différents membres qui les composent sur <a href="/index.php?page=aide&sub=emploi">cette page</a>.<br />
-						Un <a href="https://www.ts-x.eu/forum/viewtopic.php?f=10&t=26749">règlement général</a> est mis à votre disposition sur le site pour vous permettre de mieux comprendre le fonctionnement de la communauté, Role Play,<br />
+						Un <a href="https://www.ts-x.eu/forum/viewtopic.php?f=10&t=26749">règlement général</a> est mis à votre disposition sur le site pour vous permettre de mieux comprendre le fonctionnement de la communauté,<br />
 						Il est souvent mis à jour et des modifications peuvent survenir tous les jours.<br />
 						<br />
 						Dorénavant, vous savez ce que vous devez faire, vous connaissez bien les règles et les différents métiers, il ne vous reste plus qu'à trouver le job qui vous correspond, pour cela, deux solutions s'offrent à vous :<br />
@@ -139,12 +139,12 @@
 							<tr class="txt">
 								<td>/lock</td>
 								<td>Permet de fermer une porte dont on possède la clé.<br />
-									Si vous ne possédez pas la clé de la porte, vous ne pourrez pas la fermé ou l'ouvrir.</td>
+									Si vous ne possédez pas la clé de la porte, cela n'aura aucun effet.</td>
 							</tr>
 							<tr class="txt">
 								<td>/unlock</td>
 								<td>Permet d'ouvrir une porte dont on possède la clé.<br />
-									Si vous ne possédez pas la clé de la porte, vous ne pourrez pas l'ouvrir ou la fermé.</td>
+									Si vous ne possédez pas la clé de la porte, cela n'aura aucun effet.</td>
 							</tr>
 							<tr class="txt">
 								<td>/out</td>
@@ -160,12 +160,12 @@
 							</tr>
 							<tr class="txt">
 								<td>/item ou /i </td>
-								<td>Permet d'ouvrir l'inventaire avec des objets que l'on a sur soi et pas dans sa banque. </td>
+								<td>Permet d'ouvrir l'inventaire des objets que l'on a sur soi.</td>
 							</tr>
 							<tr class="txt">
 								<td>/give XXXXXX</td>
 								<td>Permet de donner une somme d'argent à la personne que l'on vise,<br />
-									remplacez XXXXXX par le montant voulu (Remarque : vous ne pouvez donner plus de 100.000$ par /give). Avant de pouvoir /give , vous devrez effectué 20 heures de jeux pour ne plus etre "Nouveau" sur le serveur.</td>
+									remplacez XXXXXX par le montant voulu (Remarque : vous ne pouvez donner plus de 100.000$ par /give et vous devez avoir effectué 20h de jeux pour avoir accès à cette commande).</td>
 							</tr>
 							<tr class="txt">
 								<td>/3rd</td>
@@ -192,12 +192,12 @@
 								<td>Permet de voir son niveau de vitalité.</td>
 							</tr>
 							<tr class="txt">
-							        <td>/irc</td>
-								<td>Permet de parler à une/des personne qui sont connectée sur l'irc et/ou alors poser une question à un admin si vous en avez besoin</td>
+							        <td>!irc</td>
+								<td>Permet de parler à un admin/joueur connecté sur l'irc.</td>
 								</tr>
 							<tr class="txt">
 	                                                        <td>/gps</td>
-								<td>Si vous devez aller à un endroit sur la ville et que vous ne connaisser pas le chemin , vous tapez cette commande , et votre chemin est montrer par des flèches noir et blanches.</td>
+								<td>Ouvre un menu qui vous permettra de choisir un lieu de la map, et vous y guidera comme un vrais gps !</td>
                                                         </tr>
 						</table>
 					</div>
