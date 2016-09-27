@@ -24,7 +24,7 @@
 						Il n'est jamais facile de rentrer complètement et en peu de temps dans un nouveau jeu, vous pourrez trouver ici toutes les informations nécessaires à cette adaptation en milieu parfois hostile.</p>
 						<br />
 						<p>Comme vous l'aurez surement constaté à votre arrivée sur le serveur, un tutoriel exclusif vous est proposé, inévitable, il vous permettra de découvrir les principales commandes et les principaux endroits et items qu'on peut trouver sur la map de Princeton.
-						Après l'avoir accompli vous aurez 10 000 $Rp pour commencer une nouvelle vie !</p>
+						Après l'avoir accompli vous aurez 25 000 $Rp pour commencer une nouvelle vie !</p>
 					</div>
 				</div>
 			</div>
@@ -44,7 +44,7 @@
 					<div class="panel-body">
 						<p>Vous débutez dans le roleplay et vous vous posez des questions ? C'est normal ! Et ce wiki va tenter d'y répondre du mieux possible.<br />
 						La communauté du roleplay sera là aussi pour vous aider, c'est un peu long à lire, mais prenez le temps de le faire, cela ne peut que vous aider à mieux comprendre le fonctionnement du jeu.<br />
-						Le roleplay ts-x compte au total 15 jobs, avec une hiérarchie bien précise, et toujours à leur tête un chef accompagné(s) d'un ou plusieurs co-chef(s).<br />
+						Le roleplay ts-x compte au total 17 jobs, avec une hiérarchie bien précise, et toujours à leur tête un chef accompagné(s) d'un ou plusieurs co-chef(s).<br />
 						<br />
 						Ils sont tous référencés avec les différents membres qui les composent sur <a href="/index.php?page=aide&sub=emploi">cette page</a>.<br />
 						Un <a href="https://www.ts-x.eu/forum/viewtopic.php?f=10&t=26749">règlement général</a> est mis à votre disposition sur le site pour vous permettre de mieux comprendre le fonctionnement de la communauté,<br />
@@ -139,12 +139,12 @@
 							<tr class="txt">
 								<td>/lock</td>
 								<td>Permet de fermer une porte dont on possède la clé.<br />
-									Si vous ne possédez pas la clé de la porte, vous ne pourrez rien faire.</td>
+									Si vous ne possédez pas la clé de la porte, cela n'aura aucun effet.</td>
 							</tr>
 							<tr class="txt">
 								<td>/unlock</td>
 								<td>Permet d'ouvrir une porte dont on possède la clé.<br />
-									Si vous ne possédez pas la clé de la porte, vous ne pourrez rien faire.</td>
+									Si vous ne possédez pas la clé de la porte, cela n'aura aucun effet.</td>
 							</tr>
 							<tr class="txt">
 								<td>/out</td>
@@ -160,12 +160,12 @@
 							</tr>
 							<tr class="txt">
 								<td>/item ou /i </td>
-								<td>Permet d'ouvrir l'inventaire des objets que l'on a sur soi. </td>
+								<td>Permet d'ouvrir l'inventaire des objets que l'on a sur soi.</td>
 							</tr>
 							<tr class="txt">
 								<td>/give XXXXXX</td>
 								<td>Permet de donner une somme d'argent à la personne que l'on vise,<br />
-									remplacez XXXXXX par le montant voulu (Remarque : vous ne pouvez donner plus de 100.000$ par /give).</td>
+									remplacez XXXXXX par le montant voulu (Remarque : vous ne pouvez donner plus de 100.000$ par /give et vous devez avoir effectué 20h de jeux pour avoir accès à cette commande).</td>
 							</tr>
 							<tr class="txt">
 								<td>/3rd</td>
@@ -173,11 +173,11 @@
 							</tr>
 							<tr class="txt">
 								<td>/job </td>
-								<td>Permet de voir et de faire appel à un job suivant vos besoins.</td>
+								<td>Permet de voir et de faire appel à un job suivant vos besoins [Cela ne marche que quand une personne du métier concerné est connecté sur le serveur.</td>
 							</tr>
 							<tr class="txt">
 								<td>/enjail</td>
-								<td>Permet de savoir qui est en prison. </td>
+								<td>Permet de savoir qui est en prison et pour encore combien de temps. </td>
 							</tr>
 							<tr class="txt">
 								<td>/use</td>
@@ -191,6 +191,14 @@
 								<td>/vita</td>
 								<td>Permet de voir son niveau de vitalité.</td>
 							</tr>
+							<tr class="txt">
+							        <td>!irc</td>
+								<td>Permet de parler à un admin/joueur connecté sur l'irc.</td>
+								</tr>
+							<tr class="txt">
+	                                                        <td>/gps</td>
+								<td>Ouvre un menu qui vous permettra de choisir un lieu de la map, et vous y guidera comme un vrais gps !</td>
+                                                        </tr>
 						</table>
 					</div>
 				</div>
