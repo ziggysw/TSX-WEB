@@ -11,22 +11,22 @@
 	<div class="tab-content" style="width:100%;">
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='desc'">
 					<hr class="featurette-divider">
-					<h2 class="text-center">Qui sommes nous :</h2><br />
+					<h2 class="text-center">Qui sommes-nous :</h2><br />
 					<hr class="featurette-divider">
-					<p>L'armurerie est le nerfs de la guerre à Princeton, ils sont ceux qui imagine, fabrique et vendent nos précieuses armes.
+					<p>L'armurerie est le nerf de la guerre à Princeton, elle est celle qui imagine, fabrique et vend nos précieuses armes.
 					En constante évolution, ce métier de vente vous permettra de vous créer un large réseau de contact au sein de notre ville.</p>
 					<hr class="featurette-divider">
 					<h2 class="text-center">Informations :</h2><br />
 					<hr class="featurette-divider">
-					<p><u>Siè</u>g<u>es social :</u> Rue de la soif</p><br/>
-					<p><u>Portefeuille de propriété intellectuelle :</u> Des dizaines de brevets axé sur les technologies d'armement.</p><br />
-					<p><u>Distinctions :</u> En 2015, notre entreprise à reçu le prix de "Meilleur service client de l'année" pour la 4ème année consécutive !</p>
+					<p><u>Siè</u>g<u>e social :</u> Rue de la soif</p><br/>
+					<p><u>Portefeuille de propriété intellectuelle :</u> Des dizaines de brevets axés sur les technologies d'armement.</p><br />
+					<p><u>Distinctions :</u> En 2015, notre entreprise a reçu le prix de "Meilleur service client de l'année" pour la 4ème années consécutives !</p>
 				
 					<hr class="featurette-divider">
 					<h2 class="text-center">Recrutement :</h2><br />
 					<hr class="featurette-divider">
 					<p>Nous sommes actuellement à la recherche de personel motivé et connaisseur en armement.<br />
-					Les débutants sont accepté, une période de formations de 1 semaine dans notre école vous sera accordé.</p>
+					Les débutants sont acceptés, une période de formation de 1 semaine dans notre école vous sera accordé.</p>
 					<br />
 					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposer une candidature spontanée</a></center>
 					<br />
@@ -62,7 +62,7 @@
 						</tr>
 					</tbody>
 				</table><br />
-				<p class="text-center"> Nous avons actuellement {{jobs.quota}} vendeurs régulier dans  notre entreprise.</p>
+				<p class="text-center"> Nous avons actuellement {{jobs.quota}} vendeurs réguliers dans notre entreprise.</p>
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='note'">
 			<h2 class="text-center"><u>Le rè</u>g<u>lement interne :</u></h2><br />
@@ -88,7 +88,7 @@
 					<tr>
 						<td>Collecte des matières première</td>
 						<td>[PvP] AK-47</td>
-						<td>Votre patron vous demande d'aller recuperez 5 colis en ville le plus vite possible.</td>
+						<td>Votre patron vous demande d'aller récupérer 5 colis en ville le plus vite possible.</td>
 					</tr>
 					<tr>
 						<td>Employé modèle</td>
