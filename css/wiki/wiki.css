@@ -64,7 +64,7 @@ h2{
 	width: 110px;
 	cursor: pointer;
 }
-.nav-tabs li a:hover {
+.nav-tabs li a:hover, .nav-tabs li a.active {
 	color: #fff !important;
 }
 /* Empeche que le style des menu change en responsive */
