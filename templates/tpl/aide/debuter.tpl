@@ -197,8 +197,8 @@
 								</tr>
 							<tr class="txt">
 	                                                        <td>/gps</td>
-								<ts>Si vous devez aller à un endroit sur la ville et que vous ne connaisser pas le chemin , vous tapez cette commande , et votre chemin est montrer par des flèches noir et blanches.</td>
-
+								<td>Si vous devez aller à un endroit sur la ville et que vous ne connaisser pas le chemin , vous tapez cette commande , et votre chemin est montrer par des flèches noir et blanches.</td>
+                                                        </tr>
 						</table>
 					</div>
 				</div>
