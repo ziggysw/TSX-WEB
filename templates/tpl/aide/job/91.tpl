@@ -1,32 +1,32 @@
-<div ng-controller="ctrlTabs" data-job="111">
+<div ng-controller="ctrlTabs" data-job="91">
 	<ul class="nav nav-tabs" role="tablist">
-		<li><a ng-click="tabs='desc'">Présentation </a></li>
-		<li><a ng-click="tabs='memb'">Employés </a></li>
-		<li><a ng-click="tabs='hier'">Hiérarchie </a></li>
-		<li><a ng-click="tabs='note'">Shownote </a></li>
-		<li><a ng-click="tabs='item'">Boutique </a></li>
-		<li><a ng-click="tabs='quest'">Quêtes </a></li>
+		<li><a ng-click="tabs='desc'" ng-class="tabs=='desc'? 'active' : ''">Présentation </a></li>
+		<li><a ng-click="tabs='memb'" ng-class="tabs=='memb'? 'active' : ''">Employés </a></li>
+		<li><a ng-click="tabs='hier'" ng-class="tabs=='hier'? 'active' : ''">Hiérarchie </a></li>
+		<li><a ng-click="tabs='note'" ng-class="tabs=='note'? 'active' : ''">Shownote </a></li>
+		<li><a ng-click="tabs='item'" ng-class="tabs=='item'? 'active' : ''">Boutique </a></li>
+		<li><a ng-click="tabs='quest'" ng-class="tabs=='quest'? 'active' : ''">Quêtes </a></li>
 	</ul>
 
 	<div class="tab-content" style="width:100%;">
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='desc'">
 					<hr class="featurette-divider">
-					<h2 class="text-center">Qui sommes nous :</h2><br />
+					<h2 class="text-center">Qui sommes-nous :</h2><br />
 					<hr class="featurette-divider">
-					<p>La Cosa Nostra est la famille la plus respecté de Princeton, voler au riche pour donner au pauvres n'est 
+					<p>La Cosa Nostra est la famille la plus respectée de Princeton, voler aux riches pour donner aux pauvres n'est 
 					pas du tout notre devise.<br />
 					Seul notre profit personnel compte !</p>
 					<hr class="featurette-divider">
 					<h2 class="text-center">Informations :</h2><br />
 					<hr class="featurette-divider">
-					<p><u>Siè</u>g<u>es social :</u> Rue de la soif</p><br/>
-					<p><u>Distinctions :</u> Ennemis Publique N°1 depuis plus de 5 ans, souvent immité mais jamais égalé !</p>
+					<p><u>Siè</u>g<u>e social :</u> Rue de la soif</p><br/>
+					<p><u>Distinctions :</u> Ennemis Publique N°1 depuis plus de 5 ans, souvent imité mais jamais égalé !</p>
 				
 					<hr class="featurette-divider">
 					<h2 class="text-center">Recrutement :</h2><br />
 					<hr class="featurette-divider">
-					<p>Nous sommes des hommes d'honneur, toute personne ailant un passé de hors la lois et le bienvenue chez nous.<br />
-					Escrocs, assassin et voleur sont les bienvenue chez nous.</p>
+					<p>Nous sommes des hommes d'honneur, toute personne ayant un passé d'hors la loi est la bienvenue chez nous.<br />
+					Escrocs, assassin et voleur sont les bienvenues chez nous.</p>
 					<br />
 					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposer une candidature spontanée</a></center>
 					<br />
@@ -62,7 +62,7 @@
 						</tr>
 					</tbody>
 				</table><br />
-				<p class="text-center"> Nous avons actuellement {{jobs.quota}} vendeurs régulier dans  notre entreprise.</p>
+				<p class="text-center"> Nous avons actuellement {{jobs.quota}} vendeurs réguliers dans  notre entreprise.</p>
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='note'">
 			<h2 class="text-center"><u>Le rè</u>g<u>lement interne :</u></h2><br />
@@ -102,9 +102,9 @@
 						et retournez dans votre planque pour les déposer.</td>
 					</tr>
 					<tr>
-						<td>Traffic illégal</td>
+						<td>Trafic illégal</td>
 						<td>5.000$RP</td>
-						<td>Introduisez-vous dans le commissariat jusqu'au distributeur d'arme<br />
+						<td>Introduisez-vous dans le commissariat jusqu'au distributeur d'armes<br />
 						et volez-en le plus possible !</td>
 					</tr>
 					<tr>
