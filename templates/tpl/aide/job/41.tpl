@@ -1,30 +1,30 @@
-<div ng-controller="ctrlTabs" data-job="111">
+<div ng-controller="ctrlTabs" data-job="41">
 	<ul class="nav nav-tabs" role="tablist">
-		<li><a ng-click="tabs='desc'">Présentation </a></li>
-		<li><a ng-click="tabs='memb'">Employés </a></li>
-		<li><a ng-click="tabs='hier'">Hiérarchie </a></li>
-		<li><a ng-click="tabs='note'">Shownote </a></li>
-		<li><a ng-click="tabs='item'">Boutique </a></li>
-		<li><a ng-click="tabs='quest'">Quêtes </a></li>
+		<li><a ng-click="tabs='desc'" ng-class="tabs=='desc'? 'active' : ''">Présentation </a></li>
+		<li><a ng-click="tabs='memb'" ng-class="tabs=='memb'? 'active' : ''">Employés </a></li>
+		<li><a ng-click="tabs='hier'" ng-class="tabs=='hier'? 'active' : ''">Hiérarchie </a></li>
+		<li><a ng-click="tabs='note'" ng-class="tabs=='note'? 'active' : ''">Shownote </a></li>
+		<li><a ng-click="tabs='item'" ng-class="tabs=='item'? 'active' : ''">Boutique </a></li>
+		<li><a ng-click="tabs='quest'" ng-class="tabs=='quest'? 'active' : ''">Quêtes </a></li>
 	</ul>
 
 	<div class="tab-content" style="width:100%;">
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='desc'">
 					<hr class="featurette-divider">
-					<h2 class="text-center">Qui sommes nous :</h2><br />
+					<h2 class="text-center">Qui sommes-nous :</h2><br />
 					<hr class="featurette-divider">
 					<p>Nous sommes la solution de dernier recours, donnez nous une cible, nous vous donnerons un prix et sa tête !</p>
 					<hr class="featurette-divider">
 					<h2 class="text-center">Informations :</h2><br />
 					<hr class="featurette-divider">
-					<p><u>Siè</u>g<u>es social :</u> </p><br/>
-					<p><u>Distinctions :</u> Prix john wayne, meilleur service client de l'année.</p>
+					<p><u>Siè</u>g<u>e social :</u> </p><br/>
+					<p><u>Distinctions :</u> Prix john Wayne, meilleur service client de l'année.</p>
 				
 					<hr class="featurette-divider">
 					<h2 class="text-center">Recrutement :</h2><br />
 					<hr class="featurette-divider">
-					<p>Vous en avez ras le bol de vendre des armes sans pouvoir vous en servir librement ? Votre job dans la police ne 
-					vous donnes pas l'impression d'aider votre prochain ? les mercenaires font ce que les autres ne veulent pas faire.</p>
+					<p>Vous en avez ras-le-bol de vendre des armes sans pouvoir vous en servir librement ? Votre job dans la police ne 
+					vous donne pas l'impression d'aider votre prochain ? les mercenaires font ce que les autres ne veulent pas faire.</p>
 					<br />
 					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposer une candidature spontanée</a></center>
 					<br />
@@ -60,7 +60,7 @@
 						</tr>
 					</tbody>
 				</table><br />
-				<p class="text-center"> Nous avons actuellement {{jobs.quota}} vendeurs régulier dans  notre entreprise.</p>
+				<p class="text-center"> Nous avons actuellement {{jobs.quota}} vendeurs réguliers dans  notre entreprise.</p>
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='note'">
 			<h2 class="text-center"><u>Le rè</u>g<u>lement interne :</u></h2><br />
