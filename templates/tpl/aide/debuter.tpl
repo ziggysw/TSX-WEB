@@ -139,12 +139,12 @@
 							<tr class="txt">
 								<td>/lock</td>
 								<td>Permet de fermer une porte dont on possède la clé.<br />
-									Si vous ne possédez pas la clé de la porte, cela n'aura aucun effet.</td>
+									Cependant si vous ne possédez pas la clé de la porte, cela n'aura aucun effet.</td>
 							</tr>
 							<tr class="txt">
 								<td>/unlock</td>
 								<td>Permet d'ouvrir une porte dont on possède la clé.<br />
-									Si vous ne possédez pas la clé de la porte, cela n'aura aucun effet.</td>
+									Cependant si vous ne possédez pas la clé de la porte, cela n'aura aucun effet.</td>
 							</tr>
 							<tr class="txt">
 								<td>/out</td>
@@ -152,15 +152,15 @@
 							</tr>
 							<tr class="txt">
 								<td> /shownote</td>
-								<td>Permet de voir les règles du métier dans lequel vous êtes(Il est recommandé de lire dès le recrutement et de vérifier si des modifications y ont été apportées récemment).</td>
+								<td>Permet de voir les règles du métier auquel vous appartenez (il est recommandé de lire dès le recrutement et de vérifier si des modifications y ont été apportées récemment).</td>
 							</tr>
 							<tr class="txt">
 								<td>/t </td>
-								<td> Permet d’écrire un message destiné seulement aux membres de votre métier.</td>
+								<td>Permet d’écrire un message destiné seulement aux membres de votre métier.</td>
 							</tr>
 							<tr class="txt">
 								<td>/item ou /i </td>
-								<td>Permet d'ouvrir l'inventaire des objets que l'on a sur soi.</td>
+								<td>Permet d'ouvrir l'inventaire des objets que l'on possède sur soi.</td>
 							</tr>
 							<tr class="txt">
 								<td>/give XXXXXX</td>
@@ -173,7 +173,7 @@
 							</tr>
 							<tr class="txt">
 								<td>/job </td>
-								<td>Permet de voir et de faire appel à un job suivant vos besoins [Cela ne marche que quand une personne du métier concerné est connecté sur le serveur.</td>
+								<td>Permet de voir et de faire appel à un joueur appartenant au job désiré (cela ne fonctionne que lorsqu'une personne du métier concerné est connectée sur le serveur).</td>
 							</tr>
 							<tr class="txt">
 								<td>/enjail</td>
@@ -197,7 +197,7 @@
 								</tr>
 							<tr class="txt">
 	                                                        <td>/gps</td>
-								<td>Ouvre un menu qui vous permettra de choisir un lieu de la map, et vous y guidera comme un vrais gps !</td>
+								<td>Ouvre un menu qui vous permettra de choisir un lieu de la map, et vous y guidera comme un vrai gps !</td>
                                                         </tr>
 						</table>
 					</div>
