@@ -138,13 +138,13 @@
 							</tr>
 							<tr class="txt">
 								<td>/lock</td>
-								<td>Permet de fermer une porte dont on possède la clé.<br />
-									Cependant si vous ne possédez pas la clé de la porte, cela n'aura aucun effet.</td>
+								<td>Permet de fermer une porte dont vous avez la clé.<br />
+									Si vous n'avez pas la clé de la porte, cela n'aura aucun effet.</td>
 							</tr>
 							<tr class="txt">
 								<td>/unlock</td>
-								<td>Permet d'ouvrir une porte dont on possède la clé.<br />
-									Cependant si vous ne possédez pas la clé de la porte, cela n'aura aucun effet.</td>
+								<td>Permet d'ouvrir une porte dont vous avez la clé.<br />
+									Si vous n'avez pas la clé de la porte, cela n'aura aucun effet.</td>
 							</tr>
 							<tr class="txt">
 								<td>/out</td>
