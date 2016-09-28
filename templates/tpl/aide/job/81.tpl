@@ -1,30 +1,30 @@
-<div ng-controller="ctrlTabs" data-job="111">
+<div ng-controller="ctrlTabs" data-job="81">
 	<ul class="nav nav-tabs" role="tablist">
-		<li><a ng-click="tabs='desc'">Présentation </a></li>
-		<li><a ng-click="tabs='memb'">Employés </a></li>
-		<li><a ng-click="tabs='hier'">Hiérarchie </a></li>
-		<li><a ng-click="tabs='note'">Shownote </a></li>
-		<li><a ng-click="tabs='item'">Boutique </a></li>
-		<li><a ng-click="tabs='quest'">Quêtes </a></li>
+		<li><a ng-click="tabs='desc'" ng-class="tabs=='desc'? 'active' : ''">Présentation </a></li>
+		<li><a ng-click="tabs='memb'" ng-class="tabs=='memb'? 'active' : ''">Employés </a></li>
+		<li><a ng-click="tabs='hier'" ng-class="tabs=='hier'? 'active' : ''">Hiérarchie </a></li>
+		<li><a ng-click="tabs='note'" ng-class="tabs=='note'? 'active' : ''">Shownote </a></li>
+		<li><a ng-click="tabs='item'" ng-class="tabs=='item'? 'active' : ''">Boutique </a></li>
+		<li><a ng-click="tabs='quest'" ng-class="tabs=='quest'? 'active' : ''">Quêtes </a></li>
 	</ul>
 
 	<div class="tab-content" style="width:100%;">
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='desc'">
 					<hr class="featurette-divider">
-					<h2 class="text-center">Qui sommes nous :</h2><br />
+					<h2 class="text-center">Qui sommes-nous :</h2><br />
 					<hr class="featurette-divider">
-					<p>La Stidda Famiglia est la famille la plus respecté de Princeton, pas comme les rebus de la Cosa Nostra.<br />
-					Nous sommes une petite entreprise de fleuriste qui ne ce laisse pas marché sur les pieds !</p>
+					<p>La Stidda Famiglia est la famille la plus respectée de Princeton, pas comme les rebut de la Cosa Nostra.<br />
+					Nous sommes une petite entreprise de fleuriste qui ne se laisse pas marcher sur les pieds !</p>
 					<hr class="featurette-divider">
 					<h2 class="text-center">Informations :</h2><br />
 					<hr class="featurette-divider">
-					<p><u>Siè</u>g<u>es social :</u> </p><br/>
+					<p><u>Siè</u>g<u>e social :</u> </p><br/>
 					<p><u>Distinctions :</u> Meilleur fleuriste de l'année depuis maintenant 8 ans !</p>
 				
 					<hr class="featurette-divider">
 					<h2 class="text-center">Recrutement :</h2><br />
 					<hr class="featurette-divider">
-					<p>Si vous aimez les plantes et que vous avez du sang de gitan dans les veines, alors bienvenue chez nous !</p>
+					<p>Si vous aimez les plantes et que vous avez du sang de Gitan dans les veines, alors bienvenue chez nous !</p>
 					<br />
 					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposer une candidature spontanée</a></center>
 					<br />
@@ -60,7 +60,7 @@
 						</tr>
 					</tbody>
 				</table><br />
-				<p class="text-center"> Nous avons actuellement {{jobs.quota}} vendeurs régulier dans  notre entreprise.</p>
+				<p class="text-center"> Nous avons actuellement {{jobs.quota}} vendeurs réguliers dans  notre entreprise.</p>
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='note'">
 			<h2 class="text-center"><u>Le rè</u>g<u>lement interne :</u></h2><br />
@@ -94,9 +94,9 @@
 						<td>Posez 10 plants et protégez-les pendant 24 minutes.</td>
 					</tr>
 					<tr>
-						<td>Blanchissement d'argent</td>
+						<td>Blanchiment d'argent</td>
 						<td>5.000$RP</td>
-						<td>Volez une arme à un flic et ramenez la dans votre planque.</td>
+						<td>Volez une arme à un flic et ramenez-la dans votre planque.</td>
 					</tr>
 					<tr>
 						<td>Récolte des plants</td>
@@ -105,9 +105,9 @@
 					</tr>
 					<tr>
 						<td>Razzia</td>
-						<td>En fonction des armes volé</td>
-						<td>Introduisez-vous dans le commissariat jusqu'au distributeur d'arme <br />
-						et en voler le plus possible,ou bien aller crocheter le marché noir de la mafia !</td>
+						<td>En fonction des armes volées</td>
+						<td>Introduisez-vous dans le commissariat jusqu'au distributeur d'armes <br />
+						et en voler le plus possible, ou bien aller crocheter le marché noir de la mafia !</td>
 					</tr>
 				</tbody>
 			</table><br />
