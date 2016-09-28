@@ -1,30 +1,31 @@
-<div ng-controller="ctrlTabs" data-job="111">
+<div ng-controller="ctrlTabs" data-job="1">
 	<ul class="nav nav-tabs" role="tablist">
-		<li><a ng-click="tabs='desc'">Présentation </a></li>
-		<li><a ng-click="tabs='memb'">Employés </a></li>
-		<li><a ng-click="tabs='hier'">Hiérarchie </a></li>
-		<li><a ng-click="tabs='note'">Shownote </a></li>
-		<li><a ng-click="tabs='quest'">Quêtes </a></li>
+		<li><a ng-click="tabs='desc'" ng-class="tabs=='desc'? 'active' : ''">Présentation </a></li>
+		<li><a ng-click="tabs='memb'" ng-class="tabs=='memb'? 'active' : ''">Employés </a></li>
+		<li><a ng-click="tabs='hier'" ng-class="tabs=='hier'? 'active' : ''">Hiérarchie </a></li>
+		<li><a ng-click="tabs='note'" ng-class="tabs=='note'? 'active' : ''">Shownote </a></li>
+		<li><a ng-click="tabs='item'" ng-class="tabs=='item'? 'active' : ''">Boutique </a></li>
+		<li><a ng-click="tabs='quest'" ng-class="tabs=='quest'? 'active' : ''">Quêtes </a></li>
 	</ul>
-
+	
 	<div class="tab-content" style="width:100%;">
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='desc'">
 					<hr class="featurette-divider">
-					<h2 class="text-center">Qui sommes nous :</h2><br />
+					<h2 class="text-center">Qui sommes-nous :</h2><br />
 					<hr class="featurette-divider">
-					<p>La police de Princeton est la meilleur du pays, plus de 789 arrestations par semaine.
-					Nos agents sont formé par les anciens agent des forces spéciale, nous sommes la pour proteger et servir tout les citoyens sans exeptions.</p>
+					<p>La police de Princeton est la meilleure du pays, plus de 789 arrestations par semaine.
+					Nos agents sont formés par les anciens agents des forces spéciales, nous sommes là pour protéger et servir tous les citoyens sans exception.</p>
 					<hr class="featurette-divider">
 					<h2 class="text-center">Informations :</h2><br />
 					<hr class="featurette-divider">
-					<p><u>Siè</u>g<u>es social :</u> </p><br/>
-					<p><u>Distinctions :</u> Légion d'honneur, Elue patrouille la plus Sexy de l'année.</p>
+					<p><u>Siè</u>g<u>e social :</u> </p><br/>
+					<p><u>Distinctions :</u> Légion d'honneur, Élue patrouille la plus Sexy de l'année.</p>
 				
 					<hr class="featurette-divider">
 					<h2 class="text-center">Recrutement :</h2><br />
 					<hr class="featurette-divider">
-					<p>La police recrute tout les jours des nouvelles recrues et les formes pour en faire les meilleurs.<br />
-					Si votre dévotion envers votre prochain et votre engoument pour aider la veuve et l'orphelin est plus fort que tout,<br />
+					<p>La police recrute tous les jours des nouvelles recrues et les formes pour en faire les meilleurs.<br />
+					Si votre dévotion envers votre prochain et votre engouement pour aider la veuve et l'orphelin est plus fort que tout,<br />
 					Rejoignez-nous !</p>
 					<br />
 					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposer une candidature spontanée</a></center>
@@ -61,7 +62,7 @@
 						</tr>
 					</tbody>
 				</table><br />
-				<p class="text-center"> Nous avons actuellement {{jobs.quota}} vendeurs régulier dans  notre entreprise.</p>
+				<p class="text-center"> Nous avons actuellement {{jobs.quota}} vendeurs réguliers dans  notre entreprise.</p>
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='note'">
 			<h2 class="text-center"><u>Le rè</u>g<u>lement interne :</u></h2><br />
@@ -92,7 +93,7 @@
 					<tr>
 						<td>Non à la contrebande</td>
 						<td>En fonction des objets détruits</td>
-						<td>Vous avez 24 minutes pour tazer un maximum d'objets illégaux en ville.<br />
+						<td>Vous avez 24 minutes pour taser un maximum d'objets illégaux en ville.<br />
 						(Plante: 2.000$RP, Machine: 200$RP, Photocopieuse: 3.000$RP)</td>
 					</tr>
 				</tbody>
