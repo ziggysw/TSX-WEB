@@ -1,30 +1,31 @@
-<div ng-controller="ctrlTabs" data-job="111">
+<div ng-controller="ctrlTabs" data-job="101">
 	<ul class="nav nav-tabs" role="tablist">
-		<li><a ng-click="tabs='desc'">Présentation </a></li>
-		<li><a ng-click="tabs='memb'">Employés </a></li>
-		<li><a ng-click="tabs='hier'">Hiérarchie </a></li>
-		<li><a ng-click="tabs='note'">Shownote </a></li>
-		<li><a ng-click="tabs='quest'">Quêtes </a></li>
+		<li><a ng-click="tabs='desc'" ng-class="tabs=='desc'? 'active' : ''">Présentation </a></li>
+		<li><a ng-click="tabs='memb'" ng-class="tabs=='memb'? 'active' : ''">Employés </a></li>
+		<li><a ng-click="tabs='hier'" ng-class="tabs=='hier'? 'active' : ''">Hiérarchie </a></li>
+		<li><a ng-click="tabs='note'" ng-class="tabs=='note'? 'active' : ''">Shownote </a></li>
+		<li><a ng-click="tabs='item'" ng-class="tabs=='item'? 'active' : ''">Boutique </a></li>
+		<li><a ng-click="tabs='quest'" ng-class="tabs=='quest'? 'active' : ''">Quêtes </a></li>
 	</ul>
 
 	<div class="tab-content" style="width:100%;">
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='desc'">
 					<hr class="featurette-divider">
-					<h2 class="text-center">Qui sommes nous :</h2><br />
+					<h2 class="text-center">Qui sommes-nous :</h2><br />
 					<hr class="featurette-divider">
-					<p>Le tribunal de Princeton est le performant du compté, plus de 50 procès par jours,<br/>
-					nos juges sont formé sur le terrain immédiatement après leurs études de droit et nous leur offrons de réelle 
+					<p>Le tribunal de Princeton est le plus performant du comté, plus de 50 procès par jour,<br/>
+					nos juges sont formés sur le terrain immédiatement après leurs études de droit et nous leur offrons de réelle 
 					évolution de carrière.</p>
 					<hr class="featurette-divider">
 					<h2  class="text-center">Informations :</h2><br />
 					<hr class="featurette-divider">
-					<p><u>Siè</u>g<u>es social :</u> </p><br/>
-					<p><u>Distinctions :</u> Plus jolie tribunal du compté, premier tribunal à avoir aboli la peine de mort.</p>
+					<p><u>Siè</u>g<u>e social :</u> </p><br/>
+					<p><u>Distinctions :</u> Plus joli tribunal du comté, premier tribunal à avoir aboli la peine de mort.</p>
 				
 					<hr class="featurette-divider">
 					<h2 class="text-center">Recrutement :</h2><br />
 					<hr class="featurette-divider">
-					<p>Nos séssions de formation sont journalière, nous recrutons sur présentation de votre carte No-pyj et sur validation d'un test oral.</p>
+					<p>Nos sessions de formation sont journalières, nous recrutons sur présentation de votre carte No-pyj et sur validation d'un test oral.</p>
 					<br />
 					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposer une candidature spontanée</a></center>
 					<br />
@@ -60,7 +61,7 @@
 						</tr>
 					</tbody>
 				</table><br />
-				<p class="text-center"> Nous avons actuellement {{jobs.quota}} vendeurs régulier dans  notre entreprise.</p>
+				<p class="text-center"> Nous avons actuellement {{jobs.quota}} vendeurs réguliers dans  notre entreprise.</p>
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='note'">
 			<h2 class="text-center"><u>Le rè</u>g<u>lement interne :</u></h2><br />
@@ -92,7 +93,7 @@
 					<tr>
 						<td>La justice sournoise</td>
 						<td>5 000$rp</td>
-						<td>Prenez une plainte pour meurtre sur votre cible et condamnez le.<br />
+						<td>Prenez une plainte pour meurtre sur votre cible et condamnez-le.<br />
 						(100$RP d'amende et 3h de prison minimum)</td>
 					</tr>
 				</tbody>
