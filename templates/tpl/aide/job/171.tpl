@@ -27,7 +27,7 @@
 					<h2 class="text-center">Recrutement :</h2><br />
 					<hr class="featurette-divider">
 					<p>Le Casino est actuellement à la recherche de personnel qualifié dans la relation client.<br/>
-					Des personnes capables de rester classieuses en toutes circonstances</p>
+					Des personnes capables de garder leur bienséance en toutes circonstances.</p>
 					<br />
 					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposer une candidature spontanée</a></center>
 					<br />
