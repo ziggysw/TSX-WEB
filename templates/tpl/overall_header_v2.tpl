@@ -58,7 +58,7 @@
 							<span class="sr-only">Toggle navigation</span>
 							<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="./"><img src="{if="$alternate"}{$alternate}{else}/images/bleue2.png{/if}" alt="tsX" width="350" height="100" style="max-height:100px !important"/></a>
+						<a class="navbar-brand" href="./"><img src="{if="$alternate"}{$alternate}{else}/images/bleue32.png{/if}" alt="tsX" width="350" height="100" style="max-height:100px !important"/></a>
 					</div>
 					<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right" style="z-index:2;">
@@ -91,13 +91,13 @@
 									<li><a href="/index.php?page=money"><i class="fa fa-usd"></i> Achat de $RP</a></li>
 								</ul>
 							</li>
-							<li class="dropdown"><a href="/wiki">WiKi <span class="caret hidden-xs"></span></a>
+							<li class="dropdown"><a href="/index.php?page=aide">Aide <span class="caret hidden-xs"></span></a>
 								<ul class="dropdown-menu">
-									<li><a href="/wiki/Bien_d%C3%A9buter"><i class="fa fa-key"></i> Comment bien débuter?</a></li>
-									<li><a href="/wiki/Trouver_un_job"><i class="fa fa-suitcase"></i> Comment trouver un job?</a></li>
-									<li><a href="/wiki/Gagner_de_l%27argent"><i class="fa fa-money"></i> Comment gagner de l'argent?</a></li>
-									<li><a href="/wiki/Les_binds"><i class="fa fa-keyboard-o"></i> Mettre en place vos binds</a></li>
-									<li><a href="/wiki/Le_rang_no-pyj"><i class="fa fa-ticket"></i> Qu'est-ce que le rang no-pyj ?</a></li>
+									<li><a href="/index.php?page=aide&sub=debuter"><i class="fa fa-key"></i> Comment bien débuter?</a></li>
+									<li><a href="/index.php?page=aide&sub=emploi"><i class="fa fa-suitcase"></i> Comment trouver un job?</a></li>
+									<li><a href="/index.php?page=aide&sub=argent"><i class="fa fa-money"></i> Comment gagner de l'argent?</a></li>
+									<li><a href="/index.php?page=aide&sub=bind"><i class="fa fa-keyboard-o"></i> Mettre en place vos binds</a></li>
+									<li><a href="/index.php?page=aide&sub=nopyj"><i class="fa fa-ticket"></i> Qu'est-ce que le rang no-pyj ?</a></li>
 								</ul>
 							</li><li class="dropdown">
 								<a href="/forum/">FORUM <span class="caret hidden-xs"></span></a>
