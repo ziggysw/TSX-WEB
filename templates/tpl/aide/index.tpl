@@ -17,6 +17,9 @@
 					<br />
 					<a class="various btn btn-primary" href="/index.php?page=aide&sub=debuter"><i class="fa fa-hand-o-right"></i> En savoir plus !</a>
 				</div></div>
+				<!--<header>
+				<a class="various btn btn-primary" href="/index.php?page=aide&sub=debuter"><i class="fa fa-hand-o-right"></i> En savoir plus !</a>
+				</header>-->
 			</div>
 			<div class="item"><!-- Slide 1 -->
 				<img id="img_carrousel" alt="Binds" src="/images/wiki/bind.png" /></a>

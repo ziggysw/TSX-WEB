@@ -2,7 +2,7 @@
 <script type="text/javascript" src="/js/wiki/wiki.js"></script>
 <div ng-controller="ctrlAide" id="mainWiki">
 
-<br />
+<br /><br /><br /><br />
 
 	<nav class="navbar navbar-inverse p-navbar" id="mw-navigation">
 					<div class="container-fluid">
@@ -31,7 +31,7 @@
 								<ul class="dropdown-menu p-Rôle-Play" id="p-Rôle-Play">
 										<li><a href="/index.php?page=aide&sub=debuter"><i class="fa fa-book" aria-hidden="true"></i> Comment bien débuter ?</a></li>
 										<li><a href="/index.php?page=aide&sub=argent"><i class="fa fa-money" aria-hidden="true"></i> Comment gagner de l'argent sur le Roleplay ?</a></li>
-										<li><a href="/index.php?page=aide&sub=emploi"><i class="fa fa-map-o" aria-hidden="true"></i> Comment Trouver un emploi ?[CREA]</a></li>
+										<li><a href="/index.php?page=aide&sub=emploi"><i class="fa fa-map-o" aria-hidden="true"></i> Comment Trouver un emploi ?</a></li>
 										<li><a href="/index.php?page=aide&sub=mairie"><i class="fa fa-medium" aria-hidden="true"></i> La Mairie [CREA]</a></li>
 										<li><a href="/index.php?page=aide&sub=pvp"><i class="fa fa-shield" aria-hidden="true"></i> La PvP</a></li>
 										<li><a href="/index.php?page=aide&sub=crayon"><i class="fa fa-paint-brush" aria-hidden="true"></i> Les Crayons de Couleurs</a></li>

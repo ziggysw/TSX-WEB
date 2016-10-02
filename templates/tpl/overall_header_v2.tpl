@@ -118,9 +118,10 @@
 	</div>
 	{$intro}
 	<div class="container main">
-<!--
-<div class="col-sm-4 col-sm-offset-8 alert alert-success" role="alert">
-<strong>Princeton a été mis à jour.</strong> Venez faire un tour en ville !
+<div class="col-sm-7 col-sm-offset-5 alert alert-danger" role="alert">
+<strong>Le VAC arrive sur le serveur role-play.</strong> Si vous êtes ban-vac, vous pouvez gagner une clé CS:GO <a href="https://www.ts-x.eu/forum/viewtopic.php?p=605126&f=10#p605126"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+ ici <i class="fa fa-trophy" aria-hidden="true"></i>
+</a>
 </div>
--->
+
 		{$page}
