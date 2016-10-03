@@ -170,9 +170,9 @@ server.put('/group/:groupid/:steamid', function (req, res, next) {
           if( row2.job_id == row1.job_id )
               return res.send(new ERR.ForbiddenError("Vous n'avez pas les permissions suffisantes pour ce rang."));
 
-          server.conn.query("SELECT COUNT(`group_id`) as `cpt` FROM `rp_users` U INNER JOIN `rp_groups` G ON G.`id`=U.`group_id` WHERE G.`id`=? OR G.`owner`=?;", [uniqID, uniqID], function(err, row) {
+          server.conn.query("SELECT COUNT(`group_id`) as `cpt` FROM `rp_users` U INNER JOIN `rp_groups` G ON G.`id`=U.`group_id` WHERE (G.`id`=? OR G.`owner`=?) AND U.`steamid`<>? ;", [uniqID, uniqID, req.params["steamid"]], function(err, row) {
             if( jobID != 0 && parseInt(row[0].cpt) >= 10 )
-              return res.send(new ERR.ForbiddenError("NotAuthorized: Cannot grant some of your level or higher"));
+              return res.send(new ERR.ForbiddenError("Impossible de recruter plus de 10 personnes dans votre groupe."));
 
             server.conn.query("UPDATE `rp_users` SET `group_id`=? WHERE `steamid`=? LIMIT 1;", [jobID, req.params["steamid"]], function(err, row) {
               if( err ) return res.send(new ERR.InternalServerError(err));
