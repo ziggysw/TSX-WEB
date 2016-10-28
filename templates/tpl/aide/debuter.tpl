@@ -113,7 +113,7 @@
 								<td>6</td>
 								<td>Habitant</td>
 								<td>21 600</td>
-								<td>Il est temps de vous installer en ville ! Passagez à la mairie pour faire votre identitez (nom, prénom, date de naissance), et vous recevez 10 cadeaux</td>
+								<td>Il est temps de vous installer en ville ! Passez à la mairie pour faire votre identitez (nom, prénom, date de naissance), et vous recevez 10 cadeaux</td>
 							</tr>
 							<tr class="txt">
 								<td>12</td>
