@@ -92,8 +92,8 @@
 					<div class="panel-body">
 						<table class="table wiki-table-prune">
 							<tr>
-								<th>Niveau</th>
-								<th>Rank</th>
+								<th>Rang</th>
+								<th>Titre du grade</th>
 								<th>XP</th>
 								<th>Bonus</th>
 							</tr>
