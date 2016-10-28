@@ -90,6 +90,201 @@
 						</div>
 					</div>
 					<div class="panel-body">
+						<table class="table wiki-table-prune">
+							<tr>
+								<th>Niveau</th>
+								<th>Rank</th>
+								<th>XP</th>
+								<th>Bonus</th>
+							</tr>
+							<tr class="txt">
+								<td>1</td>
+								<td>Turoriel</td>
+								<td>0</td>
+								<td>Ne peut pas faire de dégât, ni en subir, ni avoir un job</td>
+							</tr>
+							<tr class="txt">
+								<td>2</td>
+								<td>Renégat</td>
+								<td>7 200</td>
+								<td>Peut attaquer les joueurs</td>
+							</tr>
+							<tr class="txt">
+								<td>6</td>
+								<td>Habitant</td>
+								<td>21 600</td>
+								<td>Passage à la mairie (nom, prénom, date de naissance), et recois 10 cadeaux</td>
+							</tr>
+							<tr class="txt">
+								<td>12</td>
+								<td>Simple citoyen</td>
+								<td>72 000</td>
+								<td>Droit du no-pyj</td>
+							</tr>
+							<tr class="txt">
+								<td>30</td>
+								<td>Citoyen dévoué</td>
+								<td>108 000</td>
+								<td>Droit de vote</td>
+							</tr>
+							<tr class="txt">
+								<td>42</td>
+								<td>Propriétaire</td>
+								<td>151 200</td>
+								<td>Peut participer aux enchères villa immobilière</td>
+							</tr>
+							<tr class="txt">
+								<td>56</td>
+								<td>Patriote</td>
+								<td>201 600</td>
+								<td>Peut devenir chef de job</td>
+							</tr>
+							<tr class="txt">
+								<td>72</td>
+								<td>Porte-parole</td>
+								<td>259 200</td>
+								<td>Peut passer la limite du chat général</td>
+							</tr>
+							<tr class="txt">
+								<td>90</td>
+								<td>Élu</td>
+								<td>324 000</td>
+								<td>Peut devenir maire</td>
+							</tr>
+							<tr class="txt">
+								<td>110</td>
+								<td>Baron</td>
+								<td>396 000</td>
+								<td>2 plants de drogue max supplémentaires</td>
+							</tr>
+							<tr class="txt">
+								<td>132</td>
+								<td>Vicompte</td>
+								<td>475 200</td>
+								<td>Peut participer aux braquages</td>
+							</tr>
+							<tr class="txt">
+								<td>156</td>
+								<td>Compte</td>
+								<td>561 600</td>
+								<td>Respawn à 200HP</td>
+							</tr>
+							<tr class="txt">
+								<td>182</td>
+								<td>Marquis</td>
+								<td>655 200</td>
+								<td>2 machines max supplémentaires</td>
+							</tr>
+							<tr class="txt">
+								<td>210</td>
+								<td>Duc</td>
+								<td>756 000</td>
+								<td>Peut lancer un braquage</td>
+							</tr>
+							<tr class="txt">
+							        <td>240</td>
+								<td>Conseillé</td>
+								<td>864 000</td>
+								<td>Double l'inventaire max en banque</td>
+								</tr>
+							<tr class="txt">
+	                                                        <td>272</td>
+								<td>Assistant haut conseillé</td>
+								<td>979 200</td>
+								<td>Respawn à 200 kevlar</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>306</td>
+								<td>Haut conseillé</td>
+								<td>1 101 600</td>
+								<td>Peut acheter des contrats kidnappings</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>342</td>
+								<td>Ministre</td>
+								<td>1 231 200</td>
+								<td>peut faire des quêtes de freekill</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>420</td>
+								<td>Prince héritier</td>
+								<td>1 512 000</td>
+								<td>3 plants de drogue max supplémentaire</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>462</td>
+								<td>Roi</td>
+								<td>1 663 200</td>
+								<td>Respawn à 250 Kevlar</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>506</td>
+								<td>Roi d'ordre divin</td>
+								<td>1 821 600</td>
+								<td>3 machines max supplémentaires</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>552</td>
+								<td>Empereur</td>
+								<td>1 987 200</td>
+								<td>Peut créer un gang</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>600</td>
+								<td>Empereur d'ordre divin</td>
+								<td>2 160 000</td>
+								<td>CASH: 1 000 000$, s'il accepte de recommencer au niveau 2 + prestige</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>650</td>
+								<td>Héros</td>
+								<td>2 340 000</td>
+								<td>Temps de respawn divisé par 2</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>702</td>
+								<td>Super Héros</td>
+								<td>2 527 200</td>
+								<td>Recois 50 cadeaux</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>756</td>
+								<td>Fils de Dieu</td>
+								<td>2 721 600</td>
+								<td>Regénération HP/Kevalr passif</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>812</td>
+								<td>Demi Dieu</td>
+								<td>2 923 200</td>
+								<td>Production accélérée de drogue et des machines</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>870</td>
+								<td>Dieu</td>
+								<td>3 132 000</td>
+								<td>Accès au +force sur les joueurs</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>930</td>
+								<td>Dieu supprème</td>
+								<td>3 348 000</td>
+								<td>Peut demander à obtenir des droits admins pour 1 semaine.<br /> 
+								Quelques soit son passé</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>1000</td>
+								<td>Créateur de l'univers</td>
+								<td>3 600 000</td>
+								<td>CASH: 2 500 000$, il recommence niveau 2 avec prestige + 1</td>
+                                                        </tr>
+							
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br />
 						
 					</div>
 				</div>
