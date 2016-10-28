@@ -111,7 +111,10 @@
 									</div>
 								</div>
 								<div class="panel-body">
-									<p>Information non disponible pour le moment...</p>
+									<p>Pour devenir maire vous devrez tout d'abord vous assurer d'avoir atteint ou dépassé le niveau RP 90 (324 000xp) qui offre le bonus de pouvoir prétendre à devenir maire</p>
+									<p>Rendez vous ensuite à la mairie de Princetown (la grande tour entre le commissariat et le bar le requin) puis appuyez sur votre touche "utiliser" pour ouvrir le menu de la mairie.</p>
+									<p>Vous aurez l'option candidatures et vous pourrez déposer la votre pour 50 000$ RP.</p>
+									<p>Va s'en suivre un temps de vote par les joueurs ayant atteint ou dépassé le niveau 20, à vous de trouver le bon moyen de pub !</p>
 								</div>
 							</div>
 						</div>
