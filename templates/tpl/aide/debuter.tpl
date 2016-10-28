@@ -113,25 +113,25 @@
 								<td>6</td>
 								<td>Habitant</td>
 								<td>21 600</td>
-								<td>Il est temps de vous installer en ville ! Passez à la mairie pour faire votre identitez (nom, prénom, date de naissance), et vous recevez 10 cadeaux</td>
+								<td>Il est temps de vous installer en ville ! Passez à la mairie pour faire votre identité (nom, prénom, date de naissance), et vous recevez 10 cadeaux</td>
 							</tr>
 							<tr class="txt">
 								<td>12</td>
 								<td>Simple citoyen</td>
 								<td>72 000</td>
-								<td>Vous avez acquis suffisemment d'epxpéricence pour prétendre au droit du no-pyj</td>
+								<td>Vous avez acquis suffisemment d'epxpéricence pour prétendre au droit du no-pyj et obtenir des avantages !</td>
 							</tr>
 							<tr class="txt">
 								<td>30</td>
 								<td>Citoyen dévoué</td>
 								<td>108 000</td>
-								<td>On y est, vous êtes citoyens ! Vous pouvez desormais aller voter pour élire votre maire</td>
+								<td>On y est, vous êtes citoyens ! Vous pouvez desormais aller voter pour élire votre maire ! Faites le bon choix !</td>
 							</tr>
 							<tr class="txt">
 								<td>42</td>
 								<td>Propriétaire</td>
 								<td>151 200</td>
-								<td>Il est temps de montrer votre richesse, desormais, participez aux enchères villa immobilière</td>
+								<td>Il est temps de montrer votre richesse, desormais vous pouvez participer aux enchères villa immobilière</td>
 							</tr>
 							<tr class="txt">
 								<td>56</td>
@@ -149,7 +149,7 @@
 								<td>90</td>
 								<td>Élu</td>
 								<td>324 000</td>
-								<td>Vous êtes un citoyen modèle ! Présentez vous aux élections du maire</td>
+								<td>Vous êtes un citoyen modèle ! Présentez vous aux élections du maire !</td>
 							</tr>
 							<tr class="txt">
 								<td>110</td>
@@ -209,13 +209,13 @@
 	                                                        <td>420</td>
 								<td>Prince héritier</td>
 								<td>1 512 000</td>
-								<td>Pour plus de performance, obtenez3 plants de drogue max supplémentaire !</td>
+								<td>Pour plus de performance, obtenez 3 plants de drogue max supplémentaire !</td>
                                                         </tr>
 							<tr class="txt">
 	                                                        <td>462</td>
 								<td>Roi</td>
 								<td>1 663 200</td>
-								<td>Le nombre d'ennemis augmente ? Ce n'est pas un problème ! Vous possedez désormais un respawn à 250 Kevlar</td>
+								<td>Votre nombre d'ennemis augmente ? Ce n'est pas un problème ! Vous possedez désormais un respawn à 250 Kevlar</td>
                                                         </tr>
 							<tr class="txt">
 	                                                        <td>506</td>
@@ -257,7 +257,7 @@
 	                                                        <td>812</td>
 								<td>Demi Dieu</td>
 								<td>2 923 200</td>
-								<td>Les objets illégaux c'est mal ... Mais génial ! Votre production de drogue et de machines est acceleré !</td>
+								<td>Les objets illégaux c'est mal ... Mais génial et il faut en profiter ! Votre production de drogue et de machines est acceleré !</td>
                                                         </tr>
 							<tr class="txt">
 	                                                        <td>870</td>
@@ -269,14 +269,14 @@
 	                                                        <td>930</td>
 								<td>Dieu supprème</td>
 								<td>3 348 000</td>
-								<td>Merci de votre fidélité ! demandezr à obtenir des droits admins pour 1 semaine.<br /> 
+								<td>Merci de votre fidélité ! demandez à obtenir des droits admins pendant 1 semaine !.<br /> 
 								Quelques soit son passé</td>
                                                         </tr>
 							<tr class="txt">
 	                                                        <td>1000</td>
 								<td>Créateur de l'univers</td>
 								<td>3 600 000</td>
-								<td>Félicitations ! Vous avez atteint le titre ultime ! Recevez2 500 000$, et recommencez niveau 2 avec prestige + 1</td>
+								<td>Félicitations ! Vous avez atteint le titre ultime ! Recevez 2 500 000$, et recommencez niveau 2 avec prestige + 1</td>
                                                         </tr>
 							
 						</table>
