@@ -367,9 +367,10 @@ exports = module.exports = function(server){
       var UserName = row[0].username_clean;
 
       var mail = "<input type='text' value='"+ SteamID + "'/> conteste <input type='text' value='" + req.params['target'] + "'/> <br />"+ req.params['reason'];
+      server.conn.query("INSERT INTO `rp_double_contest` (`steamid`, `target`) VALUES (?, ?);", [SteamID, req.params['target']], function(err, rows) {
+	if( err ) return res.send(new ERR.BadRequestError("Impossible de contester ce double-compte."));
 
-      sendmail({from: 'account@ts-x.eu', to: 'kossolax@ts-x.eu', subject: 'Double compte: '+ UserName, html: mail }, function(err, reply) {
-        server.conn.query("INSERT INTO `rp_double_contest` (`steamid`, `target`) VALUES (?, ?);", [SteamID, req.params['target']], function(err, rows) {
+        sendmail({from: 'account@ts-x.eu', to: 'kossolax@ts-x.eu', subject: 'Double compte: '+ UserName, html: mail }, function(err, reply) {
           return res.send("Votre contestation va être annalysée sous les 24 heures.");
         });
       });
@@ -1056,7 +1057,7 @@ server.get('/user/:id/incomes/:scale', function (req, res, next) {
   });
 
   sql = "SELECT SUM(`total`) as `total`, `date` FROM (";
-  sql += "    SELECT SUM(I.`prix`*S.`amount`) AS `total`, " + sqlTimeColumn;
+  sql += "    SELECT SUM(I.`prix`*1) AS `total`, " + sqlTimeColumn;
   sql += "		FROM `rp_sell` S INNER JOIN `rp_items` I ON S.`item_id`=I.`id` WHERE `steamid`=? AND (`item_type`='2' OR (`item_type`='4' AND `item_name`='Vol: Objet')) GROUP BY `date`";
   sql += "	UNION";
   sql += "	SELECT SUM(`amount`) AS `total`, " + sqlTimeColumn;

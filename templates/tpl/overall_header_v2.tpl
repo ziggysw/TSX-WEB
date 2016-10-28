@@ -73,7 +73,7 @@
 									<li><a class="hidden-xs" href="/index.php?page=valider_steamid"><i class="fa fa-steam"></i> Modifier son Steam</a></li>
 									<li><a class="hidden-xs" href="/index.php?page=steam"><i class="fa fa-code-fork"></i> Convertir SteamID</a></li>
 									<li><a href="/index.php?page=money"></a><a href="/index.php?page=serveurs"><i class="fa fa-server"></i> Info-server<span></span></a></li>
-									<li><a href="/index.php?page=bannis"><i class="fa fa-ban"></i> Ban-liste</a></li>
+									<li><a href="/index.php?page=roleplay2#/pilori/view/{$steamid}"><i class="fa fa-ban"></i> Ban-liste</a></li>
 									<li><a href="/index.php?page=money"><i class="fa fa-usd"></i> Achat de $RP</a></li>
 								</ul>
 							</li>
@@ -118,10 +118,10 @@
 	</div>
 	{$intro}
 	<div class="container main">
-<div class="col-sm-7 col-sm-offset-5 alert alert-danger" role="alert">
-<strong>Le VAC arrive sur le serveur role-play.</strong> Si vous êtes ban-vac, vous pouvez gagner une clé CS:GO <a href="https://www.ts-x.eu/forum/viewtopic.php?p=605126&f=10#p605126"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
- ici <i class="fa fa-trophy" aria-hidden="true"></i>
-</a>
+
+<div class="col-sm-12 col-sm-offset-0 alert alert-danger" role="alert">
+<strong>CRASH CS:GO.</strong> Nous sommes au courant qu'il existe un bug qui provoque la fermeture involontaire de votre jeu CSGO. Nous n'avons aucune piste quant à la résolution de ce problème. <a href="https://www.ts-x.eu/forum/viewtopic.php?f=5&t=34124&p=606250#p606250" >Vos suggestions peuvent être publiées ici</a>. Si vous trouvez comment provoquer ce bug, vous <b>remportez 1.000.000$RP et une place VIP</b>.
+En attendant, veuillez nous excuser de la gêne occasionnée. 
 </div>
 
 		{$page}
