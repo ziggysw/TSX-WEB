@@ -245,7 +245,7 @@ exports = module.exports = function(server){
 
     server.conn.query("SELECT * FROM `ts-x`.`srv_bans` WHERE REPLACE(`steamid`, 'STEAM_0', 'STEAM_1')=?;", [req.params['id']], function(err, rows) {
       if( err ) return res.send(new ERR.InternalServerError(err));
-      if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
+//      if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
 
       var k = 0;
       var found = false;

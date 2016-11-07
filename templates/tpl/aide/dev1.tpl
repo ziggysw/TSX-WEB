@@ -1,220 +1,25 @@
-		<div class="container bs-docs-container">
-			<div class="row">
-				<div class="col-md-9" role="main">
-					<br /><br />
-					<center><img id="img_title" class="radius" src="https://www.ts-x.eu/w/images/5/5d/Crayon.jpg"></center
-					<br />
-					<div class="row">
-						<div id="GroupA" class="col-md-12 group">
-							<div class="panel panel-wiki">
-								<div class="row">
-									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
-									</div>
-									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2>A quoi ça sert ?</h2></div>
-									</div>
-								</div>
-								<div class="panel-body">
-									<p>Le crayon de couleur est un item proposé par les Coachs au prix de 900 $rp.<br />
-									Une fois l'item activé, il est valable jusqu'à votre déconnexion et vous permettra de mettre de la couleur dans votre vie ainsi que de simplifier certaines commandes !</p>
-								</div>
-							</div>
-						</div>
-						<div id="GroupB" class="col-md-12 group">
-							<div class="panel panel-wiki">
-								<div class="row">
-									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
-									</div>
-									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2>Les couleurs</h2></div>
-									</div>
-								</div>
-								<div class="panel-body">
-									<table class="wiki-table-prune">
-										<tr>
-											<th id="table-top-left">Balise</th>
-											<th id="table-top-right">Couleur</th>
-										</tr>
-										<tr class="active-light">
-											<td>{darkred}</td>
-											<td><span style="color:#bb1d1a;">Bordeaux</span></td>
-										</tr>
-										<tr>
-											<td>{green} </td>
-											<td><span style="color:#5de760;">Vert</span></td>
-										</tr>
-										<tr>
-											<td>{lightgreen}</td>
-											<td><span style="color:#a8bc87;">Vert clair</span></td>
-										</tr>
-										<tr>
-											<td>{lime}</td>
-											<td><span style="color:#aae765;">Citron vert</span></td>
-										</tr>
-										<tr>
-											<td>{red}</td>
-											<td><span style="color:#d63b37;">Rouge</span></td>
-										</tr>
-										<tr>
-											<td>{grey}</td>
-											<td><span style="color:#cecbc2;">Gris</span></td>
-										</tr>
-										<tr class="active-light">
-											<td>{olive}</td>
-											<td><span style="color:#ece87c;">Jaune foncé</span></td>
-										</tr>
-										<tr>
-											<td>{lightblue}</td>
-											<td><span style="color:#668db8;">Bleau clair</span></td>
-										</tr>
-										<tr>
-											<td>{blue}</td>
-											<td><span style="color:#525db9;">Bleue</span></td>
-										</tr>
-										<tr>
-											<td>{purple}</td>
-											<td><span style="color:#b443b7;">Violet</span></td>
-										</tr>
-										<tr>
-											<td>{darkorange}</td>
-											<td><span style="color:#bf5b5d;">Orange foncé</span></td>
-										</tr>
-										<tr>
-											<td>{orange}</td>
-											<td><span style="color:#d9ae2b;">Orange</span></td>
-										</tr>
-									</table>
-								</div>
-							</div>
-						</div>
-						<div id="GroupC" class="col-md-12 group">
-							<div class="panel panel-wiki">
-								<div class="row">
-									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
-									</div>
-									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2>Les balises d'effets</h2></div>
-									</div>
-								</div>
-								<div class="panel-body">
-									<table class="wiki-table-pomme">
-										<tr>
-											<th id="table-top-left">Balise</th>
-											<th id="table-top-right">Zones d'effet</th>
-										</tr>
-										<tr>
-											<td>{hp}</td>
-											<td>Les points de vie</td>
-										</tr>
-										<tr>
-											<td>{ap}</td>
-											<td>Le Kevlar</td>
-										</tr>
-										<tr>
-											<td>{heure}</td>
-											<td>Heure</td>
-										</tr>
-										<tr>
-											<td>{minutes}</td>
-											<td>Minutes</td>
-										</tr>
-										<tr>
-											<td>{job}</td>
-											<td>Rang du métier dans lequel vous êtes</td>
-										</tr>
-										<tr>
-											<td>{gang}</td>
-											<td>Rang du gang dans lequel vous êtes</td>
-										</tr>
-										<tr>
-											<td>{zone}</td>
-											<td>Zone dans laquelle vous êtes</td>
-										</tr>
-										<tr>
-											<td>{date}</td>
-											<td>Date sur le Rôle-Play</td>
-										</tr>
-										<tr>
-											<td>{me} ou {client}</td>
-											<td>Votre pseudo</td>
-										</tr>
-										<tr>
-											<td>{target}</td>
-											<td>Ce que vous visez</td>
-										</tr>
-										<tr>
-											<td>{door}</td>
-											<td>La porte visée</td>
-										</tr>
-									</table>
-								</div>
-							</div>
-						</div>
-						<div id="GroupD" class="col-md-12 group">
-							<div class="panel panel-wiki">
-								<div class="row">
-									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
-									</div>
-									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2>Comment les utiliser ?</h2></div>
-									</div>
-								</div>
-								<div class="panel-body">
-									<div class="row">
-										<p>Dicrectement en jeux : </p><br /><br />
-										<div class="col-sm-6">
-											<img class="img_wiki" src="/images/wiki/crayon/crayon.jpg" />
-										</div>
-										<div class="col-sm-6">
-											<img class="img_wiki" src="/images/wiki/crayon/crayon1.jpg" />
-										</div>
-									</div>
-									<div class="row">
-										<br /><br />
-										<p>Dans votre pseudo steam :</p><br /><br />
-										<div class="col-sm-6">
-											<img class="img_wiki" src="/images/wiki/crayon/crayon2.png" />
-										</div>
-										<div class="col-sm-6">
-											<img class="img_wiki" src="/images/wiki/crayon/crayon3.jpg" />
-										</div>
-									</div>
-									<div class="row">
-										<br /><br />
-										<p>Ou via un bind :</p><br /><br />
-										<div class="col-sm-6">
-											<img class="img_wiki" src="/images/wiki/crayon/crayon4.jpg" />
-										</div>
-										<div class="col-sm-6">
-											<img class="img_wiki" src="/images/wiki/crayon/crayon5.jpg" />
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				
-				</div>
-				<!--Nav Bar -->
-				<nav class="col-md-2 bs-docs-sidebar">
-					<ul id="sidebar" class="nav nav-stacked fixed">
-						<li>
-							<a href="#GroupA">A quoi ça sert ?</a>
-						</li>
-						<li>
-							<a href="#GroupB">Les couleurs</a>
-						</li>
-						<li>
-							<a href="#GroupC">Les balises d'effets</a>
-						</li>
-						<li>
-							<a href="#GroupD">Comment les utiliser ?</a>
-						</li>
-					</ul>
-				</nav>
+<br />
+<div class="row">
+	<div class="col-lg-2">
+		<div class="">
+			<div class="header-lvl" style="background: #1E7145 !important;border-color: #1E7145 !important;color: #fff;"><span style="margin-left: 60px;font-family: Arial; font-weight: bold; text-align: center; font-size: 30px;">Tutoriel</span></div>
+			<div class="container">
+			X
+			<div class="body-lvl" style="background: #333;border-color: #6a6a6a;color: #fff;">
+				<span class="xp">
+					<span class="number">{xp}</span>
+						<span class="unit">XP</span>
+					</span>
+				<span class="sep"> / </span>
+				<span class="value">
+					<span class="number">0</span>
+						<span class="unit">XP</span>
+				</span>
+			</div>
+			<div class="footer-lvl" style="background: #1E7145;border-color: #1E7145;color: #fff;">
+				<a class="info_lvl">Plus d'information ...</a>
 			</div>
 		</div>
+	</div>
+</div>
+<br />

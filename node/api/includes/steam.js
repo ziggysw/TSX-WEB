@@ -40,7 +40,7 @@ exports = module.exports = function(server){
       offer.getReceivedItems(function(err, items) {
         Object.keys(items).forEach(function (i) {
           var item = items[i];
-          var euro = ( getPrice(item.market_hash_name) * 0.9);
+          var euro = ( getPrice(item.market_hash_name) * 0.95);
           var money = euro * 10000;
           var SteamID = offer.partner.getSteam2RenderedID();
           var now = new Date();
@@ -131,16 +131,16 @@ server.post('/steam/trade', function (req, res, next) {
             price: null,
           };
 
-        Object.keys(item.tags).forEach(function (j) {
-          var tag = item.tags[j];
-          if( tag.internal_name === "CSGO_Type_WeaponCase" ) return res.send(new ERR.NotFoundError("InventoryError"));
-        });
-
+/*        Object.keys(item.tags).forEach(function (j) {
+            var tag = item.tags[j];
+            if( tag.internal_name === "CSGO_Type_WeaponCase" ) return res.send(new ERR.NotFoundError("InventoryError"));
+          });
+*/
 
 
         var euro = getPrice(item.market_hash_name);
-        var money = (euro * 0.9) * 10000;
-        if( euro < 0.15 ) return res.send(new ERR.NotFoundError("InventoryError"));
+        var money = (euro * 0.95) * 10000;
+        if( euro < 0.10 ) return res.send(new ERR.NotFoundError("InventoryError"));
 
         server.conn.query("SELECT `partner`, `tokken` FROM `ts-x`.`phpbb3_users` WHERE `steamid`=?", [SteamID], function(err, row) {
           if( err ) return res.send(new ERR.InternalServerError(err));
@@ -252,15 +252,15 @@ server.get('/steam/inventory', function (req, res, next) {
 
             var isBox = false;
 
-            Object.keys(item.tags).forEach(function (j) {
+/*            Object.keys(item.tags).forEach(function (j) {
               var tag = item.tags[j];
               if( tag.internal_name === "CSGO_Type_WeaponCase" )
                 isBox = true;
             });
-
+*/
             if( !isBox ) {
               data.price = getPrice(item.market_hash_name);
-              if( data.price >= 0.15 )
+              if( data.price >= 0.10 )
                 obj.push(data);
             }
           }
@@ -319,16 +319,16 @@ server.get('/steam/inventory/:id', function (req, res, next) {
           };
 
           var isBox = false;
-          Object.keys(item.tags).forEach(function (j) {
+ /*         Object.keys(item.tags).forEach(function (j) {
             var tag = item.tags[j];
             if( tag.internal_name === "CSGO_Type_WeaponCase" )
               isBox = true;
           });
-
+*/
           if( !isBox ) {
             data.price = getPrice(item.market_hash_name);
             console.log(data);
-            if( data.price >= 0.15 )
+            if( data.price >= 0.10 )
               obj.push(data);
           }
         }
