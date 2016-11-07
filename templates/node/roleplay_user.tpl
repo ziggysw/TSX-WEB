@@ -30,6 +30,7 @@
     <div draw-line="left,150,100" class="box">
       Ratio: {{data.kill}} tués / {{data.death}} morts = {{Math.round(data.kill/data.death*100)/100}}<br />
       Niveau vitalité: {{data.vitality}}
+      Rang: {{data.rang}} - Prestige:{{data.prestige}}
     </div>
     <br /><br /><br />
     <button class="btn btn-danger" ng-show="data.job_id>0 && Params.sub==steamid" rest="delete@/user/job">Quitter mon job</button>
