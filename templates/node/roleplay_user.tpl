@@ -29,7 +29,7 @@
   <div class="col-sm-4">
     <div draw-line="left,150,100" class="box">
       Ratio: {{data.kill}} tués / {{data.death}} morts = {{Math.round(data.kill/data.death*100)/100}}<br />
-      Niveau vitalité: {{data.vitality}}
+      Niveau vitalité: {{data.vitality}}<br />
       Rang: {{data.rang}} - Prestige: {{data.prestige}}
     </div>
     <br /><br /><br />
