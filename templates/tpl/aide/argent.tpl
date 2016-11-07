@@ -418,11 +418,11 @@
 											<th>Gain</th>
 											<th class="hidden-phone" id="table-top-right">Objectif</th>
 										  </tr>
-											<tr><td>Artisan</td><td>Commande d'artisanat</td><td>5.000$RP</td><td class="hidden-phone">Posez une table de craft ou rendez-vous près d'une déjà poser.</td></tr>
+											<tr><td>Artisan</td><td>Commande d'artisanat</td><td>5.000$RP</td><td class="hidden-phone">Posez une table de craft ou rendez-vous près d'une déjà posée.</td></tr>
 											<tr><td>Justice</td><td>La justice sournoise</td><td>5.000$RP</td><td class="hidden-phone">Condamnez un meurtrier à 100$RP d'amende et 3h de prison minimum.</td></tr>
 											<tr><td>Justice</td><td>La justice express</td><td>3.000$RP</td><td class="hidden-phone">Vous avez un bonus pour vos 3 prochaines condamnations pendant 24h.<br /> (100$RP d'amende et 3h de prison minimum)</td></tr>
 											<tr><td>Justice</td><td>Un homme très recherché</td><td>2.500$RP</td><td class="hidden-phone">Vous avez 12 heures pour trouver un homme recherché par le tribunal, et l'arrêter.</td></tr>
-											<tr><td>Mafia</td><td>Délivrance</td><td>1.000$RP par prisonniers</td><td class="hidden-phone">Infiltrez-vous dans les cellules du commissariat et libérer un maximum de prisonnier.</td></tr>
+											<tr><td>Mafia</td><td>Délivrance</td><td>1.000$RP par prisonniers</td><td class="hidden-phone">Infiltrez-vous dans les cellules du commissariat et libérez un maximum de prisonnier.</td></tr>
 											<tr><td>Mafia</td><td>Où est Charlie?</td><td>1.000$RP par zone découverte</td><td class="hidden-phone">Rendez-vous dans 5 zones aléatoires de la ville.</td></tr>
 											<tr><td>Mafia</td><td>Documents secrets</td><td>5.000$RP</td><td class="hidden-phone">Rendez-vous dans la villa PvP pour voler des documents secrets et retournez dans votre planque pour les déposer.</td></tr>
 											<tr><td>Mafia</td><td>Traffic illégal</td><td>5.000$RP.</td><td class="hidden-phone">Introduisez-vous dans le commissariat jusqu'au distributeur d'arme et volez-en le plus possible !</td></tr>
@@ -439,7 +439,7 @@
 											<tr><td>Stidda Famiglia</td><td>Surveillance des plants.</td><td>500$RP par plan restant à la fin</td><td class="hidden-phone">Posez 10 plants et protégez-les pendant 24 minutes.</td></tr>
 											<tr><td>Stidda Famiglia</td><td>Blanchissement d'argent</td><td>5.000$RP</td><td class="hidden-phone">Volez une arme à un flic et ramenez la dans votre planque.</td></tr>
 											<tr><td>Stidda Famiglia</td><td>Récolte des plants</td><td>1.000$ Par plant</td><td class="hidden-phone">Crochetez 5 fois la place de l'indépendance en 5x6 minutes.</td></tr>
-											<tr><td>Stidda Famiglia</td><td>Razzia</td><td>En fonction des armes volé</td><td class="hidden-phone">Introduisez-vous dans le commissariat jusqu'au distributeur d'arme et en voler le plus possible,<br /> ou bien aller crocheter le marché noir de la mafia !</td></tr>
+											<tr><td>Stidda Famiglia</td><td>Razzia</td><td>En fonction des armes volé</td><td class="hidden-phone">Introduisez-vous dans le commissariat jusqu'au distributeur d'arme et volez en le plus possible,<br /> ou bien allez crocheter le marché noir de la mafia !</td></tr>
 											<tr><td>Technicien</td><td>Surveillance des machines</td><td>500$RP par machine restant à la fin</td><td class="hidden-phone">Posez 10 machines en protégez les durant 24 minutes</td></tr>
 											<tr><td>Technicien</td><td>Sous écoute</td><td>5.000$RP</td><td class="hidden-phone">Enlevez les micros posés par la police sur les téléphones de la ville dans le temps impartis.</td></tr>
 										</table>
