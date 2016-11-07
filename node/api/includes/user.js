@@ -92,7 +92,7 @@ exports = module.exports = function(server){
 
     var sql = "SELECT U.`name`, `money`+`bank` as `cash`, U.`job_id`, `job_name`, U.`group_id`, G.`name` as `group_name`, `time_played` as `timeplayed`, ";
     sql += "`permi_lege`, `permi_lourd`, `permi_vente`, `train` as `train_knife`, `train_weapon`, `train_esquive`, ";
-    sql += "`pay_to_bank`, `have_card`, `have_account`, `kill`, `death`, `refere`, `timePlayedJob`, U.`skin`, UNIX_TIMESTAMP(`last_connected`) as `last_connected`, `vitality`"
+    sql += "`pay_to_bank`, `have_card`, `have_account`, `kill`, `death`, `refere`, `timePlayedJob`, U.`skin`, UNIX_TIMESTAMP(`last_connected`) as `last_connected`, `vitality`, 'level' as `rang`, `prestige` "
     sql += " FROM `rp_users` U INNER JOIN `rp_jobs` J ON J.`job_id`=U.`job_id` INNER JOIN `rp_groups` G ON G.`id`=U.`group_id` WHERE `steamid`=?";
 
     server.conn.query(sql, [req.params['id']], function(err, rows) {
