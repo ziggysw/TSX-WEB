@@ -5,10 +5,12 @@
 .PCwrapper {
 	position: relative;
 	background: url(/images/pattern.png) repeat;
-	width: 250px;
-	height: 250px;
+	width: 110px;
+	height: 110px;
 	border: 1px solid #aaa;
 	border-radius: 100%;
+	margin-left:90px;
+	margin-top: 10px;
 }
 .PCwrapper, .PCwrapper * {
 	-moz-box-sizing: border-box;

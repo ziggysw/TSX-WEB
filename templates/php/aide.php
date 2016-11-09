@@ -43,6 +43,7 @@ $tpl->assign("money", $myself['money']+$myself['bank']);
 $tpl->assign("job", $myself['job_name']);
 $tpl->assign("gang", $myself['name']);
 $tpl->assign("age", getAge($user->data['user_birthday']));
+$tpl->assign("xp", $myself['xp']);
 
 $page = $tpl->draw("aide/header", $return_string=true);
 $page .= $tpl->draw("aide/".$sub, $return_string=true);

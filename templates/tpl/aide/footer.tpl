@@ -27,6 +27,10 @@
       scope: true,
       link: function(scope, element, attr) {
         scope.pc = attr.drawPiePc;
+				if( scope.pc > 100 )
+					scope.pc = 100;
+				else if( scope.pc < 0.0 )
+					scope.pc = 0.0;
       },
     }
   })
