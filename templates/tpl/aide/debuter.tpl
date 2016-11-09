@@ -285,12 +285,6 @@
 			</div>
 		</div>
 		<br />
-						
-					</div>
-				</div>
-			</div>
-		</div>
-		<br />
 		<div class="row">
 			<div id="GroupCSub2" class="col-md-12 group">
 				<div class="panel panel-wiki">
