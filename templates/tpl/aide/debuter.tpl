@@ -474,7 +474,7 @@
                 <a href="#GroupC">Monter en Lvl</a>
 				<ul class="nav nav-stacked">
                     <li><a href="#GroupCSub1">Les bonus de LvL</a></li>
-					<li><a href="#GroupCSub1">Le Prestige</a></li>
+		    <li><a href="#GroupCSub2">Le Prestige</a></li>
                 </ul>
             </li>
 			<li>
