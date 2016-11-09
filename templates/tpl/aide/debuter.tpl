@@ -90,6 +90,201 @@
 						</div>
 					</div>
 					<div class="panel-body">
+						<table class="table wiki-table-prune">
+							<tr>
+								<th>Rang</th>
+								<th>Titre du grade</th>
+								<th>XP</th>
+								<th>Bonus</th>
+							</tr>
+							<tr class="txt">
+								<td>1</td>
+								<td>Turoriel</td>
+								<td>0</td>
+								<td>Il vous est impossible pas faire de dégât, ni en subir, ni avoir un job</td>
+							</tr>
+							<tr class="txt">
+								<td>2</td>
+								<td>Renégat</td>
+								<td>7 200</td>
+								<td>Vous pouvez attaquer les joueurs ! Attention de ne pas en abuser ou vous finirez en prison !</td>
+							</tr>
+							<tr class="txt">
+								<td>6</td>
+								<td>Habitant</td>
+								<td>21 600</td>
+								<td>Il est temps de vous installer en ville ! Passez à la mairie pour faire votre identité (nom, prénom, date de naissance), et vous recevez 10 cadeaux</td>
+							</tr>
+							<tr class="txt">
+								<td>12</td>
+								<td>Simple citoyen</td>
+								<td>72 000</td>
+								<td>Vous avez acquis suffisemment d'epxpéricence pour prétendre au droit du no-pyj et obtenir des avantages !</td>
+							</tr>
+							<tr class="txt">
+								<td>30</td>
+								<td>Citoyen dévoué</td>
+								<td>108 000</td>
+								<td>On y est, vous êtes citoyens ! Vous pouvez desormais aller voter pour élire votre maire ! Faites le bon choix !</td>
+							</tr>
+							<tr class="txt">
+								<td>42</td>
+								<td>Propriétaire</td>
+								<td>151 200</td>
+								<td>Il est temps de montrer votre richesse, desormais vous pouvez participer aux enchères villa immobilière</td>
+							</tr>
+							<tr class="txt">
+								<td>56</td>
+								<td>Patriote</td>
+								<td>201 600</td>
+								<td>Votre notoriété se fait percevoir, devenez chef de job !</td>
+							</tr>
+							<tr class="txt">
+								<td>72</td>
+								<td>Porte-parole</td>
+								<td>259 200</td>
+								<td>Le besoin de parler se fait ressentir ? Passez la limite du chat général</td>
+							</tr>
+							<tr class="txt">
+								<td>90</td>
+								<td>Élu</td>
+								<td>324 000</td>
+								<td>Vous êtes un citoyen modèle ! Présentez vous aux élections du maire !</td>
+							</tr>
+							<tr class="txt">
+								<td>110</td>
+								<td>Baron</td>
+								<td>396 000</td>
+								<td>La drogue est un côté important à ne pas négliger ... Vous obtenez 2 plants de drogue max supplémentaires</td>
+							</tr>
+							<tr class="txt">
+								<td>132</td>
+								<td>Vicompte</td>
+								<td>475 200</td>
+								<td>L'argent vous manque ? Participez aux braquages</td>
+							</tr>
+							<tr class="txt">
+								<td>156</td>
+								<td>Compte</td>
+								<td>561 600</td>
+								<td>Vous obtenez un respawn à 200HP</td>
+							</tr>
+							<tr class="txt">
+								<td>182</td>
+								<td>Marquis</td>
+								<td>655 200</td>
+								<td>Argent facile ! Obtenez 2 machines max supplémentaires</td>
+							</tr>
+							<tr class="txt">
+								<td>210</td>
+								<td>Duc</td>
+								<td>756 000</td>
+								<td>La soif de $ vous agresse ... Lancez un braquage et devenez riche !</td>
+							</tr>
+							<tr class="txt">
+							        <td>240</td>
+								<td>Conseillé</td>
+								<td>864 000</td>
+								<td>Il est important d'avoir de bonnes reserves ... Votre inventaire max en banque est doublé</td>
+								</tr>
+							<tr class="txt">
+	                                                        <td>272</td>
+								<td>Assistant haut conseillé</td>
+								<td>979 200</td>
+								<td>Respawn à 200 kevlar</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>306</td>
+								<td>Haut conseillé</td>
+								<td>1 101 600</td>
+								<td>Des ennemis ? Achetez des contrats kidnappings !</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>342</td>
+								<td>Ministre</td>
+								<td>1 231 200</td>
+								<td>Une envie de meurtre ? Réalisez des quêtes de freekill</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>420</td>
+								<td>Prince héritier</td>
+								<td>1 512 000</td>
+								<td>Pour plus de performance, obtenez 3 plants de drogue max supplémentaire !</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>462</td>
+								<td>Roi</td>
+								<td>1 663 200</td>
+								<td>Votre nombre d'ennemis augmente ? Ce n'est pas un problème ! Vous possedez désormais un respawn à 250 Kevlar</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>506</td>
+								<td>Roi d'ordre divin</td>
+								<td>1 821 600</td>
+								<td>Pour devenir le maître il faut de l'argent ... Vous obtenez 3 machines max supplémentaires !</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>552</td>
+								<td>Empereur</td>
+								<td>1 987 200</td>
+								<td>Envie de reigner sur Princeton avec vos amis ? Créez un gang !</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>600</td>
+								<td>Empereur d'ordre divin</td>
+								<td>2 160 000</td>
+								<td>L'occasion est à prendre ! ... ou à laisser : obtenez 1 000 000$, est acceptez de recommencer au niveau 2 + prestige</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>650</td>
+								<td>Héros</td>
+								<td>2 340 000</td>
+								<td>Dormir est une perte de temps ... Votre temps de respawn divisé par 2</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>702</td>
+								<td>Super Héros</td>
+								<td>2 527 200</td>
+								<td>Citoyen engagé ! Recevez 50 cadeaux en remerciement</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>756</td>
+								<td>Fils de Dieu</td>
+								<td>2 721 600</td>
+								<td>Pour toujour plus de performances, vous possedez desormais une regénération HP/Kevalr en /passif !</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>812</td>
+								<td>Demi Dieu</td>
+								<td>2 923 200</td>
+								<td>Les objets illégaux c'est mal ... Mais génial et il faut en profiter ! Votre production de drogue et de machines est acceleré !</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>870</td>
+								<td>Dieu</td>
+								<td>3 132 000</td>
+								<td>Toute cette ancienneté vous a donné de gros bras ... Vous pouvez déormais déplacer les joueurs grace au +force !</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>930</td>
+								<td>Dieu supprème</td>
+								<td>3 348 000</td>
+								<td>Merci de votre fidélité ! demandez à obtenir des droits admins pendant 1 semaine !.<br /> 
+								Quelques soit son passé</td>
+                                                        </tr>
+							<tr class="txt">
+	                                                        <td>1000</td>
+								<td>Créateur de l'univers</td>
+								<td>3 600 000</td>
+								<td>Félicitations ! Vous avez atteint le titre ultime ! Recevez 2 500 000$, et recommencez niveau 2 avec prestige + 1</td>
+                                                        </tr>
+							
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br />
 						
 					</div>
 				</div>
