@@ -1,5 +1,48 @@
 <link rel="stylesheet" type="text/css" href="/css/wiki/wiki.css" media="screen">
 <script type="text/javascript" src="/js/wiki/wiki.js"></script>
+
+<style>
+.PCwrapper {
+	position: relative;
+	background: url(/images/pattern.png) repeat;
+	width: 250px;
+	height: 250px;
+	border: 1px solid #aaa;
+	border-radius: 100%;
+}
+.PCwrapper, .PCwrapper * {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.PCwrapper .pie {
+	width: 50%;
+	height: 100%;
+	transform-origin: 100% 50%;
+	position: absolute;
+	background: #aaa;
+}
+.PCwrapper .spinner {
+	border-radius: 100% 0 0 100% / 50% 0 0 50%;
+	z-index: 200;
+}
+.PCwrapper .filler {
+	border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+	left: 50%;
+	opacity: 0;
+	z-index: 100;
+}
+.PCwrapper .mask {
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	background: inherit;
+	opacity: 1;
+	z-index: 300;
+	border-radius: 100% 0 0 100% / 50% 0 0 50%;
+}
+</style>
+
 <div ng-controller="ctrlAide" id="mainWiki">
 
 <br /><br /><br /><br />
@@ -27,7 +70,7 @@
 							<!-- Rôle-Play -->
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Rôle-Play <b class="caret"></b></a>
-								
+
 								<ul class="dropdown-menu p-Rôle-Play" id="p-Rôle-Play">
 										<li><a href="/index.php?page=aide&sub=debuter"><i class="fa fa-book" aria-hidden="true"></i> Comment bien débuter ?</a></li>
 										<li><a href="/index.php?page=aide&sub=argent"><i class="fa fa-money" aria-hidden="true"></i> Comment gagner de l'argent sur le Roleplay ?</a></li>
@@ -54,7 +97,7 @@
 							<!-- Informations Pratiques -->
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Aide<b class="caret"></b></a>
-								
+
 								<ul class="dropdown-menu p-Informations Pratiques" id="p-Informations Pratiques">
 										<li><a href="/index.php?page=aide&sub=debuter#GroupD"><i class="fa fa-headphones" aria-hidden="true"></i> Le TeamSpeak [TS]</a></li>
 										<li><a href="/index.php?page=aide&sub=bind"><i class="fa fa-keyboard-o" aria-hidden="true"></i> Mettre en place vos binds</a></li>
@@ -67,7 +110,7 @@
 							<!-- Outils -->
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Outils <b class="caret"></b></a>
-								
+
 								<ul class="dropdown-menu p-Outils" id="p-Outils">
 										<!--<li><a target="_blank" href="/index.php?page=aide&sub=images"><i class="fa fa-cloud-upload" aria-hidden="true"></i> Importer une image</a></li>-->
 										<li><a target="_blank" href="https://github.com/ts-x/TSX-WEB/tree/master/templates/tpl/aide"><i class="fa fa-cog" aria-hidden="true"></i> Modifier le Wiki</a></li>

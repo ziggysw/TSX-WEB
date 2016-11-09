@@ -20,6 +20,16 @@
 			}
 		}
   })
+	.directive("drawPiePc", function ($compile) {
+    return {
+      template: '<div class="PCwrapper"><div class="pie spinner" style="transform: rotate({{pc*3.6}}deg)"></div><div class="pie filler" style="opacity: {{pc>=50?1:0}}"></div><div class="mask" style="opacity: {{pc>=50?0:1}}"></div></div>',
+      replace: false,
+      scope: true,
+      link: function(scope, element, attr) {
+        scope.pc = attr.drawPiePc;
+      },
+    }
+  })
   .controller("ctrlAide", function($scope, $http) {
 		$("body").popover({ selector: '[data-toggle="popover"]', trigger: "hover"});
 		$("body").tooltip({ selector: '[data-toggle="tooltip"]', trigger: "hover"});
