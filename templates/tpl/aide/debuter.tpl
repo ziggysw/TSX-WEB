@@ -407,17 +407,17 @@
 					</div>
 					<div class="panel-body">
 						<p>TeamSpeak (TS) est un logiciel de conversation vocale par Internet, ce freeware est une fusion entre un IRC et le téléphone.<br />
-						Contrairement à d'autres programmes de messagerie, Skype et autres, TS est conçu pour fonctionner en arrière-plan, son intérêt provient 
-						du fait qu'il n'est nullement nécessaire de quitter son serveur RP préféré pour communiquer avec ses amis et tailler le bout de gras avec eux 
-						qu'ils soient ou non connecté sur le serveur RP.<br /> 
+						Contrairement à d'autres programmes de messagerie, Skype et autres, TS est conçu pour fonctionner en arrière-plan.<br /> 
+						Son intérêt provient du fait qu'il n'est nullement nécessaire de quitter son serveur RP préféré pour communiquer avec ses amis et tailler le bout de gras avec eux 
+						qu'ils soient ou non connectés sur le serveur RP.<br /> 
 						Le TS vous permettra également de contacter plus aisément le Staff en cas de problème, car les modérateurs peuvent être présents sur le ts mais pas forcément
 						sur le rôle play.<br />
 						Divers channels ont été mis en place pour répondre à la demande et pour le confort des joueurs, ainsi vous pourrez y trouver des channels dédiés aux groupes PvP,
 						aux métiers, mais également des channels communautaires où tout le monde se retrouve pour parler de tout et de rien.</p>
 						<br /><br />
-						<p> Pour <strong><u>le télécharger</u></strong>, rien de plus simple ! rendez-vous sur :
+						<p> Pour <strong><u>le télécharger</u></strong>, rien de plus simple ! Rendez-vous sur :
 							<ul>
-								<li><a target="_blank" href="http://www.teamspeak.com/?page=downloads">le site officiel Ts3</a></li>
+								<li><a target="_blank" href="http://www.teamspeak.com/?page=downloads">Le site officiel Ts3</a></li>
 								ou
 								<li><a target="_blank" href="http://www.clubic.com/telecharger-fiche41572-teamspeak.html">Clubic</a></li>
 							</ul>
