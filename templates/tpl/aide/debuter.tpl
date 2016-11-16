@@ -101,7 +101,7 @@
 								<td>1</td>
 								<td>Turoriel</td>
 								<td>0</td>
-								<td>Il vous est impossible pas faire de dégât, ni en subir, ni avoir un job</td>
+								<td>Il vous est impossible de faire des dégâts, en subir ou d'avoir un job.</td>
 							</tr>
 							<tr class="txt">
 								<td>2</td>
@@ -119,19 +119,19 @@
 								<td>12</td>
 								<td>Simple citoyen</td>
 								<td>72 000</td>
-								<td>Vous avez acquis suffisemment d'epxpéricence pour prétendre au droit du no-pyj et obtenir des avantages !</td>
+								<td>Vous avez acquis suffisamment d'expérience pour prétendre au droit du no-pyj et obtenir des avantages !</td>
 							</tr>
 							<tr class="txt">
 								<td>30</td>
 								<td>Citoyen dévoué</td>
 								<td>108 000</td>
-								<td>On y est, vous êtes citoyens ! Vous pouvez desormais aller voter pour élire votre maire ! Faites le bon choix !</td>
+								<td>On y est, vous êtes citoyens ! Vous pouvez désormais aller voter pour élire votre maire ! Faites le bon choix !</td>
 							</tr>
 							<tr class="txt">
 								<td>42</td>
 								<td>Propriétaire</td>
 								<td>151 200</td>
-								<td>Il est temps de montrer votre richesse, desormais vous pouvez participer aux enchères villa immobilière</td>
+								<td>Il est temps de montrer votre richesse, désormais vous pouvez participer aux enchères de la villa immobilière.</td>
 							</tr>
 							<tr class="txt">
 								<td>56</td>
@@ -185,7 +185,7 @@
 							        <td>240</td>
 								<td>Conseillé</td>
 								<td>864 000</td>
-								<td>Il est important d'avoir de bonnes reserves ... Votre inventaire max en banque est doublé</td>
+								<td>Il est important d'avoir de bonnes réserves ... Votre inventaire max en banque est doublé.</td>
 								</tr>
 							<tr class="txt">
 	                                                        <td>272</td>
@@ -209,13 +209,13 @@
 	                                                        <td>420</td>
 								<td>Prince héritier</td>
 								<td>1 512 000</td>
-								<td>Pour plus de performance, obtenez 3 plants de drogue max supplémentaire !</td>
+								<td>Pour plus de performance, obtenez 3 plants de drogue max supplémentaires !</td>
                                                         </tr>
 							<tr class="txt">
 	                                                        <td>462</td>
 								<td>Roi</td>
 								<td>1 663 200</td>
-								<td>Votre nombre d'ennemis augmente ? Ce n'est pas un problème ! Vous possedez désormais un respawn à 250 Kevlar</td>
+								<td>Votre nombre d'ennemis augmente ? Ce n'est pas un problème ! Vous possédez désormais un respawn à 250 Kevlar</td>
                                                         </tr>
 							<tr class="txt">
 	                                                        <td>506</td>
@@ -227,19 +227,19 @@
 	                                                        <td>552</td>
 								<td>Empereur</td>
 								<td>1 987 200</td>
-								<td>Envie de reigner sur Princeton avec vos amis ? Créez un gang !</td>
+								<td>Envie de régner sur Princeton avec vos amis ? Créez un gang !</td>
                                                         </tr>
 							<tr class="txt">
 	                                                        <td>600</td>
 								<td>Empereur d'ordre divin</td>
 								<td>2 160 000</td>
-								<td>L'occasion est à prendre ! ... ou à laisser : obtenez 1 000 000$, est acceptez de recommencer au niveau 2 + prestige</td>
+								<td>L'occasion est à prendre... ou à laisser ! Obtenez 1 000 000$ et acceptez de recommencer au niveau 2 + prestige</td>
                                                         </tr>
 							<tr class="txt">
 	                                                        <td>650</td>
 								<td>Héros</td>
 								<td>2 340 000</td>
-								<td>Dormir est une perte de temps ... Votre temps de respawn divisé par 2</td>
+								<td>Dormir est une perte de temps ... Votre temps de respawn est divisé par 2</td>
                                                         </tr>
 							<tr class="txt">
 	                                                        <td>702</td>
@@ -251,26 +251,26 @@
 	                                                        <td>756</td>
 								<td>Fils de Dieu</td>
 								<td>2 721 600</td>
-								<td>Pour toujour plus de performances, vous possedez desormais une regénération HP/Kevalr en /passif !</td>
+								<td>Pour toujours plus de performances, vous possédez désormais une régénération HP/Kevlar en /passif !</td>
                                                         </tr>
 							<tr class="txt">
 	                                                        <td>812</td>
 								<td>Demi Dieu</td>
 								<td>2 923 200</td>
-								<td>Les objets illégaux c'est mal ... Mais génial et il faut en profiter ! Votre production de drogue et de machines est acceleré !</td>
+								<td>Les objets illégaux c'est mal ... Mais génial et il faut en profiter ! Votre production de drogue et de machines est accéléré !</td>
                                                         </tr>
 							<tr class="txt">
 	                                                        <td>870</td>
 								<td>Dieu</td>
 								<td>3 132 000</td>
-								<td>Toute cette ancienneté vous a donné de gros bras ... Vous pouvez déormais déplacer les joueurs grace au +force !</td>
+								<td>Toute cette ancienneté vous a donné de gros bras ... Vous pouvez désormais déplacer les joueurs grâce au +force !</td>
                                                         </tr>
 							<tr class="txt">
 	                                                        <td>930</td>
-								<td>Dieu supprème</td>
+								<td>Dieu suprême</td>
 								<td>3 348 000</td>
-								<td>Merci de votre fidélité ! demandez à obtenir des droits admins pendant 1 semaine !.<br /> 
-								Quelques soit son passé</td>
+								<td>Merci de votre fidélité ! Demandez à obtenir des droits admins pendant 1 semaine !.<br /> 
+								Quelque soit votre passé</td>
                                                         </tr>
 							<tr class="txt">
 	                                                        <td>1000</td>
