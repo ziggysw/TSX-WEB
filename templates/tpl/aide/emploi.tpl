@@ -12,7 +12,7 @@
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
-										<div id="GroupA" class="panel-heading panel-heading-wiki"><h2>Conseils</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>Conseils</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
@@ -37,7 +37,7 @@
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
-										<div id="GroupB" class="panel-heading panel-heading-wiki"><h2>Les métiers de ventes</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>Les métiers de ventes</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
@@ -122,7 +122,7 @@
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
-										<div id="GroupC" class="panel-heading panel-heading-wiki"><h2>Les forces de l'ordre</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>Les forces de l'ordre</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
@@ -155,7 +155,7 @@
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
-										<div id="GroupD" class="panel-heading panel-heading-wiki"><h2>Les hors la loi</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>Les hors la loi</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
@@ -187,7 +187,7 @@
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
-										<div id="GroupE" class="panel-heading panel-heading-wiki"><h2>Devenir chef d'un métier</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>Devenir chef d'un métier</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">

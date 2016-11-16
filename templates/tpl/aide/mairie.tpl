@@ -129,7 +129,14 @@
 									</div>
 								</div>
 								<div class="panel-body">
-									<p>Information non disponible pour le moment...</p>
+									<p>Les amendes sont sois augmentée de 5% ou réduite de 10%</p>
+                                    <p>Les prix des items sont sois augmentée de 10% ou réduits de 5%</p>
+                                    <p>Les réductions sont interdites</p>
+                                    <p>La production des machines et plants est accélérée ou ralentie</p>
+                                    <p>Interdit de faire des braquage</p>
+                                    <p>Lors des captures du bunker, il peux interdir d'utiliser des items</p>
+                                    <p>Les payes sont augmenté de 5% ou réduites de 10%</p>
+                                    <p>L'hôtel des ventes est interdit</p>
 								</div>
 							</div>
 						</div>
