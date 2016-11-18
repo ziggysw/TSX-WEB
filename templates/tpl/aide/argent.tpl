@@ -49,7 +49,7 @@
 									Il existe trois types de métiers :</p>
 										<ul>
 											<li><p>La justice : Tribunal ou Police, ils sont là pour faire régner l'ordre et la loi.</p></li>
-											<li><p>La vente : ils permettent de faire vivre la ville, ils fournissent les joueurs en objet et services du quotidien.</p></li>
+											<li><p>La vente : ils permettent de faire vivre la ville, ils fournissent les joueurs en objets et services du quotidien.</p></li>
 											<li><p>Les malfrats : Mafia <i>Cosa Nostra</i> et la <i>Stidda Famiglia</i>, sont des familles ou règnes les petits trafiques et larcin en tous genres.</p></li>
 										</ul></p>
 									<p>Vous l'aurez compris, le choix du job de vos rêves va être dur ! et si jamais vous avez besoin de plus de détail, nous vous en donnons sur <a target="_blank" href="?page=aide&sub=job">cette page dédiée.</a></p>
