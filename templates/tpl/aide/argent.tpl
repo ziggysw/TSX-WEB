@@ -409,7 +409,7 @@
 										</div>
 									</div>
 										<br />
-									<p>Les quêtes ne sont pas forcément tous public, certaines sont réservées en fonction de votre métier mais aussi de votre grade dans ce même métier.</p>
+									<p>Les quêtes ne sont pas forcément tous public, certaines sont réservées en fonction de votre métier mais aussi selon votre grade dans ce métier</p>
 									<br />
 										<table class="wiki-table txt"> 
 										  <tr>
