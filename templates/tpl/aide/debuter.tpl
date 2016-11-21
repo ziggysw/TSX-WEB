@@ -92,10 +92,10 @@
 					<div class="panel-body">
 						<table class="table wiki-table-prune">
 							<tr>
-								<th>Rang</th>
+								<th id="table-top-left">Rang</th>
 								<th>Titre du grade</th>
 								<th>XP</th>
-								<th>Bonus</th>
+								<th id="table-top-right">Bonus</th>
 							</tr>
 							<tr class="txt">
 								<td>1</td>
