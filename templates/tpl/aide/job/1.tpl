@@ -79,22 +79,32 @@
 						<td><h3 class="ocean">Nom de la quête</h3></td>
 						<td><h3 class="pomme">Gain </h3></td>
 						<td><h3 class="prune">Objectif :</h3></td>
+						<td><h3 class="ocean">Condition</h3></td>
 					</tr>
 					<tr>
 						<td>Suivez le lapin blanc</td>
 						<td>5 000$rp</td>
 						<td>Pourchassez un tueur en série jusqu'à ce qu'il commette un meurtre, et arrêtez-le.</td>
+						<td></td>
 					</tr>
 					<tr>
 						<td>Surveillance renforcée</td>
 						<td>210$RP / minutes dans les jails (5.000$RP)</td>
 						<td>Surveillez la prison pendant 24 minutes.</td>
+						<td>Aucune</td>
+					</tr>
+					<tr>
+						<td>Un homme très recherché</td>
+						<td>2500RP</td>
+						<td>Vous avez 12 heures pour le trouver et l'arrêter un homme recherché par le tribunal.</td>
+						<td>Aucune</td>
 					</tr>
 					<tr>
 						<td>Non à la contrebande</td>
 						<td>En fonction des objets détruits</td>
 						<td>Vous avez 24 minutes pour taser un maximum d'objets illégaux en ville.<br />
 						(Plante: 2.000$RP, Machine: 200$RP, Photocopieuse: 3.000$RP)</td>
+						<td>FBI ou +</td>
 					</tr>
 				</tbody>
 			</table><br />
