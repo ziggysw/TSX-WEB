@@ -58,7 +58,7 @@ server.get('/items/:id', function (req, res, next) {
         if( req.params['id'] == 0 )
             return res.send(new ERR.BadRequestError("InvalidParam"));
 
-        server.conn.query("SELECT I.`id`, I.`nom`, I.`prix`, SUBSTRING(`job_name`, LOCATE(' - ', `job_name`)+3) as `job` FROM `rp_items` I INNER JOIN `rp_jobs` J ON I.`job_id`=J.`job_id` WHERE I.`id`=?", [req.params['id']], function(err, rows) {
+        server.conn.query("SELECT I.`id`, I.`nom`, I.`prix`, SUBSTRING(`job_name`, LOCATE(' - ', `job_name`)+3) as `job`, CONVERT(CAST(CONVERT(description USING latin1) AS BINARY) USING utf8) as `description` FROM `rp_items` I INNER JOIN `rp_jobs` J ON I.`job_id`=J.`job_id` WHERE I.`id`=?", [req.params['id']], function(err, rows) {
 		        if( err )
               return res.send(new ERR.InternalServerError(err));
             return res.send(rows[0]);

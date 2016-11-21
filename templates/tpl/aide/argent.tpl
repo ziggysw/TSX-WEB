@@ -49,7 +49,7 @@
 									Il existe trois types de métiers :</p>
 										<ul>
 											<li><p>La justice : Tribunal ou Police, ils sont là pour faire régner l'ordre et la loi.</p></li>
-											<li><p>La vente : ils permettent de faire vivre la ville, ils fournissent les joueurs en objet et services du quotidien.</p></li>
+											<li><p>La vente : ils permettent de faire vivre la ville, ils fournissent les joueurs en objets et services du quotidien.</p></li>
 											<li><p>Les malfrats : Mafia <i>Cosa Nostra</i> et la <i>Stidda Famiglia</i>, sont des familles ou règnes les petits trafiques et larcin en tous genres.</p></li>
 										</ul></p>
 									<p>Vous l'aurez compris, le choix du job de vos rêves va être dur ! et si jamais vous avez besoin de plus de détail, nous vous en donnons sur <a target="_blank" href="?page=aide&sub=job">cette page dédiée.</a></p>
@@ -257,7 +257,7 @@
 									</div>
 								</div>
 								<div class="panel-body">
-									<p>Votre activité sur notre serveur peut elle aussi vous rapporter gros ! c'est bien simple, plus vous jouer, plus vous avez de chance de participé à des événements très lucratifs !<br />
+									<p>Votre activité sur notre serveur peut elle aussi vous rapporter gros ! C'est bien simple, plus vous jouez, plus vous avez de chance de participer à des événements très lucratifs !<br />
 									Nous vous en avons cité quelques-uns des plus importants ci-dessous.</p>
 								</div>
 							</div>
@@ -409,7 +409,7 @@
 										</div>
 									</div>
 										<br />
-									<p>Les quêtes ne sont pas forcément tous public, certaines sont réservées en fonction de votre métier.</p>
+									<p>Les quêtes ne sont pas forcément tous public, certaines sont réservées en fonction de votre métier mais aussi selon votre grade dans ce métier</p>
 									<br />
 										<table class="wiki-table txt"> 
 										  <tr>
@@ -431,6 +431,7 @@
 											<tr><td>Mercenaire</td><td>Le justicier masqué</td><td>2.500$RP</td><td class="hidden-phone">Vous avez 12 minutes pour tuer le plus grand freekiller de la ville.<br /> (Cette quête se présentera comme un contrat classique)</td></tr>
 											<tr><td>Police</td><td>Suivez le lapin blanc</td><td>5.000$RP</td><td class="hidden-phone">Pourchassez le tueur en série jusqu'à ce qu'il commette un meurtre, et arrêtez-le.</td></tr>
 											<tr><td>Police</td><td>Surveillance renforcée</td><td>210$RP / minutes dans les jails (5.000$RP)</td><td class="hidden-phone">Surveillez la prison pendant 24 minutes.</td></tr>
+											<tr><td>Police</td><td>Un homme très recherché</td><td>2.500RP</td><td class="hidden-phone">Vous avez 12 heures pour le trouver et l'arrêter un homme recherché par le tribunal.</td></tr>
 											<tr><td>Police</td><td>Non à la contrebande</td><td>En fonction des objets détruits</td><td class="hidden-phone">Vous avez 24 minutes pour tazer un maximum d'objets illégaux en ville.<br />(Plante: 2.000$RP, Machine: 200$RP, Photocopieuse: 3.000$RP)</td></tr>
 											<tr><td>Justice</td><td>Un homme très recherché</td><td>2.500RP</td><td class="hidden-phone">Vous avez 12 heures pour le trouver et l'arrêter un homme recherché par le tribunal.</td></tr>
 											<tr><td>Justice</td><td>La justice exprès</td><td>2.5000$RP</td><td class="hidden-phone">Vous avez 24 minutes pour condamner 3 joueurs différents dans votre Tribunal.<br /> (100$RP d'amende et 3h de prison minimum).</td></tr>
