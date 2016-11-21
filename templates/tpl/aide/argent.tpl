@@ -257,7 +257,7 @@
 									</div>
 								</div>
 								<div class="panel-body">
-									<p>Votre activité sur notre serveur peut elle aussi vous rapporter gros ! C'est bien simple, plus vous jouez, et plus vous avez de chance de participer à des événements très lucratifs !<br />
+									<p>Votre activité sur notre serveur peut elle aussi vous rapporter gros ! C'est bien simple, plus vous jouez, plus vous avez de chance de participer à des événements très lucratifs !<br />
 									Nous vous en avons cité quelques-uns des plus importants ci-dessous.</p>
 								</div>
 							</div>
