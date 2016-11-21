@@ -409,7 +409,7 @@
 										</div>
 									</div>
 										<br />
-									<p>Les quêtes ne sont pas forcément tous public, certaines sont réservées en fonction de votre métier.</p>
+									<p>Les quêtes ne sont pas forcément tous public, certaines sont réservées en fonction de votre métier mais aussi selon votre grade dans ce métier</p>
 									<br />
 										<table class="wiki-table txt"> 
 										  <tr>
@@ -431,6 +431,7 @@
 											<tr><td>Mercenaire</td><td>Le justicier masqué</td><td>2.500$RP</td><td class="hidden-phone">Vous avez 12 minutes pour tuer le plus grand freekiller de la ville.<br /> (Cette quête se présentera comme un contrat classique)</td></tr>
 											<tr><td>Police</td><td>Suivez le lapin blanc</td><td>5.000$RP</td><td class="hidden-phone">Pourchassez le tueur en série jusqu'à ce qu'il commette un meurtre, et arrêtez-le.</td></tr>
 											<tr><td>Police</td><td>Surveillance renforcée</td><td>210$RP / minutes dans les jails (5.000$RP)</td><td class="hidden-phone">Surveillez la prison pendant 24 minutes.</td></tr>
+											<tr><td>Police</td><td>Un homme très recherché</td><td>2.500RP</td><td class="hidden-phone">Vous avez 12 heures pour le trouver et l'arrêter un homme recherché par le tribunal.</td></tr>
 											<tr><td>Police</td><td>Non à la contrebande</td><td>En fonction des objets détruits</td><td class="hidden-phone">Vous avez 24 minutes pour tazer un maximum d'objets illégaux en ville.<br />(Plante: 2.000$RP, Machine: 200$RP, Photocopieuse: 3.000$RP)</td></tr>
 											<tr><td>Justice</td><td>Un homme très recherché</td><td>2.500RP</td><td class="hidden-phone">Vous avez 12 heures pour le trouver et l'arrêter un homme recherché par le tribunal.</td></tr>
 											<tr><td>Justice</td><td>La justice exprès</td><td>2.5000$RP</td><td class="hidden-phone">Vous avez 24 minutes pour condamner 3 joueurs différents dans votre Tribunal.<br /> (100$RP d'amende et 3h de prison minimum).</td></tr>
