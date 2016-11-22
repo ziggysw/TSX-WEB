@@ -76,7 +76,7 @@
 			<table class="table-condensed">
 				<tbody>
 					<tr>
-						<td><h3 class="ocean">Nom de la quête</h3></td>
+				<td><h3 class="ocean">Nom de la quête</h3></td>
 						<td><h3 class="pomme">Gain </h3></td>
 						<td><h3 class="prune">Objectif :</h3></td>
 					</tr>
@@ -96,18 +96,11 @@
 						<td>2500RP</td>
 						<td>Vous avez 12 heures pour le trouver et l'arrêter un homme recherché par le tribunal.</td>
 					</tr>
-				</tbody>
-			</table><br />
-		</div>
-		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='quest'">
-			<h2 class="text-center"><u>Nos missions reservées aux hauts gradés FBI et + :</u></h2><br />
-			<table class="table-condensed">
-				<tbody>
 					<tr>
 						<td>Non à la contrebande</td>
 						<td>En fonction des objets détruits</td>
 						<td>Vous avez 24 minutes pour taser un maximum d'objets illégaux en ville.<br />
-						(Plante: 2.000$RP, Machine: 200$RP, Photocopieuse: 3.000$RP)</td>
+						(Plante: 2.000$RP, Machine: 200$RP, Photocopieuse: 3.000$RP) <b>(FBI et + uniquement</b></td>
 					</tr>
 				</tbody>
 			</table><br />
