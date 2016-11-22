@@ -72,7 +72,7 @@
 			</ul><br />
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='quest'">
-			<h2>Nos missions de base :</h2><br />
+			<h2 class="text-center"><u>Nos missions de base :</u></h2><br />
 			<table class="table-condensed">
 				<tbody>
 					<tr>
@@ -100,7 +100,7 @@
 			</table><br />
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='quest'">
-			<h2>Nos missions reservées aux hauts gradés FBI et + :</h2><br />
+			<h2 class="text-center"><u>Nos missions reservées aux hauts gradés FBI et + :</u></h2><br />
 			<table class="table-condensed">
 				<tbody>
 					<tr>
