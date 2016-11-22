@@ -147,11 +147,26 @@
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2>Mode Actif /Passif</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>Mode Actif / Passif</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
-									<p>En cour de rédaction...</p>
+                                <p>En actif vous pouvez :</p>
+									<ul>
+                                        <li>Avoir accès au radar gratuitement.</li>
+                                        <li>Augmenté votre vitalité passivement, il vous suffit de ne pas être afk.</li>
+                                        <li>Avoir les bonus job.</li>
+                                        <li>Gagné 2$ par 19,5 seconde avec les machines.</li>
+                                        <li>Être tué.</li>
+                                    </ul>
+                                    <p>En passif :</p>
+                                    <ul>
+                                        <li>N'avez pas accès au radar gratuitement.</li>
+                                        <li>Votre vitalité ne sera pas augmenté.</li>
+                                        <li>Pas d'accès au bonnus job.</li>
+                                        <li>Vous gagné 1$ par 19,5 seconde avec les machines.</li>
+                                        <li>Vous ne pouvez être tué exeption: Contrat Mercenaire et ce faire écrasé par une voiture.</li>
+                                    </ul>
 								</div>
 							</div>
 						</div>
@@ -177,7 +192,7 @@
 							<a href="#GroupE">Les amendements</a>
 						</li>
 						<li>
-							<a href="#GroupF">Mode Actif /Passif</a>
+							<a href="#GroupF">Mode Actif / Passif</a>
 						</li>
 					</ul>
 				</nav>
