@@ -151,21 +151,21 @@
 									</div>
 								</div>
 								<div class="panel-body">
-                                <p>En actif vous pouvez :</p>
+                                <p>En actif vous pourrez :</p>
 									<ul>
                                         <li>Avoir accès au radar gratuitement.</li>
                                         <li>Augmenté votre vitalité passivement, il vous suffit de ne pas être afk.</li>
                                         <li>Avoir les bonus job.</li>
-                                        <li>Gagné 2$ par 19,5 seconde avec les machines.</li>
-                                        <li>Être tué.</li>
+                                        <li>Gagné 2$ par 19,5 seconde avec les machines à faux billets / photocopieuses.</li>
+                                        <li>Tuer et etre tué.</li>
                                     </ul>
-                                    <p>En passif :</p>
+                                    <p>En mode passif :</p>
                                     <ul>
-                                        <li>N'avez pas accès au radar gratuitement.</li>
+                                        <li>Vous n'aurez pas accès au radar gratuitement.</li>
                                         <li>Votre vitalité ne sera pas augmenté.</li>
-                                        <li>Pas d'accès au bonnus job.</li>
+                                        <li>Pas d'accès au Bonnus job ( /build).</li>
                                         <li>Vous gagné 1$ par 19,5 seconde avec les machines.</li>
-                                        <li>Vous ne pouvez être tué exeption: Contrat Mercenaire et ce faire écrasé par une voiture.</li>
+                                        <li>Vous ne pourrez être tué exeption: Contrat Mercenaire et ce faire écrasé par une voiture.</li>
                                     </ul>
 								</div>
 							</div>
