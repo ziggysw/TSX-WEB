@@ -151,7 +151,8 @@
 									</div>
 								</div>
 								<div class="panel-body">
-                                <p>En actif vous pourrez :</p>
+                                <h3>Un mode actif passif est disponible sur le serveur, il vous permettra d'effectuer des actions rp ou de vous en protéger.</h3>
+                                <p>En mode actif :</p>
 									<ul>
                                         <li>Avoir accès au radar gratuitement.</li>
                                         <li>Augmenté votre vitalité passivement, il vous suffit de ne pas être afk.</li>
@@ -164,7 +165,7 @@
                                         <li>Vous n'aurez pas accès au radar gratuitement.</li>
                                         <li>Votre vitalité ne sera pas augmenté.</li>
                                         <li>Pas d'accès au Bonnus job ( /build).</li>
-                                        <li>Vous gagné 1$ par 19,5 seconde avec les machines.</li>
+                                        <li>Vous gagné 1$ par 19,5 seconde avec les machines à faux billets / photocopieuses.</li>
                                         <li>Vous ne pourrez être tué exeption: Contrat Mercenaire et ce faire écrasé par une voiture.</li>
                                     </ul>
 								</div>
