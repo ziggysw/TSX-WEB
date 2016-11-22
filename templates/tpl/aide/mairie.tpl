@@ -147,7 +147,7 @@
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2>Mode Actif / Passif</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>Mode Actif/Passif</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
@@ -192,7 +192,7 @@
 							<a href="#GroupE">Les amendements</a>
 						</li>
 						<li>
-							<a href="#GroupF">Mode Actif / Passif</a>
+							<a href="#GroupF">Mode Actif/Passif</a>
 						</li>
 					</ul>
 				</nav>
