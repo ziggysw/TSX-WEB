@@ -72,7 +72,7 @@
 			</ul><br />
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='quest'">
-			<h2 class="text-center"><u>Nos missions de base :</u></h2><br />
+			<h2 class="text-center"><u>Nos missions :</u></h2><br />
 			<table class="table-condensed">
 				<tbody>
 					<tr>
@@ -84,7 +84,6 @@
 						<td>Suivez le lapin blanc</td>
 						<td>5 000$rp</td>
 						<td>Pourchassez un tueur en série jusqu'à ce qu'il commette un meurtre, et arrêtez-le.</td>
-						<td></td>
 					</tr>
 					<tr>
 						<td>Surveillance renforcée</td>
