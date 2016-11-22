@@ -156,7 +156,7 @@
 									<ul>
                                         <li>Avoir accès au radar gratuitement.</li>
                                         <li>Augmenté votre vitalité passivement, il vous suffit de ne pas être afk.</li>
-                                        <li>Avoir les bonus job.</li>
+                                        <li>Avoir les bonus job (/build).</li>
                                         <li>Gagné 2$ par 19,5 seconde avec les machines à faux billets / photocopieuses.</li>
                                         <li>Tuer et etre tué.</li>
                                     </ul>
@@ -164,7 +164,7 @@
                                     <ul>
                                         <li>Vous n'aurez pas accès au radar gratuitement.</li>
                                         <li>Votre vitalité ne sera pas augmenté.</li>
-                                        <li>Pas d'accès au Bonnus job ( /build).</li>
+                                        <li>Pas d'accès au bonnus job (/build).</li>
                                         <li>Vous gagné 1$ par 19,5 seconde avec les machines à faux billets / photocopieuses.</li>
                                         <li>Vous ne pourrez être tué exeption: Contrat Mercenaire et ce faire écrasé par une voiture.</li>
                                     </ul>
