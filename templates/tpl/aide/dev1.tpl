@@ -77,3 +77,7 @@
 
 	<!--<span ng-init="zboub=33"></span>
 	<div draw-pie-pc="{{zboub}}"></div>-->
+
+
+<span rp-item-information="114" style="transform: scale(0.1);"></span>
+
