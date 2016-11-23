@@ -155,21 +155,22 @@
 								</div>
 								<div class="panel-body">
                                 <h3>Un mode actif passif est disponible sur le serveur, il vous permettra d'effectuer des actions rp ou de vous en protéger.</h3>
+                                <br />
                                 <p>En mode actif :</p>
 									<ul>
                                         <li>Avoir accès au radar gratuitement.</li>
                                         <li>Augmentez votre vitalité passivement, il vous suffit de ne pas être afk.</li>
                                         <li>Avoir les bonus job (/build).</li>
-                                        <li>Vous gagnez 2$ par 19,5 seconde avec les machines à faux billets / photocopieuses.</li>
+                                        <li>Vous gagnez 2$ par 20 secondes avec les machines à faux billets/photocopieuses.</li>
                                         <li>Tuer et être tué.</li>
                                     </ul>
                                     <p>En mode passif :</p>
                                     <ul>
                                         <li>Vous n'aurez pas accès au radar gratuitement.</li>
                                         <li>Votre vitalité ne sera pas augmentée.</li>
-                                        <li>Pas d'accès au bonnus job (/build).</li>
-                                        <li>Vous gagnez 1$ par 19,5 seconde avec les machines à faux billets / photocopieuses.</li>
-                                        <li>Vous ne pourrez être tué à l'exception d'un contrat Mercenaire et d'une voiture qui vous renverse.</li>
+                                        <li>Pas d'accès au bonus job (/build).</li>
+                                        <li>Vous gagnez 1$ par 20 secondes avec les machines à faux billets/photocopieuses.</li>
+                                        <li>Vous ne pourrez être tué à l'exception d'un contrat mercenaire et d'une voiture qui vous renverse.</li>
                                     </ul>
 								</div>
 							</div>
