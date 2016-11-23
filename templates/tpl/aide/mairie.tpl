@@ -129,14 +129,17 @@
 									</div>
 								</div>
 								<div class="panel-body">
-									<p>Les amendes sont sois augmentée de 5% ou réduite de 10%</p>
-                                    <p>Les prix des items sont sois augmentée de 10% ou réduits de 5%</p>
-                                    <p>Les réductions sont interdites</p>
-                                    <p>La production des machines et plants est accélérée ou ralentie</p>
-                                    <p>Interdit de faire des braquage</p>
-                                    <p>Lors des captures du bunker, il peux interdir d'utiliser des items</p>
-                                    <p>Les payes sont augmenté de 5% ou réduites de 10%</p>
-                                    <p>L'hôtel des ventes est interdit</p>
+								<h3>Le maire peut mettre en place des amendements tels que :</h3>
+									<ul>
+										<li><p>Les amendes sont soit augmentées de 5% ou réduites de 10%</p></li>
+										<li><p>Les prix des items sont sois augmentés de 10% ou réduits de 5%</p></li>
+										<li><p>Les réductions sont interdites</p></li>
+										<li><p>La production des machines et plants est accélérée ou ralentie</p></li>
+										<li><p>Interdition de faire des braquage</p></li>
+										<li><p>Lors des captures du bunker, il peux interdir d'utiliser des items</p></li>
+										<li><p>Les payes sont augmentées de 5% ou réduites de 10%</p></li>
+										<li><p>L'hôtel des ventes est interdit</p></li>
+									</ul>	
 								</div>
 							</div>
 						</div>
@@ -152,21 +155,22 @@
 								</div>
 								<div class="panel-body">
                                 <h3>Un mode actif passif est disponible sur le serveur, il vous permettra d'effectuer des actions rp ou de vous en protéger.</h3>
+                                <br />
                                 <p>En mode actif :</p>
 									<ul>
                                         <li>Avoir accès au radar gratuitement.</li>
-                                        <li>Augmenté votre vitalité passivement, il vous suffit de ne pas être afk.</li>
+                                        <li>Augmentez votre vitalité passivement, il vous suffit de ne pas être afk.</li>
                                         <li>Avoir les bonus job (/build).</li>
-                                        <li>Gagné 2$ par 19,5 seconde avec les machines à faux billets / photocopieuses.</li>
-                                        <li>Tuer et etre tué.</li>
+                                        <li>Vous gagnez 2$ par 20 secondes avec les machines à faux billets/photocopieuses.</li>
+                                        <li>Tuer et être tué.</li>
                                     </ul>
                                     <p>En mode passif :</p>
                                     <ul>
                                         <li>Vous n'aurez pas accès au radar gratuitement.</li>
-                                        <li>Votre vitalité ne sera pas augmenté.</li>
-                                        <li>Pas d'accès au bonnus job (/build).</li>
-                                        <li>Vous gagné 1$ par 19,5 seconde avec les machines à faux billets / photocopieuses.</li>
-                                        <li>Vous ne pourrez être tué exeption: Contrat Mercenaire et ce faire écrasé par une voiture.</li>
+                                        <li>Votre vitalité ne sera pas augmentée.</li>
+                                        <li>Pas d'accès au bonus job (/build).</li>
+                                        <li>Vous gagnez 1$ par 20 secondes avec les machines à faux billets/photocopieuses.</li>
+                                        <li>Vous ne pourrez être tué à l'exception d'un contrat mercenaire et d'une voiture qui vous renverse.</li>
                                     </ul>
 								</div>
 							</div>
