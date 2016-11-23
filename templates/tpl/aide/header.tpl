@@ -77,7 +77,7 @@
 										<li><a href="/index.php?page=aide&sub=debuter"><i class="fa fa-book" aria-hidden="true"></i> Comment bien débuter ?</a></li>
 										<li><a href="/index.php?page=aide&sub=argent"><i class="fa fa-money" aria-hidden="true"></i> Comment gagner de l'argent sur le Roleplay ?</a></li>
 										<li><a href="/index.php?page=aide&sub=emploi"><i class="fa fa-map-o" aria-hidden="true"></i> Comment Trouver un emploi ?</a></li>
-										<li><a href="/index.php?page=aide&sub=mairie"><i class="fa fa-medium" aria-hidden="true"></i> La Mairie [CREA]</a></li>
+										<li><a href="/index.php?page=aide&sub=mairie"><i class="fa fa-medium" aria-hidden="true"></i> La Mairie</a></li>
 										<li><a href="/index.php?page=aide&sub=pvp"><i class="fa fa-shield" aria-hidden="true"></i> La PvP</a></li>
 										<li><a href="/index.php?page=aide&sub=crayon"><i class="fa fa-paint-brush" aria-hidden="true"></i> Les Crayons de Couleurs</a></li>
 										<li><a href="/index.php?page=aide&sub=argent#GroupE"><i class="fa fa-users" aria-hidden="true"></i> Le Parrainage </a></li>
@@ -114,7 +114,7 @@
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Outils <b class="caret"></b></a>
 
 								<ul class="dropdown-menu p-Outils" id="p-Outils">
-										<!--<li><a target="_blank" href="/index.php?page=aide&sub=images"><i class="fa fa-cloud-upload" aria-hidden="true"></i> Importer une image</a></li>-->
+										<li><a target="_blank" href="/images/news/MDRLOL/"><i class="fa fa-cloud-upload" aria-hidden="true"></i> Importer une image</a></li>
 										<li><a target="_blank" href="https://github.com/ts-x/TSX-WEB/tree/master/templates/tpl/aide"><i class="fa fa-cog" aria-hidden="true"></i> Modifier le Wiki</a></li>
 										<li><a target="_blank" href="https://www.ts-x.eu/forum/viewtopic.php?f=10&t=33820&view=unread#unread"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Signaler un problème</a></li>
 								</ul>
