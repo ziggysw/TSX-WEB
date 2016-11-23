@@ -11,7 +11,7 @@
 	border-radius: 100%;
 	margin-left:90px;
 	margin-top: 10px;
-}
+} 
 .PCwrapper, .PCwrapper * {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -114,7 +114,7 @@
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Outils <b class="caret"></b></a>
 
 								<ul class="dropdown-menu p-Outils" id="p-Outils">
-										<li><a target="_blank" href="/images/news/MDRLOL/"><i class="fa fa-cloud-upload" aria-hidden="true"></i> Importer une image</a></li>
+										<li><a target="_blank" href="/web/messorem/images/"><i class="fa fa-cloud-upload" aria-hidden="true"></i> Importer une image</a></li>
 										<li><a target="_blank" href="https://github.com/ts-x/TSX-WEB/tree/master/templates/tpl/aide"><i class="fa fa-cog" aria-hidden="true"></i> Modifier le Wiki</a></li>
 										<li><a target="_blank" href="https://www.ts-x.eu/forum/viewtopic.php?f=10&t=33820&view=unread#unread"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Signaler un problème</a></li>
 								</ul>
