@@ -158,7 +158,7 @@
                                 <p>En mode actif :</p>
 									<ul>
                                         <li>Avoir accès au radar gratuitement.</li>
-                                        <li>Augmenter votre vitalité passivement, il vous suffit de ne pas être afk.</li>
+                                        <li>Augmentez votre vitalité passivement, il vous suffit de ne pas être afk.</li>
                                         <li>Avoir les bonus job (/build).</li>
                                         <li>Vous gagnez 2$ par 19,5 seconde avec les machines à faux billets / photocopieuses.</li>
                                         <li>Tuer et être tué.</li>
