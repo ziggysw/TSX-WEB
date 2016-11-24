@@ -13,14 +13,14 @@
 					<hr class="featurette-divider">
 					<h2 class="text-center">Qui sommes-nous :</h2><br />
 					<hr class="featurette-divider">
-					<p>Le Casino de Princeton est le lieu le plus prestigieux de la ville, les gens les plus aisées s'y retrouvent pour y faire fructifier leurs capitaux.<br />
+					<p>Le Casino de Princeton est le lieu le plus prestigieux de la ville. Les gens les plus aisés s'y retrouvent pour y faire fructifier leurs capitaux.<br />
 					<br />Cependant nous proposons une grande diversité de jeux d'argent pour convenir à toutes les bourses.
 					</p>
 					<hr class="featurette-divider">
 					<h2 class="text-center">Informations :</h2><br />
 					<hr class="featurette-divider">
-					<p><u>Siè</u>g<u>e social : Place Station</u> </p><br/>
-					<p><u>Portefeuille de propriété intellectuelle :</u> Des dizaines de brevets axées sur les jeux d'argent.</p><br />
+					<p><u>Siè</u>g<u>e social : </u>Place Station. </p><br/>
+					<p><u>Portefeuille de propriété intellectuelle :</u> Des dizaines de brevets axés sur les jeux d'argent.</p><br />
 					<p><u>Distinctions :</u>En 2016, notre Casino a eu l'honneur de faire remporter à nos clients la plus importante cagnotte de l'histoire (estimée à plus de 15 millions de dollars).</p>
 				
 					<hr class="featurette-divider">
@@ -29,7 +29,7 @@
 					<p>Le Casino est actuellement à la recherche de personnel qualifié dans la relation client.<br/>
 					Des personnes capables de garder leur bienséance en toutes circonstances.</p>
 					<br />
-					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposer une candidature spontanée</a></center>
+					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposez une candidature spontanée</a></center>
 					<br />
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='memb'">
@@ -87,9 +87,9 @@
 						<td><h3 class="prune">Objectif :</h3></td>
 					</tr>
 					<tr>
-						<td>Collecte des matières première</td>
+						<td>Collecte des matières premières</td>
 						<td>[PvP] AK-47</td>
-						<td>Votre patron vous demande d'aller récupérer 5 colis en ville le plus vite possible.</td>
+						<td>Votre patron vous demande de récupérer 5 colis en ville le plus vite possible.</td>
 					</tr>
 					<tr>
 						<td>Employé modèle</td>
