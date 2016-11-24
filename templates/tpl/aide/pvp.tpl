@@ -103,36 +103,76 @@
 									</div>
 								</div>
 								<div class="panel-body">
-									<h3>La PVP</h3>
-                                    <p>Vous voulez devenir expert en PVP, suffit de suivre ces instructions.
-                                    Équipez-vous d’une Arme [PVP] (AK-47/M4A1-S/AWP...) à un Armurier.
-                                    Quand vous aurez utilisé votre Arme [PVP] il vous faut également un San Andreas : Ce qui vous ajoutera 1000 balles dans votre chargeur ensuite utilisé une cartouche
-                                    (incendiaires/empoisonnés/Paintball/explosive/vampirique) (Armurier/Artificier/Coach) ensuite il vous faut du stuff en supplément pour pouvoir survivre aux attaques ou même plus,
-                                    <br />
-                                    renvoyer les damages ou faire plus de damage. Grâce aux items suivants.</p>
-                                    <br />
-                                    <h3>Item obligatoire :</h3>
-                                    <ul>
-                                        <li>Les [PvP] drapeau son achetable au coach/mercenaire/sex-shop/banquier</li>
-                                    </ul>
-                                    <h3>Item optional :</h3>
-                                    <ul>
-                                        <li>Les Big Mac sont achetables au prêt d’un vendeur McDonald’s (renvoie les dégâts pendant 5secondes approximatif)</li>
-                                        <li>Les Seringues du berserker sont achetables au prêt d’un membre de l’Hôpital (augmente les Dommages pendant 7-8 secondes approximatif)</li>
-                                        <li>Les Cracks sont achetables au prêt d’un membre des dealers. (Réduction des dommages encaissés pendant 30 secondes Approximatif)</li>
-                                        <li>Les Cocaïnes sont achetables au prêt d’un membre des dealers. (Vous donne 500 hp)
-                                        Les Œils Bionique sont achetables au prêt d’un vendeur Technicien (annule l’effet visuel des drogues sur votre écran)</li>
-                                        <li>Les Régénérations bioniques sont achetables au prêt d’un vendeur Technicien (augmente votre kevlar toutes les secondes)</li>
-                                        <li>Les Kevlars + Casques sont achetable au prêt d’un vendeur Technicien/Préservatif sont achetable au prêt d’un vendeur sex-shop (vous augmente votre kevlar)</li>
-                                        <li>Les Paires de baskets sont achetables au prêt d’un coach (réduis les dégâts de chutes)</li>
-                                        <li>Les Propulseurs sont achetables au prêt d’un vendeur Technicien/Fusée sont achetable au prêt d’un artificier (Moyen le plus utile et rapide pour se déplacer en PVP)</li>
-                                        <li>Amélioration précision de tir sont achetable au prêt d’un coach (augmente la précision de tir)</li>
-                                        <li>Amélioration de toutes les capacités sont achetable au prêt d’un membre de l’hôpital (pack de chirurgie ce qui vous apporte comme bonus : vie/régent/saut/vitesse/force)</li>
-                                        <br />
-                                    </ul>
-                                    <h3>Comment vous servire du [PVP] drapeau</h3>
-                                    <p>Il vous faut également vous équiper de [PvP] drapeau, car l’objectif primaire est de capturer les zones en y jetant le drapeau à l’intérieur en appuyant sur la touche pour jeter votre arme.</p>
-                                    <p>Pour utiliser le drapeau, il faut être à l’extérieur de la PVP. Sinon le drapeau ne s’activera pas et vous essayerez bêtement de marquer l’objectif, mais cela ne fonctionnera pas. Vous pourrez vous procurer les drapeaux dans les métiers suivants : (coach/mercenaire/sex-shop/banquier)</p>
+									<h2>La PvP</h2>
+									<p>Vous voulez devenir expert en PVP, suffit de suivre ces instructions. 
+									<ul>
+										<li>Équipez-vous d’une Arme [PVP] auprès d'un Armurier :</li>
+											<div class="row">
+												<div class="col-md-3">
+													<span rp-item-information="64"></span>
+												</div>
+												<div class="col-md-3">
+													<span rp-item-information="235"></span>
+												</div>
+												<div class="col-md-3">
+													<span rp-item-information="236"></span>
+												</div>
+												<div class="col-md-3">
+													<span rp-item-information="237"></span>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-offset-2 col-md-3">
+													<span rp-item-information="238"></span>
+												</div>
+												<div class="col-md-3">
+													<span rp-item-information="239"></span>
+												</div>
+												<div class="col-md-3">
+													<span rp-item-information="240"></span>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-offset-4 col-md-3">
+													<span rp-item-information="241"></span>
+												</div>
+												<div class="col-md-3">
+													<span rp-item-information="281"></span>
+												</div>
+											</div>
+										<li>Pensez également à lui prendre quelque San Andreas et des cartouches </li>
+											<div class="row">
+												<div class="col-md-3">
+													<span rp-item-information="22"></span>
+												</div>
+												<div class="col-md-3">
+													<span rp-item-information="86"></span>
+												</div>
+												<div class="col-md-3">
+													<span rp-item-information="109"></span>
+												</div>
+												<div class="col-md-3">
+													<span rp-item-information="110"></span>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-3">
+													<span rp-item-information="125"></span>
+												</div>
+												<div class="col-md-3">
+													<span rp-item-information="86"></span>
+												</div>
+												<div class="col-md-3">
+													<span rp-item-information="109"></span>
+												</div>
+												<div class="col-md-3">
+													<span rp-item-information="110"></span>
+												</div>
+											</div>
+										<li>il vous faut du stuff en supplément pour pouvoir survivre aux attaques ou même plus, 
+										renvoyer les damages ou faire plus de damage.</li>
+									</ul>
+									Manque explo et incendiaire.
 								</div>
 							</div>
 						</div>
