@@ -12,13 +12,13 @@
 					<hr class="featurette-divider">
 					<h2 class="text-center">Qui sommes-nous :</h2><br />
 					<hr class="featurette-divider">
-					<p>Le tribunal de Princeton est le plus performant du comté, plus de 50 procès par jour,<br/>
-					nos juges sont formés sur le terrain immédiatement après leurs études de droit et nous leur offrons de réelle 
-					évolution de carrière.</p>
+					<p>Le tribunal de Princeton est le plus performant du comté, plus de 50 procès par jour.<br/>
+					Nos juges sont formés sur le terrain immédiatement après leurs études de droit et nous leurs offrons de réelles 
+					évolutions de carrière.</p>
 					<hr class="featurette-divider">
 					<h2  class="text-center">Informations :</h2><br />
 					<hr class="featurette-divider">
-					<p><u>Siè</u>g<u>e social :</u> </p><br/>
+					<p><u>Siè</u>g<u>e social :</u> Rue de la Justice. </p><br/>
 					<p><u>Distinctions :</u> Plus joli tribunal du comté, premier tribunal à avoir aboli la peine de mort.</p>
 				
 					<hr class="featurette-divider">
@@ -26,7 +26,7 @@
 					<hr class="featurette-divider">
 					<p>Nos sessions de formation sont journalières, nous recrutons sur présentation de votre carte No-pyj et sur validation d'un test oral.</p>
 					<br />
-					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposer une candidature spontanée</a></center>
+					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposez une candidature spontanée</a></center>
 					<br />
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='memb'">
@@ -60,7 +60,7 @@
 						</tr>
 					</tbody>
 				</table><br />
-				<p class="text-center"> Nous avons actuellement {{jobs.quota}} vendeurs réguliers dans  notre entreprise.</p>
+				<p class="text-center"> Nous avons actuellement {{jobs.quota}} justiciers réguliers dans  notre entreprise.</p>
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='note'">
 			<h2 class="text-center"><u>Le rè</u>g<u>lement interne :</u></h2><br />
@@ -81,19 +81,19 @@
 					<tr>
 						<td>	Un homme très recherché</td>
 						<td>2 500$rp</td>
-						<td>Vous avez 12 heures pour le trouver et l'arrêter un homme recherché par le tribunal.</td>
+						<td>Vous avez 12 heures pour trouver et arrêter un homme recherché par le tribunal.</td>
 					</tr>
 					<tr>
-						<td>La justice exprès</td>
+						<td>La justice express</td>
 						<td>2 500$rp</td>
 						<td>Vous avez 24 minutes pour condamner 3 joueurs différents dans votre Tribunal.<br />
-						(100$RP d'amende et 3h de prison minimum).</td>
+						(100$RP d'amendes et 3h de prison minimum).</td>
 					</tr>
 					<tr>
 						<td>La justice sournoise</td>
 						<td>5 000$rp</td>
 						<td>Prenez une plainte pour meurtre sur votre cible et condamnez-le.<br />
-						(100$RP d'amende et 3h de prison minimum)</td>
+						(100$RP d'amendes et 3h de prison minimum).</td>
 					</tr>
 				</tbody>
 			</table><br />
