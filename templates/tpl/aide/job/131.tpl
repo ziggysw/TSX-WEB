@@ -13,22 +13,22 @@
 					<hr class="featurette-divider">
 					<h2 class="text-center">Qui sommes-nous :</h2><br />
 					<hr class="featurette-divider">
-					<p>Fondées en 2007, nous avons très vite conquis le marché militaire et public.<br />
+					<p>Fondé en 2007, nous avons très vite conquis le marché militaire et public.<br />
 					Notre entreprise est connue pour ses feux d'artifice annuel mais aussi pour son ingéniosité quant à la conception des explosifs.</p>
 					<hr class="featurette-divider">
 					<h2 class="text-center">Informations :</h2><br />
 					<hr class="featurette-divider">
-					<p><u>Siè</u>g<u>e social :</u> Ruelle sombre</p><br/>
-					<p><u>Portefeuille de propriété intellectuelle :</u> Des dizaines de brevets axé sur les technologies d'armement chimique pour l'armée.</p><br />
-					<p><u>Distinctions :</u> En 2016, notre entreprise a reçu le prix de "Meilleur feu d'artifice de l'année" pour la 8ème années consécutives !
+					<p><u>Siè</u>g<u>e social :</u> Ruelle sombre.</p><br/>
+					<p><u>Portefeuille de propriété intellectuelle :</u> Des dizaines de brevets axés sur les technologies d'armement chimique pour l'armée.</p><br />
+					<p><u>Distinctions :</u> En 2016, notre entreprise a reçu le prix de "Meilleur feu d'artifice de l'année" pour la 8ème année consécutive !
 				
 					<hr class="featurette-divider">
 					<h2 class="text-center">Recrutement :</h2><br />
 					<hr class="featurette-divider">
-					<p>Nous sommes actuellement à la recherche de chimiste amateur ou expérimenté dans la concoction de feux d'artifice.<br />
+					<p>Nous sommes actuellement à la recherche de chimistes amateurs ou expérimentés dans la concoction de feux d'artifice.<br />
 					La mairie nous ayant confié un contrat d'exclusivité sur l'armement et l'animation de la ville, nous avons besoin de beaucoup de personnel !</p>
 					<br />
-					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposer une candidature spontanée</a></center>
+					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposez une candidature spontanée</a></center>
 					<br />
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='memb'">
@@ -86,9 +86,9 @@
 						<td><h3 class="prune">Objectif :</h3></td>
 					</tr>
 					<tr>
-						<td>Collecte des matières première</td>
+						<td>Collecte des matières premières</td>
 						<td>[PvP] AK-47</td>
-						<td>Votre patron vous demande d'aller récupérer 5 colis en ville le plus vite possible.</td>
+						<td>Votre patron vous demande de récupérer 5 colis en ville le plus vite possible.</td>
 					</tr>
 					<tr>
 						<td>Employé modèle</td>
