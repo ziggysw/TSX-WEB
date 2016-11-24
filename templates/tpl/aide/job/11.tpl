@@ -13,23 +13,23 @@
 					<hr class="featurette-divider">
 					<h2 class="text-center">Qui sommes-nous :</h2><br />
 					<hr class="featurette-divider">
-					<p>Les Agents de Services Hospitaliers (ASH) sont nombreux dans les hôpitaux et les cliniques, ils sont chargés de l’entretien et de l’hygiène des chambres des patients,
+					<p>Les Agents de Services Hospitaliers (ASH) sont nombreux dans les hôpitaux et les cliniques. Ils sont chargés de l’entretien et de l’hygiène des chambres des patients,
 					des salles d’opérations et des parties communes.</p>
 					<hr class="featurette-divider">
 					<h2 class="text-center">Informations :</h2><br />
 					<hr class="featurette-divider">
-					<p><u>Siè</u>g<u>e social :</u> Rue de la justice</p><br/>
+					<p><u>Siè</u>g<u>e social :</u> Rue de la Justice.</p><br/>
 					<p><u>Portefeuille de propriété intellectuelle :</u> Avant gardiste dans le milieu médicale, installation complètement en LIFI et matériel dernier cri !</p><br />
-					<p><u>Distinctions :</u>  Meilleurs chirurgiens plasticiens du monde et meilleur chirurgien orthopédiste d'Amérique.</p>
+					<p><u>Distinctions :</u>  Meilleurs chirurgiens plasticiens du monde et meilleurs chirurgiens orthopédistes d'Amérique.</p>
 					<hr class="featurette-divider">
 					<h2 class="text-center">Recrutement :</h2><br />
 					<hr class="featurette-divider">
-					<p>La principale fonction de l’agent de service hospitalier concerne l’hygiène des locaux.<br />
-					Il a en charge le nettoyage des chambres des malades, des accès intérieurs et suivant le service dans lequel il opère, des salles d’opération ou des véhicules sanitaires. <br />
-					Il peut également être amené à faire les lits et changer les draps.<br /> 
-					Il participe également à la distribution des repas aux malades et effectue le débarrasse de la vaisselle en fin de repas.</p>
+					<p>La principale fonction de l’agent des services hospitaliers concerne l’hygiène des locaux.<br />
+					Il a en charge le nettoyage des chambres des malades, des accès intérieurs, et, suivant le service dans lequel il opère, des salles d’opérations ou des véhicules sanitaires. <br />
+					Il peut être amené à faire les lits et changer les draps.<br /> 
+					Il participe également à la distribution des repas aux malades et effectue le ramassage de la vaisselle en fin de repas.</p>
 					<br />
-					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposer une candidature spontanée</a></center>
+					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposez une candidature spontanée</a></center>
 					<br />
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='memb'">
@@ -87,14 +87,14 @@
 						<td><h3 class="prune">Objectif :</h3></td>
 					</tr>
 					<tr>
-						<td>Collecte des matières première</td>
+						<td>Collecte des matières premières</td>
 						<td>[PvP] AK-47</td>
-						<td>Votre patron vous demande d'aller récupérer 5 colis en ville le plus vite possible.</td>
+						<td>Votre patron vous demande de récupérer 5 colis en ville le plus vite possible.</td>
 					</tr>
 					<tr>
 						<td>Employé modèle</td>
 						<td>1 000$ + 2 500 xp</td>
-						<td>Vendez pour 10 000$ de marchandise en 24h</td>
+						<td>Vendez pour 10 000$ de marchandise en 24h.</td>
 					</tr>
 				</tbody>
 			</table><br />
