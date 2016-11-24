@@ -12,13 +12,13 @@
 					<hr class="featurette-divider">
 					<h2 class="text-center">Qui sommes-nous :</h2><br />
 					<hr class="featurette-divider">
-					<p>La police de Princeton est la meilleure du pays, plus de 789 arrestations par semaine.
-					Nos agents sont formés par les anciens agents des forces spéciales, nous sommes là pour protéger et servir tous les citoyens sans exception.</p>
+					<p>La police de Princeton est la meilleure du pays! Plus de 789 arrestations par semaine.
+					Nos agents sont formés par d'anciens agents des forces spéciales. Nous sommes là pour protéger et servir tous les citoyens sans exception.</p>
 					<hr class="featurette-divider">
 					<h2 class="text-center">Informations :</h2><br />
 					<hr class="featurette-divider">
-					<p><u>Siè</u>g<u>e social :</u> </p><br/>
-					<p><u>Distinctions :</u> Légion d'honneur, Élue patrouille la plus Sexy de l'année.</p>
+					<p><u>Siè</u>g<u>e social :</u> Rue de la Paix. </p><br/>
+					<p><u>Distinctions :</u> Légion d'honneur, élue patrouille la plus Sexy de l'année.</p>
 				
 					<hr class="featurette-divider">
 					<h2 class="text-center">Recrutement :</h2><br />
@@ -27,7 +27,7 @@
 					Si votre dévotion envers votre prochain et votre engouement pour aider la veuve et l'orphelin est plus fort que tout,<br />
 					Rejoignez-nous !</p>
 					<br />
-					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposer une candidature spontanée</a></center>
+					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposez une candidature spontanée</a></center>
 					<br />
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='memb'">
@@ -61,7 +61,7 @@
 						</tr>
 					</tbody>
 				</table><br />
-				<p class="text-center"> Nous avons actuellement {{jobs.quota}} vendeurs réguliers dans  notre entreprise.</p>
+				<p class="text-center"> Nous avons actuellement {{jobs.quota}} policiers réguliers dans notre entreprise.</p>
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='note'">
 			<h2 class="text-center"><u>Le rè</u>g<u>lement interne :</u></h2><br />
