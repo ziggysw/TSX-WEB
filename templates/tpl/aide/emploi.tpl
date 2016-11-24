@@ -17,14 +17,13 @@
 								</div>
 								<div class="panel-body">
 									<ol>
-										<li><p id="GroupASub1">Dans un premier temps, vous pourrez sur notre forum, <a target="_blank" href="https://www.ts-x.eu/forum/viewforum.php?f=35">postuler à n'importe quel emploi</a>.<br />
-										Il vous suffit de rechercher l'offre de recrutement pour le métier dans lequel vous voulez trouver une place (n'hésitez pas à postuler à deux ou trois offres de métiers différents, cela augmentera vos chances). <br />
-										Pour faire une belle candidature, inspirez-vous de celles précédemment faites, et surtout ne faites pas de copier / coller.</p></li>
+										<li><p id="GroupASub1">Dans un premier temps, vous pourrez postuler pour n'importe quel emploi <a target="_blank" href="https://www.ts-x.eu/forum/viewforum.php?f=35">sur notre forum</a>.<br />
+										Il vous suffit de rechercher l'offre de recrutement du métier dans lequel vous désirez travailler (n'hésitez pas à déposer deux ou trois offres de métiers différentes, cela augmentera vos chances). <br />
+										Pour faire une belle candidature, inspirez-vous de celles précédemment faites sans faire de copier / coller.</p></li>
 										<br />
 										<li><p id="GroupASub2">Si vous avez de la chance ou des contacts, vous pourrez aussi trouver un emploi directement en jeu.<br />
 										Vous pouvez également utiliser la commande /job et contacter le chef ou un co-chef du métier qui vous intéresse s'ils sont connectés.<br />
-										Encore plus simple, faites un message correct et simple dans le chat global en demandant si un chef recrute, à ce moment-là si un co-chef ou un chef est présent,<br />
-										il vous répondra et vous présentera son métier si vous correspondez à ses attentes.</p></li>
+										Encore plus simple, faites un message correct et simple dans le chat global en demandant si un chef recrute. Si un co-chef ou un chef est présent, il vous répondra et vous présentera son métier si vous correspondez à ses attentes.</p></li>
 										<br />
 									</ol>
 								</div>
@@ -41,7 +40,7 @@
 									</div>
 								</div>
 								<div class="panel-body">
-									<p>Dans la ville de Princeton il existe 12 commerces différents qui recherchent activement des employés pour répondre aux attentes de leurs clients, serez-vous à la hauteur ?</p>
+									<p>Dans la ville de Princeton, il existe 12 commerces différents qui recherchent activement des employés pour répondre aux attentes de leurs clients. Serez-vous à la hauteur ?</p>
 									<br /><br />
 									<img id="GroupBSub1" alt="armurier" class="img_wiki radius" src="/images/wiki/job/armu.jpg" />
 									<div ng-include="'/templates/tpl/aide/job/111.tpl'"><i ng-repeat="i in [5,4,3,2,1]" class="fa fa-cog fa-spin fa-5x"></i></div>
@@ -197,8 +196,8 @@
 									<br />
 									<ul>
 										<li>Avoir le no-pyj</li>
-										<li>Être présent dans le job depuis quelque temps</li>
-										<li>Avoir au minimum 7h/semaines de jeu.</li>
+										<li>Être présent dans le job depuis quelques temps</li>
+										<li>Avoir au minimum 7h/semaine de jeu.</li>
 										<li>Avoir 100 000$</li>
 									</ul>
 									<br />
@@ -210,21 +209,20 @@
 										<li>S'occuper au bon fonctionnement, exposer les problèmes sur le forum et rechercher des solutions</li>
 									</ul>
 									<br />
-									<p>Si vous devez vous absenter pour de bonnes raisons (vacance, déménagement, etc).<br />
-									Envoyez-moi un mail, ou un MP sur le forum précisent bien qui vous êtes et pour quel job.<br />
+									<p>Si vous devez vous absenter pour de bonnes raisons (vacance, déménagement, etc), envoyez-moi un mail ou un MP sur le forum précisant bien qui vous êtes et pour quel job.<br />
 									Vous devez prendre aussi les dispositions nécessaires: Un de vos co-chef doit s'occuper du quota.</p>
 									<br />
-									<p>Vous vous engagez pour 3 mois au minimum, si vous quittez avant vous risquer les sanctions suivantes:</p>
+									<p>Vous vous engagez pour 3 mois au minimum, si vous quittez avant vous risquez les sanctions suivantes:</p>
 									<br />
 									<ul>
-										<li>Démission première semaine: Ban du serveur</li>
-										<li>Démission le premier mois: Perte du nopyj pour 31 jours.</li>
-										<li>Démission pendant le 2ème mois: Forte pénalité pour devenir chef d'un nouveau job</li>
-										<li>Démission pendant le 3ème mois: Légère pénalité pour de devenir chef d'un nouveau.</li>
+										<li>Démission la première semaine : Ban du serveur.</li>
+										<li>Démission le premier mois : Perte du nopyj pour 31 jours.</li>
+										<li>Démission pendant le 2ème mois : Forte pénalité pour devenir chef d'un nouveau job.</li>
+										<li>Démission pendant le 3ème mois : Légère pénalité pour de devenir chef d'un nouveau job.</li>
 									</ul>
 									<br />
 									<p>Enfin, vous devez impérativement marquer dans votre candidature que vous avez lu le code du travail, et ne pas dépasser les 5 lignes !<br />
-									À partir du moment où vous avez été accepté, vous avez 48 heures pour aller marquer "Lu et approuvé" sur ce topic,
+									À partir du moment où vous avez été accepté, vous avez 48 heures pour marquer "Lu et approuvé" sur ce topic,
 									sans quoi... Vous perdez votre place de chef.</p>
 									<br /><br /><br />
 									<div class="row">
