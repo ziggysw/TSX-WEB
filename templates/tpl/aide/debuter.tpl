@@ -301,22 +301,23 @@
 					<h3>Présentation</h3>
 						<p>Le prestige est une marque de puissance, il indique vous vous avez déjà atteint au minimum le niveau 600.<br />
 						Mais alors, seul l'éclat de ce grade serait la récompense de ces niveaux acquis ?<br />
-						Et bien non, le prestige vous apporte des bonus, mais avant voyons comment passer un prestige.<br />
-					<h3>Commment passer un prestige ?</h3>
-						Il existe deux manières, pour les deux il vous faut monter jusqu'à un certain niveau, les voici :<br />
+						Et bien non, le prestige vous apporte des bonus qui ne sont pas négligeables !<br />
+						
+						Il existe deux manières de passer un prestige, pour les deux il vous faut monter jusqu'à un certain niveau, les voici :<br />
 						<ul>
-							<li><p><u>La première :</u> Une fois le niveau 600 atteint (Empereur d'ordre divin, requis <td class="blood">2 160 000xp</td>), vous aurez la possibilité de recommencer niveau 2 et de gagner <td class="pomme">1 000 000$RP</td> pour ce prestige.</p></li>
-							<li><p><u>La deuxième :</u> Une fois le niveau ultime atteint (1000, Créateur de l'univers, requis <td class="blood">3 600 000xp</td>), vous serez contraint de recommencer niveau 2  et vous recevrez <td class="pomme">2 500 000$RP</td>.</p></li>
+							<li><p><u>La première :</u> Au niveau 600 (Grade : Empereur d'ordre divin, <td class="blood">xp</td> requis : <td class="blood">2 160 000xp</td>), vous aurez la possibilité de recommencer niveau 2 et de gagner <td class="pomme">1 000 000$RP</td> pour ce prestige.</p></li>
+							<li><p><u>La deuxième :</u> Au niveau 1000 (Grade : Créateur de l'univers, <td class="blood">xp</td> requis : <td class="blood">3 600 000xp</td>), vous serez contraint de recommencer niveau 2  et vous recevrez <td class="pomme">2 500 000$RP</td>.</p></li>
 						</ul>
-					<h3>La récompense</h3>
-					Le nombre de prestige passé est compté, du prestige 1 à 4 vous aurez :
-					<ul>
-						<li><p><td class="pomme">+10%</td> de paye de manière permanente</p></li>
-					</ul>
-					Pour le prestige 5 et plus vous aurez :</p>
-					<ul>
-						<li><p><td class="pomme">50%</td> de paye supplémentaire de manière permanente</p></li>
-					</ul>					
+						
+						Il est dans votre interêt de passer de nombreux prestiges et de ne pas vous satisfaire du premier, en effet il existe plusieurs prestiges qui apportent de meilleurs bonus,<br />
+						du prestige 1 à 4 vous aurez :
+						<ul>
+							<li><p><td class="pomme">+10%</td> de paye de manière permanente</p></li>
+						</ul>
+						du prestige 5 et plus vous aurez :</p>
+						<ul>
+							<li><p><td class="pomme">50%</td> de paye supplémentaire de manière permanente</p></li>
+						</ul>					
 					</div>
 				</div>
 			</div>
