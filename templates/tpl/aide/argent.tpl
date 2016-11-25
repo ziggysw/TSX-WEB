@@ -418,6 +418,8 @@
 											<th class="hidden-phone" id="table-top-right">Objectif</th>
 										  </tr>
 											<tr><td>Artisan</td><td>Commande d'artisanat</td><td>5.000$RP</td><td class="hidden-phone">Posez une table de craft ou rendez-vous près d'une déjà posée.</td></tr>
+											<tr><td>Artisan</td><td>Employé modèle</td><td>1 000$ + 2 500 xp</td><td class="hidden-phone">Vendez pour 10 000$ de marchandise en 24h.</td></tr>
+											<tr><td>Artisan</td><td>Collecte des matières premières</td><td>[PvP] AK-47</td><td class="hidden-phone">Votre patron vous demande de récupérer 5 colis en ville le plus vite possible.</td></tr>
 											<tr><td>Justice</td><td>La justice sournoise</td><td>5.000$RP</td><td class="hidden-phone">Condamnez un meurtrier à 100$RP d'amendes et 3h de prison minimum.</td></tr>
 											<tr><td>Justice</td><td>La justice express</td><td>3.000$RP</td><td class="hidden-phone">Obtenez un bonus pour vos 3 prochaines condamnations pendant 24h.<br /> (100$RP d'amendes et 3h de prison minimum)</td></tr>
 											<tr><td>Justice</td><td>Un homme très recherché</td><td>2.500$RP</td><td class="hidden-phone">Vous avez 12 heures pour trouver un homme recherché par le tribunal et l'arrêter.</td></tr>
