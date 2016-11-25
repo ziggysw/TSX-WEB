@@ -36,7 +36,7 @@ server.get('/items/job/:id', function (req, res, next) {
         if( req.params['id'] == 0 )
             return res.send(new ERR.BadRequestError("InvalidParam"));
 
-        server.conn.query("SELECT `id`, `nom`, `prix` FROM `rp_items` WHERE `job_id`=? AND `extra_cmd`<>'UNKNOWN'", [req.params['id']], function(err, rows) {
+        server.conn.query("SELECT `id`, `nom`, `prix`, CONVERT(CAST(CONVERT(description USING latin1) AS BINARY) USING utf8) as `description` FROM `rp_items` WHERE `job_id`=? AND `extra_cmd`<>'UNKNOWN'", [req.params['id']], function(err, rows) {
 		        if( err )
               return res.send(new ERR.InternalServerError(err));
             return res.send(rows);

@@ -22,7 +22,7 @@ app.controller('mainCtrl', function($scope, $http, $filter, $location, $routePar
   $http.get("https://www.ts-x.eu/api/jobs").success(function(res) { $scope.jobs = res; });
   $http.get("https://www.ts-x.eu/api/groups").success(function(res) { $scope.groups = res; });
 
-  $("body").popover({ selector: '[data-toggle="popover"]', trigger: "hover"});
+  $("body").popover({ selector: '[data-toggle="popover"]', trigger: "hover", html : true});
   $("body").tooltip({ selector: '[data-toggle="tooltip"]', trigger: "hover"});
 
   if( $location.search() && $location.search().TABS ) {  setTimeout(function() { $('#'+$location.search().TABS).show(); }, 100); }

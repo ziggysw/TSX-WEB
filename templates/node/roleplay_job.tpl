@@ -85,7 +85,7 @@
   <ul class="list-inline">
     <li ng-repeat="item in items">
       <img class="img-circle" width="100" height="100" src="/images/roleplay/csgo/items/{{item.id}}.png"
-        data-toggle="popover" data-placement="top" title="{{item.nom}}" data-content="{{item.prix}}$">
+        data-toggle="popover" data-placement="top" title="{{item.nom}} <i class=\'pull-right text-success\'>{{item.prix}}$</i>" data-content="{{item.description}}" />
     </li>
   </ul>
 </div>
