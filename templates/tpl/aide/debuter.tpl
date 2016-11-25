@@ -309,10 +309,10 @@
 							<li><p><u>La deuxième :</u> Au niveau 1000 (Grade : Créateur de l'univers, <td class="blood">xp</td> requis : <td class="blood">3 600 000xp</td>), vous serez contraint de recommencer niveau 2  et vous recevrez <td class="pomme">2 500 000$RP</td>.</p></li>
 						</ul>
 						
-						Il est dans votre interêt de passer de nombreux prestiges et de ne pas vous satisfaire du premier, en effet il existe plusieurs prestiges qui apportent de meilleurs bonus,<br />
-						du prestige 1 à 4 vous aurez :
+						Il est dans votre interêt de passer de nombreux prestiges et de ne pas vous satisfaire du premier, en effet vous cumulez les bonus,<br />
+						ainsi du prestige 1 à 4 vous aurez :
 						<ul>
-							<li><p><td class="pomme">+10%</td> de paye de manière permanente à chaque prestige passé et cummulable (Prestige 1, 10%, au prestige 2, 20%,...)</p></li>
+							<li><p><td class="pomme">+10%</td> de paye de manière permanente à chaque prestige passé en plus des bonus déjà acquis.</p></li>
 						</ul>
 						du prestige 5 et plus vous aurez :</p>
 						<ul>
