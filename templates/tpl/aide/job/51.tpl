@@ -19,17 +19,17 @@
 					<hr class="featurette-divider">
 					<h2 class="text-center">Informations :</h2><br />
 					<hr class="featurette-divider">
-					<p><u>Siè</u>g<u>e social :</u> Rue des sports</p><br/>
+					<p><u>Siè</u>g<u>e social :</u> Rue des sports.</p><br/>
 					<p><u>Portefeuille de propriété intellectuelle :</u> Possède une dizaine de brevets en rapport avec la "Voiture du future"! Projet secret nous n'en savons pas plus. </p><br />
-					<p><u>Distinctions :</u> Depuis 2014, la concession Mark's Garage travail sur un projet dit "Secret", en effet nous avons découvert des brevets déposés en rapport avec ce qui semblerait être des voitures "Tout électrique" mais aussi des voitures "Volantes". <br />
+					<p><u>Distinctions :</u> Depuis 2014, la concession Mark's Garage travail sur un projet dit "Secret". En effet nous avons découvert des brevets déposés en rapport avec ce qui semblerait être des voitures "Tout électrique" mais aussi des voitures "Volantes". <br />
 					Rien d'officiel à ce jour.</p>
 				
 					<hr class="featurette-divider">
 					<h2 class="text-center">Recrutement :</h2><br />
 					<hr class="featurette-divider">
-					<p>Le concessionnaire automobile doit impérativement être un bon négociant et un bon commercial: il doit être capable de convaincre, mais aussi de conseiller le client en fonction de ses besoins.</p>
+					<p>Le concessionnaire automobile doit impérativement être un bon négociateur et un bon commercant: il doit être capable de convaincre mais aussi de conseiller le client en fonction de ses besoins.</p>
 					<br />
-					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposer une candidature spontanée</a></center>
+					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposez une candidature spontanée</a></center>
 					<br />
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='memb'">
@@ -87,14 +87,14 @@
 						<td><h3 class="prune">Objectif :</h3></td>
 					</tr>
 					<tr>
-						<td>Collecte des matières première</td>
+						<td>Collecte des matières premières</td>
 						<td>[PvP] AK-47</td>
-						<td>Votre patron vous demande d'aller récupérer 5 colis en ville le plus vite possible.</td>
+						<td>Votre patron vous demande de récupérer 5 colis en ville le plus vite possible.</td>
 					</tr>
 					<tr>
 						<td>Employé modèle</td>
 						<td>1 000$ + 2 500 xp</td>
-						<td>Vendez pour 10 000$ de marchandise en 24h</td>
+						<td>Vendez pour 10 000$ de marchandise en 24h.</td>
 					</tr>
 				</tbody>
 			</table><br />
