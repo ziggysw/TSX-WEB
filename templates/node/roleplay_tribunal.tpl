@@ -1,7 +1,7 @@
 <br />
 <h2>Rapporter un mauvais comportement</h2>
   <h3>
-    Certain joueur ont malheureusement une attitude négative sur le serveur et ne respectent pas le règlement.
+    Certains joueurs ont malheureusement une attitude négative sur le serveur et ne respectent pas le règlement.
     Si vous avez des problèmes avec un joueur, et qu'un policier ou qu'un juge n'a rien pu faire, il est toujours possible de faire appliquer le règlement.
   </h3>
 
