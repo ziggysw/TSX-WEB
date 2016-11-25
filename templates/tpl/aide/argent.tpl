@@ -442,6 +442,8 @@
 											<tr><td>Stidda Famiglia</td><td>Razzia</td><td>En fonction des armes volées</td><td class="hidden-phone">Introduisez-vous dans le commissariat jusqu'au distributeur d'armes et volez en le plus possible<br /> ou allez crocheter le marché noir de la mafia !</td></tr>
 											<tr><td>Technicien</td><td>Surveillance des machines</td><td>500$RP par machine restante à la fin</td><td class="hidden-phone">Posez 10 machines en protégez les durant 24 minutes.</td></tr>
 											<tr><td>Technicien</td><td>Sous écoute</td><td>5.000$RP</td><td class="hidden-phone">Enlevez les micros posés par la police sur les téléphones de la ville dans le temps impartis.</td></tr>
+                                            <tr><td>Hopital</td><td>Collecte des matières première</td><td>[PvP] AK-47</td><td class="hidden-phone">Votre patron vous demande d'aller récupérer 5 colis en ville le plus vite possible.</td></tr>
+											<tr><td>Hopital</td><td>Employé modèle</td><td>1 000$ + 2 500 xp</td><td class="hidden-phone">Vendez pour 10 000$ de marchandise en 24h</td></tr>
 										</table>
 										<br />
 								</div>
