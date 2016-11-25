@@ -297,7 +297,26 @@
 						</div>
 					</div>
 					<div class="panel-body">
-						
+					
+					<h3>Présentation</h3>
+						<p>Le prestige est une marque de puissance, elle indique que vous n'êtes pas uniquement au niveau actuel, il indique vous vous avez déjà atteint au minimum le niveau 600.<br />
+						Mais alors, seul l'éclat de ce grade serait la récompense de ces niveaux acquis ?<br />
+						Et bien non, le prestige vous apporte des bonus, mais avant voyons comment passer un prestige.<br />
+					<h3>Commment passerun prestige ?</h3>
+						Il existe deux manières, pour les deux il vous faut monter jusqu'à un certain niveau, les voici :<br />
+						<ul>
+							<li><p><u>La première :</u> Une fois le niveau 600 atteint (Empereur d'ordre divin, requis 2 160 000xp), vous aurez la possibilité de recommencer niveau 2 et de gagner 1 000 000$RP pour ce prestige.</p></li>
+							<li><p><u>La deuxième :</u>Une fois le grade ultime atteint (1000, Créateur de l'univers,requis 3 600 000xp) vous serez contraint de recommencer niveau 2  et vous recevrez 2 500 000$RP.</p></li>
+						</ul>
+					<h3>La récompense</h3>
+					Le nombre de prestige passé est compté, du prestige 1 à 4 vous aurez :
+					<ul>
+						<li><p>+10% de paye de manière permanente</p></li>
+					</ul>
+					Pour le prestige 5 et plus vous aurez :</p>
+					<ul>
+						<li><p>50% de paye supplémentaire de manière permanente</p></li>
+					</ul>					
 					</div>
 				</div>
 			</div>
