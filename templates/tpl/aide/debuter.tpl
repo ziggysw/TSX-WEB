@@ -312,7 +312,7 @@
 						Il est dans votre interêt de passer de nombreux prestiges et de ne pas vous satisfaire du premier, en effet il existe plusieurs prestiges qui apportent de meilleurs bonus,<br />
 						du prestige 1 à 4 vous aurez :
 						<ul>
-							<li><p><td class="pomme">+10%</td> de paye de manière permanente</p></li>
+							<li><p><td class="pomme">+10%</td> de paye de manière permanente à chaque prestige passé et cummulable (Prestige 1, 10%, au prestige 2, 20%,...)</p></li>
 						</ul>
 						du prestige 5 et plus vous aurez :</p>
 						<ul>
