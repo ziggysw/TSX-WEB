@@ -306,7 +306,7 @@
 						Il existe deux manières, pour les deux il vous faut monter jusqu'à un certain niveau, les voici :<br />
 						<ul>
 							<li><p><u>La première :</u> Une fois le niveau 600 atteint (Empereur d'ordre divin, requis <td class="blood">2 160 000xp</td>), vous aurez la possibilité de recommencer niveau 2 et de gagner <td class="pomme">1 000 000$RP</td> pour ce prestige.</p></li>
-							<li><p><u>La deuxième :</u> Une fois le niveau ultime atteint (1000, Créateur de l'univers,requis <td class="blood">3 600 000xp</td>) vous serez contraint de recommencer niveau 2  et vous recevrez <td class="pomme">2 500 000$RP</td>.</p></li>
+							<li><p><u>La deuxième :</u> Une fois le niveau ultime atteint (1000, Créateur de l'univers, requis <td class="blood">3 600 000xp</td>), vous serez contraint de recommencer niveau 2  et vous recevrez <td class="pomme">2 500 000$RP</td>.</p></li>
 						</ul>
 					<h3>La récompense</h3>
 					Le nombre de prestige passé est compté, du prestige 1 à 4 vous aurez :
