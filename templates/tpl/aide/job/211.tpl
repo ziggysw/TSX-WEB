@@ -21,16 +21,16 @@
 					<hr class="featurette-divider">
 					<p><u>Siè</u>g<u>e social :</u> Rue de la Mendicité</p><br/>
 					<p><u>Portefeuille de propriété intellectuelle :</u>  Des milliards de dollars investit dans notre belle ville de Princeton.</p><br />
-					<p><u>Distinctions :</u>Première Banque mondial à proposer des distributeurs portable à ses clients !</p>
+					<p><u>Distinctions :</u> Première Banque mondial à proposer des distributeurs portable à ses clients !</p>
 				
 					<hr class="featurette-divider">
 					<h2 class="text-center">Recrutement :</h2><br />
 					<hr class="featurette-divider">
-					<p>Ouverture de comptes, conseil en gestion, accord de prêts...<br />
+					<p>Ouverture de comptes, conseils en gestion, accords de prêts...<br />
 					Le banquier, également appelé conseiller financier, accueille les clients au sein de sa banque pour leur proposer les produits
 					les plus adaptés à leurs besoins.</p>
 					<br />
-					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposer une candidature spontanée</a></center>
+					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposez une candidature spontanée</a></center>
 					<br />
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='memb'">
@@ -64,7 +64,7 @@
 						</tr>
 					</tbody>
 				</table><br />
-				<p class="text-center"> Nous avons actuellement {{jobs.quota}} vendeurs réguliers dans notre entreprise.</p>
+				<p class="text-center"> Nous avons actuellement {{jobs.quota}} banquiers réguliers dans notre entreprise.</p>
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='note'">
 			<h2 class="text-center"><u>Le rè</u>g<u>lement interne :</u></h2><br />
@@ -88,9 +88,9 @@
 						<td><h3 class="prune">Objectif :</h3></td>
 					</tr>
 					<tr>
-						<td>Collecte des matières première</td>
+						<td>Collecte des matières premières</td>
 						<td>[PvP] AK-47</td>
-						<td>Votre patron vous demande d'aller récupérer 5 colis en ville le plus vite possible.</td>
+						<td>Votre patron vous demande de récupérer 5 colis en ville le plus vite possible.</td>
 					</tr>
 					<tr>
 						<td>Employé modèle</td>
