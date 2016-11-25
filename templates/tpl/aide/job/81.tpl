@@ -13,20 +13,20 @@
 					<hr class="featurette-divider">
 					<h2 class="text-center">Qui sommes-nous :</h2><br />
 					<hr class="featurette-divider">
-					<p>La Stidda Famiglia est la famille la plus respectée de Princeton, pas comme les rebut de la Cosa Nostra.<br />
-					Nous sommes une petite entreprise de fleuriste qui ne se laisse pas marcher sur les pieds !</p>
+					<p>La Stidda Famiglia est la famille la plus respectée de Princeton, pas comme les rebuts de la Cosa Nostra.<br />
+					Nous sommes une petite entreprise de fleuristes qui ne se laisse pas marcher sur les pieds !</p>
 					<hr class="featurette-divider">
 					<h2 class="text-center">Informations :</h2><br />
 					<hr class="featurette-divider">
-					<p><u>Siè</u>g<u>e social :</u> </p><br/>
-					<p><u>Distinctions :</u> Meilleur fleuriste de l'année depuis maintenant 8 ans !</p>
+					<p><u>Siè</u>g<u>e social :</u> Ruelle sombre.</p><br/>
+					<p><u>Distinctions :</u> Meilleurs fleuristes de l'année depuis maintenant 8 ans !</p>
 				
 					<hr class="featurette-divider">
 					<h2 class="text-center">Recrutement :</h2><br />
 					<hr class="featurette-divider">
 					<p>Si vous aimez les plantes et que vous avez du sang de Gitan dans les veines, alors bienvenue chez nous !</p>
 					<br />
-					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposer une candidature spontanée</a></center>
+					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposez une candidature spontanée</a></center>
 					<br />
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='memb'">
@@ -60,7 +60,7 @@
 						</tr>
 					</tbody>
 				</table><br />
-				<p class="text-center"> Nous avons actuellement {{jobs.quota}} vendeurs réguliers dans  notre entreprise.</p>
+				<p class="text-center"> Nous avons actuellement {{jobs.quota}} fleuristes réguliers dans  notre entreprise.</p>
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='note'">
 			<h2 class="text-center"><u>Le rè</u>g<u>lement interne :</u></h2><br />
@@ -89,7 +89,7 @@
 						<td>Crochetez tous les distributeurs présents dans les stations de métro.</td>
 					</tr>
 					<tr>
-						<td>Surveillance des plants.</td>
+						<td>Surveillance des plants</td>
 						<td>500$RP par plan restant</td>
 						<td>Posez 10 plants et protégez-les pendant 24 minutes.</td>
 					</tr>
@@ -100,14 +100,14 @@
 					</tr>
 					<tr>
 						<td>Récolte des plants</td>
-						<td>1.000$ Par plant</td>
+						<td>1.000$ par plant</td>
 						<td>Crochetez 5 fois la place de l'indépendance en 5x6 minutes.</td>
 					</tr>
 					<tr>
 						<td>Razzia</td>
 						<td>En fonction des armes volées</td>
 						<td>Introduisez-vous dans le commissariat jusqu'au distributeur d'armes <br />
-						et en voler le plus possible, ou bien aller crocheter le marché noir de la mafia !</td>
+						et en voler le plus possible, ou bien allez crocheter le marché noir de la mafia !</td>
 					</tr>
 				</tbody>
 			</table><br />
