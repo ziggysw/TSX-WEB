@@ -13,22 +13,22 @@
 					<hr class="featurette-divider">
 					<h2 class="text-center">Qui sommes-nous :</h2><br />
 					<hr class="featurette-divider">
-					<p>La Cosa Nostra est la famille la plus respectée de Princeton, voler aux riches pour donner aux pauvres n'est 
+					<p>La Cosa Nostra est la famille la plus respectée de Princeton. Voler aux riches pour donner aux pauvres n'est 
 					pas du tout notre devise.<br />
 					Seul notre profit personnel compte !</p>
 					<hr class="featurette-divider">
 					<h2 class="text-center">Informations :</h2><br />
 					<hr class="featurette-divider">
 					<p><u>Siè</u>g<u>e social :</u> Rue de la soif</p><br/>
-					<p><u>Distinctions :</u> Ennemis Publique N°1 depuis plus de 5 ans, souvent imité mais jamais égalé !</p>
+					<p><u>Distinctions :</u> Ennemis Publique N°1 depuis plus de 5 ans, souvent imités mais jamais égalés !</p>
 				
 					<hr class="featurette-divider">
 					<h2 class="text-center">Recrutement :</h2><br />
 					<hr class="featurette-divider">
 					<p>Nous sommes des hommes d'honneur, toute personne ayant un passé d'hors la loi est la bienvenue chez nous.<br />
-					Escrocs, assassin et voleur sont les bienvenues chez nous.</p>
+					Escrocs, assassins et voleurs, nos portes vous sont ouvertes.</p>
 					<br />
-					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposer une candidature spontanée</a></center>
+					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposez une candidature spontanée</a></center>
 					<br />
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='memb'">
@@ -62,7 +62,7 @@
 						</tr>
 					</tbody>
 				</table><br />
-				<p class="text-center"> Nous avons actuellement {{jobs.quota}} vendeurs réguliers dans  notre entreprise.</p>
+				<p class="text-center"> Nous avons actuellement {{jobs.quota}} mafieux réguliers dans  notre entreprise.</p>
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='note'">
 			<h2 class="text-center"><u>Le rè</u>g<u>lement interne :</u></h2><br />
@@ -87,8 +87,8 @@
 					</tr>
 					<tr>
 						<td>Délivrance</td>
-						<td>1.000$RP par prisonniers</td>
-						<td>Infiltrez-vous dans la prison et libérer un maximum de prisonnier.</td>
+						<td>1.000$RP par prisonnier</td>
+						<td>Infiltrez-vous dans la prison et libérez un maximum de prisonniers.</td>
 					</tr>
 					<tr>
 						<td>Où est Charlie?</td>
@@ -110,7 +110,7 @@
 					<tr>
 						<td>Braquage des distributeurs</td>
 						<td>2.500$RP</td>
-						<td>Crochetez tous les distributeurs présents dans les stations de métro</td>
+						<td>Crochetez tous les distributeurs présents dans les stations de métro.</td>
 					</tr>
 				</tbody>
 			</table><br />
