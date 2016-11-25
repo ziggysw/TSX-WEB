@@ -1,4 +1,3 @@
-
 <div class="panel-body">
     <h2>La PvP</h2>
     <p>Vous voulez devenir expert en PVP, suffit de suivre ces instructions. 
