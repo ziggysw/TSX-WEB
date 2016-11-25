@@ -310,14 +310,9 @@
 						</ul>
 						
 						Il est dans votre interêt de passer de nombreux prestiges et de ne pas vous satisfaire du premier, en effet vous cumulez les bonus,<br />
-						ainsi du prestige 1 à 4 vous aurez :
+						ainsi à chaque prestige vous aurez :
 						<ul>
-							<li><p><td class="pomme">+10%</td> de paye de manière permanente à chaque prestige passé en plus des bonus déjà acquis.</p></li>
-						</ul>
-						du prestige 5 et plus vous aurez :</p>
-						<ul>
-							<li><p><td class="pomme">50%</td> de paye supplémentaire de manière permanente</p></li>
-						</ul>					
+							<li><p><td class="pomme">+10%</td> de paye de manière permanente à chaque prestige passé en plus des bonus déjà acquis dans les prestiges précédents.</p></li>					
 					</div>
 				</div>
 			</div>
