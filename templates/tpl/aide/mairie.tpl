@@ -60,7 +60,7 @@
 								</div>
 								<div class="panel-body">
 									<p>La mairie de Princeton est le point névralgique de la ville.<br />
-									Vous devrez obligatoirement vous y rendre dans votre vie citoyenne pour diverses raisons comme lors des élections, pour votre recensment ou encore
+									Vous devrez obligatoirement vous y rendre dans votre vie citoyenne pour diverses raisons comme lors des élections, votre recensment ou encore
 									pour accéder à la salle informatique et à ses nombreux outils de recherche d'emploi.</p>
 								</div>
 							</div>
@@ -111,7 +111,7 @@
 									</div>
 								</div>
 								<div class="panel-body">
-									<p>Pour devenir maire vous devrez tout d'abord vous assurer d'avoir atteint ou dépassé le niveau RP 90 (324 000xp) pour pouvoir prétendre à devenir Maire.</p>
+									<p>Pour devenir maire vous devrez tout d'abord vous assurer d'avoir atteint ou dépassé le niveau RP 90 (324 000xp).</p>
 									<p>Rendez-vous ensuite à la mairie de Princeton (la grande tour entre le commissariat et le bar "le requin") puis appuyez sur votre touche "utiliser" pour ouvrir le menu de la mairie.</p>
 									<p>Vous aurez l'option "candidature" et vous pourrez déposer la votre pour 50 000$ RP.</p>
 									<p>Va s'en suivre un temps de vote par les joueurs ayant atteint ou dépassé le niveau 30, à vous de trouver le bon moyen de vous faire de la pub !</p>
@@ -136,7 +136,7 @@
 										<li><p>Les réductions sont interdites</p></li>
 										<li><p>La production de machines et plants est accélérée ou ralentie</p></li>
 										<li><p>Interdition de faire des braquages</p></li>
-										<li><p>Lors des captures du bunker, interdiction d'utiliser des items</p></li>
+										<li><p>Lors des captures du bunker, il peux interdir d'utiliser des items</p></li>
 										<li><p>Les payes sont augmentées de 5% ou réduites de 10%</p></li>
 										<li><p>L'hôtel des ventes est interdit</p></li>
 									</ul>	
@@ -159,9 +159,9 @@
                                 <p>En mode actif :</p>
 									<ul>
                                         <li>Avoir accès au radar gratuitement.</li>
-                                        <li>Augmentez votre vitalité passivement, si vous n'êtes pas afk.</li>
+                                        <li>Augmentez votre vitalité passivement si vous n'êtes pas afk.</li>
                                         <li>Avoir les bonus job (/build).</li>
-                                        <li>Gagnez 2$ toutes 20 secondes avec les machines à faux billets/photocopieuses.</li>
+                                        <li>Vous gagnez 2$ toutes les 20 secondes avec les machines à faux billets/photocopieuses.</li>
                                         <li>Tuer et être tué.</li>
                                     </ul>
                                     <p>En mode passif :</p>
@@ -169,7 +169,7 @@
                                         <li>Vous n'aurez pas accès au radar gratuitement.</li>
                                         <li>Votre vitalité ne sera pas augmentée.</li>
                                         <li>Pas d'accès au bonus job (/build).</li>
-                                        <li>Vous gagnez 1$ toutes 20 secondes avec les machines à faux billets/photocopieuses.</li>
+                                        <li>Vous gagnez 1$ toutes les 20 secondes avec les machines à faux billets/photocopieuses.</li>
                                         <li>Vous ne pourrez être tué à l'exception d'un contrat mercenaire et d'une voiture qui vous renverse.</li>
                                     </ul>
 								</div>
