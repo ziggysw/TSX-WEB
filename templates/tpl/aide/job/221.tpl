@@ -21,7 +21,7 @@
 					<hr class="featurette-divider">
 					<p><u>Siè</u>g<u>e social :</u> Rue de l'innovation</p><br/>
 					<p><u>Portefeuille de propriété intellectuelle :</u> Nous possèdons un brevet très innovant, en effet, nous avons inventé l'éolienne enterrée.</p><br />
-					<p><u>Distinctions :</u> Nous sommes capables d'intervenir sur n'importe quel types de matériels, et inventer des nouvelles machines toujours plus puissante comme récemment, les "Photocopieuses".</p>
+					<p><u>Distinctions :</u> Nous sommes capables d'intervenir sur n'importe quel type de matériel, et inventer de nouvelles machines toujours plus puissantes comme récemment, les "Photocopieuses".</p>
 				
 					<hr class="featurette-divider">
 					<h2 class="text-center">Recrutement :</h2><br />
@@ -30,7 +30,7 @@
 					mais rarement au niveau hiérarchique ou décisionnel.<br /> 
 					Il est présent dans beaucoup de domaines, notamment les nouvelles technologies ou les énergies renouvelables.</p>
 					<br />
-					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposer une candidature spontanée</a></center>
+					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposez une candidature spontanée</a></center>
 					<br />
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='memb'">
@@ -64,7 +64,7 @@
 						</tr>
 					</tbody>
 				</table><br />
-				<p class="text-center"> Nous avons actuellement {{jobs.quota}} vendeurs réguliers dans notre entreprise.</p>
+				<p class="text-center"> Nous avons actuellement {{jobs.quota}} techniciens réguliers dans notre entreprise.</p>
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='note'">
 			<h2 class="text-center"><u>Le rè</u>g<u>lement interne :</u></h2><br />
@@ -88,19 +88,19 @@
 						<td><h3 class="prune">Objectif :</h3></td>
 					</tr>
 					<tr>
-						<td>Collecte des matières première</td>
+						<td>Collecte des matières premières</td>
 						<td>[PvP] AK-47</td>
-						<td>Votre patron vous demande d'aller récupérer 5 colis en ville le plus vite possible.</td>
+						<td>Votre patron vous demande de récupérer 5 colis en ville le plus vite possible.</td>
 					</tr>
 					<tr>
 						<td>Employé modèle</td>
 						<td>1 000$ + 2 500 xp</td>
-						<td>Vendez pour 10 000$ de marchandise en 24h</td>
+						<td>Vendez pour 10 000$ de marchandise en 24h.</td>
 					</tr>
 					<tr>
 						<td>Surveillance des machines</td>
-						<td>500$RP par machine restant à la fin</td>
-						<td>Posez 10 machines en protégez les durant 24h</td>
+						<td>500$RP par machine restante à la fin</td>
+						<td>Posez 10 machines et protégez les durant 24h.</td>
 					</tr>
 					<tr>
 						<td>Sous écoute</td>

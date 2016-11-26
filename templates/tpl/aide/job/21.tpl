@@ -18,17 +18,17 @@
 					<hr class="featurette-divider">
 					<h2 class="text-center">Informations :</h2><br />
 					<hr class="featurette-divider">
-					<p><u>Siè</u>g<u>e social :</u> Avenue des Belges</p><br/>
+					<p><u>Siè</u>g<u>e social :</u> Avenue des Belges.</p><br/>
 					<p><u>Portefeuille de propriété intellectuelle :</u> Pionnier dans la vente rapide à emporter (Fast Food), 
-					Nous possèdons des avantages non négligeable en terme de taxes et de TVA.</p>
-					<p><u>Distinctions :</u>Les plus gros mangeurs du monde s'y retrouvent pour faire des concours.	</p>
+					nous possédons des avantages non négligeables en terme de taxes et de TVA.</p>
+					<p><u>Distinctions : </u>Les plus gros mangeurs du monde s'y retrouvent pour participer à des concours de grosse bouffe.	</p>
 					<hr class="featurette-divider">
 					<h2 class="text-center">Recrutement :</h2><br />
 					<hr class="featurette-divider">
-					<p>Travailler chez McDonald's demande de la rapidité et de l'efficacité, vous vous verrez souvent attribuer la tâche de caissier,
+					<p>Travailler chez McDonald's demande de la rapidité et de l'efficacité. Vous vous verrez souvent attribuer la tâche de caissier,
 					vous serez constamment en train de prendre les commandes des clients, de les préparer et de les donner.</p>
 					<br />
-					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposer une candidature spontanée</a></center>
+					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposez une candidature spontanée</a></center>
 					<br />
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='memb'">
@@ -86,9 +86,9 @@
 						<td><h3 class="prune">Objectif :</h3></td>
 					</tr>
 					<tr>
-						<td>Collecte des matières première</td>
+						<td>Collecte des matières premières</td>
 						<td>[PvP] AK-47</td>
-						<td>Votre patron vous demande d'aller récupérer 5 colis en ville le plus vite possible.</td>
+						<td>Votre patron vous demande de récupérer 5 colis en ville le plus vite possible.</td>
 					</tr>
 					<tr>
 						<td>Employé modèle</td>
