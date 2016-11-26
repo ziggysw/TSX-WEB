@@ -319,19 +319,19 @@
 					</div>
 					<div class="row">
 						<div class="col-md-offset-2 col-md-3">
-							<img class="img-circle" width="100" height="75"
+							<img width="100" height="75"
 							src="../images/wiki/debuter/prestige1.png" data-toggle="popover"
 							data-placement="top" title="" data-content="+ 10% de paye"
 							data-original-title="Prestige 1">
 						</div>
 						<div class="col-md-3">
-							<img class="img-circle" width="100" height="75"
+							<img width="100" height="75"
 							src="../images/wiki/debuter/prestige2.png" data-toggle="popover"
 							data-placement="top" title="" data-content="+ 20% de paye"
 							data-original-title="Prestige 2">
 						</div>
 						<div class="col-md-3">
-							<img class="img-circle" width="100" height="75"
+							<img width="100" height="75"
 							src="../images/wiki/debuter/prestige3.png" data-toggle="popover"
 							data-placement="top" title="" data-content="+ 30% de paye"
 							data-original-title="Prestige 3">
