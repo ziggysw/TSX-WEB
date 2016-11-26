@@ -60,8 +60,8 @@
 								</div>
 								<div class="panel-body">
 									<p>La mairie de Princeton est le point névralgique de la ville.<br />
-									Vous devrez obligatoirement vous y rendre dans votre vie citoyenne pour diverse raison comme les élections, votre recensment ou encore
-									pour acceder à la salle informatique et ses nombreux outils de recherche d'emploi.</p>
+									Vous devrez obligatoirement vous y rendre dans votre vie citoyenne pour diverses raisons comme lors des élections, pour votre recensment ou encore
+									pour accéder à la salle informatique et à ses nombreux outils de recherche d'emploi.</p>
 								</div>
 							</div>
 						</div>
@@ -76,9 +76,9 @@
 									</div>
 								</div>
 								<div class="panel-body">
-									<p>Toute les semaines, des éléctions ont lieux à Princeton.<br />
+									<p>Toutes les semaines, des élections ont lieux à Princeton.<br />
 									Pour y participer, rien de plus simple, direction la mairie ! <br />
-									Dans la mezzanine du hall d'entrée vous trouverez des cabines de vote, entrez dedans et un menus automatique s'ouvrira en vous proposant le choix des 
+									Dans la mezzanine du hall d'entrée, vous trouverez des cabines de vote. Entrez dedans et un menu automatique s'ouvrira en vous proposant le choix des 
 									candidats. <br />
 									A VOS VOTES !</p>
 								</div>
@@ -96,7 +96,7 @@
 								</div>
 								<div class="panel-body">
 									<p>Une salle informatique est à votre disposition dans la mairie (ascenseur gauche).<br />
-									Cette dernière vous permettra d'acceder à notre wiki mais aussi au offre d'emplois disponible sur princeton !</p>
+									Cette dernière vous permettra d'accéder à notre wiki mais aussi aux offres d'emplois disponibles sur Princeton !</p>
 								</div>
 							</div>
 						</div>
@@ -111,9 +111,9 @@
 									</div>
 								</div>
 								<div class="panel-body">
-									<p>Pour devenir maire vous devrez tout d'abord vous assurer d'avoir atteint ou dépassé le niveau RP 90 (324 000xp) qui offre le bonus de pouvoir prétendre à devenir maire</p>
-									<p>Rendez vous ensuite à la mairie de Princetown (la grande tour entre le commissariat et le bar le requin) puis appuyez sur votre touche "utiliser" pour ouvrir le menu de la mairie.</p>
-									<p>Vous aurez l'option candidatures et vous pourrez déposer la votre pour 50 000$ RP.</p>
+									<p>Pour devenir maire vous devrez tout d'abord vous assurer d'avoir atteint ou dépassé le niveau RP 90 (324 000xp) pour pouvoir prétendre à devenir Maire.</p>
+									<p>Rendez-vous ensuite à la mairie de Princeton (la grande tour entre le commissariat et le bar "le requin") puis appuyez sur votre touche "utiliser" pour ouvrir le menu de la mairie.</p>
+									<p>Vous aurez l'option "candidature" et vous pourrez déposer la votre pour 50 000$ RP.</p>
 									<p>Va s'en suivre un temps de vote par les joueurs ayant atteint ou dépassé le niveau 30, à vous de trouver le bon moyen de vous faire de la pub !</p>
 								</div>
 							</div>
@@ -132,11 +132,11 @@
 								<h3>Le maire peut mettre en place des amendements tels que :</h3>
 									<ul>
 										<li><p>Les amendes sont soit augmentées de 5% ou réduites de 10%</p></li>
-										<li><p>Les prix des items sont sois augmentés de 10% ou réduits de 5%</p></li>
+										<li><p>Le prix des items sont soit augmentés de 10% ou réduits de 5%</p></li>
 										<li><p>Les réductions sont interdites</p></li>
-										<li><p>La production des machines et plants est accélérée ou ralentie</p></li>
-										<li><p>Interdition de faire des braquage</p></li>
-										<li><p>Lors des captures du bunker, il peux interdir d'utiliser des items</p></li>
+										<li><p>La production de machines et plants est accélérée ou ralentie</p></li>
+										<li><p>Interdition de faire des braquages</p></li>
+										<li><p>Lors des captures du bunker, interdiction d'utiliser des items</p></li>
 										<li><p>Les payes sont augmentées de 5% ou réduites de 10%</p></li>
 										<li><p>L'hôtel des ventes est interdit</p></li>
 									</ul>	
@@ -154,14 +154,14 @@
 									</div>
 								</div>
 								<div class="panel-body">
-                                <h3>Un mode actif passif est disponible sur le serveur, il vous permettra d'effectuer des actions rp ou de vous en protéger.</h3>
+                                <h3>Un mode actif/passif est disponible sur le serveur. Il vous permettra d'effectuer des actions rp ou de vous en protéger.</h3>
                                 <br />
                                 <p>En mode actif :</p>
 									<ul>
                                         <li>Avoir accès au radar gratuitement.</li>
-                                        <li>Augmentez votre vitalité passivement, il vous suffit de ne pas être afk.</li>
+                                        <li>Augmenter votre vitalité passivement, si vous n'êtes pas afk.</li>
                                         <li>Avoir les bonus job (/build).</li>
-                                        <li>Vous gagnez 2$ par 20 secondes avec les machines à faux billets/photocopieuses.</li>
+                                        <li>Gagner 2$ toutes 20 secondes avec les machines à faux billets/photocopieuses.</li>
                                         <li>Tuer et être tué.</li>
                                     </ul>
                                     <p>En mode passif :</p>
@@ -169,7 +169,7 @@
                                         <li>Vous n'aurez pas accès au radar gratuitement.</li>
                                         <li>Votre vitalité ne sera pas augmentée.</li>
                                         <li>Pas d'accès au bonus job (/build).</li>
-                                        <li>Vous gagnez 1$ par 20 secondes avec les machines à faux billets/photocopieuses.</li>
+                                        <li>Vous gagnez 1$ toutes 20 secondes avec les machines à faux billets/photocopieuses.</li>
                                         <li>Vous ne pourrez être tué à l'exception d'un contrat mercenaire et d'une voiture qui vous renverse.</li>
                                     </ul>
 								</div>
