@@ -118,11 +118,9 @@
 	</div>
 	{$intro}
 	<div class="container main">
-
 <!--
-<div class="col-sm-12 col-sm-offset-0 alert alert-danger" role="alert">
-<strong>CRASH CS:GO.</strong> Nous sommes au courant qu'il existe un bug qui provoque la fermeture involontaire de votre jeu CSGO. Nous n'avons aucune piste quant à la résolution de ce problème. <a href="https://www.ts-x.eu/forum/viewtopic.php?f=5&t=34124&p=607514#p607514" >Vos suggestions peuvent être publiées ici</a>. Si vous trouvez comment provoquer ce bug, vous <b class="text-capitalize">remportez 1.500.000$RP, une place VIP et 20€ PayPal</b>.
-En attendant, veuillez nous excuser de la gêne occasionnée. 
+<div class="col-sm-12 col-sm-offset-0 alert alert-warning" role="alert">
+Suite à la dernière mise à jour de CS:GO, votre jeu <b>crash en cas de *retour windows*</b>. Nous vous conseillons donc de jouer en *fenêtré* et de <b>ne surtout pas</b> cliquer sur le bouton pour <b>minimiser</b> votre jeu. Préférez donc <b>utiliser la commande *alt-tab*</b> ou encore la touche *windows*.
 </div>
 -->
 		{$page}

@@ -282,8 +282,6 @@
 							<a href="#GroupC">Passer VIP</a>
 							<ul class="nav nav-stacked">
 								<li><a href="#GroupCSub1">Devenir VIP</a></li>
-							</ul>
-							<ul class="nav nav-stacked">
 								<li><a href="#GroupCSub2">Qui s'occupe des VIP ?</a></li>
 							</ul>
 						</li>
