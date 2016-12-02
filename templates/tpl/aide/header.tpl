@@ -109,6 +109,7 @@
 							<li><a target="_blank" href="/web/messorem/images/"><i class="fa fa-cloud-upload" aria-hidden="true"></i> Importer une image</a></li>
 							<li><a target="_blank" href="https://github.com/ts-x/TSX-WEB/tree/master/templates/tpl/aide"><i class="fa fa-cog" aria-hidden="true"></i> Modifier le Wiki</a></li>
 							<li><a target="_blank" href="https://www.ts-x.eu/forum/viewtopic.php?f=10&t=33820&view=unread#unread"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Signaler un problème</a></li>
+							<li><a target="_blank" href="https://www.ts-x.eu/index.php?page=aide&sub=vip"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Beta VIP</a></li>
 						</ul>
 					</li>
 				</ul>
