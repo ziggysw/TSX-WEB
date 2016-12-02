@@ -1,4 +1,4 @@
-		<!-- ATTENTION !! Avant toute modification sachez que pour les models de props vous devez rajouter 1 à l'id et au getElementById.
+		<!-- ATTENTION RECOMMANDATION !! Avant toute modification sachez que pour les models de props vous devez rajouter 1 à l'id et au getElementById.
 		Props exterrieur = 1000 // Props intérrieur = 2000 // Skin humanoide = 3000 // Skin animal = 4000 // Skin objet = 5000
 		Exemple :
 				<h3>Arret de bus</h3>
