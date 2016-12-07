@@ -318,6 +318,7 @@ ul.nav-tabs > li:nth-child(2) {
 
 .fixed {
     position: fixed;
+	z-index: 9999999999;
 }
 
 /* sidebar */

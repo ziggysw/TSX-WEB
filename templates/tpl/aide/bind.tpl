@@ -12,7 +12,7 @@
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2 id="t1" >Qu'est-ce qu'un Bind ?</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2 id="GroupA" >Qu'est-ce qu'un Bind ?</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
@@ -28,7 +28,7 @@
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2 id="t2" >Afficher la console</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2 id="GroupB" >Afficher la console</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
@@ -51,7 +51,7 @@
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2 id="t3" >Ecrire vos Binds</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2 id="GroupC" >Ecrire vos Binds</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
@@ -84,10 +84,12 @@
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2 id="t4" >Les touches spéciales</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2 id="GroupD" >Les touches spéciales</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
+									<center><h2 id="GroupDSub1"><u>Le Pavé Numéri</u>q<u>ue</u></h2></center>
+									<br />
 									<div class="row">
 										<div class="col-xs-offset-3 col-xs-3">
 											  <img class="img_wiki center-block"src="/images/wiki/bind/Slash.png" alt="/">
@@ -179,6 +181,8 @@
 									<br />
 									<hr class="featurette-divider">
 									<br />
+									<center><h2 id="GroupDSub2"><u>Le Control Pad</u></h2></center>
+									<br />
 									<div class="row">
 										<div class="col-xs-3">
 											<img class="img_wiki center-block" src="/images/wiki/bind/Pgup.png" alt="PGUP">
@@ -218,6 +222,68 @@
 											</a>
 										</div>
 									</div>
+									<br />
+									<hr class="featurette-divider">
+									<br />
+									<div class="row">
+									<center><h2 id="GroupDSub3"><u>Les flèches directionelles</u></h2></center>
+									<br />
+										<div class="col-xs-offset-5 col-xs-2">
+											<img class="img_wiki center-block" src="/images/wiki/bind/AD.png" alt="Flèche haut">
+											<p class="text-center">uparrow</p>
+											</a>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-offset-3 col-xs-2">
+											<img class="img_wiki center-block" src="/images/wiki/bind/AD.png" alt="Flèche gauche">
+											<p class="text-center">leftarrow</p>
+											</a>
+										</div>
+										<div class="col-xs-2">
+											<img class="img_wiki center-block" src="/images/wiki/bind/).png" alt="Flèche bas">
+											<p class="text-center">downarrow</p>
+											</a>
+										</div>
+										<div class="col-xs-2">
+											<img class="img_wiki center-block" src="/images/wiki/bind/+=.png" alt="Flèche droite">
+											<p class="text-center">rightarrow</p>
+											</a>
+										</div>
+									</div>
+									<br />
+									<hr class="featurette-divider">
+									<br />
+									<center><h2 id="GroupDSub4"><u>La Souris</u></h2></center>
+									<br />
+									<table class="wiki-table-prune">
+										<tbody>
+											<tr>
+												<th id="table-top-left">Position</th>
+												<th id="table-top-right">Commande</th>
+											  </tr>
+											<tr>
+												<td><p class="txt">Molette haut</p></td>
+												<td><p class="txt">MWHEELUP</p></td>
+											</tr>
+											<tr>
+												<td><p class="txt">Molette bas</p></td>
+												<td><p class="txt">MWHEELDOWN</p></td>
+											</tr>
+											<tr>
+												<td><p class="txt">Click molette</p></td>
+												<td><p class="txt">MOUSE3</p></td>
+											</tr>
+											<tr>
+												<td><p class="txt">Bouton 1 côté</p></td> 
+												<td><p class="txt">MOUSE1</p></td>
+											</tr>
+											<tr>
+												<td><p class="txt">Bouton 2 côté</p></td>
+												<td><p class="txt">MOUSE2</p></td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
 							</div>
 						</div>
@@ -227,10 +293,17 @@
 				<!--Nav Bar -->
 				<nav class="col-md-2 bs-docs-sidebar"> 
 					<ul class="nav nav-stacked fixed">
-						<li><a href="#t1" id="page_menu_wiki" ><i class="fa fa-asterisk prune" aria-hidden="true"></i> Qu'est-ce qu'un Bind </a></li>
-						<li><a href="#t2" id="page_menu_wiki" ><i class="fa fa-asterisk ocean" aria-hidden="true"></i> Afficher la console</a></li>
-						<li><a href="#t3" id="page_menu_wiki" ><i class="fa fa-asterisk gold" aria-hidden="true"></i> Ecrire vos Binds</a></li>
-						<li><a href="#t4" id="page_menu_wiki" ><i class="fa fa-asterisk pomme" aria-hidden="true"></i> Les touches spéciales</a></li>
+						<li><a href="#GroupA" id="page_menu_wiki" ><i class="fa fa-asterisk prune" aria-hidden="true"></i> Qu'est-ce qu'un Bind </a></li>
+						<li><a href="#GroupB" id="page_menu_wiki" ><i class="fa fa-asterisk ocean" aria-hidden="true"></i> Afficher la console</a></li>
+						<li><a href="#GroupC" id="page_menu_wiki" ><i class="fa fa-asterisk gold" aria-hidden="true"></i> Ecrire vos Binds</a></li>
+						<li><a href="#GroupD" id="page_menu_wiki" ><i class="fa fa-asterisk pomme" aria-hidden="true"></i> Les touches spéciales</a>
+							<ul class="nav nav-stacked">
+								<li><a href="#GroupDSub1">Le Pavé Numérique</a></li>
+								<li><a href="#GroupDSub2">Le Control Pad</a></li>
+								<li><a href="#GroupDSub3">Les flèches directionelles</a></li>
+								<li><a href="#GroupDSub4">La Souris</a></li>
+							</ul>
+						</li>
 					</ul>
 				</nav>
 			</div>

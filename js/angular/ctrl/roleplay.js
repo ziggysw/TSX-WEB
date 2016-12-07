@@ -472,7 +472,7 @@ app.controller('rpTribunalCase', function($scope, $location, $routeParams, $http
       });
     });
 
-    $scope.cat = {chat: "Chat", money: "Transaction", kill: "Meurtre", jail: "Prison", item: "Item", buy: "Vente", steal: "Vol", connect: "Connexion" };
+    $scope.cat = {chat: "Chat", money: "Transaction", kill: "Meurtre", jail: "Prison", item: "Item", buy: "Vente", steal: "Vol", connect: "Connexion", other: "Autres" };
 
   }
 });

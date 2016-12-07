@@ -114,7 +114,7 @@ server.get('/panel/events', function (req, res, next) {
       server.conn.query(server.getAuthAdminID, [req.headers.auth], function(err, row) {
         if( err ) return res.send(new ERR.InternalServerError(err));
         if( row[0] == null ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
-	var dStart = moment().subtract(1, 'months').unix();
+	      var dStart = moment().subtract(1, 'months').unix();
         server.conn.query("SELECT username, COUNT(*) as CPT FROM `ts-x`.`phpbb3_posts` P INNER JOIN `ts-x`.`phpbb3_users` U ON P.`poster_id`=U.`user_id` WHERE P.`topic_id`=20936 AND P.`post_time`>=? GROUP BY poster_id ORDER BY cpt DESC", [dStart], function(err, row) {
           return res.send(row);
         });
@@ -124,7 +124,27 @@ server.get('/panel/events', function (req, res, next) {
     }
         next();
 });
-
+/**
+ * @api {get} /panel/props GetProps
+ * @apiPermission admin
+ * @apiName GetProps
+ * @apiGroup Panel
+ * @apiHeader {String} auth Votre cookie de connexion.
+ */
+server.get('/panel/props', function (req, res, next) {
+  try {
+    server.conn.query(server.getAuthAdminID, [req.headers.auth], function(err, row) {
+      if( err ) return res.send(new ERR.InternalServerError(err));
+      if( row[0] == null ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+      server.conn.query("SELECT `id`, LOWER(`nom`) as nom, LOWER(`model`) as model, LOWER(`tag`) as tag, `valid` FROM `rp_shared`.`rp_props` ORDER BY `count` DESC;", function(err, row) {
+        return res.send(row);
+      });
+    });
+  } catch ( err ) {
+    return res.send(err);
+  }
+  next();
+});
 /**
  * @api {get} /panel/email GetEmailInfo
  * @apiPermission admin

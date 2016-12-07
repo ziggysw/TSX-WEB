@@ -253,8 +253,7 @@ server.get('/tribunal/:id/:type', function (req, res, next) {
       var type = req.params['type'];
       var sqlTYPE = "";
       switch(type) {
-        case "money": case "steal": case "kill":
-        case "chat": case "item": case "jail":
+        case "money": case "steal": case "kill": case "chat": case "item": case "jail": case "other":
           sqlTYPE = "`type`='"+type+"'"; break;
         case "connect":
           sqlTYPE = "`type` IN ('connect', 'disconnect', 'afk', 'noafk')"; break;
