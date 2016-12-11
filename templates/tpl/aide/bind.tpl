@@ -1,4 +1,4 @@
-		<div class="container bs-docs-container">
+		<div class="container bs-docs-container" data-spy="scroll" data-target="#sidebar">
 			<div class="row">
 				<div class="col-md-9" role="main">
 					<br /><br />
@@ -9,7 +9,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2 id="GroupA" >Qu'est-ce qu'un Bind ?</h2></div>
@@ -25,7 +25,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2 id="GroupB" >Afficher la console</h2></div>
@@ -35,7 +35,7 @@
 								<p>Dans un premier temps, notre mission sera d'activer la console dans laquelle on va écrire nos binds. Elle ressemble à ça, la petite barre en bas va nous servir à écrire nos binds.</p><br />
 								<img class="img_wiki" src="/images/wiki/bind/1200px-Console.png" /><br /><br />
 									<p><strong>Si vous savez déjà comment l'afficher, vous pouvez passer cette étape.</strong><br />
-									Pour ouvrir la console, il faudra d'abord l'activer.<br /> 
+									Pour ouvrir la console, il faudra d'abord l'activer.<br />
 									Pour ce faire, allez dans vos options et choisissez : Paramètres de jeu > activez la console développeur (3ème ligne)</p><br />
 									<img class="img_wiki" src="/images/wiki/bind/1200px-Activer_console.png" /><br /><br />
 									<p>Nous allons ensuite définir une touche pour afficher votre console, rendez-vous dans : options > clavier / souris.<br />
@@ -48,7 +48,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2 id="GroupC" >Ecrire vos Binds</h2></div>
@@ -81,7 +81,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2 id="GroupD" >Les touches spéciales</h2></div>
@@ -275,7 +275,7 @@
 												<td><p class="txt">MOUSE3</p></td>
 											</tr>
 											<tr>
-												<td><p class="txt">Bouton 1 côté</p></td> 
+												<td><p class="txt">Bouton 1 côté</p></td>
 												<td><p class="txt">MOUSE1</p></td>
 											</tr>
 											<tr>
@@ -288,10 +288,10 @@
 							</div>
 						</div>
 					</div>
-				
+
 				</div>
 				<!--Nav Bar -->
-				<nav class="col-md-2 bs-docs-sidebar"> 
+				<nav class="col-md-2 bs-docs-sidebar">
 					<ul class="nav nav-stacked fixed">
 						<li><a href="#GroupA" id="page_menu_wiki" ><i class="fa fa-asterisk prune" aria-hidden="true"></i> Qu'est-ce qu'un Bind </a></li>
 						<li><a href="#GroupB" id="page_menu_wiki" ><i class="fa fa-asterisk ocean" aria-hidden="true"></i> Afficher la console</a></li>

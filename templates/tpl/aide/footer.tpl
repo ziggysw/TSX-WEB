@@ -7,13 +7,25 @@
 </div>
 
 <script type="text/javascript">
-  var app = angular.module("tsx", [])
-	.config(function($httpProvider) {
+
+	$(document).ready( function() {
+		$('body').scrollspy();
+	});
+
+  var app = angular.module("tsx")
+	.config(function($httpProvider, $locationProvider) {
 		$httpProvider.defaults.headers.common['auth'] = _md5;
 	})
+	.config( ['$provide', function ($provide){
+    $provide.decorator('$browser', ['$delegate', function ($delegate) {
+    	$delegate.onUrlChange = function () {};
+    	$delegate.url = function () { return ""};
+    	return $delegate;
+    }]);
+  }])
   .directive("rpItemInformation", function($compile, $http) {
 		return {
-			template: '<img class="img-circle" width="100" height="100" src="/images/roleplay/csgo/items/{{item.id}}.png" data-toggle="popover" data-placement="top" title="{{item.nom}} <i class=\'pull-right text-success\'>{{item.prix}}$</i>" data-content="{{item.description}}" >',
+			template: '<img class="img-circle" width="100" height="100" src="/images/roleplay/csgo/items/{{item.id}}.png" data-toggle="popover" data-placement="top" title="{{item.nom}} <i class=\'pull-right text-success\'>{{item.prix}}$</i>" data-content="{{item.description}}" alt="{{item.nom}}">',
 			replace: false,
 			scope: true,
 			link: function(scope, element, attr) {
@@ -54,6 +66,22 @@
 		$("body").popover({ selector: '[data-toggle="popover"]', trigger: "hover",  html : true});
 		$("body").tooltip({ selector: '[data-toggle="tooltip"]', trigger: "hover"});
   })
+	.controller("search", function($scope, $http) {
+		$scope.data = new Array();
+
+		$scope.$watch("search", function(newValue, oldValue) {
+			if( newValue.length <= 1 ) {
+				$scope.data = [];
+				return;
+			}
+
+			$http.get("https://www.ts-x.eu/api/search/aide/"+newValue).success(function(res) {
+
+				$scope.data = res;
+
+			}).error(function() { $scope.data = []; });
+		});
+	})
 	.controller("vip", function($scope, $http) {
 		$http.get("https://www.ts-x.eu/api/panel/props").success(function(res) { $scope.props = res; });
 		$scope.focus

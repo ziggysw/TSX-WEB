@@ -1,4 +1,4 @@
-		<div class="container bs-docs-container">
+		<div class="container bs-docs-container" data-spy="scroll" data-target="#sidebar">
 			<div class="row">
 				<div class="col-md-9" role="main">
 					<br /><br />
@@ -9,7 +9,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2>Crash du jeu pendant le téléchargement</h2></div>
@@ -53,7 +53,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2>Problème de retour Windows</h2></div>
@@ -79,11 +79,11 @@
 											</li>
 										</ul>
 										<br />
-										<div class="row"> 
-											<div class="col-md-offset-1 col-md-3 col-xs-6"> 
-												<a class="thumbnail" data-toggle="modal" data-target="#myModal1"> 
-													<img class="img_wiki" src="/images/wiki/bug/bug5.png"> 
-												</a> 
+										<div class="row">
+											<div class="col-md-offset-1 col-md-3 col-xs-6">
+												<a class="thumbnail" data-toggle="modal" data-target="#myModal1">
+													<img class="img_wiki" src="/images/wiki/bug/bug5.png">
+												</a>
 											</div>
 											<div id="myModal1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 													<div class="modal-dialog modal-lg">
@@ -97,10 +97,10 @@
 														</div>
 													</div>
 											</div>
-											<div class="col-md-3 col-xs-6"> 
-												<a class="thumbnail" data-toggle="modal" data-target="#myModal2"> 
-													<img class="img_wiki" src="/images/wiki/bug/bug6.png"> 
-												</a> 
+											<div class="col-md-3 col-xs-6">
+												<a class="thumbnail" data-toggle="modal" data-target="#myModal2">
+													<img class="img_wiki" src="/images/wiki/bug/bug6.png">
+												</a>
 											</div>
 											<div id="myModal2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 													<div class="modal-dialog modal-lg">
@@ -114,10 +114,10 @@
 														</div>
 													</div>
 											</div>
-											<div class="col-md-3 col-xs-6"> 
-												<a class="thumbnail" data-toggle="modal" data-target="#myModal3"> 
-													<img class="img_wiki" src="/images/wiki/bug/bug7.png"> 
-												</a> 
+											<div class="col-md-3 col-xs-6">
+												<a class="thumbnail" data-toggle="modal" data-target="#myModal3">
+													<img class="img_wiki" src="/images/wiki/bug/bug7.png">
+												</a>
 											</div>
 											<div id="myModal3" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 													<div class="modal-dialog modal-lg">
@@ -140,7 +140,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2>Retour à l'écran d'accueil</h2></div>
@@ -158,7 +158,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2>Impossible de rejoindre le serveur</h2></div>
@@ -170,7 +170,7 @@
 									<img alt="img_vers_win" class="img_wiki" src="/images/wiki/bug/bug8.png"><br />
 									<br />
 									<p>Malheureusement, nous ne pouvons rien y faire, car le problème vient de Steam lui-même, soit parce que leurs serveurs on plantés, <br />
-									soit parce qu'ils font des mises à jour et nous sommes donc en décalage au niveau de la version.								
+									soit parce qu'ils font des mises à jour et nous sommes donc en décalage au niveau de la version.
 									(ex : 13h30 le serveur est en 1.2.56, steam fait une mise à jour et passe en 1.2.57. Il nous faudra alors relancer le serveur. Mais ce cas de figure est plutôt rare). </p>
 								</div>
 							</div>
@@ -179,7 +179,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2>Serveur introuvable</h2></div>
@@ -198,7 +198,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2>Crash pendant la PvP</h2></div>
@@ -215,7 +215,7 @@
 							</div>
 						</div>
 					</div>
-				
+
 				</div>
 				<!--Nav Bar -->
 				<nav class="col-md-2 bs-docs-sidebar">

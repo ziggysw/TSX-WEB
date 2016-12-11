@@ -1,4 +1,4 @@
-		<div class="container bs-docs-container">
+		<div class="container bs-docs-container" data-spy="scroll" data-target="#sidebar">
 			<div class="row">
 				<div class="col-md-9" role="main">
 					<br /><br />

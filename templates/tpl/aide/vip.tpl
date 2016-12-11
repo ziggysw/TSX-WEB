@@ -1,4 +1,4 @@
-<div class="container bs-docs-container" ng-controller="vip">	<div class="row">		<div class="col-md-9" role="main">			<br /><br />			<center><img alt="img_title" id="img_title" src="/images/wiki/admin/admin_top.png"></center><br />			<br />			<div class="row">				<div id="GroupA" class="col-md-12 group">
+<div class="container bs-docs-container" data-spy="scroll" data-target="#sidebar" ng-controller="vip">	<div class="row">		<div class="col-md-9" role="main">			<br /><br />			<center><img alt="img_title" id="img_title" src="/images/wiki/admin/admin_top.png"></center><br />			<br />			<div class="row">				<div id="GroupA" class="col-md-12 group">
 					<div class="panel panel-wiki">
 						<div class="row">
 							<div class="hidden-xs hidden-sm col-md-1">

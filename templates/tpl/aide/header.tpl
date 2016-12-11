@@ -11,7 +11,7 @@
 	border-radius: 100%;
 	margin-left:90px;
 	margin-top: 10px;
-} 
+}
 .PCwrapper, .PCwrapper * {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -47,7 +47,7 @@
 
 <div ng-controller="ctrlAide" id="mainWiki">
 
-<br /><br /><br /><br /><br /><br />
+<br /><br />
 
 	<nav class="navbar navbar-inverse p-navbar" id="mw-navigation" style="height: 58px;">
 		<div class="container-fluid">
@@ -113,7 +113,15 @@
 						</ul>
 					</li>
 				</ul>
-				<!--Barre de recherche en cour de developpement 29/11/2016 -->
+
+
+				<div ng-controller="search" class="pull-right" style="margin-top: 10px;">
+					<input class="form-control" type="text" placeholder="Rechercher" ng-model="search" />
+					<ul>
+						<li ng-repeat="item in data"><a href="index.php?page=aide&sub={{item.ref}}">{{item.ref}}</a></li>
+					</ul>
+				</div>
+
 				</div><!-- /.navbar-collapse -->
 			</div>
 		</div>

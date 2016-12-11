@@ -1,4 +1,4 @@
-		<div class="container bs-docs-container">
+		<div class="container bs-docs-container" data-spy="scroll" data-target="#sidebar">
 			<div class="row">
 				<div class="col-md-9" role="main">
 					<br /><br />
@@ -23,7 +23,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2>Comment Participer à la PvP</h2></div>
@@ -43,7 +43,7 @@
 							<div id="GroupBSub1" class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2>À quoi servent les gangs ?</h2></div>
@@ -62,7 +62,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2>Comment créer un Gang </h2></div>
@@ -76,9 +76,9 @@
 									</ol>
 									<p>Une fois cette donation faite, il vous suffira d'envoyer un mail à Kossolax@ts-x.eu pour demander la création de votre gang en précisant les informations suivantes :</p>
 									<ul>
-										<li> Nom du Gang :</li> 
-										<li> Les Grades :</li> 
-										<li> Le Tag (image représentative du Gang) :</li> 
+										<li> Nom du Gang :</li>
+										<li> Les Grades :</li>
+										<li> Le Tag (image représentative du Gang) :</li>
 									</ul>
 									<br />
 									<p>Suite à ce mail, votre gang sera créé dans les 24h et vous pourrez bénéficier d'une section "privé groupe" réservée aux membres de votre gang et d'un channel TeamSpeak qui vous sera également exclusif. Dans ce channel, la loi, c'est vous !<br />
@@ -91,7 +91,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2>Bien se préparer</h2></div>
@@ -99,7 +99,7 @@
 								</div>
 								<div class="panel-body">
 									<h2>La PvP</h2>
-									<p>Vous voulez devenir expert en PVP ? Il suffit de suivre ces instructions. 
+									<p>Vous voulez devenir expert en PVP ? Il suffit de suivre ces instructions.
 									<ul>
 										<li>Équipez-vous d’une Arme [PVP] auprès d'un Armurier :</li>
 											<div class="row">
@@ -174,7 +174,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2>Une suspicion de triche ?</h2></div>
@@ -183,7 +183,7 @@
 								<div class="panel-body">
 									<p>Vous soupçonnez une personne de tricher ou vous ne comprenez pas comment une action est possible dans des conditions normales ?<br />
 									Pas de soucis. Directement après votre mort, vous avez accès à la killcam (replay de l'action de votre assassin). Si votre soupçon se confirme, vous avez <a target="_blank" href="https://www.ts-x.eu/tv/">accès aux records des Pvp</a>, chacune étant enregistrée.</p>
-									<br /> 
+									<br />
 									<p>Grâce à ce système, nous pouvons revisionner toutes les PvP et prendre les sanctions nécessaires sur les tricheurs.<br />
 									Si votre soupçon se confirme ou que vous avez besoin d'aide pour déterminer si le joueur triche ou pas, il vous suffit d'envoyer un mail à Kossolax@ts-x.eu lui expliquant le cas et le joueur concerné.<br />
 									<br />
@@ -192,7 +192,7 @@
 							</div>
 						</div>
 					</div>
-				
+
 				</div>
 				<!--Nav Bar -->
 				<nav class="col-md-2 bs-docs-sidebar">
