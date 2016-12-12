@@ -5,6 +5,8 @@ var exec = require('child_process').exec;
 exports = module.exports = function(server){
   var moment = require('moment');
   var ERR = require('node-restify-errors');
+  var request = require('request');
+
 
   function lzw_encode(s) {
     var dict = {};
@@ -55,7 +57,15 @@ exports = module.exports = function(server){
                   if( row[0].job_id >= 101 && row[0].job_id <= 106 ) {
                     var dStart = moment().subtract(2, 'hour').toDate();
                     var dEnd = moment().add(1, 'hour').toDate();
-                    callback(null, tokken.replace("STEAM_0", "STEAM_1").trim(), dStart, dEnd);
+                    var target = tokken.replace("STEAM_0", "STEAM_1").trim();
+
+                    request("https://www.ts-x.eu/api/live/connected/"+target, function (error, response, body) {
+                      if( body == '"1"')
+                        callback(null, target, dStart, dEnd);
+                      else
+                        callback("InvalidParam");
+                    });
+
                   }
                   else {
                     callback("InvalidParam");
