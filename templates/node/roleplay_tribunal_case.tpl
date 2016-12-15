@@ -23,7 +23,7 @@
   </ul>
   <ul class="col-md-7" ng-show="moreinfo.id">
 
-    <li>Ce joueur s'est fait report {{moreinfo.timestamp*1000-3600 | date : "le d/M à HH:mm" : '+0200' }}</li>
+    <li>Ce joueur s'est fait report {{moreinfo.timestamp*1000 | date : "le d/M à HH:mm" : '+0100' }}</li>
     <li>{{moreinfo.report_raison}}: {{moreinfo.report_moreinfo}}</li>
     <br />
     <div class="text-center" ng-hide="disableButton || moreinfo.jail >= 0">
