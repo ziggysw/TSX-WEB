@@ -33,7 +33,7 @@
 <br clear="all" /><br clear="all" />
 <h3>Informations:</h3>
 <div class="btn-group btn-group-justified">
-  <a class="col-md-3 col-sm-6 btn btn-default" ng-repeat="(key, value) in stats.pvp" ng-attr-href="{{key!='villa' ? '#/group/'+value.id+'' : '#/user/'+value.id+''}}" href="yo">
+  <a class="col-md-3 col-sm-6 btn btn-default" ng-repeat="(key, value) in stats.pvp" ng-attr-href="{{key!='bunker' ? '#/user/'+value.id+'' : '#/group/'+value.id+''}}" href="yo">
     <img class="pull-left img-circle" width="64" height="64" src="/images/icons/{{key}}.jpg" />
     <div>
       <strong>{{value.type}}:</strong><br />{{value.nom}}
