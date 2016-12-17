@@ -71,6 +71,7 @@ require('./includes/tribunal.js')(server);
 require('./includes/hdv.js')(server);
 require('./includes/steam.js')(server);
 require('./includes/devzone.js')(server);
+require('./includes/search.js')(server);
 
 server.pre(function (request, response, next) {
 //	console.log(request.path());

@@ -132,13 +132,14 @@ server.get('/live/stats', function (req, res, next) {
     cb(obj);
   });
 
-  var sql = "SELECT G.`id` as `bunker`, G.`name` as `bunkerNom`, U.`steamid` as `villa`, U.`name` AS `villaNom` ";
-  sql += "FROM `rp_servers` S INNER JOIN `rp_groups` G ON G.`id`=S.`bunkerCap` INNER JOIN `rp_users` U ON U.`steamid`=S.`villaOwner` WHERE S.`id`=1";
+  var sql = "SELECT G.`id` as `bunker`, G.`name` as `bunkerNom`, U.`steamid` as `villa`, U.`name` AS `villaNom`, U2.`steamid` as `maire`, U2.`name` AS `maireNom` ";
+  sql += "FROM `rp_servers` S INNER JOIN `rp_groups` G ON G.`id`=S.`bunkerCap` INNER JOIN `rp_users` U ON U.`steamid`=S.`villaOwner` INNER JOIN `rp_users` U2 ON U2.`steamid`=S.`maire` WHERE S.`id`=1";
 
   server.conn.query(sql , function(err, rows) {
     obj.pvp = new Object();
     obj.pvp.villa = {id: rows[0].villa, nom: rows[0].villaNom, type: "La villa" };
     obj.pvp.bunker = {id: rows[0].bunker, nom: rows[0].bunkerNom, type: "Le bunker"};
+    obj.pvp.maire = {id: rows[0].maire, nom: rows[0].maireNom, type: "Le maire"};
 
     cb(obj);
   });

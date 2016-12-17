@@ -1,4 +1,4 @@
-		<div class="container bs-docs-container">
+		<div class="container bs-docs-container" data-spy="scroll" data-target="#sidebar">
 			<div class="row">
 				<div class="col-md-9" role="main">
 					<br /><br />
@@ -9,7 +9,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2>Présentation</h2></div>
@@ -64,7 +64,7 @@
 																<p class="txt">Mise en ligne en octobre 2011 et succédant à la ville d'Oviscity, la ville de Sunvale qui fût retravaillée par l'équipe Ts-X et ne rencontra pas le succès tant attendu.<br />
 																Et pour cause, à peine 2 semaines après sa mise en service, une mise à jour majeure des moteurs sur l'orangebox (à cause de Day of Defeat) rendit l'utilisation des voitures difficile, voire impossible.<br />
 																En effet, il était toujours possible de les utiliser, mais l'équipe Ts-x ne pouvaient pas garantir aux joueurs de ne pas crash.<br />
-																Il fut donc décidé pour le bien de la communauté de retirer les voitures, car l'équipe Ts-X préférait avoir 40 à 60 joueurs sans crash, que 5 à 10 joueurs avec un crash touts les 5 à 10 minutes.<br /> 
+																Il fut donc décidé pour le bien de la communauté de retirer les voitures, car l'équipe Ts-X préférait avoir 40 à 60 joueurs sans crash, que 5 à 10 joueurs avec un crash touts les 5 à 10 minutes.<br />
 																La ville devenant alors beaucoup trop grande pour des trajets à pieds entre les différents bâtiments elle connut une fin prématurée en novembre 2011 pour Oviscity.<br />
 																Le développement de sa petite sœur Riverside s'accéléra pour arriver en février 2012.
 															</div>
@@ -135,7 +135,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2>Les Référés</h2></div>
@@ -184,7 +184,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2>Passer VIP</h2></div>
@@ -200,7 +200,7 @@
 									<br />
 									Pour ce faire, il ne doit pas hésiter à se montrer ferme face aux joueurs récalcitrants tout en conservant l'esprit de la communauté. <br />
 									Un comportement exemplaire est bien évidemment demandé et être réellement impliqué dans la communauté est un vrai plus, vous devez tenter de proposer des idées dans le but d’améliorer le serveur. <br />
-									<br />		
+									<br />
 									Ce grade n’est pas obligatoire pour passer Ts-X mais il est vrai qu'il facilite l’entrée dans la team. <br />
 									Il permet notamment de faire connaissance plus facilement avec les admins de la communauté et de faire vos preuves en tant que "gérant" sur nos serveurs.</p><br />
 									<br />
@@ -234,7 +234,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2>Devenir Membre CS:GO</h2></div>
@@ -259,7 +259,7 @@
 							</div>
 						</div>
 					</div>
-				
+
 				</div>
 				<!--Nav Bar -->
 				<nav class="col-md-2 bs-docs-sidebar">
@@ -282,8 +282,6 @@
 							<a href="#GroupC">Passer VIP</a>
 							<ul class="nav nav-stacked">
 								<li><a href="#GroupCSub1">Devenir VIP</a></li>
-							</ul>
-							<ul class="nav nav-stacked">
 								<li><a href="#GroupCSub2">Qui s'occupe des VIP ?</a></li>
 							</ul>
 						</li>

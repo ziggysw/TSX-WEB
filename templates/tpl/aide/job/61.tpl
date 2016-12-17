@@ -13,24 +13,24 @@
 					<hr class="featurette-divider">
 					<h2 class="text-center">Qui sommes-nous :</h2><br />
 					<hr class="featurette-divider">
-					<p>L'agence immobilière a le monopole du logement sur Princeton, nous proposons des locations qui vont du simple HLM à la villa de luxe.<br />
-					Nos clients sont tous traité de la même manière, notre priorité depuis plusieurs années est de fournir un logement pour tous les habitants de Princeton !<br />
+					<p>L'agence immobilière a le monopole du logement sur Princeton. Nous proposons des locations qui vont du simple HLM à la villa de luxe.<br />
+					Nos clients sont tous traités de la même manière, notre priorité depuis plusieurs années étant de fournir un logement pour tous les habitants de Princeton !<br />
 					C'est pourquoi, pour les plus nécessiteux, nous avons installé des lits de camp au premier étage de  notre siège social le temps de pouvoir leur fournir un logement.</p>
 					<hr class="featurette-divider">
 					<h2 class="text-center">Informations :</h2><br />
 					<hr class="featurette-divider">
-					<p><u>Siè</u>g<u>e social :</u> Rue du Commerce</p><br/>
-					<p><u>Portefeuille de propriété intellectuelle :</u> Des dizaines de brevets axé sur l'ameublement et la construction.</p><br />
-					<p><u>Distinctions :</u> En 2013, notre groupe immobilié à reçu la médaille du mérite pour sa mobilisation dans l'association "Un logement pour tous".
+					<p><u>Siè</u>g<u>e social :</u> Rue du Commerce.</p><br/>
+					<p><u>Portefeuille de propriété intellectuelle :</u> Des dizaines de brevets axés sur l'ameublement et la construction.</p><br />
+					<p><u>Distinctions :</u> En 2013, notre groupe immobilié a reçu la médaille du mérite pour sa mobilisation dans l'association "Un logement pour tous".
 				
 					<hr class="featurette-divider">
 					<h2 class="text-center">Recrutement :</h2><br />
 					<hr class="featurette-divider">
 					<p>Nous sommes actuellement à la recherche de personnel motivé qui ne compte pas leurs heures !<br />
-					Priceton subit actuellement une forte hausse de demande de logement c'est pourquoi nous recherchons en priorité 
+					Princeton subit actuellement une forte hausse de demande de logement c'est pourquoi nous recherchons en priorité 
 					des personnes qui ont le goût du social et de la négociation.</p>
 					<br />
-					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposer une candidature spontanée</a></center>
+					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposez une candidature spontanée</a></center>
 					<br />
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='memb'">
@@ -88,14 +88,14 @@
 						<td><h3 class="prune">Objectif :</h3></td>
 					</tr>
 					<tr>
-						<td>Collecte des matières première</td>
+						<td>Collecte des matières premières</td>
 						<td>[PvP] AK-47</td>
-						<td>Votre patron vous demande d'aller récupérer 5 colis en ville le plus vite possible.</td>
+						<td>Votre patron vous demande de récupérer 5 colis en ville le plus vite possible.</td>
 					</tr>
 					<tr>
 						<td>Employé modèle</td>
 						<td>1 000$ + 2 500 xp</td>
-						<td>Vendez pour 10 000$ de marchandise en 24h</td>
+						<td>Vendez pour 10 000$ de marchandise en 24h.</td>
 					</tr>
 				</tbody>
 			</table><br />

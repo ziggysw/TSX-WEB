@@ -297,8 +297,47 @@
 						</div>
 					</div>
 					<div class="panel-body">
+						<p>Le prestige est une marque de puissance, il indique vous vous avez déjà atteint au minimum le niveau <span class="ocean">600</span>.<br />
+						Mais alors, seul l'éclat de ce grade serait la récompense de ces niveaux acquis ?<br />
+						Et bien non, le prestige vous apporte des bonus qui ne sont pas négligeables !<br />
 						
+						Il existe deux manières de passer un prestige, pour les deux il vous faut monter jusqu'à un certain niveau, les voici :<br />
+						<br />
+						<ul>
+							<li><p><u>La première :</u> Au niveau <span class="ocean">600</span> (Grade : Empereur d'ordre divin, <span class="blood">xp</span> requis : <span class="blood">2 160 000xp</span>), vous aurez la possibilité de recommencer niveau 2 et de gagner <span class="pomme">1 000 000$RP</span> pour ce prestige.</p></li>
+							<li><p><u>La deuxième :</u> Au niveau <span class="ocean">1000</span> (Grade : Créateur de l'univers, <span class="blood">xp</span> requis : <span class="blood">3 600 000xp</span>), vous serez contraint de recommencer niveau 2  et vous recevrez <span class="pomme">2 500 000$RP</span>.</p></li>
+						</ul>
+						
+						<p>Il est dans votre interêt de passer de nombreux prestiges et de ne pas vous satisfaire du premier, en effet vous cumulez les bonus,<br />
+						ainsi à chaque prestige vous aurez :</p>
+						<br />
+						<ul>
+							<li><p><span class="pomme">+10%</span> de paye de manière permanente à chaque prestige passé en plus des bonus déjà acquis dans les prestiges précédents.</p></li>
+						</ul>
+						<br />
+						<p>Pour illustrer ces bonus, voici quelques exemples des atouts en fonction des prestiges :</p>		
 					</div>
+					<div class="row">
+						<div class="col-md-offset-2 col-md-3">
+							<img width="100" height="75"
+							src="../images/wiki/debuter/prestige1.png" data-toggle="popover"
+							data-placement="top" title="" data-content="+ 10% de paye"
+							data-original-title="Prestige 1">
+						</div>
+						<div class="col-md-3">
+							<img width="100" height="75"
+							src="../images/wiki/debuter/prestige2.png" data-toggle="popover"
+							data-placement="top" title="" data-content="+ 20% de paye"
+							data-original-title="Prestige 2">
+						</div>
+						<div class="col-md-3">
+							<img width="100" height="75"
+							src="../images/wiki/debuter/prestige3.png" data-toggle="popover"
+							data-placement="top" title="" data-content="+ 30% de paye"
+							data-original-title="Prestige 3">
+						</div>
+					</div>
+				<br />
 				</div>
 			</div>
 		</div>

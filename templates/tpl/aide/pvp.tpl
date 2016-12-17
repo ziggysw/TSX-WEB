@@ -1,4 +1,4 @@
-		<div class="container bs-docs-container">
+		<div class="container bs-docs-container" data-spy="scroll" data-target="#sidebar">
 			<div class="row">
 				<div class="col-md-9" role="main">
 					<br /><br />
@@ -23,21 +23,19 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2>Comment Participer à la PvP</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
-									<p>Les captures PvP sont le mardi de 18h à 18h30 et le vendredi de 21h à 21h30, le mode de capture PvP actuellement en place sur le serveur est "Capture de Drapeau" (CDF).<br />
-									Pour capturer une zone Pvp il faudra vous munir d'un drapeau que vous pourrez préalablement acheter auprès des Coachs, vendeur Sexshop ou encore Mercenaires. <br />
-									<br />
-									Drapeaux en poche, il ne vous restera plus qu'à vous en équiper en dehors de la PvP,<br />
-									pour ensuite aller tenter de le déposer sur la base ennemie.<br />
-									Attention toutefois, vous ne serez pas seul ! pour participer aux captures PvP il vous faudra obligatoirement appartenir à un gang !<br />
-									Ce pré requis rempli, vous vous retrouverez soit en attaque (équipe rouge) avec les autres gangs attaquant pour vous épauler,<br />
-									soit en défense (équipe bleue) ou vous serez confronté à tous les autres gangs du serveur !!!
+									<p>Les captures PvP sont le mardi de 18h à 18h30 et le vendredi de 21h à 21h30.<br />
+									Le mode PvP actuellement en place sur le serveur est une "Capture de Drapeau" (CDF).<br />
+									Pour capturer une zone Pvp, il faudra vous munir d'un drapeau que vous pourrez préalablement acheter auprès des Coachs, vendeurs Sexshop ou encore Mercenaires. <br />
+									Drapeaux en poche, il ne vous restera plus qu'à vous en équiper en dehors de la PvP, pour ensuite allez tenter de le déposer sur la base ennemie.<br />
+									Attention toutefois, vous ne serez pas seul ! Pour participer aux captures PvP, il vous faudra obligatoirement appartenir à un gang !<br />
+									Ce pré-requis rempli, vous vous retrouverez soit en attaque (équipe rouge) avec les autres gangs attaquants pour vous épauler; soit en défense (équipe bleue) ou vous serez confronté à tous les autres gangs du serveur !
 								</div>
 							</div>
 						</div>
@@ -45,19 +43,18 @@
 							<div id="GroupBSub1" class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2>À quoi servent les gangs ?</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
-									<p>Un Gang est un groupe de joueurs qui décide de s'unir pour participer aux captures PvP, <br />
-									il est composé au maximum de 10 joueurs qui peuvent être recrutés jusqu'à 5 minutes avant le début de la capture.
-									<br />
-									Le gang permet également l'entraide entre membres, un channel TS privé et une section forum rien que pour vous !<br />
-									Cela peut également vous permettre de mieux vous intégrer à la communauté étant donné que vous êtes appelé à côtoyer plus de joueurs et donc plus de métier,<br />
-									en résumé être dans un gang est toujours un bonus pour votre Game Play au sein de notre communauté !</p>
+									<p>Un Gang est un groupe de joueurs qui décident de s'unir pour participer aux captures PvP. <br />
+									Il est composé au maximum de 10 joueurs qui peuvent être recrutés jusqu'à 5 minutes avant le début de la capture.<br />
+									Le gang permet également l'entraide entre membres, la possession d'un channel TS privé et d'une section forum rien que pour vous !<br />
+									Faire partie d'un gang peut vous permettre de mieux vous intégrer à la communauté étant donné que vous êtes appelé à côtoyer plus de joueurs et donc plus de métiers.<br />
+									En résumé, être dans un gang est toujours un bonus pour votre gameplay au sein de notre communauté !</p>
 								</div>
 							</div>
 						</div>
@@ -65,28 +62,26 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2>Comment créer un Gang </h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
-									<p>Pour créer un Gang, deux solutions s'offrent à vous,</p>
+									<p>Pour créer un Gang, deux solutions s'offrent à vous :</p>
 									<ol>
 										<li>Faire une donation de 20€ sur le site internet.</li>
-										<li>Contacter par mail Kossolax pour se faire prélever 2,5millions de $rp.</li>
+										<li>Contacter par mail Kossolax pour se faire prélever 2,5 millions de $rp.</li>
 									</ol>
-									<p>Une fois cette donation faite, il vous suffira d'envoyer un mail à Kossolax@ts-x.eu pour demander la création de votre gang,<br />
-									en précisant les informations suivantes :</p>
+									<p>Une fois cette donation faite, il vous suffira d'envoyer un mail à Kossolax@ts-x.eu pour demander la création de votre gang en précisant les informations suivantes :</p>
 									<ul>
-										<li> Nom du Gang :</li> 
-										<li> Les Grades :</li> 
-										<li> Le Tag (image représentative du Gang) :</li> 
+										<li> Nom du Gang :</li>
+										<li> Les Grades :</li>
+										<li> Le Tag (image représentative du Gang) :</li>
 									</ul>
 									<br />
-									<p>Suite à ce mail, votre gang sera créé dans les 24h et vous pourrez bénéficier d'une section "privé groupe" réserver aux membres de votre gang<br />
-									et d'un channel TeamSpeak qui vous sera également exclusif, dans ce channel la loi c'est vous !<br />
+									<p>Suite à ce mail, votre gang sera créé dans les 24h et vous pourrez bénéficier d'une section "privé groupe" réservée aux membres de votre gang et d'un channel TeamSpeak qui vous sera également exclusif. Dans ce channel, la loi, c'est vous !<br />
 									Ce topic vous a convaincu et vous voulez votre propre Gang ?</p><br />
 									<center><a href="https://www.ts-x.eu/index.php?page=money" class="b_gang">CREER UN GANG</a></center>
 								</div>
@@ -96,7 +91,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2>Bien se préparer</h2></div>
@@ -104,7 +99,7 @@
 								</div>
 								<div class="panel-body">
 									<h2>La PvP</h2>
-									<p>Vous voulez devenir expert en PVP, suffit de suivre ces instructions. 
+									<p>Vous voulez devenir expert en PVP ? Il suffit de suivre ces instructions.
 									<ul>
 										<li>Équipez-vous d’une Arme [PVP] auprès d'un Armurier :</li>
 											<div class="row">
@@ -140,7 +135,7 @@
 													<span rp-item-information="281"></span>
 												</div>
 											</div>
-										<li>Pensez également à lui prendre quelque San Andreas et des cartouches </li>
+										<li>Pensez également à lui prendre quelques San Andreas et des cartouches. </li>
 											<div class="row">
 												<div class="col-md-3">
 													<span rp-item-information="22"></span>
@@ -169,8 +164,7 @@
 													<span rp-item-information="110"></span>
 												</div>
 											</div>
-										<li>il vous faut du stuff en supplément pour pouvoir survivre aux attaques ou même plus, 
-										renvoyer les damages ou faire plus de damage.</li>
+										<li>Il vous faut du stuff en supplément pour pouvoir survivre aux attaques, renvoyer les dommages ou faire plus de dommages.</li>
 									</ul>
 									Manque explo et incendiaire.
 								</div>
@@ -180,7 +174,7 @@
 							<div class="panel panel-wiki">
 								<div class="row">
 									<div class="hidden-xs hidden-sm col-md-1">
-										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span>
 									</div>
 									<div class="col-md-11">
 										<div class="panel-heading panel-heading-wiki"><h2>Une suspicion de triche ?</h2></div>
@@ -188,18 +182,17 @@
 								</div>
 								<div class="panel-body">
 									<p>Vous soupçonnez une personne de tricher ou vous ne comprenez pas comment une action est possible dans des conditions normales ?<br />
-									Pas de soucis, directement après votre mort, vous avez accès à la kill cam (replay de l'action de votre assassin ) <br />
-									et si votre soupçon se confirme vous avez <a target="_blank" href="https://www.ts-x.eu/tv/">accès aux records des Pvp</a>, chaque Pvp est enregistré.</p>
-									<br /> 
-									<p>Grâce à ce système, nous pouvons revisionner toutes les PvP et prendre les sanctions nécessaires sur les tricheurs.<br />
-									Si votre soupçon se confirme ou que vous avez besoin d'aide pour déterminer si le joueur triche ou pas il vous suffit d'envoyer un mail à Kossolax@ts-x.eu lui expliquant le cas et le joueur concerné.<br />
+									Pas de soucis. Directement après votre mort, vous avez accès à la killcam (replay de l'action de votre assassin). Si votre soupçon se confirme, vous avez <a target="_blank" href="https://www.ts-x.eu/tv/">accès aux records des Pvp</a>, chacune étant enregistrée.</p>
 									<br />
-									<b><u>ATTENTION :</u></b> Si vous soupçonnez un joueur de tricherie, ne le criez surtout pas sur tous les toits, InGame dans le tchat, envoyez directement un mail à Kossolax@ts-x.eu !</p>
+									<p>Grâce à ce système, nous pouvons revisionner toutes les PvP et prendre les sanctions nécessaires sur les tricheurs.<br />
+									Si votre soupçon se confirme ou que vous avez besoin d'aide pour déterminer si le joueur triche ou pas, il vous suffit d'envoyer un mail à Kossolax@ts-x.eu lui expliquant le cas et le joueur concerné.<br />
+									<br />
+									<b><u>ATTENTION :</u></b> Si vous soupçonnez un joueur de tricherie, ne le criez surtout pas sur tous les toits, InGame dans le tchat. Envoyez directement un mail à Kossolax@ts-x.eu !</p>
 								</div>
 							</div>
 						</div>
 					</div>
-				
+
 				</div>
 				<!--Nav Bar -->
 				<nav class="col-md-2 bs-docs-sidebar">

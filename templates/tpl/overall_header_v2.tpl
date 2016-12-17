@@ -22,7 +22,8 @@
 	<![endif]-->
 	{if="count($scripts)>0"}<script type="text/javascript" src="/js/compile{loop="$scripts"}-{$value}{/loop}.js"></script>{/if}
 <!--	<style>.subforum,.btn-group-justified, img,.pagination,.postprofile dd,object,embed,.fb-post { transform: rotate(180deg); }.navbar-holder > ul > li { transform: rotate(180deg); } .subforum, .btn-group-justified, dl.icon { transform: scaleY(-1);  }dl.icon dt { transform: scaleY(-1);  }.buttons,.panel-icon,.panel-icon+a,.sf-menu>li { transform: scaleX(-1);  }</style> -->
-	<script type="text/javascript">_app = angular.module("tsx", []); _md5 = '{$uid}'; _steamid = '{$steamid}';</script>
+	<script type="text/javascript">_app = angular.module("tsx", []); _md5 = '{$uid}'; _steamid = '{$steamid}';
+	_app.config(function($httpProvider) { $httpProvider.defaults.headers.common['auth'] = _md5; }); </script>
 </head>
 <body>
 	<header>
@@ -58,7 +59,7 @@
 							<span class="sr-only">Toggle navigation</span>
 							<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="./"><img src="{if="$alternate"}{$alternate}{else}/images/bleue42.png{/if}" alt="tsX" width="350" height="100" style="max-height:100px !important"/></a>
+						<a class="navbar-brand" href="./"><img src="{if="$alternate"}{$alternate}{else}/images/bleue52.png{/if}" alt="tsX" width="350" height="100" style="max-height:100px !important"/></a>
 					</div>
 					<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right" style="z-index:2;">
@@ -118,11 +119,9 @@
 	</div>
 	{$intro}
 	<div class="container main">
-
 <!--
-<div class="col-sm-12 col-sm-offset-0 alert alert-danger" role="alert">
-<strong>CRASH CS:GO.</strong> Nous sommes au courant qu'il existe un bug qui provoque la fermeture involontaire de votre jeu CSGO. Nous n'avons aucune piste quant à la résolution de ce problème. <a href="https://www.ts-x.eu/forum/viewtopic.php?f=5&t=34124&p=607514#p607514" >Vos suggestions peuvent être publiées ici</a>. Si vous trouvez comment provoquer ce bug, vous <b class="text-capitalize">remportez 1.500.000$RP, une place VIP et 20€ PayPal</b>.
-En attendant, veuillez nous excuser de la gêne occasionnée. 
+<div class="col-sm-12 col-sm-offset-0 alert alert-warning" role="alert">
+Suite à la dernière mise à jour de CS:GO, votre jeu <b>crash en cas de *retour windows*</b>. Nous vous conseillons donc de jouer en *fenêtré* et de <b>ne surtout pas</b> cliquer sur le bouton pour <b>minimiser</b> votre jeu. Préférez donc <b>utiliser la commande *alt-tab*</b> ou encore la touche *windows*.
 </div>
 -->
 		{$page}

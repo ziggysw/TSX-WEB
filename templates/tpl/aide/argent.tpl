@@ -417,33 +417,52 @@
 											<th>Gain</th>
 											<th class="hidden-phone" id="table-top-right">Objectif</th>
 										  </tr>
-											<tr><td>Artisan</td><td>Commande d'artisanat</td><td>5.000$RP</td><td class="hidden-phone">Posez une table de craft ou rendez-vous près d'une déjà posée.</td></tr>
-											<tr><td>Justice</td><td>La justice sournoise</td><td>5.000$RP</td><td class="hidden-phone">Condamnez un meurtrier à 100$RP d'amendes et 3h de prison minimum.</td></tr>
-											<tr><td>Justice</td><td>La justice express</td><td>3.000$RP</td><td class="hidden-phone">Obtenez un bonus pour vos 3 prochaines condamnations pendant 24h.<br /> (100$RP d'amendes et 3h de prison minimum)</td></tr>
-											<tr><td>Justice</td><td>Un homme très recherché</td><td>2.500$RP</td><td class="hidden-phone">Vous avez 12 heures pour trouver un homme recherché par le tribunal et l'arrêter.</td></tr>
+											<tr><td>Armuriers</td><td>Collecte des matières premières</td><td>[PvP] AK-47</td><td class="hidden-phone">Votre patron vous demande de récupérer 5 colis en ville le plus vite possible.</td></tr>
+											<tr><td>Armuriers</td><td>Employé modèle</td><td>1 000$ + 2 500 xp</td><td class="hidden-phone">Vendez pour 10 000$ de marchandise en 24h.</td></tr>
+											<tr><td>Artificiers</td><td>Collecte des matières premières</td><td>[PvP] AK-47</td><td class="hidden-phone">Votre patron vous demande de récupérer 5 colis en ville le plus vite possible.</td></tr>
+											<tr><td>Artificiers</td><td>Employé modèle</td><td>1 000$ + 2 500 xp</td><td class="hidden-phone">Vendez pour 10 000$ de marchandise en 24h.</td></tr>
+											<tr><td>Artisans</td><td>Commande d'artisanat</td><td>5.000$RP</td><td class="hidden-phone">Posez une table de craft ou rendez-vous près d'une déjà posée.</td></tr>
+											<tr><td>Artisans</td><td>Employé modèle</td><td>1 000$ + 2 500 xp</td><td class="hidden-phone">Vendez pour 10 000$ de marchandise en 24h.</td></tr>
+											<tr><td>Artisans</td><td>Collecte des matières premières</td><td>[PvP] AK-47</td><td class="hidden-phone">Votre patron vous demande de récupérer 5 colis en ville le plus vite possible.</td></tr>
+											<tr><td>Banquiers</td><td>Collecte des matières premières</td><td>[PvP] AK-47</td><td class="hidden-phone">Votre patron vous demande de récupérer 5 colis en ville le plus vite possible.</td></tr>
+											<tr><td>Banquiers</td><td>Employé modèle</td><td>1 000$ + 2 500 xp</td><td class="hidden-phone">Vendez pour 10 000$ de marchandise en 24h.</td></tr>
+											<tr><td>Carshop</td><td>Employé modèle</td><td>1 000$ + 2 500 xp</td><td class="hidden-phone">Vendez pour 10 000$ de marchandise en 24h.</td></tr>
+											<tr><td>Carshop</td><td>Collecte des matières premières</td><td>[PvP] AK-47</td><td class="hidden-phone">Votre patron vous demande de récupérer 5 colis en ville le plus vite possible.</td></tr>
+											<tr><td>Casino</td><td>Employé modèle</td><td>1 000$ + 2 500 xp</td><td class="hidden-phone">Vendez pour 10 000$ de marchandise en 24h.</td></tr>
+											<tr><td>Casino</td><td>Collecte des matières premières</td><td>[PvP] AK-47</td><td class="hidden-phone">Votre patron vous demande de récupérer 5 colis en ville le plus vite possible.</td></tr>
+											<tr><td>Coachs</td><td>Collecte des matières premières</td><td>[PvP] AK-47</td><td class="hidden-phone">Votre patron vous demande de récupérer 5 colis en ville le plus vite possible.</td></tr>
+											<tr><td>Coachs</td><td>Employé modèle</td><td>1 000$ + 2 500 xp</td><td class="hidden-phone">Vendez pour 10 000$ de marchandise en 24h.</td></tr>
+											<tr><td>Hôpital</td><td>Collecte des matières premières</td><td>[PvP] AK-47</td><td class="hidden-phone">Votre patron vous demande de récupérer 5 colis en ville le plus vite possible.</td></tr>
+											<tr><td>Hôpital</td><td>Employé modèle</td><td>1 000$ + 2 500 xp</td><td class="hidden-phone">Vendez pour 10 000$ de marchandise en 24h.</td></tr>
 											<tr><td>Mafia</td><td>Délivrance</td><td>1.000$RP par prisonnier</td><td class="hidden-phone">Infiltrez-vous dans les cellules du commissariat et libérez un maximum de prisonniers.</td></tr>
 											<tr><td>Mafia</td><td>Où est Charlie?</td><td>1.000$RP par zone découverte</td><td class="hidden-phone">Rendez-vous dans 5 zones aléatoires de la ville.</td></tr>
 											<tr><td>Mafia</td><td>Documents secrets</td><td>5.000$RP</td><td class="hidden-phone">Rendez-vous dans la villa PvP pour voler des documents secrets et retournez dans votre planque pour les déposer.</td></tr>
 											<tr><td>Mafia</td><td>Traffic illégal</td><td>5.000$RP</td><td class="hidden-phone">Introduisez-vous dans le commissariat jusqu'au distributeur d'armes et volez-en le plus possible !</td></tr>
-											<tr><td>Mafia</td><td>Braquage des distributeurs</td><td>2.500$RP</td><td class="hidden-phone">Crochetez tous les distributeurs présents dans les stations de métro</td></tr>
-											<tr><td>Mercenaire</td><td>Un coup de main pour la justice</td><td>2.500$RP</td><td class="hidden-phone">Tuez un homme recherché par le tribunal.</td></tr>
-											<tr><td>Mercenaire</td><td>Le justicier masqué</td><td>2.500$RP</td><td class="hidden-phone">Vous avez 12 minutes pour tuer le plus grand freekiller de la ville.<br /> (Cette quête se présentera comme un contrat classique).</td></tr>
+											<tr><td>Mafia</td><td>Braquage des distributeurs</td><td>2.500$RP</td><td class="hidden-phone">Crochetez tous les distributeurs présents dans les stations de métro.</td></tr>
+											<tr><td>Mc'Do'</td><td>Collecte des matières premières</td><td>[PvP] AK-47</td><td class="hidden-phone">Votre patron vous demande de récupérer 5 colis en ville le plus vite possible.</td></tr>
+											<tr><td>Mc'Do'</td><td>Employé modèle</td><td>1 000$ + 2 500 xp</td><td class="hidden-phone">Vendez pour 10 000$ de marchandise en 24h.</td></tr>
+											<tr><td>Mercenaires</td><td>Un coup de main pour la justice</td><td>2.500$RP</td><td class="hidden-phone">Tuez un homme recherché par le tribunal.</td></tr>
+											<tr><td>Mercenaires</td><td>Le justicier masqué</td><td>2.500$RP</td><td class="hidden-phone">Vous avez 12 minutes pour tuer le plus grand freekiller de la ville.<br /> (Cette quête se présentera comme un contrat classique).</td></tr>
 											<tr><td>Police</td><td>Suivez le lapin blanc</td><td>5.000$RP</td><td class="hidden-phone">Pourchassez le tueur en série jusqu'à ce qu'il commette un meurtre, et arrêtez-le.</td></tr>
 											<tr><td>Police</td><td>Surveillance renforcée</td><td>210$RP / minute dans les jails (5.000$RP)</td><td class="hidden-phone">Surveillez la prison pendant 24 minutes.</td></tr>
 											<tr><td>Police</td><td>Un homme très recherché</td><td>2.500RP</td><td class="hidden-phone">Vous avez 12 heures pour trouver et arrêter un homme recherché par le tribunal.</td></tr>
 											<tr><td>Police</td><td>Non à la contrebande</td><td>En fonction des objets détruits</td><td class="hidden-phone">Vous avez 24 minutes pour tazer un maximum d'objets illégaux en ville.<br />(Plante: 2.000$RP, Machine: 200$RP, Photocopieuse: 3.000$RP)<br />(à partir de FBI et +)</td></tr>
-											<tr><td>Justice</td><td>Un homme très recherché</td><td>2.500RP</td><td class="hidden-phone">Vous avez 12 heures pour trouver et arrêter un homme recherché par le tribunal.</td></tr>
-											<tr><td>Justice</td><td>La justice exprès</td><td>2.5000$RP</td><td class="hidden-phone">Vous avez 24 minutes pour condamner 3 joueurs différents dans votre Tribunal.<br /> (100$RP d'amendes et 3h de prison minimum).</td></tr>
-											<tr><td>Justice</td><td>La justice sournoise</td><td>5.000$RP</td><td class="hidden-phone">Prenez une plainte pour meurtre sur votre cible et condamnez le.<br /> (100$RP d'amendes et 3h de prison minimum).</td></tr>
+											<tr><td>Sex-shop</td><td>Employé modèle</td><td>1 000$ + 2 500 xp</td><td class="hidden-phone">Vendez pour 10 000$ de marchandise en 24h.</td></tr>
+											<tr><td>Sex-shop</td><td>Collecte des matières premières</td><td>[PvP] AK-47</td><td class="hidden-phone">Votre patron vous demande de récupérer 5 colis en ville le plus vite possible.</td></tr>
 											<tr><td>Stidda Famiglia</td><td>Vandalisme des distributeurs</td><td>2.000$RP</td><td class="hidden-phone">Crochetez tous les distributeurs présents dans les stations de métro.</td></tr>
 											<tr><td>Stidda Famiglia</td><td>Surveillance des plants.</td><td>500$RP par plan restant à la fin</td><td class="hidden-phone">Posez 10 plants et protégez-les pendant 24 minutes.</td></tr>
 											<tr><td>Stidda Famiglia</td><td>Blanchissement d'argent</td><td>5.000$RP</td><td class="hidden-phone">Volez une arme à un flic et ramenez la dans votre planque.</td></tr>
 											<tr><td>Stidda Famiglia</td><td>Récolte des plants</td><td>1.000$ par plant</td><td class="hidden-phone">Crochetez 5 fois la place de l'indépendance en 5x6 minutes.</td></tr>
 											<tr><td>Stidda Famiglia</td><td>Razzia</td><td>En fonction des armes volées</td><td class="hidden-phone">Introduisez-vous dans le commissariat jusqu'au distributeur d'armes et volez en le plus possible<br /> ou allez crocheter le marché noir de la mafia !</td></tr>
-											<tr><td>Technicien</td><td>Surveillance des machines</td><td>500$RP par machine restante à la fin</td><td class="hidden-phone">Posez 10 machines en protégez les durant 24 minutes.</td></tr>
-											<tr><td>Technicien</td><td>Sous écoute</td><td>5.000$RP</td><td class="hidden-phone">Enlevez les micros posés par la police sur les téléphones de la ville dans le temps impartis.</td></tr>
-                                            <tr><td>Hopital</td><td>Collecte des matières première</td><td>[PvP] AK-47</td><td class="hidden-phone">Votre patron vous demande d'aller récupérer 5 colis en ville le plus vite possible.</td></tr>
-											<tr><td>Hopital</td><td>Employé modèle</td><td>1 000$ + 2 500 xp</td><td class="hidden-phone">Vendez pour 10 000$ de marchandise en 24h</td></tr>
+											<tr><td>Techniciens</td><td>Employé modèle</td><td>1 000$ + 2 500 xp</td><td class="hidden-phone">Vendez pour 10 000$ de marchandise en 24h.</td></tr>
+											<tr><td>Techniciens</td><td>Collecte des matières premières</td><td>[PvP] AK-47</td><td class="hidden-phone">Votre patron vous demande de récupérer 5 colis en ville le plus vite possible.</td></tr>
+											<tr><td>Techniciens</td><td>Surveillance des machines</td><td>500$RP par machine restante à la fin</td><td class="hidden-phone">Posez 10 machines et protégez les durant 24 minutes.</td></tr>
+											<tr><td>Techniciens</td><td>Sous écoute</td><td>5.000$RP</td><td class="hidden-phone">Enlevez les micros posés par la police sur les téléphones de la ville dans le temps impartis.</td></tr>
+											<tr><td>Tribunal</td><td>La justice sournoise</td><td>5.000$RP</td><td class="hidden-phone">Condamnez un meurtrier à 100$RP d'amendes et 3h de prison minimum.</td></tr>
+											<tr><td>Tribunal</td><td>La justice express</td><td>3.000$RP</td><td class="hidden-phone">Obtenez un bonus pour vos 3 prochaines condamnations pendant 24h.<br /> (100$RP d'amendes et 3h de prison minimum)</td></tr>
+											<tr><td>Tribunal</td><td>Un homme très recherché</td><td>2.500$RP</td><td class="hidden-phone">Vous avez 12 heures pour trouver un homme recherché par le tribunal et l'arrêter.</td></tr>
+                                                                                        <tr><td>Vendeurs immo</td><td>Collecte des matières premières</td><td>[PvP] AK-47</td><td class="hidden-phone">Votre patron vous demande de récupérer 5 colis en ville le plus vite possible.</td></tr>
+											<tr><td>Vendeurs immo</td><td>Employé modèle</td><td>1 000$ + 2 500 xp</td><td class="hidden-phone">Vendez pour 10 000$ de marchandise en 24h.</td></tr>
 										</table>
 										<br />
 								</div>

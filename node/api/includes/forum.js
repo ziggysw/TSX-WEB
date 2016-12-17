@@ -180,6 +180,26 @@ server.get('/forum/post/last', function (req, res, next) {
 });
 
 /**
+ * @api {put} /forum/bulb PutBulbDown
+ * @apiName PutBulbDown
+ * @apiGroup Forum
+ * @apiHeader {String} auth Votre cookie de connexion.
+ */
+server.put('/forum/bulb', function (req, res, next) {
+  try {
+    server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
+      if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+      server.conn.query("UPDATE `ts-x`.`phpbb3_users` SET `bulb`=`bulb`+1 WHERE `user_id`=?;", [row[0].user_id], function(err, row) {
+        return res.send(row);
+      });
+    });
+  } catch ( err ) {
+    return res.send(err);
+  }
+  next();
+});
+
+/**
  * @api {get} /forum/smiley GetSmiley
  * @apiName GetSmiley
  * @apiGroup Forum

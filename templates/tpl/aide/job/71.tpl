@@ -13,23 +13,23 @@
 					<hr class="featurette-divider">
 					<h2 class="text-center">Qui sommes-nous :</h2><br />
 					<hr class="featurette-divider">
-					<p>Notre entreprise est spécialisé dans l'entrainement militaire et la remise en forme.<br />
+					<p>Notre entreprise est spécialisée dans l'entrainement militaire et la remise en forme.<br />
 					Grâce à notre grande expèrience sur le marché, nous sommes en mesure de vous proposer LE programme qu'il vous faut !<br />
-					Allant de la simple remise en forme physique jusqu'à l'entrainement de tire en passant par le relooking, nous sommes l'agence qu'il vous faut !</p>
+					Allant de la simple remise en forme physique jusqu'à l'entrainement de tir en passant par le relooking. Nous sommes l'agence qu'il vous faut !</p>
 					<hr class="featurette-divider">
 					<h2 class="text-center">Informations :</h2><br />
 					<hr class="featurette-divider">
-					<p><u>Siè</u>g<u>e social :</u> Rue de la soif</p><br/>
-					<p><u>Portefeuille de propriété intellectuelle :</u>  Des dizaines de brevets axé sur les technologies des protéine avec de la graisse végétal.</p><br />
-					<p><u>Distinctions :</u> En 2015, notre équipe d'entraineur on recu le titre de meilleur salle de sport par le Maire de Princeton</p>
+					<p><u>Siè</u>g<u>e social :</u> Rue de la soif.</p><br/>
+					<p><u>Portefeuille de propriété intellectuelle :</u>  Des dizaines de brevets axés sur les technologies des protéines avec de la graisse végétale.</p><br />
+					<p><u>Distinctions :</u> En 2015, notre équipe d'entraineurs ont reçu le titre de meilleur salle de sport par le Maire de Princeton.</p>
 				
 					<hr class="featurette-divider">
 					<h2 class="text-center">Recrutement :</h2><br />
 					<hr class="featurette-divider">
-					<p>Nous sommes actuellement à la recherche de personel motivé et connaisseur en armement, et en biologie humaine.<br />
-					Les débutants sont acceptés, une période de formation de 3 semaine en alternance dans notre centre de remise en forme vous sera accordé pour donner le meilleur de vous même à nos clients !</p>
+					<p>Nous sommes actuellement à la recherche de personel motivé et connaisseur en armement et en biologie humaine.<br />
+					Les débutants sont acceptés, une période de formation de 3 semaines en alternance dans notre centre de remise en forme vous sera accordée pour donner le meilleur de vous même à nos clients !</p>
 					<br />
-					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposer une candidature spontanée</a></center>
+					<center><a href="https://www.ts-x.eu/forum/viewforum.php?f=35" class="btn btn-md btn-success"><i class="fa fa-user"></i> Déposez une candidature spontanée</a></center>
 					<br />
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='memb'">
@@ -63,7 +63,7 @@
 						</tr>
 					</tbody>
 				</table><br />
-				<p class="text-center"> Nous avons actuellement {{jobs.quota}} vendeurs réguliers dans notre entreprise.</p>
+				<p class="text-center"> Nous avons actuellement {{jobs.quota}} coachs réguliers dans notre entreprise.</p>
 		</div>
 		<div role="tabpanel" class="tab-pane active" ng-show="tabs=='note'">
 			<h2 class="text-center"><u>Le rè</u>g<u>lement interne :</u></h2><br />
@@ -93,14 +93,14 @@
 						<td><h3 class="prune">Objectif :</h3></td>
 					</tr>
 					<tr>
-						<td>Collecte des matières première</td>
+						<td>Collecte des matières premières</td>
 						<td>[PvP] AK-47</td>
-						<td>Votre patron vous demande d'aller récupérer 5 colis en ville le plus vite possible.</td>
+						<td>Votre patron vous demande de récupérer 5 colis en ville le plus vite possible.</td>
 					</tr>
 					<tr>
 						<td>Employé modèle</td>
 						<td>1 000$ + 2 500 xp</td>
-						<td>Vendez pour 10 000$ de marchandise en 24h</td>
+						<td>Vendez pour 10 000$ de marchandise en 24h.</td>
 					</tr>
 				</tbody>
 			</table><br />
