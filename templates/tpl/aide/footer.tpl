@@ -23,18 +23,6 @@
     	return $delegate;
     }]);
   }])
-  .directive("rpItemInformation", function($compile, $http) {
-		return {
-			template: '<img class="img-circle" width="100" height="100" src="/images/roleplay/csgo/items/{{item.id}}.png" data-toggle="popover" data-placement="top" title="{{item.nom}} <i class=\'pull-right text-success\'>{{item.prix}}$</i>" data-content="{{item.description}}" alt="{{item.nom}}">',
-			replace: false,
-			scope: true,
-			link: function(scope, element, attr) {
-				$http.get("https://www.ts-x.eu/api/items/"+attr.rpItemInformation).success(function(res) {
-					scope.item = res;
-	      });
-			}
-		}
-  })
 	.directive("drawPiePc", function ($compile) {
     return {
       template: '<div class="PCwrapper"><div class="pie spinner" style="transform: rotate({{pc*3.6}}deg)"></div><div class="pie filler" style="opacity: {{pc>=50?1:0}}"></div><div class="mask" style="opacity: {{pc>=50?0:1}}"></div></div>',
@@ -70,7 +58,7 @@
 		$scope.data = new Array();
 
 		$scope.$watch("search", function(newValue, oldValue) {
-			if( newValue.length <= 1 ) {
+			if( newValue && newValue.length <= 1 ) {
 				$scope.data = [];
 				return;
 			}
