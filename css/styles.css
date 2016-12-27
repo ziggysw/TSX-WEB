@@ -25,8 +25,5 @@ body{background: #101010;font: 12px Arial, Helvetica, sans-serif;line-height: 14
 #heatmap canvas { z-index:-1; }#heatmap map area { background-color: red; }
 .img_phone{max-width: 100%;}
 .list1 {word-wrap: break-word;}
-.btn-forum {
-    color: #fff;
-    background-color: #B404AE;
-    border-color: #8A0886;
-}
+.btn-forum { color: #fff; background-color: #B404AE; border-color: #8A0886; }
+.btn-forum:hover { color: #fff; background-color: #DF01D7; border-color: #B404AE; }
