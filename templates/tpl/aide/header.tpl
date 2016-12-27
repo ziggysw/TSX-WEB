@@ -71,8 +71,9 @@
 								<li><a href="/index.php?page=aide&sub=debuter"><i class="fa fa-book" aria-hidden="true"></i> Comment bien débuter ?</a></li>
 								<li><a href="/index.php?page=aide&sub=argent"><i class="fa fa-money" aria-hidden="true"></i> Comment gagner de l'argent sur le Roleplay ?</a></li>
 								<li><a href="/index.php?page=aide&sub=emploi"><i class="fa fa-map-o" aria-hidden="true"></i> Comment Trouver un emploi ?</a></li>
-								<li><a href="/index.php?page=aide&sub=mairie"><i class="fa fa-medium" aria-hidden="true"></i> La Mairie</a></li>
+								<li><a href="/index.php?page=aide&sub=debuter#GroupD"><i class="fa fa-heart" aria-hidden="true"></i> Le Mariage [☻CREA☻]</a></li>
 								<li><a href="/index.php?page=aide&sub=pvp"><i class="fa fa-shield" aria-hidden="true"></i> La PvP</a></li>
+								<li><a href="/index.php?page=aide&sub=mairie"><i class="fa fa-medium" aria-hidden="true"></i> La Mairie</a></li>
 								<li><a href="/index.php?page=aide&sub=crayon"><i class="fa fa-paint-brush" aria-hidden="true"></i> Les Crayons de Couleurs</a></li>
 								<li><a href="/index.php?page=aide&sub=argent#GroupE"><i class="fa fa-users" aria-hidden="true"></i> Le Parrainage </a></li>
 						</ul>
@@ -94,7 +95,7 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Aide<b class="caret"></b></a>
 						<ul class="dropdown-menu p-Informations Pratiques" id="p-Informations Pratiques">
-							<li><a href="/index.php?page=aide&sub=debuter#GroupE"><i class="fa fa-headphones" aria-hidden="true"></i> Le TeamSpeak [TS]</a></li>
+							<li><a href="/index.php?page=aide&sub=debuter#GroupF"><i class="fa fa-headphones" aria-hidden="true"></i> Le TeamSpeak [TS]</a></li>
 							<li><a href="/index.php?page=aide&sub=bind"><i class="fa fa-keyboard-o" aria-hidden="true"></i> Mettre en place vos binds</a></li>
 							<li><a href="/index.php?page=aide&sub=record"><i class="fa fa-video-camera" aria-hidden="true"></i> Comment faire une record ?</a></li>
 							<li><a href="https://www.ts-x.eu/index.php?page=iframe#/DevZone/" rel="nofollow"><i class="fa fa-ticket" aria-hidden="true"></i> Les futures mises à jours</a></li>

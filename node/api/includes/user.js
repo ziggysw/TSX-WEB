@@ -215,6 +215,36 @@ exports = module.exports = function(server){
     });
     next();
   });
+  /**
+   * @api {get} /user/job/:SteamID/:job GetUserJobPlaytime
+   * @apiName GetUserJobPlaytime
+   * @apiGroup User
+   * @apiParam {String} SteamID Un identifiant unique sous le format STEAM_1:x:xxxxxxx
+   * @apiParam {Integer} job Un identifiant unique du job
+   */
+  server.get('/user/job/:id/:job', function (req, res, next) {
+    if( req.params['id'] == 0 )
+      return res.send(new ERR.BadRequestError("InvalidParam"));
+
+    var cache = server.cache.get( req._url.pathname);
+    if( cache != undefined ) { return res.send(cache); };
+
+    server.conn.query("SELECT `jobplaytime` FROM `rp_users` WHERE `steamid`=?", [req.params['id']], function(err, rows) {
+      if( err ) return res.send(new ERR.InternalServerError(err));
+      if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
+
+      var result = 0;
+      var data = rows[0].jobplaytime.split(";");
+      for(var i=0; i<data.length; i++) {
+        var row = data[i].split(",");
+        if( row[0] == req.params['job'] )
+          result = row[1];
+      }
+      server.cache.set( req._url.pathname, ""+result);
+      return res.send( ""+result );
+    });
+    next();
+  });
 
   /**
    * @api {get} /user/pilori/:SteamID/next GetUserNextBanBySteamID

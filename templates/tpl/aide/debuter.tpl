@@ -350,6 +350,25 @@
 							<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 						</div>
 						<div class="col-md-11">
+							<div class="panel-heading panel-heading-wiki"><h2>Le Mariage</h2></div>
+						</div>
+					</div>
+					<div class="panel-body">
+							En cour de création ...
+					</div>
+				<br />
+				</div>
+			</div>
+		</div>
+		<br />
+		<div class="row">
+			<div id="GroupE" class="col-md-12 group">
+				<div class="panel panel-wiki">
+					<div class="row">
+						<div class="hidden-xs hidden-sm col-md-1">
+							<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
+						</div>
+						<div class="col-md-11">
 							<div class="panel-heading panel-heading-wiki"><h2>Les commandes de base</h2></div>
 						</div>
 					</div>
@@ -434,7 +453,7 @@
 		</div>
 		<br />
 		<div class="row">
-			<div id="GroupE" class="col-md-12 group">
+			<div id="GroupF" class="col-md-12 group">
 				<div class="panel panel-wiki">
 					<div class="row">
 						<div class="hidden-xs hidden-sm col-md-1">
@@ -465,7 +484,7 @@
 					
 				</div>
 				<br />
-				<div id="GroupESub1" class="col-md-12 subgroup">
+				<div id="GroupFSub1" class="col-md-12 subgroup">
 					<div class="panel panel-wiki">
 						<div class="row">
 							<div class="hidden-xs hidden-sm col-md-1">
@@ -517,10 +536,13 @@
                 </ul>
             </li>
 			<li>
-                <a href="#GroupD">Les commandes de base</a>
+                <a href="#GroupD">Le mariage</a>
+            </li>
+			<li>
+                <a href="#GroupE">Les commandes de base</a>
             </li>
             <li>
-                <a href="#GroupE">Le Teamspeak</a>
+                <a href="#GroupF">Le Teamspeak</a>
                 <ul class="nav nav-stacked">
                     <li><a href="#GroupESub1">Configurer son Teamspeak</a></li>
                 </ul>
