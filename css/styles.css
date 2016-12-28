@@ -25,6 +25,7 @@ body{background: #101010;font: 12px Arial, Helvetica, sans-serif;line-height: 14
 #heatmap canvas { z-index:-1; }#heatmap map area { background-color: red; }
 .img_phone{max-width: 100%;}
 .list1 {word-wrap: break-word;}
-.btn-forum:hover { color: #fff; background-color: #B404AE; border-color: #8A0886; }
-.btn-forum { color: #fff; background-color: #DF01D7; border-color: #B404AE; }
-.btn-success, .btn-forum, .btn-warning, .btn-danger{ margin: 5px;}
+.btn-forum:hover { color: #fff; background-color: #B404AE; border-color: #8A0886; } .btn-forum { color: #fff; background-color: #DF01D7; border-color: #B404AE; }
+.btn-mp:hover { color: #fff; background-color: #0080FF; border-color: #0174DF; } .btn-mp { color: #fff; background-color: #2E9AFE; border-color: #0080FF; }
+.btn-grp:hover { color: #fff; background-color: #B4045F; border-color: #8A084B; } .btn-grp { color: #fff; background-color: #DF0174; border-color: #B4045F; }
+.btn-success, .btn-forum, .btn-warning, .btn-danger, .btn-mp, .btn-grp { margin: 5px;}
