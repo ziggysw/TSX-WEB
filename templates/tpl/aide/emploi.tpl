@@ -134,7 +134,7 @@
 									&nbsp;<br /><br />
 									<img id="GroupCSub2" alt="avocat" class="img_wiki radius" src="/images/wiki/job/avoc.jpg" />
 									<br /><br />
-									<p>Ce métier annex vous offre l'occasion de défendre une victime ou un accusé pendant un procès.<br />
+									<p>Ce métier annexe vous offre l'occasion de défendre une victime ou un accusé pendant un procès.<br />
 									Si défendre la veuve et le meurtrier vous inspire,<a href="https://www.ts-x.eu/forum/viewtopic.php?f=35&t=33602&view=unread#unread"> c'est par ici !</a></p>
 									<br />
 									<p></p>
