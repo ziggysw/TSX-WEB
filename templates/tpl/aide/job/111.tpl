@@ -20,7 +20,7 @@
 					<hr class="featurette-divider">
 					<p><u>Siè</u>g<u>e social :</u> Rue de la soif.</p><br/>
 					<p><u>Portefeuille de propriété intellectuelle :</u> Des dizaines de brevets axés sur les technologies d'armement.</p><br />
-					<p><u>Distinctions :</u> En 2015, notre entreprise a reçu le prix de "Meilleur service client de l'année" pour la 4ème année consécutive !</p>
+					<p><u>Distinctions :</u> En 2015, notre entreprise a reçu le prix du "Meilleur service client de l'année" pour la 4ème année consécutive !</p>
 				
 					<hr class="featurette-divider">
 					<h2 class="text-center">Recrutement :</h2><br />
