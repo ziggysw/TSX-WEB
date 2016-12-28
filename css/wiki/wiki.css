@@ -34,6 +34,14 @@
     border-radius: 45px;
 }
 
+.thumbnail-wiki{
+	width: 260px!important;
+	height: 350px!important;
+	background-image: url("https://i.gyazo.com/6d84d74b216021ff34751a5a1ae761c5.png")
+	
+}
+
+
 p{
 	color : #AAAAAA ;
 	font-family:Lucida Caligraphy;
@@ -79,13 +87,6 @@ ul.nav-tabs > li:nth-child(2) {
     border-top: none !important;
 }	
 
-.panel-body li{ 
-    	font-size: 14.5px;
-	margin: 5px 0 5px 0;
-	color : #AAAAAA ;
-	font-family:Lucida Caligraphy;
-}
-
 #img_title{
 	height: 300px; 
 	width: 850px; 
@@ -112,6 +113,10 @@ ul.nav-tabs > li:nth-child(2) {
 #img_carrousel{
 	height: 500px; 
 	width: 1200px;
+}
+#img_carrousel1{
+	width: 850px;
+	height: 250px;
 }
 /* Fin regle general au wiki */
 
@@ -222,6 +227,11 @@ ul.nav-tabs > li:nth-child(2) {
 
 /* Panel-wiki*/
 
+.Panel-menu-body{
+	color : #AAAAAA ;
+	font-family:Lucida Caligraphy;
+}
+
 .panel-wiki{
     margin: 10px 0 10px 0;
     background-color: #333333;
@@ -237,6 +247,13 @@ ul.nav-tabs > li:nth-child(2) {
 	color: white;
     min-height: 62px;
 	
+}
+
+.panel-body li{ 
+    	font-size: 14.5px;
+	margin: 5px 0 5px 0;
+	color : #AAAAAA ;
+	font-family:Lucida Caligraphy;
 }
 
 .panel-icone-wiki{
@@ -532,6 +549,16 @@ ul.nav-tabs > li:nth-child(2) {
 	top:1px;
 }
 /* fin bouton gang */
+
+/* Accordion accueil*/
+
+#accordion .glyphicon { margin-right:10px; }
+.panel-collapse>.list-group .list-group-item:first-child {border-top-right-radius: 0;border-top-left-radius: 0;}
+.panel-collapse>.list-group .list-group-item {border-width: 1px 0;}
+.panel-collapse>.list-group {margin-bottom: 0;}
+.panel-collapse .list-group-item {border-radius:0;}
+
+/* Fin accordion*/
 
 /* ZONE DE TEST*/
 
