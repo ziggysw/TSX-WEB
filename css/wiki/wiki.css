@@ -240,13 +240,12 @@ ul.nav-tabs > li:nth-child(2) {
 	color:#AAAAAA;
 }
 
-.panel-heading-wiki{
-    background-color: #222222;
-	border-radius: 0px! important;
+.panel-wiki li, .panel-wiki li>a {
+    margin: 10px 0 10px 0;
+    background-color: #333333;
+    border-radius: 3px;
 	border : 1px inset transparent;
-	color: white;
-    min-height: 62px;
-	
+	color:#AAAAAA;
 }
 
 .panel-body li{ 
