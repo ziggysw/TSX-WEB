@@ -27,4 +27,4 @@ body{background: #101010;font: 12px Arial, Helvetica, sans-serif;line-height: 14
 .list1 {word-wrap: break-word;}
 .btn-forum:hover { color: #fff; background-color: #B404AE; border-color: #8A0886; }
 .btn-forum { color: #fff; background-color: #DF01D7; border-color: #B404AE; }
-.btn-success .btn-forum .btn-warning .btn-danger{ margin: 5px;}
+.btn-success, .btn-forum, .btn-warning, .btn-danger,{ margin: 5px;}
