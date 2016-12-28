@@ -229,24 +229,24 @@
 									<center><h2 id="GroupDSub3"><u>Les flèches directionelles</u></h2></center>
 									<br />
 										<div class="col-xs-offset-5 col-xs-2">
-											<img class="img_wiki center-block" src="/images/wiki/bind/AD.png" alt="Flèche haut">
+											<img class="img_wiki center-block" src="/images/wiki/bind/uparrow.png" alt="Flèche haut">
 											<p class="text-center">uparrow</p>
 											</a>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-xs-offset-3 col-xs-2">
-											<img class="img_wiki center-block" src="/images/wiki/bind/AD.png" alt="Flèche gauche">
+											<img class="img_wiki center-block" src="/images/wiki/bind/leftarrow.png" alt="Flèche gauche">
 											<p class="text-center">leftarrow</p>
 											</a>
 										</div>
 										<div class="col-xs-2">
-											<img class="img_wiki center-block" src="/images/wiki/bind/).png" alt="Flèche bas">
+											<img class="img_wiki center-block" src="/images/wiki/bind/downarrow.png" alt="Flèche bas">
 											<p class="text-center">downarrow</p>
 											</a>
 										</div>
 										<div class="col-xs-2">
-											<img class="img_wiki center-block" src="/images/wiki/bind/+=.png" alt="Flèche droite">
+											<img class="img_wiki center-block" src="/images/wiki/bind/rightarrow.png" alt="Flèche droite">
 											<p class="text-center">rightarrow</p>
 											</a>
 										</div>
