@@ -43,8 +43,8 @@
       <a class="btn btn-mp" ng-show="$parent.isAdmin" href="/forum/ucp.php?i=pm&mode=compose&u={{data.forum_id}}">Envoyer un MP</a>
    </div>
    <div class="row">
-     <button class="btn btn-danger" ng-show="data.job_id>0 && Params.sub==steamid" rest="delete@/user/job">Quitter mon job</button>
-     <button class="btn btn-grp" ng-show="data.group_id>0 && Params.sub==steamid" rest="delete@/user/group">Quitter mon groupe</button>
+     <button class="btn btn-danger" ng-show="data.job_id>0 && Params.sub==steamid" rest="!delete@/user/job">Quitter mon job</button>
+     <button class="btn btn-grp" ng-show="data.group_id>0 && Params.sub==steamid" rest="!delete@/user/group">Quitter mon groupe</button>
    </div>
     <br /><br /><br /><br /><br />
     <a href="http://steamcommunity.com/profiles/{{data.steam64}}"><img src="http://steamsignature.com/status/french/{{data.steam64}}.png" /><img src="http://steamsignature.com/AddFriend.png" /></a>

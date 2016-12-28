@@ -52,12 +52,13 @@ Highcharts.setOptions({lang: {
 	  <div class="modal-dialog">
 	    <div class="modal-content">
 	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <button type="button" class="close" data-dismiss="modal" ng-click="messageUrl=''">&times;</button>
 	        <h4 class="modal-title">{{messageTitle}}</h4>
 	      </div>
 	      <div class="modal-body">{{messageAlert}}</div>
 	      <div class="modal-footer">
-	        <button class="btn btn-info" data-dismiss="modal">Quitter</button>
+          <button class="btn btn-success" data-dismiss="modal" ng-show="messageUrl" rest="{{messageAction}}@{{messageUrl}}">Confirmer</button>
+	        <button class="btn btn-info" data-dismiss="modal" ng-click="messageUrl=''">Quitter</button>
 	      </div>
 	    </div>
 	  </div>

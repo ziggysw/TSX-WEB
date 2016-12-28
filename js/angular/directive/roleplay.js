@@ -110,14 +110,31 @@ exports = module.exports = function(app) {
       }
     };
   });
-  app.directive('rest', function ($http, $window, $location) {
+  app.directive('rest', function ($http, $window, $location, $sce) {
     return function (scope, element, attr) {
       element.bind('click', function () {
-        var method = attr.rest.split("@");
-        method[1] = "https://www.ts-x.eu/api" + method[1];
-        $http({url: method[1], method: method[0].toUpperCase()})
-        .success(function(res) { if( res.hasOwnProperty("redirect") ) { $location.path(res.redirect); } scope.$parent.showAlert = true; scope.$parent.messageAlert = res.message; scope.$parent.messageTitle = "Okay";  })
-        .error(function (res) { scope.$parent.showAlert = true; scope.$parent.messageAlert = res.message; scope.$parent.messageTitle = "Erreur"; });
+
+        var str = attr.rest;
+        var confir = str.charAt(0);
+        if( confir == '!' )
+          str = str.substring(1);
+
+        var method = str.split("@");
+
+        if( confir == '!' ) {
+          scope.$parent.showAlert = true;
+          scope.$parent.messageAlert = "Êtes vous sur de vouloir \""+element.html()+"\" ?";
+          scope.$parent.messageTitle = "Confirmation";
+          scope.$parent.messageUrl = method[1];
+          scope.$parent.messageAction = method[0];
+        }
+        else {
+          method[1] = "https://www.ts-x.eu/api" + method[1];
+          $http({url: method[1], method: method[0].toUpperCase()})
+          .success(function(res) { if( res.hasOwnProperty("redirect") ) { $location.path(res.redirect); } scope.$parent.showAlert = true; scope.$parent.messageAlert = res.message; scope.$parent.messageTitle = "Okay";  })
+          .error(function (res) { scope.$parent.showAlert = true; scope.$parent.messageAlert = res.message; scope.$parent.messageTitle = "Erreur"; });
+        }
+
       });
     }
   });
