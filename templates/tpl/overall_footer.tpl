@@ -18,7 +18,7 @@
 				</ul>
 			</div>
 		</article>
-		<article class="col-sm-offset-1 col-sm-2">
+		<article class="col-sm-3">
 			<div class="row">
 				<h4>La Ts-X tv présente :</h4>
 				<div class="video">
