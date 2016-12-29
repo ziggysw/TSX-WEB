@@ -1,6 +1,4 @@
-<div class="row">
-    <!--Main Content -->
-    <div class="col-md-9" role="main"> 
+    <div class="col-xs-12 col-sm-9"> 
 		<br /><br />
 		<center><img alt="img_title" id="img_title" src="/images/wiki/debuter/1280px-Bon_debut.png"></center><br />
 		<br />
@@ -519,7 +517,7 @@
 			</div>
 		</div>
 	</div>
-	<!--Nav Bar -->
+	<!--Nav Bar
     <nav class="col-md-2 bs-docs-sidebar">
         <ul id="sidebar" class="nav nav-stacked fixed">
             <li>
@@ -548,5 +546,4 @@
                 </ul>
             </li>
         </ul>
-    </nav>
-</div>
+    </nav>-->

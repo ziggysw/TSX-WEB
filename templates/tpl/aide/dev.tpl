@@ -1,5 +1,4 @@
-<div class="row">	
-	<div class="col-md-9" role="main">
+	<div class="col-xs-12 col-sm-9">
 		<h1> Recapitulatif des class spéciale du wiki </h1>
 		<br /><br />
 		<h2 id="t1">Les Tableaux</h2>
@@ -117,8 +116,7 @@
 		<p>class="wiki-bulle"  pour les couleurs : wiki-blue / wiki-red / wiki-green / wiki-orange / wiki-jaune / wiki-prune / wiki-bonbon / wiki-cannelle / wiki-ciel / wiki-lemon / wiki-jango</p>
 		<div class="wiki-bulle">0</div> <div class="wiki-bulle wiki-blue">1</div> <div class="wiki-bulle wiki-red">2</div> <div class="wiki-bulle wiki-green">3</div> <div class="wiki-bulle wiki-orange">4</div> <div class="wiki-bulle wiki-jaune">5</div> <div class="wiki-bulle wiki-prune">6</div> <div class="wiki-bulle wiki-bonbon">7</div> <div class="wiki-bulle wiki-cannelle">8</div> <div class="wiki-bulle wiki-ciel">9</div> <div class="wiki-bulle wiki-lemon">A</div> <div class="wiki-bulle wiki-jango">B</div>
 	</div>
-	<div class=" col-md-1" role="complementary">
-		<nav class="bs-docs-sidebar hidden-print hidden-sm hidden-xs affix"> 
+		<--<nav class="bs-docs-sidebar hidden-print hidden-sm hidden-xs affix"> 
 			<ul class="nav bs-docs-sidenav target-active">
 				<li><a href="#t1" id="page_menu_wiki" ><i class="fa fa-asterisk prune" aria-hidden="true"></i>Tableaux</a></li>
 				<li><a href="#t2" id="page_menu_wiki" ><i class="fa fa-asterisk ocean" aria-hidden="true"></i>Class couleur</a></li>
@@ -126,6 +124,4 @@
 				<li><a href="#t4" id="page_menu_wiki" ><i class="fa fa-asterisk pomme" aria-hidden="true"></i>Badge</a></li>
 				<li><a href="#t5" id="page_menu_wiki" ><i class="fa fa-asterisk blood" aria-hidden="true"></i>Bulle</a></li>
 			</ul>
-		</nav>
-	</div>
-</div>
+		</nav>-->

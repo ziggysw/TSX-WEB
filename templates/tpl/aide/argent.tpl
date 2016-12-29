@@ -1,4 +1,3 @@
-			<div class="row">
 				<div class="col-md-9" role="main">
 					<br /><br />
 					<center><img alt="img_title" id="img_title" src="/images/wiki/argent/argent_top.png"></center><br />
@@ -538,9 +537,8 @@
 							</div>
 						</div>
 					</div>
-				
 				</div>
-				<!--Nav Bar -->
+				<!--Nav Bar
 				<nav class="col-md-2 bs-docs-sidebar">
 					<ul id="sidebar" class="nav nav-stacked fixed">
 						<li>
@@ -579,5 +577,4 @@
 							<a href="#GroupF">Faire un don pour le serveur</a>
 						</li>
 					</ul>
-				</nav>
-			</div>
+				</nav>-->

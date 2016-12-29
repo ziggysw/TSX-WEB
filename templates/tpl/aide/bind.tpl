@@ -1,6 +1,4 @@
-		<div class="container bs-docs-container" data-spy="scroll" data-target="#sidebar">
-			<div class="row">
-				<div class="col-md-9" role="main">
+				<div class="col-xs-12 col-sm-9">
 					<br /><br />
 					<center><img alt="img_title" id="img_title" src="https://www.ts-x.eu/images/wiki/bind.png"></center><br />
 					<br />
@@ -290,7 +288,7 @@
 					</div>
 
 				</div>
-				<!--Nav Bar -->
+				<!--Nav Bar
 				<nav class="col-md-2 bs-docs-sidebar">
 					<ul class="nav nav-stacked fixed">
 						<li><a href="#GroupA" id="page_menu_wiki" ><i class="fa fa-asterisk prune" aria-hidden="true"></i> Qu'est-ce qu'un Bind </a></li>
@@ -305,6 +303,4 @@
 							</ul>
 						</li>
 					</ul>
-				</nav>
-			</div>
-		</div>
+				</nav>-->
