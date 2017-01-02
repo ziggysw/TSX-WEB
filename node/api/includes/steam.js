@@ -166,6 +166,16 @@ server.post('/steam/trade', function (req, res, next) {
 });
 
 /**
+ * @api {get} /steam/twofactor/:id
+ * @apiName GetSteamTwoFactor
+ * @apiGroup Steam
+ */
+server.get('/steam/twofactor/:id', function (req, res, next) {
+  return res.send(SteamTotp.generateAuthCode(req.params['id']));
+
+});
+
+/**
  * @api {get} /steam/trade
  * @apiName GetSteamInvetory
  * @apiGroup Steam

@@ -245,6 +245,50 @@ exports = module.exports = function(server){
     });
     next();
   });
+  /**
+   * @api {get} /user/job/:SteamID GetUserJobPlaytime
+   * @apiName GetUserJobPlaytime
+   * @apiGroup User
+   * @apiParam {String} SteamID Un identifiant unique sous le format STEAM_1:x:xxxxxxx
+   */
+  server.get('/user/job/:id', function (req, res, next) {
+
+    var cache = server.cache.get( req._url.pathname);
+    if( cache != undefined ) { return res.send(cache); };
+
+    server.conn.query("SELECT `job_id`, `job_name`, `is_boss` FROM `rp_jobs`;", [req.params['id']], function(err, rows) {
+      if( err ) return res.send(new ERR.InternalServerError(err));
+
+      var jobs = new Array();
+      for(var i=0; i<rows.length; i++) {
+        jobs[ rows[i].job_id ] = rows[i].job_name;
+
+        if( rows[i].is_boss  ) {
+          jobs[ rows[i].job_id - 1 ] = (rows[i].job_name).substring( (rows[i].job_name).indexOf(" - ") + 3);
+        }
+
+      }
+
+      server.conn.query("SELECT `jobplaytime` FROM `rp_users` WHERE `steamid`=?", [req.params['id']], function(err, rows) {
+        if( err ) return res.send(new ERR.InternalServerError(err));
+        if( rows.length == 0 ) return res.send(new ERR.NotFoundError("UserNotFound"));
+
+        var result = {};
+
+        var data = rows[0].jobplaytime.split(";");
+        for(var i=0; i<data.length; i++) {
+          var row = data[i].split(",");
+          result[ jobs[row[0]] ] = row[1];
+        }
+
+        server.cache.set( req._url.pathname, result);
+        return res.send( result );
+      });
+
+      next();
+    });
+    next();
+  });
 
   /**
    * @api {get} /user/pilori/:SteamID/next GetUserNextBanBySteamID

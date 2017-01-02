@@ -2,6 +2,9 @@
 exports = module.exports = function(server){
   var ERR = require('node-restify-errors');
   var moment = require('moment');
+  var gd = require('node-gd');
+  var fs = require('fs');
+  var wrap = require('wordwrap')(60);
 
 /**
  * @api {post} /forum/pm/:id SendUserPM
@@ -128,6 +131,59 @@ server.get('/forum/user/pm/unread', function (req, res, next) {
     return res.send(err);
   }
   next();
+});
+
+server.get('/forum/announcement/:id', function (req, res, next) {
+  try {
+    var cache = server.cache.get( req._url.pathname);
+    if( cache != undefined ) {
+      fs.readFile(cache.content, function(err, data) {
+        res.setHeader("Content-Type", "image/jpeg");
+        res.writeHead(200);
+        res.write(data);
+        res.end();
+        return next();
+      });
+      return next();
+    }
+
+
+    if( req.params['id'] == 0 ) return res.send(new ERR.BadRequestError("InvalidParam"));
+    server.conn.query("SELECT CONVERT(`text` USING utf32) as `text` FROM `ts-x`.`site_annonces` WHERE `id`=?", [req.params['id']], function(err, row) {
+
+      var text = wrap(row[0].text);
+
+      var cache = "/var/www/ts-x/cache/announcement/"+req.params['id']+".jpg";
+      var police = "/var/www/ts-x/fonts/NotoSans-Regular.ttf";
+      var size = 12;
+      var img = gd.createSync(1, 1);
+      var black = img.colorAllocate(0,0,0);
+      var length = img.stringFTBBox(black, police, size, 0, 0, 0, text);
+      img.destroy();
+
+      var img = gd.createSync(500, length[1]+20+size);
+      var white = img.colorAllocate(255,255,255);
+      var black = img.colorAllocate(0,0,0);
+      img.stringFT(black, police, size, 0, 10, size+10, text);
+
+      img.saveJpeg(cache, 100, function(err, bla) {
+        img.destroy();
+        fs.readFile(cache, function(err, data) {
+          res.setHeader("Content-Type", "image/jpeg");
+          res.writeHead(200);
+          res.write(data);
+
+          server.cache.set( req._url.pathname, {content: cache});
+          res.end();
+          return next();
+        });
+      });
+
+    });
+  }
+  catch ( err ) {
+   return res.send(err);
+  }
 });
 
 /**

@@ -1,5 +1,5 @@
 <br /><br />
-
+</div>
 <div class="col-sm-offset-4 col-sm-8 alert alert-warning" role="alert">
 	<p class="txt"><span><img alt="attention" id="img_warning" src="/images/wiki/warning.png"/></span>
 	Si cette page n'est plus d'actualité, vous pouvez nous le signaler

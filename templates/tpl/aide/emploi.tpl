@@ -1,3 +1,4 @@
+				
 				<div class="col-xs-12 col-sm-9">
 						<br /><br />
 						<center><img alt="img_title" id="img_title" src="/images/wiki/job/job_top.png"></center><br />
