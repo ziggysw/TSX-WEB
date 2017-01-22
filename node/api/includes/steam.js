@@ -14,6 +14,52 @@ exports = module.exports = function(server){
   var client = new SteamUser();
   var manager = new TradeOfferManager({steam: client, domain: "ts-x.eu", language: "fr"});
 
+  function getInventoryFromID(SteamID, callback) {
+    request("http://steamcommunity.com/profiles/" + (new SteamC(SteamID)).getSteamID64() + "/inventory/json/730/2", function (error, response, body) {
+      if( error ) throw new ERR.NotFoundError("SteamError");
+
+      try {
+        body = JSON.parse(body);
+      }
+      catch ( e ) {
+        throw new ERR.NotFoundError("InventoryError");
+      }
+      if( !body.success ) throw new ERR.NotFoundError("InventoryError");
+
+      var invs = body.rgInventory;
+      var items = body.rgDescriptions;
+      var invID = new Array();
+      var obj = new Array();
+
+      Object.keys(invs).forEach(function (i) {
+        var inv = invs[i];
+        invID[inv.classid+"_"+inv.instanceid] = inv.id;
+      });
+
+      Object.keys(items).forEach(function (i) {
+        var item = items[i];
+        if( parseInt(item.tradable) == 1 ) {
+          var data = {
+            id: invID[item.classid+"_"+item.instanceid],
+            name: item.name,
+            classid: item.classid,
+            instanceid: item.instanceid,
+            image: item.icon_url_large ? item.icon_url_large : item.icon_url,
+            hashname: item.market_hash_name,
+            price: null,
+          };
+
+          data.price = getPrice(item.market_hash_name);
+          if( data.price >= 0.10 )
+            obj.push(data);
+        }
+      });
+
+      callback(obj);
+    });
+  }
+
+
   var priceListDATA = new Array();
   Object.keys(priceListOld.prices).forEach(function (j) {
     priceListDATA[priceListOld.prices[j].market_hash_name] = priceListOld.prices[j].price;
@@ -21,7 +67,6 @@ exports = module.exports = function(server){
 
   if (fs.existsSync('polldata.json')) {
     manager.pollData = JSON.parse(fs.readFileSync('polldata.json'));
-    console.log
   }
   manager.on('pollData', function(pollData) {
   	fs.writeFile('polldata.json', JSON.stringify(pollData));
@@ -40,6 +85,7 @@ exports = module.exports = function(server){
       offer.getReceivedItems(function(err, items) {
         Object.keys(items).forEach(function (i) {
           var item = items[i];
+          console.log(item);
           var euro = ( getPrice(item.market_hash_name) * 0.95);
           var money = euro * 10000;
           var SteamID = offer.partner.getSteam2RenderedID();
@@ -54,17 +100,12 @@ exports = module.exports = function(server){
     }
   });
   function getPrice(name) {
+    if( priceListDATA[name] <= 0 )
+      console.log(name, priceListDATA[name]);
+     if( priceListDATA[name] >= 1000 )
+      console.log(name, priceListDATA[name]);
+
     return priceListDATA[name];
-    /*
-    var total = 0;
-    var count = 0;
-    var price = priceList[name];
-    console.log(price);
-      Object.keys(price).forEach(function (j) {
-        total += (price[j].price * price[j].count);
-        count += price[j].count;
-    });
-    return Math.floor(total/count)/100;*/
   }
 
   /**
@@ -100,68 +141,40 @@ server.post('/steam/trade', function (req, res, next) {
     if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
     var SteamID = row[0].steamid;
 
-    request("http://steamcommunity.com/profiles/" + (new SteamC(SteamID)).getSteamID64() + "/inventory/json/730/2", function (error, response, body) {
-	console.log(error);
-      try {
-        body = JSON.parse(body);
-        if( !body.success ) return res.send(new ERR.NotFoundError("InventoryError"));
+    try {
+      getInventoryFromID(SteamID, function(obj) {
+        Object.keys(obj).forEach(function (i) {
+          var item = obj[i];
+          if( item.id == parseInt(req.params['itemid']) ) {
 
-        var invs = body.rgInventory;
-        var items = body.rgDescriptions;
-        var invID = new Array();
-        var obj = new Array();
+            var euro = getPrice(item.hashname);
+            var money = (euro * 0.95) * 10000;
+            if( euro < 0.10 ) return res.send(new ERR.NotFoundError("InventoryError"));
 
-        var cData = "";
+            server.conn.query("SELECT `partner`, `tokken` FROM `ts-x`.`phpbb3_users` WHERE `steamid`=?", [SteamID], function(err, row) {
+              if( err ) return res.send(new ERR.InternalServerError(err));
+              var offer = manager.createOffer(SteamID);
+              offer.setMessage("Votre item vaut: "+Math.round(money)+" $RP, selon les prix actuels sur le marché.");
+              offer.setToken(row[0].tokken);
+              offer.addTheirItem({appid: 730, contextid: 2, assetid: parseInt(req.params['itemid'])});
+              offer.send(function(err, status) {
+                console.log(err);
+                if( err && err.eresult == 15 ) return res.send({id: -1});
+                else if( err && err.eresult == 50 ) return res.send({id: -2});
+                else if( err ) return res.send(new ERR.InternalServerError(err));
+                res.send({id: offer.id});
+                return next();
+              });
 
-        Object.keys(invs).forEach(function (i) {
-          var inv = invs[i];
-          if( inv.id == parseInt(req.params['itemid']) ) {
-            cData = inv.classid+"_"+inv.instanceid;
+            });
+
           }
         });
-
-        if( cData == "" )  return res.send(new ERR.NotFoundError("InventoryError"));
-
-        var item = items[cData];
-        if( parseInt(item.tradable) != 1 ) return res.send(new ERR.NotFoundError("InventoryError"));
-          var data = {
-            id: invID[item.classid+"_"+item.instanceid],
-            name: item.name,
-            hashname: item.market_hash_name,
-            price: null,
-          };
-
-/*        Object.keys(item.tags).forEach(function (j) {
-            var tag = item.tags[j];
-            if( tag.internal_name === "CSGO_Type_WeaponCase" ) return res.send(new ERR.NotFoundError("InventoryError"));
-          });
-*/
-
-
-        var euro = getPrice(item.market_hash_name);
-        var money = (euro * 0.95) * 10000;
-        if( euro < 0.10 ) return res.send(new ERR.NotFoundError("InventoryError"));
-
-        server.conn.query("SELECT `partner`, `tokken` FROM `ts-x`.`phpbb3_users` WHERE `steamid`=?", [SteamID], function(err, row) {
-          if( err ) return res.send(new ERR.InternalServerError(err));
-          var offer = manager.createOffer(SteamID);
-          offer.setMessage("Votre item vaut: "+Math.round(money)+" $RP, selon les prix actuels sur le marché.");
-          offer.setToken(row[0].tokken);
-          offer.addTheirItem({appid: 730, contextid: 2, assetid: parseInt(req.params['itemid'])});
-          offer.send(function(err, status) {
-            console.log(err);
-            if( err && err.eresult == 15 ) return res.send({id: -1});
-            else if( err && err.eresult == 50 ) return res.send({id: -2});
-            else if( err ) return res.send(new ERR.InternalServerError(err));
-            res.send({id: offer.id});
-            return next();
-          });
-        });
-      }
-      catch( e ) {
-        console.log(e);
-      }
-    });
+      });
+    }
+    catch( e ) {
+      console.log("bug while sending.."+e);
+    }
   });
 });
 
@@ -172,7 +185,6 @@ server.post('/steam/trade', function (req, res, next) {
  */
 server.get('/steam/twofactor/:id', function (req, res, next) {
   return res.send(SteamTotp.generateAuthCode(req.params['id']));
-
 });
 
 /**
@@ -230,61 +242,16 @@ server.get('/steam/inventory', function (req, res, next) {
     var cache = server.cache.get( req._url.pathname+"/"+SteamID );
     if( cache != undefined ) return res.send(cache);
 
-    request("http://steamcommunity.com/profiles/" + (new SteamC(SteamID)).getSteamID64() + "/inventory/json/730/2", function (error, response, body) {
-      if( error ) return res.send(new ERR.NotFoundError("SteamError"));
-
-      try {
-        body = JSON.parse(body);
-        if( !body.success ) return res.send(new ERR.NotFoundError("InventoryError"));
-
-        var invs = body.rgInventory;
-        var items = body.rgDescriptions;
-        var invID = new Array();
-        var obj = new Array();
-
-        Object.keys(invs).forEach(function (i) {
-          var inv = invs[i];
-          invID[inv.classid+"_"+inv.instanceid] = inv.id;
-        });
-
-        Object.keys(items).forEach(function (i) {
-          var item = items[i];
-          if( parseInt(item.tradable) == 1 ) {
-            var data = {
-              id: invID[item.classid+"_"+item.instanceid],
-              name: item.name,
-              classid: item.classid,
-              instanceid: item.instanceid,
-              image: item.icon_url_large ? item.icon_url_large : item.icon_url,
-              hashname: item.market_hash_name,
-              price: null,
-            };
-
-            var isBox = false;
-
-/*            Object.keys(item.tags).forEach(function (j) {
-              var tag = item.tags[j];
-              if( tag.internal_name === "CSGO_Type_WeaponCase" )
-                isBox = true;
-            });
-*/
-            if( !isBox ) {
-              data.price = getPrice(item.market_hash_name);
-              if( data.price >= 0.10 )
-                obj.push(data);
-            }
-          }
-        });
-
+    try {
+      getInventoryFromID(SteamID, function(obj) {
         server.cache.set( req._url.pathname+"/"+SteamID, obj, 5);
         res.send(obj);
-      }
-      catch( e ) {
-        console.log(e);
-      }
-      next();
-  });
-  next();
+      });
+    }
+    catch( e ) {
+      console.log(e);
+      return res.send(e);
+    }
   });
 });
 
@@ -298,59 +265,18 @@ server.get('/steam/inventory/:id', function (req, res, next) {
   var cache = server.cache.get( req._url.pathname+"/"+SteamID );
   if( cache != undefined ) return res.send(cache);
 
-  request("http://steamcommunity.com/profiles/" + (new SteamC(SteamID)).getSteamID64() + "/inventory/json/730/2", function (error, response, body) {
-    if( error ) return res.send(new ERR.NotFoundError("SteamError"));
-
-    try {
-      body = JSON.parse(body);
-      if( !body.success ) return res.send(new ERR.NotFoundError("InventoryError"));
-
-      var invs = body.rgInventory;
-      var items = body.rgDescriptions;
-      var invID = new Array();
-      var obj = new Array();
-
-      Object.keys(invs).forEach(function (i) {
-        var inv = invs[i];
-        invID[inv.classid+"_"+inv.instanceid] = inv.id;
-      });
-
-      Object.keys(items).forEach(function (i) {
-        var item = items[i];
-        if( parseInt(item.tradable) == 1 ) {
-          var data = {
-            id: invID[item.classid+"_"+item.instanceid],
-            name: item.name,
-            classid: item.classid,
-            instanceid: item.instanceid,
-            image: item.icon_url_large ? item.icon_url_large : item.icon_url,
-            hashname: item.market_hash_name,
-            price: null,
-          };
-
-          var isBox = false;
- /*         Object.keys(item.tags).forEach(function (j) {
-            var tag = item.tags[j];
-            if( tag.internal_name === "CSGO_Type_WeaponCase" )
-              isBox = true;
-          });
-*/
-          if( !isBox ) {
-            data.price = getPrice(item.market_hash_name);
-            console.log(data);
-            if( data.price >= 0.10 )
-              obj.push(data);
-          }
-        }
-      });
-
+  try {
+    getInventoryFromID(SteamID, function(obj) {
       server.cache.set( req._url.pathname+"/"+SteamID, obj, 5);
       res.send(obj);
-    }
-    catch( e ) {
-      console.log(e);
-    }
+    });
+  }
+  catch( e ) {
+    console.log("bug");
+    return res.send(e);
+  }
   next();
-  });
 });
+
+
 };

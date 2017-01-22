@@ -159,30 +159,33 @@ exports = module.exports = function(server){
         return res.send( "OK" );
       });
 
-      if( req.params['game'] == "teamspeak" ) {
-        var tsClient = new TeamSpeak('176.31.38.179', 10011);
+      if( req.params['game'] == "forum" || req.params['game'] == "ALL" ) {
+	server.conn.query("DELETE S FROM `ts-x`.`phpbb3_sessions` AS S INNER JOIN `ts-x`.`phpbb3_users` U ON S.`session_user_id`=U.`user_id` INNER JOIN `ts-x`.`srv_bans` B ON U.`steamid`=B.`steamid` WHERE (`Length`='0' OR `EndTime`>UNIX_TIMESTAMP()) AND `is_unban`='0' AND (`game`='forum' OR `game`='ALL')", function(err, row) { console.log(err); });
       }
-      tsClient.api.login({ client_login_name: "tsxbot", client_login_password: server.TSTokken}, function(err, resp, req) {
-        tsClient.api.use({ sid: 1}, function(err, resp, req) {
-          tsClient.send("clientupdate", {client_nickname: "[BOT2] ts-x.eu"});
-          tsClient.send('clientlist', function(err, resp, req) {
-            var clients = new Array();
-            resp.data.forEach(function(element) {
-              clients[element.client_database_id] = element.clid;
-            });
-            server.conn.query("SELECT `client_id` FROM `TeamSpeak`.`clients` WHERE `steamid`=?;", [target], function(err, rows) {
-              for(var i=0; i<rows.length; i++) {
-                tsClient.send("servergroupdelclient", {sgid: 7, cldbid: rows[i].client_id});
-                if( clients[rows[i].client_id] > 0 )
-                  tsClient.send("clientkick", {reasonid: 5, clid: clients[rows[i].client_id], reasonmsg: "banned"});
-              }
+      if( req.params['game'] == "teamspeak" || req.params['game'] == "ALL" ) {
+        var tsClient = new TeamSpeak('176.31.38.179', 10011);
+    
+        tsClient.api.login({ client_login_name: "tsxbot", client_login_password: server.TSTokken}, function(err, resp, req) {
+          tsClient.api.use({ sid: 1}, function(err, resp, req) {
+            tsClient.send("clientupdate", {client_nickname: "[BOT2] ts-x.eu"});
+            tsClient.send('clientlist', function(err, resp, req) {
+              var clients = new Array();
+              resp.data.forEach(function(element) {
+                clients[element.client_database_id] = element.clid;
+              });
+              server.conn.query("SELECT `client_id` FROM `TeamSpeak`.`clients` WHERE `steamid`=?;", [target], function(err, rows) {
+                for(var i=0; i<rows.length; i++) {
+                  tsClient.send("servergroupdelclient", {sgid: 7, cldbid: rows[i].client_id});
+                  if( clients[rows[i].client_id] > 0 )
+                    tsClient.send("clientkick", {reasonid: 5, clid: clients[rows[i].client_id], reasonmsg: "banned"});
+                }
 
-              setTimeout(function() { tsClient.disconnect(); }, 3000);
+                setTimeout(function() { tsClient.disconnect(); }, 3000);
+              });
             });
           });
         });
-      });
-
+      }
       next();
     });
     next();
@@ -1381,5 +1384,31 @@ server.post('/user/:SteamID/givemoney', function (req, res, next) {
 	next();
 });
 
+/**
+ * @api {post} /user/:SteamID/givexp giveClientXP
+ * @apiName giveClientItem
+ * @apiGroup User
+ * @apiParam {String} SteamID Un identifiant unique sous le format STEAM_1:x:xxxxxxx
+ * @apiParam {Integer} amount la quantité à envoyer
+ */
+server.post('/user/:SteamID/givexp', function (req, res, next) {
+
+  server.conn.query(server.getAuthSMAdmin, [req.headers.auth], function(err, row) {
+    if( err ) return res.send(new ERR.InternalServerError(err));
+    if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+    var SteamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
+    if( SteamID != "STEAM_1:0:7490757" && SteamID != "STEAM_1:1:39278818" ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+
+    var UserName = row[0].username;
+    var amount = parseInt(req.params['amount']);
+
+    server.conn.query("INSERT INTO `rp_csgo`.`rp_users2` (`id`, `steamid`, `xp`, `pseudo`, `steamid2`) VALUES (NULL, ?, ?, ?, ?);", [req.params['SteamID'], amount, UserName, SteamID], function(err, row) {
+      if( err ) return res.send(new ERR.InternalServerError(err));
+      return res.send("OK");
+    });
+  });
+
+	next();
+});
 
 };

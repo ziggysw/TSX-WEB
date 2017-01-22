@@ -119,9 +119,12 @@
 	</div>
 	{$intro}
 	<div class="container main">
+
 <!--
 <div class="col-sm-12 col-sm-offset-0 alert alert-warning" role="alert">
-Suite à la dernière mise à jour de CS:GO, votre jeu <b>crash en cas de *retour windows*</b>. Nous vous conseillons donc de jouer en *fenêtré* et de <b>ne surtout pas</b> cliquer sur le bouton pour <b>minimiser</b> votre jeu. Préférez donc <b>utiliser la commande *alt-tab*</b> ou encore la touche *windows*.
+En raison du comportement haineux d'un grand nombre de joueurs lié aux rivalités entre GANGS. <b>Les 3 prochaines PvP n'auront pas lieu</b>.
+L'avenir des PvP sera compromis si la situation ne retourne pas rapidement à la normale. Si les conflits entre joueurs continuent, Il n'y aura pas d'autre choix que de supprimer chacun des gangs.
 </div>
 -->
+
 		{$page}
