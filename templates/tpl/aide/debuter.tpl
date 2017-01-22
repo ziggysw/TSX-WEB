@@ -189,7 +189,7 @@
 	                                                        <td>272</td>
 								<td>Assistant haut conseillé</td>
 								<td>979 200</td>
-								<td>Respawn à 200 kevlar</td>
+								<td>Respawn à 100 kevlar</td>
                                                         </tr>
 							<tr class="txt">
 	                                                        <td>306</td>
