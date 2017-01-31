@@ -223,7 +223,7 @@
 									Le Responsable VIP n'est autre qu'un admin de la line-up CS:GO qui est là pour aider les VIP's dans leur rôle et s'il le faut les remettre dans le droit chemin.<br />
 									<br />
 									N'hésitez pas à venir lui parler en cas de soucis, il est là pour vous aider tous comme les Leaders et admins FUN. <br />
-									Le responsable actuel de la section VIP est <a target="_blank" href="/forum/memberlist.php?mode=viewprofile&u=1608" >Exodus</a>, si vous devez rapporter un VIP ou si vous avez une question concernant les VIP n'hésiter pas.</p>
+									Le responsable actuel de la section VIP est <a target="_blank" href="/forum/memberlist.php?mode=viewprofile&u=11272" >PierreXp5</a>, si vous devez rapporter un VIP ou si vous avez une question concernant les VIP n'hésiter pas.</p>
 								</div>
 							</div>
 						</div>
