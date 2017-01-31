@@ -37,7 +37,7 @@ exports = module.exports = function(app) {
        return $sce.trustAsHtml(str.replace(/(STEAM_1:[0-1]:[0-9]{1,14})/g, "<b class='text-primary'>$1</b>"));
      };
    });
-
+   app.filter("trust", ['$sce', function($sce) { return function(htmlCode){ return $sce.trustAsHtml(htmlCode); }}]);
    app.filter('fullDuration', function () {
      return function(seconds) {
        var days = Math.floor(seconds / 86400);

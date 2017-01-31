@@ -1,6 +1,4 @@
-		<div class="container bs-docs-container" data-spy="scroll" data-target="#sidebar">
-			<div class="row">
-				<div class="col-md-9" role="main">
+				<div class="col-xs-12 col-sm-9">
 					<br /><br />
 					<center><img alt="img_title" id="img_title" src="https://www.ts-x.eu/images/wiki/bind.png"></center><br />
 					<br />
@@ -229,24 +227,24 @@
 									<center><h2 id="GroupDSub3"><u>Les flèches directionelles</u></h2></center>
 									<br />
 										<div class="col-xs-offset-5 col-xs-2">
-											<img class="img_wiki center-block" src="/images/wiki/bind/AD.png" alt="Flèche haut">
+											<img class="img_wiki center-block" src="/images/wiki/bind/uparrow.png" alt="Flèche haut">
 											<p class="text-center">uparrow</p>
 											</a>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-xs-offset-3 col-xs-2">
-											<img class="img_wiki center-block" src="/images/wiki/bind/AD.png" alt="Flèche gauche">
+											<img class="img_wiki center-block" src="/images/wiki/bind/leftarrow.png" alt="Flèche gauche">
 											<p class="text-center">leftarrow</p>
 											</a>
 										</div>
 										<div class="col-xs-2">
-											<img class="img_wiki center-block" src="/images/wiki/bind/).png" alt="Flèche bas">
+											<img class="img_wiki center-block" src="/images/wiki/bind/downarrow.png" alt="Flèche bas">
 											<p class="text-center">downarrow</p>
 											</a>
 										</div>
 										<div class="col-xs-2">
-											<img class="img_wiki center-block" src="/images/wiki/bind/+=.png" alt="Flèche droite">
+											<img class="img_wiki center-block" src="/images/wiki/bind/rightarrow.png" alt="Flèche droite">
 											<p class="text-center">rightarrow</p>
 											</a>
 										</div>
@@ -290,7 +288,7 @@
 					</div>
 
 				</div>
-				<!--Nav Bar -->
+				<!--Nav Bar
 				<nav class="col-md-2 bs-docs-sidebar">
 					<ul class="nav nav-stacked fixed">
 						<li><a href="#GroupA" id="page_menu_wiki" ><i class="fa fa-asterisk prune" aria-hidden="true"></i> Qu'est-ce qu'un Bind </a></li>
@@ -305,6 +303,4 @@
 							</ul>
 						</li>
 					</ul>
-				</nav>
-			</div>
-		</div>
+				</nav>-->

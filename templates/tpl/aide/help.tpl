@@ -1,6 +1,4 @@
-		<div class="container bs-docs-container" data-spy="scroll" data-target="#sidebar">
-			<div class="row">
-				<div class="col-md-9" role="main">
+				<div class="col-xs-12 col-sm-9">
 					<br /><br />
 					<center><img id="img_title" class="radius" src="/images/wiki/bug/bug_top.png"></center>
 					<br />
@@ -217,7 +215,7 @@
 					</div>
 
 				</div>
-				<!--Nav Bar -->
+				<!--Nav Bar
 				<nav class="col-md-2 bs-docs-sidebar">
 					<ul id="sidebar" class="nav nav-stacked fixed">
 						<li>
@@ -243,6 +241,4 @@
 							<a href="#GroupF">Crash pendant la PvP</a>
 						</li>
 					</ul>
-				</nav>
-			</div>
-		</div>
+				</nav>-->

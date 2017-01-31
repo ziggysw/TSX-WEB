@@ -1,6 +1,4 @@
-		<div class="container bs-docs-container" data-spy="scroll" data-target="#sidebar">
-			<div class="row">
-				<div class="col-md-9" role="main">
+				<div class="col-xs-12 col-sm-9">
 					<!-- Carrousel -->
 					<div id="slider" class="carousel slide" data-ride="carousel">
 						<ol class="carousel-indicators"><!-- Bulle de navigation -->
@@ -178,7 +176,7 @@
 					</div>
 
 				</div>
-				<!--Nav Bar -->
+				<!--Nav Bar
 				<nav class="col-md-2 bs-docs-sidebar">
 					<ul id="sidebar" class="nav nav-stacked fixed">
 						<li>
@@ -200,6 +198,4 @@
 							<a href="#GroupF">Mode Actif/Passif</a>
 						</li>
 					</ul>
-				</nav>
-			</div>
-		</div>
+				</nav>-->

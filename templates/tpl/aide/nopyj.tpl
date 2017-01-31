@@ -8,8 +8,7 @@
 			<div class="alert alert-info" role="alert">Vous pourrez décrochez votre No-Pyj à vos 16 ans, courage ! </div>
 			{/if}
 		{/if}
-			<div class="row">
-				<div class="col-md-9" role="main">
+				<div class="col-xs-12 col-sm-9">
 				<br /><br />
 				<center><img id="img_title" class="radius" src="/images/wiki/nopyj/nopyj_top.png"></center>
 				<br />
@@ -210,7 +209,7 @@
 						</div>
 					</div>
 				</div>
-				<!--Nav Bar -->
+				<!--Nav Bar
 				<nav class="col-md-2 bs-docs-sidebar">
 					<ul id="sidebar" class="nav nav-stacked fixed">
 						<li>
@@ -235,5 +234,4 @@
 							<a href="#GroupG">Le rang "No-Pyj" émancipé</a>
 						</li>
 					</ul>
-				</nav>
-			</div>
+				</nav>-->

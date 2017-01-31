@@ -39,8 +39,8 @@
   </div>
 
   <div modal-show="showDialog" class="modal fade">
-    <div class="modal-dialog">
-      <form ng-submit="UpdateData(pData.group_id)">
+    <div class="modal-dialog" ng-controller="rpSteamIDLookup">
+      <form ng-submit="$parent.UpdateData(pData.group_id)">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -49,7 +49,7 @@
           <div class="modal-body">
             <div class="input-group">
               <span class="input-group-addon" required>SteamID:</span>
-              <input type="text" class="form-control" ng-model="steamid" ng-change="updateSteamID()" />
+              <input type="text" class="form-control" ng-model="$parent.steamid" ng-change="updateSteamID()" />
               <span class="input-group-addon">{{pData.name}}</span>
             </div>
             <div class="input-group">

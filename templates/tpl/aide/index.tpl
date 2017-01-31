@@ -1,143 +1,204 @@
-﻿
-	<!-- Carrousel -->
-	<div id="slider" class="carousel slide" data-ride="carousel">
-		<ol class="carousel-indicators"><!-- Bulle de navigation -->
-			<li data-target="#slider" data-slide-to="0" class="active"></li>
-			<li data-target="#slider" data-slide-to="1" class=""></li>
-			<li data-target="#slider" data-slide-to="2" class=""></li>
-		</ol>
-		<div class="carousel-inner" role="listbox">
-			<div class="item active"><!-- Slide 0 -->
-				<img id="img_carrousel" alt="NeW" src="/images/wiki/guide_debutant.png" />
-				<div class="flex-caption "><div>
-					<p class="title1">Bien débuter sa vie à Princeton-City</p>
-					<p class="title2"><span class="wiki_pub"><u>Ar</u>g<u>ent actuel :</u></span> {$money|pretty_number} $rp<br />
-					Bienvenue {$name} !<br />
-					Si tu souhaites avoir plus d'argent en banque, je te conseille de venir jeter un oeil à ce tutoriel !</p>
-					<br />
-					<a class="various btn btn-primary" href="/index.php?page=aide&sub=debuter"><i class="fa fa-hand-o-right"></i> En savoir plus !</a>
-				</div></div>
-				<!--<header>
-				<a class="various btn btn-primary" href="/index.php?page=aide&sub=debuter"><i class="fa fa-hand-o-right"></i> En savoir plus !</a>
-				</header>-->
-			</div>
-			<div class="item"><!-- Slide 1 -->
-				<img id="img_carrousel" alt="Binds" src="/images/wiki/bind.png" /></a>
-				<div class="flex-caption"><div>
-					<p class="title1">Les binds</p>
-					<p class="title2">Cet article vous informera sûr les diverses touches "bindable" de votre clavier, sur les différents binds possibles et sur ce que l'on appelle communément un "Bind"</p>
-					<br />
-					<a class="various btn btn-primary" href="/index.php?page=aide&sub=bind"><i class="fa fa-hand-o-right"></i> En savoir plus !</a>
-				</div></div>
-			</div>
-			<div class="item"><!-- Slide 2 -->
-				<img id="img_carrousel" alt="PVP" src="/images/wiki/banniere_pvp.png" /></a>
-				<div class="flex-caption"><div>
-					<p class="title1">Les Gangs et La PvP</p>
-					<p class="title2"><span class="wiki_pub"><u>Ran</u>g<u> actuel :</u></span> {$gang} </p>
-					<p class="title3">Tu rêves de devenir un As de la PvP et tu ne sais pas comment t'y prendre ?<br /><br /> Ce tutoriel est peut-être fait pour toi !</p>
-					<br />
-					<a class="various btn btn-primary" href="/index.php?page=aide&sub=pvp"><i class="fa fa-hand-o-right"></i> En savoir plus !</a>
-				</div></div>
-			</div>
-		</div>
-		<!-- Controle gauche -->
-		<a class="left carousel-control" href="#slider" role="button" data-slide="prev">
-		<span class="sr-only">Previous</span></a>
-		<!-- Controle droite -->
-		<a class="right carousel-control" href="#slider" role="button" data-slide="next">
-		<span class="sr-only">Next</span></a>
-	</div>
-	<br /><br />
-	<div class="container marketing">
-	
-		<!-- Ligne des 3 blocks -->
-		<div class="row">
-			<div class="col-sm-6 col-md-4">
-				<div class="thumbnail" id="thun_index">
-					<a href="/index.php?page=aide&sub=emploi"><div id="rotate"><img class="img-circle" src="/images/wiki/pole_emploi.png" alt="Generic placeholder image" id="img_circle_index"></div></a>
-					<div class="caption">
-						<h2 id="title_thun">Trouver un Job</h2>
-						<p>Trouver un métier sur à Princeton-City n'est pas toujours évident, c'est pourquoi nous vous expliquons ici tous les filons pour trouver enfin le job de vos rêves !</p>
-						<br />
-						<p><a class="btn btn-success" href="/index.php?page=aide&sub=emploi" role="button"><i class="fa fa-hand-o-right"></i> Aller voir !</a></p>
+﻿			<div class="col-xs-12 col-sm-9">
+				<!-- prevoir une images pour remplacer le carrousel en version telephone ? -->
+                <!-- Carrousel -->
+				<div id="slider" class="carousel slide" data-ride="carousel">
+					<div class="carousel-inner" role="listbox">
+						<div class="item active"><!-- Slide 0 -->
+							<img id="img_carrousel1" alt="NeW" src="http://rp-csgo.fr/images/rp/1.jpg" />
+						</div>
+						<div class="item"><!-- Slide 1 -->
+							<img id="img_carrousel1" alt="Binds" src="http://rp-csgo.fr/images/rp/2.jpg" />
+						</div>
+						<div class="item"><!-- Slide 2 -->
+							<img id="img_carrousel1" alt="PVP" src="http://rp-csgo.fr/images/rp/3.jpg" />
+						</div>
+						<div class="item"><!-- Slide 3 -->
+							<img id="img_carrousel1" alt="PVP" src="http://rp-csgo.fr/images/rp/4.jpg" />
+						</div>
+						<div class="item"><!-- Slide 4 -->
+							<img id="img_carrousel1" alt="PVP" src="http://rp-csgo.fr/images/rp/5.jpg" />
+						</div>
+						<div class="item"><!-- Slide 5 -->
+							<img id="img_carrousel1" alt="PVP" src="http://rp-csgo.fr/images/rp/6.jpg" />
+						</div>
+						<div class="item"><!-- Slide 6 -->
+							<img id="img_carrousel1" alt="PVP" src="http://rp-csgo.fr/images/rp/7.jpg" />
+						</div>
+						<div class="item"><!-- Slide 7 -->
+							<img id="img_carrousel1" alt="PVP" src="http://rp-csgo.fr/images/rp/8.jpg" />
+						</div>
+						<div class="item"><!-- Slide 8 -->
+							<img id="img_carrousel1" alt="PVP" src="http://rp-csgo.fr/images/rp/9.jpg" />
+						</div>
+						<div class="item"><!-- Slide 9 -->
+							<img id="img_carrousel1" alt="PVP" src="http://rp-csgo.fr/images/rp/10.jpg" />
+						</div>
+						<div class="item"><!-- Slide 10 -->
+							<img id="img_carrousel1" alt="PVP" src="http://rp-csgo.fr/images/rp/11.jpg" />
+						</div>
+						<div class="item"><!-- Slide 11 -->
+							<img id="img_carrousel1" alt="PVP" src="http://rp-csgo.fr/images/rp/12.jpg" />
+						</div>
+						<div class="item"><!-- Slide 12 -->
+							<img id="img_carrousel1" alt="PVP" src="http://rp-csgo.fr/images/rp/13.jpg" />
+						</div>
+						<div class="item"><!-- Slide 13 -->
+							<img id="img_carrousel1" alt="PVP" src="http://rp-csgo.fr/images/rp/14.jpg" />
+						</div>
+						<div class="item"><!-- Slide 14 -->
+							<img id="img_carrousel1" alt="PVP" src="http://rp-csgo.fr/images/rp/15.jpg" />
+						</div>
+						<div class="item"><!-- Slide 15 -->
+							<img id="img_carrousel1" alt="PVP" src="http://rp-csgo.fr/images/rp/16.jpg" />
+						</div>
+						<div class="item"><!-- Slide 16 -->
+							<img id="img_carrousel1" alt="PVP" src="http://rp-csgo.fr/images/rp/17.jpg" />
+						</div>
+						<div class="item"><!-- Slide 17 -->
+							<img id="img_carrousel1" alt="PVP" src="http://rp-csgo.fr/images/rp/18.jpg" />
+						</div>
+						<div class="item"><!-- Slide 18 -->
+							<img id="img_carrousel1" alt="PVP" src="http://rp-csgo.fr/images/rp/19.jpg" />
+						</div>
+						
 					</div>
+					<!-- Controle gauche -->
+					<a class="left carousel-control" href="#slider" role="button" data-slide="prev">
+					<span class="sr-only">Previous</span></a>
+					<!-- Controle droite -->
+					<a class="right carousel-control" href="#slider" role="button" data-slide="next">
+					<span class="sr-only">Next</span></a>
 				</div>
-			</div>
-			<div class="col-sm-6 col-md-4">
-				<div class="thumbnail" id="thun_index">
-					<a href="/index.php?page=aide&sub=argent"><div id="rotate"><img class="img-circle" src="/images/wiki/piece.png" alt="Generic placeholder image" id="img_circle_index"></div></a>
-					<div class="caption">
-						<h2 id="title_thun">Gagner de L'argent</h2>
-						<p>Quand on commence une nouvelle vie, il n'est jamais facile de faire des économies... Grâce à nous vous deviendrez le plus riche des hommes en seulement quelques jours.</p>
-						<br />
-						<p><a class="btn btn-success" href="/index.php?page=aide&sub=argent" role="button"><i class="fa fa-hand-o-right"></i> Aller voir !</a></p>
-					</div>
+				<br />
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-4"> 
+                        <div class="thumbnail thumbnail-wiki">
+                            <img class="img_wiki" src="/images/wiki/debuter.png" alt="320x150">
+                            <div class="caption">
+                                <h4>Bien débuter</h4>
+                               <p> Bienvenue {$name} !<br />
+								<span class="hidden-phone">Si tu souhaites en savoir plus sur les rouages de Princeton, c'est ici !</span></p>
+                            </div>
+							<center><a class="btn btn-mp" href="/index.php?page=aide&sub=debuter"> En savoir plus </a></center>
+							<br />
+                            <div class="ratings">
+								<p>Importance :
+                                    <span style="color: yellow;"><i class="fa fa-star" aria-hidden="true"></i></span>
+									<span style="color: yellow;"><i class="fa fa-star" aria-hidden="true"></i></span>
+									<span style="color: yellow;"><i class="fa fa-star" aria-hidden="true"></i></span>
+									<span style="color: yellow;"><i class="fa fa-star" aria-hidden="true"></i></span>
+									<span style="color: yellow;"><i class="fa fa-star" aria-hidden="true"></i></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+					<div class="col-xs-6 col-sm-6 col-md-4">
+                        <div class="thumbnail thumbnail-wiki">
+                            <img src="/images/wiki/emploi.png" alt="">
+                            <div class="caption">
+                                <h4>Trouver un emploi</h4>
+								<p class="hidden-sm hidden-md hidden-lg">Envie de changement ?</p>
+                               <p class="hidden-phone">{$job} ne te conviens pas ? <br />
+							   Ici tu découvriras les multiples métier qui composent notre ville !</p>
+                            </div>
+							<center><a class="btn btn-warning" href="/index.php?page=aide&sub=emploi"> Aller voir</a></center>
+							<br />
+                            <div class="ratings">
+								<p>Importance :
+                                    <span style="color: yellow;"><i class="fa fa-star" aria-hidden="true"></i></span>
+									<span style="color: yellow;"><i class="fa fa-star" aria-hidden="true"></i></span>
+									<span style="color: yellow;"><i class="fa fa-star" aria-hidden="true"></i></span>
+									<span style="color: yellow;"><i class="fa fa-star" aria-hidden="true"></i></span>
+									<span style="color: yellow;"><i class="fa fa-star-half-o" aria-hidden="true"></i></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+					<div class="col-xs-6 col-sm-6 col-md-4">
+                        <div class="thumbnail thumbnail-wiki">
+                            <img src="/images/wiki/argent.png" alt="">
+                            <div class="caption">
+                                <h4>Gagner de l'argent</h4>
+								<p class="hidden-sm hidden-md hidden-lg">Devenir riche ? facile !</p>
+                                <p class="hidden-phone">Tu as {$money|pretty_number} $rp,<br />
+							   Ça te suffis pas ? viens voir comment en gagner plus !</p>
+                            </div>
+							<center><a class="btn btn-success" href="/index.php?page=aide&sub=argent"> $$$ </a></center>
+							<br />
+                            <div class="ratings">
+								<p>Importance :
+                                    <span style="color: yellow;"><i class="fa fa-star" aria-hidden="true"></i></span>
+									<span style="color: yellow;"><i class="fa fa-star" aria-hidden="true"></i></span>
+									<span style="color: yellow;"><i class="fa fa-star" aria-hidden="true"></i></span>
+									<span style="color: yellow;"><i class="fa fa-star" aria-hidden="true"></i></span>
+									<span style="color: yellow;"><i class="fa fa-star-o" aria-hidden="true"></i></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+					<div class="col-xs-6 col-sm-6 col-md-4"> 
+                        <div class="thumbnail thumbnail-wiki">
+                            <img class="img_wiki" src="/images/wiki/mariage.png" alt="">
+                            <div class="caption">
+                                <h4>Le Mariage</h4>
+                               <p> <span class="hidden-phone">Amoureux ?<br /></span>
+								Déclare ta flame à ton âme soeur et partagez tous durant 7 jours !</p>
+                            </div>
+							<center><a class="btn btn-danger" href="https://www.ts-x.eu/index.php?page=aide&sub=debuter#GroupD"> Les avantages </a></center>
+							<br />
+                            <div class="ratings">
+								<p>Importance :
+                                    <span style="color: yellow;"><i class="fa fa-star" aria-hidden="true"></i></span>
+									<span style="color: yellow;"><i class="fa fa-star" aria-hidden="true"></i></span>
+									<span style="color: yellow;"><i class="fa fa-star" aria-hidden="true"></i></span>
+									<span style="color: yellow;"><i class="fa fa-star-half-o" aria-hidden="true"></i></span>
+									<span style="color: yellow;"><i class="fa fa-star-o" aria-hidden="true"></i></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+					<div class="col-xs-6 col-sm-6 col-md-4">
+                        <div class="thumbnail thumbnail-wiki">
+                            <img src="/images/wiki/nopyj.png" alt="">
+                            <div class="caption">
+                                <h4>Le rang No-pyj</h4>
+                               <p><span class="hidden-phone">Tu as plus de 16 ans ?<br /></span>
+							   Viens découvrir les modalitées et avantages du rang No-Pyj.</p>
+                            </div>
+							<center><a class="btn btn-grp" href="/index.php?page=aide&sub=nopyj"> Ce renseigner</a></center>
+							<br />
+                            <div class="ratings">
+								<p>Importance :
+                                    <span style="color: yellow;"><i class="fa fa-star" aria-hidden="true"></i></span>
+									<span style="color: yellow;"><i class="fa fa-star" aria-hidden="true"></i></span>
+									<span style="color: yellow;"><i class="fa fa-star" aria-hidden="true"></i></span>
+									<span style="color: yellow;"><i class="fa fa-star-o" aria-hidden="true"></i></span>
+									<span style="color: yellow;"><i class="fa fa-star-o" aria-hidden="true"></i></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+					<div class="col-xs-6 col-sm-6 col-md-4"> 
+                        <div class="thumbnail thumbnail-wiki">
+                            <img src="/images/wiki/whotsx.png" alt="">
+                            <div class="caption">
+                                <h4>Qui sont les Ts-X ?</h4>
+                                <p><span class="hidden-phone">The Spécialists'X<br /></span>
+							   Beaucoup plus qu'un simple nom, ils sont une grande famille...</p>
+                            </div>
+							<center><a class="btn btn-forum" href="/index.php?page=aide&sub=admin#GroupA"> Lire </a></center>
+							<br />
+                            <div class="ratings">
+								<p>Importance :
+                                    <span style="color: yellow;"><i class="fa fa-star" aria-hidden="true"></i></span>
+									<span style="color: yellow;"><i class="fa fa-star" aria-hidden="true"></i></span>
+									<span style="color: yellow;"><i class="fa fa-star-half-o" aria-hidden="true"></i></span>
+									<span style="color: yellow;"><i class="fa fa-star-o" aria-hidden="true"></i></span>
+									<span style="color: yellow;"><i class="fa fa-star-o" aria-hidden="true"></i></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 				</div>
-			</div>
-			<div class="col-sm-6 col-md-4">
-				<div class="thumbnail" id="thun_index">
-					<a href="/index.php?page=aide&sub=nopyj"><div id="rotate"><img class="img-circle" src="/images/wiki/No_pyj.png" alt="Generic placeholder image" id="img_circle_index"></div></a>
-					<div class="caption">
-						<h2 id="title_thun">Le No-PYJ</h2>
-						<p>Qu'est-ce que le NO-PYJ ? À quoi sert-il ? Comment l'obtenir ?<br />
-						Nous vous expliquons tous dans cet article !</p>
-						<br />
-						<p><a class="btn btn-success" href="/index.php?page=aide&sub=nopyj" role="button"><i class="fa fa-hand-o-right"></i> Aller voir !</a></p>
-					</div>
-				</div>
-			</div> 
+            </div>
 		</div>
-		  <!-- debut du block-buster -->
-		<div class="row">
-			<div class="hidden-md hidden-lg"><hr class="featurette-divider">
-			<div class="row featurette">
-				<div class="col-md-7">
-					<h2 class="featurette-heading">Bienvenue à Princeton-City <span class="text-muted">#I_have_a_dream</span></h2>
-					<p class="lead">Tout connaitre sur le serveur rôle-play, les bases, le règlement, les secrets les plus enfouis... <a href="/index.php?page=aide&sub=debuter">lire plus</a></p>
-				</div>
-				<div class="col-md-5">
-				  <img id="img_block_buster" class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="http://2.bp.blogspot.com/_FU9UCvCKHaQ/TBYL1pifkZI/AAAAAAAADR0/7crhQZ9qsJ0/s1600/l_fccf730fd0b94713bad70cb9b979bbea.jpg" data-holder-rendered="true">
-				</div>
-			</div></div>
-
-			<hr class="featurette-divider">
-			  <div class="row featurette">
-				<div class="col-md-7 col-md-push-5">
-				  <h2 class="featurette-heading">Nous rejoindre <span class="text-muted">#Chargement_en_cours...</span></h2>
-				  <p class="lead">Vous souhaitez nous rejoindre, mais vous n'y arrivez pas ?<br />
-				  Vous trouverez ici diverses astuces sur les problèmes connus...<a href="/index.php?page=aide&sub=help">lire plus</a>
-				</div>
-				<div class="col-md-5 col-md-pull-7">
-				  <img id="img_block_buster" class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="http://www.2vanssay.fr/twittmooc/wp-content/uploads/2014/01/Twitter-Help.jpg" data-holder-rendered="true">
-				</div>
-			  </div>
-
-			<hr class="featurette-divider">
-			  <div class="row featurette">
-				<div class="col-md-7">
-				  <h2 class="featurette-heading">Silence ça tourne !<span class="text-muted">#faire_une_record</span></h2>
-				  <p class="lead">Vous aimeriez apprendre à filmer vos actions en jeu ? Ou tout simplement faire un reportage en caméra cachée pour dénoncer des comportements nuisibles à la communauté ?
-				  Rien de plus simple, après ce petit stage vous deviendrez le roi des caméras cachées... <a href="/index.php?page=aide&sub=record">lire plus</a></p>
-				</div>
-				<div class="col-md-5">
-				  <img id="img_block_buster" class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="/images/wiki/faire_une_record.png" data-holder-rendered="true">
-				</div>
-			  </div>
-			  
-			<hr class="featurette-divider">
-			  <div class="row featurette">
-				<div class="col-md-7 col-md-push-5">
-				  <h2 class="featurette-heading">Devenir VIP / Membre CS:GO <span class="text-muted">#Admin</span></h2>
-				  <p class="lead">Notre communauté vous plaît et vous tient à coeur ?<br />
-				  Vous aimeriez en faire plus pour nous et pour nos joueurs ?<br />
-				  Rejoignez-nous ! Les recrutements sont ouverts toute l'année sur simple candidature, mais attention !<br />
-				  Il faut tout de même certains prérequis...<a href="/index.php?page=aide&sub=admin">lire plus</a>
-				</div>
-				<div class="col-md-5 col-md-pull-7">
-				  <img id="img_block_buster" class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="https://bootstrapmaster.com/wp-content/themes/bootstrap/img/avatars/noavatar.png" data-holder-rendered="true">
-				</div>
-			  </div>
-		</div>
-	</div>
-		<br /><br />

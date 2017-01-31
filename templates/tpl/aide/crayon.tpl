@@ -1,6 +1,4 @@
-		<div class="container bs-docs-container" data-spy="scroll" data-target="#sidebar">
-			<div class="row">
-				<div class="col-md-9" role="main">
+				<div class="col-xs-12 col-sm-9">
 					<br /><br />
 					<center><img id="img_title" class="radius" src="https://www.ts-x.eu/w/images/5/5d/Crayon.jpg"></center>
 					<br />
@@ -202,7 +200,7 @@
 					</div>
 
 				</div>
-				<!--Nav Bar -->
+				<!--Nav Bar
 				<nav class="col-md-2 bs-docs-sidebar">
 					<ul id="sidebar" class="nav nav-stacked fixed">
 						<li>
@@ -218,6 +216,4 @@
 							<a href="#GroupD">Comment les utiliser ?</a>
 						</li>
 					</ul>
-				</nav>
-			</div>
-		</div>
+				</nav>-->

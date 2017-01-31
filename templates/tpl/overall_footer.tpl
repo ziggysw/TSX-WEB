@@ -18,7 +18,7 @@
 				</ul>
 			</div>
 		</article>
-		<article class="col-sm-offset-1 col-sm-2">
+		<article class="col-sm-3">
 			<div class="row">
 				<h4>La Ts-X tv présente :</h4>
 				<div class="video">
@@ -51,11 +51,13 @@
 		}
 
 	</style>
+<!--
 	<div ng-controller="lights" id="lights">
 		<div ng-repeat="i in bulb track by $index"
 			class="bulb bulb-{{i.color}}"
 			style="left:{{i.id*32}}px; background-position: -{{i.state*32}}px {{i.color*32}}px;" ng-mouseover="explode(i.id)"></div>
 	</div>
+-->
 </footer>
 	<script type="text/javascript" src="https://www.ts-x.eu/js/compile-bootstrap-globals-jquery.event.move.js?v=3"></script>
 <script>

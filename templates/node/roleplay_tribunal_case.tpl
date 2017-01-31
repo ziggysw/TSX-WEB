@@ -28,8 +28,8 @@
     <br />
     <div class="text-center" ng-hide="disableButton || moreinfo.jail >= 0">
       <button class="btn btn-danger" rest="put@/tribunal/{{moreinfo.id}}/1">Condamner ({{condamner}})</button>
-      <button class="btn btn-warning" rest="put@/tribunal/{{moreinfo.id}}/0">Ignorer</button>
-      <button class="btn btn-success" rest="put@/tribunal/{{moreinfo.id}}/2">Acquitter ({{acquitter}})</button>
+      <button class="btn btn-warning" rest="put@/tribunal/{{moreinfo.id}}/2">Ignorer</button>
+      <button class="btn btn-success" rest="put@/tribunal/{{moreinfo.id}}/0">Acquitter ({{acquitter}})</button>
     </div>
     <div class="alert alert-danger" role="alert" ng-show="disableButton && moreinfo.jail == -1">
       <i class="fa fa-exclamation-triangle"></i>

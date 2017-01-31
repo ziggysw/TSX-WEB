@@ -4,6 +4,8 @@ exports = module.exports = function(server) {
 var sys  = require('os-utils');
 var ERR = require('node-restify-errors');
 var moment = require('moment');
+var child = require('child_process');
+var fs = require('fs');
 
 function encode(str, key) {
    key = require('crypto').createHash('sha1').update(key).digest("hex");
@@ -49,7 +51,7 @@ server.get('/panel/sys', function (req, res, next) {
 
           cb(obj);
         });
-        require('child_process').exec('free -m', function(error, stdout, stderr) {
+        child.exec('free -m', function(error, stdout, stderr) {
           var lines = stdout.split("\n");
           var str_mem_info = lines[1].replace( /[\s\n\r]+/g,' ');
           var mem_info = str_mem_info.split(' ');
@@ -61,13 +63,13 @@ server.get('/panel/sys', function (req, res, next) {
 
           cb(obj);
         });
-        require('child_process').exec('cat /sys/class/net/eth0/statistics/rx_bytes; sleep 1; cat /sys/class/net/eth0/statistics/rx_bytes', function(error, stdout, stderr) {
+        child.exec('cat /sys/class/net/eth0/statistics/rx_bytes; sleep 1; cat /sys/class/net/eth0/statistics/rx_bytes', function(error, stdout, stderr) {
           var lines = stdout.split("\n");
           obj.network = (parseInt(lines[1]) - parseInt(lines[0]))/1024;
 
           cb(obj);
         });
-        require('child_process').exec('php /var/www/ts-x/templates/php/serveurs.php', function(error, stdout, stderr) {
+        child.exec('php /var/www/ts-x/templates/php/serveurs.php', function(error, stdout, stderr) {
           var lines = stdout.split("\n");
           obj.players = lines[0];
 
@@ -190,6 +192,43 @@ server.get('/panel/email', function (req, res, next) {
         return res.send(err);
     }
 	next();
+});
+
+server.post('/panel/social', function (req, res, next) {
+  try {
+    server.conn.query("INSERT INTO `ts-x`.`site_annonces` (`titre`, `text`, `url`) VALUES (?,?,?);", [req.params['title'], req.params['txt'], req.params['url']], function(err, row) {
+      if( err ) throw err;
+
+      var res = row.insertId;
+      var path = "/var/www/ts-x/cache/announcement/";
+
+      if( req.params['url'] ) {
+        var ext = req.params['url'].substr(req.params['url'].lastIndexOf('.') + 1);
+        var output = path+res+'-url.'+ext;
+
+        child.execSync('curl --silent -o '+output+' '+req.params['url']);
+        req.params['url'] = output;
+      }
+
+      var obj = {title: req.params['title'], txt: req.params['txt'], url: req.params['url'] };
+      fs.writeFileSync(path+res+".txt", JSON.stringify(obj));
+
+      console.log("Go...");
+      /*
+      child.exec("casperjs /var/www/ts-x/node/api/bot/steam.js "+res, function(error, stdout, stderr) {
+        server.conn.query("UPDATE `ts-x`.`site_annonces` SET `steam`=? WHERE `id`=?;", [stdout, res]);
+      });
+      child.exec("casperjs /var/www/ts-x/node/api/bot/twitter.js "+res, function(error, stdout, stderr) {
+        server.conn.query("UPDATE `ts-x`.`site_annonces` SET `twitter`=? WHERE `id`=?;", [stdout, res]);
+      });
+      */
+
+    });
+  }
+  catch ( err ) {
+      return res.send(err);
+  }
+  next();
 });
 
 };
