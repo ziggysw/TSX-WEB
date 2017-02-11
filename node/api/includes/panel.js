@@ -135,7 +135,7 @@ server.get('/panel/events', function (req, res, next) {
  */
 server.get('/panel/props', function (req, res, next) {
   try {
-    server.conn.query(server.getAuthAdminID, [req.headers.auth], function(err, row) {
+    server.conn.query(server.getAuthSMAdmin, [req.headers.auth], function(err, row) {
       if( err ) return res.send(new ERR.InternalServerError(err));
       if( row[0] == null ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
       server.conn.query("SELECT `id`, LOWER(`nom`) as nom, LOWER(`model`) as model, LOWER(`tag`) as tag, `valid` FROM `rp_shared`.`rp_props` ORDER BY `count` DESC;", function(err, row) {
@@ -196,34 +196,58 @@ server.get('/panel/email', function (req, res, next) {
 
 server.post('/panel/social', function (req, res, next) {
   try {
-    server.conn.query("INSERT INTO `ts-x`.`site_annonces` (`titre`, `text`, `url`) VALUES (?,?,?);", [req.params['title'], req.params['txt'], req.params['url']], function(err, row) {
-      if( err ) throw err;
 
-      var res = row.insertId;
-      var path = "/var/www/ts-x/cache/announcement/";
+    server.conn.query(server.getAuthSMAdmin, [req.headers.auth], function(err, row) {
+      if( err ) return res.send(new ERR.InternalServerError(err));
+      if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+      var SteamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
+      if( SteamID != "STEAM_1:0:7490757" && SteamID != "STEAM_1:1:39278818" && SteamID != "STEAM_1:1:46128440" ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
 
-      if( req.params['url'] ) {
-        var ext = req.params['url'].substr(req.params['url'].lastIndexOf('.') + 1);
-        var output = path+res+'-url.'+ext;
+      console.log(SteamID);
 
-        child.execSync('curl --silent -o '+output+' '+req.params['url']);
-        req.params['url'] = output;
-      }
+      server.conn.query("INSERT INTO `ts-x`.`site_annonces` (`titre`, `text`, `url`) VALUES (?,?,?);", [req.params['title'], req.params['txt'], req.params['url']], function(err, row) {
+        if( err ) throw err;
 
-      var obj = {title: req.params['title'], txt: req.params['txt'], url: req.params['url'] };
-      fs.writeFileSync(path+res+".txt", JSON.stringify(obj));
+        var res = row.insertId;
+        var path = "/var/www/ts-x/cache/announcement/";
 
-      console.log("Go...");
-      /*
-      child.exec("casperjs /var/www/ts-x/node/api/bot/steam.js "+res, function(error, stdout, stderr) {
-        server.conn.query("UPDATE `ts-x`.`site_annonces` SET `steam`=? WHERE `id`=?;", [stdout, res]);
+        if( req.params['url'] ) {
+          var ext = req.params['url'].substr(req.params['url'].lastIndexOf('.') + 1);
+          var output = path+res+'-url.'+ext;
+
+          child.execSync('curl --silent -o '+output+' '+req.params['url']);
+          req.params['url'] = output;
+        }
+
+        var obj = {title: req.params['title'], txt: req.params['txt'], url: req.params['url'] };
+        fs.writeFileSync(path+res+".txt", JSON.stringify(obj));
+
+        setTimeout( function() {
+          console.log("fb");
+          child.exec("casperjs /var/www/ts-x/node/api/bot/facebook.js "+res, function(error, stdout, stderr) {
+            console.log(error, stdout, stderr);
+            server.conn.query("UPDATE `ts-x`.`site_annonces` SET `facebook`=? WHERE `id`=?;", [stdout, res]);
+          });
+        }, 1);
+        setTimeout( function() {
+          console.log("steam");
+          child.exec("casperjs /var/www/ts-x/node/api/bot/steam.js "+res, function(error, stdout, stderr) {
+            console.log(error, stdout, stderr);
+            server.conn.query("UPDATE `ts-x`.`site_annonces` SET `steam`=? WHERE `id`=?;", [stdout, res]);
+          });
+        }, 10000);
+        setTimeout( function() {
+          console.log("tweet");
+          child.exec("casperjs /var/www/ts-x/node/api/bot/twitter.js "+res, function(error, stdout, stderr) {
+            console.log(error, stdout, stderr);
+            server.conn.query("UPDATE `ts-x`.`site_annonces` SET `twitter`=? WHERE `id`=?;", [stdout, res]);
+          });
+        }, 20000);
+
+        return res.send("OK");
       });
-      child.exec("casperjs /var/www/ts-x/node/api/bot/twitter.js "+res, function(error, stdout, stderr) {
-        server.conn.query("UPDATE `ts-x`.`site_annonces` SET `twitter`=? WHERE `id`=?;", [stdout, res]);
-      });
-      */
-
     });
+
   }
   catch ( err ) {
       return res.send(err);

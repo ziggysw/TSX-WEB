@@ -72,7 +72,6 @@
 									<li><a href="/index.php?page=intro&amp;last=news"><i class="fa fa-newspaper-o"></i> News</a></li>
 									<li><a href="/forum/memberlist.php?g=19&amp;mode=group&amp;sk=m&amp;sd=a"><i class="fa fa-users"></i> Les membres</a></li>
 									<li><a class="hidden-xs" href="/index.php?page=valider_steamid"><i class="fa fa-steam"></i> Modifier son Steam</a></li>
-									<li><a class="hidden-xs" href="/index.php?page=steam"><i class="fa fa-code-fork"></i> Convertir SteamID</a></li>
 									<li><a href="/index.php?page=money"></a><a href="/index.php?page=serveurs"><i class="fa fa-server"></i> Info-server<span></span></a></li>
 									<li><a href="/index.php?page=roleplay2#/pilori/view/{$steamid}"><i class="fa fa-ban"></i> Ban-liste</a></li>
 									<li><a href="/index.php?page=money"><i class="fa fa-usd"></i> Achat de $RP</a></li>
