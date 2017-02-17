@@ -79,9 +79,9 @@
       </li>
     </ul>
   </div>
-</div>
+</div> <br />
 <div class="row" ng-show="items.length > 0">
-  <h3>Les objets à vendre:</h3>
+  <h3><u>Les objets à vendre :</u></h3>
   <ul class="list-inline">
     <li ng-repeat="item in items">
       <img class="img-circle" width="100" height="100" src="/images/roleplay/csgo/items/{{item.id}}.png"
