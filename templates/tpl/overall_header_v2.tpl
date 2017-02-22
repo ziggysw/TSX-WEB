@@ -119,11 +119,11 @@
 	{$intro}
 	<div class="container main">
 
-<!--
+
 <div class="col-sm-12 col-sm-offset-0 alert alert-warning" role="alert">
-En raison du comportement haineux d'un grand nombre de joueurs lié aux rivalités entre GANGS. <b>Les 3 prochaines PvP n'auront pas lieu</b>.
-L'avenir des PvP sera compromis si la situation ne retourne pas rapidement à la normale. Si les conflits entre joueurs continuent, Il n'y aura pas d'autre choix que de supprimer chacun des gangs.
+Certains joueurs démissionnent de leur groupe afin de contourner certaines règles mises en place par la mairie. Ils retournent après dans leur groupe, juste le temps d'une PvP.
+ Si ce comportement est encore une fois remarqué chez ces personnes: Il sera interdit à quiconque de rejoindre un gang 7 JOURS après l'avoir quitté.
+Merci de votre compréhension.
 </div>
--->
 
 		{$page}
