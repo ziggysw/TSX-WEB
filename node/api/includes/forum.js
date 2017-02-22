@@ -299,4 +299,23 @@ server.get('/forum/download', function (req, res, next) {
   });
   next();
 });
+
+/**
+ * @api {get} /forum/steamid GetUserSteamID
+ * @apiName GetUserSteamID
+ * @apiGroup Forum
+ * @apiHeader {String} auth Votre cookie de connexion.
+ */
+server.get('/forum/steamid', function (req, res, next) {
+  try {
+    server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
+      if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+      return res.send(row[0].steamid.replace("STEAM_0", "STEAM_1"));
+    });
+  } catch ( err ) {
+    return res.send(err);
+  }
+  next();
+});
+
 };
