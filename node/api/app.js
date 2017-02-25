@@ -53,7 +53,7 @@ server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
 server.use(redirect());
-
+server.use(restify.CORS({origins: ['*'], credentials: true, headers: ['auth']}));
 
 require('./includes/user.js')(server);
 require('./includes/report.js')(server);

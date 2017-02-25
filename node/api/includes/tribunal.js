@@ -148,7 +148,7 @@ exports = module.exports = function(server){
     var cache = server.cache.get( req._url.pathname);
     if( cache != undefined ) { return res.send(cache); }
 
-    	server.conn.query("SELECT `id`, U.`steamid`, U.`name`, `report_raison`, `timestamp`, `jail`, `amende`, `reason`, U2.`steamid` as juge, U2.`name` as `jugeName` FROM `ts-x`.`site_report` R INNER JOIN `rp_csgo`.`rp_users` U ON U.`steamid`=R.`report_steamid` INNER JOIN `rp_csgo`.`rp_users` U2 ON U2.`steamid`=R.`juge` WHERE jail<>-1 AND amende<>-1 ORDER BY `timestamp` DESC LIMIT 50;", function(err, row) {
+    	server.conn.query("SELECT `id`, U.`steamid`, U.`name`, `report_raison`, `timestamp`, `jail`, `amende`, `reason`, U2.`steamid` as juge, U2.`name` as `jugeName` FROM `ts-x`.`site_report` R INNER JOIN `rp_csgo`.`rp_users` U ON U.`steamid`=R.`report_steamid` LEFT JOIN `rp_csgo`.`rp_users` U2 ON U2.`steamid`=R.`juge` ORDER BY `timestamp` DESC LIMIT 50;", function(err, row) {
       if( err ) return res.send(new ERR.InternalServerError(err));
 
       server.cache.set( req._url.pathname, row);
