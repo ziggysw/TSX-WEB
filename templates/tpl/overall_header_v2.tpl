@@ -105,6 +105,7 @@
 									<li><a href="/forum/"><i class="fa fa-globe"></i> Toutes les catégories</a></li>
 									<li><a href="/forum/viewforum.php?f=92"><i class="fa fa-list-alt"></i> Section Générale</a></li>
 									<li><a href="/forum/viewforum.php?f=117"><img src="/images/icons/section/csgo.png" width="16" height="16"> CS:GO RolePlay</a></li>
+									<li><a href="/forum/viewforum.php?f=35"><i class="fa fa-rss-square"></i> Pole Emploi</a></li>
 									<li><a href="/forum/viewforum.php?f=83"><img src="/images/icons/section/tf.png" width="16" height="16">Team Fortress 2</a></li>
 									<li><a href="/forum/viewforum.php?f=88"><img src="/images/icons/section/lol.png" width="16" height="16">League Of Legend</a></li>
 									<li><a href="/forum/viewforum.php?f=20"><i class="fa fa-lock"></i> Privée</a></li>
