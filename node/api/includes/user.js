@@ -279,9 +279,9 @@ exports = module.exports = function(server){
         var result = {};
 
         var data = rows[0].jobplaytime.split(";");
-        for(var i=0; i<data.length; i++) {
+        for(var i=0; i<data.length - 1; i++) {
           var row = data[i].split(",");
-          result[ jobs[row[0]] ] = row[1];
+          result[ row[0] ] = {name: jobs[row[0]], time: row[1]};
         }
 
         server.cache.set( req._url.pathname, result);

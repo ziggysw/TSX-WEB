@@ -103,7 +103,7 @@
           </div>
           <div class="input-group">
             <span class="input-group-addon">Montant:</span>
-            <input type="number" class="form-control" ng-init="amount=0" ng-model="amount" value="0" min="0" max="{{data.cash}}" />
+            <input type="number" class="form-control" ng-init="amount=0" ng-model="amount" value="0" min="0" />
           </div>
         </div>
         <div class="modal-footer">
