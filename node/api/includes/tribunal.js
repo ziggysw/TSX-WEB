@@ -54,7 +54,7 @@ exports = module.exports = function(server){
                 server.conn.query("SELECT `job_id` FROM `rp_users` WHERE `steamid`=?", [SteamID], function(err, row) {
                   if( err ) return res.send(new ERR.InternalServerError(err));
                   if( row[0] == null ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
-                  if( row[0].job_id >= 101 && row[0].job_id <= 106 ) {
+                  if( row[0].job_id >= 101 && row[0].job_id <= 109 ) {
                     var dStart = moment().subtract(2, 'hour').toDate();
                     var dEnd = moment().add(1, 'hour').toDate();
                     var target = tokken.replace("STEAM_0", "STEAM_1").trim();

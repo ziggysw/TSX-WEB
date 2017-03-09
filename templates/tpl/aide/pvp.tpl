@@ -36,6 +36,8 @@
 									Drapeaux en poche, il ne vous restera plus qu'à vous en équiper en dehors de la PvP, pour ensuite allez tenter de le déposer sur la base ennemie.<br />
 									Attention toutefois, vous ne serez pas seul ! Pour participer aux captures PvP, il vous faudra obligatoirement appartenir à un gang !<br />
 									Ce pré-requis rempli, vous vous retrouverez soit en attaque (équipe rouge) avec les autres gangs attaquants pour vous épauler; soit en défense (équipe bleue) ou vous serez confronté à tous les autres gangs du serveur !
+									<br />
+									Si votre gang ressort vainqueur de la capture, tout les membres recevront un bonus de respawn divisé par 2 ainsi qu'un bonus de production sur les machines et les plants de drogues (temps de production réduit de 1/4)
 								</div>
 							</div>
 						</div>

@@ -55,12 +55,6 @@
 	<div class="col-sm-3 hidden-phone">
 		<div class="container">
 			<div class="col-sm-3 hidden-phone">
-				<div ng-controller="search"">
-					<input class="form-control" type="text" placeholder="Rechercher" ng-model="search">
-					<ul>
-						<li ng-repeat="item in data"><a href="index.php?page=aide&sub={{item.ref}}">{{item.ref}}</a></li>
-					</ul>
-				</div>
 				<div class="panel-group" id="accordion">
 				<!--<div class="panel panel-wiki">
 						<div class="panel-heading">
@@ -159,6 +153,13 @@
 							</ul>
 						</div>
 					</div>
+					<br />
+					<div ng-controller="search"">
+					<input class="form-control" type="text" placeholder="Rechercher" ng-model="search">
+					<ul>
+						<li ng-repeat="item in data"><a href="index.php?page=aide&sub={{item.ref}}">{{item.ref}}</a></li>
+					</ul>
+				</div>
 				</div>
 			</div>
 		</div>

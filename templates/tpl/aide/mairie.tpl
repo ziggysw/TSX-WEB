@@ -127,7 +127,7 @@
 									</div>
 								</div>
 								<div class="panel-body">
-								<h3>Le maire peut mettre en place des amendements tels que :</h3>
+								<h3>Le maire peut mettre en place 4 des amendements ci-dessous :</h3>
 									<ul>
 										<li><p>Les amendes sont soit augmentées de 5% ou réduites de 10%</p></li>
 										<li><p>Le prix des items sont soit augmentés de 10% ou réduits de 5%</p></li>
@@ -138,6 +138,7 @@
 										<li><p>Les payes sont augmentées de 5% ou réduites de 10%</p></li>
 										<li><p>L'hôtel des ventes est interdit</p></li>
 									</ul>
+									<p>Mais attention, chaque amendements ne pourra affecter que un job ou un gang à la fois.</p>
 								</div>
 							</div>
 						</div>
