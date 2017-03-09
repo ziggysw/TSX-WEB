@@ -91,6 +91,9 @@
   <span ng-show="Params.sub==81">
   <div ng-include="'/templates/tpl/aide/job/drogues.tpl'"></div>
   </span>
+  <span ng-show="Params.sub==71">
+  <div ng-include="'/templates/tpl/aide/job/skin.tpl'"></div>
+  </span>
 </div>
 <div modal-show="showDialog" class="modal fade">
   <div class="modal-dialog" ng-controller="rpSteamIDLookup">
