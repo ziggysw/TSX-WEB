@@ -88,7 +88,9 @@
         data-toggle="popover" data-placement="top" title="{{item.nom}} <i class=\'pull-right text-success\'>{{item.prix}}$</i>" data-content="{{item.description}}" />
     </li>
   </ul>
+  <span ng-show="Params.sub==81">
   <div ng-include="'/templates/tpl/aide/job/drogues.tpl'"></div>
+  </span>
 </div>
 <div modal-show="showDialog" class="modal fade">
   <div class="modal-dialog" ng-controller="rpSteamIDLookup">
