@@ -116,12 +116,3 @@
 		<p>class="wiki-bulle"  pour les couleurs : wiki-blue / wiki-red / wiki-green / wiki-orange / wiki-jaune / wiki-prune / wiki-bonbon / wiki-cannelle / wiki-ciel / wiki-lemon / wiki-jango</p>
 		<div class="wiki-bulle">0</div> <div class="wiki-bulle wiki-blue">1</div> <div class="wiki-bulle wiki-red">2</div> <div class="wiki-bulle wiki-green">3</div> <div class="wiki-bulle wiki-orange">4</div> <div class="wiki-bulle wiki-jaune">5</div> <div class="wiki-bulle wiki-prune">6</div> <div class="wiki-bulle wiki-bonbon">7</div> <div class="wiki-bulle wiki-cannelle">8</div> <div class="wiki-bulle wiki-ciel">9</div> <div class="wiki-bulle wiki-lemon">A</div> <div class="wiki-bulle wiki-jango">B</div>
 	</div>
-		<--<nav class="bs-docs-sidebar hidden-print hidden-sm hidden-xs affix"> 
-			<ul class="nav bs-docs-sidenav target-active">
-				<li><a href="#t1" id="page_menu_wiki" ><i class="fa fa-asterisk prune" aria-hidden="true"></i>Tableaux</a></li>
-				<li><a href="#t2" id="page_menu_wiki" ><i class="fa fa-asterisk ocean" aria-hidden="true"></i>Class couleur</a></li>
-				<li><a href="#t3" id="page_menu_wiki" ><i class="fa fa-asterisk gold" aria-hidden="true"></i>Panel</a></li>
-				<li><a href="#t4" id="page_menu_wiki" ><i class="fa fa-asterisk pomme" aria-hidden="true"></i>Badge</a></li>
-				<li><a href="#t5" id="page_menu_wiki" ><i class="fa fa-asterisk blood" aria-hidden="true"></i>Bulle</a></li>
-			</ul>
-		</nav>-->

@@ -12,7 +12,12 @@
 						</div>
 						<div id="MenuOne" class="panel-collapse collapse">
 							<ul class="list-group">
-								Je fais le menu quand tu as fais ta page !
+								<ul class="list-group">
+								<li class="list-group-item"><a href="#GroupA">Titre 1</a></li>
+								<li class="list-group-item"><a href="#GroupB">Titre 2</a></li>
+								<li class="list-group-item"><a href="#GroupC">Titre 3</a></li>
+								<li class="list-group-item"><a href="#GroupD">Titre 4</a></li>
+								<li class="list-group-item"><a href="#GroupE">Titre 5</a></li>
 							</ul>
 						</div>
 					</div>
@@ -33,11 +38,11 @@
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2>Titre</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>Titre 1</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
-									<p></p>
+									<p>COUCOUCOUCOUCOUCOCOU</p>
 								</div>
 							</div>
 						</div>
@@ -48,11 +53,11 @@
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2>Titre</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>Titre 2</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
-									<p></p>
+									<p>COUCOUCOUCOUCOUCOCOU</p>
 								</div>
 							</div>
 						</div>
@@ -63,11 +68,11 @@
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2>Titre</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>Titre 3</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
-									<p></p>
+									<p>COUCOUCOUCOUCOUCOCOU</p>
 								</div>
 							</div>
 						</div>
@@ -78,11 +83,11 @@
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2>Titre</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>Titre 4</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
-									<p></p>
+									<p>COUCOUCOUCOUCOUCOCOU</p>
 								</div>
 							</div>
 						</div>
@@ -93,11 +98,11 @@
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2>Titre</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>Titre 5</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
-									<p></p>
+									<p>COUCOUCOUCOUCOUCOCOU</p>
 								</div>
 							</div>
 						</div>
@@ -108,11 +113,11 @@
 										<span class="panel-heading panel-icone-wiki"><img src="/images/wiki/logo_wiki.png" /></span> 
 									</div>
 									<div class="col-md-11">
-										<div class="panel-heading panel-heading-wiki"><h2>Titre</h2></div>
+										<div class="panel-heading panel-heading-wiki"><h2>Titre 6</h2></div>
 									</div>
 								</div>
 								<div class="panel-body">
-									<p></p>
+									<p>COUCOUCOUCOUCOUCOCOU</p>
 								</div>
 							</div>
 						</div>
