@@ -1,4 +1,14 @@
-﻿			<div class="col-xs-12 col-sm-9">
+﻿		<div class="row">
+			<div class="col-sm-3 hidden-phone">
+				<div class="container">
+					<div class="col-sm-3 hidden-phone">
+						<div class="panel-group" id="accordion">
+						<div ng-include="'/templates/tpl/aide/menu.tpl'"></div>			
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-9">
 				<!-- prevoir une images pour remplacer le carrousel en version telephone ? -->
                 <!-- Carrousel -->
 				<div id="slider" class="carousel slide" data-ride="carousel">

@@ -1,4 +1,43 @@
-				
+			<div class="row">
+				<div class="col-sm-3 hidden-phone">
+					<div class="container">
+						<div class="col-sm-3 hidden-phone">
+							<div class="panel-group" id="accordion">
+							<div class="panel panel-wiki">
+						<div class="panel-heading">
+							<h4 class="panel-title title-nav">
+								<a data-toggle="collapse" data-parent="#accordion" href="#MenuOne"><i class="fa fa-chevron-right" aria-hidden="true"></i>
+								Liste des jobs</a>
+							</h4>
+						</div>
+						<div id="MenuOne" class="panel-collapse collapse">
+							<ul class="list-group">
+								<li class="list-group-item"><a href="#GroupBSub1">Armurier</a></li>
+								<li class="list-group-item"><a href="#GroupBSub2">L'agence immobilière</a></li>
+								<li class="list-group-item"><a href="#GroupBSub3">Artificier</a></li>
+								<li class="list-group-item"><a href="#GroupBSub4">Artisan</a></li>
+								<li class="list-group-item"><a href="#GroupBSub5">Banquier</a></li>
+								<li class="list-group-item"><a href="#GroupBSub6">Concessionnaire</a></li>
+								<li class="list-group-item"><a href="#GroupBSub7">Coach</a></li>
+								<li class="list-group-item"><a href="#GroupBSub8">L'hôpital</a></li>
+								<li class="list-group-item"><a href="#GroupBSub9">Casino</a></li>
+								<li class="list-group-item"><a href="#GroupBSub10">Mc Donald's</a></li>
+								<li class="list-group-item"><a href="#GroupBSub11">Sex-shop</a></li>
+								<li class="list-group-item"><a href="#GroupBSub12">Technicien</a></li>
+								<li class="list-group-item"><a href="#GroupCSub1">La Justice</a></li>
+								<li class="list-group-item"><a href="#GroupCSub2">Les avocats</a></li>
+								<li class="list-group-item"><a href="#GroupCSub3">La police</a></li>
+								<li class="list-group-item"><a href="#GroupDSub1">La mafia Cosa Nostra</a></li>
+								<li class="list-group-item"><a href="#GroupDSub2">Mercenaire</a></li>
+								<li class="list-group-item"><a href="#GroupDSub3">La Stidda Famiglia</a></li>
+							</ul>
+						</div>
+					</div>
+							<div ng-include="'/templates/tpl/aide/menu.tpl'"></div>			
+							</div>
+						</div>
+					</div>
+				</div>	
 				<div class="col-xs-12 col-sm-9">
 						<br /><br />
 						<center><img alt="img_title" id="img_title" src="/images/wiki/job/job_top.png"></center><br />
@@ -239,51 +278,4 @@
 							</div>
 						</div>
 					</div>
-
-				</div>
-				<!--Nav Bar
-				<nav class="col-md-2 bs-docs-sidebar">
-					<ul id="sidebar" class="nav nav-stacked fixed">
-						<li>
-							<a href="#GroupA">Conseils</a>
-							<ul class="nav nav-stacked">
-								<li><a href="#GroupASub1">Par le Forum</a></li>
-								<li><a href="#GroupASub2">En Jeu</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="#GroupB">Les métiers de ventes</a>
-							<ul class="nav nav-stacked">
-								<li><a href="#GroupBSub1">Armurier</a></li>
-								<li><a href="#GroupBSub2">L'agence immobilière</a></li>
-								<li><a href="#GroupBSub3">Artificier</a></li>
-								<li><a href="#GroupBSub4">Artisan</a></li>
-								<li><a href="#GroupBSub5">Banquier</a></li>
-								<li><a href="#GroupBSub6">Concessionnaire</a></li>
-								<li><a href="#GroupBSub7">Coach</a></li>
-								<li><a href="#GroupBSub8">L'hôpital</a></li>
-								<li><a href="#GroupBSub9">Casino</a></li>
-								<li><a href="#GroupBSub10">Mc Donald's</a></li>
-								<li><a href="#GroupBSub11">Sex-shop</a></li>
-								<li><a href="#GroupBSub12">Technicien</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="#GroupC">Les Forces de l'ordre</a>
-							<ul class="nav nav-stacked">
-								<li><a href="#GroupCSub1">La Justice</a></li>
-								<li><a href="#GroupCSub2">Les avocats</a></li>
-								<li><a href="#GroupCSub3">La police</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="#GroupD">Les hors la lois</a>
-							<ul class="nav nav-stacked">
-								<li><a href="#GroupDSub1">La mafia Cosa Nostra</a></li>
-								<li><a href="#GroupDSub2">Mercenaire</a></li>
-								<li><a href="#GroupDSub3">La Stidda Famiglia</a></li>
-							</ul>
-						</li>
-						<li><a href="#GroupE">Devenir chef d'un métier</a></li>
-					</ul>
-				</nav>-->
+			</div>

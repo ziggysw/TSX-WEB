@@ -3,8 +3,7 @@ exports = module.exports = function(server){
   var ERR = require('node-restify-errors');
   var fs = require('fs');
   var request = require('request');
-  var priceList = require('/var/www/ts-x/node/api/market.json');
-  var priceListOld = require('/var/www/ts-x/node/api/old.json');
+  var priceListOld = require('/var/www/ts-x/node/api/price.json');
 
   var SteamUser = require('steam-user');
   var SteamC = require('steamid');
@@ -48,8 +47,14 @@ exports = module.exports = function(server){
             hashname: item.market_hash_name,
             price: null,
           };
+	  data.price = getPrice(item.market_hash_name);
 
-          data.price = getPrice(item.market_hash_name);
+/*	  Object.keys(item.tags).forEach(function (j) {
+            var tag = item.tags[j];
+            if( tag.internal_name === "CSGO_Type_WeaponCase" )
+		data.price = 0.05;
+          });
+*/
           if( data.price >= 0.10 )
             obj.push(data);
         }

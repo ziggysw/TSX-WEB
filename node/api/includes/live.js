@@ -1,4 +1,4 @@
-"use strict";
++"use strict";
 exports = module.exports = function(server) {
   var request = require('request');
   var ERR = require('node-restify-errors');
@@ -227,6 +227,7 @@ server.get('/live/update', function (req, res, next) {
   function traitement(error, response, body) {
     try {
     body = JSON.parse(body);
+    console.log(body);
     body.forEach(function (i) {
       request({url: i.url+"?access_token="+tokken, headers: {'User-Agent': 'kossolax'}}, function (error, response, body) {
         body = JSON.parse(body);

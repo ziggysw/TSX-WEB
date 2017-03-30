@@ -296,20 +296,20 @@
 									  <tr>
 										<th id="table-top-left">Palier</th>
 										<th>Point minimum</th>
-										<th>Coefficient multiplicateur</th>
+										<th>Salaire perçu en plus</th>
 										<th id="table-top-right">Nombre de hambugers</th>
 									  </tr>
-									  <tr><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-									  <tr><td>1</td><td>256</td><td>1.2</td><td>1</td></tr>
-									  <tr><td>2</td><td>1 024</td><td>1.5</td><td>4</td></tr>
-									  <tr><td>3</td><td>4 096</td><td>1.9</td><td>16</td></tr>
-									  <tr><td>4</td><td>16 384</td><td>2.4</td><td>64</td></tr>
-									  <tr><td>5</td><td>65 536</td><td>3</td><td>256</td></tr>
-									  <tr><td>6</td><td>262 144</td><td>3.7</td><td>1 024</td></tr>
-									  <tr><td>7</td><td>1 048 576</td><td>4.5</td><td>4 096</td></tr>
-									  <tr><td>8</td><td>4 194 304</td><td>5.4</td><td>16 384</td></tr>
-									  <tr><td>9</td><td>16 777 216</td><td>6.4</td><td>65 536</td></tr>
-									  <tr><td>10</td><td>67 108 864</td><td>7.4</td><td>262 144</td></tr>
+									  <tr><td>0</td><td>0</td><td>0%</td><td>0</td></tr>
+									  <tr><td>1</td><td>256</td><td>20%</td><td>1</td></tr>
+									  <tr><td>2</td><td>1 024</td><td>50%</td><td>4</td></tr>
+									  <tr><td>3</td><td>4 096</td><td>90%</td><td>16</td></tr>
+									  <tr><td>4</td><td>16 384</td><td>140%</td><td>64</td></tr>
+									  <tr><td>5</td><td>65 536</td><td>200%</td><td>256</td></tr>
+									  <tr><td>6</td><td>262 144</td><td>270%</td><td>1 024</td></tr>
+									  <tr><td>7</td><td>1 048 576</td><td>350%</td><td>4 096</td></tr>
+									  <tr><td>8</td><td>4 194 304</td><td>440%</td><td>16 384</td></tr>
+									  <tr><td>9</td><td>16 777 216</td><td>540%</td><td>65 536</td></tr>
+									  <tr><td>10</td><td>67 108 864</td><td>650%</td><td>262 144</td></tr>
 									</table>
 								</div>
 							</div>
