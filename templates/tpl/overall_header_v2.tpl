@@ -119,10 +119,10 @@
 	</div>
 	{$intro}
 	<div class="container main">
-<div class="col-sm-12 col-sm-offset-0 alert alert-warning" role="alert">
+<--<div class="col-sm-12 col-sm-offset-0 alert alert-warning" role="alert">
 Suite à une mise à jour de steam, le Rôle-Play CS:GO fermera ses portes ce soir.<br/> 
 En effet de nombreuse contrainte nous on était imposé et il devient impossible de faire un contenue correcte pour nos joueurs.<br/> 
 Nous réouvrirons prochainement un RP sur Rust ou sur Arma.
 Merci de votre compréhension.
-</div>
+</div>-->
 		{$page}
