@@ -121,8 +121,9 @@
 	<div class="container main">
 <!--
 <div class="col-sm-12 col-sm-offset-0 alert alert-warning" role="alert">
-Certains joueurs démissionnent de leur groupe afin de contourner certaines règles mises en place par la mairie. Ils retournent après dans leur groupe, juste le temps d'une PvP.
- Si ce comportement est encore une fois remarqué chez ces personnes: Il sera interdit à quiconque de rejoindre un gang 7 JOURS après l'avoir quitté.
+Suite à une de steam, le Rôle-Play CS:GO fermera ses portes ce soir.<br/> 
+En effet de nombreuse contrainte nous on était imposé et il devient impossible de faire un contenue correcte pour nos joueurs.<br/> 
+Nous réouvrirons prochainement un RP sur Rust ou sur Arma.
 Merci de votre compréhension.
 </div>
 -->

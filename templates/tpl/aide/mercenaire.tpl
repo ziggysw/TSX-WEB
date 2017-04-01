@@ -87,7 +87,7 @@
 									</div>
 								</div>
 								<div class="panel-body">
-									<p>COUCOUCOUCOUCOUCOCOU</p>
+									<p>test</p>
 								</div>
 							</div>
 						</div>
