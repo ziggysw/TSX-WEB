@@ -21,7 +21,7 @@
 	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	{if="count($scripts)>0"}<script type="text/javascript" src="/js/compile{loop="$scripts"}-{$value}{/loop}.js"></script>{/if}
-	<style>.subforum,.btn-group-justified, img,.pagination,.postprofile dd,object,embed,.fb-post { transform: rotate(180deg); }.navbar-holder > ul > li { transform: rotate(180deg); } .subforum, .btn-group-justified, dl.icon { transform: scaleY(-1);  }dl.icon dt { transform: scaleY(-1);  }.buttons,.panel-icon,.panel-icon+a,.sf-menu>li { transform: scaleX(-1);  }</style> 
+	<!-- <style>.subforum,.btn-group-justified, img,.pagination,.postprofile dd,object,embed,.fb-post { transform: rotate(180deg); }.navbar-holder > ul > li { transform: rotate(180deg); } .subforum, .btn-group-justified, dl.icon { transform: scaleY(-1);  }dl.icon dt { transform: scaleY(-1);  }.buttons,.panel-icon,.panel-icon+a,.sf-menu>li { transform: scaleX(-1);  }</style> --> 
 	<script type="text/javascript">_app = angular.module("tsx", []); _md5 = '{$uid}'; _steamid = '{$steamid}';
 	_app.config(function($httpProvider) { $httpProvider.defaults.headers.common['auth'] = _md5; }); </script>
 </head>
