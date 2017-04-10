@@ -86,7 +86,7 @@
 									<li><a href="/index.php?page=roleplay2#/"><i class="fa fa-briefcase"></i> Liste des jobs<span></span></a></li>
 									<li><a href="/index.php?page=success"><i class="fa fa-trophy"></i> Les succès</a></li>
 									<li><a class="hidden-xs" href="/index.php?page=tribunal"><i class="fa fa-gavel"></i> Le Tribunal</a></li>
-									<li><a href="/index.php?page=report"><i class="fa fa-phone"></i> Le téléphone</a></li>
+									<li ng-show="data.job_id<=5 && Params.sub==steamid"><a href="/index.php?page=report"><i class="fa fa-phone"></i> Le téléphone</a></li>
 									<li><a href="/index.php?page=parrainage"><i class="fa fa-user-plus"></i> Parrainage</a></li>
 									<li><a href="/index.php?page=money"><i class="fa fa-usd"></i> Achat de $RP</a></li>
 								</ul>
