@@ -90,6 +90,7 @@
 								<li class="list-group-item"><a href="https://www.ts-x.eu/forum/viewtopic.php?f=10&t=33820&view=unread#unread"><i class="fa fa-exclamation-triangle hidden-xs hidden-sm" aria-hidden="true"></i> Signaler un problème</a></li>
 								<li class="list-group-item"><a href="https://github.com/ts-x/TSX-WEB/tree/master/templates/tpl/aide"><i class="fa fa-cog hidden-xs hidden-sm" aria-hidden="true"></i> Modifier le wiki</a></li>
 								<li class="list-group-item"><a href="/index.php?page=aide&sub=vip"><i class="fa fa-database hidden-xs hidden-sm" aria-hidden="true"></i> Beta vip</a></li>
+								<li class="list-group-item"><a href="/index.php?page=aide&sub=dev"><i class="fa fa-database hidden-xs hidden-sm" aria-hidden="true"></i> Page Help Dev</a></li>
 							</ul>
 						</div>
 					</div>

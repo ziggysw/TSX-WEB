@@ -1,6 +1,30 @@
-		<div class="container bs-docs-container" data-spy="scroll" data-target="#sidebar">
 			<div class="row">
-				<div class="col-md-9" role="main">
+				<div class="col-sm-3 hidden-phone">
+					<div class="container">
+						<div class="col-sm-3 hidden-phone">
+							<div class="panel-group" id="accordion">
+								<!--<div class="panel panel-wiki">
+									<div class="panel-heading">
+										<h4 class="panel-title title-nav">
+											<a data-toggle="collapse" data-parent="#accordion" href="#MenuOne"><i class="fa fa-chevron-right" aria-hidden="true"></i>
+											Index</a>
+										</h4>
+									</div>
+									<div id="MenuOne" class="panel-collapse collapse">
+										<ul class="list-group">
+											<li class="list-group-item"><a href="#GroupA">Présentation</a></li>
+											<li class="list-group-item"><a href="#GroupB">Les Référés</a></li>
+											<li class="list-group-item"><a href="#GroupC">Passer VIP</a></li>
+											<li class="list-group-item"><a href="#GroupD">Devenir Membre CS:GO</a></li>
+										</ul>
+									</div>
+								</div>-->
+								<div ng-include="'/templates/tpl/aide/menu.tpl'"></div>			
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-9" role="main">
 					<br /><br />
 					<div id="slider" class="carousel slide" data-ride="carousel">
 						<div class="carousel-inner" role="listbox">
@@ -234,7 +258,7 @@
 					</div>
 
 				</div>
-				<!--Nav Bar -->
+				<!--Nav Bar
 				<nav class="col-md-2 bs-docs-sidebar">
 					<ul id="sidebar" class="nav nav-stacked fixed">
 						<li>
@@ -254,6 +278,6 @@
 							<a href="#GroupD">Suspicion de triche</a>
 						</li>
 					</ul>
-				</nav>
+				</nav>-->
 			</div>
 		</div>

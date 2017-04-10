@@ -1,7 +1,37 @@
+<div class="row">
+	<div class="col-sm-3 hidden-phone">
+		<div class="container">
+			<div class="col-sm-3 hidden-phone">
+				<div class="panel-group" id="accordion">
+					<!--<div class="panel panel-wiki">
+						<div class="panel-heading">
+							<h4 class="panel-title title-nav">
+								<a data-toggle="collapse" data-parent="#accordion" href="#MenuOne"><i class="fa fa-chevron-right" aria-hidden="true"></i>
+								Index</a>
+							</h4>
+						</div>
+						<div id="MenuOne" class="panel-collapse collapse">
+							<ul class="list-group">
+								<li class="list-group-item"><a href="#GroupA">Présentation</a></li>
+								<li class="list-group-item"><a href="#GroupB">Les Référés</a></li>
+								<li class="list-group-item"><a href="#GroupC">Passer VIP</a></li>
+								<li class="list-group-item"><a href="#GroupD">Devenir Membre CS:GO</a></li>
+							</ul>
+						</div>
+					</div>-->
+					<div ng-include="'/templates/tpl/aide/menu.tpl'"></div>			
+				</div>
+			</div>
+		</div>
+	</div>	
 	<div class="col-xs-12 col-sm-9">
-		<h1> Recapitulatif des class spéciale du wiki </h1>
+		<h2 style="font-size:400%" class="text-center"> Help Dev</h2>
 		<br /><br />
-		<h2 id="t1">Les Tableaux</h2>
+		<p>Cette page est faite pour vous aider dans la création / maintenance du wiki. Pour tout question, mp forum 
+		<a target="_blank" href="https://www.ts-x.eu/forum/memberlist.php?mode=viewprofile&u=13262">Messorem</a> ou faites 
+		<a target="_blank" href="https://www.ts-x.eu/forum/viewtopic.php?f=10&t=33820&view=unread#unread">un petit poste ici</a>.</p>
+		<br /><br />
+		<h2>Les Tableaux</h2>
 		<br />
 		<p>Par defaut : wiki-table </p><br />
 		<table class="wiki-table">
@@ -77,7 +107,7 @@
 		<br /> 
 		<p>Attention pour arrondir les angles, pensez a mettre en ID "table-top-left" première case, premiere ligne du tableaux et "table-top-right" dernière case, premiere ligne du tableaux.</p>
 
-		<h2 id="t2">Les classes couleurs</h2>
+		<h2>Les classes couleurs</h2>
 		<ul>
 			<li><span class="blood">blood</span></li> 
 			<li><span class="gold">gold</span></li> 
@@ -89,8 +119,8 @@
 			<li><span class="txt">txt</span> <span class="info"><= couleur noir</span></li> 
 		</ul>
 
-		<h2 id="t3">Le Panel </h2>
-		<p>class="panel panel-wiki" (en cour de dev) et pour l'en-tête class="panel-heading panel-heading-wiki"</p>
+		<h2>Le Panel </h2>
+		<p>class="panel panel-wiki" et pour l'en-tête class="panel-heading panel-heading-wiki"</p>
 		<br />
 		<div class="panel panel-wiki">
 			<div class="row">
@@ -116,3 +146,4 @@
 		<p>class="wiki-bulle"  pour les couleurs : wiki-blue / wiki-red / wiki-green / wiki-orange / wiki-jaune / wiki-prune / wiki-bonbon / wiki-cannelle / wiki-ciel / wiki-lemon / wiki-jango</p>
 		<div class="wiki-bulle">0</div> <div class="wiki-bulle wiki-blue">1</div> <div class="wiki-bulle wiki-red">2</div> <div class="wiki-bulle wiki-green">3</div> <div class="wiki-bulle wiki-orange">4</div> <div class="wiki-bulle wiki-jaune">5</div> <div class="wiki-bulle wiki-prune">6</div> <div class="wiki-bulle wiki-bonbon">7</div> <div class="wiki-bulle wiki-cannelle">8</div> <div class="wiki-bulle wiki-ciel">9</div> <div class="wiki-bulle wiki-lemon">A</div> <div class="wiki-bulle wiki-jango">B</div>
 	</div>
+</div>

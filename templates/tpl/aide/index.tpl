@@ -196,7 +196,7 @@
                                 <p><span class="hidden-phone">The Spécialists'X<br /></span>
 							   Beaucoup plus qu'un simple nom, ils sont une grande famille...</p>
                             </div>
-							<center><a class="btn btn-forum" href="/index.php?page=aide&sub=admin#GroupA"> Lire </a></center>
+							<center><a class="btn btn-forum" href="/index.php?page=aide&sub=admin"> Lire </a></center>
 							<br />
                             <div class="ratings">
 								<p>Importance :

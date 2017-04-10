@@ -1,4 +1,3 @@
-		
 		{if="$nopyj==1"}
 		<div class="alert alert-success" role="alert">Vous avez le rang No-Pyj, félicitation ! N'hésitez pas à aider les autres joueurs ;)</div>	
 		{else} 
@@ -8,6 +7,32 @@
 			<div class="alert alert-info" role="alert">Vous pourrez décrochez votre No-Pyj à vos 16 ans, courage ! </div>
 			{/if}
 		{/if}
+			<div class="row">
+				<div class="col-sm-3 hidden-phone">
+					<div class="container">
+						<div class="col-sm-3 hidden-phone">
+							<div class="panel-group" id="accordion">
+								<!--<div class="panel panel-wiki">
+									<div class="panel-heading">
+										<h4 class="panel-title title-nav">
+											<a data-toggle="collapse" data-parent="#accordion" href="#MenuOne"><i class="fa fa-chevron-right" aria-hidden="true"></i>
+											Index</a>
+										</h4>
+									</div>
+									<div id="MenuOne" class="panel-collapse collapse">
+										<ul class="list-group">
+											<li class="list-group-item"><a href="#GroupA">Présentation</a></li>
+											<li class="list-group-item"><a href="#GroupB">Les Référés</a></li>
+											<li class="list-group-item"><a href="#GroupC">Passer VIP</a></li>
+											<li class="list-group-item"><a href="#GroupD">Devenir Membre CS:GO</a></li>
+										</ul>
+									</div>
+								</div>-->
+								<div ng-include="'/templates/tpl/aide/menu.tpl'"></div>			
+							</div>
+						</div>
+					</div>
+				</div>
 				<div class="col-xs-12 col-sm-9">
 				<br /><br />
 				<center><img id="img_title" class="radius" src="/images/wiki/nopyj/nopyj_top.png"></center>
@@ -209,6 +234,7 @@
 						</div>
 					</div>
 				</div>
+			</div>
 				<!--Nav Bar
 				<nav class="col-md-2 bs-docs-sidebar">
 					<ul id="sidebar" class="nav nav-stacked fixed">

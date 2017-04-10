@@ -1,4 +1,30 @@
-				<div class="col-md-9" role="main">
+			<div class="row">
+				<div class="col-sm-3 hidden-phone">
+					<div class="container">
+						<div class="col-sm-3 hidden-phone">
+							<div class="panel-group" id="accordion">
+								<!--<div class="panel panel-wiki">
+									<div class="panel-heading">
+										<h4 class="panel-title title-nav">
+											<a data-toggle="collapse" data-parent="#accordion" href="#MenuOne"><i class="fa fa-chevron-right" aria-hidden="true"></i>
+											Index</a>
+										</h4>
+									</div>
+									<div id="MenuOne" class="panel-collapse collapse">
+										<ul class="list-group">
+											<li class="list-group-item"><a href="#GroupA">Présentation</a></li>
+											<li class="list-group-item"><a href="#GroupB">Les Référés</a></li>
+											<li class="list-group-item"><a href="#GroupC">Passer VIP</a></li>
+											<li class="list-group-item"><a href="#GroupD">Devenir Membre CS:GO</a></li>
+										</ul>
+									</div>
+								</div>-->
+								<div ng-include="'/templates/tpl/aide/menu.tpl'"></div>			
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-9" role="main">
 					<br /><br />
 					<center><img alt="img_title" id="img_title" src="/images/wiki/argent/argent_top.png"></center><br />
 					<br />
@@ -538,6 +564,7 @@
 						</div>
 					</div>
 				</div>
+			</div>
 				<!--Nav Bar
 				<nav class="col-md-2 bs-docs-sidebar">
 					<ul id="sidebar" class="nav nav-stacked fixed">
