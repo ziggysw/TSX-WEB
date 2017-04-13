@@ -146,6 +146,8 @@
                             </div>
                         </div>
                     </div>
+				</div>
+				<div class="row">
 					<div class="col-xs-6 col-sm-6 col-md-4"> 
                         <div class="thumbnail thumbnail-wiki">
                             <img class="img_wiki" src="/images/wiki/mariage.png" alt="">

@@ -28,7 +28,7 @@
 							</ul>
 						</div>
 					</div>
-					<div class="panel panel-wiki">
+					<!--<div class="panel panel-wiki">
 						<div class="panel-heading">
 							<h4 class="panel-title title-nav">
 								<a data-toggle="collapse" data-parent="#accordion" href="#MenuJob"><i class="fa fa-chevron-right" aria-hidden="true"></i>
@@ -40,7 +40,7 @@
 							<li class="list-group-item"><a href="/index.php?page=aide&sub=mercenaire"><i class="fa fa-paint-brush hidden-xs hidden-sm" aria-hidden="true"></i> Les Mercenaires</a></li>
 							</ul>
 						</div>
-					</div>
+					</div>-->
 					<div class="panel panel-wiki">
 						<div class="panel-heading panel-menu-header">
 							<h4 class="panel-title">
