@@ -96,7 +96,7 @@
 						</div>
 					</div>
 					<div class="panel-body">
-						
+						<p>En cour de création ...</p>
 					</div>
 				</div>
 			</div>
