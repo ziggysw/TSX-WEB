@@ -119,8 +119,8 @@
 	</div>
 	{$intro}
 	<div class="container main">
-<div class="col-sm-12 col-sm-offset-0 alert alert-warning" role="alert">
+<!---<div class="col-sm-12 col-sm-offset-0 alert alert-warning" role="alert">
 Le serveur RP est actuellement OFF pour une raison idépendante de notre volontée.<br />
 Veuillez nous excuser pour la gène occasioné, nos techniciens planchent actuellement sur le problème.
-</div>
+</div>--->
 		{$page}
