@@ -119,10 +119,9 @@
 	</div>
 	{$intro}
 	<div class="container main">
-<!--<div class="col-sm-12 col-sm-offset-0 alert alert-warning" role="alert">
-Suite à une mise à jour de steam, le Rôle-Play CS:GO fermera ses portes ce soir.<br/> 
-En effet de nombreuse contrainte nous on était imposé et il devient impossible de faire un contenue correcte pour nos joueurs.<br/> 
-Nous réouvrirons prochainement un RP sur Rust ou sur Arma.
-Merci de votre compréhension.
-</div>-->
+<!--
+<div class="col-sm-12 col-sm-offset-0 alert alert-warning" role="alert">
+	<strong>Maintenance</strong>. Une maintenance est prévue ce matin afin d'effectuer une mises à jour de notre infrastructure. <a href="https://www.ts-x.eu/forum/viewtopic.php?f=10&t=35205&view=unread#unread">Merci de votre patience.</a>
+</div>
+-->
 		{$page}

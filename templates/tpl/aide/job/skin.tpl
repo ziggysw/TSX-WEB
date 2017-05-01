@@ -3,7 +3,7 @@
 					<div ng-controller="ctrlTabs" data-job="71">
 							<img width="100" height="75"
 							src="/images/wiki/job/skin/lara.png" data-toggle="popover"
-							data-placement="top" title="" data-content="Ce skin coûte 5 passe fitnesse" 
+							data-placement="top" title="" data-content="Ce skin coûte 6 passe fitnesse" 
 							data-original-title="lara" />
 							<img width="100" height="75"
 							src="/images/wiki/job/skin/desire.png" data-toggle="popover"
@@ -15,7 +15,7 @@
 							data-original-title="Eva" />
 							<img width="100" height="75"
 							src="/images/wiki/job/skin/zoey.png" data-toggle="popover"
-							data-placement="top" title="" data-content="Ce skin coûte 5 passe fitnesse"
+							data-placement="top" title="" data-content="Ce skin coûte 3 passe fitnesse"
 							data-original-title="Zoey" />
 							<img width="100" height="75"
 							src="/images/wiki/job/skin/misty.png" data-toggle="popover"
@@ -26,11 +26,11 @@
 						<br /><br />
 							<img width="100" height="75"
 							src="/images/wiki/job/skin/redfield.png" data-toggle="popover"
-							data-placement="top" title="" data-content="Ce skin coûte 5 passe fitnesse"
+							data-placement="top" title="" data-content="Ce skin coûte 6 passe fitnesse"
 							data-original-title="Redfield" />
 							<img width="100" height="75"
 							src="/images/wiki/job/skin/marco.png" data-toggle="popover"
-							data-placement="top" title="" data-content="Ce skin coûte 5 passe fitnesse"
+							data-placement="top" title="" data-content="Ce skin coûte 4 passe fitnesse"
 							data-original-title="Marco" />
 							<img width="100" height="75"
 							src="/images/wiki/job/skin/pong.png" data-toggle="popover"
@@ -38,7 +38,7 @@
 							data-original-title="Pong" />
 							<img width="100" height="75"
 							src="/images/wiki/job/skin/50cent.png" data-toggle="popover"
-							data-placement="top" title="" data-content="Ce skin coûte 5 passe fitnesse"
+							data-placement="top" title="" data-content="Ce skin coûte 6 passe fitnesse"
 							data-original-title="50cent" />
 							<img width="100" height="75"
 							src="/images/wiki/job/skin/loyd.png" data-toggle="popover"
@@ -54,11 +54,11 @@
 							data-original-title="Leon" />
 							<img width="100" height="75"
 							src="/images/wiki/job/skin/hitman.png" data-toggle="popover"
-							data-placement="top" title="" data-content="Ce skin coûte 5 passe fitnesse"
+							data-placement="top" title="" data-content="Ce skin coûte 6 passe fitnesse"
 							data-original-title="Hitman" />
 							<img width="100" height="75"
 							src="/images/wiki/job/skin/duke.png" data-toggle="popover"
-							data-placement="top" title="" data-content="Ce skin coûte 5 passe fitnesse"
+							data-placement="top" title="" data-content="Ce skin coûte 3 passe fitnesse"
 							data-original-title="Duke Nukem" />
 							<img width="100" height="75"
 							src="/images/wiki/job/skin/nick.png" data-toggle="popover"
