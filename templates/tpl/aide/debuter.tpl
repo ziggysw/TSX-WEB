@@ -183,13 +183,13 @@
 							</tr>
 							<tr class="txt">
 								<td>132</td>
-								<td>Vicompte</td>
+								<td>Vicomte</td>
 								<td>475 200</td>
 								<td>L'argent vous manque ? Participez aux braquages</td>
 							</tr>
 							<tr class="txt">
 								<td>156</td>
-								<td>Compte</td>
+								<td>Comte</td>
 								<td>561 600</td>
 								<td>Vous obtenez un respawn à 200HP</td>
 							</tr>
