@@ -486,6 +486,7 @@
 											<tr><td>Tribunal</td><td>La justice sournoise</td><td>5.000$RP</td><td class="hidden-phone">Condamnez un meurtrier pour double homicide.</td></tr>
 											<tr><td>Tribunal</td><td>La justice express</td><td>3.000$RP</td><td class="hidden-phone">Obtenez un bonus pour vos 3 prochaines condamnations pendant 24h.<br /> (100$RP d'amendes et 3h de prison minimum)</td></tr>
 											<tr><td>Tribunal</td><td>Un homme très recherché</td><td>2.500$RP</td><td class="hidden-phone">Vous avez 12 heures pour trouver un homme recherché par le tribunal et l'arrêter.</td></tr>
+											<tr><td>Tribunal</td><td>Acte de présence</td><td>15$RP toutes les 10 secondes</td><td class="hidden-phone">Vous devez rester au Tribunal pendant les 48 prochaines heures.</td></tr>
                                                                                         <tr><td>Vendeurs immo</td><td>Collecte des matières premières</td><td>[PvP] AK-47</td><td class="hidden-phone">Votre patron vous demande de récupérer 5 colis en ville le plus vite possible.</td></tr>
 											<tr><td>Vendeurs immo</td><td>Employé modèle</td><td>1 000$ + 2 500 xp</td><td class="hidden-phone">Vendez pour 10 000$ de marchandise en 24h.</td></tr>
 										</table>
