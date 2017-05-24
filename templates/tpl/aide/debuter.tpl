@@ -499,9 +499,9 @@
 						<br /><br />
 						<p> Pour <strong><u>le télécharger</u></strong>, rien de plus simple ! Rendez-vous sur :
 							<ul>
-								<li><a target="_blank" href="http://www.teamspeak.com/?page=downloads">Le site officiel Ts3</a></li>
+								<li><a target="_blank" href="http://www.teamspeak.com/?page=downloads"><span style="color:#337ab7;">Le site officiel Ts3</span></a></li>
 								ou
-								<li><a target="_blank" href="http://www.clubic.com/telecharger-fiche41572-teamspeak.html">Clubic</a></li>
+								<li><a target="_blank" href="http://www.clubic.com/telecharger-fiche41572-teamspeak.html"><span style="color:#337ab7;">Clubic</span></a></li>
 							</ul>
 						</p>
 					</div>
