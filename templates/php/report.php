@@ -10,7 +10,7 @@ if( $user->data['steamid'] == 'notset' || $user->data['steamid'] == '' ) {
         exit;
 }
 
-$query = mysql_query("SELECT * FROM `srv_bans` WHERE `SteamID`='".$user->data['steamid']."' AND (`Length`='0' OR `EndTime`>UNIX_TIMESTAMP()) AND `is_unban`='0';");
+$query = mysql_query("SELECT * FROM `srv_bans` WHERE `SteamID`='".$user->data['steamid']."' AND (`Length`='0' OR `EndTime`>UNIX_TIMESTAMP()) AND `is_unban`='0' AND `game`<>'whitelist';");
 while( $row2 = mysql_fetch_array($query) ) {
         error_box("Erreur", "Vous etes bannis d'un de nos serveurs, et n'avez pas acces a cette page.");
         exit;

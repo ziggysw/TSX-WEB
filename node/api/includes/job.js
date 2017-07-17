@@ -1,7 +1,7 @@
 "use strict";
 exports = module.exports = function(server) {
   var ERR = require('node-restify-errors');
-  var ratioMulti = 1.2;
+  var ratioMulti = 1.0;
 
 
 /**
@@ -51,8 +51,7 @@ server.get('/job/:id/top', function (req, res, next) {
   sql += "    WHERE S.`job_id`='"+id+"' AND `item_type`='0' GROUP BY `steamid`";
   sql += "    UNION";
   sql += "    SELECT `steamid`, SUM(`total`) as `total` FROM ( ";
-  sql += "        SELECT `steamid`, SUM(I.`prix`*S.`amount`) AS `total` FROM `rp_sell` S";
-  sql += "        INNER JOIN `rp_items` I ON S.`item_id`=I.`id`";
+  sql += "        SELECT `steamid`, SUM(S.`amount`) AS `total` FROM `rp_sell` S";
   sql += "        WHERE S.`job_id`='"+id+"' AND (`item_type`='2' OR (`item_type`='4' AND `item_name`='Vol: Objet'))";
   sql += "        GROUP BY `steamid`";
   sql += "        UNION ";

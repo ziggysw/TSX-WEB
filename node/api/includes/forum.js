@@ -29,14 +29,16 @@ server.post('/forum/pm/:id', function (req, res, next) {
       if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
       var uid = row[0].user_id;
 
-      var sql = "INSERT INTO `ts-x`.`phpbb3_privmsgs`(`msg_id`, `author_id`, `author_ip`, `message_time`, `message_subject`, `message_text`, `to_address` ) VALUES";
-      sql += "  (NULL, '"+uid+"', '0.0.0.0', UNIX_TIMESTAMP(), ?, ?, 'u_"+req.params['id']+"');"
+      var sql = "INSERT INTO `ts-x`.`phpbb3_privmsgs`(`msg_id`, `author_id`, `author_ip`, `message_time`, `message_subject`, `message_text`, `to_address`, `bcc_address`) VALUES";
+      sql += "  (NULL, '"+uid+"', '0.0.0.0', UNIX_TIMESTAMP(), ?, ?, 'u_"+req.params['id']+"', '');"
+
       server.conn.query(sql, [req.params['title'], req.params['message']], function(err, row) {
         var ID = row.insertId;
 
         sql = "INSERT INTO `ts-x`.`phpbb3_privmsgs_to`(`msg_id`, `user_id`, `author_id`, `pm_new`, `pm_unread`) VALUES ";
         sql += " (?, ?, ?, '1', '1');"
         server.conn.query(sql, [ID, req.params['id'], uid], function(err, row) {
+
           sql = "UPDATE `ts-x`.`phpbb3_users` SET `user_new_privmsg`=`user_new_privmsg`+1, `user_unread_privmsg`=`user_unread_privmsg`+1, `user_last_privmsg`=UNIX_TIMESTAMP() WHERE `user_id`=?";
           server.conn.query(sql, [req.params['id']], function(err, row) {
             return res.send("OK");

@@ -229,6 +229,10 @@
 								<p>Dans certaines circonstances exceptionnelles il est possible que l'on vous accorde le rang "No-Pyj émancipé", mais ce grade n'est pas accordé au premier venu...<br /><br />
 								Les "No-Pyj émancipé" sont des joueurs qui n'ont pas l'âge requis pour avoir le rang "No-Pyj" mais qui connaissent très bien le règlement et ont fait preuve d'un comportement exemplaire,
 								ce rang vous accorde les mêmes avantages que le rang "No-Pyj" côté Forum (Forum "no-pyj" et place de chef de job) mais pas côté serveur (+force ou /me).</p>
+								<br />
+								<p><center><span style="color:red;font-size:20px;"><u>Attention :</u></span> </center>
+								<br />La Première condition pour passer le "No-Pyj émancipé" est de ne pas demandé quel en sont les conditions, ensuite il vous faudra avoir aucun ban à votre actif
+								et avoir un certain montant de temps de jeux sur le Rôle-Play</p>
 								</div>
 							</div>
 						</div>

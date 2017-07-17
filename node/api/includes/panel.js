@@ -135,7 +135,7 @@ server.get('/panel/events', function (req, res, next) {
  */
 server.get('/panel/props', function (req, res, next) {
   try {
-    server.conn.query(server.getAuthSMAdmin, [req.headers.auth], function(err, row) {
+    server.conn.query(server.getAuthSteamID, [req.headers.auth], function(err, row) {
       if( err ) return res.send(new ERR.InternalServerError(err));
       if( row[0] == null ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
       server.conn.query("SELECT `id`, LOWER(`nom`) as nom, LOWER(`model`) as model, LOWER(`tag`) as tag, `valid` FROM `rp_shared`.`rp_props` ORDER BY `count` DESC;", function(err, row) {

@@ -182,9 +182,9 @@ next();
 server.get('/live/sondage/:steamid', function(req, res, next) {
   try {
     var steamid = req.params["steamid"].replace("STEAM_1", "STEAM_0");
-    if( steamid == "notset" ) return res.send("2");
+    if( steamid == "notset" || steamid.length <= 5  ) return res.send("2");
 
-    server.conn.query("SELECT * FROM `ts-x`.`site_sondage` WHERE `steamid`=? LIMIT 1;", [steamid], function(err, row) {
+    server.conn.query("SELECT * FROM `ts-x`.`site_sondage` WHERE `steamid`=? AND `time`+(10*24*60*60) > UNIX_TIMESTAMP() LIMIT 1;", [steamid], function(err, row) {
       if( err ) return res.send("2");
       if( row.length == 0) return res.send("0");
       return res.send("1");

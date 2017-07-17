@@ -163,7 +163,7 @@ server.post('/steam/trade', function (req, res, next) {
               offer.setToken(row[0].tokken);
               offer.addTheirItem({appid: 730, contextid: 2, assetid: parseInt(req.params['itemid'])});
               offer.send(function(err, status) {
-                console.log(err);
+		console.log(err.eresult);
                 if( err && err.eresult == 15 ) return res.send({id: -1});
                 else if( err && err.eresult == 50 ) return res.send({id: -2});
                 else if( err ) return res.send(new ERR.InternalServerError(err));

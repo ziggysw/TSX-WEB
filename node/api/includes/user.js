@@ -481,7 +481,7 @@ exports = module.exports = function(server){
     if( req.params['type'] == 0 )
       return res.send(new ERR.BadRequestError("InvalidParam"));
 
-    req.params['type'] = req.params['type'].replace("STEAM_0", "STEAM_1");
+    	req.params['id'] = req.params['id'].replace("STEAM_0", "STEAM_1");
 
       var sql = "SELECT *,  G.`name` AS  `group_name`, U.`name` AS `name`";
       sql += "  FROM  `rp_users` U ";
@@ -503,7 +503,7 @@ exports = module.exports = function(server){
 
       }
       server.conn.query(sql, [req.params['id']], function(err, rows) {
-        if( err ) return res.send(new ERR.BadRequestError("InvalidParam"));
+        if( err ) return res.send(new ERR.BadRequestError(err));
         if( rows.length == 0 ) return res.send(new ERR.BadRequestError("InvalidParam"));
 
 
@@ -1154,7 +1154,7 @@ server.get('/user/:id/incomes/:scale', function (req, res, next) {
   });
 
   sql = "SELECT SUM(`amount`) AS `total`, " + sqlTimeColumn;
-  sql += "			FROM `rp_sell` WHERE `steamid`=? AND `item_id`='0' AND `item_name`='LOTO' GROUP BY `date` ORDER BY `date` ASC;";
+  sql += "			FROM `rp_sell` WHERE `steamid`=? AND `item_id`='-1' AND `item_name`='LOTO' GROUP BY `date` ORDER BY `date` ASC;";
 
   server.conn.query(sql, [req.params['id']], function(err, rows) {
     if( err ) return res.send(new ERR.InternalServerError(err));
@@ -1197,7 +1197,7 @@ server.get('/user/:id/incomes/:scale', function (req, res, next) {
     cb(obj);
   });
 
-  sql = "SELECT SUM(`temps`)/60 AS `total`, " + sqlTimeColumn +"	FROM `rp_stats` WHERE `steamid`=? GROUP BY `date` ORDER BY `date` ASC;"
+  sql = "SELECT SUM(`temps`)/60 AS `total`, " + sqlTimeColumn +"	FROM `rp_stats` WHERE `steamid`=? AND `timestamp`>(UNIX_TIMESTAMP()-(31*24*60*60)) GROUP BY `date` ORDER BY `date` ASC;"
   server.conn.query(sql, [req.params['id']], function(err, rows) {
     if( err ) return res.send(new ERR.InternalServerError(err));
 
@@ -1341,7 +1341,8 @@ server.post('/user/:SteamID/giveitem', function (req, res, next) {
     if( err ) return res.send(new ERR.InternalServerError(err));
     if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
     var SteamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
-    if( SteamID != "STEAM_1:0:7490757" && SteamID != "STEAM_1:1:39278818" && SteamID != "STEAM_1:0:23617413" ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+    if( SteamID != "STEAM_1:0:7490757" && SteamID != "STEAM_1:1:39278818" && SteamID != "STEAM_1:0:23617413" && SteamID != "STEAM_1:1:114134761" && SteamID != "STEAM_1:1:114134761" )
+	return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
 
     var UserName = row[0].username;
     var amount = parseInt(req.params['amount']);
@@ -1369,7 +1370,8 @@ server.post('/user/:SteamID/givemoney', function (req, res, next) {
     if( err ) return res.send(new ERR.InternalServerError(err));
     if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
     var SteamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
-    if( SteamID != "STEAM_1:0:7490757" && SteamID != "STEAM_1:1:39278818" && SteamID != "STEAM_1:0:23617413" ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+    if( SteamID != "STEAM_1:0:7490757" && SteamID != "STEAM_1:1:39278818" && SteamID != "STEAM_1:0:23617413" && SteamID != "STEAM_1:1:114134761" && SteamID != "STEAM_1:1:114134761" )
+        return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
 
     var UserName = row[0].username;
     var amount = parseInt(req.params['amount']);
@@ -1397,7 +1399,8 @@ server.post('/user/:SteamID/givexp', function (req, res, next) {
     if( err ) return res.send(new ERR.InternalServerError(err));
     if( row.length == 0 ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
     var SteamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
-    if( SteamID != "STEAM_1:0:7490757" && SteamID != "STEAM_1:1:39278818" && SteamID != "STEAM_1:0:23617413" ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+    if( SteamID != "STEAM_1:0:7490757" && SteamID != "STEAM_1:1:39278818" && SteamID != "STEAM_1:0:23617413" && SteamID != "STEAM_1:1:114134761" && SteamID != "STEAM_1:1:114134761" )
+        return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
 
     var UserName = row[0].username;
     var amount = parseInt(req.params['amount']);

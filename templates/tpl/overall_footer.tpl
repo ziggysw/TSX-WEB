@@ -30,7 +30,7 @@
 	</div>
 	<br /><br />
 	<div class="container">
-		<p>Copyright &copy; 2010-2016 &bull; <a href="https://www.ts-x.eu">ts-x.eu</a> &bull; KoSSoLaX`</p>
+		<p>Copyright &copy; 2010-2017 &bull; <a href="https://www.ts-x.eu">ts-x.eu</a> &bull; KoSSoLaX`</p>
 	</div>
 
 	<style>
@@ -59,7 +59,7 @@
 	</div>
 -->
 </footer>
-	<script type="text/javascript" src="https://www.ts-x.eu/js/compile-bootstrap-globals-jquery.event.move.js?v=3"></script>
+	<script type="text/javascript" src="https://www.ts-x.eu/js/compile-bootstrap-globals-login-jquery.event.move.js?v=467"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
