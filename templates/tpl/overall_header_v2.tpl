@@ -40,7 +40,7 @@
 					{/if}
 				</ul>
 				<ul class="follow-icon">
-			             	<li><a target="_blank" href="https://www.youtube.com/channel/UC87KJ_5RVz6SgOzZPqfQJYw"><i class="fa-youtube-play"></i></a></li>
+			             	<li><a target="_blank" href="https://www.youtube.com/channel/UC87KJ_5RVz6SgOzZPqfQJYw"><i class="fa fa-youtube-play"></i></a></li>
 					<li><a target="_blank" href="https://www.facebook.com/The-Specialists-X-Roleplay-1405541629728459"><i class="fa fa-facebook"></i></a></li>
 					<li><a target="_blank" href="https://twitter.com/KoSSoLaX"><i class="fa fa-twitter"></i></a></li>
 					<li><a target="_blank" href="http://steamcommunity.com/groups/TS-X-RP"><i class="fa fa-steam"></i></a></li>
