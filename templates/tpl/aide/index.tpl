@@ -108,8 +108,8 @@
                             <div class="caption">
                                 <h4>Trouver un emploi</h4>
 								<p class="hidden-sm hidden-md hidden-lg">Envie de changement ?</p>
-                               <p class="hidden-phone">{$job} ne te conviens pas ? <br />
-							   Ici tu découvriras les multiples métier qui composent notre ville !</p>
+                               <p class="hidden-phone">{$job} ne te convient pas ? <br />
+							   Ici tu découvriras les multiples métiers qui composent notre ville !</p>
                             </div>
 							<center><a class="btn btn-warning" href="/index.php?page=aide&sub=emploi"> Aller voir</a></center>
 							<br />
@@ -131,7 +131,7 @@
                                 <h4>Gagner de l'argent</h4>
 								<p class="hidden-sm hidden-md hidden-lg">Devenir riche ? facile !</p>
                                 <p class="hidden-phone">Tu as {$money|pretty_number} $rp,<br />
-							   Ça te suffis pas ? viens voir comment en gagner plus !</p>
+							   Ça te suffit pas ? viens voir comment en gagner plus !</p>
                             </div>
 							<center><a class="btn btn-success" href="/index.php?page=aide&sub=argent"> $$$ </a></center>
 							<br />
@@ -154,7 +154,7 @@
                             <div class="caption">
                                 <h4>Le Mariage</h4>
                                <p> <span class="hidden-phone">Amoureux ?<br /></span>
-								Déclare ta flame à ton âme soeur et partagez tous durant 7 jours !</p>
+								Déclare ta flame à ton âme soeur et partagez tout durant 7 jours !</p>
                             </div>
 							<center><a class="btn btn-danger" href="https://www.ts-x.eu/index.php?page=aide&sub=debuter#GroupD"> Les avantages </a></center>
 							<br />
@@ -175,9 +175,9 @@
                             <div class="caption">
                                 <h4>Le rang No-pyj</h4>
                                <p><span class="hidden-phone">Tu as plus de 16 ans ?<br /></span>
-							   Viens découvrir les modalitées et avantages du rang No-Pyj.</p>
+							   Viens découvrir les modalités et avantages du rang No-Pyj.</p>
                             </div>
-							<center><a class="btn btn-grp" href="/index.php?page=aide&sub=nopyj"> Ce renseigner</a></center>
+							<center><a class="btn btn-grp" href="/index.php?page=aide&sub=nopyj"> Se renseigner</a></center>
 							<br />
                             <div class="ratings">
 								<p>Importance :
