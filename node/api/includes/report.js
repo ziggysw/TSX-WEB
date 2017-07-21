@@ -29,18 +29,21 @@ exports = module.exports = function(server) {
         if( row[0] == null ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
 	if( row[0].steamid == 'notset' ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
 
-        var steamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
+	server.conn.query("SELECT * FROM `ts-x`.`srv_bans` WHERE `SteamID`=? AND (`Length`='0' OR `EndTime`>UNIX_TIMESTAMP()) AND `is_unban`='0' AND `game`<>'whitelist';", [row[0].steamid], function(err, row2) {
+	  if( row2[0] != null ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+          var steamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
 
-        server.conn.query("INSERT INTO `rp_messages` (`id`, `title`, `text`, `timestamp`, `steamid`, `reportSteamID`) VALUES (NULL, ?, ?, ?, ?, ?);", [req.params['reason'], req.params['moreinfo'],  parseInt(d.getTime()/1000), steamID, req.params['steamid']], function(err, row) {
-          if( err ) return res.send(new ERR.InternalServerError(err));
-
-          var ID = row.insertId;
-
-
-          server.conn.query("INSERT INTO `rp_messages_seen` (`messageid`, `steamid`) (SELECT ?, `steamid` FROM `rp_users` WHERE `job_id` IN (1,2,101,102) OR `refere` = 1 OR `steamid`=? OR `steamid`=?);", [ID, req.params['steamid'], steamID], function( err, row ) {
+          server.conn.query("INSERT INTO `rp_messages` (`id`, `title`, `text`, `timestamp`, `steamid`, `reportSteamID`) VALUES (NULL, ?, ?, ?, ?, ?);", [req.params['reason'], req.params['moreinfo'],  parseInt(d.getTime()/1000), steamID, req.params['steamid']], function(err, row) {
             if( err ) return res.send(new ERR.InternalServerError(err));
 
-            return res.send({'id': ID});
+            var ID = row.insertId;
+
+
+            server.conn.query("INSERT INTO `rp_messages_seen` (`messageid`, `steamid`) (SELECT ?, `steamid` FROM `rp_users` WHERE `job_id` IN (1,2,101,102) OR `refere` = 1 OR `steamid`=? OR `steamid`=?);", [ID, req.params['steamid'], steamID], function( err, row ) {
+              if( err ) return res.send(new ERR.InternalServerError(err));
+
+              return res.send({'id': ID});
+	    });
           });
         });
       });
@@ -105,12 +108,16 @@ exports = module.exports = function(server) {
         if( err ) return res.send(new ERR.InternalServerError(err));
         if( row[0] == null ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
 
-        var steamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
+        server.conn.query("SELECT * FROM `ts-x`.`srv_bans` WHERE `SteamID`=? AND (`Length`='0' OR `EndTime`>UNIX_TIMESTAMP()) AND `is_unban`='0' AND `game`<>'whitelist';", [row[0].steamid], function(err, row2) {
+          if( row2[0] != null ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
 
-        server.conn.query("SELECT M.`id`, M.`title`, `seen`, `timestamp`, U.`name` as 'name', U2.`name` as 'plaignant' FROM `rp_messages` M INNER JOIN `rp_messages_seen` MS ON MS.`messageid`=M.`id` INNER JOIN `rp_users` U ON M.`reportSteamID`=U.`steamid` INNER JOIN `rp_users` U2 ON M.`SteamID`=U2.`steamid` WHERE MS.`steamid`=? AND `linked_to` IS NULL AND ((M.`lock`=1 AND MS.`seen`=0) OR M.`lock`=0) ORDER BY M.`timestamp` DESC", [steamID], function( err, row ) {
-          if( err ) return res.send(new ERR.InternalServerError(err));
-          if( row[0] == null ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
-          res.send( row );
+          var steamID = row[0].steamid.replace("STEAM_0", "STEAM_1");
+  
+          server.conn.query("SELECT M.`id`, M.`title`, `seen`, `timestamp`, U.`name` as 'name', U2.`name` as 'plaignant' FROM `rp_messages` M INNER JOIN `rp_messages_seen` MS ON MS.`messageid`=M.`id` INNER JOIN `rp_users` U ON M.`reportSteamID`=U.`steamid` INNER JOIN `rp_users` U2 ON M.`SteamID`=U2.`steamid` WHERE MS.`steamid`=? AND `linked_to` IS NULL AND ((M.`lock`=1 AND MS.`seen`=0) OR M.`lock`=0) ORDER BY M.`timestamp` DESC", [steamID], function( err, row ) {
+            if( err ) return res.send(new ERR.InternalServerError(err));
+            if( row[0] == null ) return res.send(new ERR.NotAuthorizedError("NotAuthorized"));
+            res.send( row );
+          });
         });
       });
     } catch ( err ) {
