@@ -95,9 +95,9 @@
 						</div>
 					</div>
 					<br />
-					<div ng-controller="search"">
+					<div ng-controller="search" class="panel panel-wiki">
 						<input class="form-control" type="text" placeholder="Rechercher" ng-model="search">
-						<ul>
-							<li ng-repeat="item in data"><a href="index.php?page=aide&sub={{item.ref}}">{{item.ref}}</a></li>
+						<ul class="list-group">
+							<li class="list-group-item" ng-repeat="i in data"><a href="https://www.ts-x.eu/index.php?page=aide&sub={{i.url}}">{{i.title}}</a></li>
 						</ul>
 					</div>
